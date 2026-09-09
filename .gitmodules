@@ -1,12 +1,12 @@
 [submodule "autonomous_flight"]
 	path = autonomous_flight
-	url = https://github.com/Zhefan-Xu/autonomous_flight.git
+	url = https://github.com/zxr1231/autonomous_flight.git
 [submodule "global_planner"]
 	path = global_planner
-	url = https://github.com/Zhefan-Xu/global_planner.git
+	url = https://github.com/zxr1231/global_planner.git
 [submodule "uav_simulator"]
 	path = uav_simulator
-	url = https://github.com/Zhefan-Xu/uav_simulator.git
+	url = https://github.com/zxr1231/uav_simulator.git
 [submodule "trajectory_planner"]
 	path = trajectory_planner
 	url = https://github.com/Zhefan-Xu/trajectory_planner.git
