@@ -2,7 +2,7 @@
 
 This branch adds automatic return to the recorded takeoff XY/yaw at the configured takeoff altitude. It hovers after arrival and does not land.
 
-Completion is a runtime condition: the current reachable sampled PRM has fresh zero information gain. It is checked across at least three observations and five simulation seconds. A path-planning failure, empty roadmap, stale depth input, or remaining gain cannot alone trigger return. This event is not proof of ground-truth map coverage.
+Completion is a runtime condition: the selected path and every node in the current reachable sampled PRM have fresh information gain at or below the configured threshold. The current simulation default is 500 voxels. It is checked across at least three observations and five simulation seconds. A path-planning failure, empty roadmap, stale depth input, or gain above the threshold cannot alone trigger return. This event is not proof of ground-truth map coverage or a literal 98% measurement.
 
 Return paths use known inflated-free connections, directly when possible and via the existing PRM otherwise. Failed return planning results in hover and retry. The original B-spline and dynamic-obstacle handling execute the path.
 
