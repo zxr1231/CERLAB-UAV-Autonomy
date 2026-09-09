@@ -6,6 +6,8 @@ Completion is a runtime condition: the current reachable sampled PRM has fresh z
 
 Return paths use known inflated-free connections, directly when possible and via the existing PRM otherwise. Failed return planning results in hover and retry. The original B-spline and dynamic-obstacle handling execute the path.
 
+If globally prefiltered high-gain goals are disconnected, the planner connects the current pose to all nearby known-free PRM nodes and refreshes fallback candidates inside the reachable component. This recovery runs only after all normal candidates fail.
+
 State topics:
 
 - `/dynamicExploration/home`
@@ -34,6 +36,6 @@ source devel/setup.bash
 rosrun autonomous_flight return_home_checks
 ```
 
-They cover completion gating, direct return, PRM detour, blocked/unknown/out-of-map home, remaining reachable gain, empty roadmap, and the already-at-home case.
+All 22 checks pass. They cover completion gating, direct return, PRM detour, blocked/unknown/out-of-map home, remaining reachable gain, empty roadmap, already-at-home, multiple current-pose connectors, and disconnected global-goal recovery.
 
-Full-range runs are retained as failures. The first exposed a local-trajectory failure branch that stopped without requesting a new global path; this branch now requests recovery. A second run recovered from local failures but later remained `EXPLORATION_BLOCKED` because all candidate A* queries failed while reachable nonzero gain remained. The completion gate correctly refused to call that condition complete. This baseline roadmap-connectivity issue is outside the return-home trigger and must not be hidden by returning early.
+Full-range runs are retained as failures. The first exposed a local-trajectory failure branch that stopped without requesting a new global path; this branch now requests recovery. A second run recovered from local failures but later remained `EXPLORATION_BLOCKED` because all candidate A* queries failed while reachable nonzero gain remained. The completion gate correctly refused to call that condition complete. The reachable-component fallback above addresses this case; full-range online validation is still pending.
