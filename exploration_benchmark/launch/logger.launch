@@ -1,0 +1,7 @@
+<launch>
+  <arg name="output_dir" />
+  <node pkg="exploration_benchmark" type="benchmark_logger.py"
+        name="exploration_benchmark_logger" output="screen">
+    <param name="output_dir" value="$(arg output_dir)" />
+  </node>
+</launch>

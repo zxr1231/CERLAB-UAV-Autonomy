@@ -1,0 +1,19 @@
+{
+  "experiment_id": "EXP-BENCH-FULL-VISUAL",
+  "date": "2026-09-14",
+  "mode": "full",
+  "world": "floorplan2_dynamic_5.world",
+  "completion_gain_threshold": 500,
+  "runner_timeout_wall_seconds": 1200,
+  "gazebo_gui": true,
+  "rviz": true,
+  "record_rosbag": false,
+  "coverage_status": "UNAVAILABLE_NO_VERIFIED_DENOMINATOR",
+  "seed_note": "The same integer is currently supplied to Gazebo and DEP; split environment_seed and planner_seed before external-baseline experiments.",
+  "runs": [
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-BENCH-FULL-VISUAL/seed_001/20260914T153122",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-BENCH-FULL-VISUAL/seed_002/20260914T154424",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-BENCH-FULL-VISUAL/seed_003/20260914T155258",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-BENCH-FULL-VISUAL/seed_002/20260914T160207"
+  ]
+}
