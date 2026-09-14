@@ -48,3 +48,6 @@ Run ROS-independent accounting tests with:
 ```bash
 python3 exploration_benchmark/test/test_benchmark_core.py
 ```
+
+The dated MVP runtime evidence and the limits of seed reproducibility are recorded in
+[`VALIDATION.md`](VALIDATION.md).
