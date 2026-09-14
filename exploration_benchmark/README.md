@@ -54,3 +54,17 @@ The dated MVP runtime evidence and the limits of seed reproducibility are record
 
 Versioned experiment protocols, lightweight manifests, aggregate tables, and reports
 are stored in the project-level [`experiments`](../experiments/README.md) directory.
+
+Generate the Benchmark v2 floorplan2 ground-truth prototype with:
+
+```bash
+rosrun exploration_benchmark generate_ground_truth_mask.py \
+  --world "$(rospack find uav_simulator)/worlds/floorplan2/floorplan2_dynamic_5.world" \
+  --config "$(rospack find exploration_benchmark)/../experiments/benchmark_v2/config/floorplan2_static_v1.json" \
+  --output-mask /tmp/floorplan2_static_v1.npz \
+  --output-metadata /tmp/floorplan2_static_v1.metadata.json \
+  --output-preview /tmp/floorplan2_static_v1.png
+```
+
+The committed mask is an offline evaluation artifact. It is not loaded by the
+exploration planner and does not change map updates or path selection.

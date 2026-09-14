@@ -1,0 +1,51 @@
+# Benchmark v2 implementation status
+
+## Completed in the first atomic checkpoint
+
+- V2-00: baseline verified and `feat/benchmark-v2` created from `1716e46`.
+- V2-01: metric sets, time origin, Unknown/provenance semantics, censoring, and fair
+  comparison rules frozen in `METRICS_SPEC.md`.
+- V2-02 floorplan2 prototype: direct SDF box parsing, full pose composition,
+  deterministic voxelization, six-connected free-space extraction, static surface
+  mask, robot-size box inflation, reachable flight-center mask, deterministic NPZ,
+  canonical content hash, and top-down PNG preview.
+- External method check: FUEL and FALCON papers plus FALCON's released map coverage
+  implementation were inspected from primary sources.
+
+## Floorplan2 static mask v1
+
+- Shape: `201 × 201 × 25` voxels at 0.1 m resolution.
+- Discrete task volume: 1,010.025 m³.
+- Accessible static-free denominator: 980,550 voxels = 980.550 m³.
+- Static occupied: 29,475 voxels = 29.475 m³.
+- Static surface: 29,375 voxels = 29.375 m³.
+- Reachable inflated flight-center space in z=[0.7,1.2]: 172,885 voxels.
+- Unreachable static-free voxels: 0.
+- Accessible XY boundary touches: 0, confirming a closed rasterized outer wall.
+- Canonical content SHA256:
+  `23c85015a99be3ea585e4a407b6a2e6654eb7263bbb64ad2f4ba319e8f8a43da`.
+- Deterministic NPZ file SHA256:
+  `c782566ede82d4fdc3928c3d9d73a94a1578a33d6382866e4b8923279dc0e930`.
+
+## Verification
+
+- Clean-environment Release build passed with `CMAKE_PREFIX_PATH=/opt/ros/noetic`.
+- Benchmark core tests: 5 passed.
+- Ground-truth generator tests: 7 passed.
+- Existing return/completion/seed checks: 25 passed before prototype changes; the
+  prototype does not link to those components.
+- Real mask regenerated twice with byte-identical NPZ and PNG outputs.
+- Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
+- No ROS/Gazebo processes remained.
+
+## Explicitly pending
+
+- `F_observable` oracle visibility mask and validation.
+- Online sensor-ray provenance in map_manager.
+- Coverage CSV, T80/T90/T95, and planning-active time origin.
+- PRM/B-spline/odom association, collision and resource metrics.
+- Environment/planner seed separation, batch runner, statistics, and full runtime
+  validation.
+
+The committed mask is not yet used to report Coverage. Until online sensor provenance
+and oracle visibility are validated, existing map point counts remain proxies.

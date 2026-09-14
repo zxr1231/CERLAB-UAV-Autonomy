@@ -17,3 +17,6 @@ Layout:
 Map-point counts are map-size proxies. They are not coverage and must not be used to
 derive T80/T90/T95 until a verified evaluation volume and explorable-space
 denominator are available.
+
+Benchmark v2 metric definitions, source audit, and deterministic floorplan2 masks are
+under [`benchmark_v2`](benchmark_v2/METRICS_SPEC.md).

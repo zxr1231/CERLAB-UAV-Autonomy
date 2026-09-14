@@ -1,0 +1,512 @@
+{
+  "accessible_fraction_of_task": 0.97081755402094,
+  "accessible_free_touches_xy_boundary": 0,
+  "boundary_links": [
+    "Wall_0",
+    "Wall_2",
+    "Wall_4",
+    "Wall_6"
+  ],
+  "box_count": 13,
+  "boxes": [
+    {
+      "center": [
+        -9.664839,
+        -0.328557,
+        1.25
+      ],
+      "collision": "Wall_0_Collision",
+      "link": "Wall_0",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -3.673205103346574e-06,
+          0.9999999999932537,
+          0.0
+        ],
+        [
+          -0.9999999999932537,
+          -3.673205103346574e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        20.15,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        -3.164839,
+        -0.6315569999999999,
+        1.25
+      ],
+      "collision": "Wall_10_Collision",
+      "link": "Wall_10",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -3.673205103346574e-06,
+          0.9999999999932537,
+          0.0
+        ],
+        [
+          -0.9999999999932537,
+          -3.673205103346574e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        10.5,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        5.340201,
+        3.084823,
+        1.25
+      ],
+      "collision": "Wall_12_Collision",
+      "link": "Wall_12",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -3.673205103346574e-06,
+          0.9999999999932537,
+          0.0
+        ],
+        [
+          -0.9999999999932537,
+          -3.673205103346574e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        3.25,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        2.835161,
+        -2.0645569999999998,
+        1.25
+      ],
+      "collision": "Wall_14_Collision",
+      "link": "Wall_14",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -3.673205103346574e-06,
+          0.9999999999932537,
+          0.0
+        ],
+        [
+          -0.9999999999932537,
+          -3.673205103346574e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        4.25,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        -6.864828999999999,
+        -1.024566,
+        1.25
+      ],
+      "collision": "Wall_16_Collision",
+      "link": "Wall_16",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        1.5,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        -0.9455689999999999,
+        5.119263,
+        1.25
+      ],
+      "collision": "Wall_18_Collision",
+      "link": "Wall_18",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -3.673205103346574e-06,
+          0.9999999999932537,
+          0.0
+        ],
+        [
+          -0.9999999999932537,
+          -3.673205103346574e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        2.75,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        0.35442599999999996,
+        3.8192630000000003,
+        1.25
+      ],
+      "collision": "Wall_19_Collision",
+      "link": "Wall_19",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        2.75,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        0.335161,
+        -10.328557,
+        1.25
+      ],
+      "collision": "Wall_2_Collision",
+      "link": "Wall_2",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        20.15,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        1.6544210000000001,
+        4.994263,
+        1.25
+      ],
+      "collision": "Wall_20_Collision",
+      "link": "Wall_20",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -3.673205103346574e-06,
+          -0.9999999999932537,
+          0.0
+        ],
+        [
+          0.9999999999932537,
+          -3.673205103346574e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        2.5,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        0.26809299999999997,
+        -8.484717,
+        1.25
+      ],
+      "collision": "Wall_22_Collision",
+      "link": "Wall_22",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -3.673205103346574e-06,
+          0.9999999999932537,
+          0.0
+        ],
+        [
+          -0.9999999999932537,
+          -3.673205103346574e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        3.5,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        10.335161,
+        -0.328557,
+        1.25
+      ],
+      "collision": "Wall_4_Collision",
+      "link": "Wall_4",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -3.673205103346574e-06,
+          -0.9999999999932537,
+          0.0
+        ],
+        [
+          0.9999999999932537,
+          -3.673205103346574e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        20.15,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        0.335161,
+        9.671443,
+        1.25
+      ],
+      "collision": "Wall_6_Collision",
+      "link": "Wall_6",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          -0.9999999999964793,
+          -2.65358979335273e-06,
+          0.0
+        ],
+        [
+          2.65358979335273e-06,
+          -0.9999999999964793,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        20.15,
+        0.15,
+        2.5
+      ]
+    },
+    {
+      "center": [
+        0.335161,
+        1.671443,
+        1.25
+      ],
+      "collision": "Wall_8_Collision",
+      "link": "Wall_8",
+      "model": "floorplan2",
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "size": [
+        3.15,
+        0.15,
+        2.5
+      ]
+    }
+  ],
+  "config_path": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/config/floorplan2_static_v1.json",
+  "config_sha256": "54d5369f77a4d4f0681024054c4df7e1469b6dd5e9ca7d01519ef367bac32567",
+  "counts": {
+    "accessible_free": 980550,
+    "flight_reachable": 172885,
+    "inflated_occupied": 145600,
+    "static_occupied": 29475,
+    "static_surface": 29375,
+    "unreachable_free": 0
+  },
+  "flight_z": [
+    0.7,
+    1.2
+  ],
+  "global_index_min": [
+    103,
+    96,
+    1
+  ],
+  "home_local_index": [
+    97,
+    104,
+    10
+  ],
+  "home_position": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "inflation_cells": [
+    3,
+    3,
+    2
+  ],
+  "map_frame": "map",
+  "map_origin": [
+    -20.0,
+    -20.0,
+    -0.1
+  ],
+  "mask_content_sha256": "23c85015a99be3ea585e4a407b6a2e6654eb7263bbb64ad2f4ba319e8f8a43da",
+  "mask_file_sha256": "c782566ede82d4fdc3928c3d9d73a94a1578a33d6382866e4b8923279dc0e930",
+  "mask_path": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/masks/floorplan2_static_v1.npz",
+  "preview_path": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/masks/floorplan2_static_v1.png",
+  "preview_sha256": "7883417495abe53d237f7c91452e0b5b7d583b2a486843e466508a50684cba28",
+  "resolution": 0.1,
+  "robot_size": [
+    0.5,
+    0.5,
+    0.3
+  ],
+  "schema_version": "cerlab-ground-truth-mask-v1",
+  "shape": [
+    201,
+    201,
+    25
+  ],
+  "static_models": [
+    "floorplan2"
+  ],
+  "task_bbox_collision_aabb_max": [
+    10.41019800754091,
+    9.746469734916904,
+    2.5
+  ],
+  "task_bbox_collision_aabb_min": [
+    -9.73987600754091,
+    -10.403557275422413,
+    0.0
+  ],
+  "task_volume_m3": 1010.0250000000002,
+  "task_voxel_count": 1010025,
+  "volumes_m3": {
+    "accessible_free": 980.5500000000002,
+    "flight_reachable": 172.88500000000005,
+    "inflated_occupied": 145.60000000000002,
+    "static_occupied": 29.47500000000001,
+    "static_surface": 29.375000000000007,
+    "unreachable_free": 0.0
+  },
+  "voxel_volume_m3": 0.0010000000000000002,
+  "world_path": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/uav_simulator/worlds/floorplan2/floorplan2_dynamic_5.world",
+  "world_sha256": "00e53bf50ddfae89746b4aed70dc60caa1cfdc6c3939c27a32e65eccd8e276a8"
+}

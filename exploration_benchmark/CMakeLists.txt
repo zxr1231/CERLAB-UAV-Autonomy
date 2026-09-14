@@ -13,10 +13,12 @@ catkin_package()
 
 catkin_install_python(PROGRAMS
   scripts/benchmark_logger.py
+  scripts/generate_ground_truth_mask.py
   scripts/run_experiment.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 if(CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/test_benchmark_core.py)
+  catkin_add_nosetests(test/test_ground_truth.py)
 endif()
