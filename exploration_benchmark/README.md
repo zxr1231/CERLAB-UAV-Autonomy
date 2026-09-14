@@ -51,3 +51,6 @@ python3 exploration_benchmark/test/test_benchmark_core.py
 
 The dated MVP runtime evidence and the limits of seed reproducibility are recorded in
 [`VALIDATION.md`](VALIDATION.md).
+
+Versioned experiment protocols, lightweight manifests, aggregate tables, and reports
+are stored in the project-level [`experiments`](../experiments/README.md) directory.

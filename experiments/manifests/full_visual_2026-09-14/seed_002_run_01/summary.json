@@ -1,0 +1,45 @@
+{
+  "coverage_status": "UNAVAILABLE_NO_VERIFIED_DENOMINATOR",
+  "cumulative_distance": 197.59811524003365,
+  "map_message_count": 4693,
+  "map_points": 1064646,
+  "mission_distance": 196.70810271158857,
+  "mission_end_sim": 459.178,
+  "mission_sim_duration": 455.976,
+  "mission_start_sim": 3.202,
+  "mission_state": "HOME_REACHED",
+  "mission_wall_duration": 456.4604131870001,
+  "odom_count": 12508,
+  "passed": true,
+  "planning": {
+    "global": {
+      "count": 38,
+      "max_ms": 108.85,
+      "mean_ms": 49.58434210526319,
+      "p95_ms": 92.65634999999999
+    },
+    "local": {
+      "count": 199,
+      "max_ms": 4.675,
+      "mean_ms": 0.5448542713567841,
+      "p95_ms": 1.6801999999999995
+    },
+    "return": {
+      "count": 7,
+      "max_ms": 0.58,
+      "mean_ms": 0.4657142857142857,
+      "p95_ms": 0.5704
+    }
+  },
+  "planning_event_count": 244,
+  "rtf": {
+    "count": 469,
+    "max": 1.001222234032404,
+    "mean": 0.9989373754979739,
+    "p95": 0.9993614494390726
+  },
+  "sim_duration": 470.726,
+  "sim_end": 471.696,
+  "sim_start": 0.97,
+  "wall_duration": 471.5620588649999
+}

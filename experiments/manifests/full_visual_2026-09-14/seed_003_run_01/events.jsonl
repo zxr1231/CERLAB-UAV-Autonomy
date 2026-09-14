@@ -1,0 +1,8 @@
+{"event": "LOGGER_STARTED", "sim_time": 1.041, "wall_elapsed": 0.007014560999778041}
+{"current": "EXPLORING", "event": "MISSION_STATE", "previous": "UNKNOWN", "sim_time": 3.276, "wall_elapsed": 2.529250359999878}
+{"current": "CONFIRMING_COMPLETE", "event": "MISSION_STATE", "previous": "EXPLORING", "sim_time": 416.078, "wall_elapsed": 415.782164836}
+{"current": "EXPLORING", "event": "MISSION_STATE", "previous": "CONFIRMING_COMPLETE", "sim_time": 419.222, "wall_elapsed": 418.93200461000015}
+{"current": "CONFIRMING_COMPLETE", "event": "MISSION_STATE", "previous": "EXPLORING", "sim_time": 451.656, "wall_elapsed": 451.40717603999974}
+{"current": "RETURNING_HOME", "event": "MISSION_STATE", "previous": "CONFIRMING_COMPLETE", "sim_time": 457.034, "wall_elapsed": 456.7915425010001}
+{"current": "HOME_REACHED", "event": "MISSION_STATE", "previous": "RETURNING_HOME", "sim_time": 471.079, "wall_elapsed": 470.853144789}
+{"event": "LOGGER_STOPPED", "sim_time": 483.312, "wall_elapsed": 483.105535661}

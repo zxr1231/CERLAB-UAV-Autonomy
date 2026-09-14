@@ -1,0 +1,49 @@
+{
+  "branch": "feat/benchmark",
+  "command": [
+    "/home/zxr2/cerlab_benchmark_ws/devel/lib/exploration_benchmark/run_experiment.py",
+    "--experiment-id",
+    "EXP-BENCH-FULL-VISUAL",
+    "--seed",
+    "1",
+    "--mode",
+    "full",
+    "--timeout",
+    "1200",
+    "--rviz"
+  ],
+  "completion_gain_threshold": 500,
+  "coverage_status": "UNAVAILABLE_NO_VERIFIED_DENOMINATOR",
+  "end_utc": "2026-09-14T07:43:58.702407+00:00",
+  "error": null,
+  "files": {
+    "autonomous_flight/cfg/dynamic_exploration/exploration_param.yaml": "5c937204fa4c1c0b3b6559ce471c52902dd547598aa6c2ea51929f735ee1e504",
+    "autonomous_flight/cfg/dynamic_exploration/flight_base.yaml": "d8a7878b53b4c22605a687e02fef3e631cb8968f935fd2e2c427cb8c90225997",
+    "autonomous_flight/cfg/dynamic_exploration/mapping_param.yaml": "a0efc81649cce8f185ccca775a4820e1d4b23107c30d50868669f2eab215cd9a",
+    "autonomous_flight/cfg/dynamic_exploration/planner_param.yaml": "7de582e43ecf82cb3216cb3fa2a822f4ac2d2af624b373598634467d4c54cfce",
+    "uav_simulator/launch/start.launch": "d267b7884c2ddaa40f2cd915bbd6df4ebd13721e1b43862f173a96e75d36d650",
+    "uav_simulator/urdf/quadcopter.urdf": "b9861ffa79cc8c13fcc3a9f813f9c3691045f589152531edaa4dfa434e75f2b5"
+  },
+  "git_status": "",
+  "main_commit": "84ed6f9ea0477d00f6f351f6be9e50c34cdb3814",
+  "method": "hire_return_home_500",
+  "mode": "full",
+  "outcome": "USER_ABORT",
+  "record_rosbag": false,
+  "schema_version": 1,
+  "seed": 1,
+  "start_utc": "2026-09-14T07:31:22.679380+00:00",
+  "status": "FAILED",
+  "submodules": [
+    "57e029b7313630ab903fa5125ab71a8939dda4a4 autonomous_flight (heads/feat/benchmark)",
+    " c4983761aa08c0e606ee3d56dd44c74ca5b60069 global_planner (heads/feat/benchmark)",
+    " d8112b85f6ad4e2519b0f34740ff0f6c466bca24 map_manager (heads/main)",
+    " 4b4be99ea0697c0c617dd9c256507e94d83a307d onboard_detector (heads/main)",
+    " 7e66ca4ad24944d6b168fb1964b298fac042ebd1 remote_control (7e66ca4)",
+    " 0854be3099be7a29fa2f3428a1c8e66da4b1f8ab time_optimizer (heads/main)",
+    " 7f8f5d77556877169f31c978b3f3bdba0fcb62d2 tracking_controller (heads/main)",
+    " a84b491456e4f97d400627e1e2cd07392ac91333 trajectory_planner (heads/main)",
+    " 299fcf3df40ecd7216e80f63d2f09166ab7d448a uav_simulator (heads/feat/benchmark)"
+  ],
+  "wall_duration": 755.9858066379998
+}
