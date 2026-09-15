@@ -20,6 +20,9 @@
 - V2-04 partial: the runner records the third-confirmation simulation timestamp in
   `planning_start.json`; provisional free/surface Coverage and censored interpolated
   T80/T90/T95 are implemented.
+- V2-07 partial: Runner CLI, result paths, simulator launch, DEP launch, and schema-2
+  manifests now separate `environment_seed` and `planner_seed`; legacy `--seed`
+  remains a shorthand for equal values.
 
 ## Floorplan2 static mask v1
 
@@ -65,7 +68,7 @@
 - Coverage CSV, T80/T90/T95, and planning-active time origin.
 - PRM/B-spline/odom association, collision and resource metrics.
 - Environment/planner seed separation, batch runner, statistics, and full runtime
-  validation.
+  matrix validation (the single-run seed separation is implemented).
 
 The pipeline now outputs provisional Coverage. Until oracle visibility and a clean
 full-run validation are complete, these values must not support paper claims;

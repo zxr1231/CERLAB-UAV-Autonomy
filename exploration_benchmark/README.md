@@ -19,7 +19,8 @@ After building and sourcing the workspace, run one small-ROI smoke experiment:
 ```bash
 rosrun exploration_benchmark run_experiment.py \
   --experiment-id EXP-BENCH-SMOKE \
-  --seed 1 \
+  --environment-seed 1 \
+  --planner-seed 1 \
   --mode smoke \
   --timeout 240
 ```
@@ -29,7 +30,7 @@ Use `--mode full` for the configured full DEP region. RViz is disabled by defaul
 Each run is written below the workspace `results/` directory as:
 
 ```text
-EXP-ID/seed_NNN/TIMESTAMP/
+EXP-ID/environment_seed_NNN/planner_seed_NNN/TIMESTAMP/
 ├── run.json
 ├── rosparams.yaml
 ├── metrics.csv
@@ -75,3 +76,7 @@ On `feat/benchmark-v2`, the runner loads this mask by default and records provis
 sensor-provenance coverage. Use `--disable-coverage` only for explicit compatibility
 runs. Coverage remains provisional until the scenario's oracle visibility audit has
 passed.
+
+`--environment-seed` controls Gazebo and `--planner-seed` controls DEP. The legacy
+`--seed N` remains available as shorthand for setting both to `N`; manifests always
+record the two effective values separately.

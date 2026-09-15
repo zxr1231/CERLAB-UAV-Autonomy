@@ -16,7 +16,9 @@ import threading
 import time
 from pathlib import Path
 
-from exploration_benchmark.core import atomic_write_json, create_run_directory
+from exploration_benchmark.core import (atomic_write_json,
+                                        create_seed_pair_run_directory,
+                                        resolve_seeds)
 
 
 PROMPTS = [
@@ -133,7 +135,8 @@ def read_ros_clock(timeout=5.0):
     return int(seconds.group(1)) + int(nanoseconds.group(1)) * 1e-9
 
 
-def process_manifest(project, seed, mode, ground_truth_mask=None,
+def process_manifest(project, environment_seed, planner_seed, mode,
+                     ground_truth_mask=None,
                      ground_truth_metadata=None):
     keys = [
         project / "uav_simulator/launch/start.launch",
@@ -150,7 +153,9 @@ def process_manifest(project, seed, mode, ground_truth_mask=None,
         "status": "RUNNING",
         "method": "hire_return_home_500",
         "mode": mode,
-        "seed": seed,
+        "seed": environment_seed if environment_seed == planner_seed else None,
+        "environment_seed": environment_seed,
+        "planner_seed": planner_seed,
         "main_commit": run_output(["git", "rev-parse", "HEAD"], project),
         "branch": run_output(["git", "branch", "--show-current"], project),
         "git_status": run_output(["git", "status", "--porcelain=v1"], project),
@@ -181,7 +186,10 @@ def main():
     parser.add_argument("--workspace", default="/home/zxr2/cerlab_benchmark_ws")
     parser.add_argument("--results-root", default="")
     parser.add_argument("--experiment-id", required=True)
-    parser.add_argument("--seed", required=True, type=int)
+    parser.add_argument("--seed", type=int,
+                        help="legacy shorthand setting both environment and planner seed")
+    parser.add_argument("--environment-seed", type=int)
+    parser.add_argument("--planner-seed", type=int)
     parser.add_argument("--mode", choices=("smoke", "full"), default="smoke")
     parser.add_argument("--timeout", type=float, default=240.0, help="wall seconds after planning starts")
     parser.add_argument("--rviz", action="store_true")
@@ -189,6 +197,11 @@ def main():
     parser.add_argument("--ground-truth-metadata", default="")
     parser.add_argument("--disable-coverage", action="store_true")
     args = parser.parse_args()
+    try:
+        environment_seed, planner_seed = resolve_seeds(
+            args.seed, args.environment_seed, args.planner_seed)
+    except ValueError as error:
+        parser.error(str(error))
     workspace = Path(args.workspace).resolve()
     project = workspace / "src/CERLAB-UAV-Autonomy"
     default_mask = project / "experiments/benchmark_v2/masks/floorplan2_static_v1.npz"
@@ -203,9 +216,10 @@ def main():
             raise RuntimeError("ground-truth mask/metadata missing; use --disable-coverage explicitly")
     results_root = Path(args.results_root).resolve() if args.results_root else workspace / "results"
     timestamp = datetime.datetime.now().strftime("%Y%m%dT%H%M%S")
-    output = create_run_directory(results_root, args.experiment_id, args.seed, timestamp)
-    manifest = process_manifest(project, args.seed, args.mode, ground_truth_mask,
-                                ground_truth_metadata)
+    output = create_seed_pair_run_directory(
+        results_root, args.experiment_id, environment_seed, planner_seed, timestamp)
+    manifest = process_manifest(project, environment_seed, planner_seed, args.mode,
+                                ground_truth_mask, ground_truth_metadata)
     atomic_write_json(output / "run.json", manifest)
     events_stream = (output / "runner_events.jsonl").open("x", encoding="utf-8")
     wall_start = time.monotonic()
@@ -225,7 +239,7 @@ def main():
             raise RuntimeError("ROS Master already exists; refuse duplicate benchmark")
         simulator_body = ("source %s/uav_simulator/gazeboSetup.bash\n"
                           "exec roslaunch uav_simulator start.launch gazebo_seed:=%d gui:=%s" %
-                          (project, args.seed, "true" if args.rviz else "false"))
+                          (project, environment_seed, "true" if args.rviz else "false"))
         simulator = Process("simulator", shell_command(workspace, simulator_body),
                             output / "simulator.log", event=event)
         processes.append(simulator)
@@ -251,7 +265,7 @@ def main():
             event("PROCESS_STARTED", name="rviz", pid=rviz.process.pid)
         launch = "return_home_smoke.launch" if args.mode == "smoke" else "dynamic_exploration.launch"
         exploration_body = ("exec roslaunch autonomous_flight %s benchmark_seed:=%d" %
-                            (launch, args.seed))
+                            (launch, planner_seed))
         exploration = Process("exploration", shell_command(workspace, exploration_body),
                               output / "exploration.log", interactive=True, event=event)
         processes.append(exploration)
