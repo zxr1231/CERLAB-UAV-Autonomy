@@ -15,6 +15,11 @@
   voxel addresses touched by sensor raycasts and publishes timestamped incremental
   deltas with sequence, raycast ID, and cumulative total. Direct `setFree()` and
   `freeRegion()` calls bypass the tracker.
+- V2-03 consumer checkpoint: the logger loads the fixed mask, reconstructs the union
+  from deltas, rejects sequence/count/duplicate errors, and records `coverage.csv`.
+- V2-04 partial: the runner records the third-confirmation simulation timestamp in
+  `planning_start.json`; provisional free/surface Coverage and censored interpolated
+  T80/T90/T95 are implemented.
 
 ## Floorplan2 static mask v1
 
@@ -40,6 +45,10 @@
   prototype does not link to those components.
 - Sensor-observation tracker gtest: 2 cases passed; all dependent planner and flight
   targets rebuilt successfully.
+- Coverage accumulator tests: 4 passed. Combined Catkin result: 20 tests, 0 failures.
+- Headless seed-1 smoke reached `HOME_REACHED`; 612 provenance messages were
+  contiguous, 137,459 unique full-map addresses reconciled exactly, free/surface
+  curves were monotonic, and no process remained.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
@@ -47,15 +56,18 @@
 ## Explicitly pending
 
 - `F_observable` oracle visibility mask and validation.
-- Logger-side consumption, sequence-gap validation, and runtime validation of the
-  map_manager sensor-ray provenance stream.
+- A clean-commit runtime repeat; the first smoke intentionally records a dirty tree
+  because it validated the implementation before commit.
+- Artificial-clear integration assertion beyond source-path and tracker tests.
+- Full-run T80/T90/T95 behavior and logger overhead.
 - Coverage CSV, T80/T90/T95, and planning-active time origin.
 - PRM/B-spline/odom association, collision and resource metrics.
 - Environment/planner seed separation, batch runner, statistics, and full runtime
   validation.
 
-The committed mask is not yet used to report Coverage. Until online sensor provenance
-and oracle visibility are validated, existing map point counts remain proxies.
+The pipeline now outputs provisional Coverage. Until oracle visibility and a clean
+full-run validation are complete, these values must not support paper claims;
+existing historical map point counts remain proxies.
 
 Draft PRs:
 

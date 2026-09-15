@@ -6,7 +6,9 @@ import hashlib
 import json
 import os
 import pty
+import re
 import selectors
+import shlex
 import signal
 import subprocess
 import sys
@@ -34,6 +36,13 @@ def sha256(path):
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def manifest_path(path, project):
+    try:
+        return str(path.relative_to(project))
+    except ValueError:
+        return str(path)
 
 
 def shell_command(workspace, body):
@@ -108,7 +117,24 @@ def wait_for_topic(topic, timeout):
     return False
 
 
-def process_manifest(project, seed, mode):
+def read_ros_clock(timeout=5.0):
+    try:
+        result = subprocess.run(["rostopic", "echo", "-n", "1", "/clock/clock"],
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                text=True, timeout=timeout)
+    except subprocess.TimeoutExpired as error:
+        raise RuntimeError("simulation clock read timeout") from error
+    if result.returncode != 0:
+        raise RuntimeError("simulation clock read failed: %s" % result.stdout.strip())
+    seconds = re.search(r"^secs:\s*(\d+)\s*$", result.stdout, re.MULTILINE)
+    nanoseconds = re.search(r"^nsecs:\s*(\d+)\s*$", result.stdout, re.MULTILINE)
+    if seconds is None or nanoseconds is None:
+        raise RuntimeError("unexpected simulation clock output: %s" % result.stdout.strip())
+    return int(seconds.group(1)) + int(nanoseconds.group(1)) * 1e-9
+
+
+def process_manifest(project, seed, mode, ground_truth_mask=None,
+                     ground_truth_metadata=None):
     keys = [
         project / "uav_simulator/launch/start.launch",
         project / "uav_simulator/urdf/quadcopter.urdf",
@@ -117,8 +143,10 @@ def process_manifest(project, seed, mode):
         project / "autonomous_flight/cfg/dynamic_exploration/mapping_param.yaml",
         project / "autonomous_flight/cfg/dynamic_exploration/planner_param.yaml",
     ]
-    return {
-        "schema_version": 1,
+    if ground_truth_mask is not None:
+        keys.extend([ground_truth_mask, ground_truth_metadata])
+    manifest = {
+        "schema_version": 2,
         "status": "RUNNING",
         "method": "hire_return_home_500",
         "mode": mode,
@@ -127,13 +155,25 @@ def process_manifest(project, seed, mode):
         "branch": run_output(["git", "branch", "--show-current"], project),
         "git_status": run_output(["git", "status", "--porcelain=v1"], project),
         "submodules": run_output(["git", "submodule", "status"], project).splitlines(),
-        "files": {str(path.relative_to(project)): sha256(path) for path in keys},
+        "files": {manifest_path(path, project): sha256(path) for path in keys},
         "completion_gain_threshold": 500,
-        "coverage_status": "UNAVAILABLE_NO_VERIFIED_DENOMINATOR",
+        "coverage_status": ("PROVISIONAL_PENDING_RUNTIME_VALIDATION"
+                            if ground_truth_mask is not None else
+                            "UNAVAILABLE_NO_GROUND_TRUTH_MASK"),
         "record_rosbag": False,
         "start_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "command": sys.argv,
     }
+    if ground_truth_mask is not None:
+        metadata = json.loads(ground_truth_metadata.read_text(encoding="utf-8"))
+        manifest["ground_truth"] = {
+            "mask": str(ground_truth_mask),
+            "metadata": str(ground_truth_metadata),
+            "mask_content_sha256": metadata["mask_content_sha256"],
+            "accessible_denominator": metadata["counts"]["accessible_free"],
+            "surface_denominator": metadata["counts"]["static_surface"],
+        }
+    return manifest
 
 
 def main():
@@ -145,13 +185,27 @@ def main():
     parser.add_argument("--mode", choices=("smoke", "full"), default="smoke")
     parser.add_argument("--timeout", type=float, default=240.0, help="wall seconds after planning starts")
     parser.add_argument("--rviz", action="store_true")
+    parser.add_argument("--ground-truth-mask", default="")
+    parser.add_argument("--ground-truth-metadata", default="")
+    parser.add_argument("--disable-coverage", action="store_true")
     args = parser.parse_args()
     workspace = Path(args.workspace).resolve()
     project = workspace / "src/CERLAB-UAV-Autonomy"
+    default_mask = project / "experiments/benchmark_v2/masks/floorplan2_static_v1.npz"
+    default_metadata = project / "experiments/benchmark_v2/masks/floorplan2_static_v1.metadata.json"
+    if args.disable_coverage:
+        ground_truth_mask = ground_truth_metadata = None
+    else:
+        ground_truth_mask = Path(args.ground_truth_mask).resolve() if args.ground_truth_mask else default_mask
+        ground_truth_metadata = (Path(args.ground_truth_metadata).resolve()
+                                 if args.ground_truth_metadata else default_metadata)
+        if not ground_truth_mask.is_file() or not ground_truth_metadata.is_file():
+            raise RuntimeError("ground-truth mask/metadata missing; use --disable-coverage explicitly")
     results_root = Path(args.results_root).resolve() if args.results_root else workspace / "results"
     timestamp = datetime.datetime.now().strftime("%Y%m%dT%H%M%S")
     output = create_run_directory(results_root, args.experiment_id, args.seed, timestamp)
-    manifest = process_manifest(project, args.seed, args.mode)
+    manifest = process_manifest(project, args.seed, args.mode, ground_truth_mask,
+                                ground_truth_metadata)
     atomic_write_json(output / "run.json", manifest)
     events_stream = (output / "runner_events.jsonl").open("x", encoding="utf-8")
     wall_start = time.monotonic()
@@ -180,7 +234,11 @@ def main():
             raise RuntimeError("odometry topic timeout")
         if not wait_for_topic("/camera/depth/image_raw", 60):
             raise RuntimeError("depth topic timeout")
-        logger_body = ("exec roslaunch exploration_benchmark logger.launch output_dir:=%s" % output)
+        logger_body = ("exec roslaunch exploration_benchmark logger.launch output_dir:=%s "
+                       "ground_truth_mask:=%s ground_truth_metadata:=%s" %
+                       (shlex.quote(str(output)),
+                        shlex.quote(str(ground_truth_mask)) if ground_truth_mask else "''",
+                        shlex.quote(str(ground_truth_metadata)) if ground_truth_metadata else "''"))
         logger = Process("logger", shell_command(workspace, logger_body),
                          output / "logger.log", event=event)
         processes.append(logger)
@@ -205,7 +263,22 @@ def main():
             time.sleep(0.2)
         if exploration.prompt_stage < 3:
             raise RuntimeError("official confirmation prompt timeout")
-        event("EXPLORATION_STARTED")
+        try:
+            planning_start_sim = read_ros_clock()
+        except RuntimeError:
+            if ground_truth_mask is not None:
+                raise
+            planning_start_sim = None
+        planning_start = {
+            "schema_version": 1,
+            "event": "PLANNING_ACTIVE",
+            "sim_time": planning_start_sim,
+            "wall_elapsed": time.monotonic()-wall_start,
+            "utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        }
+        atomic_write_json(output / "planning_start.json", planning_start)
+        manifest["planning_start_sim"] = planning_start_sim
+        event("EXPLORATION_STARTED", sim_time=planning_start_sim)
         subprocess.run(["rosparam", "dump", str(output / "rosparams.yaml")], check=True)
         deadline = time.monotonic() + args.timeout
         home_since = None
@@ -246,8 +319,17 @@ def main():
             except Exception as stop_error:
                 event("STOP_ERROR", process=process.name, error=str(stop_error))
         events_stream.close()
+        summary_path = output / "summary.json"
+        if summary_path.exists():
+            try:
+                final_summary = json.loads(summary_path.read_text(encoding="utf-8"))
+                manifest["coverage_status"] = final_summary.get(
+                    "coverage_status", manifest["coverage_status"])
+            except (OSError, ValueError):
+                manifest["coverage_status"] = "INVALID_SUMMARY_JSON"
         manifest.update({
             "status": "VERIFIED" if outcome == "HOME_REACHED" else "FAILED",
+            "measurement_status": manifest["coverage_status"],
             "outcome": outcome,
             "error": error,
             "end_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),

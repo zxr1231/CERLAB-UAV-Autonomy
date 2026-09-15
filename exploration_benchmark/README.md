@@ -35,8 +35,10 @@ EXP-ID/seed_NNN/TIMESTAMP/
 ├── metrics.csv
 ├── trajectory.csv
 ├── planning.csv
+├── coverage.csv
 ├── events.jsonl
 ├── runner_events.jsonl
+├── planning_start.json
 ├── live_status.json
 ├── summary.json
 ├── runner_result.json
@@ -68,3 +70,8 @@ rosrun exploration_benchmark generate_ground_truth_mask.py \
 
 The committed mask is an offline evaluation artifact. It is not loaded by the
 exploration planner and does not change map updates or path selection.
+
+On `feat/benchmark-v2`, the runner loads this mask by default and records provisional
+sensor-provenance coverage. Use `--disable-coverage` only for explicit compatibility
+runs. Coverage remains provisional until the scenario's oracle visibility audit has
+passed.

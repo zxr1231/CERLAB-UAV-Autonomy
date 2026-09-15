@@ -326,12 +326,18 @@ def build_masks(world_path, config):
     voxel_volume = grid.resolution ** 3
     task_voxel_count = int(np.prod(grid.shape))
     accessible_voxel_count = int(accessible_free.sum())
+    map_shape = np.ceil(np.asarray(config["map_size"], dtype=float) /
+                        grid.resolution).astype(int)
     metadata = {
         "schema_version": "cerlab-ground-truth-mask-v1",
         "map_frame": config.get("map_frame", "map"),
         "map_origin": grid.map_origin.tolist(),
+        "map_size": list(config["map_size"]),
+        "map_shape": map_shape.tolist(),
         "resolution": grid.resolution,
         "global_index_min": grid.global_index_min.tolist(),
+        "global_index_max_exclusive": (grid.global_index_min +
+                                       np.asarray(grid.shape)).tolist(),
         "shape": list(grid.shape),
         "task_bbox_collision_aabb_min": boundary_min.tolist(),
         "task_bbox_collision_aabb_max": boundary_max.tolist(),

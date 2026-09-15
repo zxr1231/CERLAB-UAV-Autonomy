@@ -8,12 +8,14 @@ import time
 from pathlib import Path
 
 import rospy
+from map_manager.msg import ObservedVoxelDelta
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import PointCloud2
 from std_msgs.msg import String
 
 from exploration_benchmark.core import (TrajectoryAccumulator, atomic_write_json,
                                         duration_summary, value_summary)
+from exploration_benchmark.coverage import CoverageAccumulator
 
 
 class BenchmarkLogger:
@@ -47,6 +49,15 @@ class BenchmarkLogger:
             rospy.get_param("~odom_noise_threshold", 1e-4))
         self.previous_metric_sim = None
         self.previous_metric_wall = None
+        self.coverage = None
+        self.coverage_reported_errors = set()
+        self.coverage_reported_thresholds = set()
+        mask_path = rospy.get_param("~ground_truth_mask", "")
+        metadata_path = rospy.get_param("~ground_truth_metadata", "")
+        if bool(mask_path) != bool(metadata_path):
+            raise RuntimeError("ground-truth mask and metadata must be configured together")
+        if mask_path:
+            self.coverage = CoverageAccumulator(mask_path, metadata_path)
 
         self.trajectory_file, self.trajectory_writer = self._csv(
             "trajectory.csv", ["sim_time", "wall_elapsed", "x", "y", "z", "yaw",
@@ -64,12 +75,24 @@ class BenchmarkLogger:
                              "update_path_ms", "bspline_ms", "roadmap_nodes",
                              "goal_candidates", "candidate_paths", "best_path_gain",
                              "dynamic_obstacles", "path_poses", "raw_json"])
+        self.coverage_file, self.coverage_writer = self._csv(
+            "coverage.csv", ["sim_time", "wall_elapsed", "planning_elapsed",
+                             "sequence", "raycast_id", "delta_count",
+                             "new_unique_count", "observed_total_full_map",
+                             "reconstructed_total_full_map", "observed_task",
+                             "accessible_observed", "accessible_denominator",
+                             "free_coverage", "surface_observed",
+                             "surface_denominator", "surface_coverage",
+                             "known_volume_m3", "valid", "errors"])
         self.events_file = (self.output / "events.jsonl").open("x", encoding="utf-8")
 
         rospy.Subscriber("/CERLAB/quadcopter/odom", Odometry, self.odom_callback, queue_size=50)
         rospy.Subscriber("/dynamic_map/explored_voxel_map", PointCloud2, self.map_callback, queue_size=1)
         rospy.Subscriber("/dynamicExploration/mission_state", String, self.state_callback, queue_size=20)
         rospy.Subscriber("/dynamicExploration/planning_event", String, self.planning_callback, queue_size=100)
+        if self.coverage is not None:
+            rospy.Subscriber("/dynamic_map/sensor_observation_delta", ObservedVoxelDelta,
+                             self.coverage_callback, queue_size=100)
         self.timer = rospy.Timer(rospy.Duration(1.0), self.metric_timer)
         rospy.on_shutdown(self.close)
         self.event("LOGGER_STARTED")
@@ -168,8 +191,54 @@ class BenchmarkLogger:
             self.planning_writer.writerow(row)
             self.planning_file.flush()
 
+    def load_planning_start(self):
+        if self.coverage is None or self.coverage.planning_start_sim is not None:
+            return
+        path = self.output / "planning_start.json"
+        if not path.exists():
+            return
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            sim_time = float(payload["sim_time"])
+        except (OSError, ValueError, KeyError, TypeError) as error:
+            message = "invalid planning_start.json: %s" % error
+            self.coverage.invalidate(message)
+            if message not in self.coverage_reported_errors:
+                self.coverage_reported_errors.add(message)
+                self.event("COVERAGE_INVALID", error=message)
+            return
+        self.coverage.set_planning_start(sim_time)
+        self.event("PLANNING_ACTIVE", planning_start_sim=sim_time)
+
+    def coverage_callback(self, message):
+        with self.lock:
+            self.load_planning_start()
+            sim_time = message.header.stamp.to_sec() or rospy.get_time()
+            sample = self.coverage.ingest(message.sequence, message.observed_total,
+                                          message.addresses, sim_time,
+                                          message.raycast_id)
+            row = dict(sample)
+            row["wall_elapsed"] = self.wall_elapsed()
+            row["planning_elapsed"] = ("" if sample["planning_elapsed"] is None
+                                       else sample["planning_elapsed"])
+            row["errors"] = json.dumps(sample["errors"], sort_keys=True)
+            self.coverage_writer.writerow(row)
+            self.coverage_file.flush()
+            for error in sample["errors"]:
+                if error not in self.coverage_reported_errors:
+                    self.coverage_reported_errors.add(error)
+                    self.event("COVERAGE_INVALID", error=error,
+                               sequence=message.sequence)
+            for name, threshold in (("T80", 0.80), ("T90", 0.90), ("T95", 0.95)):
+                crossing = self.coverage.threshold_times[threshold]
+                if crossing is not None and name not in self.coverage_reported_thresholds:
+                    self.coverage_reported_thresholds.add(name)
+                    self.event("COVERAGE_THRESHOLD", threshold=name,
+                               planning_elapsed=crossing)
+
     def metric_timer(self, _event):
         with self.lock:
+            self.load_planning_start()
             sim_time = rospy.get_time()
             wall_time = self.wall_elapsed()
             rtf = ""
@@ -203,6 +272,7 @@ class BenchmarkLogger:
                 "mission_distance": None if self.mission_distance_start is None else
                                     self.trajectory.distance-self.mission_distance_start,
                 "odom_count": self.odom_count, "planning_count": self.planning_count,
+                "coverage": None if self.coverage is None else self.coverage.summary(),
             })
 
     def close(self):
@@ -211,11 +281,13 @@ class BenchmarkLogger:
                 return
             self.closed = True
             self.event("LOGGER_STOPPED")
+            self.load_planning_start()
             for stream in (self.trajectory_file, self.metrics_file,
-                           self.planning_file, self.events_file):
+                           self.planning_file, self.coverage_file, self.events_file):
                 stream.flush()
                 stream.close()
             summary = {
+                "schema_version": 2,
                 "mission_state": self.state,
                 "passed": self.state == "HOME_REACHED",
                 "sim_start": self.sim_start,
@@ -238,7 +310,10 @@ class BenchmarkLogger:
                     "return": duration_summary(self.return_times),
                 },
                 "rtf": value_summary(self.rtf_values),
-                "coverage_status": "UNAVAILABLE_NO_VERIFIED_DENOMINATOR",
+                "coverage_status": ("UNAVAILABLE_NO_GROUND_TRUTH_MASK"
+                                    if self.coverage is None else
+                                    self.coverage.summary()["status"]),
+                "coverage": None if self.coverage is None else self.coverage.summary(),
             }
             atomic_write_json(self.output / "summary.json", summary)
 

@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(exploration_benchmark)
 
 find_package(catkin REQUIRED COMPONENTS
+  map_manager
   rospy
   std_msgs
   nav_msgs
@@ -9,7 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 catkin_python_setup()
-catkin_package()
+catkin_package(CATKIN_DEPENDS map_manager)
 
 catkin_install_python(PROGRAMS
   scripts/benchmark_logger.py
@@ -20,5 +21,6 @@ catkin_install_python(PROGRAMS
 
 if(CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/test_benchmark_core.py)
+  catkin_add_nosetests(test/test_coverage.py)
   catkin_add_nosetests(test/test_ground_truth.py)
 endif()

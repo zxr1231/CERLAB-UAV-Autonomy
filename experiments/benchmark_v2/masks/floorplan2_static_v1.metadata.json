@@ -440,6 +440,11 @@
     0.7,
     1.2
   ],
+  "global_index_max_exclusive": [
+    304,
+    297,
+    26
+  ],
   "global_index_min": [
     103,
     96,
@@ -465,6 +470,16 @@
     -20.0,
     -20.0,
     -0.1
+  ],
+  "map_shape": [
+    400,
+    400,
+    30
+  ],
+  "map_size": [
+    40.0,
+    40.0,
+    3.0
   ],
   "mask_content_sha256": "23c85015a99be3ea585e4a407b6a2e6654eb7263bbb64ad2f4ba319e8f8a43da",
   "mask_file_sha256": "c782566ede82d4fdc3928c3d9d73a94a1578a33d6382866e4b8923279dc0e930",
