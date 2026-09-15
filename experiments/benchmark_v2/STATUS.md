@@ -36,6 +36,10 @@
   recovery of interrupted tasks, and opt-in failed-task retry are implemented. A clean
   one-task runtime and subsequent resume dry-run verified success skipping and correct
   selection of the next pending seed.
+- V2-09 completed: per-attempt CSV and aggregate JSON generation,
+  outcome/completion/return/collision rates with Wilson intervals, measurement-status
+  filtering, continuous distributions, and explicit threshold censoring are
+  implemented and verified against the real V2-08 batch state.
 
 ## Floorplan2 static mask v1
 
@@ -90,6 +94,10 @@
   `PENDING`. A resumed `--max-tasks 1 --dry-run` skipped 1/1 and selected 2/2 without
   starting ROS. The child run reached `HOME_REACHED` with all measurement statuses
   valid and no residual process.
+- V2-09 real-data aggregation retained the V2-08 attempt as one independent row,
+  preserved its censored T80/T90/T95 values as null, reported zero threshold
+  attainments, and included only `VALID` Coverage, trajectory, collision, and resource
+  measurements in their corresponding statistics. Release build and 35 tests passed.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.

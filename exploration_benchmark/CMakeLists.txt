@@ -18,12 +18,14 @@ catkin_install_python(PROGRAMS
   scripts/run_experiment.py
   scripts/run_matrix.py
   scripts/summarize_trajectory_alignment.py
+  scripts/summarize_matrix.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 if(CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/test_benchmark_core.py)
   catkin_add_nosetests(test/test_batch.py)
+  catkin_add_nosetests(test/test_aggregate.py)
   catkin_add_nosetests(test/test_coverage.py)
   catkin_add_nosetests(test/test_collision_metrics.py)
   catkin_add_nosetests(test/test_ground_truth.py)

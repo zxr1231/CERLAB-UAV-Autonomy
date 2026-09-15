@@ -115,3 +115,16 @@ after every attempt. A resumed batch skips successful and failed tasks, retries 
 interrupted task, and reruns failures only with `--retry-failed`. Use `--max-tasks N`
 to bound one invocation. Every failed or interrupted raw run remains in the result
 tree; the batch controller never deletes it.
+
+Aggregate every recorded attempt in a batch state with:
+
+```bash
+rosrun exploration_benchmark summarize_matrix.py \
+  --batch-state /path/to/batch_state.json \
+  --output-dir /path/to/summary
+```
+
+This writes `runs.csv` and `aggregate.json`. Failures and retries remain separate
+rows. Rates include Wilson 95% intervals. Coverage threshold summaries report the
+attainment rate, censored count, and conditional distribution among runs that
+actually reached the threshold; a timeout is never substituted for T80/T90/T95.
