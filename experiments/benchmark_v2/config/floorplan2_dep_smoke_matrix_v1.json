@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "experiment_id": "EXP-BENCH-V2-DEP-SMOKE-MATRIX-V1",
+  "method": "hire_return_home_500",
+  "mode": "smoke",
+  "timeout": 180,
+  "seed_pairs": [[1, 1], [2, 2], [3, 3]],
+  "repeats": 1,
+  "rviz": false,
+  "disable_coverage": false
+}

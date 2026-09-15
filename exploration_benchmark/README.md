@@ -101,3 +101,17 @@ so normal ground contact before takeoff is not an exploration collision. Formal 
 sample the complete process trees created for `simulator`, `exploration`, and `logger`
 at 1 Hz after planning starts. CPU is expressed relative to one logical core and may
 exceed 100%; RSS is the sum of resident pages and may count shared pages repeatedly.
+
+Preview the three-seed Benchmark v2 smoke matrix without starting ROS:
+
+```bash
+rosrun exploration_benchmark run_matrix.py \
+  --config "$(rospack find exploration_benchmark)/../experiments/benchmark_v2/config/floorplan2_dep_smoke_matrix_v1.json" \
+  --dry-run
+```
+
+Remove `--dry-run` to execute tasks serially. `batch_state.json` is updated atomically
+after every attempt. A resumed batch skips successful and failed tasks, retries an
+interrupted task, and reruns failures only with `--retry-failed`. Use `--max-tasks N`
+to bound one invocation. Every failed or interrupted raw run remains in the result
+tree; the batch controller never deletes it.

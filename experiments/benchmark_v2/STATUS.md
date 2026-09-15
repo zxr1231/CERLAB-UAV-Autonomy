@@ -31,6 +31,10 @@
 - V2-07 completed: Runner CLI, result paths, simulator launch, DEP launch, and schema-2
   manifests now separate `environment_seed` and `planner_seed`; legacy `--seed`
   remains a shorthand for equal values.
+- V2-08 implementation in progress: an explicit seed-pair matrix schema, deterministic
+  task IDs, dry-run, atomic state checkpoints, serial isolation, bounded execution,
+  recovery of interrupted tasks, and opt-in failed-task retry are implemented. Dry-run
+  and unit validation passed; runtime resume validation is pending.
 
 ## Floorplan2 static mask v1
 
