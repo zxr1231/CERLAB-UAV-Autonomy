@@ -11,6 +11,10 @@
   canonical content hash, and top-down PNG preview.
 - External method check: FUEL and FALCON papers plus FALCON's released map coverage
   implementation were inspected from primary sources.
+- V2-03 producer checkpoint: `map_manager@da5facb` tracks the monotonic union of
+  voxel addresses touched by sensor raycasts and publishes timestamped incremental
+  deltas with sequence, raycast ID, and cumulative total. Direct `setFree()` and
+  `freeRegion()` calls bypass the tracker.
 
 ## Floorplan2 static mask v1
 
@@ -34,6 +38,8 @@
 - Ground-truth generator tests: 7 passed.
 - Existing return/completion/seed checks: 25 passed before prototype changes; the
   prototype does not link to those components.
+- Sensor-observation tracker gtest: 2 cases passed; all dependent planner and flight
+  targets rebuilt successfully.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
@@ -41,7 +47,8 @@
 ## Explicitly pending
 
 - `F_observable` oracle visibility mask and validation.
-- Online sensor-ray provenance in map_manager.
+- Logger-side consumption, sequence-gap validation, and runtime validation of the
+  map_manager sensor-ray provenance stream.
 - Coverage CSV, T80/T90/T95, and planning-active time origin.
 - PRM/B-spline/odom association, collision and resource metrics.
 - Environment/planner seed separation, batch runner, statistics, and full runtime
@@ -49,3 +56,8 @@
 
 The committed mask is not yet used to report Coverage. Until online sensor provenance
 and oracle visibility are validated, existing map point counts remain proxies.
+
+Draft PRs:
+
+- Parent Benchmark v2: https://github.com/zxr1231/CERLAB-UAV-Autonomy/pull/3
+- Sensor provenance producer: https://github.com/zxr1231/map_manager/pull/1
