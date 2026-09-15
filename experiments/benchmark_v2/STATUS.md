@@ -17,10 +17,14 @@
   `freeRegion()` calls bypass the tracker.
 - V2-03 consumer checkpoint: the logger loads the fixed mask, reconstructs the union
   from deltas, rejects sequence/count/duplicate errors, and records `coverage.csv`.
-- V2-04 partial: the runner records the third-confirmation simulation timestamp in
-  `planning_start.json`; provisional free/surface Coverage and censored interpolated
-  T80/T90/T95 are implemented.
-- V2-07 partial: Runner CLI, result paths, simulator launch, DEP launch, and schema-2
+- V2-04 implementation: the runner records the third-confirmation simulation timestamp
+  in `planning_start.json`; provisional free/surface Coverage and censored interpolated
+  T80/T90/T95 are implemented. Clean full-run validation remains pending.
+- V2-05 implementation: stable global-planning and local-trajectory IDs associate the
+  selected PRM path, local optimizer input, sampled B-spline, and executed odometry.
+  Per-trajectory length ratios and point-to-polyline deviations are generated without
+  including return-home odometry.
+- V2-07 completed: Runner CLI, result paths, simulator launch, DEP launch, and schema-2
   manifests now separate `environment_seed` and `planner_seed`; legacy `--seed`
   remains a shorthand for equal values.
 
@@ -60,6 +64,10 @@
   manifest recorded environment seed 1 and planner seed 2, Gazebo ran with
   `--seed 1`, `/DEP/random_seed` was 2, legacy `seed` was null, and provenance
   remained valid through sequence 1,584.
+- V2-05 development smoke reached `HOME_REACHED`: 13 selected PRM paths, 15 local
+  inputs, 15 B-splines, and one return path were recorded exactly once with unique
+  IDs. All 15 B-splines associated with odometry; the offline alignment summary was
+  `VALID`. A final clean-commit smoke remains pending.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
@@ -69,8 +77,9 @@
 - `F_observable` oracle visibility mask and validation.
 - Artificial-clear integration assertion beyond source-path and tracker tests.
 - Full-run T80/T90/T95 behavior and logger overhead.
-- Coverage CSV, T80/T90/T95, and planning-active time origin.
-- PRM/B-spline/odom association, collision and resource metrics.
+- Clean full-run validation of Coverage, T80/T90/T95, and the planning-active time
+  origin.
+- Collision and resource metrics.
 - Batch seed matrix, statistics, and multi-run seed-pair validation.
 
 The pipeline now outputs provisional Coverage. Until oracle visibility and a clean

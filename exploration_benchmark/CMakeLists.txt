@@ -16,6 +16,7 @@ catkin_install_python(PROGRAMS
   scripts/benchmark_logger.py
   scripts/generate_ground_truth_mask.py
   scripts/run_experiment.py
+  scripts/summarize_trajectory_alignment.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -23,4 +24,5 @@ if(CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/test_benchmark_core.py)
   catkin_add_nosetests(test/test_coverage.py)
   catkin_add_nosetests(test/test_ground_truth.py)
+  catkin_add_nosetests(test/test_trajectory_metrics.py)
 endif()

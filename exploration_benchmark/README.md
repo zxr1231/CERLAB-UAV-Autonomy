@@ -36,6 +36,9 @@ EXP-ID/environment_seed_NNN/planner_seed_NNN/TIMESTAMP/
 ├── metrics.csv
 ├── trajectory.csv
 ├── planning.csv
+├── planned_paths.jsonl
+├── trajectory_alignment.csv
+├── trajectory_alignment_summary.json
 ├── coverage.csv
 ├── events.jsonl
 ├── runner_events.jsonl
@@ -80,3 +83,10 @@ passed.
 `--environment-seed` controls Gazebo and `--planner-seed` controls DEP. The legacy
 `--seed N` remains available as shorthand for setting both to `N`; manifests always
 record the two effective values separately.
+
+Benchmark v2 assigns stable IDs to accepted local B-spline trajectories and records
+the selected global PRM path, local optimizer input, sampled B-spline, and associated
+odometry separately. `trajectory_alignment.csv` compares their lengths and geometric
+deviations. Odometry remains assigned to the active local trajectory until it is
+replaced or return planning begins; return-home motion is therefore excluded from
+local B-spline execution metrics.

@@ -40,6 +40,8 @@ class BenchmarkLogger:
         self.odom_count = 0
         self.map_count = 0
         self.planning_count = 0
+        self.active_trajectory_id = 0
+        self.recorded_path_keys = set()
         self.global_times = []
         self.local_times = []
         self.return_times = []
@@ -62,7 +64,7 @@ class BenchmarkLogger:
         self.trajectory_file, self.trajectory_writer = self._csv(
             "trajectory.csv", ["sim_time", "wall_elapsed", "x", "y", "z", "yaw",
                                "vx", "vy", "vz", "distance_increment", "cumulative_distance",
-                               "mission_distance"])
+                               "mission_distance", "trajectory_id"])
         self.metrics_file, self.metrics_writer = self._csv(
             "metrics.csv", ["sim_time", "wall_elapsed", "mission_state", "map_points",
                             "cumulative_distance", "mission_distance", "odom_count",
@@ -74,7 +76,11 @@ class BenchmarkLogger:
                              "candidate_search_ms", "path_scoring_ms", "input_path_ms",
                              "update_path_ms", "bspline_ms", "roadmap_nodes",
                              "goal_candidates", "candidate_paths", "best_path_gain",
-                             "dynamic_obstacles", "path_poses", "raw_json"])
+                             "dynamic_obstacles", "path_poses", "global_sequence",
+                             "trajectory_id", "waypoint_index", "selected_path_length",
+                             "selected_path_poses", "input_path_length",
+                             "input_path_poses", "bspline_path_length",
+                             "bspline_path_poses", "path_length", "raw_json"])
         self.coverage_file, self.coverage_writer = self._csv(
             "coverage.csv", ["sim_time", "wall_elapsed", "planning_elapsed",
                              "sequence", "raycast_id", "delta_count",
@@ -85,6 +91,8 @@ class BenchmarkLogger:
                              "surface_denominator", "surface_coverage",
                              "known_volume_m3", "valid", "errors"])
         self.events_file = (self.output / "events.jsonl").open("x", encoding="utf-8")
+        self.planned_paths_file = (self.output / "planned_paths.jsonl").open(
+            "x", encoding="utf-8")
 
         rospy.Subscriber("/CERLAB/quadcopter/odom", Odometry, self.odom_callback, queue_size=50)
         rospy.Subscriber("/dynamic_map/explored_voxel_map", PointCloud2, self.map_callback, queue_size=1)
@@ -143,6 +151,7 @@ class BenchmarkLogger:
                 "cumulative_distance": self.trajectory.distance,
                 "mission_distance": "" if self.mission_distance_start is None else
                                     self.trajectory.distance-self.mission_distance_start,
+                "trajectory_id": self.active_trajectory_id,
             })
             if self.odom_count % 30 == 0:
                 self.trajectory_file.flush()
@@ -174,6 +183,8 @@ class BenchmarkLogger:
                 self.event("INVALID_PLANNING_EVENT", error=str(error), raw=message.data)
                 return
             kind = payload.get("kind", "unknown")
+            if (kind == "local" and payload.get("success") and payload.get("trajectory_id")):
+                self.active_trajectory_id = int(payload["trajectory_id"])
             total = payload.get("total_ms")
             if isinstance(total, (int, float)):
                 {"global": self.global_times, "local": self.local_times,
@@ -183,13 +194,64 @@ class BenchmarkLogger:
                       "roadmap_ms", "prune_ms", "gain_update_ms", "goal_selection_ms",
                       "candidate_search_ms", "path_scoring_ms", "input_path_ms",
                       "update_path_ms", "bspline_ms", "roadmap_nodes", "goal_candidates",
-                      "candidate_paths", "best_path_gain", "dynamic_obstacles", "path_poses"]
+                      "candidate_paths", "best_path_gain", "dynamic_obstacles", "path_poses",
+                      "global_sequence", "trajectory_id", "waypoint_index",
+                      "selected_path_length", "selected_path_poses", "input_path_length",
+                      "input_path_poses", "bspline_path_length", "bspline_path_poses",
+                      "path_length"]
             row = {field: payload.get(field, "") for field in fields}
             row.update({"sim_time": payload.get("sim_time", rospy.get_time()),
                         "wall_elapsed": self.wall_elapsed(), "kind": kind,
                         "raw_json": message.data})
             self.planning_writer.writerow(row)
             self.planning_file.flush()
+            if kind == "global":
+                self.record_path("prm", payload.get("sequence"),
+                                 payload.get("selected_path_points"), payload)
+            elif kind == "local":
+                self.record_path("input", payload.get("sequence"),
+                                 payload.get("input_path_points"), payload)
+                if payload.get("success"):
+                    self.record_path("bspline", payload.get("trajectory_id"),
+                                     payload.get("bspline_path_points"), payload)
+            elif kind == "return":
+                self.active_trajectory_id = 0
+                self.record_path("return", payload.get("sequence"),
+                                 payload.get("path_points"), payload)
+
+    def record_path(self, kind, identifier, points, planning_payload):
+        if not identifier or not isinstance(points, list):
+            return
+        identifier = int(identifier)
+        key = (kind, identifier)
+        if key in self.recorded_path_keys:
+            self.event("DUPLICATE_PLANNED_PATH", kind=kind, identifier=identifier)
+            return
+        parsed = []
+        try:
+            for point in points:
+                if len(point) != 3:
+                    raise ValueError("point does not have three coordinates")
+                parsed.append([float(value) for value in point])
+        except (TypeError, ValueError) as error:
+            self.event("INVALID_PLANNED_PATH", kind=kind, identifier=identifier,
+                       error=str(error))
+            return
+        self.recorded_path_keys.add(key)
+        length = sum(math.sqrt(sum((b[i]-a[i]) ** 2 for i in range(3)))
+                     for a, b in zip(parsed, parsed[1:]))
+        record = {
+            "kind": kind,
+            "id": identifier,
+            "global_sequence": planning_payload.get("global_sequence"),
+            "sim_time": planning_payload.get("sim_time", rospy.get_time()),
+            "wall_elapsed": self.wall_elapsed(),
+            "pose_count": len(parsed),
+            "length": length,
+            "points": parsed,
+        }
+        self.planned_paths_file.write(json.dumps(record, sort_keys=True) + "\n")
+        self.planned_paths_file.flush()
 
     def load_planning_start(self):
         if self.coverage is None or self.coverage.planning_start_sim is not None:
@@ -283,7 +345,8 @@ class BenchmarkLogger:
             self.event("LOGGER_STOPPED")
             self.load_planning_start()
             for stream in (self.trajectory_file, self.metrics_file,
-                           self.planning_file, self.coverage_file, self.events_file):
+                           self.planning_file, self.coverage_file, self.events_file,
+                           self.planned_paths_file):
                 stream.flush()
                 stream.close()
             summary = {
@@ -304,6 +367,7 @@ class BenchmarkLogger:
                 "odom_count": self.odom_count,
                 "map_message_count": self.map_count,
                 "planning_event_count": self.planning_count,
+                "planned_path_count": len(self.recorded_path_keys),
                 "planning": {
                     "global": duration_summary(self.global_times),
                     "local": duration_summary(self.local_times),

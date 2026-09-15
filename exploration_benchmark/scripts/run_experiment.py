@@ -19,6 +19,7 @@ from pathlib import Path
 from exploration_benchmark.core import (atomic_write_json,
                                         create_seed_pair_run_directory,
                                         resolve_seeds)
+from exploration_benchmark.trajectory_metrics import write_run_metrics
 
 
 PROMPTS = [
@@ -332,6 +333,12 @@ def main():
                 process.stop()
             except Exception as stop_error:
                 event("STOP_ERROR", process=process.name, error=str(stop_error))
+        try:
+            trajectory_metrics = write_run_metrics(output)
+            manifest["trajectory_metrics_status"] = trajectory_metrics["status"]
+        except Exception as metrics_error:
+            manifest["trajectory_metrics_status"] = "INVALID"
+            event("TRAJECTORY_METRICS_ERROR", error=str(metrics_error))
         events_stream.close()
         summary_path = output / "summary.json"
         if summary_path.exists():
