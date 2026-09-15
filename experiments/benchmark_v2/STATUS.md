@@ -56,6 +56,10 @@
   Its manifest had an empty Git status and matching final `measurement_status`;
   sequences 1–1,074 were contiguous, 284,780 addresses reconciled exactly, and all
   Coverage invariants passed.
+- Split-seed smoke at parent `9bbeffb` reached `HOME_REACHED`: result path and
+  manifest recorded environment seed 1 and planner seed 2, Gazebo ran with
+  `--seed 1`, `/DEP/random_seed` was 2, legacy `seed` was null, and provenance
+  remained valid through sequence 1,584.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
@@ -67,8 +71,7 @@
 - Full-run T80/T90/T95 behavior and logger overhead.
 - Coverage CSV, T80/T90/T95, and planning-active time origin.
 - PRM/B-spline/odom association, collision and resource metrics.
-- Environment/planner seed separation, batch runner, statistics, and full runtime
-  matrix validation (the single-run seed separation is implemented).
+- Batch seed matrix, statistics, and multi-run seed-pair validation.
 
 The pipeline now outputs provisional Coverage. Until oracle visibility and a clean
 full-run validation are complete, these values must not support paper claims;
