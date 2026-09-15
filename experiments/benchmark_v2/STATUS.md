@@ -24,11 +24,10 @@
   selected PRM path, local optimizer input, sampled B-spline, and executed odometry.
   Per-trajectory length ratios and point-to-polyline deviations are generated without
   mixing return-home trajectories into the primary exploration aggregate.
-- V2-06 implementation in progress: the quadcopter contact sensor, collision episode
-  accumulator, and `/proc` process-tree resource sampler are implemented and unit
-  tested. A process-group development run exposed ROS child sessions, so the resource
-  scope was corrected to recursive parent/child trees; clean runtime validation is
-  pending.
+- V2-06 completed: the quadcopter contact sensor, collision episode accumulator, and
+  `/proc` process-tree resource sampler are implemented, unit tested, and verified in
+  a clean runtime. An initial process-group implementation exposed ROS child sessions;
+  the final resource scope recursively follows parent/child trees.
 - V2-07 completed: Runner CLI, result paths, simulator launch, DEP launch, and schema-2
   manifests now separate `environment_seed` and `planner_seed`; legacy `--seed`
   remains a shorthand for equal values.
@@ -75,6 +74,12 @@
   and two return B-splines all associated with odometry, the automatic schema-2
   alignment summary was `VALID`, provenance Coverage remained valid, and no ROS or
   Gazebo process remained.
+- V2-06 clean-commit smoke at parent `082c55c` and `uav_simulator@cc8c8a6`
+  reached `HOME_REACHED` in 90.26 s. It received 3,924 post-start contact messages
+  and reported zero collision episodes with status `VALID`. All 78 resource samples
+  covered the complete simulator, exploration, and logger process trees; there were
+  no negative CPU deltas or residual processes. Collision, resource, trajectory, and
+  Coverage statuses were all valid.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
@@ -86,7 +91,6 @@
 - Full-run T80/T90/T95 behavior and logger overhead.
 - Clean full-run validation of Coverage, T80/T90/T95, and the planning-active time
   origin.
-- Collision and resource metrics.
 - Batch seed matrix, statistics, and multi-run seed-pair validation.
 
 The pipeline now outputs provisional Coverage. Until oracle visibility and a clean
