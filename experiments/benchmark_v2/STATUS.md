@@ -92,3 +92,4 @@ Draft PRs:
 
 - Parent Benchmark v2: https://github.com/zxr1231/CERLAB-UAV-Autonomy/pull/3
 - Sensor provenance producer: https://github.com/zxr1231/map_manager/pull/1
+- Planning-event producer: https://github.com/zxr1231/autonomous_flight/pull/3
