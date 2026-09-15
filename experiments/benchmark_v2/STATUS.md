@@ -64,10 +64,12 @@
   manifest recorded environment seed 1 and planner seed 2, Gazebo ran with
   `--seed 1`, `/DEP/random_seed` was 2, legacy `seed` was null, and provenance
   remained valid through sequence 1,584.
-- V2-05 development smoke reached `HOME_REACHED`: 13 selected PRM paths, 15 local
-  inputs, 15 B-splines, and one return path were recorded exactly once with unique
-  IDs. All 15 B-splines associated with odometry; the offline alignment summary was
-  `VALID`. A final clean-commit smoke remains pending.
+- V2-05 clean-commit smoke at parent `fa4050a` reached `HOME_REACHED` in 84.66 s
+  wall time. It recorded 10 selected PRM paths, seven local inputs, seven B-splines,
+  and one return path exactly once with unique `(kind, id)` pairs. The five exploration
+  and two return B-splines all associated with odometry, the automatic schema-2
+  alignment summary was `VALID`, provenance Coverage remained valid, and no ROS or
+  Gazebo process remained.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
