@@ -49,6 +49,10 @@
 - Headless seed-1 smoke reached `HOME_REACHED`; 612 provenance messages were
   contiguous, 137,459 unique full-map addresses reconciled exactly, free/surface
   curves were monotonic, and no process remained.
+- A clean-commit schema-2 smoke at parent `6e0f508` also reached `HOME_REACHED`.
+  Its manifest had an empty Git status and matching final `measurement_status`;
+  sequences 1–1,074 were contiguous, 284,780 addresses reconciled exactly, and all
+  Coverage invariants passed.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
@@ -56,8 +60,6 @@
 ## Explicitly pending
 
 - `F_observable` oracle visibility mask and validation.
-- A clean-commit runtime repeat; the first smoke intentionally records a dirty tree
-  because it validated the implementation before commit.
 - Artificial-clear integration assertion beyond source-path and tracker tests.
 - Full-run T80/T90/T95 behavior and logger overhead.
 - Coverage CSV, T80/T90/T95, and planning-active time origin.

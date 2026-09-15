@@ -28,3 +28,27 @@ it.
 
 This run validates transport and accounting behavior. The Coverage values remain
 provisional pending oracle visibility analysis of the accessible-free denominator.
+
+## Clean-commit repeat
+
+A second headless seed-1 smoke ran from parent commit `6e0f508` with an empty
+`git_status` and schema version 2:
+
+- Run: `EXP-BENCH-V2-CLEAN/seed_001/20260915T102048`
+- Outcome: `HOME_REACHED`
+- Mission simulation duration: 65.376 s
+- Mission odometry distance: 16.359 m
+- Planning-active timestamp: 3.961 s
+- Provenance sequences: 1–1,074, contiguous
+- Unique full-map sensor-observed voxels: 284,780, exactly reconciled
+- Task-box observed: 245,600 = 245.600 m³
+- Accessible-free observed: 240,474 / 980,550 = 24.5244%
+- Static-surface observed: 5,126 / 29,375 = 17.4502%
+- Mean RTF: 0.999228
+- Manifest `measurement_status`: `PROVISIONAL_ACCESSIBLE_FREE_V1`
+- Stream validity and monotonicity checks: passed
+- Residual processes: none
+
+The two smoke runs followed different short trajectories even with seed 1, so their
+final provisional Coverage differs. They validate data integrity, not algorithm
+performance or end-to-end deterministic replay.

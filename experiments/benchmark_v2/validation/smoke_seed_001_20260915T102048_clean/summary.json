@@ -1,0 +1,79 @@
+{
+  "coverage": {
+    "accessible_denominator": 980550,
+    "accessible_observed": 240474,
+    "errors": [],
+    "free_coverage": 0.24524399571668962,
+    "known_volume_m3": 245.60000000000005,
+    "mask_content_sha256": "23c85015a99be3ea585e4a407b6a2e6654eb7263bbb64ad2f4ba319e8f8a43da",
+    "note": "Provisional until oracle visibility and runtime validation pass.",
+    "observed_task": 245600,
+    "observed_total_full_map": 284780,
+    "planning_start_sim": 3.9610000000000003,
+    "schema_version": "cerlab-coverage-v2-provisional-1",
+    "sequence": 1074,
+    "status": "PROVISIONAL_ACCESSIBLE_FREE_V1",
+    "surface_coverage": 0.17450212765957446,
+    "surface_denominator": 29375,
+    "surface_observed": 5126,
+    "thresholds": {
+      "T80": {
+        "censored": true,
+        "seconds": null
+      },
+      "T90": {
+        "censored": true,
+        "seconds": null
+      },
+      "T95": {
+        "censored": true,
+        "seconds": null
+      }
+    },
+    "valid": true
+  },
+  "coverage_status": "PROVISIONAL_ACCESSIBLE_FREE_V1",
+  "cumulative_distance": 17.250773565243044,
+  "map_message_count": 782,
+  "map_points": 276593,
+  "mission_distance": 16.35919986402152,
+  "mission_end_sim": 68.963,
+  "mission_sim_duration": 65.37599999999999,
+  "mission_start_sim": 3.5869999999999997,
+  "mission_state": "HOME_REACHED",
+  "mission_wall_duration": 65.42699076999997,
+  "odom_count": 2167,
+  "passed": true,
+  "planning": {
+    "global": {
+      "count": 12,
+      "max_ms": 49.597,
+      "mean_ms": 20.271083333333333,
+      "p95_ms": 48.7973
+    },
+    "local": {
+      "count": 13,
+      "max_ms": 1.022,
+      "mean_ms": 0.1983846153846154,
+      "p95_ms": 0.5606000000000002
+    },
+    "return": {
+      "count": 1,
+      "max_ms": 0.07,
+      "mean_ms": 0.07,
+      "p95_ms": 0.07
+    }
+  },
+  "planning_event_count": 26,
+  "rtf": {
+    "count": 77,
+    "max": 0.9996421101309725,
+    "mean": 0.9992284671398555,
+    "p95": 0.999479661126444
+  },
+  "schema_version": 2,
+  "sim_duration": 78.908,
+  "sim_end": 80.268,
+  "sim_start": 1.3599999999999999,
+  "wall_duration": 79.25165004099995
+}
