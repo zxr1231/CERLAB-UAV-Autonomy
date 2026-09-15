@@ -94,10 +94,15 @@
   `PENDING`. A resumed `--max-tasks 1 --dry-run` skipped 1/1 and selected 2/2 without
   starting ROS. The child run reached `HOME_REACHED` with all measurement statuses
   valid and no residual process.
+- Resuming the same V2-08 smoke matrix skipped 1/1 and serially completed 2/2 and 3/3.
+  All three tasks are `SUCCESS`/`HOME_REACHED` with one attempt each and no residual
+  process. This is pipeline validation; seed 1 used `60cb836`, while seeds 2/3 used
+  offline-aggregation commit `224cbf0`, so it is not a formal comparison set.
 - V2-09 real-data aggregation retained the V2-08 attempt as one independent row,
-  preserved its censored T80/T90/T95 values as null, reported zero threshold
-  attainments, and included only `VALID` Coverage, trajectory, collision, and resource
-  measurements in their corresponding statistics. Release build and 35 tests passed.
+  then correctly expanded to three rows after matrix completion. It preserved all
+  censored T80/T90/T95 values as null, reported 0/3 threshold attainments, and included
+  only `VALID` Coverage, trajectory, collision, and resource measurements in their
+  corresponding statistics. Release build and 35 tests passed.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.

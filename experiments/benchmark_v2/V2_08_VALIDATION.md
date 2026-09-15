@@ -36,5 +36,11 @@ Batch state:
 Seed-1 raw run:
 `/home/zxr2/cerlab_benchmark_ws/results/EXP-BENCH-V2-DEP-SMOKE-MATRIX-V1/environment_seed_001/planner_seed_001/20260915T211634`
 
-This validates orchestration and recovery only. It is not a completed three-seed or
-formal performance experiment.
+The same batch was then resumed without a task limit. Seed pairs 2/2 and 3/3 ran
+serially after 1/1 was skipped; all three tasks ended `SUCCESS` with outcome
+`HOME_REACHED`. No duplicate attempt or residual ROS/Gazebo process was created.
+
+Seed 1 ran at parent `60cb836`, while seeds 2 and 3 ran at `224cbf0`. The intervening
+changes add only the offline aggregator and documentation, but the exact parent commit
+is still not identical. This matrix validates orchestration and recovery only and is
+not a formal performance experiment.
