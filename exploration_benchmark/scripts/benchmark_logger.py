@@ -8,6 +8,7 @@ import time
 from pathlib import Path
 
 import rospy
+from gazebo_msgs.msg import ContactsState
 from map_manager.msg import ObservedVoxelDelta
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import PointCloud2
@@ -15,6 +16,7 @@ from std_msgs.msg import String
 
 from exploration_benchmark.core import (TrajectoryAccumulator, atomic_write_json,
                                         duration_summary, value_summary)
+from exploration_benchmark.collision_metrics import CollisionEpisodeAccumulator
 from exploration_benchmark.coverage import CoverageAccumulator
 
 
@@ -35,6 +37,7 @@ class BenchmarkLogger:
         self.mission_start_wall = None
         self.mission_end_wall = None
         self.mission_distance_start = None
+        self.planning_start_sim = None
         self.state = "UNKNOWN"
         self.map_points = 0
         self.odom_count = 0
@@ -54,6 +57,8 @@ class BenchmarkLogger:
         self.coverage = None
         self.coverage_reported_errors = set()
         self.coverage_reported_thresholds = set()
+        self.collisions = CollisionEpisodeAccumulator(
+            rospy.get_param("~collision_quiet_period", 0.1))
         mask_path = rospy.get_param("~ground_truth_mask", "")
         metadata_path = rospy.get_param("~ground_truth_metadata", "")
         if bool(mask_path) != bool(metadata_path):
@@ -90,6 +95,10 @@ class BenchmarkLogger:
                              "free_coverage", "surface_observed",
                              "surface_denominator", "surface_coverage",
                              "known_volume_m3", "valid", "errors"])
+        self.collision_file, self.collision_writer = self._csv(
+            "collisions.csv", ["episode_id", "phase", "start_sim", "end_sim",
+                               "duration_sim", "wall_elapsed_recorded", "contact_pairs",
+                               "max_force_n", "max_depth_m"])
         self.events_file = (self.output / "events.jsonl").open("x", encoding="utf-8")
         self.planned_paths_file = (self.output / "planned_paths.jsonl").open(
             "x", encoding="utf-8")
@@ -98,6 +107,8 @@ class BenchmarkLogger:
         rospy.Subscriber("/dynamic_map/explored_voxel_map", PointCloud2, self.map_callback, queue_size=1)
         rospy.Subscriber("/dynamicExploration/mission_state", String, self.state_callback, queue_size=20)
         rospy.Subscriber("/dynamicExploration/planning_event", String, self.planning_callback, queue_size=100)
+        rospy.Subscriber("/CERLAB/quadcopter/contacts", ContactsState,
+                         self.collision_callback, queue_size=100)
         if self.coverage is not None:
             rospy.Subscriber("/dynamic_map/sensor_observation_delta", ObservedVoxelDelta,
                              self.coverage_callback, queue_size=100)
@@ -254,7 +265,7 @@ class BenchmarkLogger:
         self.planned_paths_file.flush()
 
     def load_planning_start(self):
-        if self.coverage is None or self.coverage.planning_start_sim is not None:
+        if self.planning_start_sim is not None:
             return
         path = self.output / "planning_start.json"
         if not path.exists():
@@ -264,13 +275,57 @@ class BenchmarkLogger:
             sim_time = float(payload["sim_time"])
         except (OSError, ValueError, KeyError, TypeError) as error:
             message = "invalid planning_start.json: %s" % error
-            self.coverage.invalidate(message)
+            if self.coverage is not None:
+                self.coverage.invalidate(message)
             if message not in self.coverage_reported_errors:
                 self.coverage_reported_errors.add(message)
                 self.event("COVERAGE_INVALID", error=message)
             return
-        self.coverage.set_planning_start(sim_time)
+        self.planning_start_sim = sim_time
+        if self.coverage is not None:
+            self.coverage.set_planning_start(sim_time)
         self.event("PLANNING_ACTIVE", planning_start_sim=sim_time)
+
+    def collision_phase(self):
+        return "return" if self.state in ("RETURNING_HOME", "RETURN_BLOCKED",
+                                           "HOME_REACHED") else "exploration"
+
+    def record_collision_episodes(self, episodes):
+        for episode in episodes:
+            row = dict(episode)
+            row["wall_elapsed_recorded"] = self.wall_elapsed()
+            row["contact_pairs"] = json.dumps(row["contact_pairs"], sort_keys=True)
+            self.collision_writer.writerow(row)
+            self.collision_file.flush()
+            self.event("COLLISION_ENDED", episode_id=episode["episode_id"],
+                       phase=episode["phase"], start_sim=episode["start_sim"],
+                       end_sim=episode["end_sim"])
+
+    def collision_callback(self, message):
+        with self.lock:
+            self.load_planning_start()
+            sim_time = message.header.stamp.to_sec() or rospy.get_time()
+            if self.planning_start_sim is None or sim_time < self.planning_start_sim:
+                return
+            pairs = []
+            max_force = 0.0
+            max_depth = 0.0
+            for state in message.states:
+                pair = " | ".join(sorted((state.collision1_name,
+                                           state.collision2_name)))
+                pairs.append(pair)
+                force = state.total_wrench.force
+                max_force = max(max_force,
+                                math.sqrt(force.x ** 2 + force.y ** 2 + force.z ** 2))
+                if state.depths:
+                    max_depth = max(max_depth, max(float(value) for value in state.depths))
+            completed, started = self.collisions.update(
+                sim_time, self.collision_phase(), pairs, max_force, max_depth)
+            self.record_collision_episodes(completed)
+            if started:
+                self.event("COLLISION_STARTED",
+                           episode_id=self.collisions.active["episode_id"],
+                           phase=self.collisions.active["phase"], pairs=pairs)
 
     def coverage_callback(self, message):
         with self.lock:
@@ -302,6 +357,7 @@ class BenchmarkLogger:
         with self.lock:
             self.load_planning_start()
             sim_time = rospy.get_time()
+            self.record_collision_episodes(self.collisions.advance(sim_time))
             wall_time = self.wall_elapsed()
             rtf = ""
             if self.previous_metric_sim is not None:
@@ -342,15 +398,17 @@ class BenchmarkLogger:
             if self.closed:
                 return
             self.closed = True
-            self.event("LOGGER_STOPPED")
             self.load_planning_start()
+            self.record_collision_episodes(self.collisions.advance(
+                self.sim_end if self.sim_end is not None else rospy.get_time(), force=True))
+            self.event("LOGGER_STOPPED")
             for stream in (self.trajectory_file, self.metrics_file,
                            self.planning_file, self.coverage_file, self.events_file,
-                           self.planned_paths_file):
+                           self.planned_paths_file, self.collision_file):
                 stream.flush()
                 stream.close()
             summary = {
-                "schema_version": 2,
+                "schema_version": 3,
                 "mission_state": self.state,
                 "passed": self.state == "HOME_REACHED",
                 "sim_start": self.sim_start,
@@ -368,6 +426,7 @@ class BenchmarkLogger:
                 "map_message_count": self.map_count,
                 "planning_event_count": self.planning_count,
                 "planned_path_count": len(self.recorded_path_keys),
+                "collision": self.collisions.summary(),
                 "planning": {
                     "global": duration_summary(self.global_times),
                     "local": duration_summary(self.local_times),

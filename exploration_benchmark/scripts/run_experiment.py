@@ -20,6 +20,7 @@ from exploration_benchmark.core import (atomic_write_json,
                                         create_seed_pair_run_directory,
                                         resolve_seeds)
 from exploration_benchmark.trajectory_metrics import write_run_metrics
+from exploration_benchmark.resource_metrics import ResourceMonitor
 
 
 PROMPTS = [
@@ -71,6 +72,7 @@ class Process:
         else:
             self.process = subprocess.Popen(command, stdout=self.log, stderr=subprocess.STDOUT,
                                             preexec_fn=os.setsid)
+        self.pgid = os.getpgid(self.process.pid)
 
     def _pump(self):
         buffer = ""
@@ -95,16 +97,15 @@ class Process:
         if self.process.poll() is not None:
             self.log.close()
             return
-        group = os.getpgid(self.process.pid)
-        os.killpg(group, signal.SIGINT)
+        os.killpg(self.pgid, signal.SIGINT)
         try:
             self.process.wait(timeout=12)
         except subprocess.TimeoutExpired:
-            os.killpg(group, signal.SIGTERM)
+            os.killpg(self.pgid, signal.SIGTERM)
             try:
                 self.process.wait(timeout=8)
             except subprocess.TimeoutExpired:
-                os.killpg(group, signal.SIGKILL)
+                os.killpg(self.pgid, signal.SIGKILL)
                 self.process.wait(timeout=5)
         self.log.close()
 
@@ -150,7 +151,7 @@ def process_manifest(project, environment_seed, planner_seed, mode,
     if ground_truth_mask is not None:
         keys.extend([ground_truth_mask, ground_truth_metadata])
     manifest = {
-        "schema_version": 2,
+        "schema_version": 3,
         "status": "RUNNING",
         "method": "hire_return_home_500",
         "mode": mode,
@@ -223,6 +224,7 @@ def main():
                                 ground_truth_mask, ground_truth_metadata)
     atomic_write_json(output / "run.json", manifest)
     events_stream = (output / "runner_events.jsonl").open("x", encoding="utf-8")
+    resource_monitor = ResourceMonitor(output)
     wall_start = time.monotonic()
 
     def event(event_name, **fields):
@@ -234,6 +236,8 @@ def main():
     processes = []
     outcome = "UNKNOWN"
     error = None
+    resource_started = False
+    resource_groups = {}
     try:
         if subprocess.run(["rosnode", "list"], stdout=subprocess.DEVNULL,
                           stderr=subprocess.DEVNULL).returncode == 0:
@@ -249,6 +253,9 @@ def main():
             raise RuntimeError("odometry topic timeout")
         if not wait_for_topic("/camera/depth/image_raw", 60):
             raise RuntimeError("depth topic timeout")
+        if not wait_for_topic("/CERLAB/quadcopter/contacts", 30):
+            raise RuntimeError("quadcopter contact topic timeout")
+        manifest["collision_measurement_status"] = "CONTACT_TOPIC_VERIFIED"
         logger_body = ("exec roslaunch exploration_benchmark logger.launch output_dir:=%s "
                        "ground_truth_mask:=%s ground_truth_metadata:=%s" %
                        (shlex.quote(str(output)),
@@ -295,8 +302,14 @@ def main():
         manifest["planning_start_sim"] = planning_start_sim
         event("EXPLORATION_STARTED", sim_time=planning_start_sim)
         subprocess.run(["rosparam", "dump", str(output / "rosparams.yaml")], check=True)
+        resource_groups = {process.name: process.process.pid for process in processes}
+        resource_monitor.sample(time.monotonic()-wall_start, planning_start_sim,
+                                resource_groups)
+        resource_started = True
+        next_resource_sample = time.monotonic() + 1.0
         deadline = time.monotonic() + args.timeout
         home_since = None
+        latest_sim_time = planning_start_sim
         while time.monotonic() < deadline:
             for process in processes:
                 if process.process.poll() is not None:
@@ -308,6 +321,7 @@ def main():
                     status = json.loads(status_path.read_text(encoding="utf-8"))
                 except (OSError, ValueError):
                     status = {}
+                latest_sim_time = status.get("sim_time", latest_sim_time)
                 if status.get("mission_state") == "HOME_REACHED":
                     if home_since is None:
                         home_since = time.monotonic()
@@ -317,6 +331,10 @@ def main():
                         break
                 else:
                     home_since = None
+            if time.monotonic() >= next_resource_sample:
+                resource_monitor.sample(time.monotonic()-wall_start, latest_sim_time,
+                                        resource_groups)
+                next_resource_sample += 1.0
             time.sleep(0.5)
         else:
             outcome = "TIMEOUT"
@@ -334,6 +352,13 @@ def main():
             except Exception as stop_error:
                 event("STOP_ERROR", process=process.name, error=str(stop_error))
         try:
+            resource_summary = resource_monitor.close()
+            manifest["resource_metrics_status"] = resource_summary["status"]
+        except Exception as resource_error:
+            manifest["resource_metrics_status"] = "INVALID"
+            event("RESOURCE_METRICS_ERROR", error=str(resource_error),
+                  sampling_started=resource_started)
+        try:
             trajectory_metrics = write_run_metrics(output)
             manifest["trajectory_metrics_status"] = trajectory_metrics["status"]
         except Exception as metrics_error:
@@ -346,6 +371,8 @@ def main():
                 final_summary = json.loads(summary_path.read_text(encoding="utf-8"))
                 manifest["coverage_status"] = final_summary.get(
                     "coverage_status", manifest["coverage_status"])
+                manifest["collision_measurement_status"] = final_summary.get(
+                    "collision", {}).get("status", "INVALID_COLLISION_SUMMARY")
             except (OSError, ValueError):
                 manifest["coverage_status"] = "INVALID_SUMMARY_JSON"
         manifest.update({

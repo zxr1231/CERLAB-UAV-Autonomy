@@ -97,6 +97,30 @@ Algorithm completion, exploration completion, return start, return success, time
 collision, and process failure remain separate events. A return failure after the
 algorithm completion event does not erase valid exploration measurements.
 
+## Collision metric
+
+The quadcopter collision mesh has a Gazebo contact sensor that publishes
+`gazebo_msgs/ContactsState`. Collision measurement begins at `PLANNING_ACTIVE`;
+contacts during spawn and takeoff are excluded. Consecutive contact messages belong
+to one collision episode until there has been a 0.1 s simulation-time quiet period.
+The primary safety values are whether any episode occurred and the episode count,
+reported separately for exploration and return. Contact pairs, duration, maximum
+reported wrench norm, and penetration depth are diagnostics. Wrench and penetration
+values depend on the Gazebo/ODE contact solver and must not be compared with another
+physics engine without calibration. A zero-collision run is valid only if contact
+messages were received after planning began.
+
+## Resource metric
+
+At 1 Hz wall time after `PLANNING_ACTIVE`, the Runner reads Linux `/proc` for the
+complete descendant trees rooted at its simulator, exploration, and logger launch
+processes. The exploration tree is the primary algorithm resource scope; simulator
+and logger loads are reported separately. CPU percentage is summed process CPU time
+over wall time, where 100% equals one fully occupied logical core and multi-threaded
+loads can exceed 100%. RSS is the sum of per-process resident pages; shared pages may
+therefore be counted more than once. Formal comparisons disable RViz and use the same
+host, build type, sampling interval, and background-process policy.
+
 ## Fair comparison rules
 
 - Evaluation masks, sensor model, task box, dynamics, start pose, time origin, timeout,
@@ -106,6 +130,7 @@ algorithm completion event does not erase valid exploration measurements.
 - Each scenario/algorithm uses at least ten environment seeds; failures are retained.
 - Success rates are reported separately from conditional time/path statistics.
 - PRM path, commanded B-spline, and executed odometry distance remain distinct.
+- Collision episodes and resource scopes use the definitions above for every method.
 
 ## External reference check
 

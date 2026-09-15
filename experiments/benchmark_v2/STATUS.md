@@ -24,6 +24,11 @@
   selected PRM path, local optimizer input, sampled B-spline, and executed odometry.
   Per-trajectory length ratios and point-to-polyline deviations are generated without
   mixing return-home trajectories into the primary exploration aggregate.
+- V2-06 implementation in progress: the quadcopter contact sensor, collision episode
+  accumulator, and `/proc` process-tree resource sampler are implemented and unit
+  tested. A process-group development run exposed ROS child sessions, so the resource
+  scope was corrected to recursive parent/child trees; clean runtime validation is
+  pending.
 - V2-07 completed: Runner CLI, result paths, simulator launch, DEP launch, and schema-2
   manifests now separate `environment_seed` and `planner_seed`; legacy `--seed`
   remains a shorthand for equal values.

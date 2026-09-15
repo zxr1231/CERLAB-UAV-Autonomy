@@ -23,6 +23,8 @@ catkin_install_python(PROGRAMS
 if(CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/test_benchmark_core.py)
   catkin_add_nosetests(test/test_coverage.py)
+  catkin_add_nosetests(test/test_collision_metrics.py)
   catkin_add_nosetests(test/test_ground_truth.py)
+  catkin_add_nosetests(test/test_resource_metrics.py)
   catkin_add_nosetests(test/test_trajectory_metrics.py)
 endif()

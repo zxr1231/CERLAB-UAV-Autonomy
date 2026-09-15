@@ -39,6 +39,9 @@ EXP-ID/environment_seed_NNN/planner_seed_NNN/TIMESTAMP/
 ├── planned_paths.jsonl
 ├── trajectory_alignment.csv
 ├── trajectory_alignment_summary.json
+├── collisions.csv
+├── resources.csv
+├── resource_summary.json
 ├── coverage.csv
 ├── events.jsonl
 ├── runner_events.jsonl
@@ -90,3 +93,11 @@ odometry separately. `trajectory_alignment.csv` compares their lengths and geome
 deviations. Odometry remains assigned to the active local trajectory until it is
 replaced. The summary separates `exploration` trajectories (`global_sequence > 0`)
 from return trajectories and uses only the exploration phase for its primary metrics.
+
+Run manifests and logger summaries use schema 3 after adding V2-06. Benchmark v2
+merges 50 Hz Gazebo contact messages into collision episodes using
+a 0.1 s simulation-time quiet period. Contacts before `PLANNING_ACTIVE` are ignored,
+so normal ground contact before takeoff is not an exploration collision. Formal runs
+sample the complete process trees created for `simulator`, `exploration`, and `logger`
+at 1 Hz after planning starts. CPU is expressed relative to one logical core and may
+exceed 100%; RSS is the sum of resident pages and may count shared pages repeatedly.
