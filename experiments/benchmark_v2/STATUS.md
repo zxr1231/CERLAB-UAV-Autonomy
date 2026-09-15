@@ -31,10 +31,11 @@
 - V2-07 completed: Runner CLI, result paths, simulator launch, DEP launch, and schema-2
   manifests now separate `environment_seed` and `planner_seed`; legacy `--seed`
   remains a shorthand for equal values.
-- V2-08 implementation in progress: an explicit seed-pair matrix schema, deterministic
+- V2-08 completed: an explicit seed-pair matrix schema, deterministic
   task IDs, dry-run, atomic state checkpoints, serial isolation, bounded execution,
-  recovery of interrupted tasks, and opt-in failed-task retry are implemented. Dry-run
-  and unit validation passed; runtime resume validation is pending.
+  recovery of interrupted tasks, and opt-in failed-task retry are implemented. A clean
+  one-task runtime and subsequent resume dry-run verified success skipping and correct
+  selection of the next pending seed.
 
 ## Floorplan2 static mask v1
 
@@ -84,6 +85,11 @@
   covered the complete simulator, exploration, and logger process trees; there were
   no negative CPU deltas or residual processes. Collision, resource, trajectory, and
   Coverage statuses were all valid.
+- V2-08 clean runtime at parent `60cb836` executed only seed pair 1/1, atomically
+  changed its task from `RUNNING` to `SUCCESS`, and retained seed pairs 2/2 and 3/3 as
+  `PENDING`. A resumed `--max-tasks 1 --dry-run` skipped 1/1 and selected 2/2 without
+  starting ROS. The child run reached `HOME_REACHED` with all measurement statuses
+  valid and no residual process.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
