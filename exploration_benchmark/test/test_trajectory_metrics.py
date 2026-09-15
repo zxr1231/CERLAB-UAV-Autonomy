@@ -43,11 +43,37 @@ class TrajectoryMetricsTest(unittest.TestCase):
                 ])
             summary = write_run_metrics(root)
             self.assertEqual(summary["trajectory_count"], 1)
+            self.assertEqual(summary["phases"]["exploration"]["trajectory_count"], 1)
+            self.assertEqual(summary["phases"]["return"]["trajectory_count"], 0)
             with (root/"trajectory_alignment.csv").open() as stream:
                 row = next(csv.DictReader(stream))
+            self.assertEqual(row["phase"], "exploration")
             self.assertEqual(float(row["executed_length"]), 2.0)
             self.assertEqual(float(row["bspline_to_input_length_ratio"]), 1.0)
             self.assertEqual(float(row["odom_to_bspline_max_distance"]), 0.0)
+
+    def test_zero_global_sequence_is_return_phase(self):
+        with tempfile.TemporaryDirectory() as root:
+            root = Path(root)
+            paths = [
+                {"kind": "input", "id": 3, "global_sequence": 0,
+                 "points": [[0, 0, 0], [1, 0, 0]]},
+                {"kind": "bspline", "id": 3, "global_sequence": 0,
+                 "points": [[0, 0, 0], [1, 0, 0]]},
+            ]
+            (root/"planned_paths.jsonl").write_text(
+                "".join(json.dumps(item)+"\n" for item in paths))
+            with (root/"trajectory.csv").open("w", newline="") as stream:
+                writer = csv.DictWriter(stream,
+                                        fieldnames=["sim_time", "x", "y", "z",
+                                                    "trajectory_id"],
+                                        lineterminator="\n")
+                writer.writeheader()
+                writer.writerow({"sim_time": 1, "x": 0, "y": 0, "z": 0,
+                                 "trajectory_id": 3})
+            summary = write_run_metrics(root)
+            self.assertEqual(summary["phases"]["exploration"]["trajectory_count"], 0)
+            self.assertEqual(summary["phases"]["return"]["trajectory_count"], 1)
 
 
 if __name__ == "__main__":

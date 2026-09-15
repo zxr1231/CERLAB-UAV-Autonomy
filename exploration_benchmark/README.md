@@ -88,5 +88,5 @@ Benchmark v2 assigns stable IDs to accepted local B-spline trajectories and reco
 the selected global PRM path, local optimizer input, sampled B-spline, and associated
 odometry separately. `trajectory_alignment.csv` compares their lengths and geometric
 deviations. Odometry remains assigned to the active local trajectory until it is
-replaced or return planning begins; return-home motion is therefore excluded from
-local B-spline execution metrics.
+replaced. The summary separates `exploration` trajectories (`global_sequence > 0`)
+from return trajectories and uses only the exploration phase for its primary metrics.

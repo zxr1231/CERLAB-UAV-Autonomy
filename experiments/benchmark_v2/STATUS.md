@@ -23,7 +23,7 @@
 - V2-05 implementation: stable global-planning and local-trajectory IDs associate the
   selected PRM path, local optimizer input, sampled B-spline, and executed odometry.
   Per-trajectory length ratios and point-to-polyline deviations are generated without
-  including return-home odometry.
+  mixing return-home trajectories into the primary exploration aggregate.
 - V2-07 completed: Runner CLI, result paths, simulator launch, DEP launch, and schema-2
   manifests now separate `environment_seed` and `planner_seed`; legacy `--seed`
   remains a shorthand for equal values.

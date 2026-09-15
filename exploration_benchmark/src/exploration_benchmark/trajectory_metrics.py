@@ -10,13 +10,19 @@ from exploration_benchmark.core import atomic_write_json, value_summary
 
 
 FIELDS = [
-    "trajectory_id", "global_sequence", "input_length", "bspline_length",
+    "trajectory_id", "global_sequence", "phase", "input_length", "bspline_length",
     "executed_length", "bspline_to_input_length_ratio",
     "executed_to_bspline_length_ratio", "odom_sample_count",
     "execution_duration", "bspline_to_input_mean_distance",
     "bspline_to_input_max_distance", "odom_to_bspline_mean_distance",
     "odom_to_bspline_max_distance",
 ]
+
+METRIC_FIELDS = (
+    "bspline_to_input_length_ratio", "executed_to_bspline_length_ratio",
+    "bspline_to_input_mean_distance", "bspline_to_input_max_distance",
+    "odom_to_bspline_mean_distance", "odom_to_bspline_max_distance",
+)
 
 
 def polyline_length(points):
@@ -85,6 +91,8 @@ def summarize_run(run_dir):
         rows.append({
             "trajectory_id": identifier,
             "global_sequence": bspline.get("global_sequence"),
+            "phase": ("exploration" if int(bspline.get("global_sequence") or 0) > 0
+                      else "return"),
             "input_length": input_length,
             "bspline_length": bspline_length,
             "executed_length": executed_length,
@@ -106,6 +114,17 @@ def summarize_run(run_dir):
     return rows
 
 
+def summarize_rows(rows):
+    return {
+        "trajectory_count": len(rows),
+        "trajectories_with_odom": sum(row["odom_sample_count"] > 0 for row in rows),
+        "metrics": {
+            field: value_summary([row[field] for row in rows if row[field] is not None])
+            for field in METRIC_FIELDS
+        },
+    }
+
+
 def write_run_metrics(run_dir):
     run_dir = Path(run_dir)
     rows = summarize_run(run_dir)
@@ -113,17 +132,16 @@ def write_run_metrics(run_dir):
         writer = csv.DictWriter(stream, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
-    metrics = {}
-    for field in ("bspline_to_input_length_ratio", "executed_to_bspline_length_ratio",
-                  "bspline_to_input_mean_distance", "bspline_to_input_max_distance",
-                  "odom_to_bspline_mean_distance", "odom_to_bspline_max_distance"):
-        metrics[field] = value_summary([row[field] for row in rows if row[field] is not None])
+    phases = {phase: summarize_rows([row for row in rows if row["phase"] == phase])
+              for phase in ("exploration", "return")}
     summary = {
-        "schema_version": 1,
+        "schema_version": 2,
         "status": "VALID" if rows else "NO_ASSOCIATED_TRAJECTORIES",
+        "primary_phase": "exploration",
         "trajectory_count": len(rows),
         "trajectories_with_odom": sum(row["odom_sample_count"] > 0 for row in rows),
-        "metrics": metrics,
+        "metrics": phases["exploration"]["metrics"],
+        "phases": phases,
     }
     atomic_write_json(run_dir/"trajectory_alignment_summary.json", summary)
     return summary
