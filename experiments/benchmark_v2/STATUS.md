@@ -152,6 +152,12 @@ collision episodes. Mean T80/T90/T95 was 229.35/296.06/388.62 s; mean exploratio
 distance was 167.54 m and final free Coverage was 0.9548. This remains a preliminary
 3/10-seed subset.
 
+The final baseline protocol is frozen in `floorplan2_dep_formal_10seed_v1.json`: seed
+pairs 1/1 through 10/10, one full headless run each, timeout 900 s, audited v2
+Coverage, RViz off, and rosbag off. All ten tasks must run from the clean commit that
+introduces this configuration; do not mix the earlier three-seed subset into its
+aggregate.
+
 The pipeline now has a validated floorplan2 v2 Coverage definition. Static
 observability and one clean full run have passed. This validates the measurement
 pipeline, while paper performance claims still require a same-commit multi-seed set;

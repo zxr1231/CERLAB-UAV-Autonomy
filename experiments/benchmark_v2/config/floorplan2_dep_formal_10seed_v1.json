@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "experiment_id": "EXP-BENCH-V2-DEP-FORMAL-10SEED-V1",
+  "method": "hire_return_home_500",
+  "mode": "full",
+  "timeout": 900,
+  "seed_pairs": [
+    [1, 1],
+    [2, 2],
+    [3, 3],
+    [4, 4],
+    [5, 5],
+    [6, 6],
+    [7, 7],
+    [8, 8],
+    [9, 9],
+    [10, 10]
+  ],
+  "repeats": 1,
+  "rviz": false,
+  "disable_coverage": false
+}
