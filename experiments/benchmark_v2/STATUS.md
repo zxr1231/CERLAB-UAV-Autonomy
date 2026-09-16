@@ -123,6 +123,12 @@
   `PROVISIONAL_ACCESSIBLE_FREE_V2_OBSERVABILITY_AUDITED`, observability fractions were
   1.0/1.0, all measurement statuses were valid, and no process remained. The small-ROI
   final free Coverage was 0.2146, so T80/T90/T95 correctly remained censored.
+- Clean full run at parent `c414604` reached `HOME_REACHED`. T80/T90/T95 were
+  267.11/329.24/383.04 s from `PLANNING_ACTIVE`; algorithm completion/return start was
+  450.72 s and final free/static-surface Coverage was 0.9636/0.6236. All 6,258
+  provenance rows were contiguous and monotonic, cumulative addresses reconciled at
+  1,190,646, all auxiliary measurement statuses were valid, real-time factor averaged
+  0.9992, and no process remained.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
@@ -130,13 +136,11 @@
 ## Explicitly pending
 
 - Artificial-clear integration assertion beyond source-path and tracker tests.
-- Clean full-run validation of Coverage, T80/T90/T95, and the planning-active time
-  origin.
 - Formal same-commit matrix with at least ten seeds and paper-level statistics.
 
-The pipeline now outputs provisional Coverage. The static observability gate has
-passed, but until a clean full-run validation is complete these values must not
-support paper claims;
+The pipeline now has a validated floorplan2 v2 Coverage definition. Static
+observability and one clean full run have passed. This validates the measurement
+pipeline, while paper performance claims still require a same-commit multi-seed set;
 existing historical map point counts remain proxies.
 
 Draft PRs:

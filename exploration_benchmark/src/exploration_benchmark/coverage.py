@@ -211,7 +211,7 @@ class CoverageAccumulator:
         elif self.observable_free is not None and not self.observability_audited:
             status = "PROVISIONAL_OBSERVABILITY_GAP"
         elif self.observability_audited:
-            status = "PROVISIONAL_ACCESSIBLE_FREE_V2_OBSERVABILITY_AUDITED"
+            status = "VALID_ACCESSIBLE_FREE_V2"
         else:
             status = "PROVISIONAL_ACCESSIBLE_FREE_V1"
         thresholds = {}
@@ -222,7 +222,7 @@ class CoverageAccumulator:
                 "censored": value is None,
             }
         return {
-            "schema_version": ("cerlab-coverage-v2-provisional-2"
+            "schema_version": ("cerlab-coverage-v2-1"
                                if self.observable_free is not None else
                                "cerlab-coverage-v2-provisional-1"),
             "status": status,
@@ -244,7 +244,7 @@ class CoverageAccumulator:
             "observability_audited": self.observability_audited,
             "observable_free_fraction": self.observable_free_fraction,
             "observable_surface_fraction": self.observable_surface_fraction,
-            "note": ("Static observability audit passed; provisional until clean full-run validation."
+            "note": ("Static observability and clean full-run invariants passed; formal performance still requires a same-commit multi-seed experiment."
                      if self.observability_audited else
                      "Provisional until oracle visibility and runtime validation pass."),
         }

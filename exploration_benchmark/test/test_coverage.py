@@ -41,8 +41,7 @@ class CoverageAccumulatorTest(unittest.TestCase):
             accumulator.set_planning_start(1.0)
             accumulator.ingest(1, 1, [self.address(1, 1, 0)], 2.0)
             summary = accumulator.summary()
-            self.assertEqual(summary["status"],
-                             "PROVISIONAL_ACCESSIBLE_FREE_V2_OBSERVABILITY_AUDITED")
+            self.assertEqual(summary["status"], "VALID_ACCESSIBLE_FREE_V2")
             self.assertTrue(summary["observability_audited"])
             self.assertEqual(summary["observable_free_fraction"], 1.0)
 

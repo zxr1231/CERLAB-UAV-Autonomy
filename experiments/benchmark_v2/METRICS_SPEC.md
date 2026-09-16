@@ -1,6 +1,6 @@
 # Benchmark v2 metric specification
 
-Status: frozen draft for the floorplan2 prototype. Any semantic change must increment
+Status: frozen floorplan2 v2 definition. Any semantic change must increment
 the schema version and regenerate masks; old and new schemas must not be aggregated.
 
 ## Coordinate and grid convention

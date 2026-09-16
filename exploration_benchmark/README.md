@@ -81,8 +81,11 @@ exploration planner and does not change map updates or path selection.
 On `feat/benchmark-v2`, the runner loads this mask by default and records provisional
 sensor-provenance coverage. Use `--disable-coverage` only for explicit compatibility
 runs. The default v2 mask records that all accessible-free and static-surface voxels
-passed the floorplan2 static observability audit. Coverage remains provisional until
-a clean full-run validation passes.
+passed the floorplan2 static observability audit. Coverage was kept provisional until
+the matching full-run validation passed. That validation is now recorded, so runs
+using the audited v2 artifact report `VALID_ACCESSIBLE_FREE_V2`. This validates
+measurement semantics, while performance claims still require a same-commit
+multi-seed experiment.
 
 `--environment-seed` controls Gazebo and `--planner-seed` controls DEP. The legacy
 `--seed N` remains available as shorthand for setting both to `N`; manifests always
