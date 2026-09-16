@@ -124,12 +124,14 @@ def summarize_run(run_dir, task_id="", attempt=None, attempt_status=""):
         run = load_json(run_dir / "run.json")
         summary = load_json(run_dir / "summary.json")
     except (OSError, ValueError):
-        return {field: None for field in RUN_FIELDS} | {
+        row = {field: None for field in RUN_FIELDS}
+        row.update({
             "run_id": "%s_attempt%02d" % (task_id or "unknown", attempt or 0),
             "task_id": task_id, "attempt": attempt, "result_dir": str(run_dir),
             "status": attempt_status, "outcome": "UNREADABLE_RESULT",
             "manifest_readable": False,
-        }
+        })
+        return row
     events = load_jsonl(run_dir / "events.jsonl")
     trajectory = load_csv(run_dir / "trajectory.csv")
     planning = load_csv(run_dir / "planning.csv")

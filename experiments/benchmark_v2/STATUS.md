@@ -158,6 +158,13 @@ Coverage, RViz off, and rosbag off. All ten tasks must run from the clean commit
 introduces this configuration; do not mix the earlier three-seed subset into its
 aggregate.
 
+The v1 matrix produced one valid seed-1 run but also retained an interrupted attempt
+and a duplicate-master rejection. This exposed a Python 3.8 incompatibility in the
+offline aggregator's unreadable-result path. The fix preserves all three attempt rows
+while restricting algorithm-rate denominators to the one readable run. The final
+publishable matrix is therefore re-frozen as `floorplan2_dep_formal_10seed_v2.json`;
+all ten runs must use the commit containing that fix.
+
 The pipeline now has a validated floorplan2 v2 Coverage definition. Static
 observability and one clean full run have passed. This validates the measurement
 pipeline, while paper performance claims still require a same-commit multi-seed set;

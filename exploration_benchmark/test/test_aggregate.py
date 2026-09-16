@@ -76,6 +76,23 @@ class AggregateTest(unittest.TestCase):
             self.assertFalse(rows[0]["manifest_readable"])
             self.assertEqual(rows[0]["outcome"], "MISSING_RESULT_DIR")
 
+    def test_incomplete_result_directory_gets_unreadable_row(self):
+        with tempfile.TemporaryDirectory() as root:
+            root = Path(root)
+            result = root / "incomplete"
+            result.mkdir()
+            (result / "run.json").write_text(json.dumps({"outcome": "PROCESS_ERROR"}))
+            state = root / "batch_state.json"
+            state.write_text(json.dumps({"tasks": [{
+                "task_id": "env001_planner001_repeat01", "environment_seed": 1,
+                "planner_seed": 1, "attempts": [{"attempt": 2,
+                                                   "status": "PROCESS_ERROR",
+                                                   "result_dir": str(result)}]}]}))
+            _, rows = rows_from_batch_state(state)
+            self.assertEqual(len(rows), 1)
+            self.assertFalse(rows[0]["manifest_readable"])
+            self.assertEqual(rows[0]["outcome"], "UNREADABLE_RESULT")
+
 
 if __name__ == "__main__":
     unittest.main()
