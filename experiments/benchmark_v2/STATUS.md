@@ -129,13 +129,16 @@
   provenance rows were contiguous and monotonic, cumulative addresses reconciled at
   1,190,646, all auxiliary measurement statuses were valid, real-time factor averaged
   0.9992, and no process remained.
+- `map_manager` artificial-clear integration rostest constructs a real synthetic
+  `occMap`: `setFree()` plus `freeRegion()` leave observed total/pending delta at zero,
+  while `updateOccupancyInfo()` raises both to one. All three provenance rostest cases
+  passed under an isolated ROS Master.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
 
 ## Explicitly pending
 
-- Artificial-clear integration assertion beyond source-path and tracker tests.
 - Formal same-commit matrix with at least ten seeds and paper-level statistics.
 
 The pipeline now has a validated floorplan2 v2 Coverage definition. Static
