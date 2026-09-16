@@ -52,3 +52,20 @@ noise, or complete SLAM uncertainty.
 
 Two independent generations produced byte-identical NPZ and PNG files. Array subset,
 partition, equality, and zero-complement assertions passed.
+
+## Online integration check
+
+A clean smoke at parent `d6acf4e` loaded the v2 artifact by default and reached
+`HOME_REACHED` in 80.78 s wall time. The manifest was clean and recorded the v2
+content hash. Final Coverage status was
+`PROVISIONAL_ACCESSIBLE_FREE_V2_OBSERVABILITY_AUDITED`, with:
+
+- `observability_audited=true`;
+- observable free/surface fractions 1.0 / 1.0;
+- 1,040 contiguous provenance updates and no Coverage error;
+- valid collision, resource, and trajectory measurements;
+- 3,420 post-start contact messages, zero collision episodes;
+- no residual ROS/Gazebo process.
+
+The smoke final free Coverage was 0.2146 because it uses the small ROI. T80/T90/T95
+correctly remained censored and null.

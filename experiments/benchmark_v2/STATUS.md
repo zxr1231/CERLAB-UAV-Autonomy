@@ -118,6 +118,11 @@
   censored T80/T90/T95 values as null, reported 0/3 threshold attainments, and included
   only `VALID` Coverage, trajectory, collision, and resource measurements in their
   corresponding statistics. Release build and 35 tests passed.
+- Clean v2-mask integration smoke at parent `d6acf4e` reached `HOME_REACHED`; its
+  manifest was clean, Coverage status was
+  `PROVISIONAL_ACCESSIBLE_FREE_V2_OBSERVABILITY_AUDITED`, observability fractions were
+  1.0/1.0, all measurement statuses were valid, and no process remained. The small-ROI
+  final free Coverage was 0.2146, so T80/T90/T95 correctly remained censored.
 - Real mask regenerated twice with byte-identical NPZ and PNG outputs.
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
@@ -125,7 +130,6 @@
 ## Explicitly pending
 
 - Artificial-clear integration assertion beyond source-path and tracker tests.
-- Full-run T80/T90/T95 behavior and logger overhead.
 - Clean full-run validation of Coverage, T80/T90/T95, and the planning-active time
   origin.
 - Formal same-commit matrix with at least ten seeds and paper-level statistics.
