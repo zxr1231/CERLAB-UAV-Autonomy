@@ -146,6 +146,12 @@ pairs 1/1, 2/2, and 3/3, timeout 900 s, rosbag disabled, and the audited v2 mask
 must run from one clean parent commit; results remain a preliminary subset of the
 required ten-seed matrix.
 
+Batch 1 completed from clean parent `a29c1a8`: all three tasks have one attempt,
+`SUCCESS`/`HOME_REACHED`, valid Coverage/resource/trajectory measurements, and zero
+collision episodes. Mean T80/T90/T95 was 229.35/296.06/388.62 s; mean exploration
+distance was 167.54 m and final free Coverage was 0.9548. This remains a preliminary
+3/10-seed subset.
+
 The pipeline now has a validated floorplan2 v2 Coverage definition. Static
 observability and one clean full run have passed. This validates the measurement
 pipeline, while paper performance claims still require a same-commit multi-seed set;
