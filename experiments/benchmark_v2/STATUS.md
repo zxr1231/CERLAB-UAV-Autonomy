@@ -141,6 +141,11 @@
 
 - Formal same-commit matrix with at least ten seeds and paper-level statistics.
 
+Formal baseline batch 1 is configured as three serial headless full runs using seed
+pairs 1/1, 2/2, and 3/3, timeout 900 s, rosbag disabled, and the audited v2 mask. It
+must run from one clean parent commit; results remain a preliminary subset of the
+required ten-seed matrix.
+
 The pipeline now has a validated floorplan2 v2 Coverage definition. Static
 observability and one clean full run have passed. This validates the measurement
 pipeline, while paper performance claims still require a same-commit multi-seed set;
