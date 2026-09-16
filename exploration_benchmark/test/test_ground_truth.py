@@ -12,6 +12,7 @@ from exploration_benchmark.ground_truth import (GridSpec, OrientedBox,
                                                 adjacent_to,
                                                 canonical_mask_sha256,
                                                 dilate_box, flood_fill,
+                                                oracle_visibility_masks,
                                                 parse_static_boxes,
                                                 voxelize_boxes,
                                                 write_deterministic_npz)
@@ -91,6 +92,64 @@ class GroundTruthTest(unittest.TestCase):
         expected = canonical_mask_sha256(arrays)
         self.assertEqual(len(expected), 64)
         self.assertEqual(expected, canonical_mask_sha256(dict(arrays)))
+
+    def test_visibility_respects_static_occlusion(self):
+        grid = GridSpec(np.zeros(3), 1.0, np.zeros(3, dtype=int), (7, 3, 1))
+        accessible = np.ones(grid.shape, dtype=bool)
+        occupied = np.zeros(grid.shape, dtype=bool)
+        occupied[3, :, :] = True
+        accessible[3, :, :] = False
+        flight = np.zeros(grid.shape, dtype=bool)
+        flight[1, 1, 0] = True
+        config = {"visibility_oracle": {
+            "body_to_camera": [0, 0, 1, 0, -1, 0, 0, 0,
+                               0, -1, 0, 0, 0, 0, 0, 1],
+            "depth_intrinsics": [1, 1, 0, 50],
+            "image_cols": 100, "image_rows": 100,
+            "depth_filter_margin": 0, "depth_skip_pixel": 1,
+            "raycast_max_length": 5,
+            "azimuth_samples": 4, "convergence_samples": [4],
+        }}
+        visible = oracle_visibility_masks(accessible.shape, flight, occupied, grid, config)[4]
+        self.assertTrue(visible[2, 1, 0])
+        self.assertFalse(visible[4, 1, 0])
+
+    def test_visibility_convergence_is_nested(self):
+        grid = GridSpec(np.zeros(3), 1.0, np.zeros(3, dtype=int), (9, 9, 1))
+        accessible = np.ones(grid.shape, dtype=bool)
+        flight = np.zeros(grid.shape, dtype=bool)
+        flight[4, 4, 0] = True
+        occupied = np.zeros(grid.shape, dtype=bool)
+        config = {"visibility_oracle": {
+            "body_to_camera": [0, 0, 1, 0, -1, 0, 0, 0,
+                               0, -1, 0, 0, 0, 0, 0, 1],
+            "depth_intrinsics": [1, 1, 0, 50],
+            "image_cols": 100, "image_rows": 100,
+            "depth_filter_margin": 0, "depth_skip_pixel": 1,
+            "raycast_max_length": 4,
+            "azimuth_samples": 8, "convergence_samples": [4, 8],
+        }}
+        masks = oracle_visibility_masks(accessible.shape, flight, occupied, grid, config)
+        self.assertTrue(np.all(masks[4] <= masks[8]))
+        self.assertGreater(int(masks[8].sum()), int(masks[4].sum()))
+
+    def test_visibility_rejects_non_extruded_geometry(self):
+        grid = GridSpec(np.zeros(3), 1.0, np.zeros(3, dtype=int), (3, 3, 2))
+        accessible = np.ones(grid.shape, dtype=bool)
+        flight = np.ones(grid.shape, dtype=bool)
+        occupied = np.zeros(grid.shape, dtype=bool)
+        occupied[1, 1, 0] = True
+        config = {"visibility_oracle": {
+            "body_to_camera": [0, 0, 1, 0, -1, 0, 0, 0,
+                               0, -1, 0, 0, 0, 0, 0, 1],
+            "depth_intrinsics": [1, 1, 0, 50],
+            "image_cols": 100, "image_rows": 100,
+            "depth_filter_margin": 0, "depth_skip_pixel": 1,
+            "raycast_max_length": 2, "azimuth_samples": 4,
+            "convergence_samples": [4],
+        }}
+        with self.assertRaisesRegex(ValueError, "vertically extruded"):
+            oracle_visibility_masks(accessible.shape, flight, occupied, grid, config)
 
 
 if __name__ == "__main__":

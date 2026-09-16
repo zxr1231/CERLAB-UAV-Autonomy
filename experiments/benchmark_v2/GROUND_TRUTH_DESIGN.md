@@ -22,9 +22,11 @@ Coverage definition.
 1. **SDF collision voxelization — selected for floorplan worlds.** It is independent
    of planner output, deterministic, geometrically aligned with Gazebo collision
    boxes, and requires no new dependency.
-2. **Gazebo oracle raycasting — deferred to visibility refinement.** It can determine
-   sensor-observable subsets and handle arbitrary geometry, but is slower and couples
-   mask generation to a running simulator.
+2. **Offline voxel visibility oracle — selected for floorplan2 refinement.** It uses
+   every reachable flight voxel, the mapper camera model, nested yaw samples, and
+   static voxel occlusion without coupling the result to a tested planner or a running
+   simulator. It deliberately fails for non-vertically-extruded geometry; arbitrary
+   meshes remain a future backend.
 3. **Final online occupancy map — rejected as denominator.** It depends on the tested
    planner, mapper thresholds, artificial free regions, and run duration, causing a
    circular and biased metric.
@@ -34,7 +36,15 @@ Coverage definition.
 
 ## Prototype boundary
 
-The first artifact provides `static_occupied`, `accessible_free`, `static_surface`,
-`inflated_occupied`, `flight_reachable`, and `unreachable_free`. It does not yet claim
-that every accessible voxel is visible under the camera model. Oracle visibility and
-online sensor-provenance integration are separate gated tasks.
+The v1 artifact provides `static_occupied`, `accessible_free`, `static_surface`,
+`inflated_occupied`, `flight_reachable`, and `unreachable_free`. The v2 artifact adds
+`observable_free`, `observable_static_surface`, and their complements. The oracle
+assumes level body roll/pitch, allows yaw at every reachable flight voxel, reproduces
+the camera transform, vertical sampled-pixel envelope and 5 m raycast, and treats the
+five moving people as transient objects rather than static denominator occluders.
+
+For floorplan2, 32, 64, and 128 nested yaw samples all classify every one of the
+980,550 accessible-free voxels and every one of the 29,375 static-surface voxels as
+observable. This equality validates the existing denominators under the stated static
+model; it does not model localization error, dynamic occlusion, camera noise, body
+tilt, or arbitrary mesh worlds.

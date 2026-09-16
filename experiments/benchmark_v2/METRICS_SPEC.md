@@ -34,9 +34,14 @@ floorplan collision box.
 - `F_flight`: the start-connected subset within altitude `[0.7,1.2]` after box
   inflation by `ceil(robot_size/(2r))`. It is a feasibility mask for camera-pose
   generation, not a Coverage denominator.
-- `F_observable`: the subset of `F_accessible` visible from at least one valid pose in
-  `F_flight` under the mapping camera model. This remains a planned diagnostic until
-  the oracle-visibility stage is implemented.
+- `F_observable`: the subset of `F_accessible` visible from at least one level pose in
+  `F_flight` under the mapping camera model. The floorplan2 offline oracle uses every
+  flight voxel and nested 32/64/128 yaw directions, the configured camera transform,
+  sampled vertical pixels, 5 m raycast, and static-wall occlusion. All three yaw
+  resolutions yield `F_observable = F_accessible`; the analogous static-surface audit
+  also yields equality. The oracle is a static sensor-feasibility audit, not SLAM
+  uncertainty or a guarantee that a particular exploration trajectory observes every
+  voxel.
 
 The mask generator must reject unsupported collision geometry rather than silently
 dropping it. Each mask records source/config hashes, dimensions, counts, volumes, and

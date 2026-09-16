@@ -206,8 +206,8 @@ def main():
         parser.error(str(error))
     workspace = Path(args.workspace).resolve()
     project = workspace / "src/CERLAB-UAV-Autonomy"
-    default_mask = project / "experiments/benchmark_v2/masks/floorplan2_static_v1.npz"
-    default_metadata = project / "experiments/benchmark_v2/masks/floorplan2_static_v1.metadata.json"
+    default_mask = project / "experiments/benchmark_v2/masks/floorplan2_static_observable_v2.npz"
+    default_metadata = project / "experiments/benchmark_v2/masks/floorplan2_static_observable_v2.metadata.json"
     if args.disable_coverage:
         ground_truth_mask = ground_truth_metadata = None
     else:

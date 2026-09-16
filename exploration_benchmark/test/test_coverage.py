@@ -12,14 +12,18 @@ from exploration_benchmark.coverage import CoverageAccumulator
 
 
 class CoverageAccumulatorTest(unittest.TestCase):
-    def make_accumulator(self, root):
+    def make_accumulator(self, root, audited=False):
         root = Path(root)
         accessible = np.ones((2, 2, 2), dtype=bool)
         surface = np.zeros_like(accessible)
         surface[0, 0, 0] = True
         surface[1, 1, 1] = True
         mask = root / "mask.npz"
-        np.savez(mask, accessible_free=accessible, static_surface=surface)
+        arrays = {"accessible_free": accessible, "static_surface": surface}
+        if audited:
+            arrays.update({"observable_free": accessible,
+                           "observable_static_surface": surface})
+        np.savez(mask, **arrays)
         metadata = {
             "shape": [2, 2, 2],
             "map_shape": [4, 3, 2],
@@ -30,6 +34,17 @@ class CoverageAccumulatorTest(unittest.TestCase):
         metadata_path = root / "metadata.json"
         metadata_path.write_text(json.dumps(metadata))
         return CoverageAccumulator(mask, metadata_path)
+
+    def test_observability_audited_status(self):
+        with tempfile.TemporaryDirectory() as root:
+            accumulator = self.make_accumulator(root, audited=True)
+            accumulator.set_planning_start(1.0)
+            accumulator.ingest(1, 1, [self.address(1, 1, 0)], 2.0)
+            summary = accumulator.summary()
+            self.assertEqual(summary["status"],
+                             "PROVISIONAL_ACCESSIBLE_FREE_V2_OBSERVABILITY_AUDITED")
+            self.assertTrue(summary["observability_audited"])
+            self.assertEqual(summary["observable_free_fraction"], 1.0)
 
     @staticmethod
     def address(x, y, z):

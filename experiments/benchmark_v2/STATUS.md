@@ -40,6 +40,10 @@
   outcome/completion/return/collision rates with Wilson intervals, measurement-status
   filtering, continuous distributions, and explicit threshold censoring are
   implemented and verified against the real V2-08 batch state.
+- V2-04 observability gate completed offline: mask v2 uses every reachable flight
+  voxel and nested 32/64/128 yaw directions with mapper camera geometry and static
+  occlusion. Each resolution found all 980,550 accessible-free voxels and all 29,375
+  static-surface voxels observable, so the existing denominators are unchanged.
 
 ## Floorplan2 static mask v1
 
@@ -55,6 +59,17 @@
   `23c85015a99be3ea585e4a407b6a2e6654eb7263bbb64ad2f4ba319e8f8a43da`.
 - Deterministic NPZ file SHA256:
   `c782566ede82d4fdc3928c3d9d73a94a1578a33d6382866e4b8923279dc0e930`.
+
+## Floorplan2 observable mask v2
+
+- Accessible free observable: 980,550 / 980,550 = 100%.
+- Static surface observable: 29,375 / 29,375 = 100%.
+- Observable-free counts at 32/64/128 nested yaw samples: 980,550 / 980,550 / 980,550.
+- Unobservable accessible and static-surface voxels: 0 / 0.
+- Canonical content SHA256:
+  `4769621c2dcd395cd2083375fc0bf456aff4447382eba1caa6e15bee1e3201c5`.
+- Deterministic NPZ file SHA256:
+  `58a21ffbe6bfc7168d3eb9de8762632b82aac702b5c4129e5a73f92565142bc1`.
 
 ## Verification
 
@@ -109,15 +124,15 @@
 
 ## Explicitly pending
 
-- `F_observable` oracle visibility mask and validation.
 - Artificial-clear integration assertion beyond source-path and tracker tests.
 - Full-run T80/T90/T95 behavior and logger overhead.
 - Clean full-run validation of Coverage, T80/T90/T95, and the planning-active time
   origin.
-- Batch seed matrix, statistics, and multi-run seed-pair validation.
+- Formal same-commit matrix with at least ten seeds and paper-level statistics.
 
-The pipeline now outputs provisional Coverage. Until oracle visibility and a clean
-full-run validation are complete, these values must not support paper claims;
+The pipeline now outputs provisional Coverage. The static observability gate has
+passed, but until a clean full-run validation is complete these values must not
+support paper claims;
 existing historical map point counts remain proxies.
 
 Draft PRs:

@@ -15,6 +15,15 @@ class CoverageAccumulator:
         with np.load(self.mask_path) as archive:
             self.accessible_free = archive["accessible_free"].astype(bool, copy=True)
             self.static_surface = archive["static_surface"].astype(bool, copy=True)
+            has_observable_free = "observable_free" in archive.files
+            has_observable_surface = "observable_static_surface" in archive.files
+            if has_observable_free != has_observable_surface:
+                raise ValueError("observable free and surface masks must be provided together")
+            self.observable_free = (archive["observable_free"].astype(bool, copy=True)
+                                    if has_observable_free else None)
+            self.observable_surface = (
+                archive["observable_static_surface"].astype(bool, copy=True)
+                if has_observable_surface else None)
 
         self.task_shape = tuple(int(value) for value in self.metadata["shape"])
         self.map_shape = tuple(int(value) for value in self.metadata["map_shape"])
@@ -33,6 +42,24 @@ class CoverageAccumulator:
             raise ValueError("accessible-free denominator is zero")
         if not np.any(self.static_surface):
             raise ValueError("static-surface denominator is zero")
+        self.observability_audited = False
+        self.observable_free_fraction = None
+        self.observable_surface_fraction = None
+        if self.observable_free is not None:
+            if (self.observable_free.shape != self.task_shape or
+                    self.observable_surface.shape != self.task_shape):
+                raise ValueError("observable mask shape does not match metadata")
+            if np.any(self.observable_free & ~self.accessible_free):
+                raise ValueError("observable-free mask is not a subset of accessible free")
+            if np.any(self.observable_surface & ~self.static_surface):
+                raise ValueError("observable-surface mask is not a subset of static surface")
+            self.observable_free_fraction = (int(self.observable_free.sum()) /
+                                             int(self.accessible_free.sum()))
+            self.observable_surface_fraction = (int(self.observable_surface.sum()) /
+                                                int(self.static_surface.sum()))
+            self.observability_audited = (
+                np.array_equal(self.observable_free, self.accessible_free) and
+                np.array_equal(self.observable_surface, self.static_surface))
 
         self.accessible_flat = self.accessible_free.ravel(order="C")
         self.surface_flat = self.static_surface.ravel(order="C")
@@ -181,6 +208,10 @@ class CoverageAccumulator:
             status = "PROVISIONAL_NO_PROVENANCE_MESSAGES"
         elif self.planning_start_sim is None:
             status = "PROVISIONAL_NO_PLANNING_TIME_ORIGIN"
+        elif self.observable_free is not None and not self.observability_audited:
+            status = "PROVISIONAL_OBSERVABILITY_GAP"
+        elif self.observability_audited:
+            status = "PROVISIONAL_ACCESSIBLE_FREE_V2_OBSERVABILITY_AUDITED"
         else:
             status = "PROVISIONAL_ACCESSIBLE_FREE_V1"
         thresholds = {}
@@ -191,7 +222,9 @@ class CoverageAccumulator:
                 "censored": value is None,
             }
         return {
-            "schema_version": "cerlab-coverage-v2-provisional-1",
+            "schema_version": ("cerlab-coverage-v2-provisional-2"
+                               if self.observable_free is not None else
+                               "cerlab-coverage-v2-provisional-1"),
             "status": status,
             "valid": self.valid,
             "errors": list(self.errors),
@@ -208,5 +241,10 @@ class CoverageAccumulator:
             "known_volume_m3": self.task_seen_count * float(self.metadata["voxel_volume_m3"]),
             "thresholds": thresholds,
             "mask_content_sha256": self.metadata["mask_content_sha256"],
-            "note": "Provisional until oracle visibility and runtime validation pass.",
+            "observability_audited": self.observability_audited,
+            "observable_free_fraction": self.observable_free_fraction,
+            "observable_surface_fraction": self.observable_surface_fraction,
+            "note": ("Static observability audit passed; provisional until clean full-run validation."
+                     if self.observability_audited else
+                     "Provisional until oracle visibility and runtime validation pass."),
         }

@@ -64,15 +64,15 @@ The dated MVP runtime evidence and the limits of seed reproducibility are record
 Versioned experiment protocols, lightweight manifests, aggregate tables, and reports
 are stored in the project-level [`experiments`](../experiments/README.md) directory.
 
-Generate the Benchmark v2 floorplan2 ground-truth prototype with:
+Generate the Benchmark v2 floorplan2 observable ground-truth artifact with:
 
 ```bash
 rosrun exploration_benchmark generate_ground_truth_mask.py \
   --world "$(rospack find uav_simulator)/worlds/floorplan2/floorplan2_dynamic_5.world" \
-  --config "$(rospack find exploration_benchmark)/../experiments/benchmark_v2/config/floorplan2_static_v1.json" \
-  --output-mask /tmp/floorplan2_static_v1.npz \
-  --output-metadata /tmp/floorplan2_static_v1.metadata.json \
-  --output-preview /tmp/floorplan2_static_v1.png
+  --config "$(rospack find exploration_benchmark)/../experiments/benchmark_v2/config/floorplan2_static_observable_v2.json" \
+  --output-mask /tmp/floorplan2_static_observable_v2.npz \
+  --output-metadata /tmp/floorplan2_static_observable_v2.metadata.json \
+  --output-preview /tmp/floorplan2_static_observable_v2.png
 ```
 
 The committed mask is an offline evaluation artifact. It is not loaded by the
@@ -80,8 +80,9 @@ exploration planner and does not change map updates or path selection.
 
 On `feat/benchmark-v2`, the runner loads this mask by default and records provisional
 sensor-provenance coverage. Use `--disable-coverage` only for explicit compatibility
-runs. Coverage remains provisional until the scenario's oracle visibility audit has
-passed.
+runs. The default v2 mask records that all accessible-free and static-surface voxels
+passed the floorplan2 static observability audit. Coverage remains provisional until
+a clean full-run validation passes.
 
 `--environment-seed` controls Gazebo and `--planner-seed` controls DEP. The legacy
 `--seed N` remains available as shorthand for setting both to `N`; manifests always

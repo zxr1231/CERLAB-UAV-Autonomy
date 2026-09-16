@@ -229,6 +229,151 @@ def adjacent_to(mask):
     return adjacent
 
 
+def _shift_2d(mask, dx, dy):
+    """Return values at target+(dx,dy), filling outside the array with false."""
+    result = np.zeros_like(mask, dtype=bool)
+    nx, ny = mask.shape
+    if ((dx >= 0 and dx >= nx) or (dx < 0 and -dx >= nx) or
+            (dy >= 0 and dy >= ny) or (dy < 0 and -dy >= ny)):
+        return result
+    target_x = slice(0, nx-dx) if dx >= 0 else slice(-dx, nx)
+    source_x = slice(dx, nx) if dx >= 0 else slice(0, nx+dx)
+    target_y = slice(0, ny-dy) if dy >= 0 else slice(-dy, ny)
+    source_y = slice(dy, ny) if dy >= 0 else slice(0, ny+dy)
+    result[target_x, target_y] = mask[source_x, source_y]
+    return result
+
+
+def _bresenham_offsets(end_x, end_y):
+    """Integer cells after the origin on a 2-D Bresenham ray."""
+    x = y = 0
+    dx, dy = abs(int(end_x)), abs(int(end_y))
+    sx = 1 if end_x > 0 else -1 if end_x < 0 else 0
+    sy = 1 if end_y > 0 else -1 if end_y < 0 else 0
+    error = dx - dy
+    result = []
+    while x != end_x or y != end_y:
+        twice = 2 * error
+        if twice > -dy:
+            error -= dy
+            x += sx
+        if twice < dx:
+            error += dx
+            y += sy
+        result.append((x, y))
+    return result
+
+
+def _validate_visibility_config(config):
+    required = ("body_to_camera", "depth_intrinsics", "image_cols", "image_rows",
+                "depth_filter_margin", "depth_skip_pixel", "raycast_max_length",
+                "azimuth_samples", "convergence_samples")
+    visibility = config.get("visibility_oracle", {})
+    missing = [name for name in required if name not in visibility]
+    if missing:
+        raise ValueError("visibility oracle field(s) missing: %s" % missing)
+    transform = np.asarray(visibility["body_to_camera"], dtype=float).reshape((4, 4))
+    expected_rotation = np.array(((0.0, 0.0, 1.0),
+                                  (-1.0, 0.0, 0.0),
+                                  (0.0, -1.0, 0.0)))
+    if not np.allclose(transform[:3, :3], expected_rotation, atol=1e-9):
+        raise ValueError("visibility oracle currently requires the level CERLAB camera rotation")
+    if abs(transform[1, 3]) > 1e-9:
+        raise ValueError("visibility oracle currently requires zero lateral camera offset")
+    samples = int(visibility["azimuth_samples"])
+    convergence = [int(value) for value in visibility["convergence_samples"]]
+    if samples <= 0 or not convergence or convergence[-1] != samples:
+        raise ValueError("invalid visibility convergence samples")
+    if any(value <= 0 or samples % value or
+           (i and value <= convergence[i-1]) for i, value in enumerate(convergence)):
+        raise ValueError("visibility convergence samples must be increasing divisors")
+    intrinsics = np.asarray(visibility["depth_intrinsics"], dtype=float)
+    if intrinsics.size != 4 or np.any(intrinsics[:2] <= 0):
+        raise ValueError("invalid visibility camera intrinsics")
+    if int(visibility["image_cols"]) <= 2 * int(visibility["depth_filter_margin"]):
+        raise ValueError("invalid visibility image columns")
+    if int(visibility["depth_skip_pixel"]) <= 0:
+        raise ValueError("invalid visibility pixel stride")
+    return visibility, transform, intrinsics, convergence
+
+
+def oracle_visibility_masks(task_shape, flight_reachable, static_occupied,
+                            grid, config):
+    """Conservative visibility union from every flight voxel and nested yaw samples."""
+    visibility, transform, intrinsics, convergence = _validate_visibility_config(config)
+    final_samples = convergence[-1]
+    resolution = float(grid.resolution)
+    forward_offset = float(transform[0, 3])
+    camera_height = float(transform[2, 3])
+    _fx, fy, _cx, cy = intrinsics
+    image_rows = int(visibility["image_rows"])
+    margin = int(visibility["depth_filter_margin"])
+    pixel_stride = int(visibility["depth_skip_pixel"])
+    max_range = float(visibility["raycast_max_length"])
+    if image_rows <= 2 * margin or max_range <= 0 or forward_offset < 0:
+        raise ValueError("invalid visibility image bounds or range")
+    if task_shape[2] > 31:
+        raise ValueError("visibility bit mask supports at most 31 z cells")
+
+    occupied_xy = np.any(static_occupied, axis=2)
+    if not np.array_equal(static_occupied,
+                          np.broadcast_to(occupied_xy[:, :, None], static_occupied.shape)):
+        raise ValueError("visibility oracle currently requires vertically extruded occupancy")
+    target_z = grid.centers(2)
+    body_z = grid.centers(2)
+    radius_cells = int(math.ceil((max_range + forward_offset) / resolution))
+    endpoint_by_direction = []
+    seen_endpoints = set()
+    for index in range(final_samples):
+        angle = 2.0 * math.pi * index / final_samples
+        endpoint = (int(round(radius_cells * math.cos(angle))),
+                    int(round(radius_cells * math.sin(angle))))
+        if endpoint == (0, 0) or endpoint in seen_endpoints:
+            continue
+        seen_endpoints.add(endpoint)
+        endpoint_by_direction.append((index, endpoint))
+
+    visible_bits = np.zeros(task_shape[:2], dtype=np.uint32)
+    snapshots = {}
+    processed = set()
+    for sample_count in convergence:
+        step = final_samples // sample_count
+        direction_indices = {index for index in range(0, final_samples, step)} - processed
+        processed.update(direction_indices)
+        for index, endpoint in endpoint_by_direction:
+            if index not in direction_indices:
+                continue
+            blocked = np.zeros(task_shape[:2], dtype=bool)
+            for dx, dy in _bresenham_offsets(*endpoint):
+                body_distance = math.hypot(dx, dy) * resolution
+                optical_depth = body_distance - forward_offset
+                if optical_depth > 0:
+                    for body_z_index in range(flight_reachable.shape[2]):
+                        source = (_shift_2d(flight_reachable[:, :, body_z_index], dx, dy) &
+                                  ~blocked)
+                        if not np.any(source):
+                            continue
+                        delta_z = target_z - (body_z[body_z_index] + camera_height)
+                        pixel_v = cy - fy * delta_z / optical_depth
+                        last_pixel_v = margin + ((image_rows-margin-1-margin) //
+                                                  pixel_stride) * pixel_stride
+                        nearest_pixel_v = np.clip(
+                            margin + np.rint((pixel_v-margin) / pixel_stride) * pixel_stride,
+                            margin, last_pixel_v)
+                        ray_delta_z = (cy-nearest_pixel_v) * optical_depth / fy
+                        valid_z = ((np.abs(ray_delta_z-delta_z) <= resolution/2.0 + 1e-9) &
+                                   (np.hypot(optical_depth, delta_z) <= max_range + 1e-9))
+                        if np.any(valid_z):
+                            bit_value = np.uint32(sum(1 << int(z) for z in np.flatnonzero(valid_z)))
+                            visible_bits[source] |= bit_value
+                blocked |= _shift_2d(occupied_xy, dx, dy)
+        mask = np.zeros(task_shape, dtype=bool)
+        for z_index in range(task_shape[2]):
+            mask[:, :, z_index] = (visible_bits & np.uint32(1 << z_index)) != 0
+        snapshots[sample_count] = mask
+    return snapshots
+
+
 def canonical_mask_sha256(arrays):
     digest = hashlib.sha256()
     for name in sorted(arrays):
@@ -323,13 +468,46 @@ def build_masks(world_path, config):
         "static_surface": static_surface,
         "unreachable_free": unreachable_free,
     }
+    visibility_metadata = None
+    if "visibility_oracle" in config:
+        convergence_masks = oracle_visibility_masks(
+            accessible_free.shape, flight_reachable, occupied, grid, config)
+        sample_counts = sorted(convergence_masks)
+        observable_free = convergence_masks[sample_counts[-1]] & accessible_free
+        unobservable_accessible = accessible_free & ~observable_free
+        observable_static_surface = convergence_masks[sample_counts[-1]] & static_surface
+        unobservable_static_surface = static_surface & ~observable_static_surface
+        arrays["observable_free"] = observable_free
+        arrays["observable_static_surface"] = observable_static_surface
+        arrays["unobservable_accessible"] = unobservable_accessible
+        arrays["unobservable_static_surface"] = unobservable_static_surface
+        visibility_metadata = {
+            "algorithm": "nested_discrete_yaw_voxel_occlusion_v1",
+            "conservative_lower_bound": True,
+            "level_body_pose": True,
+            "dynamic_obstacles_excluded": True,
+            "azimuth_samples": sample_counts[-1],
+            "convergence_counts": {
+                str(samples): int((convergence_masks[samples] & accessible_free).sum())
+                for samples in sample_counts
+            },
+            "convergence_additions": {
+                str(sample_counts[i]): int(
+                    (convergence_masks[sample_counts[i]] & accessible_free).sum() -
+                    ((convergence_masks[sample_counts[i-1]] & accessible_free).sum()
+                                            if i else 0))
+                for i in range(len(sample_counts))
+            },
+            "config": config["visibility_oracle"],
+        }
     voxel_volume = grid.resolution ** 3
     task_voxel_count = int(np.prod(grid.shape))
     accessible_voxel_count = int(accessible_free.sum())
     map_shape = np.ceil(np.asarray(config["map_size"], dtype=float) /
                         grid.resolution).astype(int)
     metadata = {
-        "schema_version": "cerlab-ground-truth-mask-v1",
+        "schema_version": ("cerlab-ground-truth-mask-v2" if visibility_metadata
+                           else "cerlab-ground-truth-mask-v1"),
         "map_frame": config.get("map_frame", "map"),
         "map_origin": grid.map_origin.tolist(),
         "map_size": list(config["map_size"]),
@@ -369,6 +547,12 @@ def build_masks(world_path, config):
             "rotation": box.rotation.tolist(),
         } for box in boxes],
     }
+    if visibility_metadata is not None:
+        metadata["visibility_oracle"] = visibility_metadata
+        metadata["observable_fraction_of_accessible"] = (
+            int(arrays["observable_free"].sum()) / accessible_voxel_count)
+        metadata["observable_fraction_of_static_surface"] = (
+            int(arrays["observable_static_surface"].sum()) / int(static_surface.sum()))
     return arrays, metadata, grid
 
 
@@ -380,6 +564,8 @@ def topdown_image(arrays, grid, home_position):
     image = np.full(occupied.shape + (3,), 220, dtype=np.uint8)
     image[unreachable] = (150, 150, 150)
     image[accessible] = (245, 245, 245)
+    if "unobservable_accessible" in arrays:
+        image[arrays["unobservable_accessible"].any(axis=2)] = (235, 165, 65)
     image[occupied] = (20, 20, 20)
     image[flight] = (80, 190, 110)
     home = grid.position_to_local_index(home_position)
