@@ -137,9 +137,22 @@
 - Array partition, disjointness, subset, shape, dtype, and stored-hash checks passed.
 - No ROS/Gazebo processes remained.
 
-## Explicitly pending
+## Benchmark v2 completion
 
-- Formal same-commit matrix with at least ten seeds and paper-level statistics.
+Benchmark v2 is complete. The final same-commit matrix contains ten successful full
+runs from parent `8230c80`; all Coverage, collision, resource, and trajectory integrity
+checks passed. Seeds 3, 9, and 10 were repeated, and the downstream baseline replaces
+only their T95 values according to the recorded project decision. Original and repeat
+data remain preserved.
+
+The final report is `FINAL_BASELINE_10SEED_2026-09-17.md`. Reviewable aggregate
+artifacts are committed under `final_baseline/`; large raw logs remain in the workspace
+results tree. The selected T95-only aggregate SHA256 is
+`3fd086fe4d0f4dd13bcfebee13e886d0708ab59dfa315799199117ae515eb9d6`.
+
+The next phase is algorithm development: path-history marginal information gain,
+multiple candidate paths, and edge visibility caching, followed by matched-seed
+ablations against this frozen baseline.
 
 Formal baseline batch 1 is configured as three serial headless full runs using seed
 pairs 1/1, 2/2, and 3/3, timeout 900 s, rosbag disabled, and the audited v2 mask. It
@@ -165,10 +178,9 @@ while restricting algorithm-rate denominators to the one readable run. The final
 publishable matrix is therefore re-frozen as `floorplan2_dep_formal_10seed_v2.json`;
 all ten runs must use the commit containing that fix.
 
-The pipeline now has a validated floorplan2 v2 Coverage definition. Static
-observability and one clean full run have passed. This validates the measurement
-pipeline, while paper performance claims still require a same-commit multi-seed set;
-existing historical map point counts remain proxies.
+The pipeline has a validated floorplan2 v2 Coverage definition, static observability
+audit, full-run validation, and completed same-commit 10-seed baseline. Historical
+map-point counts remain proxies and must not be mixed with v2 Coverage.
 
 Draft PRs:
 
