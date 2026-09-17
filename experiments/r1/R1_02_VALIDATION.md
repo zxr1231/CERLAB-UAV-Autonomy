@@ -27,10 +27,11 @@ Result: 3/3 PASS
 ```
 
 The tests verify deterministic repeated loading, corruption rejection, and rejection
-of a directory without the manifest completion marker. Compilation verifies the C++
-map capture/export integration. A short live export smoke test belongs at the start of
-R1-03 data collection; until then, no claim is made that a real snapshot dataset has
-been collected.
+of a directory without the manifest completion marker. The initial selected-package
+compilation verified the map capture/export sources, but did not rebuild downstream
+`autonomous_flight` after the `occMap` class layout changed. R1-03's live smoke exposed
+that stale ABI, rebuilt the dependent target, and then passed export and reload. See
+`R1_03_VALIDATION.md`; this correction supersedes the original build-only confidence.
 
 Known scope boundary: the snapshot captures one atomic mapper value state after legacy
 path scoring. Candidate routes and legacy gain fields record what the live baseline

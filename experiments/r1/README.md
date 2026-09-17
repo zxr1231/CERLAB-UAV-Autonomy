@@ -90,5 +90,32 @@ payloads, dimension mismatches, and cross-file sequence or map-version mismatche
 - corruption and incomplete-snapshot tests fail closed;
 - no online scoring or trajectory code consumes snapshot data.
 
-R1-03 will implement visible unknown voxel sets against this fixed representation. It
-is deliberately outside the current batch.
+## R1-03 visible unknown voxel set
+
+R1-03 adds the offline `legacy_proxy_v1` evaluator. Given one immutable map, position,
+and yaw, it returns a `frozenset` of stable global voxel addresses. The implementation
+deliberately mirrors the current DEP proxy before introducing any sensor-model change:
+
+- target voxel must be Unknown and not inflated occupied;
+- target center must lie in the planning ROI and within `dmax`;
+- horizontal yaw difference must be at most half the configured horizontal FoV;
+- vertical FoV supplies the same z scan envelope used by `calculateUnknown()` rather
+  than a pinhole vertical-angle test;
+- `dmin` is preserved in provenance but remains unapplied, matching current source;
+- inflated occupied voxels block the target-to-viewpoint sampled line; Unknown voxels
+  do not block it.
+
+This is an explicit compatibility model, not a claim of physical camera fidelity. It
+uses voxel centers rather than DEP's floating scan origin so that every observation has
+one stable address. R1-04 must keep sampling-model differences separate from path
+history deduplication.
+
+Inspect one pose without changing planner behavior:
+
+```bash
+rosrun exploration_benchmark inspect_r1_visibility.py SNAPSHOT_DIRECTORY
+```
+
+Optional `--position X Y Z`, `--yaw RAD`, and `--list-addresses` arguments support
+controlled fixtures. The default output includes the visible set size and a SHA-256
+of sorted 64-bit addresses.

@@ -1,0 +1,40 @@
+{
+  "status": "integration_smoke_only",
+  "date": "2026-09-17",
+  "world": "floorplan2_dynamic_5.world",
+  "gazebo_seed": 1,
+  "dep_seed": 1,
+  "gui": false,
+  "planning_sequence": 1,
+  "map_version": 514557,
+  "map_resolution": 0.1,
+  "map_dimensions": [400, 400, 30],
+  "voxel_count": 4800000,
+  "occupancy_counts": {
+    "unknown": 4766627,
+    "free": 31859,
+    "occupied": 1514
+  },
+  "inflated_count": 9955,
+  "roadmap_nodes": 7,
+  "roadmap_edges": 9,
+  "goal_candidates": 7,
+  "candidate_paths": 4,
+  "selected_candidate": 0,
+  "visibility_model": "legacy_proxy_v1",
+  "visible_unknown_count": 409,
+  "visible_set_sha256": "59b749e3804ad8214b6ce2bb7f4f3d388b2f237432631c82e1d7f8d2f77b4721",
+  "repeat_hash_match": true,
+  "visibility_command_wall_seconds": 5.02,
+  "visibility_command_max_rss_kib": 33764,
+  "snapshot_files_sha256": {
+    "manifest.json": "0978ce925299a60a379d3ad7ac27d3c337818f437779b66f9bfcf8f9626b5ee5",
+    "map.bin": "ce82fa1cd48b7e267f2db269351f6ccf64684ccbd29956ad9ae6d6c179d3dc70",
+    "planner.json": "5ab98724deb148cb32ed28cf9e392a757432eba83e5261ca4bf224d9391078b2"
+  },
+  "notes": [
+    "This run validates export and offline evaluation only.",
+    "It is not part of the formal benchmark or novelty evidence.",
+    "The first launch failed because autonomous_flight had not been rebuilt after an occMap ABI change; rebuilding the dependent target fixed it."
+  ]
+}
