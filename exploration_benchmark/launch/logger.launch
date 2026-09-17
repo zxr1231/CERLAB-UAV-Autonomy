@@ -1,7 +1,11 @@
 <launch>
   <arg name="output_dir" />
+  <arg name="ground_truth_mask" default="" />
+  <arg name="ground_truth_metadata" default="" />
   <node pkg="exploration_benchmark" type="benchmark_logger.py"
         name="exploration_benchmark_logger" output="screen">
     <param name="output_dir" value="$(arg output_dir)" />
+    <param name="ground_truth_mask" value="$(arg ground_truth_mask)" />
+    <param name="ground_truth_metadata" value="$(arg ground_truth_metadata)" />
   </node>
 </launch>

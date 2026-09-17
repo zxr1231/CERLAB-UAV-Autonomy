@@ -1,0 +1,13 @@
+{
+  "schema_version": "cerlab-ground-truth-config-v1",
+  "map_frame": "map",
+  "map_origin": [-20.0, -20.0, -0.1],
+  "map_size": [40.0, 40.0, 3.0],
+  "resolution": 0.1,
+  "static_models": ["floorplan2"],
+  "boundary_links": ["Wall_0", "Wall_2", "Wall_4", "Wall_6"],
+  "task_z": [0.0, 2.5],
+  "home_position": [0.0, 0.0, 1.0],
+  "robot_size": [0.5, 0.5, 0.3],
+  "flight_z": [0.7, 1.2]
+}

@@ -1,0 +1,77 @@
+{
+  "coverage": {
+    "accessible_denominator": 980550,
+    "accessible_observed": 120891,
+    "errors": [],
+    "free_coverage": 0.1232889704757534,
+    "known_volume_m3": 123.51400000000002,
+    "mask_content_sha256": "23c85015a99be3ea585e4a407b6a2e6654eb7263bbb64ad2f4ba319e8f8a43da",
+    "note": "Provisional until oracle visibility and runtime validation pass.",
+    "observed_task": 123514,
+    "observed_total_full_map": 137459,
+    "planning_start_sim": 3.904,
+    "sequence": 612,
+    "status": "PROVISIONAL_ACCESSIBLE_FREE_V1",
+    "surface_coverage": 0.0892936170212766,
+    "surface_denominator": 29375,
+    "surface_observed": 2623,
+    "thresholds": {
+      "T80": {
+        "censored": true,
+        "seconds": null
+      },
+      "T90": {
+        "censored": true,
+        "seconds": null
+      },
+      "T95": {
+        "censored": true,
+        "seconds": null
+      }
+    },
+    "valid": true
+  },
+  "coverage_status": "PROVISIONAL_ACCESSIBLE_FREE_V1",
+  "cumulative_distance": 5.146303757076964,
+  "map_message_count": 539,
+  "map_points": 142593,
+  "mission_distance": 4.259210963542926,
+  "mission_end_sim": 45.031,
+  "mission_sim_duration": 41.65,
+  "mission_start_sim": 3.3810000000000002,
+  "mission_state": "HOME_REACHED",
+  "mission_wall_duration": 41.682030845999975,
+  "odom_count": 1519,
+  "passed": true,
+  "planning": {
+    "global": {
+      "count": 9,
+      "max_ms": 100.755,
+      "mean_ms": 24.66688888888889,
+      "p95_ms": 77.08899999999997
+    },
+    "local": {
+      "count": 4,
+      "max_ms": 0.164,
+      "mean_ms": 0.102,
+      "p95_ms": 0.1547
+    },
+    "return": {
+      "count": 1,
+      "max_ms": 0.053,
+      "mean_ms": 0.053,
+      "p95_ms": 0.053
+    }
+  },
+  "planning_event_count": 14,
+  "rtf": {
+    "count": 53,
+    "max": 1.0011246213523657,
+    "mean": 0.9992465304018472,
+    "p95": 0.9999839162499599
+  },
+  "sim_duration": 54.635,
+  "sim_end": 55.799,
+  "sim_start": 1.164,
+  "wall_duration": 55.00480793700001
+}

@@ -7,8 +7,10 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from exploration_benchmark.core import (TrajectoryAccumulator, atomic_write_json,
-                                        create_run_directory, duration_summary, percentile,
-                                        value_summary)
+                                        create_run_directory,
+                                        create_seed_pair_run_directory,
+                                        duration_summary, percentile,
+                                        resolve_seeds, value_summary)
 
 
 class BenchmarkCoreTest(unittest.TestCase):
@@ -51,6 +53,20 @@ class BenchmarkCoreTest(unittest.TestCase):
             path = Path(root) / "result.json"
             atomic_write_json(path, {"passed": True})
             self.assertEqual(json.loads(path.read_text())["passed"], True)
+
+    def test_seed_resolution_and_pair_directory(self):
+        self.assertEqual(resolve_seeds(seed=3), (3, 3))
+        self.assertEqual(resolve_seeds(seed=3, planner_seed=7), (3, 7))
+        self.assertEqual(resolve_seeds(environment_seed=2, planner_seed=9), (2, 9))
+        with self.assertRaises(ValueError):
+            resolve_seeds(environment_seed=2)
+        with self.assertRaises(ValueError):
+            resolve_seeds(seed=-1)
+        with tempfile.TemporaryDirectory() as root:
+            path = create_seed_pair_run_directory(root, "EXP-PAIR", 2, 9, "time")
+            self.assertEqual(path.relative_to(root).parts,
+                             ("EXP-PAIR", "environment_seed_002",
+                              "planner_seed_009", "time"))
 
 
 if __name__ == "__main__":

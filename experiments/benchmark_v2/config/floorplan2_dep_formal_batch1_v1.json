@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "experiment_id": "EXP-BENCH-V2-DEP-FORMAL-BATCH1-V1",
+  "method": "hire_return_home_500",
+  "mode": "full",
+  "timeout": 900,
+  "seed_pairs": [[1, 1], [2, 2], [3, 3]],
+  "repeats": 1,
+  "rviz": false,
+  "disable_coverage": false
+}

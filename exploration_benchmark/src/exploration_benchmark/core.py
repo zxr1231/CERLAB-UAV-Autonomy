@@ -80,6 +80,28 @@ def create_run_directory(results_root, experiment_id, seed, timestamp):
     return path
 
 
+def resolve_seeds(seed=None, environment_seed=None, planner_seed=None):
+    if seed is None and (environment_seed is None or planner_seed is None):
+        raise ValueError("provide legacy --seed or both environment and planner seeds")
+    environment_seed = seed if environment_seed is None else environment_seed
+    planner_seed = seed if planner_seed is None else planner_seed
+    environment_seed = int(environment_seed)
+    planner_seed = int(planner_seed)
+    if environment_seed < 0 or planner_seed < 0:
+        raise ValueError("seeds must be non-negative")
+    return environment_seed, planner_seed
+
+
+def create_seed_pair_run_directory(results_root, experiment_id, environment_seed,
+                                   planner_seed, timestamp):
+    path = (Path(results_root) / safe_component(experiment_id) /
+            ("environment_seed_%03d" % int(environment_seed)) /
+            ("planner_seed_%03d" % int(planner_seed)) /
+            safe_component(timestamp))
+    path.mkdir(parents=True, exist_ok=False)
+    return path
+
+
 def atomic_write_json(path, value):
     path = Path(path)
     temporary = path.with_name(path.name + ".tmp")
