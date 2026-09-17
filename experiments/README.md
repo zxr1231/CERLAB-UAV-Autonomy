@@ -24,3 +24,8 @@ under [`benchmark_v2`](benchmark_v2/METRICS_SPEC.md).
 The completed ten-seed baseline, T95 repeat policy, per-seed table, and final aggregate
 are documented in
 [`FINAL_BASELINE_10SEED_2026-09-17.md`](benchmark_v2/FINAL_BASELINE_10SEED_2026-09-17.md).
+
+Phase R1 observation-gain diagnostics are specified under [`r1`](r1/README.md).
+Generated map snapshots stay in `experiments/r1/snapshots/` and are intentionally
+ignored; only manifests, selected fixtures, aggregate tables, and reports should be
+committed.

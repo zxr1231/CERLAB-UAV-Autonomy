@@ -2,4 +2,5 @@
 *.py[cod]
 .pytest_cache/
 results/
+experiments/r1/snapshots/
 *.bag

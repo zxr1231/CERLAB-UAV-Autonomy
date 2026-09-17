@@ -19,6 +19,7 @@ catkin_install_python(PROGRAMS
   scripts/run_matrix.py
   scripts/summarize_trajectory_alignment.py
   scripts/summarize_matrix.py
+	scripts/inspect_r1_snapshot.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -31,4 +32,5 @@ if(CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/test_ground_truth.py)
   catkin_add_nosetests(test/test_resource_metrics.py)
   catkin_add_nosetests(test/test_trajectory_metrics.py)
+	catkin_add_nosetests(test/test_r1_snapshot.py)
 endif()
