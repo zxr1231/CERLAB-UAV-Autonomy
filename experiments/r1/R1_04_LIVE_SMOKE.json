@@ -1,0 +1,41 @@
+{
+  "status": "integration_smoke_only",
+  "date": "2026-09-17",
+  "world": "floorplan2_dynamic_5.world",
+  "gazebo_seed": 1,
+  "dep_seed": 1,
+  "planning_sequence": 1,
+  "map_version": 505484,
+  "sample_spacing_m": 0.5,
+  "selected_candidate": 0,
+  "rankings": {
+    "legacy_score": [0, 1, 2, 3],
+    "raw_utility": [0, 1, 2, 3],
+    "unique_utility": [0, 1, 2, 3]
+  },
+  "ranking_changes": {
+    "legacy_to_unique_top1": false,
+    "raw_to_unique_top1": false
+  },
+  "candidates": [
+    {"id": 0, "samples": 3, "legacy_gain": 2412, "legacy_score": 644.9027316305392, "raw_gain": 3846, "unique_gain": 1724, "duplicate_ratio": 0.5517420696827873, "unique_utility": 460.95037700292266},
+    {"id": 1, "samples": 3, "legacy_gain": 2137, "legacy_score": 495.0852714968143, "raw_gain": 3139, "unique_gain": 1815, "duplicate_ratio": 0.42179037910162476, "unique_utility": 420.4865548744586},
+    {"id": 2, "samples": 3, "legacy_gain": 1667, "legacy_score": 428.27378982661463, "raw_gain": 2353, "unique_gain": 1564, "duplicate_ratio": 0.33531661708457283, "unique_utility": 401.811762020891},
+    {"id": 3, "samples": 4, "legacy_gain": 1856, "legacy_score": 377.6187930821279, "raw_gain": 2619, "unique_gain": 1655, "duplicate_ratio": 0.36807941962581136, "unique_utility": 336.72365439166043}
+  ],
+  "invariants_passed": true,
+  "repeat_equal_excluding_timing": true,
+  "internal_total_wall_seconds": 3.306923144999928,
+  "external_command_wall_seconds": 3.58,
+  "report_sha256": "30c00fcaecf6bee6948360dcffb05820bc9b49a745f9c1f3c12ecac1745289c1",
+  "snapshot_files_sha256": {
+    "manifest.json": "c3adb897c8cc8bc53587462f1b30bca4025c00064d7e5b8105c2a0393881f771",
+    "map.bin": "5c5f9d3505d612d0e2eed0af3acdc82d96f3072a9aa344d899b7a65c22e6f7c2",
+    "planner.json": "6a78a93c6569ee964a694c811fe1c1417d8e71e8b956531a8d48815c81e5a11c"
+  },
+  "notes": [
+    "Substantial duplicate ratios in this snapshot did not alter ranking.",
+    "This fixture is not formal H1 evidence.",
+    "Raw-to-unique isolates deduplication; legacy-to-unique also changes sampling."
+  ]
+}

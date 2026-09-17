@@ -110,9 +110,9 @@ def _parse_map(raw):
                           tuple(dimensions), p_min_log, p_occ_log, payload)
 
 
-def load_frozen_map(directory):
+def load_frozen_map(directory, snapshot=None):
     """Load the immutable voxel arrays after validating the snapshot manifest."""
-    snapshot = load_snapshot(directory)
+    snapshot = snapshot or load_snapshot(directory)
     map_path = Path(directory) / snapshot["manifest"]["map_file"]
     return _parse_map(map_path.read_bytes())
 

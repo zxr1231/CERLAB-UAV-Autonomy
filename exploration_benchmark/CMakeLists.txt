@@ -21,6 +21,7 @@ catkin_install_python(PROGRAMS
   scripts/summarize_matrix.py
 	scripts/inspect_r1_snapshot.py
 	scripts/inspect_r1_visibility.py
+	scripts/diagnose_r1_path_gain.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -35,4 +36,5 @@ if(CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/test_trajectory_metrics.py)
 	catkin_add_nosetests(test/test_r1_snapshot.py)
 	catkin_add_nosetests(test/test_r1_visibility.py)
+	catkin_add_nosetests(test/test_r1_path_gain.py)
 endif()

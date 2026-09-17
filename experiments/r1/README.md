@@ -119,3 +119,40 @@ rosrun exploration_benchmark inspect_r1_visibility.py SNAPSHOT_DIRECTORY
 Optional `--position X Y Z`, `--yaw RAD`, and `--list-addresses` arguments support
 controlled fixtures. The default output includes the visible set size and a SHA-256
 of sorted 64-bit addresses.
+
+## R1-04 path gain diagnostics
+
+R1-04 samples every shortcut candidate polyline at a fixed spatial interval. Segment
+samples use the exported outgoing heading; the terminal sample uses the legacy
+best-yaw value. Shared segment endpoints are evaluated once, and rotation-only samples
+are intentionally excluded at this stage.
+
+For samples `V_0 ... V_n`, the report defines:
+
+```text
+raw_gain       = sum_i |V_i|
+unique_gain    = |union_i V_i|
+marginal_i     = |V_i minus union_{j<i} V_j|
+duplicate_ratio = 1 - unique_gain/raw_gain
+```
+
+Each candidate owns an independent history. The evaluator asserts `raw>=unique`, all
+marginals are nonnegative, and their sum equals `unique`. It records sample-level set
+hashes and the final union hash so repeated evaluation can be checked.
+
+`findBestPath()` now exports the exact legacy gain, distance, yaw distance, estimated
+time and score produced for every candidate during online baseline scoring. It does not
+recompute or replace the decision. Raw and unique utilities use that same exported
+estimated-time denominator.
+
+Run the offline diagnostic with:
+
+```bash
+rosrun exploration_benchmark diagnose_r1_path_gain.py SNAPSHOT_DIRECTORY \
+  --spacing 0.5 --output REPORT.json
+```
+
+Raw-versus-unique ranking isolates path-history deduplication under the new evaluator.
+Legacy-versus-unique also contains the effects of voxel-center and along-edge sampling,
+so it must not be attributed solely to deduplication. Sampling sensitivity belongs to
+R1-06, and actual observation validation remains a later phase.
