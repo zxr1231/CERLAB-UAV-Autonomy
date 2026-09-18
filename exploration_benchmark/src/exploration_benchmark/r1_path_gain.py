@@ -140,18 +140,25 @@ def diagnose_snapshot_paths(directory, spacing=0.5,
                             visibility_fn=visible_unknown_voxels):
     """Evaluate all exported candidates without changing planner state."""
     started = time.perf_counter()
+    stage_started = time.perf_counter()
     snapshot = load_snapshot(directory)
+    snapshot_load_seconds = time.perf_counter() - stage_started
     planner = snapshot["planner"]
+    stage_started = time.perf_counter()
     grid = load_frozen_map(directory, snapshot=snapshot)
+    frozen_map_load_seconds = time.perf_counter() - stage_started
     config = LegacyVisibilityConfig.from_planner(planner)
+    stage_started = time.perf_counter()
     candidates = [evaluate_candidate_path(grid, candidate, config, spacing, visibility_fn)
                   for candidate in planner["candidate_paths"]]
+    candidate_evaluation_seconds = time.perf_counter() - stage_started
     legacy_rank = [candidate["candidate_id"] for candidate in sorted(
         (candidate for candidate in candidates
          if candidate.get("legacy_metrics") and candidate["legacy_metrics"].get("valid")),
         key=lambda item: (-float(item["legacy_metrics"]["score"]), item["candidate_id"]))]
     raw_rank = _rank(candidates, "raw_utility")
     unique_rank = _rank(candidates, "unique_utility")
+    total_wall_seconds = time.perf_counter() - started
     return {
         "schema": "cerlab-r1-path-gain-v1",
         "source_snapshot": str(directory),
@@ -186,5 +193,12 @@ def diagnose_snapshot_paths(directory, spacing=0.5,
                                                for item in candidates),
             "candidate_histories_independent": True,
         },
-        "total_wall_seconds": time.perf_counter() - started,
+        "timing": {
+            "snapshot_validation_load_seconds": snapshot_load_seconds,
+            "frozen_map_reload_seconds": frozen_map_load_seconds,
+            "candidate_evaluation_seconds": candidate_evaluation_seconds,
+            "candidate_inner_seconds_sum": sum(candidate["evaluation_wall_seconds"]
+                                               for candidate in candidates),
+        },
+        "total_wall_seconds": total_wall_seconds,
     }

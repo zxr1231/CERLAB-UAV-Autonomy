@@ -65,3 +65,9 @@ The 25 snapshots come from one trajectory and are temporally correlated. Stage l
 are equal-count state snapshots, not equal coverage intervals. No confidence interval
 or significance claim is valid from this pilot alone. Formal H1 evidence still needs
 multiple seeds and layouts, and H2 still needs predicted-versus-actual observation.
+
+R1-06 subsequently found that 0.25 m is the defensible formal diagnostic spacing.
+Under 0.25 m, raw→unique Top-1 changed in 4/25 snapshots (16%) and mean duplicate ratio
+was 52.19%. These supersede the 0.5 m descriptive rates above for later R1 decisions;
+the difference itself demonstrates that gain magnitude and ranking are sampling-step
+sensitive. See `R1_06_VALIDATION.md`.

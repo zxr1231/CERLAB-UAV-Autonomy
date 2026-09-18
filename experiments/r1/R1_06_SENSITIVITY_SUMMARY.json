@@ -1,0 +1,51 @@
+{
+  "status": "single_run_sampling_sensitivity",
+  "date": "2026-09-18",
+  "snapshot_count": 25,
+  "candidate_count": 152,
+  "formal_spacing_m": 0.25,
+  "development_spacing_m": 0.5,
+  "rejected_spacing_m": 1.0,
+  "full_set": {
+    "0.25": {"samples": 8613, "time_seconds": 235.2135219630004, "max_rss_kib": 37780, "top1_agreement_vs_025": 1.0, "full_rank_agreement_vs_025": 1.0},
+    "0.5": {"samples": 4497, "time_seconds": 155.10617059999996, "max_rss_kib": 37420, "unique_gain_relative_error_mean": 0.05677118708494922, "unique_gain_relative_error_median": 0.03630705852572467, "top1_agreement_vs_025": 0.96, "full_rank_agreement_vs_025": 0.8, "rank_spearman": 0.9848744588744589},
+    "1.0": {"samples": 2483, "time_seconds": 111.7834739239999, "max_rss_kib": 36928, "unique_gain_relative_error_mean": 0.12972124599839335, "unique_gain_relative_error_median": 0.10833452927669346, "top1_agreement_vs_025": 0.8, "full_rank_agreement_vs_025": 0.6, "rank_spearman": 0.9564935064935065}
+  },
+  "convergence_subset_025_vs_0125": {
+    "snapshots": 6,
+    "candidates": 33,
+    "unique_gain_relative_error_mean": 0.027636589836012356,
+    "unique_gain_relative_error_median": 0.017921146953405017,
+    "top1_agreement": 1.0,
+    "full_rank_agreement": 0.8333333333333334,
+    "rank_spearman": 0.9944444444444445
+  },
+  "formal_025_h1_description": {
+    "duplicate_ratio_snapshot_mean": 0.5218906846641507,
+    "selected_duplicate_ratio_mean": 0.6715467710207129,
+    "raw_unique_order_change_rate": 0.36,
+    "raw_unique_top1_change_rate": 0.16,
+    "raw_choice_unique_relative_regret_mean": 0.00864115238627634,
+    "raw_choice_unique_relative_regret_max": 0.0783081338236454
+  },
+  "operational_05_profile": {
+    "candidate_evaluation_wall_fraction": 0.6324818407837086,
+    "exact_pose_yaw_reuse_fraction": 0.4109406270847231,
+    "exact_directed_sampled_edge_reuse_fraction": 0.4253164556962026,
+    "cache_gate_passed_offline_only": true,
+    "cache_action": "defer_until_guided_cpp_pipeline_exists"
+  },
+  "artifact_sha256": {
+    "full_comparison": "ffbb7af6ca788c2cd5e717afea05f6a0e05b7660e61669e02059e7fbc6054e7f",
+    "convergence_subset": "64d3ae1f6c7a833a31f60f7c74d9ee6f2186eb822438741288c9b1fd647455f5",
+    "spacing_025_summary": "33909c83cea3c83697fbcfa13139eea0818eb6183ae898e61491a3dc411004a7",
+    "spacing_050_summary": "d729290d86c038193d3a592b3a708b61936e03df1d722fd9a20092f6cffca472",
+    "spacing_100_summary": "93770a6668ad9ae87d9ca15cdc8bce9ad516598c209326bfec60bc72ab2041e5"
+  },
+  "limitations": [
+    "One scene and one correlated trajectory.",
+    "Offline Python timing is not online C++ planner timing.",
+    "The 0.125 m convergence check covers six stage-endpoint snapshots.",
+    "Predicted gain has not yet been validated against actual observation."
+  ]
+}

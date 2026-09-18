@@ -4,6 +4,7 @@ import csv
 import json
 import math
 import os
+import resource
 import statistics
 import tempfile
 from pathlib import Path
@@ -223,6 +224,7 @@ def run_snapshot_study(snapshot_root, output_directory, spacing=0.5, resume=True
         "rows": rows,
         "failures": failures,
         "aggregate": aggregate_rows(rows) if rows else None,
+        "process_max_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
     }
     _atomic_json(output_directory / "summary.json", summary)
     if rows:
