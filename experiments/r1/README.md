@@ -156,3 +156,24 @@ Raw-versus-unique ranking isolates path-history deduplication under the new eval
 Legacy-versus-unique also contains the effects of voxel-center and along-edge sampling,
 so it must not be attributed solely to deduplication. Sampling sensitivity belongs to
 R1-06, and actual observation validation remains a later phase.
+
+## R1-05 snapshot study
+
+R1-05 collects every successful planning snapshot during one complete baseline run,
+then removes retry bursts using only vehicle/map state. Starting from the first retained
+snapshot, another snapshot is retained when vehicle displacement is at least 1 m or map
+version increases by at least 500,000; the final snapshot is always retained. Gain,
+ranking and candidate identity are never used for selection. Retained snapshots are
+sorted by planning sequence and divided into equal-count early/middle/late tertiles.
+
+Run or resume the offline study with:
+
+```bash
+rosrun exploration_benchmark study_r1_snapshots.py SNAPSHOT_ROOT OUTPUT_DIRECTORY \
+  --spacing 0.5 --min-position-delta 1.0 --min-map-version-delta 500000
+```
+
+Each detailed report is committed atomically and reused on resume only when source path
+and spacing match. Failed snapshots remain listed in `summary.json`; they are not
+silently removed. The study reports snapshot-level change rates so bursts with many
+candidates do not receive extra statistical weight.

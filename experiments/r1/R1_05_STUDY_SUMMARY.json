@@ -1,0 +1,51 @@
+{
+  "status": "single_run_pilot",
+  "date": "2026-09-18",
+  "world": "floorplan2_dynamic_5.world",
+  "gazebo_seed": 1,
+  "dep_seed": 1,
+  "completion_gain_threshold": 500,
+  "return_trigger_sim_time_approx": 534.75,
+  "home_reached_sim_time_approx": 569.62,
+  "sample_spacing_m": 0.5,
+  "raw_snapshot_count": 64,
+  "selected_snapshot_count": 25,
+  "candidate_count": 152,
+  "failures": 0,
+  "selection_policy": {
+    "type": "state_change_decorrelation",
+    "min_position_delta_m": 1.0,
+    "min_map_version_delta": 500000,
+    "keep_first": true,
+    "keep_final": true,
+    "uses_gain_or_ranking": false
+  },
+  "stage_counts": {"early": 9, "middle": 8, "late": 8},
+  "overall": {
+    "duplicate_ratio_snapshot_mean": 0.3587122171668852,
+    "selected_duplicate_ratio_mean": 0.48607918486430196,
+    "raw_unique_order_change_rate": 0.32,
+    "raw_unique_top1_change_rate": 0.08,
+    "raw_unique_rank_spearman_mean": 0.9745108225108225,
+    "raw_choice_unique_relative_regret_mean": 0.0034735266553107265,
+    "raw_choice_unique_relative_regret_max": 0.05295797765506872,
+    "zero_marginal_fraction_mean": 0.6578944852877284,
+    "legacy_unique_top1_change_rate": 0.16,
+    "diagnostic_wall_seconds_sum": 152.9073842510004
+  },
+  "by_stage": {
+    "early": {"snapshots": 9, "duplicate_ratio_mean": 0.4329672932203751, "raw_unique_order_change_rate": 0.3333333333333333, "raw_unique_top1_change_rate": 0.1111111111111111, "zero_marginal_fraction_mean": 0.4235608268753881},
+    "middle": {"snapshots": 8, "duplicate_ratio_mean": 0.41033151196976553, "raw_unique_order_change_rate": 0.25, "raw_unique_top1_change_rate": 0.125, "zero_marginal_fraction_mean": 0.6474670640456903},
+    "late": {"snapshots": 8, "duplicate_ratio_mean": 0.22355596180382883, "raw_unique_order_change_rate": 0.375, "raw_unique_top1_change_rate": 0.0, "zero_marginal_fraction_mean": 0.9319472722436494}
+  },
+  "raw_unique_top1_changes": [
+    {"planning_sequence": 4, "stage": "early", "raw_candidate": 0, "unique_candidate": 1, "unique_relative_advantage": 0.05295797765506872},
+    {"planning_sequence": 52, "stage": "middle", "raw_candidate": 2, "unique_candidate": 3, "unique_relative_advantage": 0.03388018872769944}
+  ],
+  "generated_summary_sha256": "e9efcd9aa5f4860739c1b3fdf8678c68caec3ed6bd690b2b810424a795c84a25",
+  "generated_csv_sha256": "4c1f600620ac0c7dd4ecbd1399ef65ea6a520c6d7e90dc10f7d18a680063216a",
+  "notes": [
+    "Snapshots are temporally correlated and are not independent statistical trials.",
+    "Legacy-to-unique changes include sampling differences; raw-to-unique isolates deduplication."
+  ]
+}

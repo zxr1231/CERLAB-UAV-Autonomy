@@ -3,4 +3,5 @@
 .pytest_cache/
 results/
 experiments/r1/snapshots/
+experiments/r1/studies/
 *.bag
