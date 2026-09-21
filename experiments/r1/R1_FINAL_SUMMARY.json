@@ -1,0 +1,46 @@
+{
+  "schema": "cerlab-r1-final-decision-v1",
+  "date": "2026-09-21",
+  "status": "complete",
+  "decision": "conditional_go_to_r2_shadow_predicted_actual_validation",
+  "online_behavior_changed": false,
+  "formal_sampling_spacing_m": 0.25,
+  "pilot_evidence": {
+    "scene_count": 1,
+    "run_count": 1,
+    "raw_snapshot_count": 64,
+    "state_decorrelated_snapshot_count": 25,
+    "candidate_route_count": 152,
+    "duplicate_ratio_snapshot_mean": 0.5218906846641507,
+    "selected_route_duplicate_ratio_mean": 0.6715467710207129,
+    "raw_unique_full_order_change_rate": 0.36,
+    "raw_unique_top1_change_rate": 0.16,
+    "raw_choice_unique_relative_regret_mean": 0.00864115238627634,
+    "raw_choice_unique_relative_regret_max": 0.0783081338236454
+  },
+  "hypotheses": {
+    "H1": "pilot_supported_not_formal",
+    "H2": "not_tested_mandatory_r2_gate",
+    "H3": "not_tested",
+    "H4": "not_tested",
+    "H5": "offline_proxy_gate_passed_deferred"
+  },
+  "method_positioning": {
+    "primary": "observation_opportunity_guided_budgeted_route_generation",
+    "supporting": [
+      "path_history_aware_unique_observation_evaluation",
+      "observation_value_preserving_shortcut_if_needed"
+    ],
+    "engineering_only_until_reprofiled": [
+      "dependency_aware_incremental_edge_evaluation"
+    ]
+  },
+  "next_task": "R2-01_freeze_plan_execution_interval_and_actual_observation_linkage",
+  "frozen_constraints": [
+    "legacy_completion_threshold_500",
+    "benchmark_v2_world_sensor_dynamics_and_seed_rules",
+    "no_online_route_selection_change",
+    "no_full_rosbag",
+    "exclude_artificial_takeoff_clear_from_actual_observation"
+  ]
+}

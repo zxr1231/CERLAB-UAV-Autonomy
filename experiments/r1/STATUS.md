@@ -8,8 +8,8 @@
 | R1-04 Path gain diagnostics | Complete | exact per-candidate legacy export, raw/unique/marginal evaluator, seven focused tests, one live smoke |
 | R1-05 Snapshot study | Complete as single-run pilot | 64 raw / 25 state-decorrelated snapshots, 152 candidates, `R1_05_VALIDATION.md` |
 | R1-06 Runtime and sensitivity | Complete | 0.125 subset convergence; 0.25/0.5/1.0 full comparison; runtime/RSS/reuse/cache gate |
-| R1-07 Phase decision | Not started | depends on R1-05/06 |
+| R1-07 Phase decision | Complete | conditional GO to R2 shadow-mode predicted/actual validation; `R1_FINAL_DECISION.md` |
 
-Resume from R1-07. Do not rerun R1-01 through R1-06 unless validation fails or the
-schema changes. Use 0.25 m for formal fixed-snapshot diagnostics; 0.5 m is permitted
-only for faster development checks. R1 evidence remains a single correlated run.
+Phase R1 is complete. Resume from R2-01 only after explicit user instruction. Do not
+rerun R1 unless validation fails or the snapshot/evaluator schema changes. Use 0.25 m
+for formal diagnostics; 0.5 m is permitted only for labelled development checks.

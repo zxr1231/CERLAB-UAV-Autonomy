@@ -177,3 +177,10 @@ Each detailed report is committed atomically and reused on resume only when sour
 and spacing match. Failed snapshots remain listed in `summary.json`; they are not
 silently removed. The study reports snapshot-level change rates so bursts with many
 candidates do not receive extra statistical weight.
+
+## R1 completion decision
+
+R1-01 through R1-07 are complete. The decision is a conditional GO to R2 shadow-mode
+predicted/actual observation validation. Unique gain remains a supporting evaluator,
+not a standalone primary contribution. See `R1_FINAL_DECISION.md`; no R2 behavior is
+implemented or enabled by R1.
