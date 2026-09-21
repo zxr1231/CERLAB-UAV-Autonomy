@@ -39,7 +39,8 @@ explicit consistency checks rather than relying only on this source inspection.
 
 ## Current boundary
 
-R2-01 through R2-03 are complete. Actual observation sets are assigned by sensor
+R2-01 through R2-04 are complete. Actual observation sets are assigned by sensor
 message timestamp, while callback-time interval IDs are retained for boundary audit.
-Predicted sets, overlap metrics and correlation analysis have not yet been implemented.
-See `STATUS.md`, `R2_01_02_VALIDATION.md`, and `R2_03_VALIDATION.md`.
+Four predicted layers are built on each global-plan snapshot. Overlap metrics and
+correlation analysis have not yet been implemented. See `STATUS.md` and the validation
+reports through `R2_04_VALIDATION.md`.

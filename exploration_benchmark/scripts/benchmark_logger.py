@@ -85,6 +85,7 @@ class BenchmarkLogger:
             "planning.csv", ["sim_time", "wall_elapsed", "kind", "schema_version",
                              "sequence", "success", "recovery_used", "replan_reason",
                              "map_version", "depth_sequence", "trajectory_start_sim",
+                             "start_x", "start_y", "start_z", "start_yaw",
                              "total_ms", "frontier_ms", "roadmap_ms",
                              "prune_ms", "gain_update_ms", "goal_selection_ms",
                              "candidate_search_ms", "path_scoring_ms", "input_path_ms",
@@ -247,7 +248,8 @@ class BenchmarkLogger:
             self.planning_count += 1
             fields = ["schema_version", "sequence", "success", "recovery_used",
                       "replan_reason", "map_version", "depth_sequence",
-                      "trajectory_start_sim", "total_ms", "frontier_ms",
+                      "trajectory_start_sim", "start_x", "start_y", "start_z",
+                      "start_yaw", "total_ms", "frontier_ms",
                       "roadmap_ms", "prune_ms", "gain_update_ms", "goal_selection_ms",
                       "candidate_search_ms", "path_scoring_ms", "input_path_ms",
                       "update_path_ms", "bspline_ms", "roadmap_nodes", "goal_candidates",
@@ -263,6 +265,8 @@ class BenchmarkLogger:
             self.planning_writer.writerow(row)
             self.planning_file.flush()
             if kind == "global":
+                self.record_path("prm_raw", payload.get("sequence"),
+                                 payload.get("raw_path_points"), payload)
                 self.record_path("prm", payload.get("sequence"),
                                  payload.get("selected_path_points"), payload)
             elif kind == "local":
