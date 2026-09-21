@@ -1,0 +1,39 @@
+{
+  "status": "integration_smoke_passed",
+  "date": "2026-09-21",
+  "world": "floorplan2_dynamic_5.world",
+  "gazebo_seed": 1,
+  "dep_seed": 1,
+  "gui": false,
+  "planning_rows": 51,
+  "planning_schema3_rows": 51,
+  "execution_intervals": 43,
+  "valid_execution_intervals": 43,
+  "observation_delta_messages": 1416,
+  "associated_observation_delta_messages": 1315,
+  "associated_first_observation_addresses": 443700,
+  "replan_reasons_observed": [
+    "dynamic_obstacle_periodic",
+    "new_global_path",
+    "next_waypoint"
+  ],
+  "interval_end_reasons_observed": [
+    "LOGGER_STOPPED",
+    "SUPERSEDED_BY_TRAJECTORY"
+  ],
+  "online_behavior_changed": false,
+  "full_rosbag_used": false,
+  "failed_fixture_retained": "experiments/r2/results/smoke_20260921",
+  "passing_fixture": "experiments/r2/results/smoke_pass_20260921",
+  "hashes": {
+    "execution_intervals.csv": "95c79a52279b62d6b71659dc8664a031ffa890326880bea9fce4b5acea3772a7",
+    "observation_deltas.jsonl": "dda913502f38d5a1495ef2655b2b11fd497323426d10fdab089ad39328499566",
+    "planning.csv": "6b8d1a3a2ec9c318311ef5cfabb2631066c012795ea32b59b30a96bd00577f1f",
+    "summary.json": "c505f4747f080b98173990082cb7d461adfb4638002b3123703fbd9d5076e0c5"
+  },
+  "notes": [
+    "This fixture validates linkage and file integrity only.",
+    "Unassociated deltas are retained with interval ID zero.",
+    "No predicted-versus-actual metric has been computed."
+  ]
+}

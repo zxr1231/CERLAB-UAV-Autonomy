@@ -18,6 +18,8 @@ from exploration_benchmark.core import (TrajectoryAccumulator, atomic_write_json
                                         duration_summary, value_summary)
 from exploration_benchmark.collision_metrics import CollisionEpisodeAccumulator
 from exploration_benchmark.coverage import CoverageAccumulator
+from exploration_benchmark.execution_intervals import (INTERVAL_FIELDS,
+                                                        ExecutionIntervalTracker)
 
 
 class BenchmarkLogger:
@@ -44,6 +46,10 @@ class BenchmarkLogger:
         self.map_count = 0
         self.planning_count = 0
         self.active_trajectory_id = 0
+        self.active_global_sequence = 0
+        self.latest_odom = None
+        self.execution_intervals = ExecutionIntervalTracker()
+        self.observation_delta_count = 0
         self.recorded_path_keys = set()
         self.global_times = []
         self.local_times = []
@@ -69,14 +75,17 @@ class BenchmarkLogger:
         self.trajectory_file, self.trajectory_writer = self._csv(
             "trajectory.csv", ["sim_time", "wall_elapsed", "x", "y", "z", "yaw",
                                "vx", "vy", "vz", "distance_increment", "cumulative_distance",
-                               "mission_distance", "trajectory_id"])
+                               "mission_distance", "trajectory_id", "execution_interval_id",
+                               "global_sequence"])
         self.metrics_file, self.metrics_writer = self._csv(
             "metrics.csv", ["sim_time", "wall_elapsed", "mission_state", "map_points",
                             "cumulative_distance", "mission_distance", "odom_count",
                             "map_message_count", "rtf"])
         self.planning_file, self.planning_writer = self._csv(
-            "planning.csv", ["sim_time", "wall_elapsed", "kind", "sequence", "success",
-                             "recovery_used", "total_ms", "frontier_ms", "roadmap_ms",
+            "planning.csv", ["sim_time", "wall_elapsed", "kind", "schema_version",
+                             "sequence", "success", "recovery_used", "replan_reason",
+                             "map_version", "depth_sequence", "trajectory_start_sim",
+                             "total_ms", "frontier_ms", "roadmap_ms",
                              "prune_ms", "gain_update_ms", "goal_selection_ms",
                              "candidate_search_ms", "path_scoring_ms", "input_path_ms",
                              "update_path_ms", "bspline_ms", "roadmap_nodes",
@@ -86,6 +95,8 @@ class BenchmarkLogger:
                              "selected_path_poses", "input_path_length",
                              "input_path_poses", "bspline_path_length",
                              "bspline_path_poses", "path_length", "raw_json"])
+        self.execution_file, self.execution_writer = self._csv(
+            "execution_intervals.csv", INTERVAL_FIELDS)
         self.coverage_file, self.coverage_writer = self._csv(
             "coverage.csv", ["sim_time", "wall_elapsed", "planning_elapsed",
                              "sequence", "raycast_id", "delta_count",
@@ -102,6 +113,8 @@ class BenchmarkLogger:
         self.events_file = (self.output / "events.jsonl").open("x", encoding="utf-8")
         self.planned_paths_file = (self.output / "planned_paths.jsonl").open(
             "x", encoding="utf-8")
+        self.observation_deltas_file = (self.output / "observation_deltas.jsonl").open(
+            "x", encoding="utf-8")
 
         rospy.Subscriber("/CERLAB/quadcopter/odom", Odometry, self.odom_callback, queue_size=50)
         rospy.Subscriber("/dynamic_map/explored_voxel_map", PointCloud2, self.map_callback, queue_size=1)
@@ -109,9 +122,8 @@ class BenchmarkLogger:
         rospy.Subscriber("/dynamicExploration/planning_event", String, self.planning_callback, queue_size=100)
         rospy.Subscriber("/CERLAB/quadcopter/contacts", ContactsState,
                          self.collision_callback, queue_size=100)
-        if self.coverage is not None:
-            rospy.Subscriber("/dynamic_map/sensor_observation_delta", ObservedVoxelDelta,
-                             self.coverage_callback, queue_size=100)
+        rospy.Subscriber("/dynamic_map/sensor_observation_delta", ObservedVoxelDelta,
+                         self.observation_callback, queue_size=100)
         self.timer = rospy.Timer(rospy.Duration(1.0), self.metric_timer)
         rospy.on_shutdown(self.close)
         self.event("LOGGER_STARTED")
@@ -141,11 +153,17 @@ class BenchmarkLogger:
 
     def odom_callback(self, message):
         with self.lock:
+            if self.closed:
+                return
             sim_time = message.header.stamp.to_sec() or rospy.get_time()
             position = message.pose.pose.position
             velocity = message.twist.twist.linear
+            yaw = self.yaw(message.pose.pose.orientation)
             increment, warning = self.trajectory.update(
                 sim_time, (position.x, position.y, position.z))
+            self.latest_odom = ((position.x, position.y, position.z), yaw)
+            self.execution_intervals.observe_odom(
+                sim_time, self.latest_odom[0], yaw, increment)
             self.odom_count += 1
             if self.sim_start is None:
                 self.sim_start = sim_time
@@ -156,28 +174,36 @@ class BenchmarkLogger:
                 "sim_time": "%.6f" % sim_time,
                 "wall_elapsed": "%.6f" % self.wall_elapsed(),
                 "x": position.x, "y": position.y, "z": position.z,
-                "yaw": self.yaw(message.pose.pose.orientation),
+                "yaw": yaw,
                 "vx": velocity.x, "vy": velocity.y, "vz": velocity.z,
                 "distance_increment": increment,
                 "cumulative_distance": self.trajectory.distance,
                 "mission_distance": "" if self.mission_distance_start is None else
                                     self.trajectory.distance-self.mission_distance_start,
                 "trajectory_id": self.active_trajectory_id,
+                "execution_interval_id": self.active_trajectory_id,
+                "global_sequence": self.active_global_sequence,
             })
             if self.odom_count % 30 == 0:
                 self.trajectory_file.flush()
 
     def map_callback(self, message):
         with self.lock:
+            if self.closed:
+                return
             self.map_points = int(message.width) * int(message.height)
             self.map_count += 1
 
     def state_callback(self, message):
         with self.lock:
+            if self.closed:
+                return
             if message.data != self.state:
                 old_state = self.state
                 self.state = message.data
                 self.event("MISSION_STATE", previous=old_state, current=self.state)
+                if self.state in ("RETURNING_HOME", "HOME_REACHED"):
+                    self.close_execution_interval("MISSION_STATE_" + self.state)
                 if self.state == "EXPLORING" and self.mission_start_sim is None:
                     self.mission_start_sim = rospy.get_time()
                     self.mission_start_wall = self.wall_elapsed()
@@ -188,6 +214,8 @@ class BenchmarkLogger:
 
     def planning_callback(self, message):
         with self.lock:
+            if self.closed:
+                return
             try:
                 payload = json.loads(message.data)
             except (TypeError, ValueError) as error:
@@ -195,13 +223,31 @@ class BenchmarkLogger:
                 return
             kind = payload.get("kind", "unknown")
             if (kind == "local" and payload.get("success") and payload.get("trajectory_id")):
-                self.active_trajectory_id = int(payload["trajectory_id"])
+                trajectory_id = int(payload["trajectory_id"])
+                global_sequence = int(payload.get("global_sequence") or 0)
+                pose = self.latest_odom
+                closed = self.execution_intervals.start(
+                    trajectory_id, global_sequence,
+                    payload.get("trajectory_start_sim") or payload.get("sim_time", rospy.get_time()),
+                    self.wall_elapsed(), payload.get("replan_reason", "unspecified"),
+                    payload.get("map_version"), payload.get("depth_sequence"),
+                    None if pose is None else pose[0], 0.0 if pose is None else pose[1])
+                self.write_execution_interval(closed)
+                self.active_trajectory_id = trajectory_id
+                self.active_global_sequence = global_sequence
+                self.event("EXECUTION_INTERVAL_STARTED", interval_id=trajectory_id,
+                           global_sequence=global_sequence,
+                           reason=payload.get("replan_reason", "unspecified"),
+                           map_version=payload.get("map_version"),
+                           depth_sequence=payload.get("depth_sequence"))
             total = payload.get("total_ms")
             if isinstance(total, (int, float)):
                 {"global": self.global_times, "local": self.local_times,
                  "return": self.return_times}.get(kind, []).append(float(total))
             self.planning_count += 1
-            fields = ["sequence", "success", "recovery_used", "total_ms", "frontier_ms",
+            fields = ["schema_version", "sequence", "success", "recovery_used",
+                      "replan_reason", "map_version", "depth_sequence",
+                      "trajectory_start_sim", "total_ms", "frontier_ms",
                       "roadmap_ms", "prune_ms", "gain_update_ms", "goal_selection_ms",
                       "candidate_search_ms", "path_scoring_ms", "input_path_ms",
                       "update_path_ms", "bspline_ms", "roadmap_nodes", "goal_candidates",
@@ -227,6 +273,7 @@ class BenchmarkLogger:
                                      payload.get("bspline_path_points"), payload)
             elif kind == "return":
                 self.active_trajectory_id = 0
+                self.active_global_sequence = 0
                 self.record_path("return", payload.get("sequence"),
                                  payload.get("path_points"), payload)
 
@@ -263,6 +310,26 @@ class BenchmarkLogger:
         }
         self.planned_paths_file.write(json.dumps(record, sort_keys=True) + "\n")
         self.planned_paths_file.flush()
+
+    def write_execution_interval(self, row):
+        if row is None:
+            return
+        serializable = dict(row)
+        serializable["errors"] = json.dumps(serializable["errors"], sort_keys=True)
+        self.execution_writer.writerow(serializable)
+        self.execution_file.flush()
+        self.event("EXECUTION_INTERVAL_ENDED", interval_id=row["interval_id"],
+                   global_sequence=row["global_sequence"], reason=row["end_reason"],
+                   duration_sim=row["duration_sim"], odom_count=row["odom_count"],
+                   executed_distance=row["executed_distance"], valid=row["valid"])
+
+    def close_execution_interval(self, reason, map_version=None, depth_sequence=None):
+        row = self.execution_intervals.close(
+            rospy.get_time(), self.wall_elapsed(), reason, map_version, depth_sequence)
+        self.write_execution_interval(row)
+        if row is not None:
+            self.active_trajectory_id = 0
+            self.active_global_sequence = 0
 
     def load_planning_start(self):
         if self.planning_start_sim is not None:
@@ -303,6 +370,8 @@ class BenchmarkLogger:
 
     def collision_callback(self, message):
         with self.lock:
+            if self.closed:
+                return
             self.load_planning_start()
             sim_time = message.header.stamp.to_sec() or rospy.get_time()
             if self.planning_start_sim is None or sim_time < self.planning_start_sim:
@@ -327,10 +396,28 @@ class BenchmarkLogger:
                            episode_id=self.collisions.active["episode_id"],
                            phase=self.collisions.active["phase"], pairs=pairs)
 
-    def coverage_callback(self, message):
+    def observation_callback(self, message):
         with self.lock:
+            if self.closed:
+                return
             self.load_planning_start()
             sim_time = message.header.stamp.to_sec() or rospy.get_time()
+            self.observation_delta_count += 1
+            self.observation_deltas_file.write(json.dumps({
+                "sim_time": sim_time,
+                "wall_elapsed": self.wall_elapsed(),
+                "sensor_sequence": int(message.sequence),
+                "raycast_id": int(message.raycast_id),
+                "observed_total": int(message.observed_total),
+                "delta_count": len(message.addresses),
+                "addresses": [int(value) for value in message.addresses],
+                "execution_interval_id": self.active_trajectory_id,
+                "trajectory_id": self.active_trajectory_id,
+                "global_sequence": self.active_global_sequence,
+            }, sort_keys=True) + "\n")
+            self.observation_deltas_file.flush()
+            if self.coverage is None:
+                return
             sample = self.coverage.ingest(message.sequence, message.observed_total,
                                           message.addresses, sim_time,
                                           message.raycast_id)
@@ -355,6 +442,8 @@ class BenchmarkLogger:
 
     def metric_timer(self, _event):
         with self.lock:
+            if self.closed:
+                return
             self.load_planning_start()
             sim_time = rospy.get_time()
             self.record_collision_episodes(self.collisions.advance(sim_time))
@@ -399,12 +488,14 @@ class BenchmarkLogger:
                 return
             self.closed = True
             self.load_planning_start()
+            self.close_execution_interval("LOGGER_STOPPED")
             self.record_collision_episodes(self.collisions.advance(
                 self.sim_end if self.sim_end is not None else rospy.get_time(), force=True))
             self.event("LOGGER_STOPPED")
             for stream in (self.trajectory_file, self.metrics_file,
                            self.planning_file, self.coverage_file, self.events_file,
-                           self.planned_paths_file, self.collision_file):
+                           self.planned_paths_file, self.collision_file,
+                           self.execution_file, self.observation_deltas_file):
                 stream.flush()
                 stream.close()
             summary = {
@@ -426,6 +517,8 @@ class BenchmarkLogger:
                 "map_message_count": self.map_count,
                 "planning_event_count": self.planning_count,
                 "planned_path_count": len(self.recorded_path_keys),
+                "execution_interval_count": self.execution_intervals.completed_count,
+                "observation_delta_count": self.observation_delta_count,
                 "collision": self.collisions.summary(),
                 "planning": {
                     "global": duration_summary(self.global_times),

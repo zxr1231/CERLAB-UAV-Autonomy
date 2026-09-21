@@ -4,4 +4,5 @@
 results/
 experiments/r1/snapshots/
 experiments/r1/studies/
+experiments/r2/results/
 *.bag
