@@ -1,0 +1,27 @@
+{
+  "status": "actual_observation_set_construction_passed",
+  "date": "2026-09-21",
+  "source_fixture": "experiments/r2/results/smoke_pass_20260921",
+  "schema": "cerlab-r2-actual-observation-v1",
+  "interval_count": 43,
+  "valid_interval_count": 43,
+  "intervals_with_observation": 43,
+  "delta_message_count": 1416,
+  "global_unique_first_observation_addresses": 490729,
+  "timestamp_assigned_addresses": 443024,
+  "unassociated_before_first_addresses": 47705,
+  "unassociated_between_interval_addresses": 0,
+  "unassociated_after_final_addresses": 0,
+  "logged_vs_timestamp_association_mismatch_messages": 39,
+  "sensor_sequence_gaps": 0,
+  "duplicate_first_observation_addresses": 0,
+  "observed_total_mismatches": 0,
+  "artificial_clear_included": false,
+  "online_behavior_changed": false,
+  "hashes": {
+    "actual_observation_summary.json": "193221a1a8d68ed93a0d047d195674cb319dc6e53183afc22b57c02f8f2a80de",
+    "actual_observation_intervals.csv": "3a79ce07f865f2a2e70e7331f8768d4b20efe6ceeb42e84455142aad8407463c",
+    "actual_observation_sets.jsonl": "c4fad36d5e55b2196cae28a65266631cc7cabf6fa299d55f989f090b1cd0a34d"
+  },
+  "next_task": "R2-04_predicted_sets_for_prm_shortcut_bspline_and_odom_prefix"
+}

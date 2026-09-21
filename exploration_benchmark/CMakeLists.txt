@@ -24,6 +24,7 @@ catkin_install_python(PROGRAMS
 	scripts/diagnose_r1_path_gain.py
 	scripts/study_r1_snapshots.py
 	scripts/compare_r1_sampling.py
+	scripts/summarize_r2_actual_observation.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -42,4 +43,5 @@ if(CATKIN_ENABLE_TESTING)
 	catkin_add_nosetests(test/test_r1_snapshot_study.py)
   catkin_add_nosetests(test/test_r1_sensitivity.py)
 	catkin_add_nosetests(test/test_execution_intervals.py)
+	catkin_add_nosetests(test/test_actual_observation.py)
 endif()
