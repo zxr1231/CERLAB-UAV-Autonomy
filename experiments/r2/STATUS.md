@@ -8,9 +8,9 @@
 | R2-04 Predicted PRM/shortcut/B-spline/odom-prefix sets | Complete | raw PRM retention, four-layer 0.25 m set construction, live smoke |
 | R2-05 Alignment and correctness tests | Complete | execution-start snapshot fix, set metrics, layer retention, live smoke |
 | R2-06 Early/middle/late validation | Complete (conditional) | mapper-matched shadow calibration and one full seed-1 stage study; late-stage overprediction retained as explicit limitation |
-| R2-07 Phase decision | Not started | depends on R2-06 |
+| R2-07 Phase decision | Complete | conditional Go to feature-flagged Innovation 1 with planner-consistent online gain and mapper-matched offline validation |
 
-Resume from R2-07 final phase decision. Do not
+R2 is complete. Resume from I1-01 in `R2_FINAL_DECISION.md`. Do not
 rerun R2-01 through R2-05 unless schemas, interval definitions or observation
 provenance change. R2-06 conditionally supports H2 in early/middle exploration, while
 late-stage precision remains insufficient for an unconditional claim.

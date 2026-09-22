@@ -1,0 +1,50 @@
+{
+  "schema": "cerlab-r2-final-decision-v1",
+  "date": "2026-09-22",
+  "status": "complete",
+  "decision": "conditional_go_to_innovation_1",
+  "next_task": "I1-01_freeze_unique_gain_interfaces_and_feature_flags",
+  "online_behavior_changed": false,
+  "hypotheses": {
+    "H1": "pilot_supported_one_scene",
+    "H2": "conditionally_supported_early_middle_late_overprediction_risk",
+    "H3": "not_tested",
+    "H4": "structural_risk_observed_not_tested_online",
+    "H5": "deferred_pending_final_cpp_profiling"
+  },
+  "r1_evidence": {
+    "sampling_spacing_m": 0.25,
+    "snapshot_count": 25,
+    "candidate_route_count": 152,
+    "candidate_duplicate_ratio_mean": 0.5218906846641507,
+    "selected_duplicate_ratio_mean": 0.6715467710207129,
+    "full_order_change_rate": 0.36,
+    "top1_change_rate": 0.16,
+    "raw_choice_unique_relative_regret_mean": 0.00864115238627634,
+    "raw_choice_unique_relative_regret_max": 0.0783081338236454
+  },
+  "r2_evidence": {
+    "formal_scene_count": 1,
+    "formal_seed_count": 1,
+    "preselected_intervals": 24,
+    "eligible_intervals": 19,
+    "shadow_jaccard_overall": 0.5311824928987756,
+    "shadow_count_spearman_overall": 0.8122807017543858,
+    "shadow_precision_late": 0.18605123773793963,
+    "shadow_recall_late": 0.9909197422378442
+  },
+  "innovation_1_role": "supporting_evaluator_not_primary_contribution",
+  "online_model": "planner_consistent_2m_unique_visible_voxel_union",
+  "validation_model": "mapper_matched_5m_frozen_shadow_with_late_stage_limit",
+  "frozen_controls": [
+    "legacy_goal_prefilter",
+    "single_geometric_astar_route_per_goal",
+    "original_shortcut",
+    "legacy_completion_gain_threshold_500",
+    "benchmark_v2_world_sensor_dynamics_start_seed_and_coverage",
+    "no_rosbag",
+    "no_edge_cache_during_innovation_1"
+  ],
+  "required_pilot_seed_pairs": [[1, 1], [2, 2], [3, 3]],
+  "final_paper_claim_allowed": false
+}

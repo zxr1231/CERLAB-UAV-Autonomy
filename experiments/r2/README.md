@@ -46,4 +46,5 @@ sets. The legacy proxy shows useful count correlation for odom prefixes but weak
 set overlap. R2-06 replaces it for offline validation with a mapper-matched frozen-map
 shadow evaluator. The new evaluator performs well in early/middle exploration but
 overpredicts in the late stage because Unknown physical obstacles are absent from the
-snapshot. See `R2_06_VALIDATION.md`; R2-07 is the next task.
+snapshot. R2-07 records a conditional Go to Innovation 1. See
+`R2_FINAL_DECISION.md`; the next task is I1-01.
