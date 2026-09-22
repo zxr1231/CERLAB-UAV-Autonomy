@@ -1,50 +1,24 @@
-# Phase R2 predicted-versus-actual observation validation
+# Phase R2: final retained record
 
-R2 validates whether predicted unique observation corresponds to sensor-observed new
-voxels. It remains shadow mode: online route selection, dynamics, Benchmark v2
-configuration and the legacy completion threshold 500 stay unchanged.
+R2 is complete. It established timestamp-linked execution intervals, actual sensor
+first-observation sets, four predicted path/execution layers and a mapper-matched
+frozen-map shadow evaluator. Artificial takeoff clearing remains excluded and no
+rosbag is required.
 
-## Planning and execution identifiers
+Only the files needed by later development are retained here:
 
-- `global_sequence`: one successful or failed global DEP planning attempt;
-- `trajectory_id`: one local B-spline planning sequence, positive only on success;
-- `execution_interval_id`: equal to the successful `trajectory_id` that activated the
-  B-spline;
-- an interval begins at `trajectory_start_sim` from the successful local planning
-  event and ends when another B-spline supersedes it, the mission enters return/home,
-  or the logger shuts down;
-- odometry and observation deltas outside an active interval keep ID zero and are not
-  silently assigned to a nearby plan.
+- `R2_FINAL_DECISION.md`: authoritative Go/No-Go decision, frozen Innovation-1
+  definitions, acceptance gates and kill criteria;
+- `R2_FINAL_SUMMARY.json`: machine-readable R1/R2 evidence and next-task contract;
+- `R2_06_VALIDATION.md` and `R2_06_FORMAL.json`: final predicted-versus-actual evidence
+  and the documented late-stage overprediction limitation;
+- `STATUS.md`: compact completion index.
 
-Execution intervals describe activated B-splines, not completed global PRM routes. A
-single global route can produce several local trajectories, and replanning can truncate
-every level of the predicted route.
+Stage reports and smoke summaries were removed after consolidation. They remain
+recoverable from Git history and the final R2 bundle. The lightweight 24-snapshot
+reference fixture for Innovation 1 is stored at
+`/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922`; its compressed
+copy and all relevant Git bundles are in
+`/home/zxr2/下载/CERLAB_R2_Final_2026-09-22`.
 
-## Lightweight files
-
-The Benchmark logger now records:
-
-- `planning.csv`: schema version, global/local IDs, replan reason, map version, depth
-  sequence and trajectory start time in addition to existing timing/path fields;
-- `trajectory.csv`: odometry/yaw tagged with execution interval and global sequence;
-- `execution_intervals.csv`: start/end reason, time, versions, odometry count,
-  executed distance and endpoint poses;
-- `observation_deltas.jsonl`: every sensor first-observation delta with its exact voxel
-  addresses and active interval/global/trajectory IDs;
-- `events.jsonl`: explicit interval start/end lifecycle events.
-
-No rosbag is required. Artificial `setFree`/takeoff clearing does not call the sensor
-observation tracker and therefore does not enter `ObservedVoxelDelta`; R2-03 will add
-explicit consistency checks rather than relying only on this source inspection.
-
-## Current boundary
-
-R2-01 through R2-06 are complete. Actual observation sets are assigned by sensor
-message timestamp, while callback-time interval IDs are retained for boundary audit.
-Four predicted layers are built on execution-start snapshots and aligned with actual
-sets. The legacy proxy shows useful count correlation for odom prefixes but weak exact
-set overlap. R2-06 replaces it for offline validation with a mapper-matched frozen-map
-shadow evaluator. The new evaluator performs well in early/middle exploration but
-overpredicts in the late stage because Unknown physical obstacles are absent from the
-snapshot. R2-07 records a conditional Go to Innovation 1. See
-`R2_FINAL_DECISION.md`; the next task is I1-01.
+The next task is I1-01. Online baseline behavior is unchanged at this checkpoint.
