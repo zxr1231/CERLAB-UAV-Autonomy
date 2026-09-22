@@ -1,5 +1,8 @@
 # CERLAB experiment records
 
+For a new Codex conversation, start with [`CODEX_HANDOFF.md`](CODEX_HANDOFF.md). It is
+the maintained single-file project state and continuation prompt.
+
 This directory keeps reviewable experiment configuration, lightweight manifests,
 aggregate tables, reports, and analysis code. Large raw logs and trajectories remain
 under the benchmark workspace result root and are not committed to Git.
