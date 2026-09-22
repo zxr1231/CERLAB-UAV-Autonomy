@@ -27,6 +27,7 @@ catkin_install_python(PROGRAMS
 	scripts/summarize_r2_actual_observation.py
 	scripts/summarize_r2_predicted_observation.py
 	scripts/summarize_r2_alignment.py
+	scripts/summarize_r2_sensor_shadow.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -48,4 +49,5 @@ if(CATKIN_ENABLE_TESTING)
 	catkin_add_nosetests(test/test_actual_observation.py)
 	catkin_add_nosetests(test/test_predicted_observation.py)
 	catkin_add_nosetests(test/test_observation_alignment.py)
+	catkin_add_nosetests(test/test_sensor_shadow.py)
 endif()

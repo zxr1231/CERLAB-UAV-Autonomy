@@ -198,6 +198,8 @@ def main():
     parser.add_argument("--ground-truth-mask", default="")
     parser.add_argument("--ground-truth-metadata", default="")
     parser.add_argument("--disable-coverage", action="store_true")
+    parser.add_argument("--diagnostic-snapshots", action="store_true",
+                        help="write immutable planning/execution snapshots into the run")
     args = parser.parse_args()
     try:
         environment_seed, planner_seed = resolve_seeds(
@@ -272,8 +274,13 @@ def main():
             processes.append(rviz)
             event("PROCESS_STARTED", name="rviz", pid=rviz.process.pid)
         launch = "return_home_smoke.launch" if args.mode == "smoke" else "dynamic_exploration.launch"
-        exploration_body = ("exec roslaunch autonomous_flight %s benchmark_seed:=%d" %
-                            (launch, planner_seed))
+        snapshot_arguments = ""
+        if args.diagnostic_snapshots:
+            snapshot_arguments = (" diagnostic_snapshot_enabled:=true "
+                                  "diagnostic_snapshot_directory:=%s" %
+                                  shlex.quote(str(output / "snapshots")))
+        exploration_body = ("exec roslaunch autonomous_flight %s benchmark_seed:=%d%s" %
+                            (launch, planner_seed, snapshot_arguments))
         exploration = Process("exploration", shell_command(workspace, exploration_body),
                               output / "exploration.log", interactive=True, event=event)
         processes.append(exploration)
