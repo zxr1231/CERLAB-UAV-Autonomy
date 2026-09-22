@@ -137,7 +137,7 @@ def read_ros_clock(timeout=5.0):
     return int(seconds.group(1)) + int(nanoseconds.group(1)) * 1e-9
 
 
-def process_manifest(project, environment_seed, planner_seed, mode,
+def process_manifest(project, environment_seed, planner_seed, mode, path_gain_mode,
                      ground_truth_mask=None,
                      ground_truth_metadata=None):
     keys = [
@@ -154,6 +154,7 @@ def process_manifest(project, environment_seed, planner_seed, mode,
         "schema_version": 3,
         "status": "RUNNING",
         "method": "hire_return_home_500",
+        "path_gain_mode": path_gain_mode,
         "mode": mode,
         "seed": environment_seed if environment_seed == planner_seed else None,
         "environment_seed": environment_seed,
@@ -200,6 +201,9 @@ def main():
     parser.add_argument("--disable-coverage", action="store_true")
     parser.add_argument("--diagnostic-snapshots", action="store_true",
                         help="write immutable planning/execution snapshots into the run")
+    parser.add_argument("--path-gain-mode",
+                        choices=("legacy", "unique_shadow", "unique_online"),
+                        default="legacy")
     args = parser.parse_args()
     try:
         environment_seed, planner_seed = resolve_seeds(
@@ -223,6 +227,7 @@ def main():
     output = create_seed_pair_run_directory(
         results_root, args.experiment_id, environment_seed, planner_seed, timestamp)
     manifest = process_manifest(project, environment_seed, planner_seed, args.mode,
+                                args.path_gain_mode,
                                 ground_truth_mask, ground_truth_metadata)
     atomic_write_json(output / "run.json", manifest)
     events_stream = (output / "runner_events.jsonl").open("x", encoding="utf-8")
@@ -279,8 +284,9 @@ def main():
             snapshot_arguments = (" diagnostic_snapshot_enabled:=true "
                                   "diagnostic_snapshot_directory:=%s" %
                                   shlex.quote(str(output / "snapshots")))
-        exploration_body = ("exec roslaunch autonomous_flight %s benchmark_seed:=%d%s" %
-                            (launch, planner_seed, snapshot_arguments))
+        exploration_body = ("exec roslaunch autonomous_flight %s benchmark_seed:=%d "
+                            "path_gain_mode:=%s%s" %
+                            (launch, planner_seed, args.path_gain_mode, snapshot_arguments))
         exploration = Process("exploration", shell_command(workspace, exploration_body),
                               output / "exploration.log", interactive=True, event=event)
         processes.append(exploration)

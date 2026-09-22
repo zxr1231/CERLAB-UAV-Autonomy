@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-09-22 after I1-03.
+Last updated: 2026-09-22 after I1-04-01 preparation.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -250,18 +250,19 @@ Read `experiments/i1/I1_03_VALIDATION.md` and
 
 Run live shadow-mode validation without changing candidate selection:
 
-1. Add a launch/runner override for `path_gain_mode=unique_shadow`; default remains
-   `legacy` and `unique_online` remains unavailable.
-2. Run a bounded seed-1 smoke first. Require `selection_gain_mode=legacy`, successful
+I1-04-01 already added the explicit launch/runner override and recorded mode provenance.
+Use the command in `experiments/i1/I1_04_PREP.md` and continue with:
+
+1. Run a bounded seed-1 smoke first. Require `selection_gain_mode=legacy`, successful
    return, no collision/crash and populated Unique fields.
-3. Measure valid/no-valid/error status, Top-1 disagreement, duplicate ratio, score
+2. Measure valid/no-valid/error status, Top-1 disagreement, duplicate ratio, score
    margin, unique evaluation time, total global planning p50/p95/max, CPU/RSS and RTF.
-4. Inspect whether snapshot capture/evaluation cost disrupts replanning. Fix correctness
+3. Inspect whether snapshot capture/evaluation cost disrupts replanning. Fix correctness
    errors, but do not add Edge cache or tune the environment.
-5. If the bounded smoke is healthy, collect enough early/middle/late live events to
+4. If the bounded smoke is healthy, collect enough early/middle/late live events to
    characterize ranking changes. This is diagnostic evidence, not the I1-06 paired
    performance experiment.
-6. Keep completion and flown routes Legacy, update documentation/handoff, test,
+5. Keep completion and flown routes Legacy, update documentation/handoff, test,
    commit/push and back up the stage.
 
 After I1-01, follow I1-02 through I1-06 in the final R2 decision. The paired pilot uses
