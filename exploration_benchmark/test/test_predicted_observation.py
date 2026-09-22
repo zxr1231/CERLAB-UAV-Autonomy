@@ -71,7 +71,7 @@ class PredictedObservationTest(unittest.TestCase):
     def test_builds_all_four_layers_with_matching_ids(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp); run = root / "run"; snapshots = root / "snapshots"
-            run.mkdir(); (snapshots / "snapshot_000001").mkdir(parents=True)
+            run.mkdir(); (snapshots / "execution_000007").mkdir(parents=True)
             _write_run(run)
             snapshot = {
                 "planner": {
@@ -90,6 +90,8 @@ class PredictedObservationTest(unittest.TestCase):
                                      "dmin": 0.3, "dmax": 2,
                                      "visibility_model": "legacy_inflated_occupied_line"},
                     "planning_region": {"min": [-2, -2, 0.7], "max": [2, 2, 1.2]},
+                    "global_planning_sequence": 1,
+                    "capture_kind": "execution_start",
                 },
                 "map": {"version": 10},
                 "manifest": {"map_file": "map.bin"},
@@ -114,7 +116,7 @@ class PredictedObservationTest(unittest.TestCase):
             run.mkdir(); snapshots.mkdir(); _write_run(run)
             result = build_predicted_observation(run, snapshots)
             self.assertEqual(result["status"], "INVALID")
-            self.assertIn("missing snapshot", result["errors"][0])
+            self.assertIn("missing execution-start snapshot", result["errors"][0])
 
 
 if __name__ == "__main__":

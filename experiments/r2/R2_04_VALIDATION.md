@@ -61,6 +61,10 @@ updates. This is retained evidence of map staleness, not silently corrected. R2-
 stratify or reject intervals whose prediction snapshot is too stale before interpreting
 predicted/actual overlap.
 
+R2-05 subsequently fixed this alignment problem by capturing a second immutable map at
+each successful B-spline activation. Formal layer/actual comparison now uses the
+execution-start snapshot; global snapshots remain useful for plan-time audit.
+
 | Generated file | SHA-256 |
 |---|---|
 | `predicted_observation_summary.json` | `2a20d4ef7685a5096b6ddd3e64fef3df7b1d90d4086e52baacadf16b5f40b019` |

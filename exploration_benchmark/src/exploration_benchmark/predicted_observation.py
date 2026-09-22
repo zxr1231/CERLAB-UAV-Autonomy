@@ -100,20 +100,23 @@ def build_predicted_observation(run_directory, snapshot_root, spacing=0.25,
             records.append({"interval_id": interval_id, "global_sequence": global_sequence,
                             "status": "SKIPPED_RETURN", "errors": [], "layers": {}})
             continue
-        snapshot_path = snapshot_root / ("snapshot_%06d" % global_sequence)
+        snapshot_path = snapshot_root / ("execution_%06d" % interval_id)
         interval_errors = []
         if not snapshot_path.is_dir():
-            interval_errors.append("missing snapshot for global sequence %d" % global_sequence)
+            interval_errors.append("missing execution-start snapshot for interval %d" % interval_id)
             records.append({"interval_id": interval_id, "global_sequence": global_sequence,
                             "status": "INVALID", "errors": interval_errors, "layers": {}})
             errors.extend("interval %d: %s" % (interval_id, item) for item in interval_errors)
             continue
-        if global_sequence not in snapshot_cache:
+        if interval_id not in snapshot_cache:
             snapshot = load_snapshot(snapshot_path)
-            snapshot_cache[global_sequence] = (
+            captured_global = int(snapshot["planner"].get("global_planning_sequence", 0))
+            if captured_global != global_sequence:
+                interval_errors.append("execution snapshot global sequence mismatch")
+            snapshot_cache[interval_id] = (
                 snapshot, load_frozen_map(snapshot_path, snapshot),
                 LegacyVisibilityConfig.from_planner(snapshot["planner"]))
-        snapshot, grid, config = snapshot_cache[global_sequence]
+        snapshot, grid, config = snapshot_cache[interval_id]
         selected_id = int(snapshot["planner"]["selected_candidate"])
         candidates = {int(item["id"]): item for item in snapshot["planner"]["candidate_paths"]}
         candidate = candidates.get(selected_id)
@@ -126,7 +129,7 @@ def build_predicted_observation(run_directory, snapshot_root, spacing=0.25,
             if not raw_waypoints:
                 interval_errors.append("snapshot lacks selected raw PRM waypoints")
 
-        cache_key = global_sequence
+        cache_key = interval_id
         if cache_key not in global_layer_cache and not interval_errors:
             raw_samples = sample_candidate_path(raw_waypoints, spacing)
             shortcut_samples = sample_candidate_path(shortcut_waypoints, spacing)
@@ -182,6 +185,7 @@ def build_predicted_observation(run_directory, snapshot_root, spacing=0.25,
             "trajectory_id": int(interval["trajectory_id"]),
             "global_sequence": global_sequence,
             "snapshot_map_version": int(snapshot["map"]["version"]),
+            "snapshot_kind": snapshot["planner"].get("capture_kind"),
             "local_start_map_version": (None if local is None or not local.get("map_version")
                                         else int(local["map_version"])),
             "spacing": spacing,

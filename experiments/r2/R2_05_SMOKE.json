@@ -1,0 +1,32 @@
+{
+  "status": "alignment_passed_legacy_proxy_not_calibrated",
+  "date": "2026-09-22",
+  "source_fixture": "experiments/r2/results/r205_smoke_20260922",
+  "interval_count": 14,
+  "valid_interval_count": 14,
+  "analysis_eligible_interval_count": 13,
+  "fresh_execution_snapshot_count": 14,
+  "execution_snapshot_map_version_delta_max": 0,
+  "actual_filter_retention_mean": 0.15093317460921377,
+  "boundary_mismatch_count": 11,
+  "odom_prefix": {
+    "precision_mean": 0.3141656974313733,
+    "recall_mean": 0.04591171264676432,
+    "jaccard_mean": 0.04325363893094672,
+    "count_pearson": 0.8407508082062657,
+    "count_spearman": 0.6318681318681318
+  },
+  "transition_source_retention_mean": {
+    "prm_raw_to_shortcut": 0.7734031225921477,
+    "shortcut_to_bspline": 0.3121027041508329,
+    "bspline_to_odom_prefix": 0.5781436698886688
+  },
+  "h2_status": "not_proven_sensor_model_calibration_required",
+  "next_task": "R2-06_sensor_matched_shadow_evaluator_then_stage_validation",
+  "hashes": {
+    "observation_alignment_summary.json": "d9c2e74b6504be33c36abeba047c1e9bd1d54aa09758c09b12dae4b7a99b415e",
+    "observation_alignment_intervals.json": "7a077653a7c9d10e6af57da26affdfdb571bc9f56050adf0df6dbb6699d92ac5",
+    "predicted_observation_summary.json": "149d6b4db4bb8ca33cb2117b2d94390fae0213d91cd73951cabd9835ed0afa5a",
+    "predicted_observation_sets.jsonl": "09ae26dd0219baf8d46d6b86e081a630d9d4cbcc5b5dc9970f293734b82bc95d"
+  }
+}
