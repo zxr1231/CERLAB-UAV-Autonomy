@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-09-22 after I1-01.
+Last updated: 2026-09-22 after I1-02.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -56,11 +56,11 @@ I1-01 implementation commit: 76efaf2
 
 autonomous_flight:
   branch feat/i1-gain-logging
-  commit 3243c9f (I1-01)
+  commit e41b350 (I1-02)
 
 global_planner:
   branch feat/i1-unique-gain
-  commit 4b996cf (I1-01)
+  commit 219162f (I1-02)
 
 map_manager:
   branch feat/r2-execution-logging
@@ -227,23 +227,31 @@ tests, 85 Python tests, all return-home checks and a seed-1 small-ROI smoke pass
 
 Read `experiments/i1/I1_01_VALIDATION.md` and `experiments/i1/STATUS.md`.
 
-## Immediate next task: I1-02
+I1-02 is complete. It added the immutable-snapshot C++ visible-set/path evaluator,
+0.25 m polyline sampling, raw/unique/marginal metrics, independent candidate histories,
+snapshot-version provenance and candidate metrics in diagnostic snapshots. Six C++
+tests, 85 Python tests and all return-home checks pass. `unique_shadow` can now compute
+counterfactual rankings; it still cannot control flight. `unique_online` remains
+fail-closed.
 
-Do not change candidate selection. Implement only the I1-02 evaluator foundation from
-`experiments/r2/R2_FINAL_DECISION.md`:
+Read `experiments/i1/I1_02_VALIDATION.md`.
 
-1. Implement stable visible-Unknown voxel-address sets under the frozen planner model:
-   2 m range, baseline yaw rule/z-envelope, Unknown transparency, inflated occlusion
-   and planning ROI.
-2. Sample candidate paths at the frozen 0.25 m interval and compute raw, unique,
-   per-sample marginal, duplicate ratio and unique utility on one immutable snapshot.
-3. Keep candidate histories independent and fail closed on map-version mismatch.
-4. Populate the schema fields frozen by I1-01, but keep selection mode Legacy and keep
-   both non-Legacy configuration modes unavailable until the relevant correctness gate.
-5. Do not implement Edge cache, change A*, Goal selection, shortcut or completion.
-6. Add focused unit fixtures, compile and test. I1-03 will perform the broader frozen
-   offline-reference agreement study.
-7. Update this handoff, commit/push changed repositories and create a verified backup.
+## Immediate next task: I1-03
+
+Do not change candidate selection. Validate the I1-02 evaluator against the retained
+offline reference:
+
+1. Build a deterministic C++ fixture runner for the retained R1/R2 binary snapshots;
+   do not hand-copy expected counts.
+2. On selected 0.25 m candidates, require exact raw, unique, marginal and stable-address
+   agreement with the Python reference under the same planner model.
+3. Add explicit yaw wrap/boundary, ROI clipping, zero-length segment, terminal yaw,
+   invalid snapshot and independent-candidate cases.
+4. Diagnose any mismatch from coordinate/index, scan bounds, occlusion stepping or path
+   sampling; do not loosen equality tolerances for integer sets/counts.
+5. Keep selection Legacy and do not start live shadow exploration until this gate
+   passes.
+6. Update documentation/handoff, compile/test, push GitHub and create a backup.
 
 After I1-01, follow I1-02 through I1-06 in the final R2 decision. The paired pilot uses
 seed pairs 1/1, 2/2 and 3/3. Final paper-scale ten-seed and multi-scene ablation is

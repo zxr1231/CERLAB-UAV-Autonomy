@@ -6,6 +6,5 @@ gate remains unchanged.
 
 Authoritative scope and gates are in `../r2/R2_FINAL_DECISION.md`.
 
-Current state: I1-01 complete. Continue from I1-02, the C++ visible-set and path
-evaluator, without changing route selection.
-
+Current state: I1-01 and I1-02 complete. Continue from I1-03 frozen-fixture
+C++/Python agreement and boundary correctness tests. Online selection remains Legacy.
