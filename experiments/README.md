@@ -37,3 +37,5 @@ Phase R2 predicted-versus-actual observation validation is complete under
 [`r2`](r2/R2_FINAL_DECISION.md). Its final decision conditionally authorizes the
 feature-flagged Innovation-1 unique-gain phase while retaining the legacy completion
 gate and frozen Benchmark-v2 controls.
+
+Innovation 1 progress and validation records are under [`i1`](i1/STATUS.md).

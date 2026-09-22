@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-09-22 after R2-07 and document consolidation.
+Last updated: 2026-09-22 after I1-01.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -50,16 +50,16 @@ The repositories are clean and their active branches are maintained in the user'
 GitHub account. The user has authorized pushes for completed project work.
 
 ```text
-parent branch: feat/r2-predicted-actual-validation
-parent commit: 317544973fd13d87064758b3e9d3bc89d4caa995
+parent branch: feat/i1-unique-gain
+parent starting commit for I1: 80f5e2f5b0a287348d2fc7dc9bca0eac0d7d11f6
 
 autonomous_flight:
-  branch feat/r2-execution-logging
-  commit 067402b097a0e8ccb4a13ca932d6481479bd64a7
+  branch feat/i1-gain-logging
+  commit 3243c9f (I1-01)
 
 global_planner:
-  branch feat/r2-predicted-layers
-  commit 60ff159fa3be3ee89326818695c85eaa871dcd93
+  branch feat/i1-unique-gain
+  commit 4b996cf (I1-01)
 
 map_manager:
   branch feat/r2-execution-logging
@@ -216,22 +216,33 @@ The reference fixture contains 24 selected execution snapshots plus trajectory,
 interval, actual-observation and shadow files. Do not delete the full run or historical
 backups unless the user explicitly revisits data cleanup.
 
-## Immediate next task: I1-01
+## Innovation 1 progress
 
-Do not start by changing candidate selection. First implement only the I1-01 contract
-from `experiments/r2/R2_FINAL_DECISION.md`:
+I1-01 is complete. It added a versioned path-gain contract with `legacy`,
+`unique_shadow` and `unique_online` names, 0.25 m sampling, schema-4 planning fields,
+CSV columns and snapshot provenance. Default selection remains Legacy. Both unique
+modes fail closed because the evaluator is not implemented yet. Compile, three new C++
+tests, 85 Python tests, all return-home checks and a seed-1 small-ROI smoke passed.
 
-1. Define versioned `legacy`, `unique_shadow` and `unique_online` modes.
-2. Freeze event/log fields for legacy/raw/unique/marginal gain, duplicate ratio,
-   unique utility, evaluation time, selected candidate under each ranking and fallback.
-3. Freeze the planner-consistent visibility contract: 2 m range, baseline yaw rule,
-   baseline z-envelope, Unknown transparency, inflated occlusion, planning ROI and
-   0.25 m spatial sampling.
-4. Keep mapper-matched 5 m shadow evaluation offline only.
-5. Keep default behavior `legacy`; keep completion threshold 500 on legacy gain.
-6. Add schema/flag tests and documentation. Do not yet implement online ranking.
-7. Compile and run relevant tests, update the handoff and phase status, commit parent
-   and any changed submodules, push GitHub, and create a local stage backup.
+Read `experiments/i1/I1_01_VALIDATION.md` and `experiments/i1/STATUS.md`.
+
+## Immediate next task: I1-02
+
+Do not change candidate selection. Implement only the I1-02 evaluator foundation from
+`experiments/r2/R2_FINAL_DECISION.md`:
+
+1. Implement stable visible-Unknown voxel-address sets under the frozen planner model:
+   2 m range, baseline yaw rule/z-envelope, Unknown transparency, inflated occlusion
+   and planning ROI.
+2. Sample candidate paths at the frozen 0.25 m interval and compute raw, unique,
+   per-sample marginal, duplicate ratio and unique utility on one immutable snapshot.
+3. Keep candidate histories independent and fail closed on map-version mismatch.
+4. Populate the schema fields frozen by I1-01, but keep selection mode Legacy and keep
+   both non-Legacy configuration modes unavailable until the relevant correctness gate.
+5. Do not implement Edge cache, change A*, Goal selection, shortcut or completion.
+6. Add focused unit fixtures, compile and test. I1-03 will perform the broader frozen
+   offline-reference agreement study.
+7. Update this handoff, commit/push changed repositories and create a verified backup.
 
 After I1-01, follow I1-02 through I1-06 in the final R2 decision. The paired pilot uses
 seed pairs 1/1, 2/2 and 3/3. Final paper-scale ten-seed and multi-scene ablation is
