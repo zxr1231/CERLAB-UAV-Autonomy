@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-09-22 after I1-02.
+Last updated: 2026-09-22 after I1-03.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -60,7 +60,7 @@ autonomous_flight:
 
 global_planner:
   branch feat/i1-unique-gain
-  commit 219162f (I1-02)
+  commit acfe5e8 (I1-03)
 
 map_manager:
   branch feat/r2-execution-logging
@@ -236,22 +236,33 @@ fail-closed.
 
 Read `experiments/i1/I1_02_VALIDATION.md`.
 
-## Immediate next task: I1-03
+I1-03 is complete. Across all 24 retained frozen snapshots, all 217 candidates and
+13,131 path samples exactly match the Python reference for raw gain, unique gain,
+per-sample marginals and final stable voxel-address sets. Weighted duplication is
+65.252%. Nine C++ tests and 85 Python tests pass. The first sampled comparison exposed
+only a null-versus-empty-array fixture serialization issue, which was fixed and
+documented.
 
-Do not change candidate selection. Validate the I1-02 evaluator against the retained
-offline reference:
+Read `experiments/i1/I1_03_VALIDATION.md` and
+`experiments/i1/I1_03_CPP_PYTHON_AGREEMENT.json`.
 
-1. Build a deterministic C++ fixture runner for the retained R1/R2 binary snapshots;
-   do not hand-copy expected counts.
-2. On selected 0.25 m candidates, require exact raw, unique, marginal and stable-address
-   agreement with the Python reference under the same planner model.
-3. Add explicit yaw wrap/boundary, ROI clipping, zero-length segment, terminal yaw,
-   invalid snapshot and independent-candidate cases.
-4. Diagnose any mismatch from coordinate/index, scan bounds, occlusion stepping or path
-   sampling; do not loosen equality tolerances for integer sets/counts.
-5. Keep selection Legacy and do not start live shadow exploration until this gate
-   passes.
-6. Update documentation/handoff, compile/test, push GitHub and create a backup.
+## Immediate next task: I1-04
+
+Run live shadow-mode validation without changing candidate selection:
+
+1. Add a launch/runner override for `path_gain_mode=unique_shadow`; default remains
+   `legacy` and `unique_online` remains unavailable.
+2. Run a bounded seed-1 smoke first. Require `selection_gain_mode=legacy`, successful
+   return, no collision/crash and populated Unique fields.
+3. Measure valid/no-valid/error status, Top-1 disagreement, duplicate ratio, score
+   margin, unique evaluation time, total global planning p50/p95/max, CPU/RSS and RTF.
+4. Inspect whether snapshot capture/evaluation cost disrupts replanning. Fix correctness
+   errors, but do not add Edge cache or tune the environment.
+5. If the bounded smoke is healthy, collect enough early/middle/late live events to
+   characterize ranking changes. This is diagnostic evidence, not the I1-06 paired
+   performance experiment.
+6. Keep completion and flown routes Legacy, update documentation/handoff, test,
+   commit/push and back up the stage.
 
 After I1-01, follow I1-02 through I1-06 in the final R2 decision. The paired pilot uses
 seed pairs 1/1, 2/2 and 3/3. Final paper-scale ten-seed and multi-scene ablation is

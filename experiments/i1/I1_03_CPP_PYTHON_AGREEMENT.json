@@ -1,0 +1,2203 @@
+{
+  "candidate_count": 217,
+  "matched_candidate_count": 217,
+  "schema": "cerlab-i1-cpp-python-agreement-v1",
+  "snapshot_count": 24,
+  "snapshots": [
+    {
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 1200,
+          "sample_count": 4,
+          "unique_address_count": 481,
+          "unique_gain": 481
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5177,
+          "sample_count": 5,
+          "unique_address_count": 1932,
+          "unique_gain": 1932
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 295,
+          "sample_count": 5,
+          "unique_address_count": 130,
+          "unique_gain": 130
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3328,
+          "sample_count": 7,
+          "unique_address_count": 1530,
+          "unique_gain": 1530
+        }
+      ],
+      "errors": [],
+      "map_version": 1183170,
+      "matched_candidate_count": 4,
+      "snapshot": "execution_000001",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 187,
+          "sample_count": 23,
+          "unique_address_count": 187,
+          "unique_gain": 187
+        }
+      ],
+      "errors": [],
+      "map_version": 3327686,
+      "matched_candidate_count": 1,
+      "snapshot": "execution_000012",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 282,
+          "sample_count": 15,
+          "unique_address_count": 282,
+          "unique_gain": 282
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 13,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5754,
+          "sample_count": 48,
+          "unique_address_count": 1997,
+          "unique_gain": 1997
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 14,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        }
+      ],
+      "errors": [],
+      "map_version": 4760986,
+      "matched_candidate_count": 4,
+      "snapshot": "execution_000023",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 9405,
+          "sample_count": 28,
+          "unique_address_count": 3246,
+          "unique_gain": 3246
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 19358,
+          "sample_count": 56,
+          "unique_address_count": 6507,
+          "unique_gain": 6507
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 13607,
+          "sample_count": 51,
+          "unique_address_count": 4850,
+          "unique_gain": 4850
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 12430,
+          "sample_count": 48,
+          "unique_address_count": 4299,
+          "unique_gain": 4299
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 9394,
+          "sample_count": 43,
+          "unique_address_count": 3356,
+          "unique_gain": 3356
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 12929,
+          "sample_count": 76,
+          "unique_address_count": 3808,
+          "unique_gain": 3808
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7512,
+          "sample_count": 40,
+          "unique_address_count": 2815,
+          "unique_gain": 2815
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 17298,
+          "sample_count": 69,
+          "unique_address_count": 5200,
+          "unique_gain": 5200
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6125,
+          "sample_count": 37,
+          "unique_address_count": 2167,
+          "unique_gain": 2167
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5742,
+          "sample_count": 24,
+          "unique_address_count": 2117,
+          "unique_gain": 2117
+        }
+      ],
+      "errors": [],
+      "map_version": 8668281,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000034",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 19185,
+          "sample_count": 82,
+          "unique_address_count": 6498,
+          "unique_gain": 6498
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 13434,
+          "sample_count": 77,
+          "unique_address_count": 4841,
+          "unique_gain": 4841
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 12257,
+          "sample_count": 74,
+          "unique_address_count": 4290,
+          "unique_gain": 4290
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 9221,
+          "sample_count": 69,
+          "unique_address_count": 3347,
+          "unique_gain": 3347
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 11679,
+          "sample_count": 103,
+          "unique_address_count": 3744,
+          "unique_gain": 3744
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7339,
+          "sample_count": 66,
+          "unique_address_count": 2806,
+          "unique_gain": 2806
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 16647,
+          "sample_count": 95,
+          "unique_address_count": 5192,
+          "unique_gain": 5192
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 11893,
+          "sample_count": 100,
+          "unique_address_count": 4099,
+          "unique_gain": 4099
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5952,
+          "sample_count": 63,
+          "unique_address_count": 2156,
+          "unique_gain": 2156
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6567,
+          "sample_count": 64,
+          "unique_address_count": 2276,
+          "unique_gain": 2276
+        }
+      ],
+      "errors": [],
+      "map_version": 12076615,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000044",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 12923,
+          "sample_count": 34,
+          "unique_address_count": 4757,
+          "unique_gain": 4757
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7878,
+          "sample_count": 29,
+          "unique_address_count": 3065,
+          "unique_gain": 3065
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8263,
+          "sample_count": 64,
+          "unique_address_count": 2992,
+          "unique_gain": 2992
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5532,
+          "sample_count": 25,
+          "unique_address_count": 2264,
+          "unique_gain": 2264
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5958,
+          "sample_count": 51,
+          "unique_address_count": 2177,
+          "unique_gain": 2177
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 10044,
+          "sample_count": 43,
+          "unique_address_count": 3380,
+          "unique_gain": 3380
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6209,
+          "sample_count": 49,
+          "unique_address_count": 2491,
+          "unique_gain": 2491
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 1351,
+          "sample_count": 23,
+          "unique_address_count": 652,
+          "unique_gain": 652
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 21,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 555,
+          "sample_count": 29,
+          "unique_address_count": 477,
+          "unique_gain": 477
+        }
+      ],
+      "errors": [],
+      "map_version": 15240865,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000055",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 1338,
+          "sample_count": 27,
+          "unique_address_count": 500,
+          "unique_gain": 500
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 1271,
+          "sample_count": 23,
+          "unique_address_count": 612,
+          "unique_gain": 612
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8252,
+          "sample_count": 83,
+          "unique_address_count": 2992,
+          "unique_gain": 2992
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 19,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5155,
+          "sample_count": 70,
+          "unique_address_count": 1941,
+          "unique_gain": 1941
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 10112,
+          "sample_count": 62,
+          "unique_address_count": 3383,
+          "unique_gain": 3383
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5373,
+          "sample_count": 67,
+          "unique_address_count": 2296,
+          "unique_gain": 2296
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5936,
+          "sample_count": 85,
+          "unique_address_count": 1917,
+          "unique_gain": 1917
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 4494,
+          "sample_count": 68,
+          "unique_address_count": 1538,
+          "unique_gain": 1538
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 4185,
+          "sample_count": 44,
+          "unique_address_count": 1731,
+          "unique_gain": 1731
+        }
+      ],
+      "errors": [],
+      "map_version": 18221448,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000066",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7916,
+          "sample_count": 95,
+          "unique_address_count": 2930,
+          "unique_gain": 2930
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7874,
+          "sample_count": 72,
+          "unique_address_count": 2737,
+          "unique_gain": 2737
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8602,
+          "sample_count": 70,
+          "unique_address_count": 2893,
+          "unique_gain": 2893
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7670,
+          "sample_count": 53,
+          "unique_address_count": 2543,
+          "unique_gain": 2543
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 10578,
+          "sample_count": 42,
+          "unique_address_count": 3065,
+          "unique_gain": 3065
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7795,
+          "sample_count": 51,
+          "unique_address_count": 2954,
+          "unique_gain": 2954
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6350,
+          "sample_count": 97,
+          "unique_address_count": 2105,
+          "unique_gain": 2105
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6493,
+          "sample_count": 96,
+          "unique_address_count": 2261,
+          "unique_gain": 2261
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6993,
+          "sample_count": 94,
+          "unique_address_count": 2269,
+          "unique_gain": 2269
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5177,
+          "sample_count": 46,
+          "unique_address_count": 2213,
+          "unique_gain": 2213
+        }
+      ],
+      "errors": [],
+      "map_version": 24379075,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000078",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7916,
+          "sample_count": 95,
+          "unique_address_count": 2930,
+          "unique_gain": 2930
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7874,
+          "sample_count": 72,
+          "unique_address_count": 2737,
+          "unique_gain": 2737
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8602,
+          "sample_count": 70,
+          "unique_address_count": 2893,
+          "unique_gain": 2893
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7670,
+          "sample_count": 53,
+          "unique_address_count": 2543,
+          "unique_gain": 2543
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 10578,
+          "sample_count": 42,
+          "unique_address_count": 3065,
+          "unique_gain": 3065
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7795,
+          "sample_count": 51,
+          "unique_address_count": 2954,
+          "unique_gain": 2954
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6350,
+          "sample_count": 97,
+          "unique_address_count": 2105,
+          "unique_gain": 2105
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6493,
+          "sample_count": 96,
+          "unique_address_count": 2261,
+          "unique_gain": 2261
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6993,
+          "sample_count": 94,
+          "unique_address_count": 2269,
+          "unique_gain": 2269
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5177,
+          "sample_count": 46,
+          "unique_address_count": 2213,
+          "unique_gain": 2213
+        }
+      ],
+      "errors": [],
+      "map_version": 24730010,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000079",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8328,
+          "sample_count": 85,
+          "unique_address_count": 2989,
+          "unique_gain": 2989
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7874,
+          "sample_count": 80,
+          "unique_address_count": 2737,
+          "unique_gain": 2737
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8602,
+          "sample_count": 78,
+          "unique_address_count": 2893,
+          "unique_gain": 2893
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 4647,
+          "sample_count": 20,
+          "unique_address_count": 1903,
+          "unique_gain": 1903
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 4384,
+          "sample_count": 20,
+          "unique_address_count": 1743,
+          "unique_gain": 1743
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6762,
+          "sample_count": 87,
+          "unique_address_count": 2164,
+          "unique_gain": 2164
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6905,
+          "sample_count": 86,
+          "unique_address_count": 2320,
+          "unique_gain": 2320
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7405,
+          "sample_count": 84,
+          "unique_address_count": 2328,
+          "unique_gain": 2328
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3317,
+          "sample_count": 78,
+          "unique_address_count": 1302,
+          "unique_gain": 1302
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 4117,
+          "sample_count": 80,
+          "unique_address_count": 1488,
+          "unique_gain": 1488
+        }
+      ],
+      "errors": [],
+      "map_version": 25689229,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000091",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7824,
+          "sample_count": 110,
+          "unique_address_count": 2836,
+          "unique_gain": 2836
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7886,
+          "sample_count": 108,
+          "unique_address_count": 2741,
+          "unique_gain": 2741
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8614,
+          "sample_count": 106,
+          "unique_address_count": 2897,
+          "unique_gain": 2897
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6685,
+          "sample_count": 112,
+          "unique_address_count": 2160,
+          "unique_gain": 2160
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6828,
+          "sample_count": 111,
+          "unique_address_count": 2316,
+          "unique_gain": 2316
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7328,
+          "sample_count": 109,
+          "unique_address_count": 2324,
+          "unique_gain": 2324
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6709,
+          "sample_count": 102,
+          "unique_address_count": 2182,
+          "unique_gain": 2182
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5503,
+          "sample_count": 93,
+          "unique_address_count": 2122,
+          "unique_gain": 2122
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5261,
+          "sample_count": 97,
+          "unique_address_count": 1702,
+          "unique_gain": 1702
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 77,
+          "sample_count": 75,
+          "unique_address_count": 28,
+          "unique_gain": 28
+        }
+      ],
+      "errors": [],
+      "map_version": 27852360,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000101",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7812,
+          "sample_count": 110,
+          "unique_address_count": 2832,
+          "unique_gain": 2832
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7874,
+          "sample_count": 108,
+          "unique_address_count": 2737,
+          "unique_gain": 2737
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8602,
+          "sample_count": 106,
+          "unique_address_count": 2893,
+          "unique_gain": 2893
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6673,
+          "sample_count": 112,
+          "unique_address_count": 2156,
+          "unique_gain": 2156
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6816,
+          "sample_count": 111,
+          "unique_address_count": 2312,
+          "unique_gain": 2312
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7316,
+          "sample_count": 109,
+          "unique_address_count": 2320,
+          "unique_gain": 2320
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6697,
+          "sample_count": 102,
+          "unique_address_count": 2178,
+          "unique_gain": 2178
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5491,
+          "sample_count": 93,
+          "unique_address_count": 2118,
+          "unique_gain": 2118
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5249,
+          "sample_count": 97,
+          "unique_address_count": 1698,
+          "unique_gain": 1698
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 65,
+          "sample_count": 75,
+          "unique_address_count": 24,
+          "unique_gain": 24
+        }
+      ],
+      "errors": [],
+      "map_version": 31378194,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000112",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7874,
+          "sample_count": 63,
+          "unique_address_count": 2737,
+          "unique_gain": 2737
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8602,
+          "sample_count": 61,
+          "unique_address_count": 2893,
+          "unique_gain": 2893
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6733,
+          "sample_count": 97,
+          "unique_address_count": 2546,
+          "unique_gain": 2546
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5869,
+          "sample_count": 96,
+          "unique_address_count": 1882,
+          "unique_gain": 1882
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6414,
+          "sample_count": 96,
+          "unique_address_count": 2028,
+          "unique_gain": 2028
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6834,
+          "sample_count": 95,
+          "unique_address_count": 2015,
+          "unique_gain": 2015
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6897,
+          "sample_count": 83,
+          "unique_address_count": 2470,
+          "unique_gain": 2470
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5275,
+          "sample_count": 51,
+          "unique_address_count": 2069,
+          "unique_gain": 2069
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5249,
+          "sample_count": 52,
+          "unique_address_count": 1698,
+          "unique_gain": 1698
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 1045,
+          "sample_count": 49,
+          "unique_address_count": 623,
+          "unique_gain": 623
+        }
+      ],
+      "errors": [],
+      "map_version": 32770825,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000123",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3755,
+          "sample_count": 24,
+          "unique_address_count": 1337,
+          "unique_gain": 1337
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 848,
+          "sample_count": 21,
+          "unique_address_count": 392,
+          "unique_gain": 392
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7179,
+          "sample_count": 78,
+          "unique_address_count": 2783,
+          "unique_gain": 2783
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7026,
+          "sample_count": 77,
+          "unique_address_count": 2321,
+          "unique_gain": 2321
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6812,
+          "sample_count": 77,
+          "unique_address_count": 2252,
+          "unique_gain": 2252
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7524,
+          "sample_count": 77,
+          "unique_address_count": 2302,
+          "unique_gain": 2302
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7075,
+          "sample_count": 64,
+          "unique_address_count": 2647,
+          "unique_gain": 2647
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 202,
+          "sample_count": 15,
+          "unique_address_count": 102,
+          "unique_gain": 102
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 93,
+          "sample_count": 71,
+          "unique_address_count": 54,
+          "unique_gain": 54
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7666,
+          "sample_count": 70,
+          "unique_address_count": 2912,
+          "unique_gain": 2912
+        }
+      ],
+      "errors": [],
+      "map_version": 35401063,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000134",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6733,
+          "sample_count": 70,
+          "unique_address_count": 2546,
+          "unique_gain": 2546
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6408,
+          "sample_count": 68,
+          "unique_address_count": 2458,
+          "unique_gain": 2458
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6569,
+          "sample_count": 69,
+          "unique_address_count": 2016,
+          "unique_gain": 2016
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6439,
+          "sample_count": 68,
+          "unique_address_count": 2006,
+          "unique_gain": 2006
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5305,
+          "sample_count": 55,
+          "unique_address_count": 1855,
+          "unique_gain": 1855
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 7496,
+          "sample_count": 61,
+          "unique_address_count": 2487,
+          "unique_gain": 2487
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5243,
+          "sample_count": 68,
+          "unique_address_count": 1836,
+          "unique_gain": 1836
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6371,
+          "sample_count": 113,
+          "unique_address_count": 2070,
+          "unique_gain": 2070
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 337,
+          "sample_count": 52,
+          "unique_address_count": 160,
+          "unique_gain": 160
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 1774,
+          "sample_count": 42,
+          "unique_address_count": 544,
+          "unique_gain": 544
+        }
+      ],
+      "errors": [],
+      "map_version": 36444678,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000144",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 4070,
+          "sample_count": 26,
+          "unique_address_count": 1652,
+          "unique_gain": 1652
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 15,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 18,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 5184,
+          "sample_count": 114,
+          "unique_address_count": 1520,
+          "unique_gain": 1520
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 20,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 8,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 18,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6390,
+          "sample_count": 105,
+          "unique_address_count": 2069,
+          "unique_gain": 2069
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 264,
+          "sample_count": 73,
+          "unique_address_count": 85,
+          "unique_gain": 85
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 103,
+          "sample_count": 18,
+          "unique_address_count": 35,
+          "unique_gain": 35
+        }
+      ],
+      "errors": [],
+      "map_version": 38518583,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000155",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 2771,
+          "sample_count": 26,
+          "unique_address_count": 1212,
+          "unique_gain": 1212
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 15,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 18,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 2691,
+          "sample_count": 114,
+          "unique_address_count": 799,
+          "unique_gain": 799
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 20,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 8,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 18,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6306,
+          "sample_count": 105,
+          "unique_address_count": 1985,
+          "unique_gain": 1985
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 264,
+          "sample_count": 73,
+          "unique_address_count": 85,
+          "unique_gain": 85
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 103,
+          "sample_count": 18,
+          "unique_address_count": 35,
+          "unique_gain": 35
+        }
+      ],
+      "errors": [],
+      "map_version": 38524697,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000156",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 30,
+          "sample_count": 62,
+          "unique_address_count": 30,
+          "unique_gain": 30
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 92,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 38,
+          "sample_count": 74,
+          "unique_address_count": 12,
+          "unique_gain": 12
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 55,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 18,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3055,
+          "sample_count": 74,
+          "unique_address_count": 1138,
+          "unique_gain": 1138
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 107,
+          "sample_count": 68,
+          "unique_address_count": 72,
+          "unique_gain": 72
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 79,
+          "sample_count": 62,
+          "unique_address_count": 14,
+          "unique_gain": 14
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3984,
+          "sample_count": 75,
+          "unique_address_count": 1107,
+          "unique_gain": 1107
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 66,
+          "sample_count": 42,
+          "unique_address_count": 14,
+          "unique_gain": 14
+        }
+      ],
+      "errors": [],
+      "map_version": 40307222,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000167",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 62,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 92,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 38,
+          "sample_count": 74,
+          "unique_address_count": 12,
+          "unique_gain": 12
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 55,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 18,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3055,
+          "sample_count": 74,
+          "unique_address_count": 1138,
+          "unique_gain": 1138
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 107,
+          "sample_count": 68,
+          "unique_address_count": 72,
+          "unique_gain": 72
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 79,
+          "sample_count": 62,
+          "unique_address_count": 14,
+          "unique_gain": 14
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3984,
+          "sample_count": 75,
+          "unique_address_count": 1107,
+          "unique_gain": 1107
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 66,
+          "sample_count": 42,
+          "unique_address_count": 14,
+          "unique_gain": 14
+        }
+      ],
+      "errors": [],
+      "map_version": 41703214,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000177",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 62,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 92,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 38,
+          "sample_count": 74,
+          "unique_address_count": 12,
+          "unique_gain": 12
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 55,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 18,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 664,
+          "sample_count": 74,
+          "unique_address_count": 376,
+          "unique_gain": 376
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 107,
+          "sample_count": 68,
+          "unique_address_count": 72,
+          "unique_gain": 72
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 79,
+          "sample_count": 62,
+          "unique_address_count": 14,
+          "unique_gain": 14
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3984,
+          "sample_count": 75,
+          "unique_address_count": 1107,
+          "unique_gain": 1107
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 66,
+          "sample_count": 42,
+          "unique_address_count": 14,
+          "unique_gain": 14
+        }
+      ],
+      "errors": [],
+      "map_version": 43951578,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000188",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 2553,
+          "sample_count": 82,
+          "unique_address_count": 1078,
+          "unique_gain": 1078
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 80,
+          "sample_count": 96,
+          "unique_address_count": 13,
+          "unique_gain": 13
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 22,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 63,
+          "sample_count": 64,
+          "unique_address_count": 12,
+          "unique_gain": 12
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 10,
+          "sample_count": 56,
+          "unique_address_count": 8,
+          "unique_gain": 8
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 81,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 2317,
+          "sample_count": 44,
+          "unique_address_count": 564,
+          "unique_gain": 564
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 47,
+          "sample_count": 28,
+          "unique_address_count": 47,
+          "unique_gain": 47
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 117,
+          "sample_count": 32,
+          "unique_address_count": 66,
+          "unique_gain": 66
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 34,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        }
+      ],
+      "errors": [],
+      "map_version": 47238311,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000198",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 2373,
+          "sample_count": 79,
+          "unique_address_count": 1018,
+          "unique_gain": 1018
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8,
+          "sample_count": 63,
+          "unique_address_count": 8,
+          "unique_gain": 8
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 13,
+          "sample_count": 9,
+          "unique_address_count": 5,
+          "unique_gain": 5
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8,
+          "sample_count": 33,
+          "unique_address_count": 2,
+          "unique_gain": 2
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 76,
+          "sample_count": 41,
+          "unique_address_count": 12,
+          "unique_gain": 12
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 1707,
+          "sample_count": 62,
+          "unique_address_count": 505,
+          "unique_gain": 505
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 190,
+          "sample_count": 38,
+          "unique_address_count": 73,
+          "unique_gain": 73
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6,
+          "sample_count": 79,
+          "unique_address_count": 5,
+          "unique_gain": 5
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 85,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 12,
+          "sample_count": 44,
+          "unique_address_count": 3,
+          "unique_gain": 3
+        }
+      ],
+      "errors": [],
+      "map_version": 50956027,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000209",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 10,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 528,
+          "sample_count": 79,
+          "unique_address_count": 253,
+          "unique_gain": 253
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8,
+          "sample_count": 63,
+          "unique_address_count": 8,
+          "unique_gain": 8
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 13,
+          "sample_count": 9,
+          "unique_address_count": 5,
+          "unique_gain": 5
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 8,
+          "sample_count": 33,
+          "unique_address_count": 2,
+          "unique_gain": 2
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 76,
+          "sample_count": 41,
+          "unique_address_count": 12,
+          "unique_gain": 12
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 1741,
+          "sample_count": 62,
+          "unique_address_count": 524,
+          "unique_gain": 524
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 190,
+          "sample_count": 38,
+          "unique_address_count": 73,
+          "unique_gain": 73
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 6,
+          "sample_count": 79,
+          "unique_address_count": 5,
+          "unique_gain": 5
+        },
+        {
+          "candidate_id": 8,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 85,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 9,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 12,
+          "sample_count": 44,
+          "unique_address_count": 3,
+          "unique_gain": 3
+        }
+      ],
+      "errors": [],
+      "map_version": 54780966,
+      "matched_candidate_count": 10,
+      "snapshot": "execution_000219",
+      "status": "MATCH"
+    },
+    {
+      "candidate_count": 8,
+      "candidates": [
+        {
+          "candidate_id": 0,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 37,
+          "sample_count": 42,
+          "unique_address_count": 32,
+          "unique_gain": 32
+        },
+        {
+          "candidate_id": 1,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 123,
+          "sample_count": 37,
+          "unique_address_count": 32,
+          "unique_gain": 32
+        },
+        {
+          "candidate_id": 2,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 32,
+          "sample_count": 45,
+          "unique_address_count": 21,
+          "unique_gain": 21
+        },
+        {
+          "candidate_id": 3,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 29,
+          "sample_count": 39,
+          "unique_address_count": 29,
+          "unique_gain": 29
+        },
+        {
+          "candidate_id": 4,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 34,
+          "sample_count": 49,
+          "unique_address_count": 23,
+          "unique_gain": 23
+        },
+        {
+          "candidate_id": 5,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 3,
+          "sample_count": 75,
+          "unique_address_count": 2,
+          "unique_gain": 2
+        },
+        {
+          "candidate_id": 6,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 23,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        },
+        {
+          "candidate_id": 7,
+          "match": true,
+          "mismatches": [],
+          "raw_gain": 0,
+          "sample_count": 46,
+          "unique_address_count": 0,
+          "unique_gain": 0
+        }
+      ],
+      "errors": [],
+      "map_version": 56344531,
+      "matched_candidate_count": 8,
+      "snapshot": "execution_000231",
+      "status": "MATCH"
+    }
+  ],
+  "spacing": 0.25,
+  "status": "MATCH"
+}

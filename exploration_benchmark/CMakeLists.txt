@@ -28,6 +28,7 @@ catkin_install_python(PROGRAMS
 	scripts/summarize_r2_predicted_observation.py
 	scripts/summarize_r2_alignment.py
 	scripts/summarize_r2_sensor_shadow.py
+	scripts/compare_i1_cpp_python.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
