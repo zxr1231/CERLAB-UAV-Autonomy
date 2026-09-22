@@ -1,0 +1,35 @@
+{
+  "schema": "cerlab-r2-06-summary-v1",
+  "date": "2026-09-22",
+  "status": "COMPLETE_CONDITIONAL",
+  "run": "/home/zxr2/cerlab_benchmark_ws/results/EXP-R2-06-SENSOR-SHADOW-SEED1-V1/environment_seed_001/planner_seed_001/20260922T152615",
+  "source_commit_at_run_start": "e697f8c907f72659f51c2a226175cd24933bda82",
+  "environment_seed": 1,
+  "planner_seed": 1,
+  "outcome": "HOME_REACHED",
+  "collision": false,
+  "coverage_final": 0.9625975217989904,
+  "t80_seconds": 223.92622931442082,
+  "t90_seconds": 354.5299523255814,
+  "t95_seconds": 488.1204501557632,
+  "exploration_distance_m": 232.16540488366877,
+  "preselected_intervals": 24,
+  "eligible_intervals": 19,
+  "excluded_empty_intervals": 5,
+  "legacy_overall": {
+    "precision_mean": 0.5177807628604488,
+    "recall_mean": 0.17676113275653368,
+    "jaccard_mean": 0.08713488819279876,
+    "count_pearson": 0.595285716383855,
+    "count_spearman": 0.07702509298441898
+  },
+  "sensor_shadow_overall": {
+    "precision_mean": 0.5440061597370716,
+    "recall_mean": 0.9808064626532599,
+    "jaccard_mean": 0.5311824928987756,
+    "count_pearson": 0.5047293732829367,
+    "count_spearman": 0.8122807017543858
+  },
+  "decision": "proceed_to_R2_07_with_late_stage_overprediction_as_explicit_risk",
+  "h2_status": "conditionally_supported_not_proven"
+}

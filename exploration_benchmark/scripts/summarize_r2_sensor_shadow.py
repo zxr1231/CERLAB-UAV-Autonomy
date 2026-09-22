@@ -15,13 +15,15 @@ def main():
     parser.add_argument("--spacing", type=float, default=0.1)
     parser.add_argument("--yaw-spacing", type=float, default=0.05)
     parser.add_argument("--evaluation-pixel-skip", type=int)
+    parser.add_argument("--samples-per-stage", type=int,
+                        help="preselect this many evenly spaced intervals per execution tertile")
     args = parser.parse_args()
     prediction = write_sensor_shadow_observation(
         args.run_directory, args.snapshot_root, args.mapping_config,
         args.output_directory, args.spacing, args.yaw_spacing,
-        args.evaluation_pixel_skip)
+        args.evaluation_pixel_skip, args.samples_per_stage)
     comparison = write_sensor_shadow_comparison(
-        args.output_directory or args.run_directory, args.snapshot_root,
+        args.run_directory, args.snapshot_root,
         args.output_directory)
     print(json.dumps({"prediction": prediction, "comparison": comparison},
                      indent=2, sort_keys=True))

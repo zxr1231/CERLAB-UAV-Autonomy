@@ -10,6 +10,7 @@ from exploration_benchmark.sensor_shadow import (CameraShadowConfig, camera_pose
                                                   camera_unit_rays,
                                                   visible_unknown_shadow,
                                                   voxel_line)
+from exploration_benchmark.sensor_shadow_observation import select_stage_intervals
 
 
 def _grid(dimensions=(8, 5, 3)):
@@ -40,6 +41,13 @@ def _config(body_to_camera=None):
 
 
 class SensorShadowTest(unittest.TestCase):
+    def test_stage_selection_is_even_and_independent_of_gain(self):
+        rows = [{"interval_id": str(index), "global_sequence": "1", "valid": "true",
+                 "odom_count": "3", "gain": str(100-index)} for index in range(1, 13)]
+        self.assertEqual(select_stage_intervals(rows, 2),
+                         {1: "early", 4: "early", 5: "middle", 8: "middle",
+                          9: "late", 12: "late"})
+
     def test_camera_extrinsic_and_yaw_match_forward_body_axis(self):
         origin, rotation = camera_pose((1.0, 2.0, 1.0), math.pi/2, _config())
         np.testing.assert_allclose(origin, (1.0, 2.0, 1.0), atol=1e-12)

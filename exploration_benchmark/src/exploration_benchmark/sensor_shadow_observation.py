@@ -10,7 +10,7 @@ from pathlib import Path
 from exploration_benchmark.core import atomic_write_json
 from exploration_benchmark.observation_alignment import (comparable_actual_set,
                                                           set_metrics, spearman)
-from exploration_benchmark.predicted_observation import sample_odom_prefix
+from exploration_benchmark.predicted_observation import sample_odom_prefix, visible_union
 from exploration_benchmark.r1_snapshot import load_frozen_map, load_snapshot
 from exploration_benchmark.r1_visibility import LegacyVisibilityConfig, visible_set_sha256
 from exploration_benchmark.sensor_shadow import (CameraShadowConfig,
@@ -57,11 +57,39 @@ def _write_jsonl(path, records):
     os.replace(str(temporary), str(path))
 
 
+def select_stage_intervals(intervals, samples_per_stage):
+    """Select outcome-independent, execution-order-spaced intervals per tertile."""
+    eligible = [row for row in intervals
+                if int(row["global_sequence"]) > 0 and
+                row.get("valid", "true").lower() == "true" and
+                int(row.get("odom_count") or 0) >= 2]
+    eligible.sort(key=lambda row: int(row["interval_id"]))
+    staged = {name: [] for name in ("early", "middle", "late")}
+    for index, row in enumerate(eligible):
+        stage = ("early", "middle", "late")[min(2, (3*index)//len(eligible))]
+        staged[stage].append(row)
+    selected = {}
+    for stage, rows in staged.items():
+        count = min(samples_per_stage, len(rows))
+        if count == 1:
+            indices = [len(rows)//2]
+        elif count > 1:
+            indices = [round(index*(len(rows)-1)/(count-1)) for index in range(count)]
+        else:
+            indices = []
+        for index in indices:
+            selected[int(rows[index]["interval_id"])] = stage
+    return selected
+
+
 def build_sensor_shadow_observation(run_directory, snapshot_root, mapping_config,
                                     spacing=0.1, yaw_spacing=0.05,
-                                    evaluation_pixel_skip=None):
+                                    evaluation_pixel_skip=None,
+                                    samples_per_stage=None):
     run_directory = Path(run_directory); snapshot_root = Path(snapshot_root)
     intervals = _read_csv(run_directory/"execution_intervals.csv")
+    selected_stages = (select_stage_intervals(intervals, samples_per_stage)
+                       if samples_per_stage else None)
     trajectory = _read_csv(run_directory/"trajectory.csv")
     odom = {}
     for row in trajectory:
@@ -73,6 +101,8 @@ def build_sensor_shadow_observation(run_directory, snapshot_root, mapping_config
     for interval in intervals:
         identifier = int(interval["interval_id"])
         global_sequence = int(interval["global_sequence"])
+        if selected_stages is not None and identifier not in selected_stages:
+            continue
         if global_sequence <= 0:
             records.append({"interval_id": identifier, "status": "SKIPPED_RETURN",
                             "errors": [], "addresses": []})
@@ -84,7 +114,7 @@ def build_sensor_shadow_observation(run_directory, snapshot_root, mapping_config
         samples = sample_odom_prefix(odom.get(identifier, []), spacing, yaw_spacing)
         if not samples:
             interval_errors.append("execution interval has no odometry prefix")
-        addresses = set(); config = None; grid = None
+        addresses = set(); legacy_addresses = set(); config = None; grid = None
         interval_start = time.monotonic()
         if not interval_errors:
             snapshot = load_snapshot(snapshot_path)
@@ -92,6 +122,8 @@ def build_sensor_shadow_observation(run_directory, snapshot_root, mapping_config
             region = snapshot["planner"]["planning_region"]
             config = CameraShadowConfig.from_yaml(
                 mapping_config, region["min"], region["max"], evaluation_pixel_skip)
+            legacy_config = LegacyVisibilityConfig.from_planner(snapshot["planner"])
+            legacy_addresses = visible_union(grid, legacy_config, samples)
             addresses = visible_shadow_union(grid, samples, config)
         errors.extend("interval %d: %s" % (identifier, item) for item in interval_errors)
         ordered = sorted(addresses)
@@ -102,6 +134,10 @@ def build_sensor_shadow_observation(run_directory, snapshot_root, mapping_config
             "status": "VALID" if not interval_errors else "INVALID",
             "errors": interval_errors,
             "sample_count": len(samples),
+            "stage": None if selected_stages is None else selected_stages[identifier],
+            "legacy_predicted_unknown_voxels": len(legacy_addresses),
+            "legacy_set_sha256": visible_set_sha256(legacy_addresses),
+            "legacy_addresses": sorted(legacy_addresses),
             "predicted_unknown_voxels": len(ordered),
             "set_sha256": visible_set_sha256(ordered),
             "wall_seconds": time.monotonic()-interval_start,
@@ -115,6 +151,9 @@ def build_sensor_shadow_observation(run_directory, snapshot_root, mapping_config
         "snapshot_root": str(snapshot_root),
         "mapping_config": str(Path(mapping_config).resolve()),
         "spacing": spacing, "yaw_spacing": yaw_spacing,
+        "selection": ("all_execution_intervals" if selected_stages is None else
+                      "execution_order_tertiles_even_spacing"),
+        "samples_per_stage": samples_per_stage,
         "interval_count": len(records),
         "valid_interval_count": sum(row["status"] == "VALID" for row in records),
         "status": "VALID" if not errors else "INVALID",
@@ -126,12 +165,13 @@ def build_sensor_shadow_observation(run_directory, snapshot_root, mapping_config
 
 def write_sensor_shadow_observation(run_directory, snapshot_root, mapping_config,
                                     output_directory=None, spacing=0.1,
-                                    yaw_spacing=0.05, evaluation_pixel_skip=None):
+                                    yaw_spacing=0.05, evaluation_pixel_skip=None,
+                                    samples_per_stage=None):
     output = Path(output_directory) if output_directory else Path(run_directory)
     output.mkdir(parents=True, exist_ok=True)
     result = build_sensor_shadow_observation(
         run_directory, snapshot_root, mapping_config, spacing, yaw_spacing,
-        evaluation_pixel_skip)
+        evaluation_pixel_skip, samples_per_stage)
     summary = {key: value for key, value in result.items() if key != "intervals"}
     atomic_write_json(output/"sensor_shadow_summary.json", summary)
     _write_jsonl(output/"sensor_shadow_sets.jsonl", result["intervals"])
@@ -164,18 +204,17 @@ def _model_summary(records, key):
     }
 
 
-def compare_sensor_shadow(run_directory, snapshot_root):
+def compare_sensor_shadow(run_directory, snapshot_root, shadow_directory=None):
     run_directory = Path(run_directory); snapshot_root = Path(snapshot_root)
+    shadow_directory = Path(shadow_directory) if shadow_directory else run_directory
     actual = _jsonl_index(run_directory/"actual_observation_sets.jsonl")
-    legacy = _jsonl_index(run_directory/"predicted_observation_sets.jsonl")
-    shadow = _jsonl_index(run_directory/"sensor_shadow_sets.jsonl")
-    identifier_sets = (set(actual), set(legacy), set(shadow))
-    common = sorted(set.intersection(*identifier_sets))
-    records, errors = [], []
-    if not all(items == identifier_sets[0] for items in identifier_sets[1:]):
-        errors.append("actual, legacy and shadow interval IDs differ")
+    shadow = _jsonl_index(shadow_directory/"sensor_shadow_sets.jsonl")
+    legacy_path = run_directory/"predicted_observation_sets.jsonl"
+    legacy = _jsonl_index(legacy_path) if legacy_path.is_file() else None
+    common = sorted(set(actual) & set(shadow))
+    records, errors, exclusions = [], [], []
     for identifier in common:
-        if legacy[identifier].get("status") != "VALID" or shadow[identifier].get("status") != "VALID":
+        if shadow[identifier].get("status") != "VALID":
             continue
         snapshot_path = snapshot_root/("execution_%06d" % identifier)
         snapshot = load_snapshot(snapshot_path)
@@ -186,10 +225,21 @@ def compare_sensor_shadow(run_directory, snapshot_root):
         legacy_config = LegacyVisibilityConfig.from_planner(snapshot["planner"])
         comparable, out_of_map = comparable_actual_set(
             actual[identifier]["addresses"], grid, legacy_config)
-        if out_of_map or not comparable:
-            errors.append("interval %d has invalid/empty comparable actual set" % identifier)
+        if out_of_map:
+            errors.append("interval %d has out-of-map actual addresses" % identifier)
             continue
-        legacy_addresses = legacy[identifier]["layers"]["odom_prefix"]["addresses"]
+        if not comparable:
+            exclusions.append({"interval_id": identifier,
+                               "reason": "empty_comparable_actual_set",
+                               "preselected_stage": shadow[identifier].get("stage")})
+            continue
+        if "legacy_addresses" in shadow[identifier]:
+            legacy_addresses = shadow[identifier]["legacy_addresses"]
+        elif legacy is not None and identifier in legacy:
+            legacy_addresses = legacy[identifier]["layers"]["odom_prefix"]["addresses"]
+        else:
+            errors.append("interval %d lacks legacy prediction" % identifier)
+            continue
         records.append({
             "interval_id": identifier,
             "actual_full_count": len(actual[identifier]["addresses"]),
@@ -197,8 +247,14 @@ def compare_sensor_shadow(run_directory, snapshot_root):
             "legacy": set_metrics(legacy_addresses, comparable),
             "sensor_shadow": set_metrics(shadow[identifier]["addresses"], comparable),
             "shadow_wall_seconds": shadow[identifier]["wall_seconds"],
+            "preselected_stage": shadow[identifier].get("stage"),
         })
-    records = _assign_stages(records)
+    stages_preselected = bool(records) and all(row.get("preselected_stage") for row in records)
+    if stages_preselected:
+        for row in records:
+            row["stage"] = row.pop("preselected_stage")
+    else:
+        records = _assign_stages(records)
     by_stage = {}
     for stage in ("early", "middle", "late"):
         subset = [row for row in records if row["stage"] == stage]
@@ -212,8 +268,11 @@ def compare_sensor_shadow(run_directory, snapshot_root):
         "schema": "cerlab-r2-shadow-comparison-v1",
         "status": "VALID" if records and not errors else "INVALID",
         "errors": errors,
+        "excluded_interval_count": len(exclusions),
+        "exclusions": exclusions,
         "eligible_interval_count": len(records),
-        "stage_definition": "equal_count_ordered_execution_intervals",
+        "stage_definition": ("preselected_execution_order_tertiles" if stages_preselected else
+                             "equal_count_ordered_execution_intervals"),
         "overall": {"legacy": legacy_summary, "sensor_shadow": shadow_summary},
         "delta_shadow_minus_legacy": {
             key: (None if shadow_summary[key] is None or legacy_summary[key] is None
@@ -229,7 +288,7 @@ def compare_sensor_shadow(run_directory, snapshot_root):
 def write_sensor_shadow_comparison(run_directory, snapshot_root,
                                    output_directory=None):
     output = Path(output_directory) if output_directory else Path(run_directory)
-    result = compare_sensor_shadow(run_directory, snapshot_root)
+    result = compare_sensor_shadow(run_directory, snapshot_root, output_directory)
     summary = {key: value for key, value in result.items() if key != "intervals"}
     atomic_write_json(output/"sensor_shadow_comparison_summary.json", summary)
     atomic_write_json(output/"sensor_shadow_comparison_intervals.json",

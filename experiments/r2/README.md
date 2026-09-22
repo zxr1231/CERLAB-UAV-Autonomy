@@ -39,8 +39,11 @@ explicit consistency checks rather than relying only on this source inspection.
 
 ## Current boundary
 
-R2-01 through R2-05 are complete. Actual observation sets are assigned by sensor
+R2-01 through R2-06 are complete. Actual observation sets are assigned by sensor
 message timestamp, while callback-time interval IDs are retained for boundary audit.
 Four predicted layers are built on execution-start snapshots and aligned with actual
 sets. The legacy proxy shows useful count correlation for odom prefixes but weak exact
-set overlap, so H2 remains unproven. See `R2_05_VALIDATION.md` before starting R2-06.
+set overlap. R2-06 replaces it for offline validation with a mapper-matched frozen-map
+shadow evaluator. The new evaluator performs well in early/middle exploration but
+overpredicts in the late stage because Unknown physical obstacles are absent from the
+snapshot. See `R2_06_VALIDATION.md`; R2-07 is the next task.

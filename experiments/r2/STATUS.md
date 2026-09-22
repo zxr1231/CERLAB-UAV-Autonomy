@@ -7,9 +7,10 @@
 | R2-03 Actual newly observed set | Complete | timestamp-canonical interval unions, integrity checks, passing smoke |
 | R2-04 Predicted PRM/shortcut/B-spline/odom-prefix sets | Complete | raw PRM retention, four-layer 0.25 m set construction, live smoke |
 | R2-05 Alignment and correctness tests | Complete | execution-start snapshot fix, set metrics, layer retention, live smoke |
-| R2-06 Early/middle/late validation | Not started | first calibrate a sensor-matched prediction kernel; legacy proxy did not pass exact-set gate |
+| R2-06 Early/middle/late validation | Complete (conditional) | mapper-matched shadow calibration and one full seed-1 stage study; late-stage overprediction retained as explicit limitation |
 | R2-07 Phase decision | Not started | depends on R2-06 |
 
-Resume from R2-06 sensor-model calibration, then early/middle/late validation. Do not
+Resume from R2-07 final phase decision. Do not
 rerun R2-01 through R2-05 unless schemas, interval definitions or observation
-provenance change. Current evidence does not establish H2.
+provenance change. R2-06 conditionally supports H2 in early/middle exploration, while
+late-stage precision remains insufficient for an unconditional claim.
