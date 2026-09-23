@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-09-23 after I1-05 Unique online smoke.
+Last updated: 2026-09-23 after I1-06 seed-1 paired checkpoint.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -264,15 +264,32 @@ selection/evaluator tests, 85 Python tests and all return-home checks pass.
 Read `experiments/i1/I1_05_VALIDATION.md` and
 `experiments/i1/I1_05_ONLINE_SMOKE.json`.
 
-## Immediate next task: I1-06
+## I1-06 progress and immediate next task
+
+I1-06 is underway. The resumable paired matrix is
+`experiments/i1/I1_06_MATRIX.json`, and its state is
+`/home/zxr2/cerlab_benchmark_ws/results/EXP-I1-06-PAIRED-PILOT-V1/batch_state.json`.
+Seed 1 Legacy and Unique-online completed on the same commit (`10e9c35`), both returned
+home without collision. Unique-online T80/T90/T95 was 167.50/239.54/328.67 s versus
+Legacy 203.40/280.33/452.74 s; exploration distance was 196.04 m versus 186.38 m;
+global planning mean was 92.96 versus 48.43 ms. A first Unique attempt was interrupted
+by loss of its execution session and remains preserved as an excluded partial run.
+These are one-seed pilot observations, not a method conclusion. Read
+`experiments/i1/I1_06_PROGRESS_2026-09-23.md`.
+
+The user asked to stop and back up after seed 1. The current checkout may be the
+`docs/i1-06-progress` branch to preserve this handoff. The frozen experiment branch is
+`feat/i1-unique-gain` at `10e9c35`; switch to it before any remaining run and require
+an empty Git status. The next task is seed 2 only: resume `run_matrix.py` with
+`--max-tasks 2`; its dry run must list only the two seed-2
+modes. After that pair, record and back it up before seed 3. Seed 1 must not be rerun.
 
 Run the pre-registered three-seed paired pilot and make the Innovation-1 decision:
 
-1. Create one matrix/config with modes `legacy` and `unique_online`, seed pairs 1/1,
-   2/2 and 3/3, full mode, 900 s timeout, Coverage enabled and no RViz/rosbag.
+1. Verify current Git state and the matrix dry run; run only seed 2 modes next.
 2. Ensure every run records the same parent/submodule commits and an empty Git status.
 3. Retain failures/censoring. Do not substitute repeat values during this pilot.
-4. Aggregate paired Coverage, T80/T90/T95, completion, exploration/final distance,
+4. After seeds 2 and 3 finish, aggregate paired Coverage, T80/T90/T95, completion, exploration/final distance,
    collision, success, planning time, CPU/RSS, RTF and Unique selection/fallback data.
 5. Add actual observation per metre/second and low-new-observation interval metrics
    using the existing sensor provenance where available.
