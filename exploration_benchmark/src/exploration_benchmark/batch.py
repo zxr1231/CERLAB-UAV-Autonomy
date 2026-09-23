@@ -27,6 +27,12 @@ def parse_matrix_config(value):
     pairs = value.get("seed_pairs")
     if not isinstance(pairs, list) or not pairs:
         raise ValueError("seed_pairs must be a non-empty list")
+    gain_modes = value.get("path_gain_modes", ["legacy"])
+    if (not isinstance(gain_modes, list) or not gain_modes or
+            len(gain_modes) != len(set(gain_modes)) or
+            any(item not in ("legacy", "unique_shadow", "unique_online")
+                for item in gain_modes)):
+        raise ValueError("path_gain_modes must be distinct supported modes")
     tasks = []
     seen = set()
     for pair in pairs:
@@ -40,19 +46,23 @@ def parse_matrix_config(value):
         else:
             raise ValueError("each seed pair must be [environment, planner] or an object")
         for repeat in range(1, repeats + 1):
-            identifier = "env%03d_planner%03d_repeat%02d" % (
-                environment_seed, planner_seed, repeat)
-            if identifier in seen:
-                raise ValueError("duplicate matrix task: %s" % identifier)
-            seen.add(identifier)
-            tasks.append({
-                "task_id": identifier,
-                "environment_seed": environment_seed,
-                "planner_seed": planner_seed,
-                "repeat": repeat,
-                "status": "PENDING",
-                "attempts": [],
-            })
+            for gain_mode in gain_modes:
+                identifier = "env%03d_planner%03d_repeat%02d" % (
+                    environment_seed, planner_seed, repeat)
+                if "path_gain_modes" in value:
+                    identifier += "_" + gain_mode
+                if identifier in seen:
+                    raise ValueError("duplicate matrix task: %s" % identifier)
+                seen.add(identifier)
+                tasks.append({
+                    "task_id": identifier,
+                    "environment_seed": environment_seed,
+                    "planner_seed": planner_seed,
+                    "repeat": repeat,
+                    "path_gain_mode": gain_mode,
+                    "status": "PENDING",
+                    "attempts": [],
+                })
     return {
         "schema_version": 1,
         "experiment_id": experiment_id,
@@ -61,6 +71,7 @@ def parse_matrix_config(value):
         "timeout": timeout,
         "rviz": bool(value.get("rviz", False)),
         "disable_coverage": bool(value.get("disable_coverage", False)),
+        "path_gain_modes": gain_modes,
         "tasks": tasks,
     }
 

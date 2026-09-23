@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "experiment_id": "EXP-I1-06-PAIRED-PILOT-V1",
+  "method": "hire_return_home_500_unique_ablation",
+  "mode": "full",
+  "timeout": 900,
+  "seed_pairs": [[1, 1], [2, 2], [3, 3]],
+  "path_gain_modes": ["legacy", "unique_online"],
+  "repeats": 1,
+  "rviz": false,
+  "disable_coverage": false
+}

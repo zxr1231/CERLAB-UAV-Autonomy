@@ -106,6 +106,7 @@ def main():
             "--planner-seed", str(task["planner_seed"]),
             "--mode", matrix["mode"],
             "--timeout", str(matrix["timeout"]),
+            "--path-gain-mode", task.get("path_gain_mode", "legacy"),
         ]
         if matrix["rviz"]:
             command.append("--rviz")

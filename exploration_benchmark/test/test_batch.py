@@ -25,6 +25,20 @@ class BatchTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_matrix_config({"schema_version": 2, "experiment_id": "EXP",
                                  "seed_pairs": [[1, 1]]})
+        with self.assertRaisesRegex(ValueError, "path_gain_modes"):
+            parse_matrix_config({"schema_version": 1, "experiment_id": "EXP",
+                                 "seed_pairs": [[1, 1]],
+                                 "path_gain_modes": ["legacy", "legacy"]})
+
+    def test_expands_paired_modes_with_distinct_resume_ids(self):
+        matrix = parse_matrix_config({"schema_version": 1, "experiment_id": "I1",
+                                      "seed_pairs": [[1, 1], [2, 2]],
+                                      "path_gain_modes": ["legacy", "unique_online"]})
+        self.assertEqual([task["task_id"] for task in matrix["tasks"]], [
+            "env001_planner001_repeat01_legacy",
+            "env001_planner001_repeat01_unique_online",
+            "env002_planner002_repeat01_legacy",
+            "env002_planner002_repeat01_unique_online"])
 
     def test_resume_policy_and_hash(self):
         tasks = [{"task_id": "a", "status": "SUCCESS", "attempts": []},
