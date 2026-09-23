@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-09-22 after I1-04-01 preparation.
+Last updated: 2026-09-23 after I1-04 live shadow validation.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -246,24 +246,29 @@ documented.
 Read `experiments/i1/I1_03_VALIDATION.md` and
 `experiments/i1/I1_03_CPP_PYTHON_AGREEMENT.json`.
 
-## Immediate next task: I1-04
+I1-04 is complete. The full seed-1 shadow run reached home without collision; all
+31 Unique evaluations were valid and counterfactual Top-1 changed 16/31 times. Change
+rates persisted below 80%, from 80–95%, and above 95% Coverage. Unique evaluation
+mean/p95/max was 47.57/101.90/112.22 ms. Global planning mean/p95 was 96.41/177.85 ms,
+while RTF remained 0.99918. These costs must remain in later comparisons.
 
-Run live shadow-mode validation without changing candidate selection:
+Read `experiments/i1/I1_04_VALIDATION.md` and
+`experiments/i1/I1_04_SHADOW_SUMMARY.json`.
 
-I1-04-01 already added the explicit launch/runner override and recorded mode provenance.
-Use the command in `experiments/i1/I1_04_PREP.md` and continue with:
+## Immediate next task: I1-05
 
-1. Run a bounded seed-1 smoke first. Require `selection_gain_mode=legacy`, successful
-   return, no collision/crash and populated Unique fields.
-2. Measure valid/no-valid/error status, Top-1 disagreement, duplicate ratio, score
-   margin, unique evaluation time, total global planning p50/p95/max, CPU/RSS and RTF.
-3. Inspect whether snapshot capture/evaluation cost disrupts replanning. Fix correctness
-   errors, but do not add Edge cache or tune the environment.
-4. If the bounded smoke is healthy, collect enough early/middle/late live events to
-   characterize ranking changes. This is diagnostic evidence, not the I1-06 paired
-   performance experiment.
-5. Keep completion and flown routes Legacy, update documentation/handoff, test,
-   commit/push and back up the stage.
+Implement feature-flagged Unique online selection:
+
+1. Allow `unique_online` only when evaluator output is valid; otherwise explicitly
+   fall back to the already computed Legacy winner and log a stable fallback reason.
+2. Switch only candidate ranking. Keep Goal prefilter, A*, shortcut, dynamics and the
+   completion/return gain threshold on Legacy values.
+3. Add unit tests for Unique winner selection, ties, invalid/no-candidate evaluation,
+   snapshot mismatch/error fallback and unchanged Legacy mode.
+4. Run a bounded small-ROI seed-1 online smoke before any full run. Require successful
+   return, no collision/crash, `selection_gain_mode=unique`, and observable fallback.
+5. Inspect path/B-spline/odom linkage and computation cost. Do not begin the three-seed
+   I1-06 pilot until I1-05 passes and is backed up.
 
 After I1-01, follow I1-02 through I1-06 in the final R2 decision. The paired pilot uses
 seed pairs 1/1, 2/2 and 3/3. Final paper-scale ten-seed and multi-scene ablation is

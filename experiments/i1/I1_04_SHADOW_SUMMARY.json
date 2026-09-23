@@ -1,0 +1,63 @@
+{
+  "schema": "cerlab-i1-live-shadow-summary-v1",
+  "date": "2026-09-23",
+  "status": "COMPLETE_CONDITIONAL_GO_TO_I1_05",
+  "small_roi_smoke": {
+    "run": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I1-04-SHADOW-SMOKE-V1/environment_seed_001/planner_seed_001/20260923T095857",
+    "outcome": "HOME_REACHED",
+    "collision": false,
+    "global_plans": 11,
+    "valid_unique_evaluations": 11,
+    "top1_change_rate": 0.6363636363636364,
+    "unique_evaluation_ms_mean": 19.281454545454544,
+    "unique_evaluation_ms_max": 25.064,
+    "rtf_mean": 0.9992998422850335
+  },
+  "full_floorplan": {
+    "run": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I1-04-SHADOW-FULL-SEED1-V1/environment_seed_001/planner_seed_001/20260923T100149",
+    "source_commit": "fbbc0826a8c2a5b7554bbdfe2292d6ead62451ef",
+    "outcome": "HOME_REACHED",
+    "collision": false,
+    "coverage_final": 0.9553577074091071,
+    "t80_seconds": 226.80774923547403,
+    "t90_seconds": 329.542,
+    "t95_seconds": 423.89575806451603,
+    "mission_sim_seconds": 470.769,
+    "mission_distance_m": 205.71584358015605,
+    "global_plans": 31,
+    "valid_unique_evaluations": 31,
+    "top1_changed": 16,
+    "top1_change_rate": 0.5161290322580645,
+    "selected_duplicate_ratio_mean": 0.6606451612903226,
+    "selected_duplicate_ratio_median": 0.683,
+    "unique_evaluation_ms": {
+      "mean": 47.56509677419355,
+      "median": 38.469,
+      "p95": 101.897,
+      "max": 112.22
+    },
+    "global_planning_ms": {
+      "mean": 96.4066774193548,
+      "p95": 177.848,
+      "max": 203.562
+    },
+    "rtf_mean": 0.9991760940008445,
+    "exploration_cpu_percent_mean": 143.27005900184074,
+    "exploration_rss_mib_mean": 459.39820963541666,
+    "stages_by_coverage": {
+      "early_below_80": {"plans": 16, "top1_changed": 9, "change_rate": 0.5625},
+      "middle_80_to_95": {"plans": 9, "top1_changed": 4, "change_rate": 0.4444444444444444},
+      "late_at_least_95": {"plans": 6, "top1_changed": 3, "change_rate": 0.5}
+    }
+  },
+  "historical_seed1_legacy_reference": {
+    "run": "/home/zxr2/cerlab_benchmark_ws/results/EXP-BENCH-V2-DEP-FORMAL-10SEED-V2/environment_seed_001/planner_seed_001/20260916T204817",
+    "global_planning_ms_mean": 35.960148148148136,
+    "global_planning_ms_p95": 116.16215,
+    "rtf_mean": 0.9991597790479787,
+    "exploration_cpu_percent_mean": 146.09133628074696,
+    "exploration_rss_mib_mean": 444.50757183056874
+  },
+  "decision": "proceed_to_feature_flagged_I1_05_with_measured_shadow_cost",
+  "performance_claim_allowed": false
+}
