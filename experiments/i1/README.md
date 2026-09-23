@@ -6,6 +6,5 @@ gate remains unchanged.
 
 Authoritative scope and gates are in `../r2/R2_FINAL_DECISION.md`.
 
-Current state: I1-01 through I1-04 complete. Continue from I1-05 feature-flagged
-online selection and fallback tests. `unique_online` remains unavailable at this
-checkpoint.
+Current state: I1-01 through I1-05 complete. Continue from I1-06 same-commit paired
+Legacy versus Unique-online seeds 1–3. Default mode and completion remain Legacy.

@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-09-23 after I1-04 live shadow validation.
+Last updated: 2026-09-23 after I1-05 Unique online smoke.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -60,7 +60,7 @@ autonomous_flight:
 
 global_planner:
   branch feat/i1-unique-gain
-  commit acfe5e8 (I1-03)
+  commit 65c2510 (I1-05 implementation)
 
 map_manager:
   branch feat/r2-execution-logging
@@ -255,20 +255,29 @@ while RTF remained 0.99918. These costs must remain in later comparisons.
 Read `experiments/i1/I1_04_VALIDATION.md` and
 `experiments/i1/I1_04_SHADOW_SUMMARY.json`.
 
-## Immediate next task: I1-05
+I1-05 is complete. A clean seed-1 small-ROI smoke used Unique selection on 10/10
+global plans, changed the Legacy Top-1 twice, reached home without collision and kept
+the completion gate on Legacy gain. All evaluations were valid, no normal fallback
+occurred, Unique evaluation mean/p95 was 19.46/25.19 ms and RTF was 0.99928. Ten C++
+selection/evaluator tests, 85 Python tests and all return-home checks pass.
 
-Implement feature-flagged Unique online selection:
+Read `experiments/i1/I1_05_VALIDATION.md` and
+`experiments/i1/I1_05_ONLINE_SMOKE.json`.
 
-1. Allow `unique_online` only when evaluator output is valid; otherwise explicitly
-   fall back to the already computed Legacy winner and log a stable fallback reason.
-2. Switch only candidate ranking. Keep Goal prefilter, A*, shortcut, dynamics and the
-   completion/return gain threshold on Legacy values.
-3. Add unit tests for Unique winner selection, ties, invalid/no-candidate evaluation,
-   snapshot mismatch/error fallback and unchanged Legacy mode.
-4. Run a bounded small-ROI seed-1 online smoke before any full run. Require successful
-   return, no collision/crash, `selection_gain_mode=unique`, and observable fallback.
-5. Inspect path/B-spline/odom linkage and computation cost. Do not begin the three-seed
-   I1-06 pilot until I1-05 passes and is backed up.
+## Immediate next task: I1-06
+
+Run the pre-registered three-seed paired pilot and make the Innovation-1 decision:
+
+1. Create one matrix/config with modes `legacy` and `unique_online`, seed pairs 1/1,
+   2/2 and 3/3, full mode, 900 s timeout, Coverage enabled and no RViz/rosbag.
+2. Ensure every run records the same parent/submodule commits and an empty Git status.
+3. Retain failures/censoring. Do not substitute repeat values during this pilot.
+4. Aggregate paired Coverage, T80/T90/T95, completion, exploration/final distance,
+   collision, success, planning time, CPU/RSS, RTF and Unique selection/fallback data.
+5. Add actual observation per metre/second and low-new-observation interval metrics
+   using the existing sensor provenance where available.
+6. Decide whether Unique-only is beneficial, neutral infrastructure, or should be
+   disabled online under the R2/I1 kill criteria. Update handoff, push and back up.
 
 After I1-01, follow I1-02 through I1-06 in the final R2 decision. The paired pilot uses
 seed pairs 1/1, 2/2 and 3/3. Final paper-scale ten-seed and multi-scene ablation is
