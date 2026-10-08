@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I2-01 protocol freeze.
+Last updated: 2026-10-08 after I2-02 isolated route solver.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -331,16 +331,21 @@ actual candidate deficits and compute costs must be reported. Source heap mutabi
 is a risk, not a demonstrated historical failure; common snapshot scoring is an
 implementation prerequisite, not an existing feature.
 
-**Immediate next task is I2-02:** implement and test an isolated immutable directed
-graph solver (deterministic Dijkstra + Yen) on a new feature branch. Verify K-route
-results against exhaustive small-graph enumeration; do not change historical A* or
-online default, and do not start full seed runs yet. Then I2-03 geometry controls,
-I2-04 integration/smoke, I2-05 preregistered paired pilot and I2-06 decision.
-Do not start I3 until the separate held-out-scene ordering protocol is frozen and
-its predicted/actual gate is completed. The documentation branch is
-`docs/i2-01-protocol`; frozen I1 remains `feat/i1-unique-gain` at `10e9c35`.
+I2-02 implements the isolated ROS-independent `routeSearch.h` solver in
+`global_planner`, with deterministic Dijkstra and Yen, immutable directed graph,
+loopless deduplication, reference/alternative pop counts and cooperative cutoff.
+Six tests include a 300-graph exhaustive oracle and complete six-vertex fixtures.
+Read `experiments/i2/I2_02_ROUTE_SEARCH_REPORT.md` and validation JSON. No online
+integration or performance claim; historical search/default/config and I1 stay fixed.
 
-Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_01_2026-10-08/`.
+**Immediate next task is I2-03:** geometric-diversity selection from the identical
+Yen pool, motion-limit filtering and post-shortcut duplicate/count contracts, tested
+without observation reward. Continue `feat/i2-route-controls` in parent and
+`global_planner`. Live PRM/map adapter and original-A* comparison remain I2-04,
+then smoke, preregistered paired pilot and I2-06 decision. Do not start full seed
+runs or I3 before their registered gates. Frozen I1 stays at `10e9c35`.
+
+Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_02_2026-10-08/`.
 
 Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in
