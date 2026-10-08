@@ -1,0 +1,40 @@
+{
+  "task": "I2-04",
+  "date": "2026-10-08",
+  "status": "integration_contract_and_bounded_smoke_passed",
+  "evidence": {
+    "snapshot_test.xml": {
+      "tests": 3,
+      "failures": 0,
+      "sha256": "9bec38f77ebc8a30cd7676235a1c2b902dec75837e18a435995ac03ffe1fdc4f"
+    },
+    "i2_04_search.xml": {
+      "tests": 7,
+      "failures": 0,
+      "sha256": "db301b830b3f49c465a52f317a778d3fd61ebba37d0f146103f626bd99100b6a"
+    },
+    "i2_04_candidates.xml": {
+      "tests": 10,
+      "failures": 0,
+      "sha256": "34cf4e87016d0d5801deb7e9b6497f891faedbfead6f1d220592f0778020d92e"
+    }
+  },
+  "python_execution_tests": 4,
+  "python_trajectory_tests": 3,
+  "smoke_source_commit": "e97291d431dba1344b4edcd59f9d4a1ff37520c5",
+  "smoke_runs": 4,
+  "pre_fix_runs_retained": 4,
+  "fixed_defect": "live-map reads in concurrent worker invalidated A-star comparison/final-check consistency",
+  "smoke_summary_sha256": "41a2732661be9f7d90e8f68b6fed6d9a5c6c90186c978b018ebb8c666c90ae42",
+  "sanitizers_this_task": "not_run; I2-02/I2-03 sanitizer evidence is not reused as an I2-04 pass",
+  "mission_success_claim": false,
+  "performance_claim": false,
+  "i1_frozen": "unchanged",
+  "default": "historical_legacy + legacy gain; rosbag disabled",
+  "remaining_limitations": [
+    "No positive surviving alternative in short smoke samples",
+    "No full paired pilot",
+    "Snapshot-safe route does not guarantee later dynamic safety/B-spline feasibility on arbitrary scenes",
+    "Frozen A-star compatibility copy/audit serialization cost included in total runtime"
+  ]
+}

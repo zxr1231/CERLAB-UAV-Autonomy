@@ -6,8 +6,8 @@
 | I2-01 Generic multi-route protocol and controls | Complete (protocol only) | I2_01_GENERIC_ROUTE_PROTOCOL.md + I2_01_PROTOCOL.json; no algorithm changes |
 | I2-02 Deterministic single-distance / Yen solver | Complete (isolated solver) | routeSearch.h + six correctness tests; see I2_02_ROUTE_SEARCH_REPORT.md and validation JSON |
 | I2-03 Geometric diversity control | Complete (isolated controls) | routeCandidates.h + nine contract tests; online counts remain I2-04 |
-| I2-04 Integration and safety smoke | Not started | snapshot-consistent adapter, disabled-feature compatibility, execution linkage |
-| I2-05 Paired pilot | Not started | register matrix before runs |
+| I2-04 Integration and safety smoke | Complete | snapshot adapter/scoring/logs; 20 C++ + 7 Python tests; V2 four bounded smoke runs; V1 defect/data retained |
+| I2-05 Candidate-supply gate then paired pilot | Not started | zero extra routes survived early smoke; preregister supply diagnostic before full matrix |
 | I2-06 Decision and held-out gate | Not started | freeze held-out ordering protocol before collection/I3 |
 | I3 observation-guided route generation gate | Pending | requires held-out-scene predicted/actual ordering check after I2 controls |
 

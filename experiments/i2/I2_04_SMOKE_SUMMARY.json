@@ -1,0 +1,222 @@
+{
+  "schema": "cerlab-i2-04-smoke-audit-v1",
+  "batch": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-04-SMOKE-V2/batch_state.json",
+  "interpretation": "bounded safety/integration only; no T95 or method superiority claim",
+  "runs": [
+    {
+      "mode": "historical_legacy",
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-04-SMOKE-V2-historical_legacy/environment_seed_001/planner_seed_001/20261008T211532",
+      "source_commit": "e97291d431dba1344b4edcd59f9d4a1ff37520c5",
+      "original_outcome": "TIMEOUT",
+      "original_run_status": "FAILED",
+      "checks": {
+        "expected_bounded_outcome": true,
+        "same_mode_registered": true,
+        "collision_valid_and_zero": true,
+        "resources_valid": true,
+        "trajectory_valid": true,
+        "movement": true,
+        "rosbag_disabled": true,
+        "four_route_layers": true,
+        "execution_linkage": true,
+        "no_crash_log": true,
+        "default_has_no_new_route_log": true
+      },
+      "passed": true,
+      "mission_distance": 9.347939604031165,
+      "rtf": {
+        "count": 38,
+        "max": 0.9999998539997463,
+        "mean": 0.999325074190516,
+        "p95": 0.9996386979869034
+      },
+      "global_planning": {
+        "count": 4,
+        "max_ms": 79.803,
+        "mean_ms": 54.906,
+        "p95_ms": 79.4004
+      },
+      "details": {},
+      "run_json_sha256": "6acff9d6d99c6eaa668ab1eeb2b35f63d37611f04d9a762dbcf76fea0da1c582"
+    },
+    {
+      "mode": "distance_single",
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-04-SMOKE-V2-distance_single/environment_seed_001/planner_seed_001/20261008T211620",
+      "source_commit": "e97291d431dba1344b4edcd59f9d4a1ff37520c5",
+      "original_outcome": "TIMEOUT",
+      "original_run_status": "FAILED",
+      "checks": {
+        "expected_bounded_outcome": true,
+        "same_mode_registered": true,
+        "collision_valid_and_zero": true,
+        "resources_valid": true,
+        "trajectory_valid": true,
+        "movement": true,
+        "rosbag_disabled": true,
+        "four_route_layers": true,
+        "execution_linkage": true,
+        "no_crash_log": true,
+        "ready_candidates": true,
+        "candidate_count_contract": true,
+        "common_shadow_snapshot": true,
+        "frozen_astar_comparisons": true,
+        "snapshot_validation_logged": true,
+        "unsafe_selection_not_executed": true
+      },
+      "passed": true,
+      "mission_distance": 9.108393554329203,
+      "rtf": {
+        "count": 38,
+        "max": 1.0020632753397198,
+        "mean": 0.9993541719711162,
+        "p95": 1.001381074838812
+      },
+      "global_planning": {
+        "count": 4,
+        "max_ms": 162.908,
+        "mean_ms": 128.91674999999998,
+        "p95_ms": 160.4825
+      },
+      "details": {
+        "route_events": 4,
+        "ready_events": 4,
+        "fallback_events": 0,
+        "total_raw": 11,
+        "total_post_shortcut_unique": 11,
+        "total_scored": 11,
+        "astar_comparison_count": 11,
+        "astar_max_excess_length": 2.220446049250313e-16,
+        "unsafe_rejections": 0,
+        "snapshot_changed_before_validation": 4,
+        "reachable_goal_instances": 11,
+        "surviving_alternatives": 0,
+        "rejection_counts": {}
+      },
+      "run_json_sha256": "44767f3d7e15820c13a25d2d631184115204e2a8ba486016ccdc54eeb7cf5edf"
+    },
+    {
+      "mode": "generic_k_shortest",
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-04-SMOKE-V2-generic_k_shortest/environment_seed_001/planner_seed_001/20261008T211707",
+      "source_commit": "e97291d431dba1344b4edcd59f9d4a1ff37520c5",
+      "original_outcome": "TIMEOUT",
+      "original_run_status": "FAILED",
+      "checks": {
+        "expected_bounded_outcome": true,
+        "same_mode_registered": true,
+        "collision_valid_and_zero": true,
+        "resources_valid": true,
+        "trajectory_valid": true,
+        "movement": true,
+        "rosbag_disabled": true,
+        "four_route_layers": true,
+        "execution_linkage": true,
+        "no_crash_log": true,
+        "ready_candidates": true,
+        "candidate_count_contract": true,
+        "common_shadow_snapshot": true,
+        "frozen_astar_comparisons": true,
+        "snapshot_validation_logged": true,
+        "unsafe_selection_not_executed": true
+      },
+      "passed": true,
+      "mission_distance": 11.210549654554203,
+      "rtf": {
+        "count": 38,
+        "max": 0.9996372326480986,
+        "mean": 0.9992312282976531,
+        "p95": 0.9995601074076275
+      },
+      "global_planning": {
+        "count": 4,
+        "max_ms": 166.852,
+        "mean_ms": 140.38575,
+        "p95_ms": 165.7594
+      },
+      "details": {
+        "route_events": 4,
+        "ready_events": 3,
+        "fallback_events": 1,
+        "total_raw": 42,
+        "total_post_shortcut_unique": 7,
+        "total_scored": 7,
+        "astar_comparison_count": 7,
+        "astar_max_excess_length": 1.1102230246251565e-16,
+        "unsafe_rejections": 0,
+        "snapshot_changed_before_validation": 3,
+        "reachable_goal_instances": 7,
+        "surviving_alternatives": 0,
+        "rejection_counts": {
+          "raw_length": 22,
+          "raw_time": 31,
+          "raw_yaw": 27,
+          "shortcut_duplicate": 4
+        }
+      },
+      "run_json_sha256": "be55626903384114f470be4df1a871f9bc4f9d481d948484c2e92d19abb3bfa1"
+    },
+    {
+      "mode": "geometric_diverse",
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-04-SMOKE-V2-geometric_diverse/environment_seed_001/planner_seed_001/20261008T211755",
+      "source_commit": "e97291d431dba1344b4edcd59f9d4a1ff37520c5",
+      "original_outcome": "TIMEOUT",
+      "original_run_status": "FAILED",
+      "checks": {
+        "expected_bounded_outcome": true,
+        "same_mode_registered": true,
+        "collision_valid_and_zero": true,
+        "resources_valid": true,
+        "trajectory_valid": true,
+        "movement": true,
+        "rosbag_disabled": true,
+        "four_route_layers": true,
+        "execution_linkage": true,
+        "no_crash_log": true,
+        "ready_candidates": true,
+        "candidate_count_contract": true,
+        "common_shadow_snapshot": true,
+        "frozen_astar_comparisons": true,
+        "snapshot_validation_logged": true,
+        "unsafe_selection_not_executed": true
+      },
+      "passed": true,
+      "mission_distance": 12.017044487434493,
+      "rtf": {
+        "count": 38,
+        "max": 1.0013816302683296,
+        "mean": 0.9992744416266968,
+        "p95": 0.9996392843867635
+      },
+      "global_planning": {
+        "count": 5,
+        "max_ms": 153.216,
+        "mean_ms": 126.59740000000002,
+        "p95_ms": 152.8274
+      },
+      "details": {
+        "route_events": 5,
+        "ready_events": 5,
+        "fallback_events": 0,
+        "total_raw": 54,
+        "total_post_shortcut_unique": 9,
+        "total_scored": 9,
+        "astar_comparison_count": 9,
+        "astar_max_excess_length": 1.7763568394002505e-15,
+        "unsafe_rejections": 0,
+        "snapshot_changed_before_validation": 5,
+        "reachable_goal_instances": 9,
+        "surviving_alternatives": 0,
+        "rejection_counts": {
+          "raw_length": 22,
+          "raw_time": 38,
+          "raw_yaw": 34,
+          "shortcut_duplicate": 7,
+          "shortcut_time": 2,
+          "shortcut_yaw": 2
+        }
+      },
+      "run_json_sha256": "97f79d2fcfe5badce46ec06d59724d62797d0a05ca5c24aa22df41cb089e2d32"
+    }
+  ],
+  "passed": true,
+  "next_gate": "I2-05 must preregister candidate-supply/coverage-of-planning-phases diagnostics before committing full paired pilot."
+}

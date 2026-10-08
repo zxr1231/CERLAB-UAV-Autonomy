@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I2-03 isolated candidate controls.
+Last updated: 2026-10-08 after I2-04 integration and bounded smoke.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -57,22 +57,21 @@ The repositories are clean and their active branches are maintained in the user'
 GitHub account. The user has authorized pushes for completed project work.
 
 ```text
-parent branch: feat/i1-unique-gain
-parent starting commit for I1: 80f5e2f5b0a287348d2fc7dc9bca0eac0d7d11f6
-I1-01 implementation commit: 76efaf2
-
-autonomous_flight:
-  branch feat/i1-gain-logging
-  commit e41b350 (I1-02)
+parent branch: feat/i2-route-controls
+I2-04 smoke source commit: e97291d431dba1344b4edcd59f9d4a1ff37520c5
+final documentation checkpoint: inspect git HEAD / local backup README
+frozen I1 branch: feat/i1-unique-gain
+frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
-  branch feat/i1-unique-gain
-  commit 65c2510 (I1-05 implementation)
-
+  branch feat/i2-route-controls
+  commit c17fa0ee1b51190407a8937da3d437b0a1002554
+autonomous_flight:
+  branch feat/i2-route-logging
+  commit 33422e2d5ff2c8e405013df5abb72f388351eb00
 map_manager:
   branch feat/r2-execution-logging
   commit f6d2e925b47916a5cb3b72e011af6f3a17dbdd26
-
 uav_simulator:
   branch feat/benchmark-v2
   commit cc8c8a6dce0214d9ba99a3189272f05dc8807d24
@@ -346,16 +345,28 @@ covered by nine tests. See `experiments/i2/I2_03_CANDIDATE_CONTROLS_REPORT.md` a
 validation JSON. Selected counts are not actual scored counts; no online integration,
 B-spline validation or observation benefit has been demonstrated.
 
-**Immediate next task is I2-04:** integrate snapshot-consistent live PRM graph,
-collision and legacy-formula scoring adapters behind explicit feature flags; verify
-historical-default compatibility, original A* vs deterministic reference differences,
-new candidate/log provenance and execution linkage. Start with bounded adapter/tests,
-then simulation smoke only after checks pass. Do not jump straight to a full seed
-matrix. Continue parent/global_planner `feat/i2-route-controls`.
-I2-05 pilot needs preregistration; I3 needs the held-out predicted/actual gate.
-Frozen I1 and Legacy default remain unchanged.
+I2-04 is complete: route modes are integrated behind historical_legacy default,
+with common snapshot Legacy/Unique-shadow scoring, frozen original-A* comparison,
+fresh-snapshot final safety check and route_controls.jsonl execution provenance.
+The planner uses a worker thread: V1 found a live-map consistency defect, fixed in
+c17fa0e. Keep V1 and V2 logs, not only the final pass. 3 snapshot + 7 search + 10
+candidate C++ tests and 7 Python linkage tests pass. V2 four 35-second smoke runs
+pass bounded checks, but remain TIMEOUT/FAILED in raw manifests (not full mission
+success). Read I2_04_INTEGRATION_REPORT.md, I2_04_VALIDATION.json and smoke summary.
 
-Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_03_2026-10-08/`.
+**Immediate next task is I2-05 candidate-supply gate:** preregister a bounded shadow
+check across existing frozen snapshots/planning phases before a full paired pilot.
+Early smoke produced 42 raw -> 7 distinct generic routes and 54 -> 9 diverse routes,
+with ZERO extra alternatives surviving constraints/shortcut. Do not blindly compare
+three full seeds of reference-only candidate sets or interpret smoke distance/time
+as performance. Diagnose supply, then version any needed protocol change before
+experiments; keep the same multi-route caps/scoring/budget. No silent preservation
+shortcut or favorable-result tuning. Formal pilot is conditional on this supply gate.
+I2-06/held-out ordering still precedes I3. I1 data/conclusion stays frozen; no Unique-
+online promotion. Parent/global_planner: feat/i2-route-controls. Autonomous_flight:
+feat/i2-route-logging. No ROS/Gazebo process remains after bounded smoke cleanup.
+
+Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_04_2026-10-08/`.
 
 Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in
