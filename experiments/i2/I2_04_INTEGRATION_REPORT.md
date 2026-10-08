@@ -73,7 +73,7 @@ See I2_04_SMOKE_SUMMARY.json for exact logs and checks.
 All sampled RTF means are about 0.999. Mean times are smoke measurements only:
 new controls also ran Unique shadow, graph/snapshot audit and extra logging; they
 are not a controlled algorithm-efficiency comparison to default Legacy.
-25 same-snapshot A* comparisons show maximum excess length 1.78e-15 m (rounding
+27 same-snapshot A* comparisons show maximum excess length 1.78e-15 m (rounding
 scale), so these samples do not demonstrate a historical A* distance error.
 
 Most alternatives fail raw time/yaw/length caps; additional candidates collapse
