@@ -1,0 +1,39 @@
+{
+  "protocol_id": "I2_05_POSE_ONLINE_ADMISSION_V1",
+  "status": "preregistered",
+  "modes": [
+    "generic_k_shortest",
+    "geometric_diverse"
+  ],
+  "seed_pair": [
+    1,
+    1
+  ],
+  "gain_mode": "unique_shadow",
+  "duration_wall_after_planning_s": 240,
+  "route_protocol": "I2_GENERIC_ROUTES_V1",
+  "k": 6,
+  "alternative_deadline_ms": 50,
+  "full_paired_pilot": false,
+  "checks": {
+    "fixed_start_yaw_max_error_rad": 1e-09,
+    "candidate_supply": "at least 3 ready global plans with selected extras after first 35 simulated seconds, per mode",
+    "ready_plan_count_min": 10,
+    "alternative_elapsed_p95_ms_max": 55,
+    "alternative_elapsed_max_ms_max": 65,
+    "rtf_mean_min": 0.9,
+    "collisions": 0,
+    "adapter_errors": 0,
+    "unsafe_selected_route_executed": 0,
+    "required_logs": [
+      "raw PRM",
+      "shortcut PRM",
+      "input",
+      "B-spline",
+      "execution intervals",
+      "route_controls"
+    ]
+  },
+  "end_condition": "one bounded run per mode; preserve TIMEOUT outcomes/failures; no tuning or seed retries for favorable results; report and backup before full pilot",
+  "scope": "freeze new-control start pose/yaw; historical default and frozen I1 unchanged"
+}
