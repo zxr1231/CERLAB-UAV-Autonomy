@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I1-06 seed-3 Legacy checkpoint.
+Last updated: 2026-10-08 after I1-06 final paired decision.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -271,51 +271,49 @@ selection/evaluator tests, 85 Python tests and all return-home checks pass.
 Read `experiments/i1/I1_05_VALIDATION.md` and
 `experiments/i1/I1_05_ONLINE_SMOKE.json`.
 
-## I1-06 progress and immediate next task
+## I1 final result and immediate next task
 
-I1-06 is underway. The resumable paired matrix is
-`experiments/i1/I1_06_MATRIX.json`, and its state is
-`/home/zxr2/cerlab_benchmark_ws/results/EXP-I1-06-PAIRED-PILOT-V1/batch_state.json`.
-Seed 1 Legacy and Unique-online completed on the same commit (`10e9c35`), both returned
-home without collision. Unique-online T80/T90/T95 was 167.50/239.54/328.67 s versus
-Legacy 203.40/280.33/452.74 s; exploration distance was 196.04 m versus 186.38 m;
-global planning mean was 92.96 versus 48.43 ms. A first Unique attempt was interrupted
-by loss of its execution session and remains preserved as an excluded partial run.
-Seed 2 also has a complete pair on `10e9c35`. By the first-valid-attempt policy,
-Unique-online T95 was 419.157 s versus Legacy 370.594 s; exploration distance was
-168.308 versus 160.150 m; mean global planning was 98.745 versus 49.120 ms. A later
-valid Legacy repeat is retained as sensitivity data and does not replace the primary
-run. The first two seeds disagree on T95 direction, so the I1 decision remains open.
-Read `experiments/i1/I1_06_PROGRESS_2026-10-08.md` and the earlier seed-1 checkpoint.
+I1-01 through I1-06 are complete. The paired matrix is
+`experiments/i1/I1_06_MATRIX.json`; raw results and `batch_state.json` remain under
+`/home/zxr2/cerlab_benchmark_ws/results/EXP-I1-06-PAIRED-PILOT-V1`.
+All six primary runs used clean commit `10e9c35`, the same submodules, configuration,
+Coverage denominator and seed pairs 1/1–3/3. All reached home with zero collision and
+valid measurements. The primary policy chooses the first actually verified completed
+attempt, even if its matrix wrapper was interrupted; later valid repeats remain
+sensitivity data. In seed 2, this means Legacy attempt 1 is primary and attempt 4 is
+an additional valid repeat. Failed attempts remain preserved.
 
-Seed 3 Legacy is now complete and backed up: T80/T90/T95
-201.606/279.219/416.485 s, exploration distance 182.365 m, final Coverage 95.217%,
-HOME_REACHED and zero collision. Seed 3 Unique-online has not started. Read
-`experiments/i1/I1_06_SEED3_LEGACY_2026-10-08.md`.
+Unique-online T95 differences versus Legacy were -124.07, +48.56 and +50.14 s in
+seeds 1–3. Exploration distance increased by 9.67, 8.16 and 54.21 m. Actual task
+sensor-new voxels per executed metre decreased in all three seeds by 170, 266 and
+1100 voxels/m. Mean global planning cost increased in all three by 44.53, 49.63 and
+31.33 ms. The mean T95 difference (-8.46 s) is dominated by seed 1; the median is
++48.56 s. These are three paired pilot runs in one scene, not a general statistical
+claim.
 
-The current checkout may be the
-`docs/i1-06-progress` branch to preserve this handoff. The frozen experiment branch is
-`feat/i1-unique-gain` at `10e9c35`; switch to it before any remaining run and require
-an empty Git status. The next task is seed 3 Unique-online only: resume
-`run_matrix.py` with `--max-tasks 1`; its dry run must list only that task. Seeds 1
-and 2 and seed 3 Legacy must
-not be rerun absent a new correctness finding.
+**Final I1 decision:** do not enable Unique-online ranking as the default and do not
+claim it independently improves exploration. The I1-KC5 downgrade criterion is met.
+Keep the tested evaluator and explicit Unique flag for diagnostics/ablation; Legacy
+remains the operational default and completion still uses Legacy gain 500. Read
+`experiments/i1/I1_FINAL_DECISION.md`, `I1_FINAL_SUMMARY.json`, and
+`I1_06_PILOT_SUMMARY.json` for exact evidence and limitations.
 
-Run the pre-registered three-seed paired pilot and make the Innovation-1 decision:
+The current checkout may be `docs/i1-06-progress` to preserve the report. The frozen
+experiment branch is `feat/i1-unique-gain` at `10e9c35`; preserve it and all raw runs.
+No I1 seed remains pending.
 
-1. Verify current Git state and the matrix dry run; run only seed 3 Unique-online next.
-2. Ensure every run records the same parent/submodule commits and an empty Git status.
-3. Retain failures/censoring. Do not substitute repeat values during this pilot.
-4. After seed 3 finishes, aggregate paired Coverage, T80/T90/T95, completion, exploration/final distance,
-   collision, success, planning time, CPU/RSS, RTF and Unique selection/fallback data.
-5. Add actual observation per metre/second and low-new-observation interval metrics
-   using the existing sensor provenance where available.
-6. Decide whether Unique-only is beneficial, neutral infrastructure, or should be
-   disabled online under the R2/I1 kill criteria. Update handoff, push and back up.
+**Immediate next task: I2 preparation.** Establish single-route, K-shortest and
+geometric-diversity controls with a fixed Goal set, candidate cap, motion budget and
+computation budget. Before implementing the proposed observation-guided routes in I3,
+trace changed I1 selections through shortcut/B-spline/odometry and check whether the
+2 m planner Unique ranking predicts actual new observation on a held-out scene.
+If that observation-model gate fails, correct the evaluator definition first. Do not
+add cache, confidence or unrelated modules to hide the I1 result.
 
-After I1-01, follow I1-02 through I1-06 in the final R2 decision. The paired pilot uses
-seed pairs 1/1, 2/2 and 3/3. Final paper-scale ten-seed and multi-scene ablation is
-deferred until the full proposed method is ready.
+Final paper-scale ten-seed and multi-scene ablation is deferred until the full
+proposed method is ready. The current three-part paper framing is in
+`experiments/PAPER_CONTRIBUTIONS_DRAFT.md`; its second and third points remain
+unimplemented hypotheses.
 
 ## Innovation-1 isolation rules
 

@@ -24,9 +24,11 @@ or performance. The publication target is an ordinary SCI/EI journal.
    Validate that the intended value survives actual execution. A local threshold alone
    is a weak stand-alone claim; this is a companion to the guided-route method.
 
-Current evidence: the evaluator in point 1 is implemented and tested, but the
-three-seed Unique-only pilot is unfinished. Points 2 and 3 remain hypotheses and have
-not been implemented. Edge caching is a conditional engineering optimization after
+Current evidence: the evaluator in point 1 is implemented and tested. Its three-seed
+Unique-only online pilot found lower actual new-observation efficiency per metre in
+all three seeds, so it is retained as a supporting evaluator rather than an
+independent performance contribution. Points 2 and 3 remain hypotheses and have not
+been implemented. Edge caching is a conditional engineering optimization after
 profiling; it is not one of these three paper claims by default.
 
 See `r2/R2_FINAL_DECISION.md`, `i1/STATUS.md`, and the final novelty audit in

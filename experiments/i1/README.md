@@ -6,5 +6,7 @@ gate remains unchanged.
 
 Authoritative scope and gates are in `../r2/R2_FINAL_DECISION.md`.
 
-Current state: I1-01 through I1-05 complete. Continue from I1-06 same-commit paired
-Legacy versus Unique-online seeds 1–3. Default mode and completion remain Legacy.
+Current state: I1-01 through I1-06 complete. See `I1_FINAL_DECISION.md`. The
+three-seed pilot does not support enabling Unique-only ranking by default; the
+evaluator remains available for diagnostics and ablation. Next is I2 generic
+multi-route controls, with observation-model reassessment before I3.

@@ -1,0 +1,23 @@
+{
+  "schema": "cerlab-i1-final-decision-v1",
+  "date": "2026-10-08",
+  "status": "COMPLETE",
+  "decision": "no_go_unique_online_as_default_conditional_go_generic_multiroute_controls",
+  "source_commit": "10e9c3589e2f5895d53e354547a03bf8f6f238a2",
+  "primary_run_count": 6,
+  "paired_seed_count": 3,
+  "all_primary_home_reached": true,
+  "all_primary_collision_free": true,
+  "all_primary_measurements_valid": true,
+  "all_t95_uncensored": true,
+  "paired_t95_delta_seconds": [-124.07032211202232, 48.56258333332977, 50.13847914870689],
+  "paired_t95_delta_mean_seconds": -8.456419876661888,
+  "paired_t95_delta_median_seconds": 48.56258333332977,
+  "paired_exploration_distance_delta_m": [9.66744089195248, 8.158813371758782, 54.212328631072126],
+  "paired_actual_accessible_voxels_per_meter_delta": [-170.23664676654698, -266.4752231226994, -1100.4407928356154],
+  "paired_global_planning_mean_delta_ms": [44.528314935064934, 49.62504996928117, 31.330052991452995],
+  "kill_criterion": "I1-KC5_triggered_for_online_default",
+  "retained_component": "path_history_unique_evaluator_for_diagnostics_and_controlled_ablation",
+  "next_task": "I2_generic_multiroute_controls_with_observation_model_reassessment_before_I3",
+  "performance_claim_allowed": false
+}
