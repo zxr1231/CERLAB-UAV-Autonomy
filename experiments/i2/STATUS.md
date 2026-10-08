@@ -7,7 +7,7 @@
 | I2-02 Deterministic single-distance / Yen solver | Complete (isolated solver) | routeSearch.h + six correctness tests; see I2_02_ROUTE_SEARCH_REPORT.md and validation JSON |
 | I2-03 Geometric diversity control | Complete (isolated controls) | routeCandidates.h + nine contract tests; online counts remain I2-04 |
 | I2-04 Integration and safety smoke | Complete | snapshot adapter/scoring/logs; 20 C++ + 7 Python tests; V2 four bounded smoke runs; V1 defect/data retained |
-| I2-05 Candidate-supply gate then paired pilot | Not started | zero extra routes survived early smoke; preregister supply diagnostic before full matrix |
+| I2-05 Candidate-supply gate then paired pilot | Partial: offline gate passed | 17/24 snapshots (4/6/7 phases), 72 cases; live pose/yaw preflight fix + online admission and paired pilot pending |
 | I2-06 Decision and held-out gate | Not started | freeze held-out ordering protocol before collection/I3 |
 | I3 observation-guided route generation gate | Pending | requires held-out-scene predicted/actual ordering check after I2 controls |
 

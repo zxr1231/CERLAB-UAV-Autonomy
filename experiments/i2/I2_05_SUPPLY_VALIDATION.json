@@ -1,0 +1,23 @@
+{
+  "task": "I2-05 first batch",
+  "date": "2026-10-08",
+  "status": "offline_supply_gate_passed_online_admission_pending",
+  "snapshot_count": 24,
+  "pool_cases": 72,
+  "integrity": "C++ verifies manifest FNV map/planner and versions; driver verifies preregistered manifest SHA256",
+  "repeat": "execution_000079 exact equality after removing elapsed_ms only",
+  "negative_integrity_test": "corrupted manifest rejected; source symlinks read only",
+  "regression_tests": {
+    "route_search": 7,
+    "route_candidates": 10
+  },
+  "build": "route_supply_fixture_runner passed; misleading indentation warnings resolved",
+  "summary_sha256": "5b88c18443e24c4d56d81a78f3cf7f7226babb22062a5d66814d4578900b7500",
+  "pose_audit_sha256": "acd24c6cc284167eabccbd521b18f74d14fa804a1493f50b7eef5fc3407b6d68",
+  "no_new_simulation": true,
+  "no_live_algorithm_change": true,
+  "i1_and_i2_v1_protocol": "unchanged",
+  "full_paired_pilot": "not_started",
+  "next_required": "new-control pose freeze fix and online 50ms candidate admission, then preregister same-commit paired matrix",
+  "environment_note": "negative check must source ROS/workspace runtime libraries; initial unsourced test did not exercise intended error path"
+}

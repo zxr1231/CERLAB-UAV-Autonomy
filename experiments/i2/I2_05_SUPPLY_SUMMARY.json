@@ -1,0 +1,797 @@
+{
+  "schema": "cerlab-i2-05-supply-summary-v1",
+  "protocol_sha256": "569835e9468683e9c5ad9281e9917e3bf78395b97e4b89e7c7e3dead7df3e9b8",
+  "snapshot_count": 24,
+  "combinations": 72,
+  "input_type": "single historical run execution-start snapshots; chronological phases, not independent seeds or exact planning replay",
+  "repeat_exact_non_timing": true,
+  "goal_instances": {
+    "reachable": 217,
+    "unreachable": 19,
+    "missing": 0
+  },
+  "primary_gate_passed": true,
+  "cases": [
+    {
+      "k": 6,
+      "constraints": "strict",
+      "positive_snapshots": 17,
+      "positive_by_phase": {
+        "chronological_early": 4,
+        "chronological_middle": 6,
+        "chronological_late": 7
+      },
+      "selected_extra_routes": 75,
+      "selection_list_changed_snapshots": 2,
+      "raw_generated": 1132,
+      "motion_feasible": 803,
+      "post_shortcut_unique": 293,
+      "heap_cutoff_goal_instances": 78,
+      "rejection_counts": {
+        "raw_length": 104,
+        "raw_time": 208,
+        "raw_yaw": 279,
+        "shortcut_duplicate": 510
+      }
+    },
+    {
+      "k": 6,
+      "constraints": "post_only",
+      "positive_snapshots": 17,
+      "positive_by_phase": {
+        "chronological_early": 4,
+        "chronological_middle": 6,
+        "chronological_late": 7
+      },
+      "selected_extra_routes": 90,
+      "selection_list_changed_snapshots": 4,
+      "raw_generated": 1132,
+      "motion_feasible": null,
+      "post_shortcut_unique": 309,
+      "heap_cutoff_goal_instances": 78,
+      "rejection_counts": null
+    },
+    {
+      "k": 6,
+      "constraints": "no_motion",
+      "positive_snapshots": 17,
+      "positive_by_phase": {
+        "chronological_early": 4,
+        "chronological_middle": 6,
+        "chronological_late": 7
+      },
+      "selected_extra_routes": 90,
+      "selection_list_changed_snapshots": 4,
+      "raw_generated": 1132,
+      "motion_feasible": null,
+      "post_shortcut_unique": 309,
+      "heap_cutoff_goal_instances": 78,
+      "rejection_counts": null
+    },
+    {
+      "k": 12,
+      "constraints": "strict",
+      "positive_snapshots": 19,
+      "positive_by_phase": {
+        "chronological_early": 5,
+        "chronological_middle": 6,
+        "chronological_late": 8
+      },
+      "selected_extra_routes": 95,
+      "selection_list_changed_snapshots": 2,
+      "raw_generated": 1777,
+      "motion_feasible": 1012,
+      "post_shortcut_unique": 320,
+      "heap_cutoff_goal_instances": 124,
+      "rejection_counts": {
+        "raw_length": 291,
+        "raw_time": 545,
+        "raw_yaw": 681,
+        "shortcut_duplicate": 692,
+        "shortcut_time": 3,
+        "shortcut_yaw": 2
+      }
+    },
+    {
+      "k": 12,
+      "constraints": "post_only",
+      "positive_snapshots": 19,
+      "positive_by_phase": {
+        "chronological_early": 5,
+        "chronological_middle": 6,
+        "chronological_late": 8
+      },
+      "selected_extra_routes": 111,
+      "selection_list_changed_snapshots": 4,
+      "raw_generated": 1777,
+      "motion_feasible": null,
+      "post_shortcut_unique": 337,
+      "heap_cutoff_goal_instances": 124,
+      "rejection_counts": null
+    },
+    {
+      "k": 12,
+      "constraints": "no_motion",
+      "positive_snapshots": 19,
+      "positive_by_phase": {
+        "chronological_early": 5,
+        "chronological_middle": 6,
+        "chronological_late": 8
+      },
+      "selected_extra_routes": 112,
+      "selection_list_changed_snapshots": 5,
+      "raw_generated": 1777,
+      "motion_feasible": null,
+      "post_shortcut_unique": 339,
+      "heap_cutoff_goal_instances": 124,
+      "rejection_counts": null
+    },
+    {
+      "k": 24,
+      "constraints": "strict",
+      "positive_snapshots": 19,
+      "positive_by_phase": {
+        "chronological_early": 5,
+        "chronological_middle": 6,
+        "chronological_late": 8
+      },
+      "selected_extra_routes": 99,
+      "selection_list_changed_snapshots": 4,
+      "raw_generated": 2560,
+      "motion_feasible": 1115,
+      "post_shortcut_unique": 329,
+      "heap_cutoff_goal_instances": 162,
+      "rejection_counts": {
+        "raw_length": 687,
+        "raw_time": 1151,
+        "raw_yaw": 1311,
+        "shortcut_duplicate": 786,
+        "shortcut_time": 7,
+        "shortcut_yaw": 2
+      }
+    },
+    {
+      "k": 24,
+      "constraints": "post_only",
+      "positive_snapshots": 19,
+      "positive_by_phase": {
+        "chronological_early": 5,
+        "chronological_middle": 6,
+        "chronological_late": 8
+      },
+      "selected_extra_routes": 116,
+      "selection_list_changed_snapshots": 6,
+      "raw_generated": 2560,
+      "motion_feasible": null,
+      "post_shortcut_unique": 347,
+      "heap_cutoff_goal_instances": 162,
+      "rejection_counts": null
+    },
+    {
+      "k": 24,
+      "constraints": "no_motion",
+      "positive_snapshots": 19,
+      "positive_by_phase": {
+        "chronological_early": 5,
+        "chronological_middle": 6,
+        "chronological_late": 8
+      },
+      "selected_extra_routes": 117,
+      "selection_list_changed_snapshots": 7,
+      "raw_generated": 2560,
+      "motion_feasible": null,
+      "post_shortcut_unique": 351,
+      "heap_cutoff_goal_instances": 162,
+      "rejection_counts": null
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "execution_000001",
+      "phase": "chronological_early",
+      "reachable_goals": 4,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 12,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 24,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        }
+      ]
+    },
+    {
+      "name": "execution_000012",
+      "phase": "chronological_early",
+      "reachable_goals": 1,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 12,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 24,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        }
+      ]
+    },
+    {
+      "name": "execution_000023",
+      "phase": "chronological_early",
+      "reachable_goals": 4,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 12,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 24,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        }
+      ]
+    },
+    {
+      "name": "execution_000034",
+      "phase": "chronological_early",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 6,
+          "post_only_extra": 6,
+          "no_motion_extra": 6
+        },
+        {
+          "k": 12,
+          "strict_extra": 12,
+          "post_only_extra": 12,
+          "no_motion_extra": 12
+        },
+        {
+          "k": 24,
+          "strict_extra": 12,
+          "post_only_extra": 12,
+          "no_motion_extra": 12
+        }
+      ]
+    },
+    {
+      "name": "execution_000044",
+      "phase": "chronological_early",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 15,
+          "post_only_extra": 15,
+          "no_motion_extra": 15
+        },
+        {
+          "k": 12,
+          "strict_extra": 15,
+          "post_only_extra": 15,
+          "no_motion_extra": 15
+        },
+        {
+          "k": 24,
+          "strict_extra": 15,
+          "post_only_extra": 15,
+          "no_motion_extra": 15
+        }
+      ]
+    },
+    {
+      "name": "execution_000055",
+      "phase": "chronological_early",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 2,
+          "post_only_extra": 2,
+          "no_motion_extra": 2
+        },
+        {
+          "k": 12,
+          "strict_extra": 4,
+          "post_only_extra": 4,
+          "no_motion_extra": 4
+        },
+        {
+          "k": 24,
+          "strict_extra": 5,
+          "post_only_extra": 5,
+          "no_motion_extra": 5
+        }
+      ]
+    },
+    {
+      "name": "execution_000066",
+      "phase": "chronological_early",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        },
+        {
+          "k": 12,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        },
+        {
+          "k": 24,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        }
+      ]
+    },
+    {
+      "name": "execution_000078",
+      "phase": "chronological_early",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 12,
+          "strict_extra": 2,
+          "post_only_extra": 2,
+          "no_motion_extra": 2
+        },
+        {
+          "k": 24,
+          "strict_extra": 2,
+          "post_only_extra": 2,
+          "no_motion_extra": 2
+        }
+      ]
+    },
+    {
+      "name": "execution_000079",
+      "phase": "chronological_middle",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 7,
+          "post_only_extra": 7,
+          "no_motion_extra": 7
+        },
+        {
+          "k": 12,
+          "strict_extra": 7,
+          "post_only_extra": 7,
+          "no_motion_extra": 7
+        },
+        {
+          "k": 24,
+          "strict_extra": 7,
+          "post_only_extra": 7,
+          "no_motion_extra": 7
+        }
+      ]
+    },
+    {
+      "name": "execution_000091",
+      "phase": "chronological_middle",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 12,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 24,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        }
+      ]
+    },
+    {
+      "name": "execution_000101",
+      "phase": "chronological_middle",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 12,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 24,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        }
+      ]
+    },
+    {
+      "name": "execution_000112",
+      "phase": "chronological_middle",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 3,
+          "post_only_extra": 4,
+          "no_motion_extra": 4
+        },
+        {
+          "k": 12,
+          "strict_extra": 3,
+          "post_only_extra": 4,
+          "no_motion_extra": 4
+        },
+        {
+          "k": 24,
+          "strict_extra": 3,
+          "post_only_extra": 4,
+          "no_motion_extra": 4
+        }
+      ]
+    },
+    {
+      "name": "execution_000123",
+      "phase": "chronological_middle",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 11,
+          "post_only_extra": 14,
+          "no_motion_extra": 14
+        },
+        {
+          "k": 12,
+          "strict_extra": 14,
+          "post_only_extra": 17,
+          "no_motion_extra": 17
+        },
+        {
+          "k": 24,
+          "strict_extra": 14,
+          "post_only_extra": 17,
+          "no_motion_extra": 17
+        }
+      ]
+    },
+    {
+      "name": "execution_000134",
+      "phase": "chronological_middle",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 2,
+          "post_only_extra": 10,
+          "no_motion_extra": 10
+        },
+        {
+          "k": 12,
+          "strict_extra": 2,
+          "post_only_extra": 10,
+          "no_motion_extra": 10
+        },
+        {
+          "k": 24,
+          "strict_extra": 2,
+          "post_only_extra": 10,
+          "no_motion_extra": 10
+        }
+      ]
+    },
+    {
+      "name": "execution_000144",
+      "phase": "chronological_middle",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 2,
+          "post_only_extra": 2,
+          "no_motion_extra": 2
+        },
+        {
+          "k": 12,
+          "strict_extra": 3,
+          "post_only_extra": 4,
+          "no_motion_extra": 4
+        },
+        {
+          "k": 24,
+          "strict_extra": 3,
+          "post_only_extra": 4,
+          "no_motion_extra": 4
+        }
+      ]
+    },
+    {
+      "name": "execution_000155",
+      "phase": "chronological_middle",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        },
+        {
+          "k": 12,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        },
+        {
+          "k": 24,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        }
+      ]
+    },
+    {
+      "name": "execution_000156",
+      "phase": "chronological_late",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        },
+        {
+          "k": 12,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        },
+        {
+          "k": 24,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        }
+      ]
+    },
+    {
+      "name": "execution_000167",
+      "phase": "chronological_late",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 5,
+          "post_only_extra": 5,
+          "no_motion_extra": 5
+        },
+        {
+          "k": 12,
+          "strict_extra": 5,
+          "post_only_extra": 5,
+          "no_motion_extra": 5
+        },
+        {
+          "k": 24,
+          "strict_extra": 6,
+          "post_only_extra": 6,
+          "no_motion_extra": 6
+        }
+      ]
+    },
+    {
+      "name": "execution_000177",
+      "phase": "chronological_late",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 3,
+          "post_only_extra": 4,
+          "no_motion_extra": 4
+        },
+        {
+          "k": 12,
+          "strict_extra": 3,
+          "post_only_extra": 4,
+          "no_motion_extra": 5
+        },
+        {
+          "k": 24,
+          "strict_extra": 3,
+          "post_only_extra": 4,
+          "no_motion_extra": 5
+        }
+      ]
+    },
+    {
+      "name": "execution_000188",
+      "phase": "chronological_late",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 3,
+          "post_only_extra": 3,
+          "no_motion_extra": 3
+        },
+        {
+          "k": 12,
+          "strict_extra": 3,
+          "post_only_extra": 3,
+          "no_motion_extra": 3
+        },
+        {
+          "k": 24,
+          "strict_extra": 3,
+          "post_only_extra": 3,
+          "no_motion_extra": 3
+        }
+      ]
+    },
+    {
+      "name": "execution_000198",
+      "phase": "chronological_late",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 0,
+          "post_only_extra": 0,
+          "no_motion_extra": 0
+        },
+        {
+          "k": 12,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        },
+        {
+          "k": 24,
+          "strict_extra": 1,
+          "post_only_extra": 1,
+          "no_motion_extra": 1
+        }
+      ]
+    },
+    {
+      "name": "execution_000209",
+      "phase": "chronological_late",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 6,
+          "post_only_extra": 8,
+          "no_motion_extra": 8
+        },
+        {
+          "k": 12,
+          "strict_extra": 9,
+          "post_only_extra": 11,
+          "no_motion_extra": 11
+        },
+        {
+          "k": 24,
+          "strict_extra": 10,
+          "post_only_extra": 13,
+          "no_motion_extra": 13
+        }
+      ]
+    },
+    {
+      "name": "execution_000219",
+      "phase": "chronological_late",
+      "reachable_goals": 10,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 5,
+          "post_only_extra": 5,
+          "no_motion_extra": 5
+        },
+        {
+          "k": 12,
+          "strict_extra": 7,
+          "post_only_extra": 7,
+          "no_motion_extra": 7
+        },
+        {
+          "k": 24,
+          "strict_extra": 8,
+          "post_only_extra": 8,
+          "no_motion_extra": 8
+        }
+      ]
+    },
+    {
+      "name": "execution_000231",
+      "phase": "chronological_late",
+      "reachable_goals": 8,
+      "trials": [
+        {
+          "k": 6,
+          "strict_extra": 2,
+          "post_only_extra": 2,
+          "no_motion_extra": 2
+        },
+        {
+          "k": 12,
+          "strict_extra": 2,
+          "post_only_extra": 2,
+          "no_motion_extra": 2
+        },
+        {
+          "k": 24,
+          "strict_extra": 2,
+          "post_only_extra": 2,
+          "no_motion_extra": 2
+        }
+      ]
+    }
+  ],
+  "claims": {
+    "candidate_supply_under_offline_operation_caps": true,
+    "online_50ms_feasibility": false,
+    "actual_observation_improvement": false,
+    "full_paired_pilot_complete": false
+  },
+  "next": "Preregister same-settings online budget admission and paired pilot; keep K=6/V1 limits. Pool12/24 and relaxed constraints are diagnostics only."
+}

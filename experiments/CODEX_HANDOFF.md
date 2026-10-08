@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I2-04 integration and bounded smoke.
+Last updated: 2026-10-08 after I2-05 offline supply gate and online pose audit.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -59,13 +59,14 @@ GitHub account. The user has authorized pushes for completed project work.
 ```text
 parent branch: feat/i2-route-controls
 I2-04 smoke source commit: e97291d431dba1344b4edcd59f9d4a1ff37520c5
+I2-05 runner checkpoint: a8967e0
 final documentation checkpoint: inspect git HEAD / local backup README
 frozen I1 branch: feat/i1-unique-gain
 frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i2-route-controls
-  commit c17fa0ee1b51190407a8937da3d437b0a1002554
+  commit 48d9a127fe55883a41ee331eeb7ae47572c96555
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -354,19 +355,30 @@ candidate C++ tests and 7 Python linkage tests pass. V2 four 35-second smoke run
 pass bounded checks, but remain TIMEOUT/FAILED in raw manifests (not full mission
 success). Read I2_04_INTEGRATION_REPORT.md, I2_04_VALIDATION.json and smoke summary.
 
-**Immediate next task is I2-05 candidate-supply gate:** preregister a bounded shadow
-check across existing frozen snapshots/planning phases before a full paired pilot.
-Early smoke produced 42 raw -> 7 distinct generic routes and 54 -> 9 diverse routes,
-with ZERO extra alternatives surviving constraints/shortcut. Do not blindly compare
-three full seeds of reference-only candidate sets or interpret smoke distance/time
-as performance. Diagnose supply, then version any needed protocol change before
-experiments; keep the same multi-route caps/scoring/budget. No silent preservation
-shortcut or favorable-result tuning. Formal pilot is conditional on this supply gate.
-I2-06/held-out ordering still precedes I3. I1 data/conclusion stays frozen; no Unique-
-online promotion. Parent/global_planner: feat/i2-route-controls. Autonomous_flight:
-feat/i2-route-logging. No ROS/Gazebo process remains after bounded smoke cleanup.
+I2-05 first batch is complete (NOT the whole pilot). Preregistered ca557e6,
+all 24 R2 execution-start snapshots x K6/12/24 =72 cases plus one fixed repeat.
+Original K6 limits pass supply admission: 17/24 snapshots (early/middle/late 4/6/7),
+1132 raw ->803 motion-feasible ->293 distinct ->292 selected, including 75 extras.
+No live configuration, I1 data or V1 limits changed. Read I2_05_SUPPLY_REPORT.md,
+protocol, validation and summary JSON. K12/24/relaxed constraints are diagnostics,
+not deployed improvements; offline operation caps do not prove online feasibility.
 
-Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_04_2026-10-08/`.
+A read-only I2-04 V2 audit found 12/27 scored-yaw mismatches with stored start yaw,
+maximum 0.0183 rad. The new integration still reads live currYaw_ and pose members
+while mapping/odometry callbacks run. Offline supply uses fixed pose and is unaffected.
+This is a new-control preflight defect to fix, not grounds to alter frozen I1 data.
+
+**Immediate next task is the next I2-05 batch:** freeze per-plan start position/yaw
+for new controls (thread-consistent capture), use that context for graph connectors,
+constraints and all candidate scores, and verify default historical compatibility.
+Then register a bounded online 50ms candidate-supply check, before committing to
+same-commit/same-scoring four-mode seed-1/2/3 full pilot. Do not automatically run
+the full matrix, tune V1 limits or add preservation shortcut to seek positive data.
+I2-06/held-out ordering still precede I3. Keep I1 default/conclusion and all failures.
+Parent/global_planner feat/i2-route-controls; autonomous_flight feat/i2-route-logging.
+I2-05 additions are offline test/analysis tools; no ROS/Gazebo was launched this batch.
+
+Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_SUPPLY_2026-10-08/`.
 
 Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in
