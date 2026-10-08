@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after the bounded I2-00 diagnosis.
+Last updated: 2026-10-08 after I2-01 protocol freeze.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -322,13 +322,25 @@ reproducible evaluator implementation defect was found. No I1 data, conclusion o
 algorithm code was changed. Read `experiments/i2/I2_00_DIAGNOSTIC_REPORT.md` and the
 frozen protocol/JSON there.
 
-**Immediate next task is I2-01:** freeze the generic multi-route comparison protocol
-and implement the baseline controls in an isolated branch: single distance route,
-generic K-shortest and geometric diversity, all with identical Goal sets, candidate
-limits, motion budgets and computation budgets. Legacy stays the operational default.
-Do not start I3 until a held-out-scene predicted/actual ordering check is completed.
-The current documentation branch may be `docs/i2-00-diagnosis`; the frozen I1 run
-branch remains `feat/i1-unique-gain` at `10e9c35`.
+I2-01 protocol is complete, NOT implemented: read
+`experiments/i2/I2_01_GENERIC_ROUTE_PROTOCOL.md` and `I2_01_PROTOCOL.json`.
+Historical Legacy stays default. New controls isolate deterministic single-distance,
+Yen K-shortest and geometric diversity with identical multi-route pool/budgets;
+Unique is shadow-only initially. Mandatory reference routes, post-shortcut collapse,
+actual candidate deficits and compute costs must be reported. Source heap mutability
+is a risk, not a demonstrated historical failure; common snapshot scoring is an
+implementation prerequisite, not an existing feature.
+
+**Immediate next task is I2-02:** implement and test an isolated immutable directed
+graph solver (deterministic Dijkstra + Yen) on a new feature branch. Verify K-route
+results against exhaustive small-graph enumeration; do not change historical A* or
+online default, and do not start full seed runs yet. Then I2-03 geometry controls,
+I2-04 integration/smoke, I2-05 preregistered paired pilot and I2-06 decision.
+Do not start I3 until the separate held-out-scene ordering protocol is frozen and
+its predicted/actual gate is completed. The documentation branch is
+`docs/i2-01-protocol`; frozen I1 remains `feat/i1-unique-gain` at `10e9c35`.
+
+Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_01_2026-10-08/`.
 
 Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in

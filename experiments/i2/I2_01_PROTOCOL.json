@@ -1,0 +1,53 @@
+{
+  "protocol_id": "I2_GENERIC_ROUTES_V1",
+  "status": "protocol_only_not_implemented",
+  "created": "2026-10-08",
+  "frozen_i1_commit": "10e9c3589e2f5895d53e354547a03bf8f6f238a2",
+  "source_parent_commit": "b721bf5d2ec2282174884e813be11bc6e6c12bbb",
+  "modes": [
+    "historical_legacy",
+    "distance_single",
+    "generic_k_shortest",
+    "geometric_diverse"
+  ],
+  "default_mode": "historical_legacy",
+  "scoring_primary": "legacy_node_sum_over_estimated_time",
+  "unique_scoring": "shadow_only",
+  "goals": "existing_prefilter_unchanged",
+  "limits": {
+    "routes_per_goal": 3,
+    "pool_per_goal": 6,
+    "global_scored_routes": 30,
+    "extra_length_ratio": 1.25,
+    "extra_estimated_time_ratio": 1.25,
+    "additional_yaw_radians": 1.5707963267948966,
+    "pool_heap_pops_per_goal": 10000,
+    "pool_heap_pops_global": 100000,
+    "alternative_generation_deadline_ms": 50
+  },
+  "deadline_scope": "after_mandatory_single_routes; alternative_search_selection_validation_shortcut",
+  "repeatability": "operation_limited_offline; wall_deadline_online_logged",
+  "pilot_seed_pairs": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "world": "floorplan2_dynamic_5.world",
+  "rosbag": false,
+  "required_route_counts": [
+    "raw_generated",
+    "motion_feasible",
+    "post_shortcut_unique",
+    "scored"
+  ],
+  "held_out_gate": "required_before_I3; must_be_preregistered_before_collection"
+}
