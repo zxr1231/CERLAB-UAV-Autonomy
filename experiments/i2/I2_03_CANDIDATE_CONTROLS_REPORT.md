@@ -17,7 +17,7 @@ snapshot line-check adapter. This is ordinary geometric shortcut, NOT the later
 observation-preserving proposal. Prepared candidates record raw and simplified
 length, total yaw and estimated time (length/speed + yawPenalty*yaw/angularSpeed).
 Wrapped angular distance is mathematically the baseline shortest angular difference;
-exact floating-point correspondence to its acos implementation remains an integration
+exact floating-point correspondence to its atan2(cross-norm, dot) implementation remains an integration
 check, especially at motion-limit boundaries. Finite valid dynamics are required.
 
 Both raw and simplified metrics are limited against their corresponding reference

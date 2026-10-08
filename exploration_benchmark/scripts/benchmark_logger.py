@@ -119,6 +119,7 @@ class BenchmarkLogger:
             "collisions.csv", ["episode_id", "phase", "start_sim", "end_sim",
                                "duration_sim", "wall_elapsed_recorded", "contact_pairs",
                                "max_force_n", "max_depth_m"])
+        self.route_controls_file = None
         self.events_file = (self.output / "events.jsonl").open("x", encoding="utf-8")
         self.planned_paths_file = (self.output / "planned_paths.jsonl").open(
             "x", encoding="utf-8")
@@ -249,6 +250,12 @@ class BenchmarkLogger:
                            reason=payload.get("replan_reason", "unspecified"),
                            map_version=payload.get("map_version"),
                            depth_sequence=payload.get("depth_sequence"))
+            if kind == "global" and isinstance(payload.get("route_controls"), dict):
+                if self.route_controls_file is None:
+                    self.route_controls_file = (self.output / "route_controls.jsonl").open("x", encoding="utf-8")
+                self.route_controls_file.write(json.dumps({"global_sequence": payload.get("sequence"),
+                    "sim_time": payload.get("sim_time"), "route_controls": payload["route_controls"]}, sort_keys=True) + "\n")
+                self.route_controls_file.flush()
             total = payload.get("total_ms")
             if isinstance(total, (int, float)):
                 {"global": self.global_times, "local": self.local_times,
@@ -515,7 +522,9 @@ class BenchmarkLogger:
             for stream in (self.trajectory_file, self.metrics_file,
                            self.planning_file, self.coverage_file, self.events_file,
                            self.planned_paths_file, self.collision_file,
-                           self.execution_file, self.observation_deltas_file):
+                           self.execution_file, self.observation_deltas_file, self.route_controls_file):
+                if stream is None:
+                    continue
                 stream.flush()
                 stream.close()
             summary = {

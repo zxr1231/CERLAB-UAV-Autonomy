@@ -204,6 +204,7 @@ def main():
     parser.add_argument("--path-gain-mode",
                         choices=("legacy", "unique_shadow", "unique_online"),
                         default="legacy")
+    parser.add_argument("--route-control-mode", choices=("historical_legacy", "distance_single", "generic_k_shortest", "geometric_diverse"), default="historical_legacy")
     args = parser.parse_args()
     try:
         environment_seed, planner_seed = resolve_seeds(
@@ -229,6 +230,7 @@ def main():
     manifest = process_manifest(project, environment_seed, planner_seed, args.mode,
                                 args.path_gain_mode,
                                 ground_truth_mask, ground_truth_metadata)
+    manifest["route_control_mode"] = args.route_control_mode
     atomic_write_json(output / "run.json", manifest)
     events_stream = (output / "runner_events.jsonl").open("x", encoding="utf-8")
     resource_monitor = ResourceMonitor(output)
@@ -285,8 +287,8 @@ def main():
                                   "diagnostic_snapshot_directory:=%s" %
                                   shlex.quote(str(output / "snapshots")))
         exploration_body = ("exec roslaunch autonomous_flight %s benchmark_seed:=%d "
-                            "path_gain_mode:=%s%s" %
-                            (launch, planner_seed, args.path_gain_mode, snapshot_arguments))
+                            "path_gain_mode:=%s route_control_mode:=%s%s" %
+                            (launch, planner_seed, args.path_gain_mode, args.route_control_mode, snapshot_arguments))
         exploration = Process("exploration", shell_command(workspace, exploration_body),
                               output / "exploration.log", interactive=True, event=event)
         processes.append(exploration)
