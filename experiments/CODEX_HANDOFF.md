@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I1-06 final paired decision.
+Last updated: 2026-10-08 after the bounded I2-00 diagnosis.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -302,13 +302,33 @@ The current checkout may be `docs/i1-06-progress` to preserve the report. The fr
 experiment branch is `feat/i1-unique-gain` at `10e9c35`; preserve it and all raw runs.
 No I1 seed remains pending.
 
-**Immediate next task: I2 preparation.** Establish single-route, K-shortest and
+At I1 close, I2 preparation was defined as establishing single-route, K-shortest and
 geometric-diversity controls with a fixed Goal set, candidate cap, motion budget and
 computation budget. Before implementing the proposed observation-guided routes in I3,
-trace changed I1 selections through shortcut/B-spline/odometry and check whether the
-2 m planner Unique ranking predicts actual new observation on a held-out scene.
+the plan also required tracing changed I1 selections through execution and checking
+whether the 2 m planner Unique ranking predicts actual new observation on a held-out scene.
 If that observation-model gate fails, correct the evaluator definition first. Do not
 add cache, confidence or unrelated modules to hide the I1 result.
+
+I2-00 has now closed the read-only I1 mismatch diagnosis. Across the three Unique
+runs, 51 global plans changed Top-1; 50 linked to local execution but only 32 had at
+least 0.5 m associated odometry. In seed 2, 222 near-identical plans occurred over
+44.744 s at one goal while the UAV moved only 0.012 m net; 220 adjacent log entries
+identified an unsafe local goal before replanning. The existing R2 matched-prefix
+comparison showed the 2 m planner proxy agrees much less with actual sensor
+observations than the 5 m mapper shadow, while frozen Unknown occlusion remains a
+limitation. I1-03 still has exact 24-snapshot/217-candidate C++/Python agreement; no
+reproducible evaluator implementation defect was found. No I1 data, conclusion or
+algorithm code was changed. Read `experiments/i2/I2_00_DIAGNOSTIC_REPORT.md` and the
+frozen protocol/JSON there.
+
+**Immediate next task is I2-01:** freeze the generic multi-route comparison protocol
+and implement the baseline controls in an isolated branch: single distance route,
+generic K-shortest and geometric diversity, all with identical Goal sets, candidate
+limits, motion budgets and computation budgets. Legacy stays the operational default.
+Do not start I3 until a held-out-scene predicted/actual ordering check is completed.
+The current documentation branch may be `docs/i2-00-diagnosis`; the frozen I1 run
+branch remains `feat/i1-unique-gain` at `10e9c35`.
 
 Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in

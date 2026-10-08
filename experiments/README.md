@@ -41,3 +41,6 @@ gate and frozen Benchmark-v2 controls.
 Innovation 1 progress and validation records are under [`i1`](i1/STATUS.md).
 The three-part paper contribution framing is in
 [`PAPER_CONTRIBUTIONS_DRAFT.md`](PAPER_CONTRIBUTIONS_DRAFT.md).
+
+I2's bounded observation-gap diagnosis and next control task are under
+[`i2`](i2/STATUS.md).
