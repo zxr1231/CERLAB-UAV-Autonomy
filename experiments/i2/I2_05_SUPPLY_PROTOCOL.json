@@ -1,0 +1,283 @@
+{
+  "protocol_id": "I2_05_SUPPLY_DIAG_V1",
+  "status": "preregistered_before_new_results",
+  "created": "2026-10-08",
+  "source_parent_commit": "08ed61bbcddbfb3ee122b2019a6b60a002f90577",
+  "source_global_planner_commit": "c17fa0ee1b51190407a8937da3d437b0a1002554",
+  "historical_graph_source_commit": "60ff159fa3be3ee89326818695c85eaa871dcd93",
+  "snapshot_role": "execution-start counterfactual feasibility, not exact original planning replay",
+  "graph_reconstruction": "reciprocal PRM edges verified from historical source; independently snapshot-validate both directions; directed synthetic start, max connector 1.5m",
+  "goal_set": "frozen prefiltered goals; no new Goals; unreachable/missing retained in records",
+  "primary": {
+    "pool_per_goal": 6,
+    "routes_per_goal": 3,
+    "global_selected_cap": 30,
+    "heap_pops_per_goal": 10000,
+    "heap_pops_global": 100000,
+    "length_ratio": 1.25,
+    "time_ratio": 1.25,
+    "extra_yaw": 1.5707963267948966,
+    "wall_deadline": "disabled offline for deterministic replay"
+  },
+  "diagnostic_pool_sizes": [
+    6,
+    12,
+    24
+  ],
+  "diagnostic_constraints": [
+    "original_raw_and_shortcut",
+    "shortcut_only_motion",
+    "no_motion_limits_with_original_shortcut"
+  ],
+  "diagnostic_changes": "counterfactual supply diagnostics only; no live config/protocol change",
+  "gate": {
+    "primary_pass": "at least 6/24 snapshots, including at least 2 middle and 2 late snapshots, retain >=1 alternative after original constraints/shortcut and selection caps",
+    "interpretation": "engineering admission criterion only; not statistical significance or a novelty/performance test",
+    "failure": "do not launch full paired matrix; finish bounded diagnosis and record bottleneck; no parameter tuning/reruns in this task"
+  },
+  "end_condition": "all 24 snapshots x three pool caps processed once, integrity verified, repeat one prespecified middle snapshot execution_000079 for exact non-timing equality; then report/backup and stop",
+  "no_new_simulation": true,
+  "no_i1_changes": true,
+  "snapshots": [
+    {
+      "name": "execution_000001",
+      "phase": "chronological_early",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000001",
+      "sequence": 1,
+      "map_version": 1183170,
+      "manifest_sha256": "872713ebeb0f6cbb7bb3742385abf6959b8edbbf9a7985cbae84969ddb396b34",
+      "planner_fnv1a64": "0fc1ffe44d1c3a68",
+      "map_fnv1a64": "2bf2cacc53687b30"
+    },
+    {
+      "name": "execution_000012",
+      "phase": "chronological_early",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000012",
+      "sequence": 12,
+      "map_version": 3327686,
+      "manifest_sha256": "66a0c3f701fb14a60a2121c5ad6046835cd33fe9ae63b61b407f1de1005a6b8b",
+      "planner_fnv1a64": "98669606fe0a8330",
+      "map_fnv1a64": "cf5d39711e661d00"
+    },
+    {
+      "name": "execution_000023",
+      "phase": "chronological_early",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000023",
+      "sequence": 23,
+      "map_version": 4760986,
+      "manifest_sha256": "1277c65b1a45fb0a72af5c3cbc5e870455dae7ee0ac7e77fd2b70fc1cd72a4aa",
+      "planner_fnv1a64": "ce671718be73c94b",
+      "map_fnv1a64": "d2d9d4318b719130"
+    },
+    {
+      "name": "execution_000034",
+      "phase": "chronological_early",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000034",
+      "sequence": 34,
+      "map_version": 8668281,
+      "manifest_sha256": "ad5c676abdd189f7a4506dc333d6ef5ef380303b1710cb2cd5f6e08f5e22238f",
+      "planner_fnv1a64": "eff8bc569035a78c",
+      "map_fnv1a64": "baad91169aef688d"
+    },
+    {
+      "name": "execution_000044",
+      "phase": "chronological_early",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000044",
+      "sequence": 44,
+      "map_version": 12076615,
+      "manifest_sha256": "76613061b73c7d3db484fcabf858574849171b964c97708deea184ed099835dc",
+      "planner_fnv1a64": "41c2d4985ba684a4",
+      "map_fnv1a64": "4f68b0683285ecb1"
+    },
+    {
+      "name": "execution_000055",
+      "phase": "chronological_early",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000055",
+      "sequence": 55,
+      "map_version": 15240865,
+      "manifest_sha256": "72f7a78ce24311d928226b38e144fad257aaa269c5e0ee781e2e970e8ac4a512",
+      "planner_fnv1a64": "55f4d4354e8b02f6",
+      "map_fnv1a64": "f2b6000a509532a0"
+    },
+    {
+      "name": "execution_000066",
+      "phase": "chronological_early",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000066",
+      "sequence": 66,
+      "map_version": 18221448,
+      "manifest_sha256": "8e9724f78aaab092a8a1da5cf5999eff5cac25760097ad51873ac0984d12429a",
+      "planner_fnv1a64": "1511436c4ad8c851",
+      "map_fnv1a64": "8a11e327ed06a984"
+    },
+    {
+      "name": "execution_000078",
+      "phase": "chronological_early",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000078",
+      "sequence": 78,
+      "map_version": 24379075,
+      "manifest_sha256": "f7358a0bc8d4116c902c7c240dedf2f07631bab7fb959b6a20abfe9dcea4edec",
+      "planner_fnv1a64": "ad42b6f559a63487",
+      "map_fnv1a64": "e1c017b09389ad6b"
+    },
+    {
+      "name": "execution_000079",
+      "phase": "chronological_middle",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000079",
+      "sequence": 79,
+      "map_version": 24730010,
+      "manifest_sha256": "40d27f1741892013fd3031bf5124b19cae277899768c524fc0f84167da5186b9",
+      "planner_fnv1a64": "ed91b420ea56ab50",
+      "map_fnv1a64": "8a0eca9a2287596e"
+    },
+    {
+      "name": "execution_000091",
+      "phase": "chronological_middle",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000091",
+      "sequence": 91,
+      "map_version": 25689229,
+      "manifest_sha256": "c48f8366f11ef0e2878b3e25a103b5b61eb98da7c8bf55090159ba7a9f27924b",
+      "planner_fnv1a64": "cafb5d806e8786f8",
+      "map_fnv1a64": "9a260dd424d35b92"
+    },
+    {
+      "name": "execution_000101",
+      "phase": "chronological_middle",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000101",
+      "sequence": 101,
+      "map_version": 27852360,
+      "manifest_sha256": "5dbe040c1b18319305815dfabb75401f781c3a9a597fd5e5c606896077bdea03",
+      "planner_fnv1a64": "23897bbc8cda7dec",
+      "map_fnv1a64": "448a1c49e333e961"
+    },
+    {
+      "name": "execution_000112",
+      "phase": "chronological_middle",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000112",
+      "sequence": 112,
+      "map_version": 31378194,
+      "manifest_sha256": "c6dfe6c97ed485ca315d72739e6d2badec012b90682914464734a178f23d6c37",
+      "planner_fnv1a64": "e3ddb2c857b48c3b",
+      "map_fnv1a64": "b192c209c57b2a78"
+    },
+    {
+      "name": "execution_000123",
+      "phase": "chronological_middle",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000123",
+      "sequence": 123,
+      "map_version": 32770825,
+      "manifest_sha256": "e766a6eb20bf79f0222fcbfd47579361346e33614dec3ec1a3eb5c634a7b7b4f",
+      "planner_fnv1a64": "5c966f88ad5a6c3f",
+      "map_fnv1a64": "8f914114f8c09232"
+    },
+    {
+      "name": "execution_000134",
+      "phase": "chronological_middle",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000134",
+      "sequence": 134,
+      "map_version": 35401063,
+      "manifest_sha256": "866496fba66cb2f5411fd91fb3217939ce4f0e920cd290bd068fe61c71261546",
+      "planner_fnv1a64": "a9ca3e2e0bc07937",
+      "map_fnv1a64": "91f70b4e9a0fdb1f"
+    },
+    {
+      "name": "execution_000144",
+      "phase": "chronological_middle",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000144",
+      "sequence": 144,
+      "map_version": 36444678,
+      "manifest_sha256": "73c60172d1678e7a65d22c098ba952abf19a665f8ddbe784e629c37cdf7edce0",
+      "planner_fnv1a64": "3b83d175262ad980",
+      "map_fnv1a64": "cc84180ac071e973"
+    },
+    {
+      "name": "execution_000155",
+      "phase": "chronological_middle",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000155",
+      "sequence": 155,
+      "map_version": 38518583,
+      "manifest_sha256": "403bd213d636a464a722b13b39cf10acc8d8a2b0d8f45210b3110f76c1164feb",
+      "planner_fnv1a64": "fe751b3a0d8f5ebf",
+      "map_fnv1a64": "0814d7aabc0e0ee2"
+    },
+    {
+      "name": "execution_000156",
+      "phase": "chronological_late",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000156",
+      "sequence": 156,
+      "map_version": 38524697,
+      "manifest_sha256": "b7c3228780343bdfe06287196ea1464f60bfbeed65092828b1d0c55ace6ef257",
+      "planner_fnv1a64": "c2c9a9560356afc7",
+      "map_fnv1a64": "44dfd3570e91ffbc"
+    },
+    {
+      "name": "execution_000167",
+      "phase": "chronological_late",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000167",
+      "sequence": 167,
+      "map_version": 40307222,
+      "manifest_sha256": "58c429ef297d1584ed49f36bfa11b26302050dbfec952b0863fba8ee40150c72",
+      "planner_fnv1a64": "5afc9da34b3c94f5",
+      "map_fnv1a64": "b7f0029ef5ad49e3"
+    },
+    {
+      "name": "execution_000177",
+      "phase": "chronological_late",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000177",
+      "sequence": 177,
+      "map_version": 41703214,
+      "manifest_sha256": "ec99f6af50e5a8b4dcf2a0ef8cbb84fa12e419e8d9d3f341794eab58afd9fff1",
+      "planner_fnv1a64": "687a200835c450a1",
+      "map_fnv1a64": "46c9333139dd0921"
+    },
+    {
+      "name": "execution_000188",
+      "phase": "chronological_late",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000188",
+      "sequence": 188,
+      "map_version": 43951578,
+      "manifest_sha256": "95ad0cd677669b9dc0e0dfc3d534137d6835483fb9c35a88a427d0abe5945fe0",
+      "planner_fnv1a64": "8a6184f6da6eb2ae",
+      "map_fnv1a64": "95bdd0807bb99414"
+    },
+    {
+      "name": "execution_000198",
+      "phase": "chronological_late",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000198",
+      "sequence": 198,
+      "map_version": 47238311,
+      "manifest_sha256": "88868c1ec4b8b6e69664d56b1aebcf609935c680a7636d6dee593ad6df1ef4d8",
+      "planner_fnv1a64": "a85f04b04fff4c66",
+      "map_fnv1a64": "201eccae7942341b"
+    },
+    {
+      "name": "execution_000209",
+      "phase": "chronological_late",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000209",
+      "sequence": 209,
+      "map_version": 50956027,
+      "manifest_sha256": "beeef564eaa137be876b93f258727c1e375d8ccf1bdfe3d18cf1b9d8dde32382",
+      "planner_fnv1a64": "2e4994876ec48e43",
+      "map_fnv1a64": "dd06cf9cd01bc210"
+    },
+    {
+      "name": "execution_000219",
+      "phase": "chronological_late",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000219",
+      "sequence": 219,
+      "map_version": 54780966,
+      "manifest_sha256": "2f955da1ed7a7d8630bfa27d86104c5926485e3ab4fc0a923abb60e247e9ec2c",
+      "planner_fnv1a64": "1397734bfc8f1048",
+      "map_fnv1a64": "83291ea9734100a7"
+    },
+    {
+      "name": "execution_000231",
+      "phase": "chronological_late",
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/R2_FINAL_REFERENCE_20260922/snapshots/execution_000231",
+      "sequence": 231,
+      "map_version": 56344531,
+      "manifest_sha256": "3cc8b8043a2bbee8ea5d17fecbd48979e0357793338d6bba51087bd5c95bb044",
+      "planner_fnv1a64": "f7a078cc09444103",
+      "map_fnv1a64": "f9ce41d92ccf9842"
+    }
+  ]
+}
