@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I1-06 seed-2 paired checkpoint.
+Last updated: 2026-10-08 after I1-06 seed-3 Legacy checkpoint.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -288,16 +288,22 @@ valid Legacy repeat is retained as sensitivity data and does not replace the pri
 run. The first two seeds disagree on T95 direction, so the I1 decision remains open.
 Read `experiments/i1/I1_06_PROGRESS_2026-10-08.md` and the earlier seed-1 checkpoint.
 
+Seed 3 Legacy is now complete and backed up: T80/T90/T95
+201.606/279.219/416.485 s, exploration distance 182.365 m, final Coverage 95.217%,
+HOME_REACHED and zero collision. Seed 3 Unique-online has not started. Read
+`experiments/i1/I1_06_SEED3_LEGACY_2026-10-08.md`.
+
 The current checkout may be the
 `docs/i1-06-progress` branch to preserve this handoff. The frozen experiment branch is
 `feat/i1-unique-gain` at `10e9c35`; switch to it before any remaining run and require
-an empty Git status. The next task is seed 3 only: resume `run_matrix.py` with
-`--max-tasks 2`; its dry run must list only the two seed-3 modes. Seeds 1 and 2 must
+an empty Git status. The next task is seed 3 Unique-online only: resume
+`run_matrix.py` with `--max-tasks 1`; its dry run must list only that task. Seeds 1
+and 2 and seed 3 Legacy must
 not be rerun absent a new correctness finding.
 
 Run the pre-registered three-seed paired pilot and make the Innovation-1 decision:
 
-1. Verify current Git state and the matrix dry run; run only seed 3 modes next.
+1. Verify current Git state and the matrix dry run; run only seed 3 Unique-online next.
 2. Ensure every run records the same parent/submodule commits and an empty Git status.
 3. Retain failures/censoring. Do not substitute repeat values during this pilot.
 4. After seed 3 finishes, aggregate paired Coverage, T80/T90/T95, completion, exploration/final distance,

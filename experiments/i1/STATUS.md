@@ -7,7 +7,7 @@
 | I1-03 Correctness and offline-reference agreement | Complete | 24 snapshots, 217 candidates and 13,131 samples exactly match Python stable-address reference |
 | I1-04 Live shadow-mode validation | Complete | small/full seed-1 diagnostics; 31/31 valid full-run evaluations, 51.6% Top-1 change, measured cost retained |
 | I1-05 Feature-flagged online selection | Complete | deterministic selection/fallback tests and successful seed-1 online smoke |
-| I1-06 Three-seed paired pilot and decision | In progress | seeds 1–2 paired runs complete; seed 3 pending; see `I1_06_PROGRESS_2026-10-08.md` |
+| I1-06 Three-seed paired pilot and decision | In progress | seeds 1–2 paired; seed 3 Legacy complete and backed up, Unique-online pending |
 
 Default mode remains Legacy. `unique_shadow` is validated for diagnostics and
 `unique_online` is now available behind the explicit feature flag. Completion remains
