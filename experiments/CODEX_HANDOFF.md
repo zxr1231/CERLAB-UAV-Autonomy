@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I2-05 offline supply gate and online pose audit.
+Last updated: 2026-10-08 after I2-05 pose fix and online admission.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -66,7 +66,7 @@ frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i2-route-controls
-  commit 48d9a127fe55883a41ee331eeb7ae47572c96555
+  commit 99f3122feb84f854ec921f6421673e4b620f2e4c
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -364,21 +364,32 @@ protocol, validation and summary JSON. K12/24/relaxed constraints are diagnostic
 not deployed improvements; offline operation caps do not prove online feasibility.
 
 A read-only I2-04 V2 audit found 12/27 scored-yaw mismatches with stored start yaw,
-maximum 0.0183 rad. The new integration still reads live currYaw_ and pose members
-while mapping/odometry callbacks run. Offline supply uses fixed pose and is unaffected.
-This is a new-control preflight defect to fix, not grounds to alter frozen I1 data.
+maximum 0.0183 rad. The initial integration read live currYaw_ and pose members
+while mapping/odometry callbacks ran. Offline supply used fixed pose and was unaffected.
+This new-control defect is now resolved by the following pose fix; I1 data stay frozen.
 
-**Immediate next task is the next I2-05 batch:** freeze per-plan start position/yaw
-for new controls (thread-consistent capture), use that context for graph connectors,
-constraints and all candidate scores, and verify default historical compatibility.
-Then register a bounded online 50ms candidate-supply check, before committing to
-same-commit/same-scoring four-mode seed-1/2/3 full pilot. Do not automatically run
-the full matrix, tune V1 limits or add preservation shortcut to seek positive data.
-I2-06/held-out ordering still precede I3. Keep I1 default/conclusion and all failures.
+I2-05 pose fix and online admission now pass. global_planner99f3122 adds a
+mutex-protected odometry mailbox and one worker-owned start pose/yaw per plan.
+New graph connectors, constraints and all candidate scores share it; historical
+Legacy behavior remains. Five tests pass, including continuous odom updates during
+fixed scoring. Two bounded240s seed1/1 runs with original K6/50ms limits pass.
+Generic/diverse: 15/16 ready plans, 10/7 post35s plans with selected extras,
+maximum yaw errors2.7e-15/1.8e-15rad, alternative max30.8/23.3ms, no recorded
+collisions or fallbacks. Total planning means282.6/198.6ms, NOT 50ms. Read
+I2_05_ONLINE_ADMISSION_REPORT.md, protocol, validation and summary. Raw runs remain
+TIMEOUT/FAILED, not a full pilot or performance win. All previous data stay retained.
+
+**Immediate next task is I2-05 paired-pilot registration:** freeze same commit,
+same scoring and settings for historical Legacy, distance-single, generic K and
+geometric diversity on seeds1/2/3. Decide and document any audit/logging overhead
+policy before collection and account for all runtime. Do not retune K/V1 constraints,
+rerun I1 or change sensors/dynamics to seek gains. Full paired pilot NOT yet run.
+I2-06 and the held-out predicted/actual ordering gate still precede I3.
 Parent/global_planner feat/i2-route-controls; autonomous_flight feat/i2-route-logging.
-I2-05 additions are offline test/analysis tools; no ROS/Gazebo was launched this batch.
+User requested backup and stop after this current batch: do not launch the pilot
+until the next continuation. Bounded checks have cleaned up their own ROS/Gazebo.
 
-Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_SUPPLY_2026-10-08/`.
+Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_ONLINE_2026-10-08/`.
 
 Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in

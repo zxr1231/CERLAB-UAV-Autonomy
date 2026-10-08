@@ -1,0 +1,21 @@
+{
+  "task": "I2-05 pose fix and online admission",
+  "date": "2026-10-08",
+  "status": "passed",
+  "pose_contract_tests": 5,
+  "pose_test_xml_sha256": "d1f1c751b67473eca6a0c13828b2ee67f19d7b254d880945eb3baf00176b834d",
+  "source_parent": "0e8874f4d8f893bfe1696f1c3b2e89d57406c47d",
+  "source_global_planner": "99f3122feb84f854ec921f6421673e4b620f2e4c",
+  "consumer_builds": [
+    "dynamic_exploration_node",
+    "test_dep_node"
+  ],
+  "online_modes": 2,
+  "duration_wall_after_planning_s": 240,
+  "summary_sha256": "352ff893f9f94032a7248b3d514760695dcc5bc551d09a6ccc1c93ab574ef32d",
+  "full_paired_pilot_complete": false,
+  "i1_and_route_protocol_v1": "unchanged",
+  "raw_outcomes_preserved": "TIMEOUT/FAILED; bounded admission passed separately",
+  "sanitizers": "not rerun for this task",
+  "next": "preregister same-commit/same-scoring paired pilot; stop here per user backup request"
+}
