@@ -39,3 +39,5 @@ feature-flagged Innovation-1 unique-gain phase while retaining the legacy comple
 gate and frozen Benchmark-v2 controls.
 
 Innovation 1 progress and validation records are under [`i1`](i1/STATUS.md).
+The three-part paper contribution framing is in
+[`PAPER_CONTRIBUTIONS_DRAFT.md`](PAPER_CONTRIBUTIONS_DRAFT.md).

@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-09-23 after I1-06 seed-1 paired checkpoint.
+Last updated: 2026-10-08 after I1-06 seed-2 paired checkpoint.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -22,6 +22,13 @@ The current research structure is:
 3. observation-value-preserving shortcut as a supporting component if its need is
    experimentally demonstrated;
 4. dependency-aware Edge evaluation only if final C++ profiling proves a bottleneck.
+
+For a three-point SCI/EI paper presentation, see
+`experiments/PAPER_CONTRIBUTIONS_DRAFT.md`: path-history observation evaluation,
+observation-opportunity-guided route generation, and observation-value-preserving
+simplification. The route generation is the intended main contribution; the other two
+are tightly connected supporting method components. Their final claim strength
+depends on the pending experiments.
 
 Occupancy confidence, semantics, energy, dynamic prediction and loop closure are out
 of the current scope. Do not add them to hide a failed hypothesis.
@@ -274,22 +281,26 @@ home without collision. Unique-online T80/T90/T95 was 167.50/239.54/328.67 s ver
 Legacy 203.40/280.33/452.74 s; exploration distance was 196.04 m versus 186.38 m;
 global planning mean was 92.96 versus 48.43 ms. A first Unique attempt was interrupted
 by loss of its execution session and remains preserved as an excluded partial run.
-These are one-seed pilot observations, not a method conclusion. Read
-`experiments/i1/I1_06_PROGRESS_2026-09-23.md`.
+Seed 2 also has a complete pair on `10e9c35`. By the first-valid-attempt policy,
+Unique-online T95 was 419.157 s versus Legacy 370.594 s; exploration distance was
+168.308 versus 160.150 m; mean global planning was 98.745 versus 49.120 ms. A later
+valid Legacy repeat is retained as sensitivity data and does not replace the primary
+run. The first two seeds disagree on T95 direction, so the I1 decision remains open.
+Read `experiments/i1/I1_06_PROGRESS_2026-10-08.md` and the earlier seed-1 checkpoint.
 
-The user asked to stop and back up after seed 1. The current checkout may be the
+The current checkout may be the
 `docs/i1-06-progress` branch to preserve this handoff. The frozen experiment branch is
 `feat/i1-unique-gain` at `10e9c35`; switch to it before any remaining run and require
-an empty Git status. The next task is seed 2 only: resume `run_matrix.py` with
-`--max-tasks 2`; its dry run must list only the two seed-2
-modes. After that pair, record and back it up before seed 3. Seed 1 must not be rerun.
+an empty Git status. The next task is seed 3 only: resume `run_matrix.py` with
+`--max-tasks 2`; its dry run must list only the two seed-3 modes. Seeds 1 and 2 must
+not be rerun absent a new correctness finding.
 
 Run the pre-registered three-seed paired pilot and make the Innovation-1 decision:
 
-1. Verify current Git state and the matrix dry run; run only seed 2 modes next.
+1. Verify current Git state and the matrix dry run; run only seed 3 modes next.
 2. Ensure every run records the same parent/submodule commits and an empty Git status.
 3. Retain failures/censoring. Do not substitute repeat values during this pilot.
-4. After seeds 2 and 3 finish, aggregate paired Coverage, T80/T90/T95, completion, exploration/final distance,
+4. After seed 3 finishes, aggregate paired Coverage, T80/T90/T95, completion, exploration/final distance,
    collision, success, planning time, CPU/RSS, RTF and Unique selection/fallback data.
 5. Add actual observation per metre/second and low-new-observation interval metrics
    using the existing sensor provenance where available.
