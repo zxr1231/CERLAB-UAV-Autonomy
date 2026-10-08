@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I2-02 isolated route solver.
+Last updated: 2026-10-08 after I2-03 isolated candidate controls.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -338,14 +338,24 @@ Six tests include a 300-graph exhaustive oracle and complete six-vertex fixtures
 Read `experiments/i2/I2_02_ROUTE_SEARCH_REPORT.md` and validation JSON. No online
 integration or performance claim; historical search/default/config and I1 stay fixed.
 
-**Immediate next task is I2-03:** geometric-diversity selection from the identical
-Yen pool, motion-limit filtering and post-shortcut duplicate/count contracts, tested
-without observation reward. Continue `feat/i2-route-controls` in parent and
-`global_planner`. Live PRM/map adapter and original-A* comparison remain I2-04,
-then smoke, preregistered paired pilot and I2-06 decision. Do not start full seed
-runs or I3 before their registered gates. Frozen I1 stays at `10e9c35`.
+I2-03 adds `routeCandidates.h`: common pool preparation, raw/simplified motion
+limits, original-order geometric shortcut with snapshot callback, duplicate/rejection
+counts, generic shortest and within-Goal directed-edge Jaccard diversity selection.
+Mandatory references first, stable ties/round-robin/caps and cooperative cutoffs are
+covered by nine tests. See `experiments/i2/I2_03_CANDIDATE_CONTROLS_REPORT.md` and
+validation JSON. Selected counts are not actual scored counts; no online integration,
+B-spline validation or observation benefit has been demonstrated.
 
-Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_02_2026-10-08/`.
+**Immediate next task is I2-04:** integrate snapshot-consistent live PRM graph,
+collision and legacy-formula scoring adapters behind explicit feature flags; verify
+historical-default compatibility, original A* vs deterministic reference differences,
+new candidate/log provenance and execution linkage. Start with bounded adapter/tests,
+then simulation smoke only after checks pass. Do not jump straight to a full seed
+matrix. Continue parent/global_planner `feat/i2-route-controls`.
+I2-05 pilot needs preregistration; I3 needs the held-out predicted/actual gate.
+Frozen I1 and Legacy default remain unchanged.
+
+Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_03_2026-10-08/`.
 
 Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in

@@ -1,0 +1,47 @@
+{
+  "task": "I2-03",
+  "date": "2026-10-08",
+  "status": "isolated_candidate_controls_passed_not_online_integrated",
+  "protocol": "I2_GENERIC_ROUTES_V1",
+  "evidence": {
+    "catkin_test.xml": {
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "sha256": "503329aad877c1be279f42baedead26bec0b8a3f496740904664bda6f6907efd"
+    },
+    "sanitized_test.xml": {
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "sha256": "be215e6b52fdedd146f23db799d4650258997a7c2deeceea09f7dd6976f450ff"
+    },
+    "search_regression.xml": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "sha256": "76e3941aaf5269191a2a06517509a4d7009351e264f475dc692c365e049fed07"
+    }
+  },
+  "build_target": "route_candidates_test",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "leak_check": "disabled_ptrace_limitation",
+  "compiler_options": "C++14 -Wall -Wextra -Werror",
+  "candidate_counts": "raw_generated, motion_feasible, post_shortcut_unique, selected; actual scored count deferred",
+  "diversity": "minimum directed-edge Jaccard distance within same Goal",
+  "generic_distance": "simplified geometric length",
+  "unchanged": [
+    "I1 frozen branch/data/conclusion",
+    "I2-01 protocol",
+    "I2-02 solver",
+    "historical planner/default/config"
+  ],
+  "online_performance": "not_tested",
+  "source_sha256": {
+    "global_planner/include/global_planner/routeCandidates.h": "d9923699444b2d1681ef9c0d76b89da69e71ca0bf84b33b15fbe4177ec28a50e",
+    "global_planner/test/route_candidates_test.cpp": "5e79af8c53fb68506e35639a8dd024765d4e3787413c98a9ed577062de4686b9"
+  }
+}
