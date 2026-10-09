@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-08 after I2-05 pose fix and online admission.
+Last updated: 2026-10-09 after completing I2-05 online-admission backup recovery.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -389,7 +389,8 @@ Parent/global_planner feat/i2-route-controls; autonomous_flight feat/i2-route-lo
 User requested backup and stop after this current batch: do not launch the pilot
 until the next continuation. Bounded checks have cleaned up their own ROS/Gazebo.
 
-Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_ONLINE_2026-10-08/`.
+Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_ONLINE_2026-10-08/`
+(completed on 2026-10-09 after the previous quota-related push interruption).
 
 Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in

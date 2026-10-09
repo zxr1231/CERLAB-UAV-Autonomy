@@ -8,7 +8,8 @@
   "source_global_planner": "99f3122feb84f854ec921f6421673e4b620f2e4c",
   "consumer_builds": [
     "dynamic_exploration_node",
-    "test_dep_node"
+    "test_dep_node",
+    "return_home_checks"
   ],
   "online_modes": 2,
   "duration_wall_after_planning_s": 240,
@@ -17,5 +18,6 @@
   "i1_and_route_protocol_v1": "unchanged",
   "raw_outcomes_preserved": "TIMEOUT/FAILED; bounded admission passed separately",
   "sanitizers": "not rerun for this task",
-  "next": "preregister same-commit/same-scoring paired pilot; stop here per user backup request"
+  "next": "preregister same-commit/same-scoring paired pilot; stop here per user backup request",
+  "backup_recovery_date": "2026-10-09"
 }

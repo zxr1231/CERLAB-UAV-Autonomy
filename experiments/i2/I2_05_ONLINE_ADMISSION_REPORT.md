@@ -23,7 +23,9 @@ before new online results: I2_05_ONLINE_ADMISSION_PROTOCOL.json.
 
 ## Tests and online result
 
-Targeted catkin build and both DEP allocation consumers pass. Five snapshot/pose
+Targeted catkin builds of dynamic_exploration_node, test_dep_node and
+return_home_checks pass (the last consumer build completed during backup recovery
+on 2026-10-09). Five snapshot/pose
 checks pass, including 20,000 mailbox updates with coherent-pair reads, invalid pose
 rejection, fixed scores/start geometry under continuous actual odomCB updates, and
 historical live-yaw semantics once the new snapshot is disabled.
