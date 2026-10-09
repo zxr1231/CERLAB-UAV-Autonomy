@@ -2,6 +2,7 @@
 """Run a resumable, serial matrix of isolated CERLAB benchmark trials."""
 import argparse
 import fcntl
+from contextlib import ExitStack
 import datetime
 import json
 import subprocess
@@ -38,7 +39,7 @@ def find_result_path(stdout, results_root):
     return None
 
 
-def main():
+def _main(resources):
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
     parser.add_argument("--workspace", default="/home/zxr2/cerlab_benchmark_ws")
@@ -65,7 +66,7 @@ def main():
     batch_lock = None
     if not args.dry_run:
         batch_root.mkdir(parents=True, exist_ok=True)
-        batch_lock = (batch_root / ".runner.lock").open("a+")
+        batch_lock = resources.enter_context((batch_root / ".runner.lock").open("a+"))
         try:
             fcntl.flock(batch_lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
@@ -216,6 +217,11 @@ def main():
     return 1 if any(task["status"] in ("FAILED", "TIMEOUT", "PROCESS_ERROR",
                                        "USER_ABORT", "INTERRUPTED", "MEASUREMENT_INVALID")
                     for task in state["tasks"]) else 0
+
+
+def main():
+    with ExitStack() as resources:
+        return _main(resources)
 
 
 if __name__ == "__main__":
