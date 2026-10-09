@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "experiment_id": "EXP-I2-05-PAIRED-PILOT-V1",
+  "method": "hire_return_home_500_route_controls",
+  "mode": "full",
+  "timeout": 900,
+  "seed_pairs": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "path_gain_modes": [
+    "unique_shadow"
+  ],
+  "route_control_modes": [
+    "historical_legacy",
+    "distance_single",
+    "generic_k_shortest",
+    "geometric_diverse"
+  ],
+  "rotate_route_modes_by_seed": true,
+  "repeats": 1,
+  "rviz": false,
+  "disable_coverage": false
+}

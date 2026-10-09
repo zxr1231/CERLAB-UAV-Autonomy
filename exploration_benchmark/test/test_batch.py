@@ -40,6 +40,22 @@ class BatchTest(unittest.TestCase):
             "env002_planner002_repeat01_legacy",
             "env002_planner002_repeat01_unique_online"])
 
+    def test_i2_route_matrix_rotation_and_unsupported_pair(self):
+        config = {"schema_version": 1, "experiment_id": "I2",
+                  "seed_pairs": [[1, 1], [2, 2], [3, 3]],
+                  "path_gain_modes": ["unique_shadow"],
+                  "route_control_modes": ["historical_legacy", "distance_single",
+                                          "generic_k_shortest", "geometric_diverse"],
+                  "rotate_route_modes_by_seed": True}
+        tasks = parse_matrix_config(config)["tasks"]
+        self.assertEqual(len(tasks), 12)
+        self.assertEqual(len({t["task_id"] for t in tasks}), 12)
+        self.assertEqual([t["route_control_mode"] for t in tasks[4:8]],
+                         ["distance_single", "generic_k_shortest", "geometric_diverse", "historical_legacy"])
+        config["path_gain_modes"] = ["unique_online"]
+        with self.assertRaisesRegex(ValueError, "do not support"):
+            parse_matrix_config(config)
+
     def test_resume_policy_and_hash(self):
         tasks = [{"task_id": "a", "status": "SUCCESS", "attempts": []},
                  {"task_id": "b", "status": "FAILED", "attempts": []},

@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-09 after completing I2-05 online-admission backup recovery.
+Last updated: 2026-10-09 at I2-05 paired-pilot registration.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -379,15 +379,21 @@ collisions or fallbacks. Total planning means282.6/198.6ms, NOT 50ms. Read
 I2_05_ONLINE_ADMISSION_REPORT.md, protocol, validation and summary. Raw runs remain
 TIMEOUT/FAILED, not a full pilot or performance win. All previous data stay retained.
 
-**Immediate next task is I2-05 paired-pilot registration:** freeze same commit,
-same scoring and settings for historical Legacy, distance-single, generic K and
-geometric diversity on seeds1/2/3. Decide and document any audit/logging overhead
-policy before collection and account for all runtime. Do not retune K/V1 constraints,
-rerun I1 or change sensors/dynamics to seek gains. Full paired pilot NOT yet run.
-I2-06 and the held-out predicted/actual ordering gate still precede I3.
-Parent/global_planner feat/i2-route-controls; autonomous_flight feat/i2-route-logging.
-User requested backup and stop after this current batch: do not launch the pilot
-until the next continuation. Bounded checks have cleaned up their own ROS/Gazebo.
+**Current task: I2-05 paired pilot collection.** User explicitly resumed after the
+previous backup. I2_05_PAIRED_PROTOCOL.md / I2_05_PAIRED_MATRIX.json register 12 runs,
+four modes x seeds1/2/3, all unique_shadow with Legacy selection, headless, timeout900s.
+Keep current tested audit/JSON/Unique overhead and charge total time; primary contrasts
+use distance_single as the common infrastructure control. K6/V1 limits unchanged.
+Order rotates across seed blocks. Batch root:
+`/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/batch_state.json`.
+A kernel lock prevents duplicate runners; never blindly reset RUNNING/INTERRUPTED.
+Reconcile actual services/processes/manifests before any resume. Terminal failures are
+retained; technical/measurement invalidity halts for diagnosis. No favorable retries.
+Collection source HEAD is recorded in batch_state and must stay fixed across runs.
+Save progress in external batch state during collection; do not commit docs/code in
+this checkout mid-matrix. A STOP_AFTER_CURRENT marker requests a clean run boundary.
+After all12 terminal attempts, summarize paired seed results, update handoff and back
+up. I2-06/held-out ordering still precede I3; I1 data and conclusions remain frozen.
 
 Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_ONLINE_2026-10-08/`
 (completed on 2026-10-09 after the previous quota-related push interruption).

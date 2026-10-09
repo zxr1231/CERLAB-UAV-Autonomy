@@ -33,9 +33,16 @@ def parse_matrix_config(value):
             any(item not in ("legacy", "unique_shadow", "unique_online")
                 for item in gain_modes)):
         raise ValueError("path_gain_modes must be distinct supported modes")
+    route_modes = value.get("route_control_modes", ["historical_legacy"])
+    supported = ("historical_legacy", "distance_single", "generic_k_shortest", "geometric_diverse")
+    if (not isinstance(route_modes, list) or not route_modes or
+            len(route_modes) != len(set(route_modes)) or any(m not in supported for m in route_modes)):
+        raise ValueError("route_control_modes must be distinct supported modes")
+    if "unique_online" in gain_modes and any(m != "historical_legacy" for m in route_modes):
+        raise ValueError("new route controls do not support unique_online")
     tasks = []
     seen = set()
-    for pair in pairs:
+    for pair_index, pair in enumerate(pairs):
         if isinstance(pair, dict):
             environment_seed, planner_seed = resolve_seeds(
                 environment_seed=pair.get("environment_seed"),
@@ -47,22 +54,30 @@ def parse_matrix_config(value):
             raise ValueError("each seed pair must be [environment, planner] or an object")
         for repeat in range(1, repeats + 1):
             for gain_mode in gain_modes:
-                identifier = "env%03d_planner%03d_repeat%02d" % (
-                    environment_seed, planner_seed, repeat)
-                if "path_gain_modes" in value:
-                    identifier += "_" + gain_mode
-                if identifier in seen:
-                    raise ValueError("duplicate matrix task: %s" % identifier)
-                seen.add(identifier)
-                tasks.append({
-                    "task_id": identifier,
-                    "environment_seed": environment_seed,
-                    "planner_seed": planner_seed,
-                    "repeat": repeat,
-                    "path_gain_mode": gain_mode,
-                    "status": "PENDING",
-                    "attempts": [],
-                })
+                ordered_routes = list(route_modes)
+                if value.get("rotate_route_modes_by_seed", False):
+                    offset = pair_index % len(ordered_routes)
+                    ordered_routes = ordered_routes[offset:] + ordered_routes[:offset]
+                for route_mode in ordered_routes:
+                    identifier = "env%03d_planner%03d_repeat%02d" % (
+                        environment_seed, planner_seed, repeat)
+                    if "path_gain_modes" in value:
+                        identifier += "_" + gain_mode
+                    if "route_control_modes" in value:
+                        identifier += "_" + route_mode
+                    if identifier in seen:
+                        raise ValueError("duplicate matrix task: %s" % identifier)
+                    seen.add(identifier)
+                    tasks.append({
+                        "task_id": identifier,
+                        "environment_seed": environment_seed,
+                        "planner_seed": planner_seed,
+                        "repeat": repeat,
+                        "path_gain_mode": gain_mode,
+                        "route_control_mode": route_mode,
+                        "status": "PENDING",
+                        "attempts": [],
+                    })
     return {
         "schema_version": 1,
         "experiment_id": experiment_id,
@@ -72,6 +87,7 @@ def parse_matrix_config(value):
         "rviz": bool(value.get("rviz", False)),
         "disable_coverage": bool(value.get("disable_coverage", False)),
         "path_gain_modes": gain_modes,
+        "route_control_modes": route_modes,
         "tasks": tasks,
     }
 

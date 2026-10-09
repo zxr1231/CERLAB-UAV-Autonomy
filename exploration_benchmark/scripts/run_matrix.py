@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Run a resumable, serial matrix of isolated CERLAB benchmark trials."""
 import argparse
+import fcntl
 import datetime
 import json
 import subprocess
@@ -8,7 +9,7 @@ import sys
 from pathlib import Path
 
 from exploration_benchmark.batch import (canonical_hash, eligible_tasks,
-                                         parse_matrix_config, recover_running_tasks)
+                                         parse_matrix_config)
 from exploration_benchmark.core import atomic_write_json
 
 
@@ -59,13 +60,32 @@ def main():
     batch_root = results_root / matrix["experiment_id"]
     state_path = batch_root / "batch_state.json"
 
+    # Kernel lock survives dialogue interruptions while this process lives.
+    # Dry-run remains read-only.
+    batch_lock = None
+    if not args.dry_run:
+        batch_root.mkdir(parents=True, exist_ok=True)
+        batch_lock = (batch_root / ".runner.lock").open("a+")
+        try:
+            fcntl.flock(batch_lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise RuntimeError("another matrix runner already owns this batch")
+        if subprocess.run(["rosnode", "list"], stdout=subprocess.DEVNULL,
+                          stderr=subprocess.DEVNULL).returncode == 0:
+            raise RuntimeError("ROS Master exists: inspect active/previous run before resuming")
+    source_commit = subprocess.check_output(["git", "rev-parse", "HEAD"],
+        cwd=workspace / "src/CERLAB-UAV-Autonomy", text=True).strip()
     if state_path.exists():
         state = load_json(state_path)
         if state.get("config_sha256") != config_hash:
             raise RuntimeError("existing batch_state.json has a different config hash")
-        recover_running_tasks(state["tasks"])
+        if state.get("source_commit", source_commit) != source_commit:
+            raise RuntimeError("matrix source commit changed; inspect before continuing")
+        if any(task["status"] in ("RUNNING", "INTERRUPTED") for task in state["tasks"]):
+            raise RuntimeError("interrupted attempt needs result reconciliation; do not auto-repeat")
     else:
         state = {
+            "source_commit": source_commit,
             "schema_version": 1,
             "experiment_id": matrix["experiment_id"],
             "method": matrix["method"],
@@ -97,6 +117,8 @@ def main():
     atomic_write_json(state_path, state)
     runner = Path(__file__).resolve().with_name("run_experiment.py")
     for task in scheduled:
+        if (batch_root / "STOP_AFTER_CURRENT").exists():
+            break
         command = [
             sys.executable, str(runner),
             "--workspace", str(workspace),
@@ -107,6 +129,7 @@ def main():
             "--mode", matrix["mode"],
             "--timeout", str(matrix["timeout"]),
             "--path-gain-mode", task.get("path_gain_mode", "legacy"),
+            "--route-control-mode", task.get("route_control_mode", "historical_legacy"),
         ]
         if matrix["rviz"]:
             command.append("--rviz")
@@ -129,14 +152,45 @@ def main():
             return 130
         result_path = find_result_path(completed.stdout, results_root)
         outcome = None
+        run_manifest = None
         if result_path is not None:
             try:
-                outcome = load_json(result_path / "run.json").get("outcome")
+                run_manifest = load_json(result_path / "run.json")
+                outcome = run_manifest.get("outcome")
             except (OSError, ValueError):
                 outcome = "INVALID_RUN_MANIFEST"
         status = "SUCCESS" if completed.returncode == 0 and outcome == "HOME_REACHED" else (
             outcome if outcome in ("TIMEOUT", "PROCESS_ERROR", "USER_ABORT") else "FAILED")
+        measurement_errors = []
+        if run_manifest is not None and status in ("SUCCESS", "TIMEOUT"):
+            for field in ("resource_metrics_status", "trajectory_metrics_status", "collision_measurement_status"):
+                if run_manifest.get(field) != "VALID":
+                    measurement_errors.append(field)
+            if not matrix["disable_coverage"] and run_manifest.get("coverage_status") != "VALID_ACCESSIBLE_FREE_V2":
+                measurement_errors.append("coverage_status")
+            if run_manifest.get("git_status"):
+                measurement_errors.append("dirty_source_tree")
+            for key in ("environment_seed", "planner_seed"):
+                if run_manifest.get(key) != task[key]:
+                    measurement_errors.append(key)
+            if "frozen_submodules" not in state:
+                state["frozen_submodules"] = run_manifest.get("submodules", [])
+            if run_manifest.get("submodules", []) != state["frozen_submodules"]:
+                measurement_errors.append("submodules")
+            if run_manifest.get("main_commit") != source_commit:
+                measurement_errors.append("main_commit")
+            if run_manifest.get("route_control_mode", "historical_legacy") != task.get("route_control_mode", "historical_legacy"):
+                measurement_errors.append("route_control_mode")
+            if run_manifest.get("path_gain_mode", "legacy") != task.get("path_gain_mode", "legacy"):
+                measurement_errors.append("path_gain_mode")
+            if "frozen_files" not in state:
+                state["frozen_files"] = run_manifest.get("files", {})
+            if run_manifest.get("files", {}) != state["frozen_files"]:
+                measurement_errors.append("frozen_files")
+            if measurement_errors:
+                status = "MEASUREMENT_INVALID"
         attempt.update({
+            "measurement_errors": measurement_errors,
             "status": status,
             "end_utc": utc_now(),
             "returncode": completed.returncode,
@@ -148,6 +202,9 @@ def main():
         task["status"] = status
         state["updated_utc"] = utc_now()
         atomic_write_json(state_path, state)
+        # Technical errors need diagnosis; TIMEOUT is a retained censored trial.
+        if status in ("PROCESS_ERROR", "FAILED", "USER_ABORT", "MEASUREMENT_INVALID"):
+            break
 
     counts = {}
     for task in state["tasks"]:
@@ -157,7 +214,7 @@ def main():
     atomic_write_json(state_path, state)
     print(str(state_path))
     return 1 if any(task["status"] in ("FAILED", "TIMEOUT", "PROCESS_ERROR",
-                                       "USER_ABORT", "INTERRUPTED")
+                                       "USER_ABORT", "INTERRUPTED", "MEASUREMENT_INVALID")
                     for task in state["tasks"]) else 0
 
 
