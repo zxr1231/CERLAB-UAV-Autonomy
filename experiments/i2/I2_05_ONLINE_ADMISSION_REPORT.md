@@ -73,3 +73,10 @@ measured rather than hidden. Do not use these short-run times as algorithm wins.
 I2-06 decision/held-out prediction-vs-actual ordering still precedes I3. Current batch
 ends with verified GitHub/local backup as requested. No ROS/Gazebo instance remains
 from the bounded checks. Read CODEX_HANDOFF.md for the first unfinished task.
+
+## Backup recovery on 2026-10-09
+
+Original temporary test/build logs were unavailable. The same-code five pose tests
+were rerun successfully on an isolated master and saved durably under the admission
+batch backup_recovery_validation_20261009 directory. Original validation hashes
+and all simulation outcomes are retained; no simulation was rerun.

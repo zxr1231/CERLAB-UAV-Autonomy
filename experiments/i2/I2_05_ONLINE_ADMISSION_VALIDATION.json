@@ -19,5 +19,12 @@
   "raw_outcomes_preserved": "TIMEOUT/FAILED; bounded admission passed separately",
   "sanitizers": "not rerun for this task",
   "next": "preregister same-commit/same-scoring paired pilot; stop here per user backup request",
-  "backup_recovery_date": "2026-10-09"
+  "backup_recovery_date": "2026-10-09",
+  "backup_recovery_pose_contract": {
+    "tests": 5,
+    "failures": 0,
+    "xml_path": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-ONLINE-ADMISSION-V1/backup_recovery_validation_20261009/pose_contract.xml",
+    "xml_sha256": "bb7d6c2f61b48c0181e1b954356b21d1cdffea3bd1bf1c3ec6b64fff58271940"
+  },
+  "temporary_evidence_note": "Original /tmp logs unavailable during recovery; original recorded hash retained, fresh same-code contract tests archived; no simulation rerun."
 }
