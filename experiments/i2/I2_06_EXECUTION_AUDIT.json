@@ -1,0 +1,666 @@
+{
+  "schema": "i2-06-readonly-execution-audit-v1",
+  "batch_state_sha256": "aafeeb2692c8d025747f187321081b9f9c8da45e94d35c0c18ad6614979631c6",
+  "frozen_source": "067794787ede6654c8ddd76fd3681a7e45c46a9c",
+  "trial_count": 12,
+  "trials": [
+    {
+      "task_id": "env001_planner001_repeat01_unique_shadow_historical_legacy",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_001/planner_seed_001/20261010T095721",
+      "local_calls": 194,
+      "local_failures": 2,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 11.186555299318611,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 2,
+        "optimizer_timeout": 2,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 0,
+      "plans_with_extra_routes": 0,
+      "same_snapshot_astar_comparisons": {
+        "count": 0,
+        "positive_excess_over_1um_count": 0,
+        "mean_excess_m": null,
+        "max_excess_m": null
+      },
+      "input_sha256": {
+        "planning.csv": "ec5393e4cfa8fcd3b42fab92d10359c97c6b2ee9f2c7f30253ad1b8b48bb38d7",
+        "trajectory.csv": "deb5d133eaecbc7e81c734af167fe5dd56fa406aab5cb94b060dc5ec823008ac",
+        "coverage.csv": "25fc9a1d347a9b636c5bdc4f34dabbfa5f78ef5c002874836396e0f5056b7fd7",
+        "metrics.csv": "a822a512d27e36b4bddabd2f8c8a422291bc81ce64fd6200e0fb2c63b49fcd4b",
+        "exploration.log": "e1d4ce7e5f0efb34f1f9b6c4aa99b51e371c7874960d177e0defa0031f143a32",
+        "run.json": "04aadf91e4bb0d93bd7afe5beaec730bbe33fc6ef32fa7686ba8c9d8cc763a28",
+        "runner_result.json": "2fa6679a55d9078e6992255a2985eae29bd209cde7bfd876a5ae8828506dbcdc",
+        "events.jsonl": "5bffd8ca7eba01d1688211226f6c88e48ba17ad7c42e889e874e975767ab28df"
+      }
+    },
+    {
+      "task_id": "env001_planner001_repeat01_unique_shadow_distance_single",
+      "status": "USER_ABORT",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_001/planner_seed_001/20261010T100536",
+      "local_calls": 2428,
+      "local_failures": 2318,
+      "terminal_failure_suffix": {
+        "count": 2315,
+        "first_sim": 254.002,
+        "last_local_sim": 723.821,
+        "elapsed_until_last_odom": 470.339,
+        "persistent": true,
+        "global_sequence_count": 2315,
+        "update_success_count": 2315,
+        "dynamic_obstacle_count_max": 2,
+        "depth_sequence_advance": 14073.0,
+        "map_version_advance": 20283804.0,
+        "travel_m": 0.04648594074618018,
+        "input_length_min_m": 7.331,
+        "input_length_max_m": 7.384,
+        "bspline_ms_median": 0.821,
+        "dominant_input_target_cm": [
+          [
+            [
+              -3.19,
+              -6.25,
+              1.16
+            ],
+            2315
+          ]
+        ],
+        "dominant_target_fraction": 1.0,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": 4690.0
+      },
+      "last_60s_position_box_diagonal_m": 0.0,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 2317,
+        "optimizer_timeout": 2,
+        "astar_failure": 1,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 2330,
+      "plans_with_extra_routes": 0,
+      "same_snapshot_astar_comparisons": {
+        "count": 11654,
+        "positive_excess_over_1um_count": 50,
+        "mean_excess_m": 0.0003202338325054399,
+        "max_excess_m": 0.0901128882591653
+      },
+      "input_sha256": {
+        "planning.csv": "a43723d95a858503eaa1d59540662ab3fa85fcb16ea1ce5eddcbcbe8c02412bb",
+        "trajectory.csv": "357d906a7335e70438875da66566d16b7ee5a606b561fd4819d78b9ff858080d",
+        "coverage.csv": "50c78dc03598c7381672ad96d08eb455534d795bdb75e7ea26f80941f65192b3",
+        "metrics.csv": "8ae62397e74d16ad33141f3d16a831afdee536704bc688abc356c00194c6014f",
+        "exploration.log": "6b467559350bbc1bbc652decf7b630a58c77396148d7ec0f2238e50a5e462c6c",
+        "run.json": "18bd48439df8e00c49c1f8034bc022a94a702b41e222d377005b2fb2d08e5223",
+        "runner_result.json": "b4c9b442f71db717754c74db85e41732d7466bc5637593d625bbb1c91e6f23c2",
+        "events.jsonl": "512804fd5db99501e7d1937496f8155361f2dfff3356589b4815381bfe96bfad",
+        "route_controls.jsonl": "7e9d804e91c9d58a6b1822bdcd913345c95cb8c0e0387c0824e3ee213c634d41"
+      }
+    },
+    {
+      "task_id": "env001_planner001_repeat01_unique_shadow_generic_k_shortest",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_001/planner_seed_001/20261010T101925",
+      "local_calls": 423,
+      "local_failures": 6,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 12.56847497917597,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 6,
+        "optimizer_timeout": 0,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 82,
+      "plans_with_extra_routes": 62,
+      "same_snapshot_astar_comparisons": {
+        "count": 630,
+        "positive_excess_over_1um_count": 35,
+        "mean_excess_m": 0.003544867599375836,
+        "max_excess_m": 0.2658422644055918
+      },
+      "input_sha256": {
+        "planning.csv": "8c544bb8be118a20589a6fc359a04a2ad6b3a2cd659642e1afc1110199999d45",
+        "trajectory.csv": "65ebe85b5753e9bc086aa87b4dbb68e1c536c789e06353ae03259e6b522892b8",
+        "coverage.csv": "2a663e12fcb2273ef9a9c8df69804cf0926636ea982984b63275bf6593eedef8",
+        "metrics.csv": "b9e948c8cf9753656f9d73d078bafa4443a4c6b0c2fd851e55f63256f5568088",
+        "exploration.log": "fd03475b5c3101859722637d30080a3948ef8b7b80e8fba3448e13917eb26833",
+        "run.json": "4df5e8a67405fb829e55782662afa8deeb11576ed8da7b468b5fad8a3f8a8eb2",
+        "runner_result.json": "eb7a5a3aa9ef43a82e9ed64d0a2a1287bde672d05908035ac39cf8bca59bb5ca",
+        "events.jsonl": "d5c8c874afc2da1f3e51d9b1e4b131224b8bf228d146aca2c8cecbf5649a27d2",
+        "route_controls.jsonl": "bd5cb06783d406c4907442d0d9cbb8ce1ec21fdba665fa75a0822531763044bb"
+      }
+    },
+    {
+      "task_id": "env001_planner001_repeat01_unique_shadow_geometric_diverse",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_001/planner_seed_001/20261010T103314",
+      "local_calls": 336,
+      "local_failures": 15,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 12.838606728490856,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 15,
+        "optimizer_timeout": 2,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 39,
+      "plans_with_extra_routes": 21,
+      "same_snapshot_astar_comparisons": {
+        "count": 293,
+        "positive_excess_over_1um_count": 5,
+        "mean_excess_m": 0.0016422281199259961,
+        "max_excess_m": 0.2691495734770797
+      },
+      "input_sha256": {
+        "planning.csv": "66d1e2c9d78b43e002b54ab7a3a195d1379a307f15918bed763a66b8d4b08db5",
+        "trajectory.csv": "78735217cb1b77b629a64c24f3e60df3553a3d39548ac08a7e12311ce3b5a3cb",
+        "coverage.csv": "ec0eecd3f3871f196264eaf553daf0b2177a80eee3cb03c5c7cfab827d092a7c",
+        "metrics.csv": "51bdf52ba0007ad03178723ecd4db6cdd6de134a34b62ae615e78f2f9172ceb7",
+        "exploration.log": "8dc8dd922a2fda506865fa6fd8999d129b1830fd4f25a22fdee29294a55cc084",
+        "run.json": "a7f10a2672e2a3d90127bd31626d736fca77fa157a1bfb4b33bcf94950474f95",
+        "runner_result.json": "c59f65d9e355066feb2e7d503982630c0d533a11f0277b8272828359d865913a",
+        "events.jsonl": "7068a81547e52a0fe90ec6076ac681db8747f0de744a88bedd1cb203f53f66b2",
+        "route_controls.jsonl": "374debecd499d5f6c8947c7ab4d3919d11aa15994e842d5204c8c4fce119f9f9"
+      }
+    },
+    {
+      "task_id": "env002_planner002_repeat01_unique_shadow_distance_single",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_002/planner_seed_002/20261010T104402",
+      "local_calls": 420,
+      "local_failures": 6,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 8.301153855857907,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 6,
+        "optimizer_timeout": 5,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 61,
+      "plans_with_extra_routes": 0,
+      "same_snapshot_astar_comparisons": {
+        "count": 377,
+        "positive_excess_over_1um_count": 10,
+        "mean_excess_m": 0.0029977237635037015,
+        "max_excess_m": 0.3166776164070857
+      },
+      "input_sha256": {
+        "planning.csv": "ed8da85da80ec7d472b9cc8519727c1a9492427017caf503a85536d8f3461c60",
+        "trajectory.csv": "56c699162118b2b2cee06fc2e643c7c360df3602d17bc7fe0809fad7324d9e1a",
+        "coverage.csv": "07a4c323018f6a20bf14f892ee92a90e3e0e037526c876bda1cb09b007aaa251",
+        "metrics.csv": "ec1c0ce988ea647ca1d9a9cd420a2e6a05761cc920fed136b0edf2b61785aed1",
+        "exploration.log": "40b359ae9551a1905437d0830e7727a5983015d00a9c231916a9b759b461fa2f",
+        "run.json": "c3c6878f0d428cf26e58fcbdc9e526265f448acd8deda96ab00b4158b736678a",
+        "runner_result.json": "39cd27eabaaa2f8ef4fb5a2d159a3ad9cf323ff189b0a7aa3fb7ceb8a7c28ab8",
+        "events.jsonl": "d8b1da67b3f15b547e110efd35244da2bad939c1ea4f40be9b99cdd27e7bc4e3",
+        "route_controls.jsonl": "c379063fb22f85eac132a1ab4914a4e7b4d0e767f60a4fca979670953e0ed4cc"
+      }
+    },
+    {
+      "task_id": "env002_planner002_repeat01_unique_shadow_generic_k_shortest",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_002/planner_seed_002/20261010T105753",
+      "local_calls": 496,
+      "local_failures": 16,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 12.273397884866284,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 16,
+        "optimizer_timeout": 15,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 195,
+      "plans_with_extra_routes": 45,
+      "same_snapshot_astar_comparisons": {
+        "count": 1094,
+        "positive_excess_over_1um_count": 20,
+        "mean_excess_m": 0.003772122544355033,
+        "max_excess_m": 0.30323004048612034
+      },
+      "input_sha256": {
+        "planning.csv": "b643c576736fc2e8f3f5229dfd64daea1457d3a1655e0fa4208e209f71335324",
+        "trajectory.csv": "2d671ad90e7777619a735bf65c6900a938e54b944b4d11620fa00dab380641cf",
+        "coverage.csv": "f9df2171fa2c54068a747bb6f96bb85400e573afac50d61d72e2d674e9d7b9f2",
+        "metrics.csv": "f6e9c542a1be8e64342a3fc1533f990b6fbe524e9b1b8d3d9019972f1c8f9ab9",
+        "exploration.log": "64c491d6689a4b19ed3c1f9389743aab1e06e820ff40c7200b5befac9558f664",
+        "run.json": "76b1eb930f59228df47ba1fef3f7db098d392656e1c9803a3f274df522a10688",
+        "runner_result.json": "1991263d9e287bd9d8bd62a6db9565a8f248cc2b7f94b8fd6ee0f15183d65a9f",
+        "events.jsonl": "5403223cd89575c7877b9994c62a2c37bfac61de6339ace841b82691ae8b0d8f",
+        "route_controls.jsonl": "dfeb4af1ddd05c45263a4ac83734eb4c93ba09508993a6e600acf34a7c0c78e4"
+      }
+    },
+    {
+      "task_id": "env002_planner002_repeat01_unique_shadow_geometric_diverse",
+      "status": "TIMEOUT",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_002/planner_seed_002/20261010T111007",
+      "local_calls": 560,
+      "local_failures": 6,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 11.552328363815347,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 6,
+        "optimizer_timeout": 2,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 67,
+      "plans_with_extra_routes": 47,
+      "same_snapshot_astar_comparisons": {
+        "count": 472,
+        "positive_excess_over_1um_count": 6,
+        "mean_excess_m": 0.0006599249319457824,
+        "max_excess_m": 0.09412922914340882
+      },
+      "input_sha256": {
+        "planning.csv": "f9bff9630c6fafd9baaf040ea5775cb60cceac0200761a08b840dc5fdcb4c28c",
+        "trajectory.csv": "799e44fe710c588f43fbd698f6eda694952e767d08d9761f4975c0fd270e9668",
+        "coverage.csv": "14df8cfd1efe6951ab58583af5db76841acec922e4641639f38c1486af1c6d66",
+        "metrics.csv": "e29acade246fa9e574a285a27c0981f0f35a93d82133557f35936877ad44beeb",
+        "exploration.log": "b2e2d6dfb7837db92648a07207a38eedf2ff64b7335cd8a97e2c07b961cfb495",
+        "run.json": "eceb3d47c39aa9e6a597a049a5ef109e94d8fa42e9bd5a445ebbe233161faf6e",
+        "runner_result.json": "d088c753d53b7722390e71a9f9c2bf1ddc56d93b07e65ec6b05451d1c05017e2",
+        "events.jsonl": "07906876eb8f44481c93aa3992e9862b092c24e007564cbc6f802058458078b2",
+        "route_controls.jsonl": "855390ec1eaf72545c346109fa1f0546ecf8e48e90c3d6807c9fe16d9559af4a"
+      }
+    },
+    {
+      "task_id": "env002_planner002_repeat01_unique_shadow_historical_legacy",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_002/planner_seed_002/20261010T112522",
+      "local_calls": 201,
+      "local_failures": 1,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 8.2091059036071,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 1,
+        "optimizer_timeout": 1,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 0,
+      "plans_with_extra_routes": 0,
+      "same_snapshot_astar_comparisons": {
+        "count": 0,
+        "positive_excess_over_1um_count": 0,
+        "mean_excess_m": null,
+        "max_excess_m": null
+      },
+      "input_sha256": {
+        "planning.csv": "ab9b231411b4d69a26f93d4e2a2e799aed15c49902e5034e616f5e3176466a82",
+        "trajectory.csv": "7c8f0a45704ca3e3a7395dca9cc60f8bff44d78f9603a8cabd79def8b58d5157",
+        "coverage.csv": "c9854a293e48ac3c40731e2be488762aee197be96f666d38fb5751f59149e25a",
+        "metrics.csv": "b2d85ac8e19ad2bd610b7c85cbef6a3588e6b067cb5a2f5f999d39fb5de685a0",
+        "exploration.log": "b0bbcd4036418889efd0b2d935515a711a2e60020cf562a6bf5445e5cea0b913",
+        "run.json": "00b368534d862a49e0e31ee6e9ea8235149a0a61f404cdfa41684bbeadbc011c",
+        "runner_result.json": "375626009ea01998ac0e452f6f73a3490e9590f58e5f629b137081d38777ae81",
+        "events.jsonl": "25072a259ca0f63cdb79abc5bf4d21442634bfa12deba70b4998a5ec90cf4f30"
+      }
+    },
+    {
+      "task_id": "env003_planner003_repeat01_unique_shadow_generic_k_shortest",
+      "status": "TIMEOUT",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_003/planner_seed_003/20261010T122608",
+      "local_calls": 2174,
+      "local_failures": 1971,
+      "terminal_failure_suffix": {
+        "count": 1963,
+        "first_sim": 469.505,
+        "last_local_sim": 904.485,
+        "elapsed_until_last_odom": 435.48300000000006,
+        "persistent": true,
+        "global_sequence_count": 1963,
+        "update_success_count": 1963,
+        "dynamic_obstacle_count_max": 2,
+        "depth_sequence_advance": 12885.0,
+        "map_version_advance": 21938555.0,
+        "travel_m": 0.11439172360894645,
+        "input_length_min_m": 4.624,
+        "input_length_max_m": 4.679,
+        "bspline_ms_median": 0.4,
+        "dominant_input_target_cm": [
+          [
+            [
+              -0.5,
+              -5.01,
+              1.01
+            ],
+            1963
+          ]
+        ],
+        "dominant_target_fraction": 1.0,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": 4350.0
+      },
+      "last_60s_position_box_diagonal_m": 0.0,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 1971,
+        "optimizer_timeout": 2,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 1994,
+      "plans_with_extra_routes": 1990,
+      "same_snapshot_astar_comparisons": {
+        "count": 10062,
+        "positive_excess_over_1um_count": 256,
+        "mean_excess_m": 0.0017649501388671382,
+        "max_excess_m": 0.46477621564421767
+      },
+      "input_sha256": {
+        "planning.csv": "b143d9e8b35097b7af75bc2ff15832485c5c87fc378f400f0c8b0ea3262bade6",
+        "trajectory.csv": "f31d2752169b145a6c47c2afc3997278fd871452fa69569a004cce6acf2046be",
+        "coverage.csv": "eb5838d634de10d9f0c8dabd557ad8dae64b43afe7ddb6e7ebfa6d3265fc51a5",
+        "metrics.csv": "8fea1ba7781c14a377cfdadc0e79e4ab7b2577898a3ebc2227ec462a1e753ea8",
+        "exploration.log": "b4930fd1a02de87991c17cd65b3b4c451a6530ac13b216ae0320a11ded825cac",
+        "run.json": "1ced6252838503e191160330b6e548008aebc166198a715bb1fbe96d76592639",
+        "runner_result.json": "7fd338f03775c44a9be0ef715713e8d1edc56ed5f611f09cea3b9e80eb7f1f13",
+        "events.jsonl": "2306e7e448c6f144bac5d9ea661ca2b47a200958f48ecebcb9677a065e955e44",
+        "route_controls.jsonl": "f21ffb984b04053ebe70f1d2b2bc9716f4591cff2e5dbb0e7d2cba5986f07844"
+      }
+    },
+    {
+      "task_id": "env003_planner003_repeat01_unique_shadow_geometric_diverse",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_003/planner_seed_003/20261010T124132",
+      "local_calls": 482,
+      "local_failures": 9,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 11.43304166371603,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 9,
+        "optimizer_timeout": 2,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 96,
+      "plans_with_extra_routes": 82,
+      "same_snapshot_astar_comparisons": {
+        "count": 679,
+        "positive_excess_over_1um_count": 47,
+        "mean_excess_m": 0.0031901866621939,
+        "max_excess_m": 0.19997215500062637
+      },
+      "input_sha256": {
+        "planning.csv": "bfa5c6c8d17ddcc927171b40e76b5f3c62d458b73c341d4a271fedb5856ffe68",
+        "trajectory.csv": "b309c5224410cdb2d588a901813087c40951008d20fcc3462827a2edbf2fffc8",
+        "coverage.csv": "b27bc6b3bae7097b365b8fefdcd2d726afe41d6dd2cb311446a7fef43a549803",
+        "metrics.csv": "d0946fe150d5eaa1a1a9d802b1c67ecfa18427d7394c17c3c756bfca47ddeeb6",
+        "exploration.log": "730a121a8f937930be49ec91d763060ea7f22ca77d28598092c58ba1a64700fc",
+        "run.json": "a6aded589d0e9a0ba59dd086b7f59069d9afe09c32bce47dd5af69d8fa2348f2",
+        "runner_result.json": "e145e057698321fbf00aac947166645ae4667d07dbd1b2c025997c2ce7b97a6b",
+        "events.jsonl": "8b1b23e4b7dd8a77b4038f41b52e142e3287bd455e09bfec9107576455d91dd7",
+        "route_controls.jsonl": "39019487d40ae16d2ab6a62d479b01ed231042495fcd0cdac3a56bd744d92b65"
+      }
+    },
+    {
+      "task_id": "env003_planner003_repeat01_unique_shadow_historical_legacy",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_003/planner_seed_003/20261010T125625",
+      "local_calls": 227,
+      "local_failures": 6,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 11.297432120476085,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 6,
+        "optimizer_timeout": 6,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 0,
+      "plans_with_extra_routes": 0,
+      "same_snapshot_astar_comparisons": {
+        "count": 0,
+        "positive_excess_over_1um_count": 0,
+        "mean_excess_m": null,
+        "max_excess_m": null
+      },
+      "input_sha256": {
+        "planning.csv": "db23e28bed9568bf849e0726541d2b209e74d283a043f7169f0021aaa8d35001",
+        "trajectory.csv": "fd4afd452a43bf6e7d8e11fe6e1d0283f3d92462ffe281ff0941a728ffa8b13f",
+        "coverage.csv": "8deee6739d120e05c8e8862f2035620290b8cdd7fbe27f57bded321fc7b7aa06",
+        "metrics.csv": "5522b1f9d82c45e99415c069c99441884835e9ee293ab33bd1cedd6e5235d097",
+        "exploration.log": "f887423d2190bd6f0cdf6805347cfca1b43732082a294c345a888fc134cb4c0d",
+        "run.json": "77039da30b230e1bb8d31317eb6da413d3fb8483ab20cc812fedd37e27e8531e",
+        "runner_result.json": "65cdd720a074553463096e7243d3c93e8c7ffc8a965212268ed208b1bfc618d3",
+        "events.jsonl": "4570dd9913f96c47cd42956b24db8a45f2a5e96ef978bb87e8fc998a716070e7"
+      }
+    },
+    {
+      "task_id": "env003_planner003_repeat01_unique_shadow_distance_single",
+      "status": "SUCCESS",
+      "result_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_003/planner_seed_003/20261010T130513",
+      "local_calls": 352,
+      "local_failures": 7,
+      "terminal_failure_suffix": {
+        "count": 0,
+        "first_sim": null,
+        "last_local_sim": null,
+        "elapsed_until_last_odom": 0,
+        "persistent": false,
+        "global_sequence_count": 0,
+        "update_success_count": 0,
+        "dynamic_obstacle_count_max": null,
+        "depth_sequence_advance": null,
+        "map_version_advance": null,
+        "travel_m": null,
+        "input_length_min_m": null,
+        "input_length_max_m": null,
+        "bspline_ms_median": null,
+        "dominant_input_target_cm": [],
+        "dominant_target_fraction": null,
+        "accessible_observation_counter_advance": 0,
+        "map_message_count_advance": null
+      },
+      "last_60s_position_box_diagonal_m": 12.198101935943935,
+      "whole_run_log_message_counts": {
+        "optimizer_failure": 7,
+        "optimizer_timeout": 0,
+        "astar_failure": 0,
+        "process_died_messages": 0
+      },
+      "ready_route_plans": 54,
+      "plans_with_extra_routes": 0,
+      "same_snapshot_astar_comparisons": {
+        "count": 361,
+        "positive_excess_over_1um_count": 4,
+        "mean_excess_m": 0.0008191752249973106,
+        "max_excess_m": 0.10857331338384313
+      },
+      "input_sha256": {
+        "planning.csv": "fbd994efb7136ba24b11f1f7b79e21d2cfe11f065bc8ca846284c6cce0ffec2c",
+        "trajectory.csv": "5001a0d3f5ac0019d43c0df5caae87ac5ff1ec6e6c1d1f1f679e1d5269ac8a6b",
+        "coverage.csv": "c065a7d71f4d9ffb933178323fe2c9298e228910951612a3b8d51f15eb8e4f9a",
+        "metrics.csv": "22e71dfcb0d07562d006ecd971529d017bb70ae7ccc20ecd9a020b405bd55564",
+        "exploration.log": "df34dfc3fbc049e70c3915455c28eac37202be3143fb8900031ebd4cc1dfb2ac",
+        "run.json": "b1d73519ee43c2ba650b9edaccbe8098ed338a2adaef866c933d6719859c4e32",
+        "runner_result.json": "572bd6a2c58e1b176f1c72dda6bca978b3babadab0b8685f6e2735848aa481c9",
+        "events.jsonl": "7e638f889fd9f2d14e4dc472f4ee2288b7e9a569b51061d1f518c256090f6b48",
+        "route_controls.jsonl": "7e9134af5991982f94d239c65a3630be69dde49ebc666ef5ead106658ec7a4df"
+      }
+    }
+  ],
+  "limitations": [
+    "Terminal failure suffix = all local calls after last successful local call; persistent iff >=5 calls and >=30s until last odom.",
+    "Message counts cover whole run; messages lack sequence IDs and cannot be assigned to every failed call.",
+    "Depth/map counters advancing prove callbacks, not useful new information or map correctness.",
+    "No frozen failure-time occupancy/control points or LBFGS status; exact collision/solver branch cannot be reconstructed.",
+    "No counterfactual treatment: neither missing feedback nor A* excess is proven to cause aggregate T95 changes."
+  ]
+}

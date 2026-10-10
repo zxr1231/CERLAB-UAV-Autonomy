@@ -1,0 +1,72 @@
+{
+  "schema": "i2-06-contract-execution-validation-v1",
+  "first_item_status": "COMPLETE",
+  "i2_06_overall_status": "PARTIAL_USER_REQUESTED_CHECKPOINT",
+  "frozen_trial_count": 12,
+  "persistent_failure_suffix_trials": 2,
+  "global_planner_fix": "3267e3d74bbdb8480ac6ea8ac9f7c26662c45e75",
+  "tests": {
+    "route_search_test.xml": {
+      "tests": "7",
+      "failures": "0",
+      "disabled": "0",
+      "errors": "0",
+      "time": "0.007",
+      "timestamp": "2026-10-10T15:28:34",
+      "name": "AllTests"
+    },
+    "route_candidates_test.xml": {
+      "tests": "10",
+      "failures": "0",
+      "disabled": "0",
+      "errors": "0",
+      "time": "0",
+      "timestamp": "2026-10-10T15:28:34",
+      "name": "AllTests"
+    },
+    "red_contract.xml": {
+      "tests": "1",
+      "failures": "1",
+      "disabled": "0",
+      "errors": "0",
+      "time": "0.314",
+      "timestamp": "2026-10-10T15:18:20",
+      "name": "AllTests"
+    },
+    "route_snapshot_test.xml": {
+      "tests": "7",
+      "failures": "0",
+      "disabled": "0",
+      "errors": "0",
+      "time": "1.73",
+      "timestamp": "2026-10-10T15:28:32",
+      "name": "AllTests"
+    }
+  },
+  "build_targets": [
+    "route_snapshot_test",
+    "route_search_test",
+    "route_candidates_test",
+    "dynamic_exploration_node",
+    "test_dep_node",
+    "return_home_checks"
+  ],
+  "held_out_gate": "NOT_REGISTERED_OR_RUN",
+  "post_fix_online_performance": "NOT_TESTED",
+  "frozen_data_replaced": false,
+  "evidence_sha256": {
+    "route_snapshot_test.log": "c0831eef5100fca4178c64ab9f924588d115a005cadbe2010d9715d8863bd500",
+    "red_contract.log": "6923a928bb61bcfad5615fc06a7ccbcd9e570c3279a65c6a24404ad72caa0dc9",
+    "audit_console.log": "e021ecea97e4b0740e0d7342ee39965ac588a28f727e037ed0184c74b169ce7d",
+    "route_search_test.xml": "8c80237b2cf28ed7e3368014cce66bfae7315bb8c7ce1b43c8cd5644838b03d3",
+    "route_candidates_test.xml": "ad30d2d41c4fd4dd8b1debed20245b1079fa62de7be4cc5f191261e257f8f9a9",
+    "red_contract.xml": "7888322c5912c10c5eb997073565a1b6a680a7f791cd32e6d5bb29ac86e6d98a",
+    "green_master.log": "d3cfcd5d0b7e6bcad16ddad7524bf3574fed624b90ef0ffa8c5bfab2a78b3117",
+    "route_candidates_test.log": "a6553ac78029c06b1d8b5b5343d7d03c1da5b329a844896ed175e3b814ae5d16",
+    "red_master.log": "f4e11eae054e4ff23748ecfb6540d087da721e930107eb8ef7e6c9584e4c7951",
+    "build.log": "4e91e9f1918b1ce2c69f036e0829b8244353d3aa508ffb6bf6eebef8b53307a8",
+    "execution_audit.json": "1c0769b840214e0f6f3513b78a9583f72f374eef69c33cbd012a923b64b1de8f",
+    "route_search_test.log": "999e5cd570e17cc58e97ee697d02c4e5c0c1f26d99f6cd5719c17e8fd7768e55",
+    "route_snapshot_test.xml": "efd7e297b94018755389c06a5ff6c1957e11a090279aed915ff379eb19fdd3b0"
+  }
+}

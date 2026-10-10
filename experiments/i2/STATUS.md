@@ -8,7 +8,9 @@
 | I2-03 Geometric diversity control | Complete (isolated controls) | routeCandidates.h + nine contract tests; online counts remain I2-04 |
 | I2-04 Integration and safety smoke | Complete | snapshot adapter/scoring/logs; 20 C++ + 7 Python tests; V2 four bounded smoke runs; V1 defect/data retained |
 | I2-05 Candidate-supply gate then paired pilot |12/12 collected and verified; pilot checkpoint complete | first attempts/failures/censoring retained; paired summary/report; I2-06 pending |
-| I2-06 Decision and held-out gate | Not started | freeze held-out ordering protocol before collection/I3 |
+| I2-06 Decision and held-out gate | Partial: first-item audit/fix complete; backed up and stopped per user | I2_06_CONTRACT_EXECUTION_REPORT.md;24 C++ tests pass; held-out protocol/collection/decision still pending |
 | I3 observation-guided route generation gate | Pending | requires held-out-scene predicted/actual ordering check after I2 controls |
 
 Legacy remains the operational default. The I1-06 data and conclusion are frozen.
+
+2026-10-10: I2-05 new controls are pre-fix (missing scored-gain feedback). Frozen trial values and conclusions stay; causal interpretation must acknowledge this confound. Repair3267e3d has no post-fix online performance evidence. Next: remaining I2-06 held-out gate only after user continuation.

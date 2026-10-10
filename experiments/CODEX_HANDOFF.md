@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-10 after all seed3 tests and verified12-trial pilot checkpoint.
+Last updated: 2026-10-10 after I2-06 first-item contract fix and12-trial read-only audit; user requested backup and stop.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -57,7 +57,7 @@ The repositories are clean and their active branches are maintained in the user'
 GitHub account. The user has authorized pushes for completed project work.
 
 ```text
-parent branch: feat/i2-route-controls
+parent branch: research/i2-06-audit
 I2-04 smoke source commit: e97291d431dba1344b4edcd59f9d4a1ff37520c5
 I2-05 runner checkpoint: a8967e0
 final documentation checkpoint: inspect git HEAD / local backup README
@@ -65,8 +65,8 @@ frozen I1 branch: feat/i1-unique-gain
 frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
-  branch feat/i2-route-controls
-  commit 99f3122feb84f854ec921f6421673e4b620f2e4c
+  branch fix/i2-06-gain-feedback
+  commit 3267e3d74bbdb8480ac6ea8ac9f7c26662c45e75
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -379,7 +379,7 @@ collisions or fallbacks. Total planning means282.6/198.6ms, NOT 50ms. Read
 I2_05_ONLINE_ADMISSION_REPORT.md, protocol, validation and summary. Raw runs remain
 TIMEOUT/FAILED, not a full pilot or performance win. All previous data stay retained.
 
-**Current checkpoint: I2-05 collected12/12 first attempts; STOPPED by user after seed3.**
+**Frozen I2-05 checkpoint: collected12/12 first attempts; all backed up.**
 All per-run full archives/COMPLETE hashes verified; controller statusall_trials_backed_up.
 No simulation/ROS master remains. Collection source0677947 stayed clean/frozen,
 with global_planner99f3122/autonomous_flight33422e2. Source checkout may now advance
@@ -402,11 +402,38 @@ have no stable overall advantage here. This is NOT the proposed observation-guid
 method; no main novelty/performance verdict or significance claim follows.
 Supplemental sensor-only rates until stop include stalled time; read with success.
 
-**Next ONLY on user continuation:** I2-06 overall decision and preregistered held-out
-predicted/actual ordering gate; bounded execution-feasibility assessment if needed.
-Do not reopen frozen I1 or rerun seeds for favorable results. Main guided construction
-and observation-preserving shortcut are still unimplemented. User requested this
-seed3 batch to end after tests/backups: do not start I2-06 in this turn.
+**Current checkpoint: I2-06 FIRST ITEM COMPLETE; backup and STOP per latest user request.**
+Read `i2/I2_06_CONTRACT_EXECUTION_REPORT.md`, `I2_06_EXECUTION_AUDIT.json`,
+`I2_06_VALIDATION.json` and the bounded protocol before resuming.
+
+Confirmed an integration contract regression: detached new-control nodes discarded
+scored-node gain feedback to live PRM. Fixed in global_planner3267e3d, separate branch.
+Frozen counterexample RED: Legacy refreshes target999999→89; pre-fix adapter leaves999999.
+GREEN:24 C++ tests pass (snapshot7/search7/candidates10); dependent flight targets build.
+Scored intermediate/goal gains alone now sync; unscored nodes and A* state preserved.
+Historical default unchanged. Post-fix online behavior/performance NOT tested.
+
+Read-only12-trial audit: persistent terminal failures only in seed1 single2315calls/
+470.339s and seed3 generic1963calls/435.483s; same input target each time, <.12m movement,
+zero new accessible observations, depth/map still advancing. Generic optimizer message
+is not direct proof of LBFGS nonconvergence. Failure-time occupancy/control points and
+solver return status are unavailable; bounded execution diagnosis ends here.
+Cannot attribute aggregate performance loss or stalls solely to missing feedback.
+Keep I2-05 observed values/conclusions, but label all new-control V1 data PRE-FIX and
+not clean isolation of route-generation effects. No replacement/retry for positives.
+
+**Next ONLY on user continuation:** remaining I2-06: preregister ONE held-out scene,
+seed, bounded duration and sensor-matched predicted/actual per-cost ordering gate;
+then collect/analyze and make the development decision. Not registered/run/passed yet.
+Use separate results; do not reuse floorplan2 Coverage denominator for a new world.
+A bounded post-fix online sanity check may accompany that collection, separately labelled.
+Do not start I3, add guidance/shortcut preservation, tune solver weights or rerun frozen
+seeds in this checkpoint. If later a corrected paired cohort is needed, register it
+separately; no claims that this repair improves measured T95.
+
+Current raw audit evidence: /home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-AUDIT-V1/.
+Current backup: /home/zxr2/下载/CERLAB_I2_Backups/I2_06_FIRST_ITEM_2026-10-10/.
+No independent-scene simulation was launched in this batch; private test master cleaned.
 
 Future user preference: AFTER observation-opportunity guidance is implemented, run
 NEW cohorts in isolated parallel ROS/Gazebo instances. Register uniform concurrency,
