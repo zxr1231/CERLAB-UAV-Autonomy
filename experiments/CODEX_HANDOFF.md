@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-09 at user-requested stop after paired-pilot registration.
+Last updated: 2026-10-10 at user-requested stop after seed2 collection.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -379,31 +379,50 @@ collisions or fallbacks. Total planning means282.6/198.6ms, NOT 50ms. Read
 I2_05_ONLINE_ADMISSION_REPORT.md, protocol, validation and summary. Raw runs remain
 TIMEOUT/FAILED, not a full pilot or performance win. All previous data stay retained.
 
-**Current checkpoint: I2-05 paired pilot REGISTERED, collection NOT STARTED.**
-User explicitly requested backup and end after registration. The pending systemd
-launch was cancelled; host inspection confirmed unit cerlab-i2-05-paired-v1 not found,
-MainPID0, no ROS11311 listener and no EXP-I2-05-PAIRED-PILOT-V1 batch directory.
-No full-pilot attempt/result exists and there is no partial run to recover.
+**Current checkpoint: I2-05 collected8/12 trials; stopped after seed2 by user.**
+Collection source remains067794787ede6654c8ddd76fd3681a7e45c46a9c, clean at
+/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy. DO NOT edit/commit its
+source during this partial matrix. This updated documentation is in separate
+worktree /home/zxr2/cerlab_i2_docs_checkpoint_20261010 on branch
+`docs/i2-seed2-checkpoint-20261010`, so source/provenance stay fixed.
 
-I2_05_PAIRED_PROTOCOL.md / I2_05_PAIRED_MATRIX.json register12 serial trials,
-four modes x seeds1/2/3, unique_shadow with Legacy selection, headless, timeout900s.
-Keep audit/JSON/Unique overhead charged in total time; primary contrasts use
-snapshot distance_single as infrastructure control. K6/V1 limits unchanged.
-Five parser and two mocked runner tests pass. Registration code commit30a74bc.
-Route modes rotate across seed blocks. Kernel lock and source/provenance checks
-protect collection; technical failures halt and failed/censored attempts are retained.
+Current state files:
+/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/batch_state.json
+and backup_controller_state.json. Controller ended with stopped_after_verified_backup;
+no ROS11311 listener or running simulator remains. STOP_BACKUP_CONTROLLER exists.
+Eight per-trial full archives/COMPLETE checksums verified under
+/home/zxr2/下载/CERLAB_I2_Backups/I2_05_PAIRED_RUNS_2026-10-10/.
+See I2_05_SEED2_CHECKPOINT_SUMMARY.json. No final3-seed conclusion yet.
 
-**Immediate next task, only after user says start:** recheck Git/submodules/services,
-then start the first registered task (seed1 historical_legacy) and remaining matrix.
-No batch source HEAD is pinned yet because no collection started; the first launch
-will pin the then-current clean HEAD. Keep that HEAD fixed throughout collection.
-Do not commit docs/code mid-matrix; use external batch state/progress for checkpoints.
-Never blindly reset RUNNING/INTERRUPTED; reconcile actual processes/manifests first.
-The STOP_AFTER_CURRENT marker requests a run-boundary checkpoint if later needed.
-I2-06 and held-out ordering still precede I3. I1 data/conclusions stay frozen.
+Seed1: historical SUCCESS, distance_single USER_ABORT, generic SUCCESS, geometric
+SUCCESS. User requested ending the single-route stalled run early after repeated
+B-spline infeasibility; retain failure/censoring, do not replace or relabel900s timeout.
+Seed2: distance_single SUCCESS, generic SUCCESS, geometric TIMEOUT, historical
+SUCCESS. Geometric had HOME_REACHED near the deadline but lacked the runner's
+extra waiting period; retain originalTIMEOUT and actual home event separately.
 
-Registration backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_PAIRED_REG_2026-10-09/`.
-Stopped-state backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_PAIRED_REG_STOP_2026-10-09/`.
+**Next action ONLY after user continuation:** inspect services/Git/backups; remove
+STOP_BACKUP_CONTROLLER; launch the external backup_controller.py with a new user
+service name (previous active unit was cerlab-i2-05-paired-backup-controller-v2,
+now inactive). Keep source HEAD0677947. It validates existing backups then schedules
+first pending seed3 generic_k_shortest, geometric_diverse, historical_legacy,
+distance_single. No reruns of completed seed1/2 or automatic failure retry.
+The external controller permits ONLY the existing user-aborted seed1 task via
+CONTINUE_AFTER_USER_ABORT.json; other technical/measurement failures still halt.
+
+After all12 terminal trials: run external summarize_pilot.py with workspace Python
+path, audit observation/execution/provenance/censoring, create final summary in a
+DOCS worktree or after collection source no longer needed, push and verify backup.
+I2-06/held-out prediction-actual gate still precedes I3.
+
+User preference: AFTER observation-opportunity guidance is implemented, switch NEW
+experimental cohorts to parallel isolated ROS/Gazebo instances. Preregister uniform
+concurrency, calibrate CPU/GPU/RTF and use the same parallel load for controls.
+Do not mix current serial data as if measured under that parallel protocol.
+Current matrix remains serial. See batch next_phase_preferences.json.
+
+Seed2 checkpoint backup:
+/home/zxr2/下载/CERLAB_I2_Backups/I2_05_SEED2_CHECKPOINT_2026-10-10/.
 
 Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_ONLINE_2026-10-08/`
 (completed on 2026-10-09 after the previous quota-related push interruption).
