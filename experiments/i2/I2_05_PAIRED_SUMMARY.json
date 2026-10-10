@@ -1,0 +1,2278 @@
+{
+  "schema": "cerlab-i2-05-paired-summary-v1",
+  "source_commit": "067794787ede6654c8ddd76fd3681a7e45c46a9c",
+  "errors": [],
+  "trial_count": 12,
+  "groups": {
+    "historical_legacy": {
+      "n": 3,
+      "success": 3,
+      "algorithm_completed": 3,
+      "collision_episodes": 0,
+      "statuses": [
+        "SUCCESS",
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "metrics": {
+        "t80_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 222.59532112515942,
+          "median_uncensored": 218.78449523809525,
+          "sample_std_uncensored": 24.37478667703168,
+          "values_in_seed_order": [
+            248.65106388206388,
+            218.78449523809525,
+            200.35040425531915
+          ]
+        },
+        "t90_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 290.00096664498534,
+          "median_uncensored": 282.66499999999996,
+          "sample_std_uncensored": 17.40996863334804,
+          "values_in_seed_order": [
+            282.66499999999996,
+            277.4595482866044,
+            309.87835164835167
+          ]
+        },
+        "t95_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 403.48463362573096,
+          "median_uncensored": 408.79089374999995,
+          "sample_std_uncensored": 16.318096108953622,
+          "values_in_seed_order": [
+            385.1738229166666,
+            408.79089374999995,
+            416.48918421052633
+          ]
+        },
+        "exploration_duration_sim": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 448.09766666666667,
+          "median_uncensored": 436.425,
+          "sample_std_uncensored": 25.588423345984697,
+          "values_in_seed_order": [
+            430.42699999999996,
+            436.425,
+            477.44100000000003
+          ]
+        },
+        "exploration_distance_m": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 187.28790630927648,
+          "median_uncensored": 188.10775779633815,
+          "sample_std_uncensored": 14.793020199845644,
+          "values_in_seed_order": [
+            172.10200921739047,
+            188.10775779633815,
+            201.65395191410084
+          ]
+        },
+        "free_coverage": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 0.9617381401594344,
+          "median_uncensored": 0.9599255519861303,
+          "sample_std_uncensored": 0.004212437240646341,
+          "values_in_seed_order": [
+            0.9599255519861303,
+            0.9587354036000204,
+            0.9665534648921523
+          ]
+        },
+        "global_planning_mean_ms": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 83.05135782241015,
+          "median_uncensored": 85.406,
+          "sample_std_uncensored": 4.9011588728484785,
+          "values_in_seed_order": [
+            85.406,
+            77.41723255813953,
+            86.33084090909091
+          ]
+        },
+        "global_planning_p95_ms": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 130.58333333333334,
+          "median_uncensored": 133.92710000000002,
+          "sample_std_uncensored": 6.786300475467722,
+          "values_in_seed_order": [
+            133.92710000000002,
+            122.774,
+            135.0489
+          ]
+        },
+        "exploration_cpu_mean": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 144.4747099652552,
+          "median_uncensored": 144.1013265168087,
+          "sample_std_uncensored": 1.2390951918472985,
+          "values_in_seed_order": [
+            143.4652430483364,
+            144.1013265168087,
+            145.85756033062046
+          ]
+        },
+        "exploration_rss_mean_mib": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 460.9689539306522,
+          "median_uncensored": 460.1600212607991,
+          "sample_std_uncensored": 2.6633124565080153,
+          "values_in_seed_order": [
+            460.1600212607991,
+            458.8038961476293,
+            463.94294438352824
+          ]
+        },
+        "mean_rtf": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 0.9991665032500139,
+          "median_uncensored": 0.9991652680878219,
+          "sample_std_uncensored": 1.3333566722178574e-05,
+          "values_in_seed_order": [
+            0.999153830241119,
+            0.9991804114211007,
+            0.9991652680878219
+          ]
+        },
+        "sensor_new_voxels_per_meter_until_stop": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 4964.595444720874,
+          "median_uncensored": 4919.7545643065205,
+          "sample_std_uncensored": 390.4355228193461,
+          "values_in_seed_order": [
+            5375.515394660001,
+            4919.7545643065205,
+            4598.516375196102
+          ]
+        },
+        "sensor_new_voxels_per_second_until_stop": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 2070.702125046259,
+          "median_uncensored": 2120.510969811537,
+          "sample_std_uncensored": 112.1746709465866,
+          "values_in_seed_order": [
+            2149.347043749579,
+            2120.510969811537,
+            1942.2483615776607
+          ]
+        }
+      }
+    },
+    "distance_single": {
+      "n": 3,
+      "success": 2,
+      "algorithm_completed": 2,
+      "collision_episodes": 0,
+      "statuses": [
+        "USER_ABORT",
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "metrics": {
+        "t80_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 206.37474981374558,
+          "median_uncensored": 204.8201991525424,
+          "sample_std_uncensored": 22.39231282950736,
+          "values_in_seed_order": [
+            184.80021978021978,
+            204.8201991525424,
+            229.50383050847458
+          ]
+        },
+        "t90_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 267.3146184193122,
+          "median_uncensored": 277.7298888888889,
+          "sample_std_uncensored": 50.27481923343144,
+          "values_in_seed_order": [
+            212.64791875,
+            277.7298888888889,
+            311.56604761904765
+          ]
+        },
+        "t95_seconds": {
+          "observed_count": 2,
+          "total_trials": 3,
+          "missing_or_censored_count": 1,
+          "mean_uncensored": 479.03853017937945,
+          "median_uncensored": 479.03853017937945,
+          "sample_std_uncensored": 30.960390736837507,
+          "values_in_seed_order": [
+            null,
+            500.93083241758245,
+            457.1462279411765
+          ]
+        },
+        "exploration_duration_sim": {
+          "observed_count": 2,
+          "total_trials": 3,
+          "missing_or_censored_count": 1,
+          "mean_uncensored": 745.0795,
+          "median_uncensored": 745.0795,
+          "sample_std_uncensored": 33.479384768839374,
+          "values_in_seed_order": [
+            null,
+            768.7529999999999,
+            721.4060000000001
+          ]
+        },
+        "exploration_distance_m": {
+          "observed_count": 2,
+          "total_trials": 3,
+          "missing_or_censored_count": 1,
+          "mean_uncensored": 331.6075378751366,
+          "median_uncensored": 331.6075378751366,
+          "sample_std_uncensored": 26.7372583967586,
+          "values_in_seed_order": [
+            null,
+            350.5136345978215,
+            312.7014411524516
+          ]
+        },
+        "free_coverage": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 0.9510417622762736,
+          "median_uncensored": 0.9642251797460609,
+          "sample_std_uncensored": 0.024422421532379408,
+          "values_in_seed_order": [
+            0.9228606394370507,
+            0.9642251797460609,
+            0.966039467645709
+          ]
+        },
+        "global_planning_mean_ms": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 113.77662169983421,
+          "median_uncensored": 115.3642131147541,
+          "sample_std_uncensored": 12.782295573909593,
+          "values_in_seed_order": [
+            100.27468902178556,
+            115.3642131147541,
+            125.69096296296296
+          ]
+        },
+        "global_planning_p95_ms": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 173.41513333333333,
+          "median_uncensored": 188.942,
+          "sample_std_uncensored": 57.704284744318024,
+          "values_in_seed_order": [
+            109.536,
+            188.942,
+            221.7674
+          ]
+        },
+        "exploration_cpu_mean": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 158.55397800509274,
+          "median_uncensored": 148.03278939452275,
+          "sample_std_uncensored": 20.07812508965511,
+          "values_in_seed_order": [
+            181.70617787783442,
+            148.03278939452275,
+            145.92296674292103
+          ]
+        },
+        "exploration_rss_mean_mib": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 474.584111441375,
+          "median_uncensored": 476.29025449966974,
+          "sample_std_uncensored": 4.12049002056055,
+          "values_in_seed_order": [
+            469.88458116319447,
+            477.57749866126073,
+            476.29025449966974
+          ]
+        },
+        "mean_rtf": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 0.999137302561013,
+          "median_uncensored": 0.9991584911839788,
+          "sample_std_uncensored": 6.032080047723161e-05,
+          "values_in_seed_order": [
+            0.9990692462563274,
+            0.9991584911839788,
+            0.9991841702427328
+          ]
+        },
+        "sensor_new_voxels_per_meter_until_stop": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 4784.398926077558,
+          "median_uncensored": 2985.4035739632886,
+          "sample_std_uncensored": 3405.4654279383267,
+          "values_in_seed_order": [
+            8712.081961914806,
+            2655.7112423545805,
+            2985.4035739632886
+          ]
+        },
+        "sensor_new_voxels_per_second_until_stop": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 1247.8167778496386,
+          "median_uncensored": 1238.520030832691,
+          "sample_std_uncensored": 42.36328808534388,
+          "values_in_seed_order": [
+            1238.520030832691,
+            1210.873973825143,
+            1294.056328891082
+          ]
+        }
+      }
+    },
+    "generic_k_shortest": {
+      "n": 3,
+      "success": 2,
+      "algorithm_completed": 2,
+      "collision_episodes": 0,
+      "statuses": [
+        "SUCCESS",
+        "SUCCESS",
+        "TIMEOUT"
+      ],
+      "metrics": {
+        "t80_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 296.7346489334496,
+          "median_uncensored": 282.39039634146343,
+          "sample_std_uncensored": 43.6406132209531,
+          "values_in_seed_order": [
+            345.74198689956336,
+            262.07156355932204,
+            282.39039634146343
+          ]
+        },
+        "t90_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 334.7214209971354,
+          "median_uncensored": 316.8221019830028,
+          "sample_std_uncensored": 42.262185222572626,
+          "values_in_seed_order": [
+            382.98778285714286,
+            304.3543781512605,
+            316.8221019830028
+          ]
+        },
+        "t95_seconds": {
+          "observed_count": 2,
+          "total_trials": 3,
+          "missing_or_censored_count": 1,
+          "mean_uncensored": 467.20035023219805,
+          "median_uncensored": 467.20035023219805,
+          "sample_std_uncensored": 62.39783064380832,
+          "values_in_seed_order": [
+            511.32227941176467,
+            423.0784210526314,
+            null
+          ]
+        },
+        "exploration_duration_sim": {
+          "observed_count": 2,
+          "total_trials": 3,
+          "missing_or_censored_count": 1,
+          "mean_uncensored": 734.473,
+          "median_uncensored": 734.473,
+          "sample_std_uncensored": 68.11559623170007,
+          "values_in_seed_order": [
+            782.6379999999999,
+            686.308,
+            null
+          ]
+        },
+        "exploration_distance_m": {
+          "observed_count": 2,
+          "total_trials": 3,
+          "missing_or_censored_count": 1,
+          "mean_uncensored": 312.22000636056816,
+          "median_uncensored": 312.22000636056816,
+          "sample_std_uncensored": 32.81996028775618,
+          "values_in_seed_order": [
+            335.42722283831375,
+            289.0127898828226,
+            null
+          ]
+        },
+        "free_coverage": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 0.9579800452127207,
+          "median_uncensored": 0.9640314109428382,
+          "sample_std_uncensored": 0.013499240411508559,
+          "values_in_seed_order": [
+            0.9673948294324614,
+            0.9640314109428382,
+            0.9425138952628627
+          ]
+        },
+        "global_planning_mean_ms": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 125.18203581570226,
+          "median_uncensored": 116.10892307692308,
+          "sample_std_uncensored": 21.36482842206462,
+          "values_in_seed_order": [
+            149.5860243902439,
+            116.10892307692308,
+            109.85115997993982
+          ]
+        },
+        "global_planning_p95_ms": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 194.08223333333336,
+          "median_uncensored": 205.00460000000012,
+          "sample_std_uncensored": 70.79040741202749,
+          "values_in_seed_order": [
+            258.77665,
+            205.00460000000012,
+            118.46544999999999
+          ]
+        },
+        "exploration_cpu_mean": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 155.77172176899583,
+          "median_uncensored": 150.5932055775614,
+          "sample_std_uncensored": 14.253598721754651,
+          "values_in_seed_order": [
+            144.83129753059688,
+            150.5932055775614,
+            171.89066219882918
+          ]
+        },
+        "exploration_rss_mean_mib": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 484.9470006387854,
+          "median_uncensored": 484.36874232186733,
+          "sample_std_uncensored": 5.969327659887738,
+          "values_in_seed_order": [
+            484.36874232186733,
+            479.28784553198886,
+            491.1844140625
+          ]
+        },
+        "mean_rtf": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 0.9991719523976496,
+          "median_uncensored": 0.9991777931808984,
+          "sample_std_uncensored": 6.486600577349683e-05,
+          "values_in_seed_order": [
+            0.9992337004886368,
+            0.9991777931808984,
+            0.9991043635234136
+          ]
+        },
+        "sensor_new_voxels_per_meter_until_stop": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 3552.8295406447605,
+          "median_uncensored": 3219.8886436039675,
+          "sample_std_uncensored": 976.6258014069977,
+          "values_in_seed_order": [
+            2786.2079651492436,
+            3219.8886436039675,
+            4652.392013181071
+          ]
+        },
+        "sensor_new_voxels_per_second_until_stop": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 1187.0396445310023,
+          "median_uncensored": 1194.128064315814,
+          "sample_std_uncensored": 172.5487435128088,
+          "values_in_seed_order": [
+            1194.128064315814,
+            1355.9349446604149,
+            1011.0559246167782
+          ]
+        }
+      }
+    },
+    "geometric_diverse": {
+      "n": 3,
+      "success": 3,
+      "algorithm_completed": 3,
+      "collision_episodes": 0,
+      "statuses": [
+        "SUCCESS",
+        "TIMEOUT",
+        "SUCCESS"
+      ],
+      "metrics": {
+        "t80_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 230.7243822074052,
+          "median_uncensored": 221.05261126760564,
+          "sample_std_uncensored": 20.3315270317255,
+          "values_in_seed_order": [
+            221.05261126760564,
+            217.0342420212766,
+            254.08629333333334
+          ]
+        },
+        "t90_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 314.5452645724856,
+          "median_uncensored": 323.15707888040714,
+          "sample_std_uncensored": 18.40464278337624,
+          "values_in_seed_order": [
+            293.4135330188679,
+            327.0651818181818,
+            323.15707888040714
+          ]
+        },
+        "t95_seconds": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 436.2597070175438,
+          "median_uncensored": 416.64882499999993,
+          "sample_std_uncensored": 52.88366476848502,
+          "values_in_seed_order": [
+            416.64882499999993,
+            496.14749999999987,
+            395.98279605263156
+          ]
+        },
+        "exploration_duration_sim": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 761.5649999999999,
+          "median_uncensored": 836.437,
+          "sample_std_uncensored": 151.78753034752225,
+          "values_in_seed_order": [
+            586.888,
+            861.3699999999999,
+            836.437
+          ]
+        },
+        "exploration_distance_m": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 338.87028070956444,
+          "median_uncensored": 361.3059684563276,
+          "sample_std_uncensored": 76.31824002478405,
+          "values_in_seed_order": [
+            253.84895658641514,
+            401.4559170859506,
+            361.3059684563276
+          ]
+        },
+        "free_coverage": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 0.9665463260415073,
+          "median_uncensored": 0.9675294477589108,
+          "sample_std_uncensored": 0.0024274262460987728,
+          "values_in_seed_order": [
+            0.9637815511702615,
+            0.9683279791953495,
+            0.9675294477589108
+          ]
+        },
+        "global_planning_mean_ms": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 154.79024141100055,
+          "median_uncensored": 151.0629375,
+          "sample_std_uncensored": 11.696903376761282,
+          "values_in_seed_order": [
+            167.89657777777776,
+            145.41120895522388,
+            151.0629375
+          ]
+        },
+        "global_planning_p95_ms": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 251.13711666666666,
+          "median_uncensored": 257.89675,
+          "sample_std_uncensored": 39.60651328191907,
+          "values_in_seed_order": [
+            286.92879999999997,
+            208.5858,
+            257.89675
+          ]
+        },
+        "exploration_cpu_mean": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 146.86746667490274,
+          "median_uncensored": 146.8121553877679,
+          "sample_std_uncensored": 0.10962175913591421,
+          "values_in_seed_order": [
+            146.7965199543369,
+            146.9937246826034,
+            146.8121553877679
+          ]
+        },
+        "exploration_rss_mean_mib": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 479.84416143736223,
+          "median_uncensored": 483.4109214834852,
+          "sample_std_uncensored": 6.842280877686456,
+          "values_in_seed_order": [
+            471.95541699526814,
+            484.16614583333336,
+            483.4109214834852
+          ]
+        },
+        "mean_rtf": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 0.9991742162408207,
+          "median_uncensored": 0.9991780770474672,
+          "sample_std_uncensored": 2.124371643069877e-05,
+          "values_in_seed_order": [
+            0.9991780770474672,
+            0.9991513068928907,
+            0.9991932647821044
+          ]
+        },
+        "sensor_new_voxels_per_meter_until_stop": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 2861.3203612109737,
+          "median_uncensored": 2588.3131795345303,
+          "sample_std_uncensored": 708.6975337180451,
+          "values_in_seed_order": [
+            3665.920130277191,
+            2329.7277738212,
+            2588.3131795345303
+          ]
+        },
+        "sensor_new_voxels_per_second_until_stop": {
+          "observed_count": 3,
+          "total_trials": 3,
+          "missing_or_censored_count": 0,
+          "mean_uncensored": 1263.16231667677,
+          "median_uncensored": 1118.0435585704602,
+          "sample_std_uncensored": 279.73401485015955,
+          "values_in_seed_order": [
+            1585.634737803465,
+            1085.8086536563846,
+            1118.0435585704602
+          ]
+        }
+      }
+    }
+  },
+  "contrasts": {
+    "generic_k_shortest minus distance_single": {
+      "t80_seconds": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 90.35989911970402,
+        "median_uncensored": 57.25136440677966,
+        "sample_std_uncensored": 61.1646379404501,
+        "values_in_seed_order": [
+          160.94176711934358,
+          57.25136440677966,
+          52.88656583298885
+        ]
+      },
+      "t90_seconds": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 67.4068025778232,
+        "median_uncensored": 26.624489262371583,
+        "sample_std_uncensored": 89.7806430660362,
+        "values_in_seed_order": [
+          170.33986410714286,
+          26.624489262371583,
+          5.2560543639551724
+        ]
+      },
+      "t95_seconds": {
+        "observed_count": 1,
+        "total_trials": 3,
+        "missing_or_censored_count": 2,
+        "mean_uncensored": -77.85241136495102,
+        "median_uncensored": -77.85241136495102,
+        "sample_std_uncensored": null,
+        "values_in_seed_order": [
+          null,
+          -77.85241136495102,
+          null
+        ]
+      },
+      "exploration_duration_sim": {
+        "observed_count": 1,
+        "total_trials": 3,
+        "missing_or_censored_count": 2,
+        "mean_uncensored": -82.44499999999994,
+        "median_uncensored": -82.44499999999994,
+        "sample_std_uncensored": null,
+        "values_in_seed_order": [
+          null,
+          -82.44499999999994,
+          null
+        ]
+      },
+      "exploration_distance_m": {
+        "observed_count": 1,
+        "total_trials": 3,
+        "missing_or_censored_count": 2,
+        "mean_uncensored": -61.50084471499895,
+        "median_uncensored": -61.50084471499895,
+        "sample_std_uncensored": null,
+        "values_in_seed_order": [
+          null,
+          -61.50084471499895,
+          null
+        ]
+      },
+      "free_coverage": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 0.006938282936447197,
+        "median_uncensored": -0.00019376880322274914,
+        "sample_std_uncensored": 0.03458587045686722,
+        "values_in_seed_order": [
+          0.0445341899954107,
+          -0.00019376880322274914,
+          -0.02352557238284636
+        ]
+      },
+      "global_planning_mean_ms": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 11.40541411586806,
+        "median_uncensored": 0.744709962168983,
+        "sample_std_uncensored": 33.85861289115359,
+        "values_in_seed_order": [
+          49.31133536845833,
+          0.744709962168983,
+          -15.839802983023134
+        ]
+      },
+      "global_planning_p95_ms": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 20.667100000000037,
+        "median_uncensored": 16.062600000000117,
+        "sample_std_uncensored": 126.33424820244707,
+        "values_in_seed_order": [
+          149.24065000000002,
+          16.062600000000117,
+          -103.30195000000002
+        ]
+      },
+      "exploration_cpu_mean": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -2.782256236096913,
+        "median_uncensored": 2.5604161830386545,
+        "sample_std_uncensored": 31.760123501447087,
+        "values_in_seed_order": [
+          -36.874880347237536,
+          2.5604161830386545,
+          25.967695455908142
+        ]
+      },
+      "exploration_rss_mean_mib": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 10.362889197410425,
+        "median_uncensored": 14.484161158672862,
+        "sample_std_uncensored": 7.496125079607756,
+        "values_in_seed_order": [
+          14.484161158672862,
+          1.7103468707281309,
+          14.894159562830282
+        ]
+      },
+      "mean_rtf": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 3.464983663659105e-05,
+        "median_uncensored": 1.9301996919574016e-05,
+        "sample_std_uncensored": 0.0001228516188766173,
+        "values_in_seed_order": [
+          0.0001644542323093745,
+          1.9301996919574016e-05,
+          -7.980671931917538e-05
+        ]
+      },
+      "sensor_new_voxels_per_meter_until_stop": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -1231.5693854327976,
+        "median_uncensored": 564.177401249387,
+        "sample_std_uncensored": 4102.611349415306,
+        "values_in_seed_order": [
+          -5925.873996765562,
+          564.177401249387,
+          1666.9884392177823
+        ]
+      },
+      "sensor_new_voxels_per_second_until_stop": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -60.77713331863629,
+        "median_uncensored": -44.39196651687689,
+        "sample_std_uncensored": 214.50056056690477,
+        "values_in_seed_order": [
+          -44.39196651687689,
+          145.06097083527197,
+          -283.00040427430395
+        ]
+      }
+    },
+    "geometric_diverse minus distance_single": {
+      "t80_seconds": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 24.34963239365962,
+        "median_uncensored": 24.582462824858766,
+        "sample_std_uncensored": 12.02086555058441,
+        "values_in_seed_order": [
+          36.252391487385864,
+          12.214042868734225,
+          24.582462824858766
+        ]
+      },
+      "t90_seconds": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 47.23064615317343,
+        "median_uncensored": 49.335292929292905,
+        "sample_std_uncensored": 34.63528384617109,
+        "values_in_seed_order": [
+          80.76561426886789,
+          49.335292929292905,
+          11.59103126135949
+        ]
+      },
+      "t95_seconds": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": -32.97338215306377,
+        "median_uncensored": -32.97338215306377,
+        "sample_std_uncensored": 39.86675065988957,
+        "values_in_seed_order": [
+          null,
+          -4.783332417582585,
+          -61.16343188854495
+        ]
+      },
+      "exploration_duration_sim": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": 103.82399999999996,
+        "median_uncensored": 103.82399999999996,
+        "sample_std_uncensored": 15.849091393515268,
+        "values_in_seed_order": [
+          null,
+          92.61699999999996,
+          115.03099999999995
+        ]
+      },
+      "exploration_distance_m": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": 49.773404896002546,
+        "median_uncensored": 49.773404896002546,
+        "sample_std_uncensored": 1.653042543539352,
+        "values_in_seed_order": [
+          null,
+          50.94228248812908,
+          48.60452730387601
+        ]
+      },
+      "free_coverage": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 0.015504563765233756,
+        "median_uncensored": 0.004102799449288597,
+        "sample_std_uncensored": 0.022049937964600457,
+        "values_in_seed_order": [
+          0.040920911733210885,
+          0.004102799449288597,
+          0.0014899801132017831
+        ]
+      },
+      "global_planning_mean_ms": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 41.01361971116635,
+        "median_uncensored": 30.04699584046979,
+        "sample_std_uncensored": 23.161691264203178,
+        "values_in_seed_order": [
+          67.6218887559922,
+          30.04699584046979,
+          25.371974537037048
+        ]
+      },
+      "global_planning_p95_ms": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 77.72198333333331,
+        "median_uncensored": 36.12934999999999,
+        "sample_std_uncensored": 86.71013268903947,
+        "values_in_seed_order": [
+          177.39279999999997,
+          19.6438,
+          36.12934999999999
+        ]
+      },
+      "exploration_cpu_mean": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -11.686511330190001,
+        "median_uncensored": -1.0390647119193375,
+        "sample_std_uncensored": 20.134930929175248,
+        "values_in_seed_order": [
+          -34.90965792349752,
+          -1.0390647119193375,
+          0.889188644846854
+        ]
+      },
+      "exploration_rss_mean_mib": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 5.2600499959872495,
+        "median_uncensored": 6.588647172072626,
+        "sample_std_uncensored": 2.774720978315111,
+        "values_in_seed_order": [
+          2.0708358320736693,
+          6.588647172072626,
+          7.120666983815454
+        ]
+      },
+      "mean_rtf": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 3.691367980773741e-05,
+        "median_uncensored": 9.094539371590216e-06,
+        "sample_std_uncensored": 6.28116490552675e-05,
+        "values_in_seed_order": [
+          0.00010883079113976901,
+          -7.184291088146999e-06,
+          9.094539371590216e-06
+        ]
+      },
+      "sensor_new_voxels_per_meter_until_stop": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -1923.0785648665847,
+        "median_uncensored": -397.0903944287584,
+        "sample_std_uncensored": 2704.9031160314194,
+        "values_in_seed_order": [
+          -5046.161831637615,
+          -325.98346853338035,
+          -397.0903944287584
+        ]
+      },
+      "sensor_new_voxels_per_second_until_stop": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 15.345538827131273,
+        "median_uncensored": -125.06532016875826,
+        "sample_std_uncensored": 288.44756259550485,
+        "values_in_seed_order": [
+          347.114706970774,
+          -125.06532016875826,
+          -176.01277032062194
+        ]
+      }
+    },
+    "geometric_diverse minus generic_k_shortest": {
+      "t80_seconds": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -66.0102667260444,
+        "median_uncensored": -45.03732153804543,
+        "sample_std_uncensored": 51.50173314643403,
+        "values_in_seed_order": [
+          -124.68937563195772,
+          -45.03732153804543,
+          -28.304103008130085
+        ]
+      },
+      "t90_seconds": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -20.176156424649776,
+        "median_uncensored": 6.334976897404317,
+        "sample_std_uncensored": 60.65569596238257,
+        "values_in_seed_order": [
+          -89.57424983827497,
+          22.710803666921322,
+          6.334976897404317
+        ]
+      },
+      "t95_seconds": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": -10.80218773219815,
+        "median_uncensored": -10.80218773219815,
+        "sample_std_uncensored": 118.61188283165373,
+        "values_in_seed_order": [
+          -94.67345441176474,
+          73.06907894736844,
+          null
+        ]
+      },
+      "exploration_duration_sim": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": -10.343999999999994,
+        "median_uncensored": -10.343999999999994,
+        "sample_std_uncensored": 262.20367974534594,
+        "values_in_seed_order": [
+          -195.7499999999999,
+          175.0619999999999,
+          null
+        ]
+      },
+      "exploration_distance_m": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": 15.432430475614709,
+        "median_uncensored": 15.432430475614709,
+        "sample_std_uncensored": 137.19384300731255,
+        "values_in_seed_order": [
+          -81.57826625189861,
+          112.44312720312803,
+          null
+        ]
+      },
+      "free_coverage": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 0.008566280828786558,
+        "median_uncensored": 0.004296568252511346,
+        "sample_std_uncensored": 0.014784293076069047,
+        "values_in_seed_order": [
+          -0.003613278262199815,
+          0.004296568252511346,
+          0.025015552496048143
+        ]
+      },
+      "global_planning_mean_ms": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 29.608205595298287,
+        "median_uncensored": 29.302285878300808,
+        "sample_std_uncensored": 11.453676564622699,
+        "values_in_seed_order": [
+          18.310553387533872,
+          29.302285878300808,
+          41.21177752006018
+        ]
+      },
+      "global_planning_p95_ms": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 57.05488333333329,
+        "median_uncensored": 28.15214999999995,
+        "sample_std_uncensored": 72.39018174521902,
+        "values_in_seed_order": [
+          28.15214999999995,
+          3.581199999999882,
+          139.43130000000002
+        ]
+      },
+      "exploration_cpu_mean": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -8.904255094093088,
+        "median_uncensored": -3.599480894957992,
+        "sample_std_uncensored": 14.280976672103654,
+        "values_in_seed_order": [
+          1.9652224237400162,
+          -3.599480894957992,
+          -25.07850681106129
+        ]
+      },
+      "exploration_rss_mean_mib": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -5.102839201423175,
+        "median_uncensored": -7.773492579014828,
+        "sample_std_uncensored": 8.94982521123575,
+        "values_in_seed_order": [
+          -12.413325326599193,
+          4.878300301344495,
+          -7.773492579014828
+        ]
+      },
+      "mean_rtf": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 2.2638431711463625e-06,
+        "median_uncensored": -2.6486288007721015e-05,
+        "sample_std_uncensored": 7.643150364564437e-05,
+        "values_in_seed_order": [
+          -5.562344116960549e-05,
+          -2.6486288007721015e-05,
+          8.89012586907656e-05
+        ]
+      },
+      "sensor_new_voxels_per_meter_until_stop": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -691.5091794337868,
+        "median_uncensored": -890.1608697827673,
+        "sample_std_uncensored": 1481.9153928869575,
+        "values_in_seed_order": [
+          879.7121651279476,
+          -890.1608697827673,
+          -2064.0788336465407
+        ]
+      },
+      "sensor_new_voxels_per_second_until_stop": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 76.12267214576757,
+        "median_uncensored": 106.987633953682,
+        "sample_std_uncensored": 331.8946057501772,
+        "values_in_seed_order": [
+          391.5066734876509,
+          -270.12629100403024,
+          106.987633953682
+        ]
+      }
+    },
+    "distance_single minus historical_legacy": {
+      "t80_seconds": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -16.220571311413845,
+        "median_uncensored": -13.96429608555286,
+        "sample_std_uncensored": 46.54316984786905,
+        "values_in_seed_order": [
+          -63.8508441018441,
+          -13.96429608555286,
+          29.15342625315543
+        ]
+      },
+      "t90_seconds": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -22.686348225673147,
+        "median_uncensored": 0.27034060228453427,
+        "sample_std_uncensored": 40.99574295613103,
+        "values_in_seed_order": [
+          -70.01708124999996,
+          0.27034060228453427,
+          1.6876959706959838
+        ]
+      },
+      "t95_seconds": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": 66.39849119911634,
+        "median_uncensored": 66.39849119911634,
+        "sample_std_uncensored": 36.40390412501942,
+        "values_in_seed_order": [
+          null,
+          92.1399386675825,
+          40.65704373065017
+        ]
+      },
+      "exploration_duration_sim": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": 288.14649999999995,
+        "median_uncensored": 288.14649999999995,
+        "sample_std_uncensored": 62.48207650598682,
+        "values_in_seed_order": [
+          null,
+          332.3279999999999,
+          243.96500000000003
+        ]
+      },
+      "exploration_distance_m": {
+        "observed_count": 2,
+        "total_trials": 3,
+        "missing_or_censored_count": 1,
+        "mean_uncensored": 136.72668301991706,
+        "median_uncensored": 136.72668301991706,
+        "sample_std_uncensored": 36.315864116697924,
+        "values_in_seed_order": [
+          null,
+          162.40587680148337,
+          111.04748923835075
+        ]
+      },
+      "free_coverage": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -0.010696377883160801,
+        "median_uncensored": -0.0005139972464432985,
+        "sample_std_uncensored": 0.023032282541204985,
+        "values_in_seed_order": [
+          -0.03706491254907962,
+          0.005489776146040515,
+          -0.0005139972464432985
+        ]
+      },
+      "global_planning_mean_ms": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 30.725263877424055,
+        "median_uncensored": 37.94698055661456,
+        "sample_std_uncensored": 13.750362425666026,
+        "values_in_seed_order": [
+          14.868689021785556,
+          37.94698055661456,
+          39.36012205387205
+        ]
+      },
+      "global_planning_p95_ms": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 42.831799999999994,
+        "median_uncensored": 66.168,
+        "sample_std_uncensored": 59.11657530566196,
+        "values_in_seed_order": [
+          -24.391100000000023,
+          66.168,
+          86.7185
+        ]
+      },
+      "exploration_cpu_mean": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 14.07926803983755,
+        "median_uncensored": 3.93146287771404,
+        "sample_std_uncensored": 21.013714680878724,
+        "values_in_seed_order": [
+          38.24093482949803,
+          3.93146287771404,
+          0.06540641230057531
+        ]
+      },
+      "exploration_rss_mean_mib": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": 13.615157510722762,
+        "median_uncensored": 12.3473101161415,
+        "sample_std_uncensored": 4.655842652726939,
+        "values_in_seed_order": [
+          9.724559902395356,
+          18.77360251363143,
+          12.3473101161415
+        ]
+      },
+      "mean_rtf": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -2.920068900088187e-05,
+        "median_uncensored": -2.1920237121886288e-05,
+        "sample_std_uncensored": 5.212579987204926e-05,
+        "values_in_seed_order": [
+          -8.458398479160856e-05,
+          -2.1920237121886288e-05,
+          1.8902154910849234e-05
+        ]
+      },
+      "sensor_new_voxels_per_meter_until_stop": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -180.19651864331613,
+        "median_uncensored": -1613.1128012328131,
+        "sample_std_uncensored": 3062.9470428743416,
+        "values_in_seed_order": [
+          3336.566567254805,
+          -2264.04332195194,
+          -1613.1128012328131
+        ]
+      },
+      "sensor_new_voxels_per_second_until_stop": {
+        "observed_count": 3,
+        "total_trials": 3,
+        "missing_or_censored_count": 0,
+        "mean_uncensored": -822.8853471966203,
+        "median_uncensored": -909.6369959863941,
+        "sample_std_uncensored": 151.29001829582796,
+        "values_in_seed_order": [
+          -910.827012916888,
+          -909.6369959863941,
+          -648.1920326865786
+        ]
+      }
+    }
+  },
+  "runs": [
+    {
+      "run_id": "env001_planner001_repeat01_unique_shadow_historical_legacy_attempt01",
+      "task_id": "env001_planner001_repeat01_unique_shadow_historical_legacy",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_001/planner_seed_001/20261010T095721",
+      "environment_seed": 1,
+      "planner_seed": 1,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.353,
+      "completion_sim": 434.78,
+      "home_reached_sim": 457.1,
+      "exploration_duration_sim": 430.42699999999996,
+      "return_duration_sim": 22.32000000000005,
+      "exploration_distance_m": 172.10200921739047,
+      "final_mission_distance_m": 181.3752559812946,
+      "free_coverage": 0.9599255519861303,
+      "surface_coverage": 0.6489531914893617,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 248.65106388206388,
+      "t80_censored": false,
+      "t90_seconds": 282.66499999999996,
+      "t90_censored": false,
+      "t95_seconds": 385.1738229166666,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 34,
+      "global_planning_mean_ms": 85.406,
+      "global_planning_p95_ms": 133.92710000000002,
+      "exploration_local_planning_count": 185,
+      "exploration_local_planning_mean_ms": 0.7593135135135135,
+      "exploration_local_planning_p95_ms": 1.6900000000000002,
+      "executed_to_bspline_length_ratio_mean": 0.4018900421382181,
+      "odom_to_bspline_mean_distance_mean": 0.026372026171253844,
+      "exploration_cpu_mean": 143.4652430483364,
+      "exploration_cpu_p95": 161.23785570033462,
+      "exploration_rss_mean_mib": 460.1600212607991,
+      "exploration_rss_peak_mib": 533.36328125,
+      "logger_cpu_mean": 28.650961236765177,
+      "logger_rss_mean_mib": 142.15618250539956,
+      "simulator_cpu_mean": 124.62384993329306,
+      "simulator_rss_mean_mib": 854.34765625,
+      "mean_rtf": 0.999153830241119,
+      "mission_sim_duration": 453.215,
+      "mission_wall_duration": 453.597944007,
+      "route_mode": "historical_legacy",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 434.78,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 925137,
+      "sensor_new_voxels_per_meter_until_stop": 5375.515394660001,
+      "sensor_new_voxels_per_second_until_stop": 2149.347043749579,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "run_json_sha256": "04aadf91e4bb0d93bd7afe5beaec730bbe33fc6ef32fa7686ba8c9d8cc763a28"
+    },
+    {
+      "run_id": "env001_planner001_repeat01_unique_shadow_distance_single_attempt01",
+      "task_id": "env001_planner001_repeat01_unique_shadow_distance_single",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_001/planner_seed_001/20261010T100536",
+      "environment_seed": 1,
+      "planner_seed": 1,
+      "mode": "full",
+      "status": "FAILED",
+      "outcome": "USER_ABORT",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": false,
+      "return_success": false,
+      "planning_start_sim": 4.326,
+      "completion_sim": null,
+      "home_reached_sim": null,
+      "exploration_duration_sim": null,
+      "return_duration_sim": null,
+      "exploration_distance_m": null,
+      "final_mission_distance_m": 102.35819680052732,
+      "free_coverage": 0.9228606394370507,
+      "surface_coverage": 0.5693957446808511,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 184.80021978021978,
+      "t80_censored": false,
+      "t90_seconds": 212.64791875,
+      "t90_censored": false,
+      "t95_seconds": null,
+      "t95_censored": true,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 2341,
+      "global_planning_mean_ms": 100.27468902178556,
+      "global_planning_p95_ms": 109.536,
+      "exploration_local_planning_count": 2428,
+      "exploration_local_planning_mean_ms": 1.0385588962108732,
+      "exploration_local_planning_p95_ms": 2.1029500000000003,
+      "executed_to_bspline_length_ratio_mean": 0.45953194760485344,
+      "odom_to_bspline_mean_distance_mean": 0.028670601401115773,
+      "exploration_cpu_mean": 181.70617787783442,
+      "exploration_cpu_p95": 211.4223388618648,
+      "exploration_rss_mean_mib": 469.88458116319447,
+      "exploration_rss_peak_mib": 587.9765625,
+      "logger_cpu_mean": 29.651766471587823,
+      "logger_rss_mean_mib": 145.9316189236111,
+      "simulator_cpu_mean": 128.3535788145669,
+      "simulator_rss_mean_mib": 856.42490234375,
+      "mean_rtf": 0.9990692462563274,
+      "mission_sim_duration": null,
+      "mission_wall_duration": null,
+      "route_mode": "distance_single",
+      "matrix_status": "USER_ABORT",
+      "observed_until_sim": 724.341,
+      "stop_is_exploration_completion": false,
+      "sensor_new_accessible_voxels_until_stop": 891753,
+      "sensor_new_voxels_per_meter_until_stop": 8712.081961914806,
+      "sensor_new_voxels_per_second_until_stop": 1238.520030832691,
+      "threshold_reached_before_exploration_completion": {
+        "t80": false,
+        "t90": false,
+        "t95": false
+      },
+      "ready_route_plans": 2330,
+      "plans_with_extra_selected_routes": 0,
+      "run_json_sha256": "18bd48439df8e00c49c1f8034bc022a94a702b41e222d377005b2fb2d08e5223"
+    },
+    {
+      "run_id": "env001_planner001_repeat01_unique_shadow_generic_k_shortest_attempt01",
+      "task_id": "env001_planner001_repeat01_unique_shadow_generic_k_shortest",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_001/planner_seed_001/20261010T101925",
+      "environment_seed": 1,
+      "planner_seed": 1,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.392,
+      "completion_sim": 787.03,
+      "home_reached_sim": 808.417,
+      "exploration_duration_sim": 782.6379999999999,
+      "return_duration_sim": 21.387000000000057,
+      "exploration_distance_m": 335.42722283831375,
+      "final_mission_distance_m": 345.4479263628014,
+      "free_coverage": 0.9673948294324614,
+      "surface_coverage": 0.6470808510638297,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 345.74198689956336,
+      "t80_censored": false,
+      "t90_seconds": 382.98778285714286,
+      "t90_censored": false,
+      "t95_seconds": 511.32227941176467,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 82,
+      "global_planning_mean_ms": 149.5860243902439,
+      "global_planning_p95_ms": 258.77665,
+      "exploration_local_planning_count": 412,
+      "exploration_local_planning_mean_ms": 0.6763300970873787,
+      "exploration_local_planning_p95_ms": 2.609549999999999,
+      "executed_to_bspline_length_ratio_mean": 0.3378715388920174,
+      "odom_to_bspline_mean_distance_mean": 0.02806745414548117,
+      "exploration_cpu_mean": 144.83129753059688,
+      "exploration_cpu_p95": 163.17223141959965,
+      "exploration_rss_mean_mib": 484.36874232186733,
+      "exploration_rss_peak_mib": 589.94140625,
+      "logger_cpu_mean": 28.268134526879955,
+      "logger_rss_mean_mib": 144.19113271652333,
+      "simulator_cpu_mean": 125.98479889242707,
+      "simulator_rss_mean_mib": 869.6168371851966,
+      "mean_rtf": 0.9992337004886368,
+      "mission_sim_duration": 804.546,
+      "mission_wall_duration": 805.1712576250002,
+      "route_mode": "generic_k_shortest",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 787.03,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 934570,
+      "sensor_new_voxels_per_meter_until_stop": 2786.2079651492436,
+      "sensor_new_voxels_per_second_until_stop": 1194.128064315814,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "ready_route_plans": 82,
+      "plans_with_extra_selected_routes": 62,
+      "run_json_sha256": "4df5e8a67405fb829e55782662afa8deeb11576ed8da7b468b5fad8a3f8a8eb2"
+    },
+    {
+      "run_id": "env001_planner001_repeat01_unique_shadow_geometric_diverse_attempt01",
+      "task_id": "env001_planner001_repeat01_unique_shadow_geometric_diverse",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_001/planner_seed_001/20261010T103314",
+      "environment_seed": 1,
+      "planner_seed": 1,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.076,
+      "completion_sim": 590.964,
+      "home_reached_sim": 627.226,
+      "exploration_duration_sim": 586.888,
+      "return_duration_sim": 36.261999999999944,
+      "exploration_distance_m": 253.84895658641514,
+      "final_mission_distance_m": 269.1635138132359,
+      "free_coverage": 0.9637815511702615,
+      "surface_coverage": 0.6469106382978723,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 221.05261126760564,
+      "t80_censored": false,
+      "t90_seconds": 293.4135330188679,
+      "t90_censored": false,
+      "t95_seconds": 416.64882499999993,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 45,
+      "global_planning_mean_ms": 167.89657777777776,
+      "global_planning_p95_ms": 286.92879999999997,
+      "exploration_local_planning_count": 319,
+      "exploration_local_planning_mean_ms": 0.5977742946708464,
+      "exploration_local_planning_p95_ms": 1.2526000000000002,
+      "executed_to_bspline_length_ratio_mean": 0.3882679688901487,
+      "odom_to_bspline_mean_distance_mean": 0.027340772146860256,
+      "exploration_cpu_mean": 146.7965199543369,
+      "exploration_cpu_p95": 164.58612987520698,
+      "exploration_rss_mean_mib": 471.95541699526814,
+      "exploration_rss_peak_mib": 576.8125,
+      "logger_cpu_mean": 29.026774317654134,
+      "logger_rss_mean_mib": 142.8112307768139,
+      "simulator_cpu_mean": 125.99757736184142,
+      "simulator_rss_mean_mib": 856.51953125,
+      "mean_rtf": 0.9991780770474672,
+      "mission_sim_duration": 623.545,
+      "mission_wall_duration": 624.0625385479998,
+      "route_mode": "geometric_diverse",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 590.964,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 930590,
+      "sensor_new_voxels_per_meter_until_stop": 3665.920130277191,
+      "sensor_new_voxels_per_second_until_stop": 1585.634737803465,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "ready_route_plans": 39,
+      "plans_with_extra_selected_routes": 21,
+      "run_json_sha256": "a7f10a2672e2a3d90127bd31626d736fca77fa157a1bfb4b33bcf94950474f95"
+    },
+    {
+      "run_id": "env002_planner002_repeat01_unique_shadow_distance_single_attempt01",
+      "task_id": "env002_planner002_repeat01_unique_shadow_distance_single",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_002/planner_seed_002/20261010T104402",
+      "environment_seed": 2,
+      "planner_seed": 2,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.349,
+      "completion_sim": 773.102,
+      "home_reached_sim": 809.985,
+      "exploration_duration_sim": 768.7529999999999,
+      "return_duration_sim": 36.88300000000004,
+      "exploration_distance_m": 350.5136345978215,
+      "final_mission_distance_m": 364.2478361292416,
+      "free_coverage": 0.9642251797460609,
+      "surface_coverage": 0.6217531914893617,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 204.8201991525424,
+      "t80_censored": false,
+      "t90_seconds": 277.7298888888889,
+      "t90_censored": false,
+      "t95_seconds": 500.93083241758245,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 61,
+      "global_planning_mean_ms": 115.3642131147541,
+      "global_planning_p95_ms": 188.942,
+      "exploration_local_planning_count": 407,
+      "exploration_local_planning_mean_ms": 0.8060368550368551,
+      "exploration_local_planning_p95_ms": 1.6922999999999995,
+      "executed_to_bspline_length_ratio_mean": 0.34930784052772823,
+      "odom_to_bspline_mean_distance_mean": 0.024658175521116994,
+      "exploration_cpu_mean": 148.03278939452275,
+      "exploration_cpu_p95": 165.24248484580963,
+      "exploration_rss_mean_mib": 477.57749866126073,
+      "exploration_rss_peak_mib": 557.94140625,
+      "logger_cpu_mean": 27.541678674940375,
+      "logger_rss_mean_mib": 164.62046263004896,
+      "simulator_cpu_mean": 126.44195546183236,
+      "simulator_rss_mean_mib": 852.48046875,
+      "mean_rtf": 0.9991584911839788,
+      "mission_sim_duration": 806.15,
+      "mission_wall_duration": 806.8310883519998,
+      "route_mode": "distance_single",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 773.102,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 930863,
+      "sensor_new_voxels_per_meter_until_stop": 2655.7112423545805,
+      "sensor_new_voxels_per_second_until_stop": 1210.873973825143,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "ready_route_plans": 61,
+      "plans_with_extra_selected_routes": 0,
+      "run_json_sha256": "c3c6878f0d428cf26e58fcbdc9e526265f448acd8deda96ab00b4158b736678a"
+    },
+    {
+      "run_id": "env002_planner002_repeat01_unique_shadow_generic_k_shortest_attempt01",
+      "task_id": "env002_planner002_repeat01_unique_shadow_generic_k_shortest",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_002/planner_seed_002/20261010T105753",
+      "environment_seed": 2,
+      "planner_seed": 2,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.26,
+      "completion_sim": 690.568,
+      "home_reached_sim": 711.936,
+      "exploration_duration_sim": 686.308,
+      "return_duration_sim": 21.368000000000052,
+      "exploration_distance_m": 289.0127898828226,
+      "final_mission_distance_m": 297.2183206852115,
+      "free_coverage": 0.9640314109428382,
+      "surface_coverage": 0.649463829787234,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 262.07156355932204,
+      "t80_censored": false,
+      "t90_seconds": 304.3543781512605,
+      "t90_censored": false,
+      "t95_seconds": 423.0784210526314,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 195,
+      "global_planning_mean_ms": 116.10892307692308,
+      "global_planning_p95_ms": 205.00460000000012,
+      "exploration_local_planning_count": 488,
+      "exploration_local_planning_mean_ms": 1.5068073770491803,
+      "exploration_local_planning_p95_ms": 2.4382499999999996,
+      "executed_to_bspline_length_ratio_mean": 0.2426073039157719,
+      "odom_to_bspline_mean_distance_mean": 0.036355372811158713,
+      "exploration_cpu_mean": 150.5932055775614,
+      "exploration_cpu_p95": 184.6489171806492,
+      "exploration_rss_mean_mib": 479.28784553198886,
+      "exploration_rss_peak_mib": 573.734375,
+      "logger_cpu_mean": 28.049699896268994,
+      "logger_rss_mean_mib": 159.12944410639778,
+      "simulator_cpu_mean": 126.26080633385274,
+      "simulator_rss_mean_mib": 863.41796875,
+      "mean_rtf": 0.9991777931808984,
+      "mission_sim_duration": 708.032,
+      "mission_wall_duration": 708.6167028250002,
+      "route_mode": "generic_k_shortest",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 690.568,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 930589,
+      "sensor_new_voxels_per_meter_until_stop": 3219.8886436039675,
+      "sensor_new_voxels_per_second_until_stop": 1355.9349446604149,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "ready_route_plans": 195,
+      "plans_with_extra_selected_routes": 45,
+      "run_json_sha256": "76b1eb930f59228df47ba1fef3f7db098d392656e1c9803a3f274df522a10688"
+    },
+    {
+      "run_id": "env002_planner002_repeat01_unique_shadow_geometric_diverse_attempt01",
+      "task_id": "env002_planner002_repeat01_unique_shadow_geometric_diverse",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_002/planner_seed_002/20261010T111007",
+      "environment_seed": 2,
+      "planner_seed": 2,
+      "mode": "full",
+      "status": "FAILED",
+      "outcome": "TIMEOUT",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.44,
+      "completion_sim": 865.81,
+      "home_reached_sim": 894.652,
+      "exploration_duration_sim": 861.3699999999999,
+      "return_duration_sim": 28.8420000000001,
+      "exploration_distance_m": 401.4559170859506,
+      "final_mission_distance_m": 411.5912211279036,
+      "free_coverage": 0.9683279791953495,
+      "surface_coverage": 0.6523914893617021,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 217.0342420212766,
+      "t80_censored": false,
+      "t90_seconds": 327.0651818181818,
+      "t90_censored": false,
+      "t95_seconds": 496.14749999999987,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 67,
+      "global_planning_mean_ms": 145.41120895522388,
+      "global_planning_p95_ms": 208.5858,
+      "exploration_local_planning_count": 549,
+      "exploration_local_planning_mean_ms": 0.5338670309653917,
+      "exploration_local_planning_p95_ms": 1.3526000000000014,
+      "executed_to_bspline_length_ratio_mean": 0.30045672364465914,
+      "odom_to_bspline_mean_distance_mean": 0.028540619499521386,
+      "exploration_cpu_mean": 146.9937246826034,
+      "exploration_cpu_p95": 165.67488670315083,
+      "exploration_rss_mean_mib": 484.16614583333336,
+      "exploration_rss_peak_mib": 554.97265625,
+      "logger_cpu_mean": 27.42392446119147,
+      "logger_rss_mean_mib": 164.78649739583332,
+      "simulator_cpu_mean": 125.92904461521006,
+      "simulator_rss_mean_mib": 851.6825390625,
+      "mean_rtf": 0.9991513068928907,
+      "mission_sim_duration": 890.743,
+      "mission_wall_duration": 891.4997573179999,
+      "route_mode": "geometric_diverse",
+      "matrix_status": "TIMEOUT",
+      "observed_until_sim": 865.81,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 935283,
+      "sensor_new_voxels_per_meter_until_stop": 2329.7277738212,
+      "sensor_new_voxels_per_second_until_stop": 1085.8086536563846,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "ready_route_plans": 67,
+      "plans_with_extra_selected_routes": 47,
+      "run_json_sha256": "eceb3d47c39aa9e6a597a049a5ef109e94d8fa42e9bd5a445ebbe233161faf6e"
+    },
+    {
+      "run_id": "env002_planner002_repeat01_unique_shadow_historical_legacy_attempt01",
+      "task_id": "env002_planner002_repeat01_unique_shadow_historical_legacy",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_002/planner_seed_002/20261010T112522",
+      "environment_seed": 2,
+      "planner_seed": 2,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.377,
+      "completion_sim": 440.802,
+      "home_reached_sim": 457.649,
+      "exploration_duration_sim": 436.425,
+      "return_duration_sim": 16.84699999999998,
+      "exploration_distance_m": 188.10775779633815,
+      "final_mission_distance_m": 193.2352895606437,
+      "free_coverage": 0.9587354036000204,
+      "surface_coverage": 0.6282212765957447,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 218.78449523809525,
+      "t80_censored": false,
+      "t90_seconds": 277.4595482866044,
+      "t90_censored": false,
+      "t95_seconds": 408.79089374999995,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 43,
+      "global_planning_mean_ms": 77.41723255813953,
+      "global_planning_p95_ms": 122.774,
+      "exploration_local_planning_count": 197,
+      "exploration_local_planning_mean_ms": 0.5490355329949238,
+      "exploration_local_planning_p95_ms": 1.3783999999999992,
+      "executed_to_bspline_length_ratio_mean": 0.42512485757383184,
+      "odom_to_bspline_mean_distance_mean": 0.02414220232509055,
+      "exploration_cpu_mean": 144.1013265168087,
+      "exploration_cpu_p95": 162.67624717671723,
+      "exploration_rss_mean_mib": 458.8038961476293,
+      "exploration_rss_peak_mib": 530.7890625,
+      "logger_cpu_mean": 29.69770011181671,
+      "logger_rss_mean_mib": 140.5315951643319,
+      "simulator_cpu_mean": 125.0359331521996,
+      "simulator_rss_mean_mib": 864.4908236799569,
+      "mean_rtf": 0.9991804114211007,
+      "mission_sim_duration": 453.811,
+      "mission_wall_duration": 454.1842552420003,
+      "route_mode": "historical_legacy",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 440.802,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 925444,
+      "sensor_new_voxels_per_meter_until_stop": 4919.7545643065205,
+      "sensor_new_voxels_per_second_until_stop": 2120.510969811537,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "run_json_sha256": "00b368534d862a49e0e31ee6e9ea8235149a0a61f404cdfa41684bbeadbc011c"
+    },
+    {
+      "run_id": "env003_planner003_repeat01_unique_shadow_generic_k_shortest_attempt01",
+      "task_id": "env003_planner003_repeat01_unique_shadow_generic_k_shortest",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_003/planner_seed_003/20261010T122608",
+      "environment_seed": 3,
+      "planner_seed": 3,
+      "mode": "full",
+      "status": "FAILED",
+      "outcome": "TIMEOUT",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": false,
+      "return_success": false,
+      "planning_start_sim": 4.204,
+      "completion_sim": null,
+      "home_reached_sim": null,
+      "exploration_duration_sim": null,
+      "return_duration_sim": null,
+      "exploration_distance_m": null,
+      "final_mission_distance_m": 195.75800951847992,
+      "free_coverage": 0.9425138952628627,
+      "surface_coverage": 0.5944851063829787,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 282.39039634146343,
+      "t80_censored": false,
+      "t90_seconds": 316.8221019830028,
+      "t90_censored": false,
+      "t95_seconds": null,
+      "t95_censored": true,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 1994,
+      "global_planning_mean_ms": 109.85115997993982,
+      "global_planning_p95_ms": 118.46544999999999,
+      "exploration_local_planning_count": 2174,
+      "exploration_local_planning_mean_ms": 0.5476099356025759,
+      "exploration_local_planning_p95_ms": 1.0473999999999997,
+      "executed_to_bspline_length_ratio_mean": 0.4217558861303494,
+      "odom_to_bspline_mean_distance_mean": 0.031032108856563722,
+      "exploration_cpu_mean": 171.89066219882918,
+      "exploration_cpu_p95": 208.05286701151036,
+      "exploration_rss_mean_mib": 491.1844140625,
+      "exploration_rss_peak_mib": 609.4375,
+      "logger_cpu_mean": 27.510525295286087,
+      "logger_rss_mean_mib": 167.83198350694445,
+      "simulator_cpu_mean": 126.40964340964044,
+      "simulator_rss_mean_mib": 856.53125,
+      "mean_rtf": 0.9991043635234136,
+      "mission_sim_duration": null,
+      "mission_wall_duration": null,
+      "route_mode": "generic_k_shortest",
+      "matrix_status": "TIMEOUT",
+      "observed_until_sim": 904.988,
+      "stop_is_exploration_completion": false,
+      "sensor_new_accessible_voxels_until_stop": 910743,
+      "sensor_new_voxels_per_meter_until_stop": 4652.392013181071,
+      "sensor_new_voxels_per_second_until_stop": 1011.0559246167782,
+      "threshold_reached_before_exploration_completion": {
+        "t80": false,
+        "t90": false,
+        "t95": false
+      },
+      "ready_route_plans": 1994,
+      "plans_with_extra_selected_routes": 1990,
+      "run_json_sha256": "1ced6252838503e191160330b6e548008aebc166198a715bb1fbe96d76592639"
+    },
+    {
+      "run_id": "env003_planner003_repeat01_unique_shadow_geometric_diverse_attempt01",
+      "task_id": "env003_planner003_repeat01_unique_shadow_geometric_diverse",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_003/planner_seed_003/20261010T124132",
+      "environment_seed": 3,
+      "planner_seed": 3,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.336,
+      "completion_sim": 840.773,
+      "home_reached_sim": 872.041,
+      "exploration_duration_sim": 836.437,
+      "return_duration_sim": 31.26800000000003,
+      "exploration_distance_m": 361.3059684563276,
+      "final_mission_distance_m": 374.7450936229716,
+      "free_coverage": 0.9675294477589108,
+      "surface_coverage": 0.647931914893617,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 254.08629333333334,
+      "t80_censored": false,
+      "t90_seconds": 323.15707888040714,
+      "t90_censored": false,
+      "t95_seconds": 395.98279605263156,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 96,
+      "global_planning_mean_ms": 151.0629375,
+      "global_planning_p95_ms": 257.89675,
+      "exploration_local_planning_count": 462,
+      "exploration_local_planning_mean_ms": 0.5516666666666666,
+      "exploration_local_planning_p95_ms": 1.27965,
+      "executed_to_bspline_length_ratio_mean": 0.32946790613440285,
+      "odom_to_bspline_mean_distance_mean": 0.030143719942278536,
+      "exploration_cpu_mean": 146.8121553877679,
+      "exploration_cpu_p95": 164.75282609566477,
+      "exploration_rss_mean_mib": 483.4109214834852,
+      "exploration_rss_peak_mib": 579.28125,
+      "logger_cpu_mean": 27.97956319977068,
+      "logger_rss_mean_mib": 166.93157388952164,
+      "simulator_cpu_mean": 126.00760494786044,
+      "simulator_rss_mean_mib": 861.125,
+      "mean_rtf": 0.9991932647821044,
+      "mission_sim_duration": 868.1740000000001,
+      "mission_wall_duration": 868.876015236001,
+      "route_mode": "geometric_diverse",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 840.773,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 935173,
+      "sensor_new_voxels_per_meter_until_stop": 2588.3131795345303,
+      "sensor_new_voxels_per_second_until_stop": 1118.0435585704602,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "ready_route_plans": 96,
+      "plans_with_extra_selected_routes": 82,
+      "run_json_sha256": "a6aded589d0e9a0ba59dd086b7f59069d9afe09c32bce47dd5af69d8fa2348f2"
+    },
+    {
+      "run_id": "env003_planner003_repeat01_unique_shadow_historical_legacy_attempt01",
+      "task_id": "env003_planner003_repeat01_unique_shadow_historical_legacy",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_003/planner_seed_003/20261010T125625",
+      "environment_seed": 3,
+      "planner_seed": 3,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.4,
+      "completion_sim": 481.841,
+      "home_reached_sim": 507.095,
+      "exploration_duration_sim": 477.44100000000003,
+      "return_duration_sim": 25.25400000000002,
+      "exploration_distance_m": 201.65395191410084,
+      "final_mission_distance_m": 212.19170006155184,
+      "free_coverage": 0.9665534648921523,
+      "surface_coverage": 0.646536170212766,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 200.35040425531915,
+      "t80_censored": false,
+      "t90_seconds": 309.87835164835167,
+      "t90_censored": false,
+      "t95_seconds": 416.48918421052633,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 44,
+      "global_planning_mean_ms": 86.33084090909091,
+      "global_planning_p95_ms": 135.0489,
+      "exploration_local_planning_count": 215,
+      "exploration_local_planning_mean_ms": 1.1819581395348837,
+      "exploration_local_planning_p95_ms": 1.407300000000001,
+      "executed_to_bspline_length_ratio_mean": 0.43995676929818367,
+      "odom_to_bspline_mean_distance_mean": 0.02600696602002321,
+      "exploration_cpu_mean": 145.85756033062046,
+      "exploration_cpu_p95": 166.0515688335195,
+      "exploration_rss_mean_mib": 463.94294438352824,
+      "exploration_rss_peak_mib": 532.63671875,
+      "logger_cpu_mean": 28.922101503924527,
+      "logger_rss_mean_mib": 147.30736781189083,
+      "simulator_cpu_mean": 125.26738637111816,
+      "simulator_rss_mean_mib": 856.296875,
+      "mean_rtf": 0.9991652680878219,
+      "mission_sim_duration": 503.204,
+      "mission_wall_duration": 503.6247837049996,
+      "route_mode": "historical_legacy",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 481.841,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 927309,
+      "sensor_new_voxels_per_meter_until_stop": 4598.516375196102,
+      "sensor_new_voxels_per_second_until_stop": 1942.2483615776607,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "run_json_sha256": "77039da30b230e1bb8d31317eb6da413d3fb8483ab20cc812fedd37e27e8531e"
+    },
+    {
+      "run_id": "env003_planner003_repeat01_unique_shadow_distance_single_attempt01",
+      "task_id": "env003_planner003_repeat01_unique_shadow_distance_single",
+      "attempt": 1,
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/environment_seed_003/planner_seed_003/20261010T130513",
+      "environment_seed": 3,
+      "planner_seed": 3,
+      "mode": "full",
+      "status": "VERIFIED",
+      "outcome": "HOME_REACHED",
+      "manifest_readable": true,
+      "git_clean": true,
+      "algorithm_completed": true,
+      "return_success": true,
+      "planning_start_sim": 4.275,
+      "completion_sim": 725.681,
+      "home_reached_sim": 751.407,
+      "exploration_duration_sim": 721.4060000000001,
+      "return_duration_sim": 25.726,
+      "exploration_distance_m": 312.7014411524516,
+      "final_mission_distance_m": 325.3817705627876,
+      "free_coverage": 0.966039467645709,
+      "surface_coverage": 0.6416,
+      "coverage_valid": true,
+      "coverage_status": "VALID_ACCESSIBLE_FREE_V2",
+      "t80_seconds": 229.50383050847458,
+      "t80_censored": false,
+      "t90_seconds": 311.56604761904765,
+      "t90_censored": false,
+      "t95_seconds": 457.1462279411765,
+      "t95_censored": false,
+      "collision_status": "VALID",
+      "collision_episodes": 0,
+      "collision_free": true,
+      "trajectory_status": "VALID",
+      "resource_status": "VALID",
+      "global_planning_count": 54,
+      "global_planning_mean_ms": 125.69096296296296,
+      "global_planning_p95_ms": 221.7674,
+      "exploration_local_planning_count": 337,
+      "exploration_local_planning_mean_ms": 0.4216379821958457,
+      "exploration_local_planning_p95_ms": 1.3289999999999997,
+      "executed_to_bspline_length_ratio_mean": 0.40321407659772973,
+      "odom_to_bspline_mean_distance_mean": 0.025963632322301356,
+      "exploration_cpu_mean": 145.92296674292103,
+      "exploration_cpu_p95": 164.2322182543391,
+      "exploration_rss_mean_mib": 476.29025449966974,
+      "exploration_rss_peak_mib": 539.171875,
+      "logger_cpu_mean": 28.290016941683024,
+      "logger_rss_mean_mib": 161.19665930482165,
+      "simulator_cpu_mean": 122.53145365209417,
+      "simulator_rss_mean_mib": 860.8704022869881,
+      "mean_rtf": 0.9991841702427328,
+      "mission_sim_duration": 747.605,
+      "mission_wall_duration": 748.2156178639998,
+      "route_mode": "distance_single",
+      "matrix_status": "SUCCESS",
+      "observed_until_sim": 725.681,
+      "stop_is_exploration_completion": true,
+      "sensor_new_accessible_voxels_until_stop": 933540,
+      "sensor_new_voxels_per_meter_until_stop": 2985.4035739632886,
+      "sensor_new_voxels_per_second_until_stop": 1294.056328891082,
+      "threshold_reached_before_exploration_completion": {
+        "t80": true,
+        "t90": true,
+        "t95": true
+      },
+      "ready_route_plans": 54,
+      "plans_with_extra_selected_routes": 0,
+      "run_json_sha256": "b1d73519ee43c2ba650b9edaccbe8098ed338a2adaef866c933d6719859c4e32"
+    }
+  ],
+  "limitations": [
+    "N3 exploratory paired pilot; no significance or generality claim",
+    "Retain user-aborted seed1 distance trial; first attempt, not replaced",
+    "Missing/censored thresholds are explicit; uncensored-only means are not unconditional method rankings",
+    "Raw T thresholds retain frozen whole-run convention; pre-return reach flags are supplemental",
+    "Sensor observation rates until stop include stalled time for failures; cannot rank methods by per-metre rate alone",
+    "No executed counterfactual observation for unselected routes"
+  ]
+}

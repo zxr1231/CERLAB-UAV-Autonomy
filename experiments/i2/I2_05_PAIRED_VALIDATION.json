@@ -1,0 +1,16 @@
+{
+  "task": "I2-05 paired pilot",
+  "status": "12 first attempts collected and backed up; user-requested stop after seed3",
+  "collection_source_commit": "067794787ede6654c8ddd76fd3681a7e45c46a9c",
+  "trial_count": 12,
+  "source_config_audit_errors": [],
+  "verified_raw_backups": 12,
+  "summary_sha256": "52f63717bfafee356f9a65bbaf000ae22171fbee744f1c6af17b94e4cdfc5317",
+  "exceptions": [
+    "seed1 distance_single USER_ABORT after repeated B-spline infeasibility at user request",
+    "seed2 geometric rawTIMEOUT retained despiteHOME_REACHED near deadline",
+    "seed3 generic TIMEOUT with B-spline infeasibility and T95 censored"
+  ],
+  "next": "I2-06 decision and held-out prediction/actual gate; no further development authorized in current stop",
+  "research_claim": "exploratory N3 control pilot, not observation-guided method or superiority proof"
+}

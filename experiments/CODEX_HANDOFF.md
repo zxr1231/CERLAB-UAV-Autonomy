@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-10 at user-requested stop after seed2 collection.
+Last updated: 2026-10-10 after all seed3 tests and verified12-trial pilot checkpoint.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -379,50 +379,42 @@ collisions or fallbacks. Total planning means282.6/198.6ms, NOT 50ms. Read
 I2_05_ONLINE_ADMISSION_REPORT.md, protocol, validation and summary. Raw runs remain
 TIMEOUT/FAILED, not a full pilot or performance win. All previous data stay retained.
 
-**Current checkpoint: I2-05 collected8/12 trials; stopped after seed2 by user.**
-Collection source remains067794787ede6654c8ddd76fd3681a7e45c46a9c, clean at
-/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy. DO NOT edit/commit its
-source during this partial matrix. This updated documentation is in separate
-worktree /home/zxr2/cerlab_i2_docs_checkpoint_20261010 on branch
-`docs/i2-seed2-checkpoint-20261010`, so source/provenance stay fixed.
+**Current checkpoint: I2-05 collected12/12 first attempts; STOPPED by user after seed3.**
+All per-run full archives/COMPLETE hashes verified; controller statusall_trials_backed_up.
+No simulation/ROS master remains. Collection source0677947 stayed clean/frozen,
+with global_planner99f3122/autonomous_flight33422e2. Source checkout may now advance
+for final documentation; raw manifests always retain collection version0677947.
 
-Current state files:
-/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/batch_state.json
-and backup_controller_state.json. Controller ended with stopped_after_verified_backup;
-no ROS11311 listener or running simulator remains. STOP_BACKUP_CONTROLLER exists.
-Eight per-trial full archives/COMPLETE checksums verified under
-/home/zxr2/下载/CERLAB_I2_Backups/I2_05_PAIRED_RUNS_2026-10-10/.
-See I2_05_SEED2_CHECKPOINT_SUMMARY.json. No final3-seed conclusion yet.
+Read I2_05_PAIRED_REPORT.md, I2_05_PAIRED_SUMMARY.json and validation.
+Statuses in seed order1/2/3:
+- historical: SUCCESS/SUCCESS/SUCCESS; T95385.174/408.791/416.489s.
+- single distance: USER_ABORT/SUCCESS/SUCCESS; T95censored/500.931/457.146s.
+- generic K: SUCCESS/SUCCESS/TIMEOUT; T95511.322/423.078/censored.
+- geometric: SUCCESS/TIMEOUT/SUCCESS; T95416.649/496.147/395.983s.
+Seed1 single was user-stopped after B-spline infeasibility; keepUSER_ABORT.
+Seed3 generic stayed at94.25% with repeated B-spline failure until900s; no retry.
+Seed2 geometry reached home near deadline but failed runner dwell; keep rawTIMEOUT
+and actualHOME event separately. Do not replace/exclude these first attempts.
 
-Seed1: historical SUCCESS, distance_single USER_ABORT, generic SUCCESS, geometric
-SUCCESS. User requested ending the single-route stalled run early after repeated
-B-spline infeasibility; retain failure/censoring, do not replace or relabel900s timeout.
-Seed2: distance_single SUCCESS, generic SUCCESS, geometric TIMEOUT, historical
-SUCCESS. Geometric had HOME_REACHED near the deadline but lacked the runner's
-extra waiting period; retain originalTIMEOUT and actual home event separately.
+N3 pilot: LegacyT95 mean403.485s/std16.318s; geometry436.260s/std52.884s.
+Geometry has greater exploration distance in all3 seeds; ordinary multi-route controls
+have no stable overall advantage here. This is NOT the proposed observation-guided
+method; no main novelty/performance verdict or significance claim follows.
+Supplemental sensor-only rates until stop include stalled time; read with success.
 
-**Next action ONLY after user continuation:** inspect services/Git/backups; remove
-STOP_BACKUP_CONTROLLER; launch the external backup_controller.py with a new user
-service name (previous active unit was cerlab-i2-05-paired-backup-controller-v2,
-now inactive). Keep source HEAD0677947. It validates existing backups then schedules
-first pending seed3 generic_k_shortest, geometric_diverse, historical_legacy,
-distance_single. No reruns of completed seed1/2 or automatic failure retry.
-The external controller permits ONLY the existing user-aborted seed1 task via
-CONTINUE_AFTER_USER_ABORT.json; other technical/measurement failures still halt.
+**Next ONLY on user continuation:** I2-06 overall decision and preregistered held-out
+predicted/actual ordering gate; bounded execution-feasibility assessment if needed.
+Do not reopen frozen I1 or rerun seeds for favorable results. Main guided construction
+and observation-preserving shortcut are still unimplemented. User requested this
+seed3 batch to end after tests/backups: do not start I2-06 in this turn.
 
-After all12 terminal trials: run external summarize_pilot.py with workspace Python
-path, audit observation/execution/provenance/censoring, create final summary in a
-DOCS worktree or after collection source no longer needed, push and verify backup.
-I2-06/held-out prediction-actual gate still precedes I3.
+Future user preference: AFTER observation-opportunity guidance is implemented, run
+NEW cohorts in isolated parallel ROS/Gazebo instances. Register uniform concurrency,
+calibrate CPU/GPU/RTF and controls' load; do not mix current serial results with them.
 
-User preference: AFTER observation-opportunity guidance is implemented, switch NEW
-experimental cohorts to parallel isolated ROS/Gazebo instances. Preregister uniform
-concurrency, calibrate CPU/GPU/RTF and use the same parallel load for controls.
-Do not mix current serial data as if measured under that parallel protocol.
-Current matrix remains serial. See batch next_phase_preferences.json.
-
-Seed2 checkpoint backup:
-/home/zxr2/下载/CERLAB_I2_Backups/I2_05_SEED2_CHECKPOINT_2026-10-10/.
+Raw batch: /home/zxr2/cerlab_benchmark_ws/results/EXP-I2-05-PAIRED-PILOT-V1/.
+Per-trial backups: /home/zxr2/下载/CERLAB_I2_Backups/I2_05_PAIRED_RUNS_2026-10-10/.
+Full matrix checkpoint: /home/zxr2/下载/CERLAB_I2_Backups/I2_05_PAIRED_FINAL_2026-10-10/.
 
 Local backup: `/home/zxr2/下载/CERLAB_I2_Backups/I2_05_ONLINE_2026-10-08/`
 (completed on 2026-10-09 after the previous quota-related push interruption).
