@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-12 I3-00 V1 camera C++ parity complete;30-candidate cost gate failed. User requested continue bounded performance work after backing up V1.
+Last updated: 2026-10-12 I3-00 V2 bounded performance batch complete; exact parity passes,500ms fixed-batch admission still fails. Next same-snapshot workload/budget specification, no further unbounded kernel optimization.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -66,7 +66,7 @@ frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i3-camera-evaluator
-  commit 4f135f2a2c792663ccbe7518eec57dcb10606058
+  commit ece80ea0a80620166cdc96487c5313821688162e
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -495,12 +495,26 @@ sampling/integration and guided method remain pending.
 One warmup+3 repeats: prefixp95=80.241ms,max81.281ms passes per-prefix budget.
 Actual fixed30-candidate workload1178.820ms FAILS registered500ms batch budget.
 Online cost admission NOT passed. Preserve failedV1 evidence; no threshold relaxation.
-Next: back up V1, then user-authorized bounded profiling and at most2 semantic-
-preserving optimizations. All original12 cases and cost workload must be retained;
-no core guided implementation before cost gate resolved. See next registered
-performance protocol, not endless calibration or new seed runs.
+V1 backup complete and GitHub pushed; V1 failure retained. User requested continued
+bounded performance protocol edc70d6, now completed (max2 interventions, no third).
+Profile endpoint479.436ms /traversal592.887ms; intervention1 batch1042.562ms;
+intervention2 compact frozen optical view/incremental addresses batch872.728ms.
+Final15tests pass and all12/239 sets/raw/unique/marginal/saved unions exact.
+Finalprefixp95=60.432ms,max65.747ms. Fixed30 probe still FAIL500ms; no admission.
+Read `i3/I3_00_PERFORMANCE_REPORT.md`, protocol and results. No online or guided
+method changes. Peak611.69MiB includes12full snapshots, not per-map online overhead.
+
+**Immediate next task:** pre-register bounded same-snapshot realistic candidate
+workload and explicit sampling/construction/whole-plan budget. Current probe cycles
+12executed-prefix snapshots, not30actual routes in one state; no claim all online
+plans exceed500ms. Preserve failed probe; new definition cannot secretly relax
+budget only for proposed method or change frozen data. All controls share candidate /
+compute rules. No further kernel optimization under completed2-intervention protocol,
+no direct I3-02/03 guided-route implementation before budget problem resolved.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PARITY-V1/.
 Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_00_V1_2026-10-12/.
+V2 raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PERFORMANCE-V2/.
+V2 backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_00_V2_2026-10-12/.
 
 ## Innovation-1 isolation rules
 
