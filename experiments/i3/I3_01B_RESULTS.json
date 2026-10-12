@@ -1,0 +1,310 @@
+{
+  "schema": "i3-01b-summary-v1",
+  "protocol_sha256": "ad832d4ed21a4eebf2f05c4b1b70608317de705d67b3b3d02bc3d3693a477d15",
+  "source_parent_commit": "74cd1882dfc1e954c23894a9bda20474a46adac3",
+  "states": [
+    {
+      "sequence": 1,
+      "stage": "early",
+      "status": "CONTEXT_VALID",
+      "operation_supply": {
+        "raw_count": 6,
+        "feasible_count": 1,
+        "distinct_count": 1,
+        "pops": 50,
+        "stop": 0
+      },
+      "rejections": {
+        "raw_length": 5,
+        "raw_time": 5,
+        "raw_yaw": 5
+      },
+      "modes": {
+        "reference": {
+          "statuses": [
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE"
+          ],
+          "completed_runs": 3,
+          "max_total_ms": 74.63903,
+          "max_generation_ms": 0,
+          "pass": true
+        },
+        "generic": {
+          "statuses": [
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 76.740859,
+          "max_generation_ms": 0.041558,
+          "pass": false
+        },
+        "diverse": {
+          "statuses": [
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 77.173023,
+          "max_generation_ms": 0.039504,
+          "pass": false
+        }
+      }
+    },
+    {
+      "sequence": 13,
+      "stage": "early",
+      "status": "SKIP_B_NEGATIVE_CONTROL",
+      "negative_control_pass": true
+    },
+    {
+      "sequence": 14,
+      "stage": "middle",
+      "status": "CONTEXT_VALID",
+      "operation_supply": {
+        "raw_count": 6,
+        "feasible_count": 2,
+        "distinct_count": 1,
+        "pops": 183,
+        "stop": 0
+      },
+      "rejections": {
+        "shortcut_duplicate": 1,
+        "raw_length": 4,
+        "raw_time": 3,
+        "raw_yaw": 3
+      },
+      "modes": {
+        "reference": {
+          "statuses": [
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE"
+          ],
+          "completed_runs": 3,
+          "max_total_ms": 94.204754,
+          "max_generation_ms": 0,
+          "pass": true
+        },
+        "generic": {
+          "statuses": [
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 94.252794,
+          "max_generation_ms": 0.115708,
+          "pass": false
+        },
+        "diverse": {
+          "statuses": [
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 93.960537,
+          "max_generation_ms": 0.12267,
+          "pass": false
+        }
+      }
+    },
+    {
+      "sequence": 26,
+      "stage": "middle",
+      "status": "CONTEXT_VALID",
+      "operation_supply": {
+        "raw_count": 6,
+        "feasible_count": 6,
+        "distinct_count": 1,
+        "pops": 4247,
+        "stop": 0
+      },
+      "rejections": {
+        "shortcut_duplicate": 5
+      },
+      "modes": {
+        "reference": {
+          "statuses": [
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE"
+          ],
+          "completed_runs": 3,
+          "max_total_ms": 162.886436,
+          "max_generation_ms": 0,
+          "pass": true
+        },
+        "generic": {
+          "statuses": [
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 164.848854,
+          "max_generation_ms": 1.635234,
+          "pass": false
+        },
+        "diverse": {
+          "statuses": [
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 164.34058,
+          "max_generation_ms": 1.641204,
+          "pass": false
+        }
+      }
+    },
+    {
+      "sequence": 27,
+      "stage": "late",
+      "status": "CONTEXT_VALID",
+      "operation_supply": {
+        "raw_count": 4,
+        "feasible_count": 4,
+        "distinct_count": 2,
+        "pops": 10000,
+        "stop": 1
+      },
+      "rejections": {
+        "shortcut_duplicate": 2
+      },
+      "modes": {
+        "reference": {
+          "statuses": [
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE"
+          ],
+          "completed_runs": 3,
+          "max_total_ms": 270.289038,
+          "max_generation_ms": 0,
+          "pass": true
+        },
+        "generic": {
+          "statuses": [
+            "ALTERNATIVE_BUDGET_FALLBACK",
+            "ALTERNATIVE_BUDGET_FALLBACK",
+            "ALTERNATIVE_BUDGET_FALLBACK"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 477.699,
+          "max_generation_ms": 3.63858,
+          "pass": false
+        },
+        "diverse": {
+          "statuses": [
+            "ALTERNATIVE_BUDGET_FALLBACK",
+            "ALTERNATIVE_BUDGET_FALLBACK",
+            "ALTERNATIVE_BUDGET_FALLBACK"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 477.808024,
+          "max_generation_ms": 3.624523,
+          "pass": false
+        }
+      }
+    },
+    {
+      "sequence": 38,
+      "stage": "late",
+      "status": "CONTEXT_VALID",
+      "operation_supply": {
+        "raw_count": 6,
+        "feasible_count": 2,
+        "distinct_count": 1,
+        "pops": 622,
+        "stop": 0
+      },
+      "rejections": {
+        "shortcut_duplicate": 1,
+        "raw_time": 4,
+        "raw_yaw": 3
+      },
+      "modes": {
+        "reference": {
+          "statuses": [
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE",
+            "REFERENCE_COMPLETE"
+          ],
+          "completed_runs": 3,
+          "max_total_ms": 88.70074,
+          "max_generation_ms": 0,
+          "pass": true
+        },
+        "generic": {
+          "statuses": [
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 90.249189,
+          "max_generation_ms": 0.28714,
+          "pass": false
+        },
+        "diverse": {
+          "statuses": [
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT",
+            "SUPPLY_DEFICIT"
+          ],
+          "completed_runs": 0,
+          "max_total_ms": 89.252055,
+          "max_generation_ms": 0.286378,
+          "pass": false
+        }
+      }
+    }
+  ],
+  "valid_reference_states": 5,
+  "reference_cost_pass": true,
+  "reference_pass_states": [
+    1,
+    14,
+    26,
+    27,
+    38
+  ],
+  "structural_supply_states": [
+    27
+  ],
+  "paired_two_candidate_states": [],
+  "cost_failure_where_supply_exists": [
+    27
+  ],
+  "decision": "INCONCLUSIVE_SUPPLY",
+  "admitted": false,
+  "aggregate": {
+    "raw_routes_including_references": 28,
+    "motion_feasible_including_references": 15,
+    "post_shortcut_distinct_including_references": 6,
+    "motion_feasible_extras": 10,
+    "distinct_extras": 1,
+    "rejection_tags": {
+      "raw_length": 9,
+      "raw_time": 12,
+      "raw_yaw": 11,
+      "shortcut_duplicate": 9
+    }
+  },
+  "no_new_simulation": true,
+  "no_kernel_change": true,
+  "limitations": [
+    "one static-scene development corpus, not independent experimental validation",
+    "shortcut duplicate is geometric collapse, not proof of observation loss",
+    "insufficient actual candidate counts cannot support fixed-count H3",
+    "state27 has a real alternative but timed-out evaluation; no partial gain accepted",
+    "no retries/case replacement, no thresholds relaxed"
+  ]
+}

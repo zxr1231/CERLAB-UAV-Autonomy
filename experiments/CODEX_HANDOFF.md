@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-12 I3-01A scope/contract complete; user requested BACKUP AND STOP. I3-01B registered, NOT executed. Resume there only when user requests; old all-Goal500ms gate remains failed.
+Last updated: 2026-10-12 I3-01B complete, NOT admitted; user requested finish backup. Next I3-01C bounded raw/shortcut observation-loss diagnostic, not yet registered or run.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -53,8 +53,9 @@ At this checkpoint no ROS, Gazebo, RViz or exploration instance is running.
 
 ## Git state at handoff
 
-The repositories are clean and their active branches are maintained in the user's
-GitHub account. The user has authorized pushes for completed project work.
+The user has authorized GitHub pushes. Local commits alone do not prove remote sync;
+consult the latest backup README/remote receipt. A previous push was not executed
+because automatic approval review hit a usage limit; report actual status explicitly.
 
 ```text
 parent branch: feat/i3-camera-evaluator
@@ -66,7 +67,7 @@ frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i3-camera-evaluator
-  commit c54078b2bba1928ee680a058b32127b0000ff361
+  commit 86ee5110f83c30561d462fca8ba6165cad77aae5
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -547,7 +548,7 @@ limits. Every incomplete2route attempt fallback; no padding or omitted failure d
 Equal caps != equal completed count: strictH3 requires matched actual2candidate cases.
 Same simplifier required across generators; later preservation ablations must be common.
 
-**STOP checkpoint per user request. Next ONLY on continuation: I3-01B registered minimal offline probe, not yet run.**
+**Historical registration for I3-01B (now completed; see current checkpoint below).**
 Read `I3_01B_MINIMAL_PROTOCOL.md/json`; use6 unchanged cases1/13/14/26/27/38;13is
 mandatory skip-negative (proposal8 rejected), remaining5 require exported-map/raw/graph
 revalidation. Reuse recordedA goal/pose, not rerun/camera-select a new Goal; map epoch
@@ -560,7 +561,37 @@ adequate supply but costsafety failure NO-GO. One batch; no favorable case/seed 
 Report and backup before any I3-02. Opportunities still need own later cost/H3 validation.
 No new novelty/performance rating from current protocol. 500ms is registered engineering
 budget, not universal hard UAV standard; any future change needs independent rationale.
-Protocol local backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_01A_2026-10-12/.
+I3-01A standalone archive was deferred by user; its documents/commits are included
+in the I3-01B checkpoint. Do not claim the separate I3_01A directory exists.
+
+**Current checkpoint: I3-01B COMPLETE, NOT admitted.**
+Read I3_01B_REPORT.md, RESULTS.json, VALIDATION.json and unchanged registered protocol.
+One6-state batch, sourceparent74cd188 /GP86ee511,6 C++ tests pass. Five valid references
+all finish within500ms; negative13never entersB or submits a path. Multi-route:
+1/14/26/38 have no distinct feasible alternative;27has one but its evaluation fails
+475ms scoring cutoff (total~478ms, correct fallback). Zero paired states complete2
+candidates under all repetitions. Overall INCONCLUSIVE_SUPPLY plus real cost failure
+at27; neither passes dual-route admission nor disproves research novelty/H3.
+28raw ->15motion-feasible ->6distinct including5references:10feasible extras,9geometric
+collapses,1distinct extra.13raw candidates fail motion constraints; reason tags overlap.
+State27operation cap10000produces4raw, not6, not proof no other routes exist.
+Completed scores match full same-model oracle; timed tests do not reuse oracle scores.
+No simulation or camera-kernel/default/online changes. Do not repeat/fill candidates.
+
+**Next: I3-01C bounded fixed-pool observation/simplification diagnosis.**
+Register before new analysis, use all saved motion-feasible raw variants (including9
+collapsed) with same frozen cases; compare raw/shortcut visible sets, gain/loss and
+motion cost. Geometric collapse alone does not prove observation loss; zero marginal
+is not empty visibility. Check whether retaining raw geometry would violate FINAL
+reference-relative motion limits. If no useful feasible observation value, stop this
+preservation route; if supported, separately design shared observation-preserving
+simplification for all controls, then retest supply/cost. No implicit core guidance,
+constraint relaxation, new seeds or third kernel tuning. Not yet registered/run.
+
+Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/.
+Backup target: /home/zxr2/下载/CERLAB_I3_Backups/I3_01B_2026-10-12/.
+User explicitly requests continue authorized task after answering mid-task questions;
+do not end the task merely to answer status. Finish current backup then report outcome.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PARITY-V1/.
 Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_00_V1_2026-10-12/.
 V2 raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PERFORMANCE-V2/.
