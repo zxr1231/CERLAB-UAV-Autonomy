@@ -196,6 +196,8 @@ def main():
     parser.add_argument("--mode", choices=("smoke", "full"), default="smoke")
     parser.add_argument("--timeout", type=float, default=240.0, help="wall seconds after planning starts")
     parser.add_argument("--rviz", action="store_true")
+    parser.add_argument("--simulator-launch", default="",
+                        help="explicit simulator launch file; default deployed start.launch")
     parser.add_argument("--ground-truth-mask", default="")
     parser.add_argument("--ground-truth-metadata", default="")
     parser.add_argument("--disable-coverage", action="store_true")
@@ -213,6 +215,9 @@ def main():
         parser.error(str(error))
     workspace = Path(args.workspace).resolve()
     project = workspace / "src/CERLAB-UAV-Autonomy"
+    simulator_launch = Path(args.simulator_launch).resolve() if args.simulator_launch else project / "uav_simulator/launch/start.launch"
+    if not simulator_launch.is_file():
+        raise RuntimeError("simulator launch missing: %s" % simulator_launch)
     default_mask = project / "experiments/benchmark_v2/masks/floorplan2_static_observable_v2.npz"
     default_metadata = project / "experiments/benchmark_v2/masks/floorplan2_static_observable_v2.metadata.json"
     if args.disable_coverage:
@@ -231,6 +236,7 @@ def main():
                                 args.path_gain_mode,
                                 ground_truth_mask, ground_truth_metadata)
     manifest["route_control_mode"] = args.route_control_mode
+    manifest["simulator_launch"] = {"path": str(simulator_launch), "sha256": sha256(simulator_launch)}
     atomic_write_json(output / "run.json", manifest)
     events_stream = (output / "runner_events.jsonl").open("x", encoding="utf-8")
     resource_monitor = ResourceMonitor(output)
@@ -252,8 +258,8 @@ def main():
                           stderr=subprocess.DEVNULL).returncode == 0:
             raise RuntimeError("ROS Master already exists; refuse duplicate benchmark")
         simulator_body = ("source %s/uav_simulator/gazeboSetup.bash\n"
-                          "exec roslaunch uav_simulator start.launch gazebo_seed:=%d gui:=%s" %
-                          (project, environment_seed, "true" if args.rviz else "false"))
+                          "exec roslaunch %s gazebo_seed:=%d gui:=%s" %
+                          (project, shlex.quote(str(simulator_launch)), environment_seed, "true" if args.rviz else "false"))
         simulator = Process("simulator", shell_command(workspace, simulator_body),
                             output / "simulator.log", event=event)
         processes.append(simulator)

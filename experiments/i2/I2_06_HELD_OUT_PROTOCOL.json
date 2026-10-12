@@ -1,0 +1,28 @@
+{
+  "schema": "i2-06-held-out-protocol-v1",
+  "experiment_id": "EXP-I2-06-HELD-OUT-SEED4-V1",
+  "environment_seed": 4,
+  "planner_seed": 4,
+  "timeout_wall_seconds": 480,
+  "route_control_mode": "distance_single",
+  "path_gain_mode": "unique_shadow",
+  "samples_per_third": 4,
+  "min_distance_m": 0.5,
+  "spacing_m": 0.25,
+  "yaw_spacing_rad": 0.1,
+  "minimum_valid": 8,
+  "minimum_per_third": 2,
+  "minimum_spearman_per_meter": 0.3,
+  "minimum_within_third_concordance": 0.6,
+  "minimum_orderable_pairs": 9,
+  "minimum_median_jaccard": 0.25,
+  "files": {
+    "experiments/i2/held_out_floorplan1.launch": "cd3c7524574857e1a812d2d40243b09a2141f1211f66c3c25091bb924ac5b4ac",
+    "uav_simulator/worlds/floorplan1/floorplan1_static.world": "9372b0c6193e971c8cd88152b245dd0ee33c575cebcfb0a3d6ac916996b00e81",
+    "autonomous_flight/cfg/dynamic_exploration/exploration_param.yaml": "257a37a5a7bf4384603d9a1ccc9a4cf2f480025948b3936acf578c4ddd8aa285",
+    "autonomous_flight/cfg/dynamic_exploration/mapping_param.yaml": "a0efc81649cce8f185ccca775a4820e1d4b23107c30d50868669f2eab215cd9a",
+    "autonomous_flight/cfg/dynamic_exploration/flight_base.yaml": "d8a7878b53b4c22605a687e02fef3e631cb8968f935fd2e2c427cb8c90225997",
+    "autonomous_flight/cfg/dynamic_exploration/planner_param.yaml": "7de582e43ecf82cb3216cb3fa2a822f4ac2d2af624b373598634467d4c54cfce",
+    "uav_simulator/urdf/quadcopter.urdf": "7ab0669339b8a1f9731f747d81a96c86191d70a6c74596092fec1b3ebaff7f91"
+  }
+}
