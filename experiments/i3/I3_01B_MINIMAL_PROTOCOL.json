@@ -1,0 +1,164 @@
+{
+  "protocol_id": "I3_01B_MINIMAL_TWO_STAGE_V1",
+  "status": "REGISTERED_NOT_EXECUTED",
+  "contract_sha256": "ca51e36217c4d71724c4370f60a394fa896f6056266d010f7ab8c5421a3c4aba",
+  "contract_file": "experiments/i3/I3_01A_CONTRACT.json",
+  "run_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548",
+  "route_log_sha256": "d3dcf3708c78757b214bdabe6f0dbed38b09eb2efd9c46665121aac09b2c08f0",
+  "mapping_yaml_sha256": "a0efc81649cce8f185ccca775a4820e1d4b23107c30d50868669f2eab215cd9a",
+  "snapshots": [
+    {
+      "sequence": 1,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000001",
+      "sha256": {
+        "planner.json": "0372f42b7bdbe3d1febbdd0aa00f5c25376a52703f0d9e26443d788cbb4056a1",
+        "map.bin": "62141d0670e7c39da5fc5e0e7f07a9fbb8ee0d0072e9d0a116cb8e993c7b6782",
+        "manifest.json": "ff20bce5124dfeb86f8d9bd4ecf1c654a5b1bf018d528a9d6c7dbec3e2790cc0"
+      },
+      "stage": "early",
+      "proposal_candidate": 0,
+      "goal_graph_id": 1,
+      "safety_accepted_at_recording": true,
+      "expected_control": "REFERENCE_REVALIDATION_REQUIRED",
+      "fixed_start_yaw": -0.00015759503438603009,
+      "fixed_start_position": [
+        0.00031056036874690333,
+        0.0005119831642866687,
+        0.9143923746490772
+      ],
+      "original_planning_map_version": 9400
+    },
+    {
+      "sequence": 13,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000013",
+      "sha256": {
+        "planner.json": "b3d1a1d7ed4f90aa348ec649a2071e160ed3339d3cff0bd5e5b0959c81234399",
+        "map.bin": "9d1abbd6f90305515db1c9b43ed7a11b53b8198651441d984476c1b52e74cd5b",
+        "manifest.json": "687757961fd7763a1148f20aae81fa90101f8e40f1fc672f3dca4d3e99225980"
+      },
+      "stage": "early",
+      "proposal_candidate": 8,
+      "goal_graph_id": 176,
+      "safety_accepted_at_recording": false,
+      "expected_control": "SKIP_B_NEGATIVE_CONTROL",
+      "fixed_start_yaw": -0.2784833284693248,
+      "fixed_start_position": [
+        0.3582542075491202,
+        -5.819319869257309,
+        0.8082740651285696
+      ],
+      "original_planning_map_version": 23495
+    },
+    {
+      "sequence": 14,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000014",
+      "sha256": {
+        "planner.json": "cd88bae7034ade3a517336c9c40da9f71a1e333a1644a4136bacb92879bf942c",
+        "map.bin": "874e561ae96b79771cc0ee70d7fdc7746396874ee72a4af49ac8af0c2ce5eb75",
+        "manifest.json": "71b2667c3afa13e992ba9a4ca662a72835d6e9c1ef332952549f52a1326cf716"
+      },
+      "stage": "middle",
+      "proposal_candidate": 6,
+      "goal_graph_id": 153,
+      "safety_accepted_at_recording": true,
+      "expected_control": "REFERENCE_REVALIDATION_REQUIRED",
+      "fixed_start_yaw": -0.2785021013036052,
+      "fixed_start_position": [
+        0.6212333101666118,
+        -5.873956642946847,
+        0.8009948678606797
+      ],
+      "original_planning_map_version": 23679
+    },
+    {
+      "sequence": 26,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000026",
+      "sha256": {
+        "planner.json": "76bd641b875f80055fe9f422139e3e868863424e70f459efd2f72df34683dc5b",
+        "map.bin": "76bd4251360067adb52073f98ea951848effcb3439eaaccb07354be193234dce",
+        "manifest.json": "e964881a713323c8340697d0c82e1724299b1da8ab1e4d8e3eca6314f6a30ef0"
+      },
+      "stage": "middle",
+      "proposal_candidate": 9,
+      "goal_graph_id": 301,
+      "safety_accepted_at_recording": true,
+      "expected_control": "REFERENCE_REVALIDATION_REQUIRED",
+      "fixed_start_yaw": -2.626427319867262,
+      "fixed_start_position": [
+        3.3183327400607885,
+        2.0552840021024714,
+        1.060217861226357
+      ],
+      "original_planning_map_version": 42223
+    },
+    {
+      "sequence": 27,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000027",
+      "sha256": {
+        "planner.json": "348a277dd47f7c156bd967983ca6555e1221bf3c14242dad6befc95a571ffd8b",
+        "map.bin": "6063cee79b53f72d142039b968836cbe388da644f9023eb3370afc5ee7cad601",
+        "manifest.json": "862f627a78ae0c23beaaf67660bdfd44bccc36140fae86aa982887aa16ff20a9"
+      },
+      "stage": "late",
+      "proposal_candidate": 4,
+      "goal_graph_id": 113,
+      "safety_accepted_at_recording": true,
+      "expected_control": "REFERENCE_REVALIDATION_REQUIRED",
+      "fixed_start_yaw": -1.1959849895169719,
+      "fixed_start_position": [
+        8.460323561235189,
+        3.4658083503536505,
+        0.7614078681168907
+      ],
+      "original_planning_map_version": 44703
+    },
+    {
+      "sequence": 38,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000038",
+      "sha256": {
+        "planner.json": "9812a019cac1ab52d0205faf96ac71824f080b58dcf5955fa3c427d29d664dc0",
+        "map.bin": "56ea5a166f99226279c7652ddea94d5e404d6c6131068fd36e28ed7e9bcd8a8c",
+        "manifest.json": "65cce16afadb206c6447e32bdf620730e24395f8958c7b15a8926c80c646b55c"
+      },
+      "stage": "late",
+      "proposal_candidate": 1,
+      "goal_graph_id": 161,
+      "safety_accepted_at_recording": true,
+      "expected_control": "REFERENCE_REVALIDATION_REQUIRED",
+      "fixed_start_yaw": 2.0556416717296675,
+      "fixed_start_position": [
+        -4.09142112445893,
+        6.399493628301736,
+        1.0018011728373897
+      ],
+      "original_planning_map_version": 73055
+    }
+  ],
+  "mode_order_odd": [
+    "camera_reference_only",
+    "generic_same_goal",
+    "diverse_same_goal"
+  ],
+  "mode_order_even": [
+    "camera_reference_only",
+    "diverse_same_goal",
+    "generic_same_goal"
+  ],
+  "warmups": 1,
+  "repeats": 3,
+  "minimum_valid_reference_states": 3,
+  "reference_strata_required": [
+    "early",
+    "middle",
+    "late"
+  ],
+  "minimum_paired_two_candidate_states": 3,
+  "paired_strata_required": [
+    "middle",
+    "late"
+  ],
+  "attempt_batches_max": 1,
+  "new_simulation": false,
+  "guidance_implemented_or_tested": false,
+  "old_failed_gates_superseded": false
+}

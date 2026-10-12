@@ -1,6 +1,6 @@
 # Budget policy draft — reviewable, not deployed
 
-Status2026-10-12: full original-Goal-set exact camera scoring NOT admitted.
+Status2026-10-12: historical draft retained; superseded for the planned two-stage probe by I3_01A_SCOPE_REVIEW.md and I3_01A_CONTRACT.json. Full original-Goal-set exact camera scoring remains NOT admitted.
 
 - Physical sensor, speed/acceleration, map/coverage and Legacy stop threshold500 remain.
 - Current test budget500ms counts map copy/model preparation/camera scoring. It does

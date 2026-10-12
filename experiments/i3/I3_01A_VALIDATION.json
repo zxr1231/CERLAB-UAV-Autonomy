@@ -1,0 +1,40 @@
+{
+  "schema": "i3-01a-protocol-validation-v1",
+  "scope_review": "COMPLETE_CONDITIONAL_OFFLINE_PROBE_ONLY",
+  "new_algorithm_implemented": false,
+  "new_experiments_run": false,
+  "new_budget_gate_passed": false,
+  "schema_and_budget_consistency": "PASS",
+  "frozen_inputs_hash_check": "PASS",
+  "fixed_cases": 6,
+  "recorded_safe_references": 5,
+  "rejected_negative_controls": [
+    13
+  ],
+  "source_parent_commit_at_review": "2e57d83a4df68b4b01ca3299f2b9283d2a854dba",
+  "source_sha256": {
+    "global_planner/include/global_planner/dep.cpp": "ad9da16495c5978fb28583bf5354bca045f59b95bef32ddbbe4d37b5fdce8182",
+    "global_planner/include/global_planner/routeControls.cpp": "8232e21978a5db6eee363c0516a85bafd1343e8c7a3e23e6920d1a5209d3234f",
+    "global_planner/include/global_planner/diagnosticSnapshot.cpp": "b3fe9a07b4d7b791155bfbb87cc2644b847ff9be2983b8827186285de7739913",
+    "autonomous_flight/include/autonomous_flight/simulation/dynamicExploration.cpp": "9d966c956aac7de61972db3d85d668a6830a0168658a38c2f5068951618c26d5",
+    "experiments/i2/I2_01_PROTOCOL.json": "9136d601b964fc273565e381c91da6075c33b7b47a4269d6664714df281d4f9d",
+    "experiments/i3/I3_00_SAME_SNAPSHOT_RESULTS.json": "397cf9915b9557bff7627e6e76d714d951260bfe1e13bfa0847061525ed93738"
+  },
+  "document_sha256": {
+    "I3_01A_SCOPE_REVIEW.md": "d76154767d33c03daa4a3a60dc372ead691ec4db7274aabc9fb65e659f85cd65",
+    "I3_01A_SOURCE_AUDIT.md": "cc1da1f275e9e8f804f548707ccadfe47f82bf05ef0e04cd0dc78bc71ba12406",
+    "I3_01A_CONTRACT.json": "ca51e36217c4d71724c4370f60a394fa896f6056266d010f7ab8c5421a3c4aba",
+    "I3_01B_MINIMAL_PROTOCOL.md": "2ff92fab4e79ad5104fa6912bc63b0bb820de0f3cff527c88d3543125674f8a6",
+    "I3_01B_MINIMAL_PROTOCOL.json": "ad832d4ed21a4eebf2f05c4b1b70608317de705d67b3b3d02bc3d3693a477d15"
+  },
+  "known_limitations": [
+    "scope narrowed explicitly, old all-Goal gates remain failed",
+    "common StageA distance_single/Legacy-score is not historical A* equivalent",
+    "equal caps do not prove equal completed candidate count",
+    "six reused development frames are not new independent validation",
+    "500ms is an engineering threshold, not universal UAV safety standard",
+    "no novelty/performance guarantee from two-stage organization"
+  ],
+  "control_count_consistency": "PASS_REFERENCE_ONLY_1_MULTI_2",
+  "user_requested_stop_after_backup": true
+}

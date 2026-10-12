@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-12 I3-00 same-snapshot actual-route budget audit complete; all-Goal exact scoring500ms still NO-GO. Next I3-01A explicit method-scope/two-stage review, not core guided implementation.
+Last updated: 2026-10-12 I3-01A scope/contract complete; user requested BACKUP AND STOP. I3-01B registered, NOT executed. Resume there only when user requests; old all-Goal500ms gate remains failed.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -528,16 +528,39 @@ not actual single-goal trials/admission. Exact duplicated pose fraction3–69% i
 reuse potential, not cache speedup or contribution. Do not conflate marginal0 with
 empty visible set.
 
-**Immediate next task: I3-01A method-scope review and concrete protocol proposal.**
-Recommend reviewing common Legacy goal selection -> same chosen Goal bounded camera
-route refinement, applied to single/K/diverse/guided controls equally. Original Legacy
-prefilter/goal/path-gain selection stays, but camera comparison Goal set becomes the
-one shared selected Goal. Must explicitly register changed method scope before coding;
-not passing/replacing failed all-Goal gate, not hiding endpoint/prefilter limitations.
-No performance claim from posthoc surrogates; real optional routes still need tests.
-Alternative if retaining all-Goal scope: separately register exact empty-observation /
-shared-pose feasibility, with no reference changes or budget inflation. Do NOT silently
-choose narrower camera scope or continue unbounded kernel tuning. No I3-02/03 yet.
+**I3-01A COMPLETE: explicit two-stage scope adopted for minimal offline probe only.**
+Read `i3/I3_01A_SCOPE_REVIEW.md`, CONTRACT.json, SOURCE_AUDIT.md and VALIDATION.json.
+CommonA is repaired distance_single generator + Legacy2m node/path gain/time scoring,
+NOT historical_legacy A* equivalence. Keep historical system baseline separate.
+A keeps originalprefilter/gain feedback/completion500; B only after existing completion
+logic says continueEXPLORING. No new live mode/algorithm has been implemented.
+
+B refines only one common safely selected Goal/terminalyaw, tau0 mandatory. First
+registered target2final candidates (reference+1real distinct alternative), rawpool6,
+old1.25motion ratios/+pi/2yaw, independent histories, camera5m exact model and full
+0.25m/0.1rad prospective sampling. This is an explicitly narrower goal-comparison
+scope, not passing old all-Goal budget or solving endpoint prefilter exclusions.
+SharedB500ms includes preparation/reference/anchor queries/generation/shortcut/sampling/
+scoring/finalvalidation/cleanup; gen50ms nested, scoringcutoff475ms, finalreserve25ms.
+StageA/localoptimizer separate; no whole-planner500ms claim. Tight proposed pose drift
+limits. Every incomplete2route attempt fallback; no padding or omitted failure denominator.
+Equal caps != equal completed count: strictH3 requires matched actual2candidate cases.
+Same simplifier required across generators; later preservation ablations must be common.
+
+**STOP checkpoint per user request. Next ONLY on continuation: I3-01B registered minimal offline probe, not yet run.**
+Read `I3_01B_MINIMAL_PROTOCOL.md/json`; use6 unchanged cases1/13/14/26/27/38;13is
+mandatory skip-negative (proposal8 rejected), remaining5 require exported-map/raw/graph
+revalidation. Reuse recordedA goal/pose, not rerun/camera-select a new Goal; map epoch
+is later export, not original decision replay. Isolated fixture tests only.
+Reference-only / generic /diverse controls, operation-limited supply diagnostic then
+actual inclusive500ms/nested50ms trials, warmup+3repeats, predeterminedorder. No guided
+or new core optimization/simulation. Require>=3valid refs spanning3strata and>=3paired
+actual2candidate states with middle+late represented; missing supply INCONCLUSIVE,
+adequate supply but costsafety failure NO-GO. One batch; no favorable case/seed replacement.
+Report and backup before any I3-02. Opportunities still need own later cost/H3 validation.
+No new novelty/performance rating from current protocol. 500ms is registered engineering
+budget, not universal hard UAV standard; any future change needs independent rationale.
+Protocol local backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_01A_2026-10-12/.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PARITY-V1/.
 Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_00_V1_2026-10-12/.
 V2 raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PERFORMANCE-V2/.

@@ -1,0 +1,125 @@
+{
+  "contract_id": "I3_TWO_STAGE_SCOPE_V1",
+  "status": "REGISTERED_FOR_MINIMAL_OFFLINE_PROBE_ONLY",
+  "implemented": false,
+  "stage_a": {
+    "generator": "repaired_distance_single",
+    "score": "legacy_node_sum_over_estimated_time_2m",
+    "historical_legacy_equivalent": false,
+    "goal_prefilter": "existing",
+    "gain_feedback": "existing_scored_node_legacy_gain",
+    "completion_gain_threshold": 500,
+    "completion_owner": "autonomous_flight_existing_CompletionGate",
+    "stage_b_entry_state": "EXPLORING",
+    "stage_b_skip": [
+      "A_UNSAFE",
+      "A_NO_PATH",
+      "A_RECOVERY_OR_FALLBACK",
+      "RETURNING_HOME",
+      "CONFIRMING_COMPLETE",
+      "SENSOR_STALE"
+    ]
+  },
+  "stage_b": {
+    "goal_policy": "same_single_stage_a_safely_accepted_goal",
+    "reference": "unchanged_tau0_and_raw_tau0",
+    "model": "mapper_matched_frozen_shadow_v1",
+    "terminal_yaw": "fixed_stage_a_goal_yaw",
+    "sampling": "route_translation_and_stationary_shortest_yaw_v1",
+    "translation_spacing_m": 0.25,
+    "yaw_spacing_rad": 0.1,
+    "desired_final_candidate_count": 2,
+    "raw_pool_cap": 6,
+    "alternative_length_ratio": 1.25,
+    "alternative_time_ratio": 1.25,
+    "additional_yaw_radians": 1.5707963267948966,
+    "motion_checks": [
+      "raw_vs_reference_raw",
+      "final_vs_reference_final"
+    ],
+    "heap_pop_cap_total": 10000,
+    "utility": "unique_visible_unknown_count/legacy_estimated_motion_time",
+    "strict_improvement_tolerance": 1e-09,
+    "tie": "reference",
+    "zero_reference_epsilon": 1e-06,
+    "independent_candidate_history": true,
+    "mutates_legacy_node_gain": false,
+    "consumes_dep_rng": false
+  },
+  "budgets": {
+    "stage_b_wall_ms": 500,
+    "generation_wall_ms_nested": 50,
+    "optional_scoring_cutoff_ms": 475,
+    "final_validation_reserved_ms": 25,
+    "overshoot_audit_ms": 25,
+    "counts": [
+      "context_preparation",
+      "snapshot_copy_if_needed",
+      "model_construction",
+      "reference_evaluation",
+      "anchor_visibility_queries",
+      "alternative_search",
+      "sampling",
+      "shortcut_trials",
+      "alternative_evaluation",
+      "final_validation",
+      "cleanup"
+    ],
+    "stage_a_in_stage_b_budget": false,
+    "whole_planner_500ms_claim": false,
+    "accept_refinement_if_position_drift_max_m": 0.25,
+    "accept_refinement_if_yaw_drift_max_rad": 0.1
+  },
+  "multi_route_policy": {
+    "no_padding": true,
+    "complete_two_or_fallback": true,
+    "fallback_requires_fresh_safety": true,
+    "incomplete_candidate_gain": "invalid_empty",
+    "supply_deficit_kept_in_denominator": true,
+    "same_caps_not_same_actual_count": true
+  },
+  "controls": [
+    "historical_legacy",
+    "common_A_only",
+    "camera_reference_only",
+    "generic_same_goal",
+    "diverse_same_goal",
+    "opportunity_same_goal",
+    "naive_marginal_insertion"
+  ],
+  "primary_claim": "baseline-route-conditioned observation-opportunity route construction, not new goal selection or voxel-union theory",
+  "next_task": "I3-01B_MINIMAL_OFFLINE_PROBE",
+  "no_online_mode_added": true,
+  "control_targets": {
+    "historical_legacy": {
+      "stage_a": "historical_legacy",
+      "camera_candidates": 0
+    },
+    "common_A_only": {
+      "stage_a": "repaired_distance_single_legacy_score",
+      "camera_candidates": 0
+    },
+    "camera_reference_only": {
+      "stage_a": "repaired_distance_single_legacy_score",
+      "camera_candidates": 1
+    },
+    "generic_same_goal": {
+      "stage_a": "repaired_distance_single_legacy_score",
+      "camera_candidates": 2
+    },
+    "diverse_same_goal": {
+      "stage_a": "repaired_distance_single_legacy_score",
+      "camera_candidates": 2
+    },
+    "opportunity_same_goal": {
+      "stage_a": "repaired_distance_single_legacy_score",
+      "camera_candidates": 2,
+      "minimal_probe_includes": false
+    },
+    "naive_marginal_insertion": {
+      "stage_a": "repaired_distance_single_legacy_score",
+      "camera_candidates": 2,
+      "minimal_probe_includes": false
+    }
+  }
+}
