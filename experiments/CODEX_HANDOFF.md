@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-12 I3-00 V2 bounded performance batch complete; exact parity passes,500ms fixed-batch admission still fails. Next same-snapshot workload/budget specification, no further unbounded kernel optimization.
+Last updated: 2026-10-12 I3-00 same-snapshot actual-route budget audit complete; all-Goal exact scoring500ms still NO-GO. Next I3-01A explicit method-scope/two-stage review, not core guided implementation.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -66,7 +66,7 @@ frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i3-camera-evaluator
-  commit ece80ea0a80620166cdc96487c5313821688162e
+  commit c54078b2bba1928ee680a058b32127b0000ff361
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -504,17 +504,46 @@ Finalprefixp95=60.432ms,max65.747ms. Fixed30 probe still FAIL500ms; no admission
 Read `i3/I3_00_PERFORMANCE_REPORT.md`, protocol and results. No online or guided
 method changes. Peak611.69MiB includes12full snapshots, not per-map online overhead.
 
-**Immediate next task:** pre-register bounded same-snapshot realistic candidate
-workload and explicit sampling/construction/whole-plan budget. Current probe cycles
-12executed-prefix snapshots, not30actual routes in one state; no claim all online
-plans exceed500ms. Preserve failed probe; new definition cannot secretly relax
-budget only for proposed method or change frozen data. All controls share candidate /
-compute rules. No further kernel optimization under completed2-intervention protocol,
-no direct I3-02/03 guided-route implementation before budget problem resolved.
+The next same-snapshot workload/budget audit is now COMPLETE (protocolca76b50).
+Read `i3/I3_00_SAME_SNAPSHOT_REPORT.md`, protocol/JSON/results/validation and
+`I3_BUDGET_POLICY_DRAFT.md`.6 states1/13/14/26/27/38 of existing held-out run; all51
+stored distance-reference routes,7862prospective poses. No kernel optimization.
+Fixed planning pose/yaw from route_controls; map is later export snapshot, not exact
+original-time replay. Explicit0.25m translation /0.1rad stationary shortest-yaw
+sampling is a PROSPECTIVE hypothesis, not actual B-spline reconstruction.
+
+All-reference prep+scoring maxima196/1676/1767/2788/3425/1871ms. Only state1passes500.
+Camera prep about37ms; most cost full long routes, not short executed prefixes.
+Candidate counts15/30 unavailable (no duplicate padding); lower-count prefixes omit
+Goals and are ONLY diagnostics. Even translation-only secondary is1.04–2.41s in
+non-start states, not an excuse to drop yaw samples. No all-Goal budget admission.
+500ms cooperative guard rejected all incomplete Goal sets, maxovershoot0.218ms;
+4sampler and2extreme-budget integration tests passed. Test tool only, not online.
+
+Snapshot13 selected_candidate=-1 while eventproposal8 because final new-map safety
+validation rejected/cleared bestPath. Confirmed SOURCE behavior, NOT exporter bug.
+Retain rejected state in registered audit; distinguish proposal vs accepted/executed.
+Optional posthoc selected-Legacy-proposal cost surrogates75–280ms include preparation,
+not actual single-goal trials/admission. Exact duplicated pose fraction3–69% is only
+reuse potential, not cache speedup or contribution. Do not conflate marginal0 with
+empty visible set.
+
+**Immediate next task: I3-01A method-scope review and concrete protocol proposal.**
+Recommend reviewing common Legacy goal selection -> same chosen Goal bounded camera
+route refinement, applied to single/K/diverse/guided controls equally. Original Legacy
+prefilter/goal/path-gain selection stays, but camera comparison Goal set becomes the
+one shared selected Goal. Must explicitly register changed method scope before coding;
+not passing/replacing failed all-Goal gate, not hiding endpoint/prefilter limitations.
+No performance claim from posthoc surrogates; real optional routes still need tests.
+Alternative if retaining all-Goal scope: separately register exact empty-observation /
+shared-pose feasibility, with no reference changes or budget inflation. Do NOT silently
+choose narrower camera scope or continue unbounded kernel tuning. No I3-02/03 yet.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PARITY-V1/.
 Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_00_V1_2026-10-12/.
 V2 raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PERFORMANCE-V2/.
 V2 backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_00_V2_2026-10-12/.
+Same-snapshot raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-SAME-SNAPSHOT-V1/.
+Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_00_SAME_SNAPSHOT_2026-10-12/.
 
 ## Innovation-1 isolation rules
 
