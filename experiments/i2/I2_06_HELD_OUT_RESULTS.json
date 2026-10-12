@@ -1,0 +1,669 @@
+{
+  "schema": "i2-06-held-out-gate-v1",
+  "run_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548",
+  "protocol_sha256": "bfe04d66d6864d2a76e881b9681a68f0a52e59ac89a4faa251ffd0a190aae4ff",
+  "eligible_count": 69,
+  "selected_count": 12,
+  "valid_count": 12,
+  "stage_counts": {
+    "early": 4,
+    "middle": 4,
+    "late": 4
+  },
+  "errors": [],
+  "actual_integrity": {
+    "schema": "cerlab-r2-actual-observation-v1",
+    "run_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548",
+    "provenance": "map_manager_sensor_observation_delta_first_observation_union",
+    "artificial_clear_included": false,
+    "interval_count": 73,
+    "valid_interval_count": 73,
+    "message_count": 7160,
+    "delta_address_count": 1672014,
+    "global_unique_address_count": 1672014,
+    "logged_vs_timestamp_association_mismatch_count": 47,
+    "unassociated_address_count": 24789,
+    "unassociated_addresses_by_phase": {
+      "before_first": 24789,
+      "between_intervals": 0,
+      "after_final": 0
+    },
+    "status": "VALID",
+    "errors": [],
+    "intervals_with_observation": 72
+  },
+  "models": {
+    "legacy": {
+      "count": 12,
+      "per_meter_spearman": 0.4358308795846447,
+      "per_second_spearman": 0.36319239965387057,
+      "count_spearman": 0.653746319376967,
+      "median_jaccard": 0.11110265385486484,
+      "mean_jaccard": 0.23807524735639005,
+      "zero_actual_count": 2,
+      "orderable_pair_count": 18,
+      "concordance": 0.6388888888888888
+    },
+    "sensor_shadow": {
+      "count": 12,
+      "per_meter_spearman": 0.8596491228070173,
+      "per_second_spearman": 0.950877192982456,
+      "count_spearman": 0.950877192982456,
+      "median_jaccard": 0.8417639583131662,
+      "mean_jaccard": 0.7973191666742145,
+      "zero_actual_count": 2,
+      "orderable_pair_count": 18,
+      "concordance": 0.7222222222222222
+    }
+  },
+  "decisions": {
+    "legacy": {
+      "status": "FAIL",
+      "checks": {
+        "telemetry": true,
+        "enough_comparisons": true,
+        "each_third": true,
+        "per_meter_rank": true,
+        "orderable_pairs": true,
+        "within_third_order": true,
+        "set_overlap": false
+      }
+    },
+    "sensor_shadow": {
+      "status": "PASS",
+      "checks": {
+        "telemetry": true,
+        "enough_comparisons": true,
+        "each_third": true,
+        "per_meter_rank": true,
+        "orderable_pairs": true,
+        "within_third_order": true,
+        "set_overlap": true
+      }
+    }
+  },
+  "by_stage": {
+    "early": {
+      "legacy": {
+        "count": 4,
+        "per_meter_spearman": -0.3999999999999999,
+        "per_second_spearman": -0.19999999999999996,
+        "count_spearman": 0.19999999999999996,
+        "median_jaccard": 0.12156677229765478,
+        "mean_jaccard": 0.12825228825807564,
+        "zero_actual_count": 0,
+        "orderable_pair_count": 6,
+        "concordance": 0.3333333333333333
+      },
+      "sensor_shadow": {
+        "count": 4,
+        "per_meter_spearman": 0.19999999999999996,
+        "per_second_spearman": 0.9999999999999998,
+        "count_spearman": 0.7999999999999998,
+        "median_jaccard": 0.6659649047669037,
+        "mean_jaccard": 0.6554072514355542,
+        "zero_actual_count": 0,
+        "orderable_pair_count": 6,
+        "concordance": 0.5
+      }
+    },
+    "middle": {
+      "legacy": {
+        "count": 4,
+        "per_meter_spearman": 0.7745966692414834,
+        "per_second_spearman": 0.7745966692414834,
+        "count_spearman": 0.7745966692414834,
+        "median_jaccard": 0.0073874413497055005,
+        "mean_jaccard": 0.25369372067485274,
+        "zero_actual_count": 1,
+        "orderable_pair_count": 6,
+        "concordance": 0.75
+      },
+      "sensor_shadow": {
+        "count": 4,
+        "per_meter_spearman": 0.7999999999999998,
+        "per_second_spearman": 0.7999999999999998,
+        "count_spearman": 0.7999999999999998,
+        "median_jaccard": 0.8180283794690575,
+        "mean_jaccard": 0.8045436761010474,
+        "zero_actual_count": 1,
+        "orderable_pair_count": 6,
+        "concordance": 0.8333333333333334
+      }
+    },
+    "late": {
+      "legacy": {
+        "count": 4,
+        "per_meter_spearman": 0.7999999999999998,
+        "per_second_spearman": 0.9999999999999998,
+        "count_spearman": 0.7999999999999998,
+        "median_jaccard": 0.15167064138769087,
+        "mean_jaccard": 0.33227973313624176,
+        "zero_actual_count": 1,
+        "orderable_pair_count": 6,
+        "concordance": 0.8333333333333334
+      },
+      "sensor_shadow": {
+        "count": 4,
+        "per_meter_spearman": 0.7999999999999998,
+        "per_second_spearman": 0.9999999999999998,
+        "count_spearman": 0.9999999999999998,
+        "median_jaccard": 0.9419724813822127,
+        "mean_jaccard": 0.9320065724860421,
+        "zero_actual_count": 1,
+        "orderable_pair_count": 6,
+        "concordance": 0.8333333333333334
+      }
+    }
+  },
+  "intervals": [
+    {
+      "interval_id": 1,
+      "stage": "early",
+      "executed_distance": 0.99877942027801,
+      "duration_sim": 5.329000000000001,
+      "actual_count": 1497,
+      "actual_full_count": 8391,
+      "actual_per_meter": 1498.829440822189,
+      "actual_per_second": 280.91574404203413,
+      "legacy": {
+        "predicted_count": 851,
+        "actual_count": 1497,
+        "intersection_count": 499,
+        "precision": 0.5863689776733255,
+        "recall": 0.3333333333333333,
+        "jaccard": 0.269875608436993,
+        "count_error": -646,
+        "absolute_count_error": 646,
+        "relative_count_error": 0.4315297261189045,
+        "predicted_per_meter": 852.0399827252392,
+        "predicted_per_second": 159.69224995308687
+      },
+      "sensor_shadow": {
+        "predicted_count": 4371,
+        "actual_count": 1497,
+        "intersection_count": 1493,
+        "precision": 0.3415694349119195,
+        "recall": 0.9973279893119572,
+        "jaccard": 0.34125714285714287,
+        "count_error": 2874,
+        "absolute_count_error": 2874,
+        "relative_count_error": 1.9198396793587174,
+        "predicted_per_meter": 4376.341673903667,
+        "predicted_per_second": 820.2289360105084
+      }
+    },
+    {
+      "interval_id": 8,
+      "stage": "early",
+      "executed_distance": 4.872857820378159,
+      "duration_sim": 11.350999999999999,
+      "actual_count": 10589,
+      "actual_full_count": 61924,
+      "actual_per_meter": 2173.057452182801,
+      "actual_per_second": 932.8693507179985,
+      "legacy": {
+        "predicted_count": 1813,
+        "actual_count": 10589,
+        "intersection_count": 1693,
+        "precision": 0.9338113623827909,
+        "recall": 0.15988289734630276,
+        "jaccard": 0.15809132505369317,
+        "count_error": -8776,
+        "absolute_count_error": 8776,
+        "relative_count_error": 0.8287845877797715,
+        "predicted_per_meter": 372.06092745371785,
+        "predicted_per_second": 159.72161043079907
+      },
+      "sensor_shadow": {
+        "predicted_count": 13572,
+        "actual_count": 10589,
+        "intersection_count": 10349,
+        "precision": 0.7625257883878573,
+        "recall": 0.9773349702521484,
+        "jaccard": 0.7492759918911092,
+        "count_error": 2983,
+        "absolute_count_error": 2983,
+        "relative_count_error": 0.2817074322410048,
+        "predicted_per_meter": 2785.2238871493983,
+        "predicted_per_second": 1195.6655801250993
+      }
+    },
+    {
+      "interval_id": 16,
+      "stage": "early",
+      "executed_distance": 3.116817803041061,
+      "duration_sim": 9.852999999999994,
+      "actual_count": 1618,
+      "actual_full_count": 9654,
+      "actual_per_meter": 519.1192114025166,
+      "actual_per_second": 164.21394499137327,
+      "legacy": {
+        "predicted_count": 181,
+        "actual_count": 1618,
+        "intersection_count": 141,
+        "precision": 0.7790055248618785,
+        "recall": 0.08714462299134734,
+        "jaccard": 0.0850422195416164,
+        "count_error": -1437,
+        "absolute_count_error": 1437,
+        "relative_count_error": 0.8881334981458591,
+        "predicted_per_meter": 58.072050224879796,
+        "predicted_per_second": 18.370039581853252
+      },
+      "sensor_shadow": {
+        "predicted_count": 2652,
+        "actual_count": 1618,
+        "intersection_count": 1572,
+        "precision": 0.5927601809954751,
+        "recall": 0.9715698393077874,
+        "jaccard": 0.5826538176426983,
+        "count_error": 1034,
+        "absolute_count_error": 1034,
+        "relative_count_error": 0.6390605686032138,
+        "predicted_per_meter": 850.8678298142609,
+        "predicted_per_second": 269.15660205013717
+      }
+    },
+    {
+      "interval_id": 23,
+      "stage": "early",
+      "executed_distance": 1.7427271515954588,
+      "duration_sim": 2.8549999999999898,
+      "actual_count": 4297,
+      "actual_full_count": 23962,
+      "actual_per_meter": 2465.6757060714385,
+      "actual_per_second": 1505.0788091068355,
+      "legacy": {
+        "predicted_count": 0,
+        "actual_count": 4297,
+        "intersection_count": 0,
+        "precision": null,
+        "recall": 0.0,
+        "jaccard": 0.0,
+        "count_error": -4297,
+        "absolute_count_error": 4297,
+        "relative_count_error": 1.0,
+        "predicted_per_meter": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "sensor_shadow": {
+        "predicted_count": 4395,
+        "actual_count": 4297,
+        "intersection_count": 4231,
+        "precision": 0.9626848691695108,
+        "recall": 0.9846404468233652,
+        "jaccard": 0.9484420533512665,
+        "count_error": 98,
+        "absolute_count_error": 98,
+        "relative_count_error": 0.022806609262276005,
+        "predicted_per_meter": 2521.9094084672965,
+        "predicted_per_second": 1539.4045534150669
+      }
+    },
+    {
+      "interval_id": 24,
+      "stage": "middle",
+      "executed_distance": 3.361260547983649,
+      "duration_sim": 10.75800000000001,
+      "actual_count": 9945,
+      "actual_full_count": 58422,
+      "actual_per_meter": 2958.7114292481137,
+      "actual_per_second": 924.4283324037917,
+      "legacy": {
+        "predicted_count": 220,
+        "actual_count": 9945,
+        "intersection_count": 148,
+        "precision": 0.6727272727272727,
+        "recall": 0.014881850175967822,
+        "jaccard": 0.014774882699411001,
+        "count_error": -9725,
+        "absolute_count_error": 9725,
+        "relative_count_error": 0.9778783308195073,
+        "predicted_per_meter": 65.45163543836954,
+        "predicted_per_second": 20.44989775051123
+      },
+      "sensor_shadow": {
+        "predicted_count": 12103,
+        "actual_count": 9945,
+        "intersection_count": 9776,
+        "precision": 0.807733619763695,
+        "recall": 0.9830065359477124,
+        "jaccard": 0.7966101694915254,
+        "count_error": 2158,
+        "absolute_count_error": 2158,
+        "relative_count_error": 0.2169934640522876,
+        "predicted_per_meter": 3600.7324714117567,
+        "predicted_per_second": 1125.02323852017
+      }
+    },
+    {
+      "interval_id": 31,
+      "stage": "middle",
+      "executed_distance": 1.7472515692337514,
+      "duration_sim": 2.85299999999998,
+      "actual_count": 2610,
+      "actual_full_count": 16227,
+      "actual_per_meter": 1493.7745920266093,
+      "actual_per_second": 914.8264984227193,
+      "legacy": {
+        "predicted_count": 0,
+        "actual_count": 2610,
+        "intersection_count": 0,
+        "precision": null,
+        "recall": 0.0,
+        "jaccard": 0.0,
+        "count_error": -2610,
+        "absolute_count_error": 2610,
+        "relative_count_error": 1.0,
+        "predicted_per_meter": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "sensor_shadow": {
+        "predicted_count": 3107,
+        "actual_count": 2610,
+        "intersection_count": 2609,
+        "precision": 0.8397167685870615,
+        "recall": 0.9996168582375479,
+        "jaccard": 0.8394465894465895,
+        "count_error": 497,
+        "absolute_count_error": 497,
+        "relative_count_error": 0.19042145593869733,
+        "predicted_per_meter": 1778.22132468455,
+        "predicted_per_second": 1089.0290921836738
+      }
+    },
+    {
+      "interval_id": 40,
+      "stage": "middle",
+      "executed_distance": 1.6108174320694362,
+      "duration_sim": 2.5050000000000523,
+      "actual_count": 0,
+      "actual_full_count": 0,
+      "actual_per_meter": 0.0,
+      "actual_per_second": 0.0,
+      "legacy": {
+        "predicted_count": 0,
+        "actual_count": 0,
+        "intersection_count": 0,
+        "precision": null,
+        "recall": null,
+        "jaccard": 1.0,
+        "count_error": 0,
+        "absolute_count_error": 0,
+        "relative_count_error": null,
+        "predicted_per_meter": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "sensor_shadow": {
+        "predicted_count": 0,
+        "actual_count": 0,
+        "intersection_count": 0,
+        "precision": null,
+        "recall": null,
+        "jaccard": 1.0,
+        "count_error": 0,
+        "absolute_count_error": 0,
+        "relative_count_error": null,
+        "predicted_per_meter": 0.0,
+        "predicted_per_second": 0.0
+      }
+    },
+    {
+      "interval_id": 47,
+      "stage": "middle",
+      "executed_distance": 1.729184449272403,
+      "duration_sim": 2.77800000000002,
+      "actual_count": 1877,
+      "actual_full_count": 11414,
+      "actual_per_meter": 1085.4828128889283,
+      "actual_per_second": 675.6659467242572,
+      "legacy": {
+        "predicted_count": 0,
+        "actual_count": 1877,
+        "intersection_count": 0,
+        "precision": null,
+        "recall": 0.0,
+        "jaccard": 0.0,
+        "count_error": -1877,
+        "absolute_count_error": 1877,
+        "relative_count_error": 1.0,
+        "predicted_per_meter": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "sensor_shadow": {
+        "predicted_count": 3113,
+        "actual_count": 1877,
+        "intersection_count": 1836,
+        "precision": 0.5897847735303565,
+        "recall": 0.9781566329248801,
+        "jaccard": 0.5821179454660749,
+        "count_error": 1236,
+        "absolute_count_error": 1236,
+        "relative_count_error": 0.6584976025572722,
+        "predicted_per_meter": 1800.2706427934115,
+        "predicted_per_second": 1120.59035277177
+      }
+    },
+    {
+      "interval_id": 48,
+      "stage": "late",
+      "executed_distance": 3.4296540706781427,
+      "duration_sim": 12.317000000000007,
+      "actual_count": 6887,
+      "actual_full_count": 43701,
+      "actual_per_meter": 2008.0742424959026,
+      "actual_per_second": 559.145895916213,
+      "legacy": {
+        "predicted_count": 236,
+        "actual_count": 6887,
+        "intersection_count": 179,
+        "precision": 0.7584745762711864,
+        "recall": 0.02599099753158124,
+        "jaccard": 0.025777649769585253,
+        "count_error": -6651,
+        "absolute_count_error": 6651,
+        "relative_count_error": 0.9657325395673008,
+        "predicted_per_meter": 68.81160465065093,
+        "predicted_per_second": 19.160509864415026
+      },
+      "sensor_shadow": {
+        "predicted_count": 7897,
+        "actual_count": 6887,
+        "intersection_count": 6767,
+        "precision": 0.8569076864632139,
+        "recall": 0.9825758675765935,
+        "jaccard": 0.844081327179743,
+        "count_error": 1010,
+        "absolute_count_error": 1010,
+        "relative_count_error": 0.1466531145636707,
+        "predicted_per_meter": 2302.5645844330106,
+        "predicted_per_second": 641.1463830478197
+      }
+    },
+    {
+      "interval_id": 56,
+      "stage": "late",
+      "executed_distance": 4.88634092712767,
+      "duration_sim": 8.30400000000003,
+      "actual_count": 6810,
+      "actual_full_count": 40622,
+      "actual_per_meter": 1393.680895696959,
+      "actual_per_second": 820.0867052023091,
+      "legacy": {
+        "predicted_count": 1148,
+        "actual_count": 6810,
+        "intersection_count": 1134,
+        "precision": 0.9878048780487805,
+        "recall": 0.16651982378854627,
+        "jaccard": 0.16617819460726846,
+        "count_error": -5662,
+        "absolute_count_error": 5662,
+        "relative_count_error": 0.831424375917768,
+        "predicted_per_meter": 234.94062676359894,
+        "predicted_per_second": 138.24662813102069
+      },
+      "sensor_shadow": {
+        "predicted_count": 6728,
+        "actual_count": 6810,
+        "intersection_count": 6618,
+        "precision": 0.9836504161712247,
+        "recall": 0.9718061674008811,
+        "jaccard": 0.9563583815028902,
+        "count_error": -82,
+        "absolute_count_error": 82,
+        "relative_count_error": 0.012041116005873716,
+        "predicted_per_meter": 1376.8994223567017,
+        "predicted_per_second": 810.2119460500934
+      }
+    },
+    {
+      "interval_id": 66,
+      "stage": "late",
+      "executed_distance": 1.6111609927387067,
+      "duration_sim": 2.507000000000005,
+      "actual_count": 0,
+      "actual_full_count": 17,
+      "actual_per_meter": 0.0,
+      "actual_per_second": 0.0,
+      "legacy": {
+        "predicted_count": 0,
+        "actual_count": 0,
+        "intersection_count": 0,
+        "precision": null,
+        "recall": null,
+        "jaccard": 1.0,
+        "count_error": 0,
+        "absolute_count_error": 0,
+        "relative_count_error": null,
+        "predicted_per_meter": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "sensor_shadow": {
+        "predicted_count": 0,
+        "actual_count": 0,
+        "intersection_count": 0,
+        "precision": null,
+        "recall": null,
+        "jaccard": 1.0,
+        "count_error": 0,
+        "absolute_count_error": 0,
+        "relative_count_error": null,
+        "predicted_per_meter": 0.0,
+        "predicted_per_second": 0.0
+      }
+    },
+    {
+      "interval_id": 73,
+      "stage": "late",
+      "executed_distance": 4.1496339698932045,
+      "duration_sim": 6.576000000000022,
+      "actual_count": 8750,
+      "actual_full_count": 47935,
+      "actual_per_meter": 2108.619715252907,
+      "actual_per_second": 1330.5961070559567,
+      "legacy": {
+        "predicted_count": 1207,
+        "actual_count": 8750,
+        "intersection_count": 1201,
+        "precision": 0.9950289975144988,
+        "recall": 0.13725714285714286,
+        "jaccard": 0.1371630881681133,
+        "count_error": -7543,
+        "absolute_count_error": 7543,
+        "relative_count_error": 0.8620571428571429,
+        "predicted_per_meter": 290.8690281497439,
+        "predicted_per_second": 183.5462287104617
+      },
+      "sensor_shadow": {
+        "predicted_count": 9005,
+        "actual_count": 8750,
+        "intersection_count": 8544,
+        "precision": 0.9488062187673515,
+        "recall": 0.9764571428571429,
+        "jaccard": 0.9275865812615351,
+        "count_error": 255,
+        "absolute_count_error": 255,
+        "relative_count_error": 0.029142857142857144,
+        "predicted_per_meter": 2170.070918383135,
+        "predicted_per_second": 1369.3734793187302
+      }
+    }
+  ],
+  "raw_input_sha256": {
+    "run.json": "2d4e07bb7b6ea0484b5f4436aa3fc3448b8abe1a80a481843e9563c4eabfe224",
+    "execution_intervals.csv": "f8d854e138649be346ece39a639257d1d3023f3bf7fb8620fd81c80f4c252ac9",
+    "trajectory.csv": "d50315c09230459e7c80190b646e52254d7053a0be65957c4d4a2f9997534270",
+    "observation_deltas.jsonl": "24908c5547e78cc68f7b76875245e1cbe277662eb622027fc293361b282ceae8",
+    "planning.csv": "b4b60db47cfd35796922c2af666257dd9c0d9d2d6db0b579488f768acf52dbda",
+    "route_controls.jsonl": "d3dcf3708c78757b214bdabe6f0dbed38b09eb2efd9c46665121aac09b2c08f0"
+  },
+  "snapshot_file_sha256": {
+    "execution_000001": {
+      "planner.json": "17956e13b3e51f0d7c5ad1eb855015bbf46806b1507968c87bb27b13dbee1bf8",
+      "map.bin": "e10164f38ebf080032071792f5c13aa3fd6b27549f56324896a0dd6e554e2761",
+      "manifest.json": "ee33988f66ad5e99c64d6d12fafa3b890c3777ffcadef0b77519ab4938e0af9c"
+    },
+    "execution_000008": {
+      "planner.json": "a01df1f9aaced093a458a2873a3ab7418d44ab0f68723c4a1c167555ea8864bd",
+      "map.bin": "2c1513f7198d740b38d0bc40ecfe1e1268d4a0c773394050a66bb8473f2892c5",
+      "manifest.json": "b966fb80bf537bfc0dedd81b27e8e6df5e72d2e678ba5b09de375bb37a833589"
+    },
+    "execution_000016": {
+      "planner.json": "1ac6ab5b3bcda8f0fcdc4e292c3fc449f428f1260370dcb807e554e638b581f3",
+      "map.bin": "a1762825a5b38f814d048847562630bb970ea4cd48aab078687cd4b39b7f50c3",
+      "manifest.json": "951b69d0f44f37b4de9e8a9b48f8c1af84fa2a7d5618b868c2a14f5fa6d5ff47"
+    },
+    "execution_000023": {
+      "planner.json": "e202dd41ad8b2cbb89d8ee524716ed54116de949d490f3d1a96a77d32da35ed4",
+      "map.bin": "731c07f6a51b40bf47cbaaa98482a6ee038dc32af8fecf0c3dbcc5c33939ee74",
+      "manifest.json": "2626a19fd7637dddf97d4bd3ec6a3b08dce19b7c42d8db2c44239382c47c605a"
+    },
+    "execution_000024": {
+      "planner.json": "3f35c49ffd8eaa67227104b406afde0feaf9e824e481a82a94088f6424edbce7",
+      "map.bin": "788ac240ac015d52bc75e5c5ca2f42ba24c7dfa799df5ea27ba9cede34d724d0",
+      "manifest.json": "808b53f437c63a56175932156b4afc113575f16555e8dbbd027f65ee542a656d"
+    },
+    "execution_000031": {
+      "planner.json": "e936715872a6db05bfb61e7183143885bce53aa1b70aff2f3e2af21fff362c8f",
+      "map.bin": "5dcc3f14879bf1b5a1749716ed655ebd48913e1f966db239550e361331bed0a6",
+      "manifest.json": "3a4b4d293b31e910b2f369c983b5d99446487e326349d561ca7c0e4661384924"
+    },
+    "execution_000040": {
+      "planner.json": "83ed4c78d8cf2678c04cbe6c632eae65615fd4e6a3a1766c185e396b035713d9",
+      "map.bin": "795505dc8dc33805022ca27ca6da372bd7de5558bf8c1badb32d014e9e240dbb",
+      "manifest.json": "0b5a019fb6a80c8082364f9cb448850c7849cde80bcc8fb2cc0544cc543bcb4e"
+    },
+    "execution_000047": {
+      "planner.json": "27708059082dce04228a3200e3662bdf11c547376d7455711c15d33ed521e38e",
+      "map.bin": "d1bf2cab6c4d85eed999682e44fcc0ee78e67b53c8914c54b2ff2b7636c5b85e",
+      "manifest.json": "4e754085a20932768ed636630dec919e183cc153646749bcf2b871d007797775"
+    },
+    "execution_000048": {
+      "planner.json": "2d6e4d25478b2bd81e115e3f74a24d1cfe022f0e34520bf4cd4ba7d3fd0fe0bc",
+      "map.bin": "9066900f28418aaa842dd81c5223642c69403b286c3b81705a077f7450051aa1",
+      "manifest.json": "916b7ea2e351c39345113338c5e07fede4362e8a8b9f11b3ebef76cbb8798a9a"
+    },
+    "execution_000056": {
+      "planner.json": "27688a11a38e0f40c9aa203fe64ff583a1a5919a84f74a7ec4fae375c6eaf7b6",
+      "map.bin": "d2e00443403d15a32a194eb09e9cfd6efb72094e8a71c81a59b5a30a49350d81",
+      "manifest.json": "9fd128deaf956184eb9ad16f935cabab4c577f2b6bd0862acf7d183ea3ef1c86"
+    },
+    "execution_000066": {
+      "planner.json": "b225cc3c872b4da1f3faccac75335895e989fcbc023bc19e81fcf3983bae1a92",
+      "map.bin": "9a603b61068b155de96eb5e3849380be2dc247d691e32df06dbace1e90ae716e",
+      "manifest.json": "69f545579313c200f2585b6e4fdcea850cf211c89ef60d549ce703df9514b3ee"
+    },
+    "execution_000073": {
+      "planner.json": "347a852cfba34c9847b6984cbbd01f8278e0899c216cb135326eaa3dcf5ecab8",
+      "map.bin": "9185aabb0108d3e0db61051dfe24fb1861146f3332c2a74d3fa178a57251be98",
+      "manifest.json": "d1118757e0d2aa57c3f3b4f72a9cfaf1b792b385d786f4d8dd31c97c0eafb853"
+    }
+  },
+  "limitations": [
+    "one dependent executed-prefix sample per interval, not unexecuted-route counterfactual",
+    "no FoV/speed/world tuning or favorable reruns",
+    "Unknown physical occlusion and level-body yaw approximation remain",
+    "No Coverage denominator for held-out world; no T80/T90/T95 claims"
+  ]
+}

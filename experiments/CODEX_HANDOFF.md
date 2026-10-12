@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-10 after I2-06 first-item contract fix and12-trial read-only audit; user requested backup and stop.
+Last updated: 2026-10-12 after I2-06 held-out gate and final I2 decision; phase complete with Conditional Go to sensor-matched C++ parity, not guided-route implementation yet.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -402,7 +402,7 @@ have no stable overall advantage here. This is NOT the proposed observation-guid
 method; no main novelty/performance verdict or significance claim follows.
 Supplemental sensor-only rates until stop include stalled time; read with success.
 
-**Current checkpoint: I2-06 FIRST ITEM COMPLETE; backup and STOP per latest user request.**
+**Historical checkpoint (2026-10-10): I2-06 first-item contract/execution audit complete.**
 Read `i2/I2_06_CONTRACT_EXECUTION_REPORT.md`, `I2_06_EXECUTION_AUDIT.json`,
 `I2_06_VALIDATION.json` and the bounded protocol before resuming.
 
@@ -422,18 +422,50 @@ Cannot attribute aggregate performance loss or stalls solely to missing feedback
 Keep I2-05 observed values/conclusions, but label all new-control V1 data PRE-FIX and
 not clean isolation of route-generation effects. No replacement/retry for positives.
 
-**Next ONLY on user continuation:** remaining I2-06: preregister ONE held-out scene,
-seed, bounded duration and sensor-matched predicted/actual per-cost ordering gate;
-then collect/analyze and make the development decision. Not registered/run/passed yet.
-Use separate results; do not reuse floorplan2 Coverage denominator for a new world.
-A bounded post-fix online sanity check may accompany that collection, separately labelled.
-Do not start I3, add guidance/shortcut preservation, tune solver weights or rerun frozen
-seeds in this checkpoint. If later a corrected paired cohort is needed, register it
-separately; no claims that this repair improves measured T95.
+**Current checkpoint: I2-00 through I2-06 COMPLETE (2026-10-12), conditional development decision.**
+Read `i2/I2_FINAL_DECISION.md`, `I2_06_HELD_OUT_PROTOCOL.md/json`,
+`I2_06_HELD_OUT_RESULTS.json`, `I2_06_POST_FIX_INTEGRATION.json` and validation.
 
-Current raw audit evidence: /home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-AUDIT-V1/.
-Current backup: /home/zxr2/下载/CERLAB_I2_Backups/I2_06_FIRST_ITEM_2026-10-10/.
-No independent-scene simulation was launched in this batch; private test master cleaned.
+Protocol committed BEFORE collection28d170f. One floorplan1_static seed4/4 headless
+480wall-second trial, distance_single/Legacy selection/unique_shadow, repairedGP3267e3d.
+RawTIMEOUT/FAILED retained, not complete-mission success; no new Coverage denominator
+so NO Coverage/T80/T90/T95. No favorable retry.69 eligible execution intervals,12 IDs
+preselected by order thirds (4each), all valid, two empty actual sets retained.
+
+Legacy2m: per-metre Spearman0.435831, within-third concordance0.638889/18pairs,
+medianJaccard0.111103 => FAIL complete gate (only overlap fails).
+Mapper-matched5m: Spearman0.859649, concordance0.722222/18pairs,
+medianJaccard0.841764 => PASS preregistered practical gate.
+Single dependent static-scene run does not prove candidate counterfactual ranking,
+exploration improvement or multi-seed significance. Early shadow n4 ranks weak:
+Spearman0.20/concordance0.50; do not claim each stage is reliable. R2 unknown-occlusion
+and level-body yaw limitations remain. Empty/empty Jaccard=1 retained; nonempty n10
+shadow median0.818028/Legacy0.055410 are descriptive sensitivity, not gate replacement.
+
+Online integration:38ready global plans with corrected feedback-policy logs,73/73local
+success, no collision/adapter error, pose error3.55e-15rad, RTF0.998991. Mission distance
+203.755m; diagnostic snapshots enabled, planning mean229.772ms includes diagnostic
+costs; no repaired-vs-old causal performance comparison.1672014first-sensor addresses
+integrityvalid, artificial clear excluded.47logged-ID/timestamp association mismatches
+reported and canonical timestamp attribution used, not falsely claimed absent.
+
+**Immediate next task ONLY after user continuation: I3-00 sensor-matched C++ evaluator.**
+Freeze a versioned contract matching existing5m mapper-shadow geometry; preserve old
+Legacy/I1 proxy modes and physical settings. Cross-check frozen12 snapshots/prefixes
+for exact addresses/raw/unique/marginal against Python and profile cost. Gate before
+observation-guided route construction. Do not implement guided routes first with
+unvalidated2m utility or silently replace old evaluator semantics/default.
+After parity/cost admission, define guided-anchor/budget method and its execution /
+observation-preserving-shortcut tests. Corrected paired comparison cohorts require
+NEW registration; old12 pre-fix trials remain historical evidence, not cleanH3 controls.
+No unrelated confidence/semantic/energy/loop-closure modules to hide failed hypotheses.
+
+New raw/analysis: /home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/.
+New backup: /home/zxr2/下载/CERLAB_I2_Backups/I2_06_HELD_OUT_2026-10-12/ (registration,
+collection full verified raw archive, final report/Git/analysis checkpoint).
+Earlier audit: /home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-AUDIT-V1/;
+earlier backup I2_06_FIRST_ITEM_2026-10-10 retained. No simulation remains.
+No I3 algorithm code started in I2-06 close.
 
 Future user preference: AFTER observation-opportunity guidance is implemented, run
 NEW cohorts in isolated parallel ROS/Gazebo instances. Register uniform concurrency,

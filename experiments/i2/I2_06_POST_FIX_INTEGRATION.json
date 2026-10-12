@@ -1,0 +1,3229 @@
+{
+  "schema": "cerlab-i2-04-smoke-audit-v1",
+  "batch": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/integration_batch.json",
+  "interpretation": "bounded safety/integration only; no T95 or method superiority claim",
+  "runs": [
+    {
+      "mode": "distance_single",
+      "result_dir": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548",
+      "source_commit": "28d170f1bccd5a9c738d711e4802c3c4178daff3",
+      "original_outcome": "TIMEOUT",
+      "original_run_status": "FAILED",
+      "checks": {
+        "expected_bounded_outcome": true,
+        "same_mode_registered": true,
+        "collision_valid_and_zero": true,
+        "resources_valid": true,
+        "trajectory_valid": true,
+        "movement": true,
+        "rosbag_disabled": true,
+        "four_route_layers": true,
+        "execution_linkage": true,
+        "no_crash_log": true,
+        "ready_candidates": true,
+        "candidate_count_contract": true,
+        "common_shadow_snapshot": true,
+        "frozen_astar_comparisons": true,
+        "snapshot_validation_logged": true,
+        "unsafe_selection_not_executed": true
+      },
+      "passed": true,
+      "mission_distance": 203.75451171376403,
+      "rtf": {
+        "count": 483,
+        "max": 1.001309723130955,
+        "mean": 0.9989914666434131,
+        "p95": 0.9993966449782034
+      },
+      "global_planning": {
+        "count": 38,
+        "max_ms": 319.543,
+        "mean_ms": 229.77200000000002,
+        "p95_ms": 290.84475
+      },
+      "details": {
+        "route_events": 38,
+        "ready_events": 38,
+        "fallback_events": 0,
+        "total_raw": 350,
+        "total_post_shortcut_unique": 350,
+        "total_scored": 350,
+        "astar_comparison_count": 350,
+        "astar_max_excess_length": 0.2948214442405366,
+        "unsafe_rejections": 1,
+        "snapshot_changed_before_validation": 38,
+        "reachable_goal_instances": 350,
+        "surviving_alternatives": 0,
+        "rejection_counts": {}
+      },
+      "run_json_sha256": "2d4e07bb7b6ea0484b5f4436aa3fc3448b8abe1a80a481843e9563c4eabfe224"
+    }
+  ],
+  "passed": true,
+  "next_gate": "I2-06 held-out observation model analysis, not I2-05",
+  "corrected_feedback_policy_count": 38,
+  "adapter_error_count": 0,
+  "local_calls": 73,
+  "local_failures": 0,
+  "pose_audit": {
+    "schema": "cerlab-i2-pose-consistency-v1",
+    "batch": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/integration_batch.json",
+    "candidate_count": 350,
+    "above_1e_3_rad": 0,
+    "max_difference_rad": 3.552713678800501e-15,
+    "interpretation": "new I2 integration preflight defect; frozen offline supply and I1 data/conclusion unaffected",
+    "required_followup": "freeze per-plan start position/yaw for new route generation, constraints and scoring; validate callback concurrency before full pilot",
+    "rows": [
+      {
+        "mode": "distance_single",
+        "global_sequence": 1,
+        "candidate_index": 0,
+        "reported_start_yaw": -0.00015759503438603009,
+        "fixed_start_yaw_cost": 1.5370268399526792,
+        "scored_yaw_cost": 1.5370268399526792,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 1,
+        "candidate_index": 1,
+        "reported_start_yaw": -0.00015759503438603009,
+        "fixed_start_yaw_cost": 1.7673034325343862,
+        "scored_yaw_cost": 1.7673034325343862,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 1,
+        "candidate_index": 2,
+        "reported_start_yaw": -0.00015759503438603009,
+        "fixed_start_yaw_cost": 1.7669883496452006,
+        "scored_yaw_cost": 1.7669883496452004,
+        "difference_rad": 2.220446049250313e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 1,
+        "candidate_index": 3,
+        "reported_start_yaw": -0.00015759503438603009,
+        "fixed_start_yaw_cost": 1.9636529700343859,
+        "scored_yaw_cost": 1.9636529700343859,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 2,
+        "candidate_index": 0,
+        "reported_start_yaw": -1.3039036542749018,
+        "fixed_start_yaw_cost": 3.6917908919436546,
+        "scored_yaw_cost": 3.691790891943655,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 2,
+        "candidate_index": 1,
+        "reported_start_yaw": -1.3039036542749018,
+        "fixed_start_yaw_cost": 2.0340385904046845,
+        "scored_yaw_cost": 2.034038590404685,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 2,
+        "candidate_index": 2,
+        "reported_start_yaw": -1.3039036542749018,
+        "fixed_start_yaw_cost": 4.6418457917749025,
+        "scored_yaw_cost": 4.6418457917749025,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 2,
+        "candidate_index": 3,
+        "reported_start_yaw": -1.3039036542749018,
+        "fixed_start_yaw_cost": 3.071049491774902,
+        "scored_yaw_cost": 3.0710494917749016,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 2,
+        "candidate_index": 4,
+        "reported_start_yaw": -1.3039036542749018,
+        "fixed_start_yaw_cost": 3.267399029274902,
+        "scored_yaw_cost": 3.267399029274902,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 3,
+        "candidate_index": 0,
+        "reported_start_yaw": 3.016743856351121,
+        "fixed_start_yaw_cost": 0.2678503313511209,
+        "scored_yaw_cost": 0.2678503313511209,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 3,
+        "candidate_index": 1,
+        "reported_start_yaw": 3.016743856351121,
+        "fixed_start_yaw_cost": 2.034996168851121,
+        "scored_yaw_cost": 2.034996168851121,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 3,
+        "candidate_index": 2,
+        "reported_start_yaw": 3.016743856351121,
+        "fixed_start_yaw_cost": 1.89684055141739,
+        "scored_yaw_cost": 1.89684055141739,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 3,
+        "candidate_index": 3,
+        "reported_start_yaw": 3.016743856351121,
+        "fixed_start_yaw_cost": 2.5623520064023038,
+        "scored_yaw_cost": 2.5623520064023038,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 3,
+        "candidate_index": 4,
+        "reported_start_yaw": 3.016743856351121,
+        "fixed_start_yaw_cost": 2.316136279938685,
+        "scored_yaw_cost": 2.316136279938685,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 0.8145896969061237,
+        "scored_yaw_cost": 0.8145896969061237,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 0.02919154690612391,
+        "scored_yaw_cost": 0.029191546906123897,
+        "difference_rad": 1.3877787807814457e-17
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 0.22554108440612364,
+        "scored_yaw_cost": 0.22554108440612364,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 1.5416047530938761,
+        "scored_yaw_cost": 1.5416047530938761,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 1.7379542905938763,
+        "scored_yaw_cost": 1.7379542905938763,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 2.130653365593876,
+        "scored_yaw_cost": 2.130653365593876,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 2.130653365593876,
+        "scored_yaw_cost": 2.130653365593876,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 7,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 5.209587990799917,
+        "scored_yaw_cost": 5.209587990799917,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 8,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 5.405937528299917,
+        "scored_yaw_cost": 5.405937528299917,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 4,
+        "candidate_index": 9,
+        "reported_start_yaw": 2.7197019780938763,
+        "fixed_start_yaw_cost": 4.620539378299917,
+        "scored_yaw_cost": 4.620539378299917,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 0.6175026577491298,
+        "scored_yaw_cost": 0.6175026577491299,
+        "difference_rad": 1.1102230246251565e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 1.5992503452491302,
+        "scored_yaw_cost": 1.5992503452491298,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 1.4029008077491305,
+        "scored_yaw_cost": 1.40290080774913,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 1.4029008077491305,
+        "scored_yaw_cost": 1.40290080774913,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 2.481410601921959,
+        "scored_yaw_cost": 2.4814106019219597,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 3.434067295169038,
+        "scored_yaw_cost": 3.434067295169038,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 3.4221887453179756,
+        "scored_yaw_cost": 3.4221887453179756,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 7,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 3.2609823231008486,
+        "scored_yaw_cost": 3.260982323100849,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 8,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 5.590405846178749,
+        "scored_yaw_cost": 5.590405846178749,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 5,
+        "candidate_index": 9,
+        "reported_start_yaw": 2.7204394797508704,
+        "fixed_start_yaw_cost": 4.805007696178749,
+        "scored_yaw_cost": 4.805007696178749,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 0,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 1.670086612203745,
+        "scored_yaw_cost": 1.6700866122037448,
+        "difference_rad": 2.220446049250313e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 1,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 2.329156713901308,
+        "scored_yaw_cost": 2.329156713901309,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 2,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 1.909926551119499,
+        "scored_yaw_cost": 1.9099265511194992,
+        "difference_rad": 2.220446049250313e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 3,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 3.275148103210861,
+        "scored_yaw_cost": 3.275148103210861,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 4,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 3.0787985657108607,
+        "scored_yaw_cost": 3.0787985657108607,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 5,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 2.686099490710861,
+        "scored_yaw_cost": 2.686099490710861,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 6,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 2.686099490710861,
+        "scored_yaw_cost": 2.686099490710861,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 7,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 3.0787985657108607,
+        "scored_yaw_cost": 3.0787985657108607,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 8,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 4.25689579071086,
+        "scored_yaw_cost": 4.256895790710861,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 6,
+        "candidate_index": 9,
+        "reported_start_yaw": -2.097050878210861,
+        "fixed_start_yaw_cost": 3.4714976407108606,
+        "scored_yaw_cost": 3.4714976407108606,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 0,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 0.4777666659415236,
+        "scored_yaw_cost": 0.47776666594152384,
+        "difference_rad": 2.220446049250313e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 1,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 0.3076314840584766,
+        "scored_yaw_cost": 0.30763148405847646,
+        "difference_rad": 1.6653345369377348e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 2,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 2.271126859058476,
+        "scored_yaw_cost": 2.2711268590584766,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 3,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 2.833961115941523,
+        "scored_yaw_cost": 2.8339611159415234,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 4,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 4.038272803738063,
+        "scored_yaw_cost": 4.038272803738063,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 5,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 3.841923266238063,
+        "scored_yaw_cost": 3.841923266238063,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 6,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 3.449224191238063,
+        "scored_yaw_cost": 3.4492241912380632,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 7,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 3.449224191238063,
+        "scored_yaw_cost": 3.449224191238063,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 8,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 5.020020491238062,
+        "scored_yaw_cost": 5.020020491238062,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 7,
+        "candidate_index": 9,
+        "reported_start_yaw": -2.8601755787380627,
+        "fixed_start_yaw_cost": 4.234622341238063,
+        "scored_yaw_cost": 4.234622341238063,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 0,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 2.7543249877134848,
+        "scored_yaw_cost": 2.7543249877134848,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 1,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 2.9832334887080023,
+        "scored_yaw_cost": 2.9832334887080023,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 2,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 2.0142670314637074,
+        "scored_yaw_cost": 2.014267031463707,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 3,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 3.0908209435362926,
+        "scored_yaw_cost": 3.0908209435362934,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 4,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 3.97261826788914,
+        "scored_yaw_cost": 3.97261826788914,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 5,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 3.8790349798488446,
+        "scored_yaw_cost": 3.8790349798488446,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 6,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 3.62043208108847,
+        "scored_yaw_cost": 3.62043208108847,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 7,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 3.8412911056860284,
+        "scored_yaw_cost": 3.8412911056860284,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 8,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 6.21015739294084,
+        "scored_yaw_cost": 6.21015739294084,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 8,
+        "candidate_index": 9,
+        "reported_start_yaw": -2.603315751143293,
+        "fixed_start_yaw_cost": 5.42475924294084,
+        "scored_yaw_cost": 5.42475924294084,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 0,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 3.536620381139869,
+        "scored_yaw_cost": 3.536620381139869,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 1,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 3.097414693273888,
+        "scored_yaw_cost": 3.097414693273888,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 2,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 2.3585231561398694,
+        "scored_yaw_cost": 2.3585231561398694,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 3,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 2.3585231561398694,
+        "scored_yaw_cost": 2.3585231561398694,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 4,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 3.6973269757898235,
+        "scored_yaw_cost": 3.6973269757898235,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 5,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 3.592673470318347,
+        "scored_yaw_cost": 3.592673470318347,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 6,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 3.321758504285002,
+        "scored_yaw_cost": 3.3217585042850017,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 7,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 3.5239976760351563,
+        "scored_yaw_cost": 3.5239976760351563,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 8,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 5.90760474256887,
+        "scored_yaw_cost": 5.90760474256887,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 9,
+        "candidate_index": 9,
+        "reported_start_yaw": -0.5913773186398693,
+        "fixed_start_yaw_cost": 5.12220659256887,
+        "scored_yaw_cost": 5.12220659256887,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 0,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 2.6366560218604977,
+        "scored_yaw_cost": 2.6366560218604977,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 1,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 3.380716910159781,
+        "scored_yaw_cost": 3.380716910159781,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 2,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 1.696447995025219,
+        "scored_yaw_cost": 1.696447995025219,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 3,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 3.6599434772048047,
+        "scored_yaw_cost": 3.659943477204805,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 4,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 1.892797639704805,
+        "scored_yaw_cost": 1.892797639704805,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 5,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 1.971662427813182,
+        "scored_yaw_cost": 1.971662427813182,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 6,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 4.472379299324011,
+        "scored_yaw_cost": 4.472379299324011,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 7,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 4.201464333290666,
+        "scored_yaw_cost": 4.201464333290666,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 8,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 6.787310571574534,
+        "scored_yaw_cost": 6.787310571574534,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 10,
+        "candidate_index": 9,
+        "reported_start_yaw": 1.696447995025219,
+        "fixed_start_yaw_cost": 6.001912421574534,
+        "scored_yaw_cost": 6.001912421574534,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 0,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 4.375272104160869,
+        "scored_yaw_cost": 4.375272104160869,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 1,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 5.119332992460152,
+        "scored_yaw_cost": 5.119332992460152,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 2,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 2.804854266132908,
+        "scored_yaw_cost": 2.804854266132908,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 3,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 2.4447015254402062,
+        "scored_yaw_cost": 2.4447015254402067,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 4,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 1.659303375440207,
+        "scored_yaw_cost": 1.6593033754402067,
+        "difference_rad": 2.220446049250313e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 5,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 6.210995381624382,
+        "scored_yaw_cost": 6.210995381624382,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 6,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 5.940080415591037,
+        "scored_yaw_cost": 5.940080415591037,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 7,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 0.6775556879402067,
+        "scored_yaw_cost": 0.677555687940207,
+        "difference_rad": 3.3306690738754696e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 8,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 8.525926653874905,
+        "scored_yaw_cost": 8.525926653874905,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 11,
+        "candidate_index": 9,
+        "reported_start_yaw": 0.28485650576062044,
+        "fixed_start_yaw_cost": 7.740528503874906,
+        "scored_yaw_cost": 7.740528503874906,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 0,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 4.599884475633228,
+        "scored_yaw_cost": 4.599884475633228,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 1,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 5.343945363932511,
+        "scored_yaw_cost": 5.343945363932511,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 2,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 4.588120543618796,
+        "scored_yaw_cost": 4.588120543618797,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 3,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 5.207253978300161,
+        "scored_yaw_cost": 5.207253978300161,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 4,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 6.4356077530967415,
+        "scored_yaw_cost": 6.4356077530967415,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 5,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 6.164692787063396,
+        "scored_yaw_cost": 6.164692787063396,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 6,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 8.750539025347265,
+        "scored_yaw_cost": 8.750539025347264,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 7,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 1.4169546139325113,
+        "scored_yaw_cost": 1.416954613932511,
+        "difference_rad": 2.220446049250313e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 8,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 0.6315564639325111,
+        "scored_yaw_cost": 0.6315564639325115,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 12,
+        "candidate_index": 9,
+        "reported_start_yaw": -0.35019133074707515,
+        "fixed_start_yaw_cost": 0.1538416860674892,
+        "scored_yaw_cost": 0.1538416860674891,
+        "difference_rad": 8.326672684688674e-17
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 0,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 4.671592477910979,
+        "scored_yaw_cost": 4.671592477910979,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 1,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 5.415653366210262,
+        "scored_yaw_cost": 5.415653366210262,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 2,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 6.507315755374492,
+        "scored_yaw_cost": 6.507315755374492,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 3,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 6.236400789341147,
+        "scored_yaw_cost": 6.236400789341147,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 4,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 2.163064333807636,
+        "scored_yaw_cost": 2.163064333807635,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 5,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 8.822247027625014,
+        "scored_yaw_cost": 8.822247027625014,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 6,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 1.4886626162102612,
+        "scored_yaw_cost": 1.4886626162102616,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 7,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 0.5448759708263325,
+        "scored_yaw_cost": 0.5448759708263322,
+        "difference_rad": 3.3306690738754696e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 8,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 0.263437644245587,
+        "scored_yaw_cost": 0.2634376442455874,
+        "difference_rad": 3.885780586188048e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 13,
+        "candidate_index": 9,
+        "reported_start_yaw": -0.2784833284693248,
+        "fixed_start_yaw_cost": 2.4888769780932716,
+        "scored_yaw_cost": 2.4888769780932716,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 0,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 4.671573705076698,
+        "scored_yaw_cost": 4.671573705076698,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 1,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 5.415634593375981,
+        "scored_yaw_cost": 5.415634593375981,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 2,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 6.507296982540211,
+        "scored_yaw_cost": 6.507296982540211,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 3,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 6.236382016506866,
+        "scored_yaw_cost": 6.236382016506866,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 4,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 2.3164720368118337,
+        "scored_yaw_cost": 2.3164720368118337,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 5,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 8.822228254790733,
+        "scored_yaw_cost": 8.822228254790733,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 6,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 1.7538695506913506,
+        "scored_yaw_cost": 1.7538695506913504,
+        "difference_rad": 2.220446049250313e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 7,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 1.0959447683759813,
+        "scored_yaw_cost": 1.0959447683759809,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 8,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 2.205252943605166,
+        "scored_yaw_cost": 2.205252943605166,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 14,
+        "candidate_index": 9,
+        "reported_start_yaw": -0.2785021013036052,
+        "fixed_start_yaw_cost": 2.316917567108861,
+        "scored_yaw_cost": 2.316917567108861,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 0,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 4.744883496664226,
+        "scored_yaw_cost": 4.744883496664226,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 1,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 5.488944384963509,
+        "scored_yaw_cost": 5.488944384963509,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 2,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 4.419741639440863,
+        "scored_yaw_cost": 4.419741639440865,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 3,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 6.580606774127739,
+        "scored_yaw_cost": 6.580606774127739,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 4,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 6.309691808094394,
+        "scored_yaw_cost": 6.309691808094394,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 5,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 1.856529449756457,
+        "scored_yaw_cost": 1.8565294497564575,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 6,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 8.895538046378263,
+        "scored_yaw_cost": 8.895538046378261,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 7,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 2.0939084757495747,
+        "scored_yaw_cost": 2.0939084757495747,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 8,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 2.42691705410063,
+        "scored_yaw_cost": 2.4269170541006306,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 15,
+        "candidate_index": 9,
+        "reported_start_yaw": -1.6777623324231288,
+        "fixed_start_yaw_cost": 3.4449081699231288,
+        "scored_yaw_cost": 3.4449081699231288,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 0,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 5.006892407935267,
+        "scored_yaw_cost": 5.006892407935267,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 1,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 5.75095329623455,
+        "scored_yaw_cost": 5.75095329623455,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 2,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 4.331590603444857,
+        "scored_yaw_cost": 4.331590603444858,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 3,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 5.116988753444858,
+        "scored_yaw_cost": 5.116988753444857,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 4,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 6.947269190870256,
+        "scored_yaw_cost": 6.947269190870256,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 5,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 6.84261568539878,
+        "scored_yaw_cost": 6.84261568539878,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 6,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 6.571700719365435,
+        "scored_yaw_cost": 6.571700719365435,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 7,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 9.157546957649302,
+        "scored_yaw_cost": 9.157546957649302,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 8,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 8.372148807649303,
+        "scored_yaw_cost": 8.372148807649303,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 16,
+        "candidate_index": 9,
+        "reported_start_yaw": -0.6896664976234459,
+        "fixed_start_yaw_cost": 2.4568123351234457,
+        "scored_yaw_cost": 2.4568123351234457,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 0,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 4.200338054024153,
+        "scored_yaw_cost": 4.2003380540241535,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 1,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 4.944398942323436,
+        "scored_yaw_cost": 4.944398942323437,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 2,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 3.507800600394374,
+        "scored_yaw_cost": 3.507800600394374,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 3,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 4.293198750394373,
+        "scored_yaw_cost": 4.293198750394373,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 4,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 6.140714836959142,
+        "scored_yaw_cost": 6.140714836959142,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 5,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 6.036061331487666,
+        "scored_yaw_cost": 6.036061331487666,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 6,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 5.765146365454321,
+        "scored_yaw_cost": 5.765146365454321,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 7,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 8.350992603738188,
+        "scored_yaw_cost": 8.350992603738188,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 8,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 7.9582935287381895,
+        "scored_yaw_cost": 7.9582935287381895,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 17,
+        "candidate_index": 9,
+        "reported_start_yaw": 1.8600487836416626,
+        "fixed_start_yaw_cost": 0.4856020211416625,
+        "scored_yaw_cost": 0.48560202114166257,
+        "difference_rad": 5.551115123125783e-17
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 0,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 6.637331969297002,
+        "scored_yaw_cost": 6.637331969297003,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 1,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 7.3813928575962855,
+        "scored_yaw_cost": 7.381392857596286,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 2,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 5.892485078556856,
+        "scored_yaw_cost": 5.892485078556856,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 3,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 6.677883228556856,
+        "scored_yaw_cost": 6.677883228556855,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 4,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 8.473055246760515,
+        "scored_yaw_cost": 8.473055246760516,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 5,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 8.20214028072717,
+        "scored_yaw_cost": 8.202140280727171,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 6,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 10.787986519011039,
+        "scored_yaw_cost": 10.787986519011039,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 7,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 0.4313308388317929,
+        "scored_yaw_cost": 0.4313308388317928,
+        "difference_rad": 1.1102230246251565e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 8,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 0.3026087826665447,
+        "scored_yaw_cost": 0.3026087826665446,
+        "difference_rad": 5.551115123125783e-17
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 18,
+        "candidate_index": 9,
+        "reported_start_yaw": 1.4443782074218852,
+        "fixed_start_yaw_cost": 0.266280982421885,
+        "scored_yaw_cost": 0.266280982421885,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 0,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 6.6841457103165105,
+        "scored_yaw_cost": 6.684145710316511,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 1,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 7.428206598615794,
+        "scored_yaw_cost": 7.428206598615795,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 2,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 5.939298819576363,
+        "scored_yaw_cost": 5.939298819576365,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 3,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 8.519868987780024,
+        "scored_yaw_cost": 8.519868987780024,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 4,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 8.248954021746679,
+        "scored_yaw_cost": 8.248954021746679,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 5,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 10.834800260030548,
+        "scored_yaw_cost": 10.834800260030546,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 6,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 3.1619245629280854,
+        "scored_yaw_cost": 3.1619245629280854,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 7,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 0.2738947521468793,
+        "scored_yaw_cost": 0.2738947521468793,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 8,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 0.11512456223587408,
+        "scored_yaw_cost": 0.115124562235874,
+        "difference_rad": 8.326672684688674e-17
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 19,
+        "candidate_index": 9,
+        "reported_start_yaw": 1.096872249735874,
+        "fixed_start_yaw_cost": 0.9005227122358741,
+        "scored_yaw_cost": 0.900522712235874,
+        "difference_rad": 1.1102230246251565e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 0,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 7.7597058696574575,
+        "scored_yaw_cost": 7.7597058696574575,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 1,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 8.50376675795674,
+        "scored_yaw_cost": 8.50376675795674,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 2,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 7.01485897891731,
+        "scored_yaw_cost": 7.01485897891731,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 3,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 9.595429147120973,
+        "scored_yaw_cost": 9.595429147120973,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 4,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 9.324514181087627,
+        "scored_yaw_cost": 9.324514181087627,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 5,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 11.910360419371493,
+        "scored_yaw_cost": 11.910360419371495,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 6,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 4.978444802203079,
+        "scored_yaw_cost": 4.97844480220308,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 7,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 2.3883934253359334,
+        "scored_yaw_cost": 2.388393425335933,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 8,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 1.9956943503359328,
+        "scored_yaw_cost": 1.9956943503359328,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 20,
+        "candidate_index": 9,
+        "reported_start_yaw": 0.9495487121640671,
+        "fixed_start_yaw_cost": 2.057604625954862,
+        "scored_yaw_cost": 2.0576046259548617,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 0,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 6.503075055670994,
+        "scored_yaw_cost": 6.503075055670994,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 1,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 6.3800144977333,
+        "scored_yaw_cost": 6.3800144977333,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 2,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 7.124075386032583,
+        "scored_yaw_cost": 7.124075386032583,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 3,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 5.6351676069931536,
+        "scored_yaw_cost": 5.6351676069931536,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 4,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 8.215737775196812,
+        "scored_yaw_cost": 8.215737775196812,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 5,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 7.944822809163467,
+        "scored_yaw_cost": 7.944822809163467,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 6,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 10.530669047447336,
+        "scored_yaw_cost": 10.530669047447335,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 7,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 4.015612108760847,
+        "scored_yaw_cost": 4.015612108760848,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 8,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 3.6420199609187387,
+        "scored_yaw_cost": 3.6420199609187387,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 21,
+        "candidate_index": 9,
+        "reported_start_yaw": -0.3040778234187387,
+        "fixed_start_yaw_cost": 0.5004273609187386,
+        "scored_yaw_cost": 0.5004273609187387,
+        "difference_rad": 1.1102230246251565e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 0,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 7.764103583151277,
+        "scored_yaw_cost": 7.764103583151278,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 1,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 7.641043025213583,
+        "scored_yaw_cost": 7.641043025213584,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 2,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 8.385103913512866,
+        "scored_yaw_cost": 8.385103913512866,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 3,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 6.896196134473437,
+        "scored_yaw_cost": 6.896196134473437,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 4,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 7.681594284473436,
+        "scored_yaw_cost": 7.6815942844734355,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 5,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 9.476766302677097,
+        "scored_yaw_cost": 9.476766302677099,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 6,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 9.205851336643752,
+        "scored_yaw_cost": 9.205851336643754,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 7,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 11.791697574927618,
+        "scored_yaw_cost": 11.791697574927621,
+        "difference_rad": 3.552713678800501e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 8,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 4.503336837062243,
+        "scored_yaw_cost": 4.503336837062243,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 22,
+        "candidate_index": 9,
+        "reported_start_yaw": 0.18364690488265642,
+        "fixed_start_yaw_cost": 3.154295232617344,
+        "scored_yaw_cost": 3.154295232617344,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 0,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 6.9454410177577675,
+        "scored_yaw_cost": 6.9454410177577675,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 1,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 6.8223804598200735,
+        "scored_yaw_cost": 6.8223804598200735,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 2,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 7.566441348119357,
+        "scored_yaw_cost": 7.566441348119357,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 3,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 6.077533569079927,
+        "scored_yaw_cost": 6.077533569079927,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 4,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 6.862931719079927,
+        "scored_yaw_cost": 6.862931719079926,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 5,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 8.658103737283586,
+        "scored_yaw_cost": 8.658103737283586,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 6,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 8.38718877125024,
+        "scored_yaw_cost": 8.38718877125024,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 7,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 10.973035009534108,
+        "scored_yaw_cost": 10.973035009534108,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 8,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 4.460807987919896,
+        "scored_yaw_cost": 4.460807987919897,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 23,
+        "candidate_index": 9,
+        "reported_start_yaw": -2.8553788183637647,
+        "fixed_start_yaw_cost": 2.0913754244267615,
+        "scored_yaw_cost": 2.0913754244267615,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 0,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 5.491958617555552,
+        "scored_yaw_cost": 5.491958617555552,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 1,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 5.368898059617858,
+        "scored_yaw_cost": 5.368898059617858,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 2,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 6.112958947917141,
+        "scored_yaw_cost": 6.112958947917141,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 3,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 4.6240511688777115,
+        "scored_yaw_cost": 4.6240511688777115,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 4,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 5.40944931887771,
+        "scored_yaw_cost": 5.40944931887771,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 5,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 7.20462133708137,
+        "scored_yaw_cost": 7.20462133708137,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 6,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 6.933706371048025,
+        "scored_yaw_cost": 6.933706371048025,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 7,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 9.519552609331893,
+        "scored_yaw_cost": 9.519552609331893,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 8,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 2.6557841611134636,
+        "scored_yaw_cost": 2.6557841611134636,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 24,
+        "candidate_index": 9,
+        "reported_start_yaw": -1.6639057710661231,
+        "fixed_start_yaw_cost": 2.459434623613463,
+        "scored_yaw_cost": 2.459434623613463,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 6.682810643561243,
+        "scored_yaw_cost": 6.682810643561243,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 6.559750085623549,
+        "scored_yaw_cost": 6.559750085623549,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 7.3038109739228325,
+        "scored_yaw_cost": 7.3038109739228325,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 5.814903194883403,
+        "scored_yaw_cost": 5.814903194883403,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 6.600301344883403,
+        "scored_yaw_cost": 6.600301344883402,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 8.395473363087062,
+        "scored_yaw_cost": 8.395473363087062,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 8.124558397053717,
+        "scored_yaw_cost": 8.124558397053717,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 7,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 10.710404635337586,
+        "scored_yaw_cost": 10.710404635337584,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 8,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 2.8085763346768147,
+        "scored_yaw_cost": 2.808576334676816,
+        "difference_rad": 1.3322676295501878e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 25,
+        "candidate_index": 9,
+        "reported_start_yaw": 2.0372857348526066,
+        "fixed_start_yaw_cost": 2.050613845856286,
+        "scored_yaw_cost": 2.050613845856286,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 0,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 5.188558821735091,
+        "scored_yaw_cost": 5.188558821735091,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 1,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 5.065498263797396,
+        "scored_yaw_cost": 5.065498263797397,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 2,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 5.809559152096679,
+        "scored_yaw_cost": 5.80955915209668,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 3,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 4.32065137305725,
+        "scored_yaw_cost": 4.320651373057251,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 4,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 5.10604952305725,
+        "scored_yaw_cost": 5.10604952305725,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 5,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 7.005875046732386,
+        "scored_yaw_cost": 7.005875046732386,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 6,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 6.9012215412609095,
+        "scored_yaw_cost": 6.9012215412609095,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 7,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 6.630306575227564,
+        "scored_yaw_cost": 6.630306575227564,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 8,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 9.216152813511432,
+        "scored_yaw_cost": 9.216152813511432,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 26,
+        "candidate_index": 9,
+        "reported_start_yaw": -2.626427319867262,
+        "fixed_start_yaw_cost": 4.531831473902173,
+        "scored_yaw_cost": 4.531831473902173,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 0,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 5.988422195740539,
+        "scored_yaw_cost": 5.988422195740539,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 1,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 5.865361637802845,
+        "scored_yaw_cost": 5.865361637802845,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 2,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 6.609422526102128,
+        "scored_yaw_cost": 6.609422526102128,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 3,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 5.120514747062698,
+        "scored_yaw_cost": 5.120514747062699,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 4,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 5.905912897062699,
+        "scored_yaw_cost": 5.905912897062698,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 5,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 7.805738420737835,
+        "scored_yaw_cost": 7.805738420737835,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 6,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 7.7010849152663585,
+        "scored_yaw_cost": 7.7010849152663585,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 7,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 7.430169949233013,
+        "scored_yaw_cost": 7.430169949233013,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 8,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 10.016016187516882,
+        "scored_yaw_cost": 10.01601618751688,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 27,
+        "candidate_index": 9,
+        "reported_start_yaw": -1.1959849895169719,
+        "fixed_start_yaw_cost": 9.623317112516881,
+        "scored_yaw_cost": 9.623317112516881,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 0,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 3.6361464640437204,
+        "scored_yaw_cost": 3.636146464043721,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 1,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 3.6866878528540634,
+        "scored_yaw_cost": 3.686687852854064,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 2,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 4.586781529896722,
+        "scored_yaw_cost": 4.586781529896722,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 3,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 2.258446144858193,
+        "scored_yaw_cost": 2.258446144858193,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 4,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 4.810990132358193,
+        "scored_yaw_cost": 4.810990132358194,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 5,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 5.7830974245324285,
+        "scored_yaw_cost": 5.783097424532429,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 6,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 5.678443919060952,
+        "scored_yaw_cost": 5.678443919060953,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 7,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 5.407528953027608,
+        "scored_yaw_cost": 5.407528953027608,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 8,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 7.993375191311475,
+        "scored_yaw_cost": 7.993375191311476,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 28,
+        "candidate_index": 9,
+        "reported_start_yaw": -1.472195174821393,
+        "fixed_start_yaw_cost": 7.600676116311475,
+        "scored_yaw_cost": 7.600676116311477,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 3.790831557908478,
+        "scored_yaw_cost": 3.790831557908478,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 3.841372946718821,
+        "scored_yaw_cost": 3.841372946718821,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 4.74146662376148,
+        "scored_yaw_cost": 4.74146662376148,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 0.4525451295035139,
+        "scored_yaw_cost": 0.4525451295035139,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 5.937782518397186,
+        "scored_yaw_cost": 5.937782518397186,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 5.83312901292571,
+        "scored_yaw_cost": 5.83312901292571,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 5.562214046892365,
+        "scored_yaw_cost": 5.562214046892365,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 7,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 8.148060285176232,
+        "scored_yaw_cost": 8.148060285176232,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 8,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 7.7553612101762335,
+        "scored_yaw_cost": 7.7553612101762335,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 29,
+        "candidate_index": 9,
+        "reported_start_yaw": 2.5066087624855733,
+        "fixed_start_yaw_cost": 7.4726004721890815,
+        "scored_yaw_cost": 7.4726004721890815,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 6.351530072246719,
+        "scored_yaw_cost": 6.351530072246719,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 5.9698588435154765,
+        "scored_yaw_cost": 5.9698588435154765,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 6.020400232325819,
+        "scored_yaw_cost": 6.020400232325819,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 6.920493909368478,
+        "scored_yaw_cost": 6.920493909368478,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 8.116809804004184,
+        "scored_yaw_cost": 8.116809804004184,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 8.012156298532707,
+        "scored_yaw_cost": 8.012156298532707,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 7.741241332499364,
+        "scored_yaw_cost": 7.741241332499364,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 7,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 10.327087570783231,
+        "scored_yaw_cost": 10.32708757078323,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 8,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 9.93438849578323,
+        "scored_yaw_cost": 9.93438849578323,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 30,
+        "candidate_index": 9,
+        "reported_start_yaw": 2.653937015778858,
+        "fixed_start_yaw_cost": 8.265372520143988,
+        "scored_yaw_cost": 8.265372520143988,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 1.871736159437293,
+        "scored_yaw_cost": 1.871736159437293,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 1.5418232574995319,
+        "scored_yaw_cost": 1.5418232574995319,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 1.5923646463098748,
+        "scored_yaw_cost": 1.5923646463098748,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 2.4924583233525337,
+        "scored_yaw_cost": 2.4924583233525337,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 3.6887742179882403,
+        "scored_yaw_cost": 3.6887742179882403,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 3.5841207125167642,
+        "scored_yaw_cost": 3.5841207125167642,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 3.313205746483419,
+        "scored_yaw_cost": 3.313205746483419,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 7,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 5.899051984767287,
+        "scored_yaw_cost": 5.899051984767287,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 8,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 5.506352909767288,
+        "scored_yaw_cost": 5.506352909767287,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 31,
+        "candidate_index": 9,
+        "reported_start_yaw": 2.5221398116476403,
+        "fixed_start_yaw_cost": 7.355334730610806,
+        "scored_yaw_cost": 7.3553347306108074,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 1.284859759715036,
+        "scored_yaw_cost": 1.284859759715036,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 2.9167591947774385,
+        "scored_yaw_cost": 2.9167591947774385,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 1.9350115072774385,
+        "scored_yaw_cost": 1.9350115072774385,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 1.9350115072774385,
+        "scored_yaw_cost": 1.9350115072774385,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 2.3277105822774384,
+        "scored_yaw_cost": 2.3277105822774384,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 3.869245576966712,
+        "scored_yaw_cost": 3.869245576966712,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 3.7223640864048746,
+        "scored_yaw_cost": 3.7223640864048746,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 7,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 3.408942534680504,
+        "scored_yaw_cost": 3.408942534680504,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 8,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 5.344022425774852,
+        "scored_yaw_cost": 5.344022425774852,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 32,
+        "candidate_index": 9,
+        "reported_start_yaw": 2.9167591947774385,
+        "fixed_start_yaw_cost": 7.802724855973253,
+        "scored_yaw_cost": 7.802724855973254,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 0,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 1.6416857145310102,
+        "scored_yaw_cost": 1.6416857145310102,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 1,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 3.508458151986388,
+        "scored_yaw_cost": 3.508458151986388,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 2,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 4.433521104434234,
+        "scored_yaw_cost": 4.433521104434234,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 3,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 4.237171566934235,
+        "scored_yaw_cost": 4.237171566934235,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 4,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 3.8444724919342352,
+        "scored_yaw_cost": 3.8444724919342352,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 5,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 5.415268791934235,
+        "scored_yaw_cost": 5.415268791934235,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 6,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 5.0225697169342345,
+        "scored_yaw_cost": 5.0225697169342345,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 7,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 6.113379563232814,
+        "scored_yaw_cost": 6.113379563232814,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 8,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 7.933265910462317,
+        "scored_yaw_cost": 7.9332659104623175,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 33,
+        "candidate_index": 9,
+        "reported_start_yaw": 1.8380352520310101,
+        "fixed_start_yaw_cost": 6.558819040782731,
+        "scored_yaw_cost": 6.558819040782731,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 0,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 5.09202353710056,
+        "scored_yaw_cost": 5.09202353710056,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 1,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 4.895673999600559,
+        "scored_yaw_cost": 4.895673999600559,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 2,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 4.50297492460056,
+        "scored_yaw_cost": 4.502974924600559,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 3,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 7.289217063345997,
+        "scored_yaw_cost": 7.289217063345998,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 4,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 4.502974924600559,
+        "scored_yaw_cost": 4.50297492460056,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 5,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 6.073771224600559,
+        "scored_yaw_cost": 6.073771224600559,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 6,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 5.681072149600559,
+        "scored_yaw_cost": 5.681072149600559,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 7,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 7.386754060840666,
+        "scored_yaw_cost": 7.3867540608406665,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 8,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 7.3867540608406665,
+        "scored_yaw_cost": 7.386754060840667,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 34,
+        "candidate_index": 9,
+        "reported_start_yaw": 0.11568831548116167,
+        "fixed_start_yaw_cost": 7.3867540608406665,
+        "scored_yaw_cost": 7.386754060840667,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 35,
+        "candidate_index": 0,
+        "reported_start_yaw": 0.9777518483568679,
+        "fixed_start_yaw_cost": 2.4972426106572936,
+        "scored_yaw_cost": 2.497242610657293,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 35,
+        "candidate_index": 1,
+        "reported_start_yaw": 0.9777518483568679,
+        "fixed_start_yaw_cost": 3.3339464055364543,
+        "scored_yaw_cost": 3.3339464055364543,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 35,
+        "candidate_index": 2,
+        "reported_start_yaw": 0.9777518483568679,
+        "fixed_start_yaw_cost": 1.0629529875129988,
+        "scored_yaw_cost": 1.0629529875129988,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 35,
+        "candidate_index": 3,
+        "reported_start_yaw": 0.9777518483568679,
+        "fixed_start_yaw_cost": 2.568020625018204,
+        "scored_yaw_cost": 2.568020625018204,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 35,
+        "candidate_index": 4,
+        "reported_start_yaw": 0.9777518483568679,
+        "fixed_start_yaw_cost": 9.145131182190747,
+        "scored_yaw_cost": 9.145131182190747,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 35,
+        "candidate_index": 5,
+        "reported_start_yaw": 0.9777518483568679,
+        "fixed_start_yaw_cost": 9.145131182190749,
+        "scored_yaw_cost": 9.145131182190749,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 36,
+        "candidate_index": 0,
+        "reported_start_yaw": 1.0064663772296163,
+        "fixed_start_yaw_cost": 2.3314757602703837,
+        "scored_yaw_cost": 2.3314757602703837,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 36,
+        "candidate_index": 1,
+        "reported_start_yaw": 1.0064663772296163,
+        "fixed_start_yaw_cost": 2.0101449907041395,
+        "scored_yaw_cost": 2.01014499070414,
+        "difference_rad": 4.440892098500626e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 36,
+        "candidate_index": 2,
+        "reported_start_yaw": 1.0064663772296163,
+        "fixed_start_yaw_cost": 3.650518551261115,
+        "scored_yaw_cost": 3.650518551261115,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 36,
+        "candidate_index": 3,
+        "reported_start_yaw": 1.0064663772296163,
+        "fixed_start_yaw_cost": 8.614661067449969,
+        "scored_yaw_cost": 8.614661067449969,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 36,
+        "candidate_index": 4,
+        "reported_start_yaw": 1.0064663772296163,
+        "fixed_start_yaw_cost": 9.116416653317998,
+        "scored_yaw_cost": 9.116416653317998,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 36,
+        "candidate_index": 5,
+        "reported_start_yaw": 1.0064663772296163,
+        "fixed_start_yaw_cost": 9.116416653317998,
+        "scored_yaw_cost": 9.116416653318,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 37,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.878048039351336,
+        "fixed_start_yaw_cost": 8.589119068590843,
+        "scored_yaw_cost": 8.589119068590843,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 37,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.878048039351336,
+        "fixed_start_yaw_cost": 5.840864740188618,
+        "scored_yaw_cost": 5.840864740188619,
+        "difference_rad": 8.881784197001252e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 37,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.878048039351336,
+        "fixed_start_yaw_cost": 1.423686341619426,
+        "scored_yaw_cost": 1.423686341619426,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 37,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.878048039351336,
+        "fixed_start_yaw_cost": 2.0382054963763347,
+        "scored_yaw_cost": 2.0382054963763347,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 37,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.878048039351336,
+        "fixed_start_yaw_cost": 8.607976934824325,
+        "scored_yaw_cost": 8.607976934824325,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 37,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.878048039351336,
+        "fixed_start_yaw_cost": 9.109732520692353,
+        "scored_yaw_cost": 9.109732520692354,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 37,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.878048039351336,
+        "fixed_start_yaw_cost": 9.109732520692354,
+        "scored_yaw_cost": 9.109732520692356,
+        "difference_rad": 1.7763568394002505e-15
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 38,
+        "candidate_index": 0,
+        "reported_start_yaw": 2.0556416717296675,
+        "fixed_start_yaw_cost": 9.723275125381175,
+        "scored_yaw_cost": 9.723275125381175,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 38,
+        "candidate_index": 1,
+        "reported_start_yaw": 2.0556416717296675,
+        "fixed_start_yaw_cost": 0.9512021402847459,
+        "scored_yaw_cost": 0.9512021402847458,
+        "difference_rad": 1.1102230246251565e-16
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 38,
+        "candidate_index": 2,
+        "reported_start_yaw": 2.0556416717296675,
+        "fixed_start_yaw_cost": 0.8896013907703324,
+        "scored_yaw_cost": 0.8896013907703324,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 38,
+        "candidate_index": 3,
+        "reported_start_yaw": 2.0556416717296675,
+        "fixed_start_yaw_cost": 2.15039496511322,
+        "scored_yaw_cost": 2.15039496511322,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 38,
+        "candidate_index": 4,
+        "reported_start_yaw": 2.0556416717296675,
+        "fixed_start_yaw_cost": 9.742132991614657,
+        "scored_yaw_cost": 9.742132991614657,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 38,
+        "candidate_index": 5,
+        "reported_start_yaw": 2.0556416717296675,
+        "fixed_start_yaw_cost": 10.243888577482688,
+        "scored_yaw_cost": 10.243888577482688,
+        "difference_rad": 0.0
+      },
+      {
+        "mode": "distance_single",
+        "global_sequence": 38,
+        "candidate_index": 6,
+        "reported_start_yaw": 2.0556416717296675,
+        "fixed_start_yaw_cost": 10.243888577482686,
+        "scored_yaw_cost": 10.243888577482688,
+        "difference_rad": 1.7763568394002505e-15
+      }
+    ]
+  }
+}

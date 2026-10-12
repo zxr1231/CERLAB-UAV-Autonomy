@@ -1,0 +1,41 @@
+{
+  "schema": "i2-06-held-out-validation-v1",
+  "protocol_committed_before_collection": "28d170f",
+  "frozen_main_commit": "28d170f1bccd5a9c738d711e4802c3c4178daff3",
+  "global_planner_fix": "3267e3d",
+  "attempts": 1,
+  "retries": 0,
+  "outcome": "TIMEOUT",
+  "collection_integrity": "VALID",
+  "coverage": "UNAVAILABLE_NO_GROUND_TRUTH_MASK",
+  "tests_passed": {
+    "gate_statistics": 3,
+    "existing_sensor_shadow": 6
+  },
+  "eligible": 69,
+  "selected_and_valid": 12,
+  "all_raw_snapshots_retained": true,
+  "analysis_empty_actual_included": 2,
+  "sensor_shadow_gate": "PASS",
+  "legacy_gate": "FAIL_SET_OVERLAP_ONLY",
+  "decision": "CONDITIONAL_GO_SENSOR_MATCHED_CPP_PARITY_BEFORE_GUIDED_ROUTE_IMPLEMENTATION",
+  "nonempty_sensitivity_descriptive_only": {
+    "legacy": {
+      "n": 10,
+      "median_jaccard": 0.05540993465560083
+    },
+    "sensor_shadow": {
+      "n": 10,
+      "median_jaccard": 0.8180283794690575
+    }
+  },
+  "artifact_sha256": {
+    "analysis/held_out_gate.json": "c173254b660c3df8a6ca9dfbf6ab5dcabb4875ec57880e407a4f6238107fd2d8",
+    "analysis/selected_intervals.json": "6fc20f0f6922584b96b3a09152afb560f3352b7369ebb3a95b4ad8f75fb343e1",
+    "analysis/sensor_shadow_sets.jsonl": "9c4db2f0ee15e2becf766f784839097a3897aa536063cb39064afd6de371ca6b",
+    "analysis_console.log": "ce66abc25622cdb3ffdb0f3b4e2dc3c24286c51bb31e677feb0ae7ff7142f458",
+    "integration_audit.json": "de2856a10536946c071846beb575303d3aa238428fe21503de5b272649d2de03",
+    "integration_batch.json": "7e7d54a1e6051e6d28fd66eb138a0751993ad9892c9605c6acd4837ed513fde7"
+  },
+  "next_task": "I3-00 sensor-matched C++ observation evaluator specification/parity/cost gate, pending user continuation"
+}
