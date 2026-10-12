@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-12 after I2-06 held-out gate and final I2 decision; phase complete with Conditional Go to sensor-matched C++ parity, not guided-route implementation yet.
+Last updated: 2026-10-12 I3-00 V1 camera C++ parity complete;30-candidate cost gate failed. User requested continue bounded performance work after backing up V1.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -57,7 +57,7 @@ The repositories are clean and their active branches are maintained in the user'
 GitHub account. The user has authorized pushes for completed project work.
 
 ```text
-parent branch: research/i2-06-audit
+parent branch: feat/i3-camera-evaluator
 I2-04 smoke source commit: e97291d431dba1344b4edcd59f9d4a1ff37520c5
 I2-05 runner checkpoint: a8967e0
 final documentation checkpoint: inspect git HEAD / local backup README
@@ -65,8 +65,8 @@ frozen I1 branch: feat/i1-unique-gain
 frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
-  branch fix/i2-06-gain-feedback
-  commit 3267e3d74bbdb8480ac6ea8ac9f7c26662c45e75
+  branch feat/i3-camera-evaluator
+  commit 4f135f2a2c792663ccbe7518eec57dcb10606058
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -422,7 +422,7 @@ Cannot attribute aggregate performance loss or stalls solely to missing feedback
 Keep I2-05 observed values/conclusions, but label all new-control V1 data PRE-FIX and
 not clean isolation of route-generation effects. No replacement/retry for positives.
 
-**Current checkpoint: I2-00 through I2-06 COMPLETE (2026-10-12), conditional development decision.**
+**I2 checkpoint: I2-00 through I2-06 COMPLETE (2026-10-12), conditional development decision.**
 Read `i2/I2_FINAL_DECISION.md`, `I2_06_HELD_OUT_PROTOCOL.md/json`,
 `I2_06_HELD_OUT_RESULTS.json`, `I2_06_POST_FIX_INTEGRATION.json` and validation.
 
@@ -449,7 +449,7 @@ costs; no repaired-vs-old causal performance comparison.1672014first-sensor addr
 integrityvalid, artificial clear excluded.47logged-ID/timestamp association mismatches
 reported and canonical timestamp attribution used, not falsely claimed absent.
 
-**Immediate next task ONLY after user continuation: I3-00 sensor-matched C++ evaluator.**
+**Task defined at I2 close: I3-00 sensor-matched C++ evaluator (now V1 implemented below).**
 Freeze a versioned contract matching existing5m mapper-shadow geometry; preserve old
 Legacy/I1 proxy modes and physical settings. Cross-check frozen12 snapshots/prefixes
 for exact addresses/raw/unique/marginal against Python and profile cost. Gate before
@@ -465,7 +465,7 @@ New backup: /home/zxr2/下载/CERLAB_I2_Backups/I2_06_HELD_OUT_2026-10-12/ (regi
 collection full verified raw archive, final report/Git/analysis checkpoint).
 Earlier audit: /home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-AUDIT-V1/;
 earlier backup I2_06_FIRST_ITEM_2026-10-10 retained. No simulation remains.
-No I3 algorithm code started in I2-06 close.
+At I2-06 close no I3 algorithm code had started.
 
 Future user preference: AFTER observation-opportunity guidance is implemented, run
 NEW cohorts in isolated parallel ROS/Gazebo instances. Register uniform concurrency,
@@ -482,6 +482,25 @@ Final paper-scale ten-seed and multi-scene ablation is deferred until the full
 proposed method is ready. The current three-part paper framing is in
 `experiments/PAPER_CONTRIBUTIONS_DRAFT.md`; its second and third points remain
 unimplemented hypotheses.
+
+## Current I3 checkpoint and immediate next task
+
+I3-00 V1 isolated camera evaluator implemented on feature branch4f135f2. Read
+`i3/I3_00_PROTOCOL.md`, `I3_00_REPORT.md`, validation, parity summary and batch cost.
+15 C++ tests pass (5camera+10old evaluator), all12 I2-06 snapshots /239poses exact
+per-pose addresses/raw/unique/marginal/union, including prior saved shadow unions.
+No online/default/sensor/stop changes. New evaluator accepts fixed samples; route
+sampling/integration and guided method remain pending.
+
+One warmup+3 repeats: prefixp95=80.241ms,max81.281ms passes per-prefix budget.
+Actual fixed30-candidate workload1178.820ms FAILS registered500ms batch budget.
+Online cost admission NOT passed. Preserve failedV1 evidence; no threshold relaxation.
+Next: back up V1, then user-authorized bounded profiling and at most2 semantic-
+preserving optimizations. All original12 cases and cost workload must be retained;
+no core guided implementation before cost gate resolved. See next registered
+performance protocol, not endless calibration or new seed runs.
+Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PARITY-V1/.
+Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_00_V1_2026-10-12/.
 
 ## Innovation-1 isolation rules
 
