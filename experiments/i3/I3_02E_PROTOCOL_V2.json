@@ -1,0 +1,177 @@
+{
+  "protocol_id": "I3_02E_FOUNDATION_V2",
+  "status": "REVISED_BEFORE_IMPLEMENTATION",
+  "supersedes": "I3_02E_EDGE_CORRIDOR_V1",
+  "v1_files_preserved": true,
+  "method_file": "I3_02E_METHOD_PROTOCOL_V2.md",
+  "inputs_file": "I3_02E_INPUTS_V2.json",
+  "audit_file": "I3_02E_ASTRA_AUDIT.md",
+  "scope": "exact_local_visibility_composition_and_limited_geometric_pool_value",
+  "observation_guided_generation": {
+    "defined": false,
+    "implemented": false,
+    "admitted": false
+  },
+  "fixed_states": [
+    1,
+    13,
+    14,
+    26,
+    27,
+    38
+  ],
+  "negative_control": 13,
+  "valid_state_denominator": 5,
+  "strata": {
+    "early": [
+      1,
+      13
+    ],
+    "middle": [
+      14,
+      26
+    ],
+    "late": [
+      27,
+      38
+    ]
+  },
+  "input_fingerprint": "sha256 canonical JSON and frozen source byte hashes; see inputs registry",
+  "pool": {
+    "enumeration_order": [
+      "reference_segment",
+      "u",
+      "v"
+    ],
+    "pair_cap": 12000,
+    "per_directed_edge_keep": 1,
+    "per_edge_key": [
+      "estimated_time",
+      "segment"
+    ],
+    "sort_key": [
+      "estimated_time",
+      "length",
+      "u",
+      "v",
+      "segment"
+    ],
+    "cap": 5,
+    "stratification": "floor(j*(n-1)/4), j=0..4; all if n<=5",
+    "uses_observation": false,
+    "synthetic_start_edges": false,
+    "geometry_epsilon_m": 0.000001,
+    "adjacent_boundary_merge": "exact coordinate equality only; reject unequal near-boundary coordinates within1e-6",
+    "global_shortcut": false
+  },
+  "motion": {
+    "model": "length/v + yaw_penalty*yaw_distance/angular_velocity",
+    "meaning": "estimated_time_not_Bspline_execution_time",
+    "length_ratio_max": 1.25,
+    "time_ratio_max": 1.25,
+    "extra_yaw_max": 1.5707963267948966,
+    "reference_min_length_m": 0.000001,
+    "min_time_seconds": 0.000001,
+    "physical_config_changes": false
+  },
+  "sampling": {
+    "contract": "twoStageFixture::sample",
+    "translation_spacing_m": 0.25,
+    "yaw_spacing_rad": 0.1,
+    "comparison_tolerance": 1e-12,
+    "vertical_heading_rad": 0,
+    "boundaries": "event partition; preserve reference canonical poses outside changed window",
+    "optical_model": "mapper_matched_frozen_shadow_v1"
+  },
+  "composition": {
+    "unchanged": "union of visibility at unchanged reference poses",
+    "forbidden": "R minus R_e",
+    "changed_window": "all connector/edge rotations/translations plus exit/terminal rotation",
+    "recompute_suffix_marginals": true,
+    "required_parity": [
+      "canonical poses",
+      "sorted unique addresses",
+      "raw",
+      "per-pose marginal",
+      "unique",
+      "same-U same-tie choice"
+    ]
+  },
+  "controls": [
+    "reference",
+    "geometry_with_u_fallback",
+    "new_only_with_u_fallback",
+    "exact_net_rerank",
+    "full_recompute_oracle_after_checkpoint"
+  ],
+  "selection": {
+    "objective": "unique_visible_unknown_count/estimated_time",
+    "extra_tie_key": [
+      "estimated_time",
+      "length",
+      "u",
+      "v",
+      "segment"
+    ],
+    "reference_improvement_tolerance": 1e-9,
+    "tolerance_is_effect_size": false,
+    "zero_reference_gain": "legal; relative effects null; report valid denominator",
+    "incomplete_gain": "invalid; never interpret as valid zero",
+    "max_D_is_not_max_U": true
+  },
+  "work_accounting": {
+    "coarse_observation_queries": 0,
+    "reference_exact_evaluations": 1,
+    "corridors_exact_evaluated_max": 5,
+    "exact_routes_scored_including_reference_max": 6,
+    "extra_submitted_max": 1,
+    "independent_full_oracle_routes_max": 6,
+    "oracle_cost_separate": true
+  },
+  "api_budget": {
+    "shared_absolute_deadline": true,
+    "reset_per_pose": false,
+    "max_pose_and_voxel_visit_limits_supported": true,
+    "visibility_scratch_bytes": 268435456,
+    "memory_accounting": "allocator capacities/nodes/buckets/marks/indices/unions before allocation; input map/model reported separately",
+    "incomplete_required_candidate": "invalidate whole control; freshly safe reference fallback else no submission",
+    "cleanup_and_sort_in_total": true,
+    "persistent_cache": false
+  },
+  "e1": {
+    "attempt_batches_max": 1,
+    "new_simulation": false,
+    "warmups": 0,
+    "formal_timing_repeats": 0,
+    "budget_admission": false,
+    "engineering_checks_mandatory": true,
+    "minimum_nontruncated_nonempty_pool_states": 3,
+    "minimum_positive_predicted_utility_states": 2,
+    "pass": "FOUNDATION_PASS_COST_STUDY_PENDING",
+    "failure_scope": "this fixed pool/representation only",
+    "oracle_choice_agreement_role": "correctness",
+    "same_pool_dominance_role": "definition invariant, not innovation evidence",
+    "strict_wins_role": "descriptive only",
+    "autostart_e2": false
+  },
+  "e2": {
+    "status": "separate protocol pending; not authorized by this revision",
+    "generation_wall_ms": 50,
+    "scoring_deadline_from_stage_b_ms": 475,
+    "final_reserve_ms": 25,
+    "total_stage_b_wall_ms": 500,
+    "warmups": 1,
+    "repeats": 3,
+    "minimum_complete_states": 3,
+    "required_strata": [
+      "early",
+      "middle",
+      "late"
+    ],
+    "needs_full_required_work_not_only_output_count": true,
+    "reference_vs_full_recompute_independent_cost_runs": true
+  },
+  "implemented": false,
+  "experiment_run": false,
+  "github_checkpoint_push": false
+}

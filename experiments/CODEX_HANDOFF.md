@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-13. I3-02E edge/corridor method and bounded protocol design complete; next is isolated I3-02E1 implementation and fixed-fixture batch. Local backup only.
+Last updated: 2026-10-13. I3-02E V2 revised after audit B; next is isolated E1 FOUNDATION evaluation, not observation-guided generation. V1 retained, no E experiment run. Local backup only.
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -71,7 +71,7 @@ frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i3-camera-evaluator
-  commit 155d65b01a92c59e35b2fd3eaaaa997e89a08cab
+  commit cde9ed05e107369504e6606ce45e43412f9cd86c
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -623,7 +623,7 @@ full-route path-history marginals, and the changed window spans25.1--97.3% of po
 (median76.1%). It neither solves the500ms failure nor supplies an observation-driven
 generator. Do not rebrand it as an algorithm/performance result.
 
-**Current checkpoint: I3-02E DESIGN COMPLETE, NOT IMPLEMENTED/RUN.**
+**Historical checkpoint: I3-02E V1 DESIGN, superseded for future execution by V2 below.**
 Read I3_02E_SOURCE_AUDIT.md, I3_02E_METHOD_PROTOCOL.md, I3_02E_PROTOCOL.json and
 I3_02E_DESIGN_REVIEW.md. Final reference segments are often shortcut lines rather than
 Graph edges. The new representation replaces one reference segment with connector ->
@@ -638,16 +638,30 @@ selection. Current CameraGainEvaluator lacks a budget-aware all-or-nothing pose-
 batch API; implementing/testing that isolated interface is an E1 prerequisite and all
 its cost counts. No persistent Edge cache is assumed.
 
-**Immediate next task, only after user resumes: implement and run I3-02E1 once.**
-Build isolated candidate/pose-set fixtures, tests, then use fixed states1/13/14/26/27/38.
-Follow the exact enumeration, per-Edge best insertion, 5-way stratification, common
-controls and kill gates. State13 must do zero work. Full address composition must equal
-full candidate recomputation. Value gates require >=3 nonempty pools, >=2 useful states,
-Proposed useful >=2, oracle choice5/5, and distinction from Geometry and Naive. A pass
-admits only I3-02E2 budget probe; do not run it automatically. A failure stops this
-representation without widening caps or seeds. Do not change online dep.cpp/default,
-start simulation, or introduce persistent cache. I3-02 remains incomplete; backup is
-local and no GitHub push claimed.
+**Current checkpoint: audit B addressed by I3-02E V2, NOT IMPLEMENTED/RUN.**
+Read i3/I3_02E_REVISION_V2.md, METHOD_PROTOCOL_V2.md, PROTOCOL_V2.json and INPUTS_V2.json.
+I3_02E_ASTRA_AUDIT.md is the immutable audit snapshot; its pre-revision status is historical.
+All four V1 E documents and earlier negative data are preserved. E1 is now exact local
+visibility composition and LIMITED GEOMETRIC POOL VALUE, not observation-guided generation.
+The latter remains undefined/unimplemented. Exact argmax matching the same oracle and
+dominating weaker same-pool selectors are correctness/definition properties, not novelty.
+
+**Immediate next task, only after user resumes: V2 E1 foundation implementation and one batch.**
+Use fixed states1/13/14/26/27/38 and registry hashes. Preserve canonical boundary poses;
+exact-equal adjacent boundary merge only, reject unequal near-boundary ambiguities.
+Event-based changed-window decomposition, B_e union C (never R minus R_e), independent
+history including recomputed suffix marginals. Validate addresses/raw/marginal/unique and
+same-U/tie oracle choice. Shared absolute deadline, counters,256MiB visibility scratch cap,
+invalid results and whole-control fallback contract apply. Actual scoring is1reference+
+up to5corridors, not2 just because1extra is output. No new optical kernel or online default.
+
+Engineering checks plus >=3 nontruncated nonempty states and >=2 positive predicted-U
+states allow FOUNDATION_PASS_COST_STUDY_PENDING only. Strict wins are descriptive.
+No automatic E2/cost benchmark, guided generation, simulation or cache. E2 requires a
+separate registration and fixed early/middle/late labels; effective early state is only1.
+Any fixed-pool failure stops that branch, not a claim all informative planning is impossible.
+Complete E1 report/local backup and stop. This turn only revised protocols, no implementation.
+I3-02 remains incomplete; do not push this small checkpoint to GitHub.
 
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01C-OBSERVATION-LOSS-V1/.
 Backup target: /home/zxr2/下载/CERLAB_I3_Backups/I3_01C_2026-10-13/.
@@ -712,8 +726,9 @@ computation budgets, with observation preservation through simplification/execut
    generated large results outside Git.
 4. Do not start duplicate ROS/Gazebo instances. Do not stop unrelated ROS projects.
 5. Do not automatically start rosbag. Use lightweight CSV/JSON.
-6. After each bounded task, run appropriate tests, update this handoff, commit, push
-   the user's GitHub repositories and create a verified local backup.
+6. After each bounded task, run appropriate checks, update this handoff, commit locally
+   and create a verified local backup. Push only after a major task such as I3-02 is
+   complete, or when the user explicitly requests a push.
 7. If context is nearly exhausted, stop at a clean checkpoint and update this file so
    a new conversation can resume from the first unfinished task.
 
@@ -725,6 +740,6 @@ computation budgets, with observation preservation through simplification/execut
 
 然后按其中“Immediate next task”继续。先核查 AGENTS.md、Git/submodule 状态和
 运行进程，不要重复已完成的 Benchmark、R1 或 R2，不要修改冻结实验条件。
-完成当前小任务后编译、测试、更新交接文档、提交并推送 GitHub，再制作本地备份。
+完成当前小任务后进行适当检查、更新交接文档、本地提交与校验备份；大任务完成或明确要求时再推送GitHub。
 如果我在任务中提问，回答后继续原任务，不要因此中断。
 ```

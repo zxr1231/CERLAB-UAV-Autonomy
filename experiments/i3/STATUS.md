@@ -8,7 +8,7 @@
 | I3-01A scope review / method protocol | Complete: explicit distance_single/Legacy StageA + same-goal2-route StageB contract, offline probe only |
 | I3-01B minimal offline supply/budget probe | Complete, NOT admitted: reference5/5pass; 4supply deficits,1alternative timeout; negative13passed |
 | I3-01C fixed-pool observation/simplification diagnostic | Complete: predicted loss10/10, direct raw-retention leads0; NOT admitted |
-| I3-02 observation opportunities / anchors | I3-02E design complete; Edge/corridor E1 implementation and experiment pending, phase incomplete |
+| I3-02 observation opportunities / anchors | Audit B addressed: E V2 foundation protocol ready; implementation/experiment and genuine guided generation pending |
 | I3-03 guided candidate construction | Pending |
 | I3-04 observation-preserving simplification | Pending |
 | I3-05 online integration | Pending |
@@ -61,7 +61,7 @@ median76.1% of poses. No timing/online admission. Its requested I3-02E design st
 now complete below; no implementation result is implied. Local backup only; no GitHub
 push claimed.
 
-I3-02E DESIGN COMPLETE2026-10-13: source audit, directed PRM Edge+two safe connector
+Historical I3-02E V1 DESIGN2026-10-13 (future execution superseded by V2): directed PRM Edge+two safe connector
 corridor representation, exact unchanged-reference/corridor set composition, common
 Geometry/Naive/Proposed pool, fixed12000 pair/5 corridor caps and E1/E2 kill gates are
 recorded in I3_02E_SOURCE_AUDIT.md, METHOD_PROTOCOL.md, PROTOCOL.json and
@@ -69,3 +69,12 @@ DESIGN_REVIEW.md. No code/experiment/online mode was added. Next implement isola
 I3-02E1 fixture and run the one fixed6-state batch. Any supply/value/distinction gate
 failure stops this representation; a pass admits only E2 budget probe. Local backup
 only; no GitHub push claimed.
+
+Current: I3-02E V2 revision COMPLETE2026-10-13, NOT implemented/run. Read REVISION_V2,
+METHOD_PROTOCOL_V2, PROTOCOL_V2 and INPUTS_V2. E1 is exact local evaluation/limited pool
+value, not guided generation. V1 and earlier failures unchanged. Oracle agreement and
+same-pool dominance are correctness properties; >=3 nonempty/nontruncated and >=2
+positive-U states are bounded value diagnostics. Pass=FOUNDATION_PASS_COST_STUDY_PENDING,
+not E2/innovation admission. Budget counts reference+up to5corridors, absolute deadline
+and256MiB visibility scratch; context hashes/old stage labels locked. Next user-triggered
+task is V2 isolated E1 implementation/tests/one batch/local backup then stop. No GitHub push.
