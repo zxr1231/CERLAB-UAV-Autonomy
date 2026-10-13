@@ -8,7 +8,7 @@
 | I3-01A scope review / method protocol | Complete: explicit distance_single/Legacy StageA + same-goal2-route StageB contract, offline probe only |
 | I3-01B minimal offline supply/budget probe | Complete, NOT admitted: reference5/5pass; 4supply deficits,1alternative timeout; negative13passed |
 | I3-01C fixed-pool observation/simplification diagnostic | Complete: predicted loss10/10, direct raw-retention leads0; NOT admitted |
-| I3-02 observation opportunities / anchors | I3-02A complete, PROXY_NOT_SUPPORTED; I3-02B not admitted, phase incomplete |
+| I3-02 observation opportunities / anchors | I3-02A proxy failed; I3-02R segment signal passed; edge/corridor generator still unimplemented, phase incomplete |
 | I3-03 guided candidate construction | Pending |
 | I3-04 observation-preserving simplification | Pending |
 | I3-05 online integration | Pending |
@@ -49,3 +49,14 @@ simulation, kernel change or performance claim. Read I3_02A_REPORT.md/RESULTS.js
 VALIDATION.json. Next is a research-scope decision; do not enlarge pool, rerun seeds,
 use oracle candidate636, or automatically enter I3-03. Local backup only; I3-02 is
 not complete and no GitHub push is claimed for this checkpoint.
+
+I3-02R COMPLETE2026-10-13: read-only attribution over the same14 saved candidates,
+zero camera calls/new candidates/simulation. Segment changed-window score chooses the
+same reference/candidate as full oracle in5/5states; route-level Spearman/sign agreement
+both1.0. It finds candidate636 at26 and preserves197 at38. Spatially,95.25%/97.31%
+of added voxels lie within5m of inserted corridors versus41.84%/56.05% of anchors.
+Decision SEGMENT_SIGNAL_ONLY_REQUIRES_NEW_OPPORTUNITY_GENERATOR. This does not change
+I3-02A failure: the score consumes saved full-route marginals and changed windows cover
+median76.1% of poses. No timing/online admission. Next only preregister I3-02E design
+for residual observation opportunity edges/corridors; close the line if bounded edge
+generation/evaluation cannot be defined. Local backup only; no GitHub push claimed.

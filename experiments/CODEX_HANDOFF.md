@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-13. I3-02A complete with PROXY_NOT_SUPPORTED; next is a research-scope decision. Local backup only at this checkpoint.
+Last updated: 2026-10-13. I3-02R scope decision complete: segment/corridor signal supported, single-point proxy remains failed; next is I3-02E edge-opportunity protocol design. Local backup only.
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -594,7 +594,7 @@ is yaw-sensitive. No actual-flight benefit or online500ms admission established.
 4accounting tests and reference/fixture/source-hash checks pass. Frozen I1/I2/B
 results remain unchanged. No new simulation, evaluator kernel or default changes.
 
-**Current checkpoint: I3-02A COMPLETE, PROXY_NOT_SUPPORTED.**
+**Historical checkpoint: I3-02A COMPLETE, PROXY_NOT_SUPPORTED.**
 Read experiments/i3/I3_02A_REPORT.md, RESULTS.json and VALIDATION.json. Protocol was
 registered at b641c96; isolated implementation parent6e2ef68 / global_plannercde9ed0.
 The fixed batch scanned3498/3498 edge-node pairs and formed14 small-pool routes across
@@ -609,14 +609,29 @@ at every nonempty state. Naive marginal selects worse routes. Formal result is
 PROXY_NOT_SUPPORTED and method-difference evidence is also absent. No I3-02B timing
 protocol, I3-03, online simulation, performance or novelty admission follows.
 
-**Immediate next task: research-scope decision only after user resumes.**
-Do not rerun I3-02A, enlarge pools/add seeds, tune the proxy after seeing results, or
-use oracle route636 as a selected success. Decide whether to lower/close this specific
-single-anchor claim, or first formulate a structurally different mechanism that can
-predict complete-route net observation under the unchanged motion/computation budget
-and preregister a new bounded gate. Do not add cache/confidence/semantics to hide the
-negative gate. Checkpoint backup is LOCAL only; I3-02 is not complete, so no GitHub
-push is claimed.
+**Current checkpoint: I3-02R COMPLETE, SEGMENT SIGNAL ONLY.**
+Read I3_02R_PROTOCOL.md, REPORT.md, RESULTS.json and VALIDATION.json. Registered433a2c9,
+implemented2a4b369. Read-only analysis uses the same14 saved I3-02A candidates with
+zero camera evaluations/new candidates/simulation and leaves PROXY_NOT_SUPPORTED intact.
+Changed-window segment score matches full-oracle candidate/reference choices5/5;
+Spearman/sign agreement are1.0. It selects636 at26 (+6.48%) and197 at38 (+0.58%).
+For these useful routes95.25%/97.31% of added voxels are within5m of the inserted
+corridor, while only41.84%/56.05% are within5m of the anchor.
+
+This is post-hoc mechanism evidence, not a deployable selector: it consumes saved
+full-route path-history marginals, and the changed window spans25.1--97.3% of poses
+(median76.1%). It neither solves the500ms failure nor supplies an observation-driven
+generator. Do not rebrand it as an algorithm/performance result.
+
+**Immediate next task, only after user resumes: I3-02E method/protocol design.**
+Define a bounded reference-conditioned observation-opportunity EDGE/CORRIDOR generator:
+V(tau0), directed nearby PRM-edge residual visibility, connection time/yaw lower bound,
+small fixed opportunity-edge cap, and same-count Geometry/Naive/Generic controls.
+Specify how edge queries fit the unchanged50/475/500ms budgets and when cache is counted;
+do not scan/evaluate the entire graph for free. Register a finite offline supply/value
+gate before implementation. If bounded construction cannot be defined, close this
+research line. Do not automatically implement I3-03, rerun seeds, or add unrelated
+modules. I3-02 remains incomplete; checkpoint backup is local and no GitHub push claimed.
 
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01C-OBSERVATION-LOSS-V1/.
 Backup target: /home/zxr2/下载/CERLAB_I3_Backups/I3_01C_2026-10-13/.

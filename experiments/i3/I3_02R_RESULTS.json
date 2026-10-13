@@ -1,0 +1,632 @@
+{
+  "schema": "i3-02r-segment-attribution-v1",
+  "protocol_sha256": "3408740a0d4a243b72390b94201c84ebf807489a25ff08d46cd4b6bcdc5f6a94",
+  "source_summary_sha256": "46932c6bd05534de06139c8e6f85123ec5b0bafd3a8dee9557553aa4a6fcbefd",
+  "selection_checkpoint_sha256": "177b74a1df431036d8fcfa12a1d3c9da5a23d170e4daed550678a71c2ab570d8",
+  "states": [
+    {
+      "sequence": 1,
+      "reference_utility": 2948.7372718308166,
+      "segment_choice": null,
+      "oracle_choice": null,
+      "geometry_choice": null,
+      "exact_choice": true,
+      "segment_selected_utility_change": 0,
+      "candidates": []
+    },
+    {
+      "sequence": 14,
+      "reference_utility": 2063.8419277300145,
+      "segment_choice": null,
+      "oracle_choice": null,
+      "geometry_choice": 158,
+      "exact_choice": true,
+      "segment_selected_utility_change": 0,
+      "candidates": [
+        {
+          "record_id": 158,
+          "anchor": 158,
+          "edge": 0,
+          "path": [
+            0,
+            158,
+            153
+          ],
+          "time": 6.887759580623111,
+          "length": 2.7466099735258767,
+          "segment_score": -716.2470106140779,
+          "candidate_changed_marginal": 13499,
+          "reference_changed_marginal": 12813,
+          "candidate_phase_marginal": {
+            "common_initial": 0,
+            "inserted_incoming": 9453,
+            "inserted_outgoing": 3475,
+            "changed_exit": 571
+          },
+          "reference_phase_marginal": {
+            "common_initial": 0,
+            "replaced_edge": 12596,
+            "changed_exit": 217
+          },
+          "candidate_sample_count": 35,
+          "reference_sample_count": 31,
+          "oracle_net_value": -716.2470106140779,
+          "utility": 1959.8535404713984,
+          "utility_change": -103.98838725861606,
+          "downstream_residual": 0.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 156,
+          "anchor": 156,
+          "edge": 0,
+          "path": [
+            0,
+            156,
+            153
+          ],
+          "time": 7.231485990476816,
+          "length": 2.7436199084123105,
+          "segment_score": -814.6439869382652,
+          "candidate_changed_marginal": 14110,
+          "reference_changed_marginal": 12813,
+          "candidate_phase_marginal": {
+            "common_initial": 0,
+            "inserted_incoming": 8948,
+            "inserted_outgoing": 5145,
+            "changed_exit": 17
+          },
+          "reference_phase_marginal": {
+            "common_initial": 0,
+            "replaced_edge": 12596,
+            "changed_exit": 217
+          },
+          "candidate_sample_count": 37,
+          "reference_sample_count": 31,
+          "oracle_net_value": -814.6439869382652,
+          "utility": 1951.1895644382823,
+          "utility_change": -112.65236329173217,
+          "downstream_residual": 0.0,
+          "sign_agrees": true
+        }
+      ]
+    },
+    {
+      "sequence": 26,
+      "reference_utility": 568.1876010016948,
+      "segment_choice": 636,
+      "oracle_choice": 636,
+      "geometry_choice": 200,
+      "exact_choice": true,
+      "segment_selected_utility_change": 36.819696911438996,
+      "candidates": [
+        {
+          "record_id": 200,
+          "anchor": 200,
+          "edge": 0,
+          "path": [
+            0,
+            200,
+            282,
+            301
+          ],
+          "time": 19.079392746060428,
+          "length": 10.011413500937518,
+          "segment_score": -3.6743929532137853,
+          "candidate_changed_marginal": 651,
+          "reference_changed_marginal": 648,
+          "candidate_phase_marginal": {
+            "common_initial": 5,
+            "inserted_incoming": 12,
+            "inserted_outgoing": 223,
+            "changed_exit": 416,
+            "unchanged_suffix": 10178
+          },
+          "reference_phase_marginal": {
+            "common_initial": 5,
+            "replaced_edge": 235,
+            "changed_exit": 413,
+            "unchanged_suffix": 10181
+          },
+          "candidate_sample_count": 90,
+          "reference_sample_count": 88,
+          "oracle_net_value": -6.674392953213785,
+          "utility": 567.8377789165768,
+          "utility_change": -0.3498220851180349,
+          "downstream_residual": -3.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 275,
+          "anchor": 275,
+          "edge": 0,
+          "path": [
+            0,
+            275,
+            282,
+            301
+          ],
+          "time": 19.96800751442703,
+          "length": 10.121208981436787,
+          "segment_score": -510.57428640610954,
+          "candidate_changed_marginal": 649,
+          "reference_changed_marginal": 648,
+          "candidate_phase_marginal": {
+            "common_initial": 5,
+            "inserted_incoming": 236,
+            "inserted_outgoing": 0,
+            "changed_exit": 413,
+            "unchanged_suffix": 10181
+          },
+          "reference_phase_marginal": {
+            "common_initial": 5,
+            "replaced_edge": 235,
+            "changed_exit": 413,
+            "unchanged_suffix": 10181
+          },
+          "candidate_sample_count": 94,
+          "reference_sample_count": 88,
+          "oracle_net_value": -510.57428640610954,
+          "utility": 542.6179849026817,
+          "utility_change": -25.56961609901316,
+          "downstream_residual": 0.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 209,
+          "anchor": 209,
+          "edge": 0,
+          "path": [
+            0,
+            209,
+            282,
+            301
+          ],
+          "time": 20.748022196542912,
+          "length": 10.685612482559094,
+          "segment_score": -1081.7689573836328,
+          "candidate_changed_marginal": 521,
+          "reference_changed_marginal": 648,
+          "candidate_phase_marginal": {
+            "common_initial": 5,
+            "inserted_incoming": 99,
+            "inserted_outgoing": 4,
+            "changed_exit": 418,
+            "unchanged_suffix": 10176
+          },
+          "reference_phase_marginal": {
+            "common_initial": 5,
+            "replaced_edge": 235,
+            "changed_exit": 413,
+            "unchanged_suffix": 10181
+          },
+          "candidate_sample_count": 97,
+          "reference_sample_count": 88,
+          "oracle_net_value": -1086.7689573836328,
+          "utility": 515.8082008309782,
+          "utility_change": -52.37940017071662,
+          "downstream_residual": -5.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 636,
+          "anchor": 285,
+          "edge": 1,
+          "path": [
+            0,
+            282,
+            285,
+            301
+          ],
+          "time": 21.527013054097026,
+          "length": 10.202028220531439,
+          "segment_score": 792.6180960604424,
+          "candidate_changed_marginal": 12784,
+          "reference_changed_marginal": 10594,
+          "candidate_phase_marginal": {
+            "common_initial": 5,
+            "unchanged_prefix": 235,
+            "inserted_incoming": 4890,
+            "inserted_outgoing": 6639,
+            "changed_exit": 1255
+          },
+          "reference_phase_marginal": {
+            "common_initial": 5,
+            "unchanged_prefix": 235,
+            "replaced_edge": 10309,
+            "changed_exit": 285
+          },
+          "candidate_sample_count": 101,
+          "reference_sample_count": 88,
+          "oracle_net_value": 792.6180960604424,
+          "utility": 605.0072979131338,
+          "utility_change": 36.819696911438996,
+          "downstream_residual": 0.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 279,
+          "anchor": 279,
+          "edge": 0,
+          "path": [
+            0,
+            279,
+            282,
+            301
+          ],
+          "time": 23.383981785777777,
+          "length": 12.28723941293729,
+          "segment_score": -2512.4885127284037,
+          "candidate_changed_marginal": 588,
+          "reference_changed_marginal": 648,
+          "candidate_phase_marginal": {
+            "common_initial": 5,
+            "inserted_incoming": 99,
+            "inserted_outgoing": 470,
+            "changed_exit": 19,
+            "unchanged_suffix": 10177
+          },
+          "reference_phase_marginal": {
+            "common_initial": 5,
+            "replaced_edge": 235,
+            "changed_exit": 413,
+            "unchanged_suffix": 10181
+          },
+          "candidate_sample_count": 111,
+          "reference_sample_count": 88,
+          "oracle_net_value": -2516.4885127284037,
+          "utility": 460.57168957214776,
+          "utility_change": -107.61591142954705,
+          "downstream_residual": -4.0,
+          "sign_agrees": true
+        }
+      ]
+    },
+    {
+      "sequence": 27,
+      "reference_utility": 532.7437069375893,
+      "segment_choice": null,
+      "oracle_choice": null,
+      "geometry_choice": 587,
+      "exact_choice": true,
+      "segment_selected_utility_change": 0,
+      "candidates": [
+        {
+          "record_id": 587,
+          "anchor": 233,
+          "edge": 1,
+          "path": [
+            0,
+            240,
+            233,
+            201,
+            154,
+            124,
+            110,
+            113
+          ],
+          "time": 34.981572388000025,
+          "length": 23.145479867838002,
+          "segment_score": -20.21254848875235,
+          "candidate_changed_marginal": 545,
+          "reference_changed_marginal": 545,
+          "candidate_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 18,
+            "inserted_incoming": 221,
+            "inserted_outgoing": 324,
+            "changed_exit": 0,
+            "unchanged_suffix": 18046
+          },
+          "reference_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 18,
+            "replaced_edge": 545,
+            "changed_exit": 0,
+            "unchanged_suffix": 18046
+          },
+          "candidate_sample_count": 162,
+          "reference_sample_count": 160,
+          "oracle_net_value": -20.21254848875235,
+          "utility": 532.165901335698,
+          "utility_change": -0.5778056018913276,
+          "downstream_residual": 0.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 584,
+          "anchor": 230,
+          "edge": 1,
+          "path": [
+            0,
+            240,
+            230,
+            201,
+            154,
+            124,
+            110,
+            113
+          ],
+          "time": 35.75586730484905,
+          "length": 23.301992465335598,
+          "segment_score": -635.7132927538332,
+          "candidate_changed_marginal": 342,
+          "reference_changed_marginal": 545,
+          "candidate_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 18,
+            "inserted_incoming": 283,
+            "inserted_outgoing": 59,
+            "changed_exit": 0,
+            "unchanged_suffix": 18046
+          },
+          "reference_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 18,
+            "replaced_edge": 545,
+            "changed_exit": 0,
+            "unchanged_suffix": 18046
+          },
+          "candidate_sample_count": 164,
+          "reference_sample_count": 160,
+          "oracle_net_value": -635.7132927538332,
+          "utility": 514.9644348720053,
+          "utility_change": -17.779272065583996,
+          "downstream_residual": 0.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 1535,
+          "anchor": 119,
+          "edge": 4,
+          "path": [
+            0,
+            240,
+            201,
+            154,
+            124,
+            119,
+            110,
+            113
+          ],
+          "time": 37.214239117467564,
+          "length": 24.07846422416729,
+          "segment_score": -2098.6516983015126,
+          "candidate_changed_marginal": 11713,
+          "reference_changed_marginal": 12602,
+          "candidate_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 3842,
+            "inserted_incoming": 176,
+            "inserted_outgoing": 10244,
+            "changed_exit": 1293,
+            "unchanged_suffix": 2159
+          },
+          "reference_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 3842,
+            "replaced_edge": 9399,
+            "changed_exit": 3203,
+            "unchanged_suffix": 2165
+          },
+          "candidate_sample_count": 171,
+          "reference_sample_count": 160,
+          "oracle_net_value": -2104.6516983015126,
+          "utility": 476.1886960543053,
+          "utility_change": -56.55501088328401,
+          "downstream_residual": -6.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 892,
+          "anchor": 184,
+          "edge": 2,
+          "path": [
+            0,
+            240,
+            201,
+            184,
+            154,
+            124,
+            110,
+            113
+          ],
+          "time": 38.65612111639173,
+          "length": 25.559946440715567,
+          "segment_score": -3039.8052593749544,
+          "candidate_changed_marginal": 1021,
+          "reference_changed_marginal": 2083,
+          "candidate_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 563,
+            "inserted_incoming": 0,
+            "inserted_outgoing": 1021,
+            "changed_exit": 0,
+            "unchanged_suffix": 16053
+          },
+          "reference_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 563,
+            "replaced_edge": 2082,
+            "changed_exit": 1,
+            "unchanged_suffix": 15963
+          },
+          "candidate_sample_count": 177,
+          "reference_sample_count": 160,
+          "oracle_net_value": -2949.8052593749544,
+          "utility": 456.43482818347866,
+          "utility_change": -76.30887875411065,
+          "downstream_residual": 90.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 1504,
+          "anchor": 88,
+          "edge": 4,
+          "path": [
+            0,
+            240,
+            201,
+            154,
+            124,
+            88,
+            110,
+            113
+          ],
+          "time": 42.80694142872909,
+          "length": 28.879458700157898,
+          "segment_score": -7339.128659401402,
+          "candidate_changed_marginal": 9452,
+          "reference_changed_marginal": 12602,
+          "candidate_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 3842,
+            "inserted_incoming": 35,
+            "inserted_outgoing": 7801,
+            "changed_exit": 1616,
+            "unchanged_suffix": 2162
+          },
+          "reference_phase_marginal": {
+            "common_initial": 7,
+            "unchanged_prefix": 3842,
+            "replaced_edge": 9399,
+            "changed_exit": 3203,
+            "unchanged_suffix": 2165
+          },
+          "candidate_sample_count": 194,
+          "reference_sample_count": 160,
+          "oracle_net_value": -7342.128659401402,
+          "utility": 361.2264619686725,
+          "utility_change": -171.51724496891683,
+          "downstream_residual": -3.0,
+          "sign_agrees": true
+        }
+      ]
+    },
+    {
+      "sequence": 38,
+      "reference_utility": 1779.0866110107868,
+      "segment_choice": 197,
+      "oracle_choice": 197,
+      "geometry_choice": 197,
+      "exact_choice": true,
+      "segment_selected_utility_change": 10.263254364132308,
+      "candidates": [
+        {
+          "record_id": 197,
+          "anchor": 197,
+          "edge": 0,
+          "path": [
+            0,
+            197,
+            161
+          ],
+          "time": 6.078744135217493,
+          "length": 4.113690491953696,
+          "segment_score": 62.387697274214645,
+          "candidate_changed_marginal": 10865,
+          "reference_changed_marginal": 10687,
+          "candidate_phase_marginal": {
+            "common_initial": 12,
+            "inserted_incoming": 4193,
+            "inserted_outgoing": 6432,
+            "changed_exit": 240
+          },
+          "reference_phase_marginal": {
+            "common_initial": 12,
+            "replaced_edge": 10498,
+            "changed_exit": 189
+          },
+          "candidate_sample_count": 29,
+          "reference_sample_count": 29,
+          "oracle_net_value": 62.387697274214645,
+          "utility": 1789.349865374919,
+          "utility_change": 10.263254364132308,
+          "downstream_residual": 0.0,
+          "sign_agrees": true
+        },
+        {
+          "record_id": 177,
+          "anchor": 177,
+          "edge": 0,
+          "path": [
+            0,
+            177,
+            161
+          ],
+          "time": 6.589210204293236,
+          "length": 4.142438302075583,
+          "segment_score": -915.775651593748,
+          "candidate_changed_marginal": 10795,
+          "reference_changed_marginal": 10687,
+          "candidate_phase_marginal": {
+            "common_initial": 12,
+            "inserted_incoming": 7063,
+            "inserted_outgoing": 3671,
+            "changed_exit": 61
+          },
+          "reference_phase_marginal": {
+            "common_initial": 12,
+            "replaced_edge": 10498,
+            "changed_exit": 189
+          },
+          "candidate_sample_count": 32,
+          "reference_sample_count": 29,
+          "oracle_net_value": -915.775651593748,
+          "utility": 1640.1055156744947,
+          "utility_change": -138.98109533629213,
+          "downstream_residual": 0.0,
+          "sign_agrees": true
+        }
+      ]
+    }
+  ],
+  "candidate_count": 14,
+  "exact_state_choices": 5,
+  "spearman_segment_vs_oracle": 1.0,
+  "sign_agreement": 1.0,
+  "gates": {
+    "exact_choice_pass": true,
+    "spearman_pass": true,
+    "sign_pass": true,
+    "state26_distinct_positive_pass": true,
+    "state38_no_regression_pass": true
+  },
+  "decision": "SEGMENT_SIGNAL_ONLY_REQUIRES_NEW_OPPORTUNITY_GENERATOR",
+  "spatial_description": [
+    {
+      "sequence": 26,
+      "record_id": 636,
+      "added_voxels": 2230,
+      "component_count": 25,
+      "largest_component": 1523,
+      "largest_component_fraction": 0.6829596412556054,
+      "anchor_distance_median": 5.232388218623321,
+      "corridor_distance_median": 3.599982076159276,
+      "within_5m_anchor_fraction": 0.41838565022421526,
+      "within_5m_corridor_fraction": 0.9524663677130045
+    },
+    {
+      "sequence": 38,
+      "record_id": 197,
+      "added_voxels": 223,
+      "component_count": 20,
+      "largest_component": 46,
+      "largest_component_fraction": 0.2062780269058296,
+      "anchor_distance_median": 4.802511263875581,
+      "corridor_distance_median": 3.0249827233255826,
+      "within_5m_anchor_fraction": 0.5605381165919282,
+      "within_5m_corridor_fraction": 0.9730941704035875
+    }
+  ],
+  "camera_evaluations": 0,
+  "new_candidates": 0,
+  "new_simulation": false,
+  "changes_i3_02a_decision": false,
+  "limitations": [
+    "post-hoc mechanism diagnosis on already observed development artifacts",
+    "segment score consumes saved full-route path-history marginals and is not an implemented cheap selector",
+    "spatial distance omits field of view and occlusion",
+    "correlated candidates and five states are not statistical validation"
+  ]
+}
