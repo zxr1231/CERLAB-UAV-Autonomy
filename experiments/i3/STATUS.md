@@ -29,3 +29,5 @@ I3-01A protocol checks complete: no runtime/kernel/sensor changes or new experim
 Historical I3-01A stop was resumed by user; I3-01B is now complete as recorded below. Reference-only target1 versus multi-route target2 is explicit in contract.
 
 I3-01B complete:6 C++ tests,one registered6-state batch. 28raw→15motion feasible→6distinct incl5references. INCONCLUSIVE_SUPPLY; state27 also has actual alternative scoring budget failure. No online/guided code. Next only fixed-pool observation-loss diagnosis after new protocol.
+
+2026-10-13: resumed only pending I3-01B backup after prior approval-quota interruption; raw artifact hashes verified unchanged. No new experiment/I3-01C started. Backup receipt records actual GitHub sync.

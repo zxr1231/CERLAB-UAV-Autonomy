@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-12 I3-01B complete, NOT admitted; user requested finish backup. Next I3-01C bounded raw/shortcut observation-loss diagnostic, not yet registered or run.
+Last updated: 2026-10-13 completing I3-01B backup after prior approval-quota interruption. I3-01B complete, NOT admitted; next I3-01C only after a new registered protocol.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -589,7 +589,7 @@ simplification for all controls, then retest supply/cost. No implicit core guida
 constraint relaxation, new seeds or third kernel tuning. Not yet registered/run.
 
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/.
-Backup target: /home/zxr2/下载/CERLAB_I3_Backups/I3_01B_2026-10-12/.
+Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_01B_2026-10-12/ (phase date12, backup completion13; README records actual remote sync).
 User explicitly requests continue authorized task after answering mid-task questions;
 do not end the task merely to answer status. Finish current backup then report outcome.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-00-CAMERA-PARITY-V1/.
