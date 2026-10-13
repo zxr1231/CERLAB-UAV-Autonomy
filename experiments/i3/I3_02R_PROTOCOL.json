@@ -1,0 +1,21 @@
+{
+  "protocol_id": "I3_02R_SEGMENT_ATTRIBUTION_V1",
+  "status": "REGISTERED_BEFORE_SEGMENT_ATTRIBUTION",
+  "source": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1",
+  "source_summary_sha256": "46932c6bd05534de06139c8e6f85123ec5b0bafd3a8dee9557553aa4a6fcbefd",
+  "source_batch_sha256": "88fdf5149092f20676d0cf56a7c720aa950b1da28529734fc76428be179a6a0c",
+  "valid_states": [1, 14, 26, 27, 38],
+  "negative_control": 13,
+  "candidate_count": 14,
+  "position_yaw_match_tolerance": 1e-12,
+  "utility_tolerance": 1e-9,
+  "spearman_min": 0.7,
+  "sign_agreement_min": 0.8,
+  "required_exact_state_choices": 5,
+  "camera_range_m_for_description": 5.0,
+  "new_camera_evaluations": 0,
+  "new_candidate_generation": 0,
+  "new_simulation": false,
+  "timing_admission": false,
+  "changes_i3_02a_decision": false
+}
