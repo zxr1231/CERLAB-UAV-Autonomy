@@ -1,0 +1,1211 @@
+{
+  "schema": "i3-02a-single-anchor-summary-v1",
+  "protocol_sha256": "56cbdf5f1b2c10297d96afd65b036e0de4f610f9fd4409fda85e45eaa9ea85fb",
+  "states": [
+    {
+      "sequence": 1,
+      "status": "COMPLETE",
+      "reference_unique": 10787,
+      "reference_raw": 93135,
+      "reference_time": 3.658176027768846,
+      "reference_utility": 2948.7372718308166,
+      "possible_pairs": 5,
+      "enumerated_pairs": 5,
+      "truncated": false,
+      "qualified_before_stratification": 0,
+      "pool_size": 0,
+      "pool_record_ids": [],
+      "rejection_counts": {
+        "reference_vertex_duplicate": 2,
+        "zero_inserted_segment": 2,
+        "no_geometric_change": 2,
+        "final_length": 3,
+        "final_time": 3,
+        "final_yaw": 3
+      },
+      "proxies": [],
+      "selections_frozen_before_oracle": {
+        "geometry": null,
+        "naive_marginal": null,
+        "residual_cost": null
+      },
+      "evaluated": [],
+      "selectors": {
+        "geometry": {
+          "record_id": null,
+          "final_choice": "reference",
+          "effective_utility": 2948.7372718308166,
+          "effective_relative_rate": 0.0,
+          "raw_relative_rate": null
+        },
+        "naive_marginal": {
+          "record_id": null,
+          "final_choice": "reference",
+          "effective_utility": 2948.7372718308166,
+          "effective_relative_rate": 0.0,
+          "raw_relative_rate": null
+        },
+        "residual_cost": {
+          "record_id": null,
+          "final_choice": "reference",
+          "effective_utility": 2948.7372718308166,
+          "effective_relative_rate": 0.0,
+          "raw_relative_rate": null
+        }
+      },
+      "reference_parity_with_i3_01c": true,
+      "generation_component_ms": 14.709031
+    },
+    {
+      "sequence": 14,
+      "status": "COMPLETE",
+      "reference_unique": 12813,
+      "reference_raw": 122978,
+      "reference_time": 6.208324304222662,
+      "reference_utility": 2063.8419277300145,
+      "possible_pairs": 179,
+      "enumerated_pairs": 179,
+      "truncated": false,
+      "qualified_before_stratification": 2,
+      "pool_size": 2,
+      "pool_record_ids": [
+        158,
+        156
+      ],
+      "rejection_counts": {
+        "reference_vertex_duplicate": 2,
+        "zero_inserted_segment": 2,
+        "no_geometric_change": 2,
+        "final_length": 173,
+        "final_time": 175,
+        "final_yaw": 174,
+        "inserted_incoming_unsafe": 122,
+        "inserted_outgoing_unsafe": 142
+      },
+      "proxies": [
+        {
+          "record_id": 158,
+          "anchor": 158,
+          "edge": 0,
+          "time": 6.887759580623111,
+          "length": 2.7466099735258767,
+          "new_voxels": 151,
+          "visible_voxels": 6185,
+          "artifact": "s014_r00158_proxy.json"
+        },
+        {
+          "record_id": 156,
+          "anchor": 156,
+          "edge": 0,
+          "time": 7.231485990476816,
+          "length": 2.7436199084123105,
+          "new_voxels": 65,
+          "visible_voxels": 5466,
+          "artifact": "s014_r00156_proxy.json"
+        }
+      ],
+      "selections_frozen_before_oracle": {
+        "geometry": 158,
+        "naive_marginal": 158,
+        "residual_cost": 158
+      },
+      "evaluated": [
+        {
+          "record_id": 158,
+          "anchor": 158,
+          "edge": 0,
+          "path": [
+            0,
+            158,
+            153
+          ],
+          "motion": {
+            "length": 2.7466099735258767,
+            "time": 6.887759580623111,
+            "yaw": 2.0705748035486176
+          },
+          "proxy": {
+            "record_id": 158,
+            "anchor": 158,
+            "edge": 0,
+            "time": 6.887759580623111,
+            "length": 2.7466099735258767,
+            "new_voxels": 151,
+            "visible_voxels": 6185,
+            "artifact": "s014_r00158_proxy.json"
+          },
+          "unique_gain": 13499,
+          "raw_gain": 150058,
+          "utility": 1959.8535404713984,
+          "effect": {
+            "added": 1031,
+            "lost": 345,
+            "net_voxels": 686,
+            "jaccard": 0.9006067610517191,
+            "utility": 1959.8535404713984,
+            "reference_utility": 2063.8419277300145,
+            "net_value": -716.2470106140779,
+            "proxy_new_error": -880,
+            "raw_relative_rate": -0.05038582939004014,
+            "effective_utility": 2063.8419277300145,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s014_r00158_full.json"
+        },
+        {
+          "record_id": 156,
+          "anchor": 156,
+          "edge": 0,
+          "path": [
+            0,
+            156,
+            153
+          ],
+          "motion": {
+            "length": 2.7436199084123105,
+            "time": 7.231485990476816,
+            "yaw": 2.243933041032253
+          },
+          "proxy": {
+            "record_id": 156,
+            "anchor": 156,
+            "edge": 0,
+            "time": 7.231485990476816,
+            "length": 2.7436199084123105,
+            "new_voxels": 65,
+            "visible_voxels": 5466,
+            "artifact": "s014_r00156_proxy.json"
+          },
+          "unique_gain": 14110,
+          "raw_gain": 151482,
+          "utility": 1951.1895644382823,
+          "effect": {
+            "added": 1688,
+            "lost": 391,
+            "net_voxels": 1297,
+            "jaccard": 0.8566305772015723,
+            "utility": 1951.1895644382823,
+            "reference_utility": 2063.8419277300145,
+            "net_value": -814.6439869382652,
+            "proxy_new_error": -1623,
+            "raw_relative_rate": -0.054583813701099014,
+            "effective_utility": 2063.8419277300145,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s014_r00156_full.json"
+        }
+      ],
+      "selectors": {
+        "geometry": {
+          "record_id": 158,
+          "added": 1031,
+          "lost": 345,
+          "net_voxels": 686,
+          "jaccard": 0.9006067610517191,
+          "utility": 1959.8535404713984,
+          "reference_utility": 2063.8419277300145,
+          "net_value": -716.2470106140779,
+          "proxy_new_error": -880,
+          "raw_relative_rate": -0.05038582939004014,
+          "effective_utility": 2063.8419277300145,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        },
+        "naive_marginal": {
+          "record_id": 158,
+          "added": 1031,
+          "lost": 345,
+          "net_voxels": 686,
+          "jaccard": 0.9006067610517191,
+          "utility": 1959.8535404713984,
+          "reference_utility": 2063.8419277300145,
+          "net_value": -716.2470106140779,
+          "proxy_new_error": -880,
+          "raw_relative_rate": -0.05038582939004014,
+          "effective_utility": 2063.8419277300145,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        },
+        "residual_cost": {
+          "record_id": 158,
+          "added": 1031,
+          "lost": 345,
+          "net_voxels": 686,
+          "jaccard": 0.9006067610517191,
+          "utility": 1959.8535404713984,
+          "reference_utility": 2063.8419277300145,
+          "net_value": -716.2470106140779,
+          "proxy_new_error": -880,
+          "raw_relative_rate": -0.05038582939004014,
+          "effective_utility": 2063.8419277300145,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        }
+      },
+      "reference_parity_with_i3_01c": true,
+      "generation_component_ms": 14.973867
+    },
+    {
+      "sequence": 26,
+      "status": "COMPLETE",
+      "reference_unique": 10834,
+      "reference_raw": 92846,
+      "reference_time": 19.06764593401904,
+      "reference_utility": 568.1876010016948,
+      "possible_pairs": 702,
+      "enumerated_pairs": 702,
+      "truncated": false,
+      "qualified_before_stratification": 36,
+      "pool_size": 5,
+      "pool_record_ids": [
+        200,
+        275,
+        209,
+        636,
+        279
+      ],
+      "rejection_counts": {
+        "reference_vertex_duplicate": 6,
+        "zero_inserted_segment": 4,
+        "no_geometric_change": 4,
+        "final_length": 648,
+        "final_time": 653,
+        "inserted_incoming_unsafe": 486,
+        "inserted_outgoing_unsafe": 570,
+        "final_yaw": 433
+      },
+      "proxies": [
+        {
+          "record_id": 200,
+          "anchor": 200,
+          "edge": 0,
+          "time": 19.079392746060428,
+          "length": 10.011413500937518,
+          "new_voxels": 0,
+          "visible_voxels": 23,
+          "artifact": "s026_r00200_proxy.json"
+        },
+        {
+          "record_id": 275,
+          "anchor": 275,
+          "edge": 0,
+          "time": 19.96800751442703,
+          "length": 10.121208981436787,
+          "new_voxels": 0,
+          "visible_voxels": 0,
+          "artifact": "s026_r00275_proxy.json"
+        },
+        {
+          "record_id": 209,
+          "anchor": 209,
+          "edge": 0,
+          "time": 20.748022196542912,
+          "length": 10.685612482559094,
+          "new_voxels": 1,
+          "visible_voxels": 4,
+          "artifact": "s026_r00209_proxy.json"
+        },
+        {
+          "record_id": 636,
+          "anchor": 285,
+          "edge": 1,
+          "time": 21.527013054097026,
+          "length": 10.202028220531439,
+          "new_voxels": 12,
+          "visible_voxels": 3516,
+          "artifact": "s026_r00636_proxy.json"
+        },
+        {
+          "record_id": 279,
+          "anchor": 279,
+          "edge": 0,
+          "time": 23.383981785777777,
+          "length": 12.28723941293729,
+          "new_voxels": 21,
+          "visible_voxels": 68,
+          "artifact": "s026_r00279_proxy.json"
+        }
+      ],
+      "selections_frozen_before_oracle": {
+        "geometry": 200,
+        "naive_marginal": 279,
+        "residual_cost": 200
+      },
+      "evaluated": [
+        {
+          "record_id": 200,
+          "anchor": 200,
+          "edge": 0,
+          "path": [
+            0,
+            200,
+            282,
+            301
+          ],
+          "motion": {
+            "length": 10.011413500937518,
+            "time": 19.079392746060428,
+            "yaw": 4.533989622561456
+          },
+          "proxy": {
+            "record_id": 200,
+            "anchor": 200,
+            "edge": 0,
+            "time": 19.079392746060428,
+            "length": 10.011413500937518,
+            "new_voxels": 0,
+            "visible_voxels": 23,
+            "artifact": "s026_r00200_proxy.json"
+          },
+          "unique_gain": 10834,
+          "raw_gain": 92905,
+          "utility": 567.8377789165768,
+          "effect": {
+            "added": 0,
+            "lost": 0,
+            "net_voxels": 0,
+            "jaccard": 1.0,
+            "utility": 567.8377789165768,
+            "reference_utility": 568.1876010016948,
+            "net_value": -6.674392953213785,
+            "proxy_new_error": 0,
+            "raw_relative_rate": -0.0006156806035564853,
+            "effective_utility": 568.1876010016948,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s026_r00200_full.json"
+        },
+        {
+          "record_id": 275,
+          "anchor": 275,
+          "edge": 0,
+          "path": [
+            0,
+            275,
+            282,
+            301
+          ],
+          "motion": {
+            "length": 10.121208981436787,
+            "time": 19.96800751442703,
+            "yaw": 4.923399266495122
+          },
+          "proxy": {
+            "record_id": 275,
+            "anchor": 275,
+            "edge": 0,
+            "time": 19.96800751442703,
+            "length": 10.121208981436787,
+            "new_voxels": 0,
+            "visible_voxels": 0,
+            "artifact": "s026_r00275_proxy.json"
+          },
+          "unique_gain": 10835,
+          "raw_gain": 92918,
+          "utility": 542.6179849026817,
+          "effect": {
+            "added": 1,
+            "lost": 0,
+            "net_voxels": 1,
+            "jaccard": 0.9999077065066913,
+            "utility": 542.6179849026817,
+            "reference_utility": 568.1876010016948,
+            "net_value": -510.57428640610954,
+            "proxy_new_error": -1,
+            "raw_relative_rate": -0.04500206631389848,
+            "effective_utility": 568.1876010016948,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s026_r00275_full.json"
+        },
+        {
+          "record_id": 209,
+          "anchor": 209,
+          "edge": 0,
+          "path": [
+            0,
+            209,
+            282,
+            301
+          ],
+          "motion": {
+            "length": 10.685612482559094,
+            "time": 20.748022196542912,
+            "yaw": 5.03120485699191
+          },
+          "proxy": {
+            "record_id": 209,
+            "anchor": 209,
+            "edge": 0,
+            "time": 20.748022196542912,
+            "length": 10.685612482559094,
+            "new_voxels": 1,
+            "visible_voxels": 4,
+            "artifact": "s026_r00209_proxy.json"
+          },
+          "unique_gain": 10702,
+          "raw_gain": 92114,
+          "utility": 515.8082008309782,
+          "effect": {
+            "added": 100,
+            "lost": 232,
+            "net_voxels": -132,
+            "jaccard": 0.9696359978050119,
+            "utility": 515.8082008309782,
+            "reference_utility": 568.1876010016948,
+            "net_value": -1086.7689573836328,
+            "proxy_new_error": -99,
+            "raw_relative_rate": -0.09218680604499918,
+            "effective_utility": 568.1876010016948,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s026_r00209_full.json"
+        },
+        {
+          "record_id": 636,
+          "anchor": 285,
+          "edge": 1,
+          "path": [
+            0,
+            282,
+            285,
+            301
+          ],
+          "motion": {
+            "length": 10.202028220531439,
+            "time": 21.527013054097026,
+            "yaw": 5.6624924167827935
+          },
+          "proxy": {
+            "record_id": 636,
+            "anchor": 285,
+            "edge": 1,
+            "time": 21.527013054097026,
+            "length": 10.202028220531439,
+            "new_voxels": 12,
+            "visible_voxels": 3516,
+            "artifact": "s026_r00636_proxy.json"
+          },
+          "unique_gain": 13024,
+          "raw_gain": 144644,
+          "utility": 605.0072979131338,
+          "effect": {
+            "added": 2230,
+            "lost": 40,
+            "net_voxels": 2190,
+            "jaccard": 0.8262400489895897,
+            "utility": 605.0072979131338,
+            "reference_utility": 568.1876010016948,
+            "net_value": 792.6180960604424,
+            "proxy_new_error": -2218,
+            "raw_relative_rate": 0.06480200702466432,
+            "effective_utility": 605.0072979131338,
+            "effective_relative_rate": 0.06480200702466432,
+            "final_choice": "extra"
+          },
+          "artifact": "s026_r00636_full.json"
+        },
+        {
+          "record_id": 279,
+          "anchor": 279,
+          "edge": 0,
+          "path": [
+            0,
+            279,
+            282,
+            301
+          ],
+          "motion": {
+            "length": 12.28723941293729,
+            "time": 23.383981785777777,
+            "yaw": 5.548371186420243
+          },
+          "proxy": {
+            "record_id": 279,
+            "anchor": 279,
+            "edge": 0,
+            "time": 23.383981785777777,
+            "length": 12.28723941293729,
+            "new_voxels": 21,
+            "visible_voxels": 68,
+            "artifact": "s026_r00279_proxy.json"
+          },
+          "unique_gain": 10770,
+          "raw_gain": 92355,
+          "utility": 460.57168957214776,
+          "effect": {
+            "added": 121,
+            "lost": 185,
+            "net_voxels": -64,
+            "jaccard": 0.9720675490643542,
+            "utility": 460.57168957214776,
+            "reference_utility": 568.1876010016948,
+            "net_value": -2516.4885127284037,
+            "proxy_new_error": -100,
+            "raw_relative_rate": -0.18940207642656048,
+            "effective_utility": 568.1876010016948,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s026_r00279_full.json"
+        }
+      ],
+      "selectors": {
+        "geometry": {
+          "record_id": 200,
+          "added": 0,
+          "lost": 0,
+          "net_voxels": 0,
+          "jaccard": 1.0,
+          "utility": 567.8377789165768,
+          "reference_utility": 568.1876010016948,
+          "net_value": -6.674392953213785,
+          "proxy_new_error": 0,
+          "raw_relative_rate": -0.0006156806035564853,
+          "effective_utility": 568.1876010016948,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        },
+        "naive_marginal": {
+          "record_id": 279,
+          "added": 121,
+          "lost": 185,
+          "net_voxels": -64,
+          "jaccard": 0.9720675490643542,
+          "utility": 460.57168957214776,
+          "reference_utility": 568.1876010016948,
+          "net_value": -2516.4885127284037,
+          "proxy_new_error": -100,
+          "raw_relative_rate": -0.18940207642656048,
+          "effective_utility": 568.1876010016948,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        },
+        "residual_cost": {
+          "record_id": 200,
+          "added": 0,
+          "lost": 0,
+          "net_voxels": 0,
+          "jaccard": 1.0,
+          "utility": 567.8377789165768,
+          "reference_utility": 568.1876010016948,
+          "net_value": -6.674392953213785,
+          "proxy_new_error": 0,
+          "raw_relative_rate": -0.0006156806035564853,
+          "effective_utility": 568.1876010016948,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        }
+      },
+      "reference_parity_with_i3_01c": true,
+      "generation_component_ms": 16.617926
+    },
+    {
+      "sequence": 27,
+      "status": "COMPLETE",
+      "reference_unique": 18616,
+      "reference_raw": 191098,
+      "reference_time": 34.94363191451242,
+      "reference_utility": 532.7437069375893,
+      "possible_pairs": 2124,
+      "enumerated_pairs": 2124,
+      "truncated": false,
+      "qualified_before_stratification": 80,
+      "pool_size": 5,
+      "pool_record_ids": [
+        587,
+        584,
+        1535,
+        892,
+        1504
+      ],
+      "rejection_counts": {
+        "reference_vertex_duplicate": 42,
+        "zero_inserted_segment": 12,
+        "no_geometric_change": 12,
+        "final_length": 1797,
+        "final_time": 1945,
+        "final_yaw": 1981,
+        "inserted_incoming_unsafe": 1588,
+        "inserted_outgoing_unsafe": 1644
+      },
+      "proxies": [
+        {
+          "record_id": 587,
+          "anchor": 233,
+          "edge": 1,
+          "time": 34.981572388000025,
+          "length": 23.145479867838002,
+          "new_voxels": 0,
+          "visible_voxels": 221,
+          "artifact": "s027_r00587_proxy.json"
+        },
+        {
+          "record_id": 584,
+          "anchor": 230,
+          "edge": 1,
+          "time": 35.75586730484905,
+          "length": 23.301992465335598,
+          "new_voxels": 0,
+          "visible_voxels": 223,
+          "artifact": "s027_r00584_proxy.json"
+        },
+        {
+          "record_id": 1535,
+          "anchor": 119,
+          "edge": 4,
+          "time": 37.214239117467564,
+          "length": 24.07846422416729,
+          "new_voxels": 12,
+          "visible_voxels": 3233,
+          "artifact": "s027_r01535_proxy.json"
+        },
+        {
+          "record_id": 892,
+          "anchor": 184,
+          "edge": 2,
+          "time": 38.65612111639173,
+          "length": 25.559946440715567,
+          "new_voxels": 0,
+          "visible_voxels": 130,
+          "artifact": "s027_r00892_proxy.json"
+        },
+        {
+          "record_id": 1504,
+          "anchor": 88,
+          "edge": 4,
+          "time": 42.80694142872909,
+          "length": 28.879458700157898,
+          "new_voxels": 0,
+          "visible_voxels": 687,
+          "artifact": "s027_r01504_proxy.json"
+        }
+      ],
+      "selections_frozen_before_oracle": {
+        "geometry": 587,
+        "naive_marginal": 1535,
+        "residual_cost": 587
+      },
+      "evaluated": [
+        {
+          "record_id": 587,
+          "anchor": 233,
+          "edge": 1,
+          "path": [
+            0,
+            240,
+            233,
+            201,
+            154,
+            124,
+            110,
+            113
+          ],
+          "motion": {
+            "length": 23.145479867838002,
+            "time": 34.981572388000025,
+            "yaw": 5.918046260081011
+          },
+          "proxy": {
+            "record_id": 587,
+            "anchor": 233,
+            "edge": 1,
+            "time": 34.981572388000025,
+            "length": 23.145479867838002,
+            "new_voxels": 0,
+            "visible_voxels": 221,
+            "artifact": "s027_r00587_proxy.json"
+          },
+          "unique_gain": 18616,
+          "raw_gain": 191400,
+          "utility": 532.165901335698,
+          "effect": {
+            "added": 0,
+            "lost": 0,
+            "net_voxels": 0,
+            "jaccard": 1.0,
+            "utility": 532.165901335698,
+            "reference_utility": 532.7437069375893,
+            "net_value": -20.21254848875235,
+            "proxy_new_error": 0,
+            "raw_relative_rate": -0.001084584565461638,
+            "effective_utility": 532.7437069375893,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s027_r00587_full.json"
+        },
+        {
+          "record_id": 584,
+          "anchor": 230,
+          "edge": 1,
+          "path": [
+            0,
+            240,
+            230,
+            201,
+            154,
+            124,
+            110,
+            113
+          ],
+          "motion": {
+            "length": 23.301992465335598,
+            "time": 35.75586730484905,
+            "yaw": 6.226937419756726
+          },
+          "proxy": {
+            "record_id": 584,
+            "anchor": 230,
+            "edge": 1,
+            "time": 35.75586730484905,
+            "length": 23.301992465335598,
+            "new_voxels": 0,
+            "visible_voxels": 223,
+            "artifact": "s027_r00584_proxy.json"
+          },
+          "unique_gain": 18413,
+          "raw_gain": 187138,
+          "utility": 514.9644348720053,
+          "effect": {
+            "added": 57,
+            "lost": 260,
+            "net_voxels": -203,
+            "jaccard": 0.9830236169870936,
+            "utility": 514.9644348720053,
+            "reference_utility": 532.7437069375893,
+            "net_value": -635.7132927538332,
+            "proxy_new_error": -57,
+            "raw_relative_rate": -0.0333730306600634,
+            "effective_utility": 532.7437069375893,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s027_r00584_full.json"
+        },
+        {
+          "record_id": 1535,
+          "anchor": 119,
+          "edge": 4,
+          "path": [
+            0,
+            240,
+            201,
+            154,
+            124,
+            119,
+            110,
+            113
+          ],
+          "motion": {
+            "length": 24.07846422416729,
+            "time": 37.214239117467564,
+            "yaw": 6.567887446650135
+          },
+          "proxy": {
+            "record_id": 1535,
+            "anchor": 119,
+            "edge": 4,
+            "time": 37.214239117467564,
+            "length": 24.07846422416729,
+            "new_voxels": 12,
+            "visible_voxels": 3233,
+            "artifact": "s027_r01535_proxy.json"
+          },
+          "unique_gain": 17721,
+          "raw_gain": 186732,
+          "utility": 476.1886960543053,
+          "effect": {
+            "added": 393,
+            "lost": 1288,
+            "net_voxels": -895,
+            "jaccard": 0.9115682045346941,
+            "utility": 476.1886960543053,
+            "reference_utility": 532.7437069375893,
+            "net_value": -2104.6516983015126,
+            "proxy_new_error": -381,
+            "raw_relative_rate": -0.10615800833834985,
+            "effective_utility": 532.7437069375893,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s027_r01535_full.json"
+        },
+        {
+          "record_id": 892,
+          "anchor": 184,
+          "edge": 2,
+          "path": [
+            0,
+            240,
+            201,
+            184,
+            154,
+            124,
+            110,
+            113
+          ],
+          "motion": {
+            "length": 25.559946440715567,
+            "time": 38.65612111639173,
+            "yaw": 6.548087337838081
+          },
+          "proxy": {
+            "record_id": 892,
+            "anchor": 184,
+            "edge": 2,
+            "time": 38.65612111639173,
+            "length": 25.559946440715567,
+            "new_voxels": 0,
+            "visible_voxels": 130,
+            "artifact": "s027_r00892_proxy.json"
+          },
+          "unique_gain": 17644,
+          "raw_gain": 181377,
+          "utility": 456.43482818347866,
+          "effect": {
+            "added": 12,
+            "lost": 984,
+            "net_voxels": -972,
+            "jaccard": 0.9465321022117242,
+            "utility": 456.43482818347866,
+            "reference_utility": 532.7437069375893,
+            "net_value": -2949.8052593749544,
+            "proxy_new_error": -12,
+            "raw_relative_rate": -0.14323750381353675,
+            "effective_utility": 532.7437069375893,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s027_r00892_full.json"
+        },
+        {
+          "record_id": 1504,
+          "anchor": 88,
+          "edge": 4,
+          "path": [
+            0,
+            240,
+            201,
+            154,
+            124,
+            88,
+            110,
+            113
+          ],
+          "motion": {
+            "length": 28.879458700157898,
+            "time": 42.80694142872909,
+            "yaw": 6.963741364285594
+          },
+          "proxy": {
+            "record_id": 1504,
+            "anchor": 88,
+            "edge": 4,
+            "time": 42.80694142872909,
+            "length": 28.879458700157898,
+            "new_voxels": 0,
+            "visible_voxels": 687,
+            "artifact": "s027_r01504_proxy.json"
+          },
+          "unique_gain": 15463,
+          "raw_gain": 160713,
+          "utility": 361.2264619686725,
+          "effect": {
+            "added": 417,
+            "lost": 3570,
+            "net_voxels": -3153,
+            "jaccard": 0.7905217254242631,
+            "utility": 361.2264619686725,
+            "reference_utility": 532.7437069375893,
+            "net_value": -7342.128659401402,
+            "proxy_new_error": -417,
+            "raw_relative_rate": -0.32195076682343615,
+            "effective_utility": 532.7437069375893,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s027_r01504_full.json"
+        }
+      ],
+      "selectors": {
+        "geometry": {
+          "record_id": 587,
+          "added": 0,
+          "lost": 0,
+          "net_voxels": 0,
+          "jaccard": 1.0,
+          "utility": 532.165901335698,
+          "reference_utility": 532.7437069375893,
+          "net_value": -20.21254848875235,
+          "proxy_new_error": 0,
+          "raw_relative_rate": -0.001084584565461638,
+          "effective_utility": 532.7437069375893,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        },
+        "naive_marginal": {
+          "record_id": 1535,
+          "added": 393,
+          "lost": 1288,
+          "net_voxels": -895,
+          "jaccard": 0.9115682045346941,
+          "utility": 476.1886960543053,
+          "reference_utility": 532.7437069375893,
+          "net_value": -2104.6516983015126,
+          "proxy_new_error": -381,
+          "raw_relative_rate": -0.10615800833834985,
+          "effective_utility": 532.7437069375893,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        },
+        "residual_cost": {
+          "record_id": 587,
+          "added": 0,
+          "lost": 0,
+          "net_voxels": 0,
+          "jaccard": 1.0,
+          "utility": 532.165901335698,
+          "reference_utility": 532.7437069375893,
+          "net_value": -20.21254848875235,
+          "proxy_new_error": 0,
+          "raw_relative_rate": -0.001084584565461638,
+          "effective_utility": 532.7437069375893,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        }
+      },
+      "reference_parity_with_i3_01c": true,
+      "generation_component_ms": 18.748308
+    },
+    {
+      "sequence": 38,
+      "status": "COMPLETE",
+      "reference_unique": 10699,
+      "reference_raw": 97065,
+      "reference_time": 6.013760057427092,
+      "reference_utility": 1779.0866110107868,
+      "possible_pairs": 488,
+      "enumerated_pairs": 488,
+      "truncated": false,
+      "qualified_before_stratification": 2,
+      "pool_size": 2,
+      "pool_record_ids": [
+        197,
+        177
+      ],
+      "rejection_counts": {
+        "reference_vertex_duplicate": 2,
+        "zero_inserted_segment": 2,
+        "no_geometric_change": 2,
+        "final_length": 477,
+        "final_time": 484,
+        "final_yaw": 476,
+        "inserted_incoming_unsafe": 409,
+        "inserted_outgoing_unsafe": 436
+      },
+      "proxies": [
+        {
+          "record_id": 197,
+          "anchor": 197,
+          "edge": 0,
+          "time": 6.078744135217493,
+          "length": 4.113690491953696,
+          "new_voxels": 0,
+          "visible_voxels": 3873,
+          "artifact": "s038_r00197_proxy.json"
+        },
+        {
+          "record_id": 177,
+          "anchor": 177,
+          "edge": 0,
+          "time": 6.589210204293236,
+          "length": 4.142438302075583,
+          "new_voxels": 166,
+          "visible_voxels": 6083,
+          "artifact": "s038_r00177_proxy.json"
+        }
+      ],
+      "selections_frozen_before_oracle": {
+        "geometry": 197,
+        "naive_marginal": 177,
+        "residual_cost": 197
+      },
+      "evaluated": [
+        {
+          "record_id": 197,
+          "anchor": 197,
+          "edge": 0,
+          "path": [
+            0,
+            197,
+            161
+          ],
+          "motion": {
+            "length": 4.113690491953696,
+            "time": 6.078744135217493,
+            "yaw": 0.9825268216318985
+          },
+          "proxy": {
+            "record_id": 197,
+            "anchor": 197,
+            "edge": 0,
+            "time": 6.078744135217493,
+            "length": 4.113690491953696,
+            "new_voxels": 0,
+            "visible_voxels": 3873,
+            "artifact": "s038_r00197_proxy.json"
+          },
+          "unique_gain": 10877,
+          "raw_gain": 99815,
+          "utility": 1789.349865374919,
+          "effect": {
+            "added": 223,
+            "lost": 45,
+            "net_voxels": 178,
+            "jaccard": 0.9754623695293902,
+            "utility": 1789.349865374919,
+            "reference_utility": 1779.0866110107868,
+            "net_value": 62.387697274214645,
+            "proxy_new_error": -223,
+            "raw_relative_rate": 0.005768833456793454,
+            "effective_utility": 1789.349865374919,
+            "effective_relative_rate": 0.005768833456793454,
+            "final_choice": "extra"
+          },
+          "artifact": "s038_r00197_full.json"
+        },
+        {
+          "record_id": 177,
+          "anchor": 177,
+          "edge": 0,
+          "path": [
+            0,
+            177,
+            161
+          ],
+          "motion": {
+            "length": 4.142438302075583,
+            "time": 6.589210204293236,
+            "yaw": 1.2233859511088268
+          },
+          "proxy": {
+            "record_id": 177,
+            "anchor": 177,
+            "edge": 0,
+            "time": 6.589210204293236,
+            "length": 4.142438302075583,
+            "new_voxels": 166,
+            "visible_voxels": 6083,
+            "artifact": "s038_r00177_proxy.json"
+          },
+          "unique_gain": 10807,
+          "raw_gain": 104276,
+          "utility": 1640.1055156744947,
+          "effect": {
+            "added": 716,
+            "lost": 608,
+            "net_voxels": 108,
+            "jaccard": 0.8840122645641699,
+            "utility": 1640.1055156744947,
+            "reference_utility": 1779.0866110107868,
+            "net_value": -915.775651593748,
+            "proxy_new_error": -550,
+            "raw_relative_rate": -0.07811935319851017,
+            "effective_utility": 1779.0866110107868,
+            "effective_relative_rate": 0.0,
+            "final_choice": "reference"
+          },
+          "artifact": "s038_r00177_full.json"
+        }
+      ],
+      "selectors": {
+        "geometry": {
+          "record_id": 197,
+          "added": 223,
+          "lost": 45,
+          "net_voxels": 178,
+          "jaccard": 0.9754623695293902,
+          "utility": 1789.349865374919,
+          "reference_utility": 1779.0866110107868,
+          "net_value": 62.387697274214645,
+          "proxy_new_error": -223,
+          "raw_relative_rate": 0.005768833456793454,
+          "effective_utility": 1789.349865374919,
+          "effective_relative_rate": 0.005768833456793454,
+          "final_choice": "extra"
+        },
+        "naive_marginal": {
+          "record_id": 177,
+          "added": 716,
+          "lost": 608,
+          "net_voxels": 108,
+          "jaccard": 0.8840122645641699,
+          "utility": 1640.1055156744947,
+          "reference_utility": 1779.0866110107868,
+          "net_value": -915.775651593748,
+          "proxy_new_error": -550,
+          "raw_relative_rate": -0.07811935319851017,
+          "effective_utility": 1779.0866110107868,
+          "effective_relative_rate": 0.0,
+          "final_choice": "reference"
+        },
+        "residual_cost": {
+          "record_id": 197,
+          "added": 223,
+          "lost": 45,
+          "net_voxels": 178,
+          "jaccard": 0.9754623695293902,
+          "utility": 1789.349865374919,
+          "reference_utility": 1779.0866110107868,
+          "net_value": 62.387697274214645,
+          "proxy_new_error": -223,
+          "raw_relative_rate": 0.005768833456793454,
+          "effective_utility": 1789.349865374919,
+          "effective_relative_rate": 0.005768833456793454,
+          "final_choice": "extra"
+        }
+      },
+      "reference_parity_with_i3_01c": true,
+      "generation_component_ms": 16.475971
+    }
+  ],
+  "negative_control": 13,
+  "decision": "PROXY_NOT_SUPPORTED",
+  "admit_timing_protocol": false,
+  "useful_supply_states": [
+    26,
+    38
+  ],
+  "residual_useful_states": [
+    38
+  ],
+  "residual_beats_naive_and_reference_states": [
+    38
+  ],
+  "mean_effective_relative_rate": {
+    "geometry": 0.0011537666913586909,
+    "naive_marginal": 0.0,
+    "residual_cost": 0.0011537666913586909
+  },
+  "mean_gate_pass": true,
+  "denominator": 5,
+  "total_possible_pairs": 3498,
+  "total_enumerated_pairs": 3498,
+  "total_pool_routes": 14,
+  "all_reference_parity": true,
+  "no_new_simulation": true,
+  "online_planner_modified": false,
+  "whole_stage_500ms_admitted": false,
+  "limitations": [
+    "five correlated development snapshots in one held-out static run",
+    "prospective frozen-map visibility, not executed B-spline or actual observation",
+    "single existing-PRM anchor and direct safe segments only",
+    "component timings are not whole-stage budget evidence"
+  ]
+}
