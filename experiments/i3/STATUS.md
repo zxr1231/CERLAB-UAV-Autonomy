@@ -8,7 +8,7 @@
 | I3-01A scope review / method protocol | Complete: explicit distance_single/Legacy StageA + same-goal2-route StageB contract, offline probe only |
 | I3-01B minimal offline supply/budget probe | Complete, NOT admitted: reference5/5pass; 4supply deficits,1alternative timeout; negative13passed |
 | I3-01C fixed-pool observation/simplification diagnostic | Complete: predicted loss10/10, direct raw-retention leads0; NOT admitted |
-| I3-02 observation opportunities / anchors | I3-02A proxy failed; I3-02R segment signal passed; edge/corridor generator still unimplemented, phase incomplete |
+| I3-02 observation opportunities / anchors | I3-02E design complete; Edge/corridor E1 implementation and experiment pending, phase incomplete |
 | I3-03 guided candidate construction | Pending |
 | I3-04 observation-preserving simplification | Pending |
 | I3-05 online integration | Pending |
@@ -57,6 +57,15 @@ both1.0. It finds candidate636 at26 and preserves197 at38. Spatially,95.25%/97.3
 of added voxels lie within5m of inserted corridors versus41.84%/56.05% of anchors.
 Decision SEGMENT_SIGNAL_ONLY_REQUIRES_NEW_OPPORTUNITY_GENERATOR. This does not change
 I3-02A failure: the score consumes saved full-route marginals and changed windows cover
-median76.1% of poses. No timing/online admission. Next only preregister I3-02E design
-for residual observation opportunity edges/corridors; close the line if bounded edge
-generation/evaluation cannot be defined. Local backup only; no GitHub push claimed.
+median76.1% of poses. No timing/online admission. Its requested I3-02E design step is
+now complete below; no implementation result is implied. Local backup only; no GitHub
+push claimed.
+
+I3-02E DESIGN COMPLETE2026-10-13: source audit, directed PRM Edge+two safe connector
+corridor representation, exact unchanged-reference/corridor set composition, common
+Geometry/Naive/Proposed pool, fixed12000 pair/5 corridor caps and E1/E2 kill gates are
+recorded in I3_02E_SOURCE_AUDIT.md, METHOD_PROTOCOL.md, PROTOCOL.json and
+DESIGN_REVIEW.md. No code/experiment/online mode was added. Next implement isolated
+I3-02E1 fixture and run the one fixed6-state batch. Any supply/value/distinction gate
+failure stops this representation; a pass admits only E2 budget probe. Local backup
+only; no GitHub push claimed.

@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-13. I3-02R scope decision complete: segment/corridor signal supported, single-point proxy remains failed; next is I3-02E edge-opportunity protocol design. Local backup only.
+Last updated: 2026-10-13. I3-02E edge/corridor method and bounded protocol design complete; next is isolated I3-02E1 implementation and fixed-fixture batch. Local backup only.
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -623,15 +623,31 @@ full-route path-history marginals, and the changed window spans25.1--97.3% of po
 (median76.1%). It neither solves the500ms failure nor supplies an observation-driven
 generator. Do not rebrand it as an algorithm/performance result.
 
-**Immediate next task, only after user resumes: I3-02E method/protocol design.**
-Define a bounded reference-conditioned observation-opportunity EDGE/CORRIDOR generator:
-V(tau0), directed nearby PRM-edge residual visibility, connection time/yaw lower bound,
-small fixed opportunity-edge cap, and same-count Geometry/Naive/Generic controls.
-Specify how edge queries fit the unchanged50/475/500ms budgets and when cache is counted;
-do not scan/evaluate the entire graph for free. Register a finite offline supply/value
-gate before implementation. If bounded construction cannot be defined, close this
-research line. Do not automatically implement I3-03, rerun seeds, or add unrelated
-modules. I3-02 remains incomplete; checkpoint backup is local and no GitHub push claimed.
+**Current checkpoint: I3-02E DESIGN COMPLETE, NOT IMPLEMENTED/RUN.**
+Read I3_02E_SOURCE_AUDIT.md, I3_02E_METHOD_PROTOCOL.md, I3_02E_PROTOCOL.json and
+I3_02E_DESIGN_REVIEW.md. Final reference segments are often shortcut lines rather than
+Graph edges. The new representation replaces one reference segment with connector ->
+real directed PRM Edge -> connector, preserves that short corridor, and uses the same
+representation for Geometry/Naive/Proposed controls. At most12000 geometry pairs and
+5 scored corridors per state are fixed before camera values.
+
+Reference pose sets form R and unchanged B_e; the changed corridor C includes entry,
+three translations and exit yaw. Proposed set is exactly B_e union C, with both new
+and lost voxels and full motion time. A full route oracle is allowed only after frozen
+selection. Current CameraGainEvaluator lacks a budget-aware all-or-nothing pose-set
+batch API; implementing/testing that isolated interface is an E1 prerequisite and all
+its cost counts. No persistent Edge cache is assumed.
+
+**Immediate next task, only after user resumes: implement and run I3-02E1 once.**
+Build isolated candidate/pose-set fixtures, tests, then use fixed states1/13/14/26/27/38.
+Follow the exact enumeration, per-Edge best insertion, 5-way stratification, common
+controls and kill gates. State13 must do zero work. Full address composition must equal
+full candidate recomputation. Value gates require >=3 nonempty pools, >=2 useful states,
+Proposed useful >=2, oracle choice5/5, and distinction from Geometry and Naive. A pass
+admits only I3-02E2 budget probe; do not run it automatically. A failure stops this
+representation without widening caps or seeds. Do not change online dep.cpp/default,
+start simulation, or introduce persistent cache. I3-02 remains incomplete; backup is
+local and no GitHub push claimed.
 
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01C-OBSERVATION-LOSS-V1/.
 Backup target: /home/zxr2/下载/CERLAB_I3_Backups/I3_01C_2026-10-13/.
