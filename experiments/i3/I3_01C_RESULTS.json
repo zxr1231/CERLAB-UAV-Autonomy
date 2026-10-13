@@ -1,0 +1,2027 @@
+{
+  "schema": "i3-01c-observation-loss-v1",
+  "protocol_sha256": "ae5219ab0be18380dd716c97a090a388a58b799f5d3ece9e849a3e70613dd9dd",
+  "rows": [
+    {
+      "sequence": 1,
+      "pool_index": 0,
+      "is_extra": false,
+      "collapsed_by_shortcut": false,
+      "source_reasons": [],
+      "full": {
+        "shortcut_change": {
+          "before_count": 10787,
+          "after_count": 10787,
+          "lost_count": 0,
+          "added_count": 0,
+          "loss_ratio": 0.0,
+          "net_before_minus_after": 0,
+          "jaccard": 1.0
+        },
+        "raw_vs_final_reference": {
+          "before_count": 10787,
+          "after_count": 10787,
+          "lost_count": 0,
+          "added_count": 0,
+          "loss_ratio": 0.0,
+          "net_before_minus_after": 0,
+          "jaccard": 1.0
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": true,
+          "yaw": true
+        },
+        "raw_as_final_motion_pass": true,
+        "raw_utility": 2948.7372718308166,
+        "reference_final_utility": 2948.7372718308166,
+        "raw_utility_improves": false,
+        "material_predicted_loss": false,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 0.5841223478634876,
+          "yaw_distance": 1.5370268399526792,
+          "time": 3.658176027768846
+        },
+        "final_motion": {
+          "length": 0.5841223478634876,
+          "yaw_distance": 1.5370268399526792,
+          "time": 3.658176027768846
+        },
+        "reference_final_motion": {
+          "length": 0.5841223478634876,
+          "yaw_distance": 1.5370268399526792,
+          "time": 3.658176027768846
+        },
+        "raw_raw_gain": 93135,
+        "final_raw_gain": 93135,
+        "raw_timing_ms": [
+          39.298613,
+          34.752843,
+          34.797053
+        ],
+        "final_timing_ms": [
+          39.833839,
+          35.470904,
+          35.381119
+        ],
+        "raw_construction_ms": 26.27223,
+        "final_construction_ms": 26.32544,
+        "raw_artifact": "s001_p00_full_raw.json",
+        "final_artifact": "s001_p00_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 8341,
+          "after_count": 8341,
+          "lost_count": 0,
+          "added_count": 0,
+          "loss_ratio": 0.0,
+          "net_before_minus_after": 0,
+          "jaccard": 1.0
+        },
+        "raw_vs_final_reference": {
+          "before_count": 8341,
+          "after_count": 8341,
+          "lost_count": 0,
+          "added_count": 0,
+          "loss_ratio": 0.0,
+          "net_before_minus_after": 0,
+          "jaccard": 1.0
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": true,
+          "yaw": true
+        },
+        "raw_as_final_motion_pass": true,
+        "raw_utility": 2280.098042490112,
+        "reference_final_utility": 2280.098042490112,
+        "raw_utility_improves": false,
+        "material_predicted_loss": false,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 0.5841223478634876,
+          "yaw_distance": 1.5370268399526792,
+          "time": 3.658176027768846
+        },
+        "final_motion": {
+          "length": 0.5841223478634876,
+          "yaw_distance": 1.5370268399526792,
+          "time": 3.658176027768846
+        },
+        "reference_final_motion": {
+          "length": 0.5841223478634876,
+          "yaw_distance": 1.5370268399526792,
+          "time": 3.658176027768846
+        },
+        "raw_raw_gain": 33975,
+        "final_raw_gain": 33975,
+        "raw_timing_ms": [
+          16.832308,
+          12.353078,
+          12.295341
+        ],
+        "final_timing_ms": [
+          16.986721,
+          12.166014,
+          12.128064
+        ],
+        "raw_construction_ms": 26.740382,
+        "final_construction_ms": 26.704595,
+        "raw_artifact": "s001_p00_no_rotation_interiors_raw.json",
+        "final_artifact": "s001_p00_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 14,
+      "pool_index": 0,
+      "is_extra": false,
+      "collapsed_by_shortcut": false,
+      "source_reasons": [],
+      "full": {
+        "shortcut_change": {
+          "before_count": 16222,
+          "after_count": 12813,
+          "lost_count": 3416,
+          "added_count": 7,
+          "loss_ratio": 0.21057822709900137,
+          "net_before_minus_after": 3409,
+          "jaccard": 0.7890812742621234
+        },
+        "raw_vs_final_reference": {
+          "before_count": 16222,
+          "after_count": 12813,
+          "lost_count": 3416,
+          "added_count": 7,
+          "loss_ratio": 0.21057822709900137,
+          "net_before_minus_after": 3409,
+          "jaccard": 0.7890812742621234
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 1613.1182234211963,
+        "reference_final_utility": 2063.8419277300145,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 2.896484486489452,
+          "yaw_distance": 3.5799075118288437,
+          "time": 10.05629951014714
+        },
+        "final_motion": {
+          "length": 2.7005852028399606,
+          "yaw_distance": 1.7538695506913506,
+          "time": 6.208324304222662
+        },
+        "reference_final_motion": {
+          "length": 2.7005852028399606,
+          "yaw_distance": 1.7538695506913506,
+          "time": 6.208324304222662
+        },
+        "raw_raw_gain": 235805,
+        "final_raw_gain": 122978,
+        "raw_timing_ms": [
+          93.980513,
+          89.590539,
+          90.443436
+        ],
+        "final_timing_ms": [
+          59.744498,
+          55.372724,
+          54.746286
+        ],
+        "raw_construction_ms": 26.225308,
+        "final_construction_ms": 27.03714,
+        "raw_artifact": "s014_p00_full_raw.json",
+        "final_artifact": "s014_p00_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 15735,
+          "after_count": 11111,
+          "lost_count": 4628,
+          "added_count": 4,
+          "loss_ratio": 0.29412138544645694,
+          "net_before_minus_after": 4624,
+          "jaccard": 0.7056992185018108
+        },
+        "raw_vs_final_reference": {
+          "before_count": 15735,
+          "after_count": 11111,
+          "lost_count": 4628,
+          "added_count": 4,
+          "loss_ratio": 0.29412138544645694,
+          "net_before_minus_after": 4624,
+          "jaccard": 0.7056992185018108
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 1564.6908670652524,
+        "reference_final_utility": 1789.6938780151556,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 2.896484486489452,
+          "yaw_distance": 3.5799075118288437,
+          "time": 10.05629951014714
+        },
+        "final_motion": {
+          "length": 2.7005852028399606,
+          "yaw_distance": 1.7538695506913506,
+          "time": 6.208324304222662
+        },
+        "reference_final_motion": {
+          "length": 2.7005852028399606,
+          "yaw_distance": 1.7538695506913506,
+          "time": 6.208324304222662
+        },
+        "raw_raw_gain": 98094,
+        "final_raw_gain": 76391,
+        "raw_timing_ms": [
+          39.567327,
+          35.023255,
+          35.282974
+        ],
+        "final_timing_ms": [
+          31.802167,
+          27.827794,
+          27.593975
+        ],
+        "raw_construction_ms": 26.223315,
+        "final_construction_ms": 27.464878,
+        "raw_artifact": "s014_p00_no_rotation_interiors_raw.json",
+        "final_artifact": "s014_p00_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 14,
+      "pool_index": 1,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 19206,
+          "after_count": 12813,
+          "lost_count": 6398,
+          "added_count": 5,
+          "loss_ratio": 0.333125065083828,
+          "net_before_minus_after": 6393,
+          "jaccard": 0.6667013690073396
+        },
+        "raw_vs_final_reference": {
+          "before_count": 19206,
+          "after_count": 12813,
+          "lost_count": 6398,
+          "added_count": 5,
+          "loss_ratio": 0.333125065083828,
+          "net_before_minus_after": 6393,
+          "jaccard": 0.6667013690073396
+        },
+        "raw_as_final_checks": {
+          "length": false,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 1804.1758350709058,
+        "reference_final_utility": 2063.8419277300145,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 3.468155342813502,
+          "yaw_distance": 3.5885742638036513,
+          "time": 10.645303870420804
+        },
+        "final_motion": {
+          "length": 2.7005852028399606,
+          "yaw_distance": 1.7538695506913506,
+          "time": 6.208324304222662
+        },
+        "reference_final_motion": {
+          "length": 2.7005852028399606,
+          "yaw_distance": 1.7538695506913506,
+          "time": 6.208324304222662
+        },
+        "raw_raw_gain": 250872,
+        "final_raw_gain": 122978,
+        "raw_timing_ms": [
+          101.619935,
+          97.097757,
+          96.967977
+        ],
+        "final_timing_ms": [
+          59.385778,
+          55.069706,
+          54.734079
+        ],
+        "raw_construction_ms": 26.255417,
+        "final_construction_ms": 26.176712,
+        "raw_artifact": "s014_p01_full_raw.json",
+        "final_artifact": "s014_p01_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 19192,
+          "after_count": 11111,
+          "lost_count": 8085,
+          "added_count": 4,
+          "loss_ratio": 0.42126927886619425,
+          "net_before_minus_after": 8081,
+          "jaccard": 0.5786101271098145
+        },
+        "raw_vs_final_reference": {
+          "before_count": 19192,
+          "after_count": 11111,
+          "lost_count": 8085,
+          "added_count": 4,
+          "loss_ratio": 0.42126927886619425,
+          "net_before_minus_after": 8081,
+          "jaccard": 0.5786101271098145
+        },
+        "raw_as_final_checks": {
+          "length": false,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 1802.8607011705105,
+        "reference_final_utility": 1789.6938780151556,
+        "raw_utility_improves": true,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 3.468155342813502,
+          "yaw_distance": 3.5885742638036513,
+          "time": 10.645303870420804
+        },
+        "final_motion": {
+          "length": 2.7005852028399606,
+          "yaw_distance": 1.7538695506913506,
+          "time": 6.208324304222662
+        },
+        "reference_final_motion": {
+          "length": 2.7005852028399606,
+          "yaw_distance": 1.7538695506913506,
+          "time": 6.208324304222662
+        },
+        "raw_raw_gain": 98338,
+        "final_raw_gain": 76391,
+        "raw_timing_ms": [
+          41.523587,
+          36.950462,
+          37.009762
+        ],
+        "final_timing_ms": [
+          31.896826,
+          27.200505,
+          27.3988
+        ],
+        "raw_construction_ms": 26.343129,
+        "final_construction_ms": 26.711216,
+        "raw_artifact": "s014_p01_no_rotation_interiors_raw.json",
+        "final_artifact": "s014_p01_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": true
+    },
+    {
+      "sequence": 26,
+      "pool_index": 0,
+      "is_extra": false,
+      "collapsed_by_shortcut": false,
+      "source_reasons": [],
+      "full": {
+        "shortcut_change": {
+          "before_count": 13501,
+          "after_count": 10834,
+          "lost_count": 2912,
+          "added_count": 245,
+          "loss_ratio": 0.21568772683504925,
+          "net_before_minus_after": 2667,
+          "jaccard": 0.7703331878364615
+        },
+        "raw_vs_final_reference": {
+          "before_count": 13501,
+          "after_count": 10834,
+          "lost_count": 2912,
+          "added_count": 245,
+          "loss_ratio": 0.21568772683504925,
+          "net_before_minus_after": 2667,
+          "jaccard": 0.7703331878364615
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 490.26776861202154,
+        "reference_final_utility": 568.1876010016948,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.642789490319345,
+          "yaw_distance": 8.44761156563878,
+          "time": 27.538012621596906
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 200734,
+        "final_raw_gain": 92846,
+        "raw_timing_ms": [
+          200.645651,
+          196.162192,
+          196.398657
+        ],
+        "final_timing_ms": [
+          125.502448,
+          121.25953,
+          121.000706
+        ],
+        "raw_construction_ms": 26.480023,
+        "final_construction_ms": 26.861988,
+        "raw_artifact": "s026_p00_full_raw.json",
+        "final_artifact": "s026_p00_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 13485,
+          "after_count": 10622,
+          "lost_count": 2900,
+          "added_count": 37,
+          "loss_ratio": 0.21505376344086022,
+          "net_before_minus_after": 2863,
+          "jaccard": 0.7827984026031652
+        },
+        "raw_vs_final_reference": {
+          "before_count": 13485,
+          "after_count": 10622,
+          "lost_count": 2900,
+          "added_count": 37,
+          "loss_ratio": 0.21505376344086022,
+          "net_before_minus_after": 2863,
+          "jaccard": 0.7827984026031652
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 489.6867535540412,
+        "reference_final_utility": 557.0692909211743,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.642789490319345,
+          "yaw_distance": 8.44761156563878,
+          "time": 27.538012621596906
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 92029,
+        "final_raw_gain": 83013,
+        "raw_timing_ms": [
+          93.053336,
+          88.959076,
+          89.230493
+        ],
+        "final_timing_ms": [
+          71.696379,
+          67.161103,
+          67.076166
+        ],
+        "raw_construction_ms": 26.706142,
+        "final_construction_ms": 26.854214,
+        "raw_artifact": "s026_p00_no_rotation_interiors_raw.json",
+        "final_artifact": "s026_p00_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 26,
+      "pool_index": 1,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 13727,
+          "after_count": 10834,
+          "lost_count": 2907,
+          "added_count": 14,
+          "loss_ratio": 0.21177241931958912,
+          "net_before_minus_after": 2893,
+          "jaccard": 0.7874244960337675
+        },
+        "raw_vs_final_reference": {
+          "before_count": 13727,
+          "after_count": 10834,
+          "lost_count": 2907,
+          "added_count": 14,
+          "loss_ratio": 0.21177241931958912,
+          "net_before_minus_after": 2893,
+          "jaccard": 0.7874244960337675
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 487.32409843924603,
+        "reference_final_utility": 568.1876010016948,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.652527493916892,
+          "yaw_distance": 8.757792473494732,
+          "time": 28.168112440906356
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 202348,
+        "final_raw_gain": 92846,
+        "raw_timing_ms": [
+          221.946471,
+          207.949457,
+          208.102648
+        ],
+        "final_timing_ms": [
+          129.29341,
+          124.41284,
+          124.256242
+        ],
+        "raw_construction_ms": 26.467865,
+        "final_construction_ms": 26.289189,
+        "raw_artifact": "s026_p01_full_raw.json",
+        "final_artifact": "s026_p01_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 13498,
+          "after_count": 10622,
+          "lost_count": 2913,
+          "added_count": 37,
+          "loss_ratio": 0.21580974959253224,
+          "net_before_minus_after": 2876,
+          "jaccard": 0.782046545991873
+        },
+        "raw_vs_final_reference": {
+          "before_count": 13498,
+          "after_count": 10622,
+          "lost_count": 2913,
+          "added_count": 37,
+          "loss_ratio": 0.21580974959253224,
+          "net_before_minus_after": 2876,
+          "jaccard": 0.782046545991873
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 479.1943382190532,
+        "reference_final_utility": 557.0692909211743,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.652527493916892,
+          "yaw_distance": 8.757792473494732,
+          "time": 28.168112440906356
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 92062,
+        "final_raw_gain": 83013,
+        "raw_timing_ms": [
+          95.462866,
+          90.786532,
+          90.634341
+        ],
+        "final_timing_ms": [
+          71.90246,
+          67.000131,
+          68.050671
+        ],
+        "raw_construction_ms": 26.634534,
+        "final_construction_ms": 26.797125,
+        "raw_artifact": "s026_p01_no_rotation_interiors_raw.json",
+        "final_artifact": "s026_p01_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 26,
+      "pool_index": 2,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 12761,
+          "after_count": 10834,
+          "lost_count": 2204,
+          "added_count": 277,
+          "loss_ratio": 0.17271373716793353,
+          "net_before_minus_after": 1927,
+          "jaccard": 0.8097100782328578
+        },
+        "raw_vs_final_reference": {
+          "before_count": 12761,
+          "after_count": 10834,
+          "lost_count": 2204,
+          "added_count": 277,
+          "loss_ratio": 0.17271373716793353,
+          "net_before_minus_after": 1927,
+          "jaccard": 0.8097100782328578
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 447.6012642456142,
+        "reference_final_utility": 568.1876010016948,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.8176054531439,
+          "yaw_distance": 8.846072113323054,
+          "time": 28.509749679790005
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 177081,
+        "final_raw_gain": 92846,
+        "raw_timing_ms": [
+          209.852435,
+          205.249704,
+          199.660911
+        ],
+        "final_timing_ms": [
+          125.203798,
+          120.773203,
+          120.756523
+        ],
+        "raw_construction_ms": 26.57063,
+        "final_construction_ms": 26.325782,
+        "raw_artifact": "s026_p02_full_raw.json",
+        "final_artifact": "s026_p02_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 12744,
+          "after_count": 10622,
+          "lost_count": 2190,
+          "added_count": 68,
+          "loss_ratio": 0.17184557438794726,
+          "net_before_minus_after": 2122,
+          "jaccard": 0.8237589759600374
+        },
+        "raw_vs_final_reference": {
+          "before_count": 12744,
+          "after_count": 10622,
+          "lost_count": 2190,
+          "added_count": 68,
+          "loss_ratio": 0.17184557438794726,
+          "net_before_minus_after": 2122,
+          "jaccard": 0.8237589759600374
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 447.0049770038482,
+        "reference_final_utility": 557.0692909211743,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.8176054531439,
+          "yaw_distance": 8.846072113323054,
+          "time": 28.509749679790005
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 90408,
+        "final_raw_gain": 83013,
+        "raw_timing_ms": [
+          95.21016,
+          90.243921,
+          90.488782
+        ],
+        "final_timing_ms": [
+          73.535427,
+          67.409185,
+          67.593865
+        ],
+        "raw_construction_ms": 26.557367,
+        "final_construction_ms": 26.683521,
+        "raw_artifact": "s026_p02_no_rotation_interiors_raw.json",
+        "final_artifact": "s026_p02_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 26,
+      "pool_index": 3,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 12987,
+          "after_count": 10834,
+          "lost_count": 2199,
+          "added_count": 46,
+          "loss_ratio": 0.16932316932316932,
+          "net_before_minus_after": 2153,
+          "jaccard": 0.8277449551139415
+        },
+        "raw_vs_final_reference": {
+          "before_count": 12987,
+          "after_count": 10834,
+          "lost_count": 2199,
+          "added_count": 46,
+          "loss_ratio": 0.16932316932316932,
+          "net_before_minus_after": 2153,
+          "jaccard": 0.8277449551139415
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 445.678348489801,
+        "reference_final_utility": 568.1876010016948,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.827343456741447,
+          "yaw_distance": 9.156253021179005,
+          "time": 29.139849499099455
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 178695,
+        "final_raw_gain": 92846,
+        "raw_timing_ms": [
+          217.412354,
+          214.76755,
+          212.970266
+        ],
+        "final_timing_ms": [
+          130.074465,
+          125.406574,
+          124.243256
+        ],
+        "raw_construction_ms": 26.596322,
+        "final_construction_ms": 26.652709,
+        "raw_artifact": "s026_p03_full_raw.json",
+        "final_artifact": "s026_p03_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 12757,
+          "after_count": 10622,
+          "lost_count": 2203,
+          "added_count": 68,
+          "loss_ratio": 0.1726895038018343,
+          "net_before_minus_after": 2135,
+          "jaccard": 0.8229239766081872
+        },
+        "raw_vs_final_reference": {
+          "before_count": 12757,
+          "after_count": 10622,
+          "lost_count": 2203,
+          "added_count": 68,
+          "loss_ratio": 0.1726895038018343,
+          "net_before_minus_after": 2135,
+          "jaccard": 0.8229239766081872
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 437.78537704507517,
+        "reference_final_utility": 557.0692909211743,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.827343456741447,
+          "yaw_distance": 9.156253021179005,
+          "time": 29.139849499099455
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 90441,
+        "final_raw_gain": 83013,
+        "raw_timing_ms": [
+          98.249847,
+          93.764891,
+          93.720819
+        ],
+        "final_timing_ms": [
+          72.140916,
+          67.498923,
+          67.511997
+        ],
+        "raw_construction_ms": 26.748184,
+        "final_construction_ms": 26.812934,
+        "raw_artifact": "s026_p03_no_rotation_interiors_raw.json",
+        "final_artifact": "s026_p03_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 26,
+      "pool_index": 4,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 13472,
+          "after_count": 10834,
+          "lost_count": 2878,
+          "added_count": 240,
+          "loss_ratio": 0.21362826603325416,
+          "net_before_minus_after": 2638,
+          "jaccard": 0.7726079346557759
+        },
+        "raw_vs_final_reference": {
+          "before_count": 13472,
+          "after_count": 10834,
+          "lost_count": 2878,
+          "added_count": 240,
+          "loss_ratio": 0.21362826603325416,
+          "net_before_minus_after": 2638,
+          "jaccard": 0.7726079346557759
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 506.1133580140649,
+        "reference_final_utility": 568.1876010016948,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.846236780912712,
+          "yaw_distance": 7.886152928584401,
+          "time": 26.618542638081514
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 200657,
+        "final_raw_gain": 92846,
+        "raw_timing_ms": [
+          203.87342,
+          199.778583,
+          199.651149
+        ],
+        "final_timing_ms": [
+          127.070056,
+          121.901243,
+          121.798925
+        ],
+        "raw_construction_ms": 26.627044,
+        "final_construction_ms": 26.423302,
+        "raw_artifact": "s026_p04_full_raw.json",
+        "final_artifact": "s026_p04_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 13446,
+          "after_count": 10622,
+          "lost_count": 2863,
+          "added_count": 39,
+          "loss_ratio": 0.21292577718280528,
+          "net_before_minus_after": 2824,
+          "jaccard": 0.7847979236188357
+        },
+        "raw_vs_final_reference": {
+          "before_count": 13446,
+          "after_count": 10622,
+          "lost_count": 2863,
+          "added_count": 39,
+          "loss_ratio": 0.21292577718280528,
+          "net_before_minus_after": 2824,
+          "jaccard": 0.7847979236188357
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 505.1365952981826,
+        "reference_final_utility": 557.0692909211743,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.846236780912712,
+          "yaw_distance": 7.886152928584401,
+          "time": 26.618542638081514
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 91922,
+        "final_raw_gain": 83013,
+        "raw_timing_ms": [
+          92.81414,
+          88.209564,
+          88.267049
+        ],
+        "final_timing_ms": [
+          72.981556,
+          67.014444,
+          67.472887
+        ],
+        "raw_construction_ms": 26.377979,
+        "final_construction_ms": 26.27521,
+        "raw_artifact": "s026_p04_no_rotation_interiors_raw.json",
+        "final_artifact": "s026_p04_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 26,
+      "pool_index": 5,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 13698,
+          "after_count": 10834,
+          "lost_count": 2873,
+          "added_count": 9,
+          "loss_ratio": 0.20973864797780697,
+          "net_before_minus_after": 2864,
+          "jaccard": 0.7897424673524477
+        },
+        "raw_vs_final_reference": {
+          "before_count": 13698,
+          "after_count": 10834,
+          "lost_count": 2873,
+          "added_count": 9,
+          "loss_ratio": 0.20973864797780697,
+          "net_before_minus_after": 2864,
+          "jaccard": 0.7897424673524477
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 502.7039428264997,
+        "reference_final_utility": 568.1876010016948,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.85597478451026,
+          "yaw_distance": 8.196333836440353,
+          "time": 27.248642457390964
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 202271,
+        "final_raw_gain": 92846,
+        "raw_timing_ms": [
+          206.031747,
+          201.597784,
+          201.453318
+        ],
+        "final_timing_ms": [
+          127.807003,
+          124.757938,
+          124.348285
+        ],
+        "raw_construction_ms": 26.186148,
+        "final_construction_ms": 26.656274,
+        "raw_artifact": "s026_p05_full_raw.json",
+        "final_artifact": "s026_p05_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 13459,
+          "after_count": 10622,
+          "lost_count": 2876,
+          "added_count": 39,
+          "loss_ratio": 0.21368600936176535,
+          "net_before_minus_after": 2837,
+          "jaccard": 0.7840420803081938
+        },
+        "raw_vs_final_reference": {
+          "before_count": 13459,
+          "after_count": 10622,
+          "lost_count": 2876,
+          "added_count": 39,
+          "loss_ratio": 0.21368600936176535,
+          "net_before_minus_after": 2837,
+          "jaccard": 0.7840420803081938
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 493.9328636663644,
+        "reference_final_utility": 557.0692909211743,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 10.85597478451026,
+          "yaw_distance": 8.196333836440353,
+          "time": 27.248642457390964
+        },
+        "final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "reference_final_motion": {
+          "length": 10.003982986214693,
+          "yaw_distance": 4.531831473902173,
+          "time": 19.06764593401904
+        },
+        "raw_raw_gain": 91955,
+        "final_raw_gain": 83013,
+        "raw_timing_ms": [
+          100.39644,
+          92.055852,
+          92.147951
+        ],
+        "final_timing_ms": [
+          73.253689,
+          66.263857,
+          66.188436
+        ],
+        "raw_construction_ms": 26.542777,
+        "final_construction_ms": 26.283861,
+        "raw_artifact": "s026_p05_no_rotation_interiors_raw.json",
+        "final_artifact": "s026_p05_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 27,
+      "pool_index": 0,
+      "is_extra": false,
+      "collapsed_by_shortcut": false,
+      "source_reasons": [],
+      "full": {
+        "shortcut_change": {
+          "before_count": 20240,
+          "after_count": 18616,
+          "lost_count": 1679,
+          "added_count": 55,
+          "loss_ratio": 0.08295454545454546,
+          "net_before_minus_after": 1624,
+          "jaccard": 0.914560236511456
+        },
+        "raw_vs_final_reference": {
+          "before_count": 20240,
+          "after_count": 18616,
+          "lost_count": 1679,
+          "added_count": 55,
+          "loss_ratio": 0.08295454545454546,
+          "net_before_minus_after": 1624,
+          "jaccard": 0.914560236511456
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 372.51887854382437,
+        "reference_final_utility": 532.7437069375893,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 25.188658051075382,
+          "yaw_distance": 14.572079398000632,
+          "time": 54.33281684707664
+        },
+        "final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "reference_final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "raw_raw_gain": 255125,
+        "final_raw_gain": 191098,
+        "raw_timing_ms": [
+          400.963953,
+          400.844159,
+          396.226929
+        ],
+        "final_timing_ms": [
+          240.964759,
+          228.922893,
+          230.37011
+        ],
+        "raw_construction_ms": 26.692003,
+        "final_construction_ms": 26.314372,
+        "raw_artifact": "s027_p00_full_raw.json",
+        "final_artifact": "s027_p00_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 20217,
+          "after_count": 18337,
+          "lost_count": 1939,
+          "added_count": 59,
+          "loss_ratio": 0.09590938319236286,
+          "net_before_minus_after": 1880,
+          "jaccard": 0.9014598540145985
+        },
+        "raw_vs_final_reference": {
+          "before_count": 20217,
+          "after_count": 18337,
+          "lost_count": 1939,
+          "added_count": 59,
+          "loss_ratio": 0.09590938319236286,
+          "net_before_minus_after": 1880,
+          "jaccard": 0.9014598540145985
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 372.09556163638825,
+        "reference_final_utility": 524.7594195377404,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 25.188658051075382,
+          "yaw_distance": 14.572079398000632,
+          "time": 54.33281684707664
+        },
+        "final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "reference_final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "raw_raw_gain": 153544,
+        "final_raw_gain": 120568,
+        "raw_timing_ms": [
+          211.207879,
+          205.158062,
+          205.228063
+        ],
+        "final_timing_ms": [
+          153.839074,
+          149.149901,
+          149.486632
+        ],
+        "raw_construction_ms": 26.561267,
+        "final_construction_ms": 26.27953,
+        "raw_artifact": "s027_p00_no_rotation_interiors_raw.json",
+        "final_artifact": "s027_p00_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 27,
+      "pool_index": 1,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 20436,
+          "after_count": 18616,
+          "lost_count": 1875,
+          "added_count": 55,
+          "loss_ratio": 0.09174985320023488,
+          "net_before_minus_after": 1820,
+          "jaccard": 0.9058123078424675
+        },
+        "raw_vs_final_reference": {
+          "before_count": 20436,
+          "after_count": 18616,
+          "lost_count": 1875,
+          "added_count": 55,
+          "loss_ratio": 0.09174985320023488,
+          "net_before_minus_after": 1820,
+          "jaccard": 0.9058123078424675
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 383.2381202838877,
+        "reference_final_utility": 532.7437069375893,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 25.190217555347363,
+          "yaw_distance": 14.067165821812683,
+          "time": 53.32454919897273
+        },
+        "final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "reference_final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "raw_raw_gain": 245878,
+        "final_raw_gain": 191098,
+        "raw_timing_ms": [
+          411.036104,
+          406.64323,
+          391.317752
+        ],
+        "final_timing_ms": [
+          244.188588,
+          236.068431,
+          231.091886
+        ],
+        "raw_construction_ms": 26.293146,
+        "final_construction_ms": 26.72226,
+        "raw_artifact": "s027_p01_full_raw.json",
+        "final_artifact": "s027_p01_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 20413,
+          "after_count": 18337,
+          "lost_count": 2135,
+          "added_count": 59,
+          "loss_ratio": 0.10459021211972762,
+          "net_before_minus_after": 2076,
+          "jaccard": 0.8928292301680344
+        },
+        "raw_vs_final_reference": {
+          "before_count": 20413,
+          "after_count": 18337,
+          "lost_count": 2135,
+          "added_count": 59,
+          "loss_ratio": 0.10459021211972762,
+          "net_before_minus_after": 2076,
+          "jaccard": 0.8928292301680344
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 382.8067992442259,
+        "reference_final_utility": 524.7594195377404,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 25.190217555347363,
+          "yaw_distance": 14.067165821812683,
+          "time": 53.32454919897273
+        },
+        "final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "reference_final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "raw_raw_gain": 146687,
+        "final_raw_gain": 120568,
+        "raw_timing_ms": [
+          209.630416,
+          204.713486,
+          207.329265
+        ],
+        "final_timing_ms": [
+          162.004265,
+          157.393866,
+          157.677475
+        ],
+        "raw_construction_ms": 26.769187,
+        "final_construction_ms": 26.664946,
+        "raw_artifact": "s027_p01_no_rotation_interiors_raw.json",
+        "final_artifact": "s027_p01_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 27,
+      "pool_index": 2,
+      "is_extra": true,
+      "collapsed_by_shortcut": false,
+      "source_reasons": [],
+      "full": {
+        "shortcut_change": {
+          "before_count": 19290,
+          "after_count": 17597,
+          "lost_count": 1838,
+          "added_count": 145,
+          "loss_ratio": 0.09528252980819077,
+          "net_before_minus_after": 1693,
+          "jaccard": 0.8979675842552097
+        },
+        "raw_vs_final_reference": {
+          "before_count": 19290,
+          "after_count": 18616,
+          "lost_count": 1331,
+          "added_count": 657,
+          "loss_ratio": 0.06899948159668222,
+          "net_before_minus_after": 674,
+          "jaccard": 0.9003358901087883
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 358.9511518061935,
+        "reference_final_utility": 532.7437069375893,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 25.215898703522747,
+          "yaw_distance": 14.262002037077103,
+          "time": 53.73990277767695
+        },
+        "final_motion": {
+          "length": 23.049799553299614,
+          "yaw_distance": 5.651507944246706,
+          "time": 34.35281544179303
+        },
+        "reference_final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "raw_raw_gain": 233367,
+        "final_raw_gain": 179908,
+        "raw_timing_ms": [
+          410.988568,
+          409.584491,
+          394.105373
+        ],
+        "final_timing_ms": [
+          238.973549,
+          225.597617,
+          225.112944
+        ],
+        "raw_construction_ms": 26.641294,
+        "final_construction_ms": 26.870941,
+        "raw_artifact": "s027_p02_full_raw.json",
+        "final_artifact": "s027_p02_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 19267,
+          "after_count": 17536,
+          "lost_count": 1879,
+          "added_count": 148,
+          "loss_ratio": 0.09752426428608502,
+          "net_before_minus_after": 1731,
+          "jaccard": 0.8955961885140356
+        },
+        "raw_vs_final_reference": {
+          "before_count": 19267,
+          "after_count": 18337,
+          "lost_count": 1591,
+          "added_count": 661,
+          "loss_ratio": 0.08257642601339077,
+          "net_before_minus_after": 930,
+          "jaccard": 0.8869931754315535
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 358.52316442975274,
+        "reference_final_utility": 524.7594195377404,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 25.215898703522747,
+          "yaw_distance": 14.262002037077103,
+          "time": 53.73990277767695
+        },
+        "final_motion": {
+          "length": 23.049799553299614,
+          "yaw_distance": 5.651507944246706,
+          "time": 34.35281544179303
+        },
+        "reference_final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "raw_raw_gain": 141662,
+        "final_raw_gain": 111457,
+        "raw_timing_ms": [
+          209.456173,
+          205.754312,
+          205.711284
+        ],
+        "final_timing_ms": [
+          157.88995,
+          153.019519,
+          153.42251
+        ],
+        "raw_construction_ms": 26.751952,
+        "final_construction_ms": 26.666728,
+        "raw_artifact": "s027_p02_no_rotation_interiors_raw.json",
+        "final_artifact": "s027_p02_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 27,
+      "pool_index": 3,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 19486,
+          "after_count": 17597,
+          "lost_count": 2034,
+          "added_count": 145,
+          "loss_ratio": 0.10438263368572308,
+          "net_before_minus_after": 1889,
+          "jaccard": 0.889002088533442
+        },
+        "raw_vs_final_reference": {
+          "before_count": 19486,
+          "after_count": 18616,
+          "lost_count": 1527,
+          "added_count": 657,
+          "loss_ratio": 0.07836395360771836,
+          "net_before_minus_after": 870,
+          "jaccard": 0.8915752370550564
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 369.531495697387,
+        "reference_final_utility": 532.7437069375893,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 25.217458207794728,
+          "yaw_distance": 13.757088460889154,
+          "time": 52.731635129573036
+        },
+        "final_motion": {
+          "length": 23.049799553299614,
+          "yaw_distance": 5.651507944246706,
+          "time": 34.35281544179303
+        },
+        "reference_final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "raw_raw_gain": 224120,
+        "final_raw_gain": 179908,
+        "raw_timing_ms": [
+          395.13235,
+          387.252914,
+          385.903449
+        ],
+        "final_timing_ms": [
+          238.644597,
+          234.198934,
+          233.75895
+        ],
+        "raw_construction_ms": 26.727379,
+        "final_construction_ms": 27.403888,
+        "raw_artifact": "s027_p03_full_raw.json",
+        "final_artifact": "s027_p03_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 19463,
+          "after_count": 17536,
+          "lost_count": 2075,
+          "added_count": 148,
+          "loss_ratio": 0.10661254688383086,
+          "net_before_minus_after": 1927,
+          "jaccard": 0.8866452501147315
+        },
+        "raw_vs_final_reference": {
+          "before_count": 19463,
+          "after_count": 18337,
+          "lost_count": 1787,
+          "added_count": 661,
+          "loss_ratio": 0.0918152391717618,
+          "net_before_minus_after": 1126,
+          "jaccard": 0.8783542039355993
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 369.0953248875215,
+        "reference_final_utility": 524.7594195377404,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 25.217458207794728,
+          "yaw_distance": 13.757088460889154,
+          "time": 52.731635129573036
+        },
+        "final_motion": {
+          "length": 23.049799553299614,
+          "yaw_distance": 5.651507944246706,
+          "time": 34.35281544179303
+        },
+        "reference_final_motion": {
+          "length": 23.131806120387022,
+          "yaw_distance": 5.905912897062699,
+          "time": 34.94363191451242
+        },
+        "raw_raw_gain": 134805,
+        "final_raw_gain": 111457,
+        "raw_timing_ms": [
+          209.929861,
+          204.432675,
+          206.197632
+        ],
+        "final_timing_ms": [
+          161.074824,
+          158.861396,
+          159.068247
+        ],
+        "raw_construction_ms": 26.581596,
+        "final_construction_ms": 26.600542,
+        "raw_artifact": "s027_p03_no_rotation_interiors_raw.json",
+        "final_artifact": "s027_p03_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 38,
+      "pool_index": 0,
+      "is_extra": false,
+      "collapsed_by_shortcut": false,
+      "source_reasons": [],
+      "full": {
+        "shortcut_change": {
+          "before_count": 11382,
+          "after_count": 10699,
+          "lost_count": 1065,
+          "added_count": 382,
+          "loss_ratio": 0.09356879283078545,
+          "net_before_minus_after": 683,
+          "jaccard": 0.8769976198571914
+        },
+        "raw_vs_final_reference": {
+          "before_count": 11382,
+          "after_count": 10699,
+          "lost_count": 1065,
+          "added_count": 382,
+          "loss_ratio": 0.09356879283078545,
+          "net_before_minus_after": 683,
+          "jaccard": 0.8769976198571914
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 1085.1563728312806,
+        "reference_final_utility": 1779.086611010787,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 4.307212502830158,
+          "yaw_distance": 3.090799202475053,
+          "time": 10.488810907780262
+        },
+        "final_motion": {
+          "length": 4.111355776857599,
+          "yaw_distance": 0.9512021402847459,
+          "time": 6.013760057427091
+        },
+        "reference_final_motion": {
+          "length": 4.111355776857599,
+          "yaw_distance": 0.9512021402847459,
+          "time": 6.013760057427091
+        },
+        "raw_raw_gain": 153401,
+        "final_raw_gain": 97065,
+        "raw_timing_ms": [
+          88.722675,
+          83.761627,
+          83.884117
+        ],
+        "final_timing_ms": [
+          53.068095,
+          48.323114,
+          48.712
+        ],
+        "raw_construction_ms": 26.529303,
+        "final_construction_ms": 26.839866,
+        "raw_artifact": "s038_p00_full_raw.json",
+        "final_artifact": "s038_p00_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 11375,
+          "after_count": 10698,
+          "lost_count": 1060,
+          "added_count": 383,
+          "loss_ratio": 0.09318681318681318,
+          "net_before_minus_after": 677,
+          "jaccard": 0.8772750467766627
+        },
+        "raw_vs_final_reference": {
+          "before_count": 11375,
+          "after_count": 10698,
+          "lost_count": 1060,
+          "added_count": 383,
+          "loss_ratio": 0.09318681318681318,
+          "net_before_minus_after": 677,
+          "jaccard": 0.8772750467766627
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 1084.4889949882108,
+        "reference_final_utility": 1778.9203256933733,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 4.307212502830158,
+          "yaw_distance": 3.090799202475053,
+          "time": 10.488810907780262
+        },
+        "final_motion": {
+          "length": 4.111355776857599,
+          "yaw_distance": 0.9512021402847459,
+          "time": 6.013760057427091
+        },
+        "reference_final_motion": {
+          "length": 4.111355776857599,
+          "yaw_distance": 0.9512021402847459,
+          "time": 6.013760057427091
+        },
+        "raw_raw_gain": 90495,
+        "final_raw_gain": 85717,
+        "raw_timing_ms": [
+          45.551384,
+          41.096579,
+          41.257734
+        ],
+        "final_timing_ms": [
+          39.76593,
+          35.240284,
+          35.32532
+        ],
+        "raw_construction_ms": 26.930762,
+        "final_construction_ms": 26.544533,
+        "raw_artifact": "s038_p00_no_rotation_interiors_raw.json",
+        "final_artifact": "s038_p00_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    },
+    {
+      "sequence": 38,
+      "pool_index": 1,
+      "is_extra": true,
+      "collapsed_by_shortcut": true,
+      "source_reasons": [
+        "shortcut_duplicate"
+      ],
+      "full": {
+        "shortcut_change": {
+          "before_count": 11390,
+          "after_count": 10699,
+          "lost_count": 1073,
+          "added_count": 382,
+          "loss_ratio": 0.0942054433713784,
+          "net_before_minus_after": 691,
+          "jaccard": 0.876401630988787
+        },
+        "raw_vs_final_reference": {
+          "before_count": 11390,
+          "after_count": 10699,
+          "lost_count": 1073,
+          "added_count": 382,
+          "loss_ratio": 0.0942054433713784,
+          "net_before_minus_after": 691,
+          "jaccard": 0.876401630988787
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 906.9868817557507,
+        "reference_final_utility": 1779.086611010787,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 4.362411138040279,
+          "yaw_distance": 4.097826812325426,
+          "time": 12.558064762691131
+        },
+        "final_motion": {
+          "length": 4.111355776857599,
+          "yaw_distance": 0.9512021402847459,
+          "time": 6.013760057427091
+        },
+        "reference_final_motion": {
+          "length": 4.111355776857599,
+          "yaw_distance": 0.9512021402847459,
+          "time": 6.013760057427091
+        },
+        "raw_raw_gain": 153153,
+        "final_raw_gain": 97065,
+        "raw_timing_ms": [
+          102.448259,
+          98.759312,
+          98.604833
+        ],
+        "final_timing_ms": [
+          53.496066,
+          49.010765,
+          48.969469
+        ],
+        "raw_construction_ms": 26.723633,
+        "final_construction_ms": 26.62452,
+        "raw_artifact": "s038_p01_full_raw.json",
+        "final_artifact": "s038_p01_full_final.json"
+      },
+      "no_rotation_interiors": {
+        "shortcut_change": {
+          "before_count": 11383,
+          "after_count": 10698,
+          "lost_count": 1068,
+          "added_count": 383,
+          "loss_ratio": 0.09382412369322674,
+          "net_before_minus_after": 685,
+          "jaccard": 0.8766785653578106
+        },
+        "raw_vs_final_reference": {
+          "before_count": 11383,
+          "after_count": 10698,
+          "lost_count": 1068,
+          "added_count": 383,
+          "loss_ratio": 0.09382412369322674,
+          "net_before_minus_after": 685,
+          "jaccard": 0.8766785653578106
+        },
+        "raw_as_final_checks": {
+          "length": true,
+          "time": false,
+          "yaw": false
+        },
+        "raw_as_final_motion_pass": false,
+        "raw_utility": 906.429471029474,
+        "reference_final_utility": 1778.9203256933733,
+        "raw_utility_improves": false,
+        "material_predicted_loss": true,
+        "direct_raw_retention_lead": false,
+        "raw_motion": {
+          "length": 4.362411138040279,
+          "yaw_distance": 4.097826812325426,
+          "time": 12.558064762691131
+        },
+        "final_motion": {
+          "length": 4.111355776857599,
+          "yaw_distance": 0.9512021402847459,
+          "time": 6.013760057427091
+        },
+        "reference_final_motion": {
+          "length": 4.111355776857599,
+          "yaw_distance": 0.9512021402847459,
+          "time": 6.013760057427091
+        },
+        "raw_raw_gain": 89897,
+        "final_raw_gain": 85717,
+        "raw_timing_ms": [
+          49.601082,
+          44.632857,
+          43.289489
+        ],
+        "final_timing_ms": [
+          39.679897,
+          34.906332,
+          34.973437
+        ],
+        "raw_construction_ms": 26.775838,
+        "final_construction_ms": 29.960491,
+        "raw_artifact": "s038_p01_no_rotation_interiors_raw.json",
+        "final_artifact": "s038_p01_no_rotation_interiors_final.json"
+      },
+      "yaw_model_sensitive": false
+    }
+  ],
+  "candidate_count": 15,
+  "extra_count": 10,
+  "collapsed_extra_count": 9,
+  "material_loss_extra_count": 10,
+  "material_loss_states": [
+    14,
+    26,
+    27,
+    38
+  ],
+  "raw_as_final_motion_pass_extra_count": 0,
+  "direct_raw_retention_extra_count": 0,
+  "direct_raw_retention_states": [],
+  "suggest_further_preservation_design": false,
+  "yaw_sensitive_extra_count": 1,
+  "no_new_simulation": true,
+  "old_budget_gates_superseded": false,
+  "limitations": [
+    "predicted sets under prospective stationary-yaw route sampling, not actual flight observation",
+    "raw-vs-raw feasibility does not imply raw-as-final execution feasibility",
+    "no partial-preservation search and no online budget admission",
+    "one previously used static-scene development corpus; candidates are correlated"
+  ]
+}

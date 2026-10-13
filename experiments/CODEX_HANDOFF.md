@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-13 completing I3-01B backup after prior approval-quota interruption. I3-01B complete, NOT admitted; next I3-01C only after a new registered protocol.
+Last updated: 2026-10-13. I3-01C complete; backup then stop at user request. No direct raw-retention admission; next is a method-scope decision, not another experiment.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -67,7 +67,7 @@ frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i3-camera-evaluator
-  commit 86ee5110f83c30561d462fca8ba6165cad77aae5
+  commit 155d65b01a92c59e35b2fd3eaaaa997e89a08cab
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -564,7 +564,7 @@ budget, not universal hard UAV standard; any future change needs independent rat
 I3-01A standalone archive was deferred by user; its documents/commits are included
 in the I3-01B checkpoint. Do not claim the separate I3_01A directory exists.
 
-**Current checkpoint: I3-01B COMPLETE, NOT admitted.**
+**Historical checkpoint: I3-01B COMPLETE, NOT admitted.**
 Read I3_01B_REPORT.md, RESULTS.json, VALIDATION.json and unchanged registered protocol.
 One6-state batch, sourceparent74cd188 /GP86ee511,6 C++ tests pass. Five valid references
 all finish within500ms; negative13never entersB or submits a path. Multi-route:
@@ -578,15 +578,29 @@ State27operation cap10000produces4raw, not6, not proof no other routes exist.
 Completed scores match full same-model oracle; timed tests do not reuse oracle scores.
 No simulation or camera-kernel/default/online changes. Do not repeat/fill candidates.
 
-**Next: I3-01C bounded fixed-pool observation/simplification diagnosis.**
-Register before new analysis, use all saved motion-feasible raw variants (including9
-collapsed) with same frozen cases; compare raw/shortcut visible sets, gain/loss and
-motion cost. Geometric collapse alone does not prove observation loss; zero marginal
-is not empty visibility. Check whether retaining raw geometry would violate FINAL
-reference-relative motion limits. If no useful feasible observation value, stop this
-preservation route; if supported, separately design shared observation-preserving
-simplification for all controls, then retest supply/cost. No implicit core guidance,
-constraint relaxation, new seeds or third kernel tuning. Not yet registered/run.
+**Current checkpoint: I3-01C COMPLETE, NO DIRECT RAW-RETENTION ADMISSION.**
+Read experiments/i3/I3_01C_REPORT.md, RESULTS.json and VALIDATION.json.
+Preregistered197e24c; batch toolingb4045ee / fixture155d65b; camera kernel unchanged.
+All15fixed-pool paths evaluated,60outputs including yaw-sampling sensitivity.
+All10extras lose material predicted visibility after shortcut (9.17–33.31%,
+median17.10%), but all10raw-as-final routes violate time/yaw limits and all primary
+raw utilities are lower than final reference. Direct-retention leads0; required2
+states, actual0. Secondary sampling still has0leads; one utility classification
+is yaw-sensitive. No actual-flight benefit or online500ms admission established.
+4accounting tests and reference/fixture/source-hash checks pass. Frozen I1/I2/B
+results remain unchanged. No new simulation, evaluator kernel or default changes.
+
+**Immediate next task, only after user resumes: method-scope decision.**
+Stop restoring complete raw PRM routes. Decide whether sparse explicit observation
+anchors can be defined directly under the fixed motion budget, with same-representation
+geometric/naive insertion controls and a NEW bounded feasibility protocol. Partial
+node retention was not searched and is neither proved impossible nor admitted.
+Do not automatically enter I3-02/03, relax constraints, tune the kernel, rerun seeds,
+or add unrelated modules. Current evidence confirms predicted loss, not a useful
+tradeoff or the success/failure of the entire proposed guided method.
+Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01C-OBSERVATION-LOSS-V1/.
+Backup target: /home/zxr2/下载/CERLAB_I3_Backups/I3_01C_2026-10-13/.
+Read its README and remote_sync_receipt.json for verified backup/push status.
 
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/.
 Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_01B_2026-10-12/ (phase date12, backup completion13; README records actual remote sync).
