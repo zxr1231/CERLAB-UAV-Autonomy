@@ -2,6 +2,8 @@
 
 Last updated: 2026-10-13. I3-01D method-scope review complete; next I3-02A isolated single-anchor feasibility batch, not online integration. Local backup only at this checkpoint.
 
+Next-session executable prompt: `experiments/i3/I3_02A_START_PROMPT.md`. Prepared for the user’s next 6.1 sol session; I3-02A remains unimplemented/unrun.
+
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
 results as evidence with stated limits, not as guaranteed performance or novelty.
