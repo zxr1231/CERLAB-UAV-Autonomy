@@ -38,3 +38,9 @@ utility than final reference. Direct retention leads0, no admission. Four accoun
 tests and fixture/reference/hash checks pass. Read I3_01C_REPORT.md. User requested
 backup then stop. Next is a method-scope decision/new bounded protocol if justified;
 I3-02/03 and online integration remain pending, not automatically authorized by results.
+
+I3-01D method-scope review COMPLETE2026-10-13: see I3_01D_METHOD_DECISION.md.
+Next I3-02A is a bounded single-anchor offline feasibility batch (not implemented/run).
+Fixed same-pool geometry/naive/residual-cost controls; preregistered supply/proxy/
+difference exit gates. Only a pass permits registering I3-02B whole-stage budget check.
+No kernel/online/simulation changes. Local backup only; GitHub after major task completion.

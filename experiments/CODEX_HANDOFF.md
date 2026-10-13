@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-13. I3-01C complete; backup then stop at user request. No direct raw-retention admission; next is a method-scope decision, not another experiment.
+Last updated: 2026-10-13. I3-01D method-scope review complete; next I3-02A isolated single-anchor feasibility batch, not online integration. Local backup only at this checkpoint.
 
 This is the canonical single-file handoff for a new Codex conversation. Read this
 file first, then read the linked phase documents before changing code. Treat recorded
@@ -52,6 +52,8 @@ Real hardware planning is deferred.
 At this checkpoint no ROS, Gazebo, RViz or exploration instance is running.
 
 ## Git state at handoff
+
+Backup policy updated by user (2026-10-13): ordinary “备份” requests mean LOCAL backup only. Push to GitHub after completing a major task such as I3-02, or when the user explicitly requests a push. Prior general push authorization does not mean every checkpoint should be pushed.
 
 The user has authorized GitHub pushes. Local commits alone do not prove remote sync;
 consult the latest backup README/remote receipt. A previous push was not executed
@@ -590,14 +592,19 @@ is yaw-sensitive. No actual-flight benefit or online500ms admission established.
 4accounting tests and reference/fixture/source-hash checks pass. Frozen I1/I2/B
 results remain unchanged. No new simulation, evaluator kernel or default changes.
 
-**Immediate next task, only after user resumes: method-scope decision.**
-Stop restoring complete raw PRM routes. Decide whether sparse explicit observation
-anchors can be defined directly under the fixed motion budget, with same-representation
-geometric/naive insertion controls and a NEW bounded feasibility protocol. Partial
-node retention was not searched and is neither proved impossible nor admitted.
-Do not automatically enter I3-02/03, relax constraints, tune the kernel, rerun seeds,
-or add unrelated modules. Current evidence confirms predicted loss, not a useful
-tradeoff or the success/failure of the entire proposed guided method.
+**Immediate next task: implement the registered I3-02A isolated feasibility batch.**
+Read experiments/i3/I3_01D_METHOD_DECISION.md in full. I3-01D design review is complete,
+NOT a new experiment or novelty proof. One anchor inserted into one final-reference
+edge; shared geometry-only pool <=5extras, same motion limits, no A* detours or new yaw.
+Compare geometry, naive marginal and residual-minus-reference-rate travel penalty.
+Full-pool oracle only diagnoses supply, never selects for the tested selectors.
+Fixed six development states,13negative. Explicit supply/proxy/method-difference gates
+are preregistered; no enlargement or favorable seed reruns. Only if all gates pass
+register whole-stage timing I3-02B; prior500ms failure is not superseded. Otherwise
+stop and revisit scope. No online/core planner change this checkpoint.
+Checkpoint backup is LOCAL only per user policy. Push after a major task such as
+I3-02 completes, or explicit request. No GitHub sync claimed for I3-01D.
+
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01C-OBSERVATION-LOSS-V1/.
 Backup target: /home/zxr2/下载/CERLAB_I3_Backups/I3_01C_2026-10-13/.
 Read its README and remote_sync_receipt.json for verified backup/push status.
