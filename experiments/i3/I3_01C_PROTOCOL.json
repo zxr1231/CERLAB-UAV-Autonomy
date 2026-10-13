@@ -1,0 +1,130 @@
+{
+  "protocol_id": "I3_01C_FIXED_POOL_OBSERVATION_LOSS_V1",
+  "status": "REGISTERED_BEFORE_MEASUREMENTS",
+  "source_root": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1",
+  "cases": [
+    {
+      "sequence": 1,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000001",
+      "snapshot_sha256": {
+        "planner.json": "0372f42b7bdbe3d1febbdd0aa00f5c25376a52703f0d9e26443d788cbb4056a1",
+        "map.bin": "62141d0670e7c39da5fc5e0e7f07a9fbb8ee0d0072e9d0a116cb8e993c7b6782",
+        "manifest.json": "ff20bce5124dfeb86f8d9bd4ecf1c654a5b1bf018d528a9d6c7dbec3e2790cc0"
+      },
+      "eligible_pool_indices": [
+        0
+      ],
+      "status": "CONTEXT_VALID",
+      "source_files": {
+        "request_000001.json": "ddc69e0ab05ca19a65d7777fc5954fab66e7b9534a33e79c4e9e98c99c5ca922",
+        "result_000001.json": "a3a52ef726bf77f7fb75f17f45557841257e9e84bee5a53037c1e46090857949"
+      }
+    },
+    {
+      "sequence": 13,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000013",
+      "snapshot_sha256": {
+        "planner.json": "b3d1a1d7ed4f90aa348ec649a2071e160ed3339d3cff0bd5e5b0959c81234399",
+        "map.bin": "9d1abbd6f90305515db1c9b43ed7a11b53b8198651441d984476c1b52e74cd5b",
+        "manifest.json": "687757961fd7763a1148f20aae81fa90101f8e40f1fc672f3dca4d3e99225980"
+      },
+      "eligible_pool_indices": [],
+      "status": "SKIP_B_NEGATIVE_CONTROL",
+      "source_files": {
+        "request_000013.json": "2294180ec7c859f0d25a1dec39caa0416dc3b5fd667a45c6981737c6bb088bce",
+        "result_000013.json": "6d20c42236ca73b692945ddfa80072873e6e330a7ac2ba28e4d9cddebb11bcd0"
+      }
+    },
+    {
+      "sequence": 14,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000014",
+      "snapshot_sha256": {
+        "planner.json": "cd88bae7034ade3a517336c9c40da9f71a1e333a1644a4136bacb92879bf942c",
+        "map.bin": "874e561ae96b79771cc0ee70d7fdc7746396874ee72a4af49ac8af0c2ce5eb75",
+        "manifest.json": "71b2667c3afa13e992ba9a4ca662a72835d6e9c1ef332952549f52a1326cf716"
+      },
+      "eligible_pool_indices": [
+        0,
+        1
+      ],
+      "status": "CONTEXT_VALID",
+      "source_files": {
+        "request_000014.json": "caf99f76ece5576803b5f39f6bb85513191f60b75f4e682cb7df121875a55d39",
+        "result_000014.json": "6839d61a837c4a774caa92dfc972f64d8a490ba51fc17ba8acc8a789f2c2af00"
+      }
+    },
+    {
+      "sequence": 26,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000026",
+      "snapshot_sha256": {
+        "planner.json": "76bd641b875f80055fe9f422139e3e868863424e70f459efd2f72df34683dc5b",
+        "map.bin": "76bd4251360067adb52073f98ea951848effcb3439eaaccb07354be193234dce",
+        "manifest.json": "e964881a713323c8340697d0c82e1724299b1da8ab1e4d8e3eca6314f6a30ef0"
+      },
+      "eligible_pool_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "status": "CONTEXT_VALID",
+      "source_files": {
+        "request_000026.json": "f09994252a9994db42524ce3ca27560bc2e91bd9fd0b59b428ea578a47484933",
+        "result_000026.json": "059c7ffb2c04fad85d013eb3957eb027d2a9170d66ccbb71cf1d38fb4290f115"
+      }
+    },
+    {
+      "sequence": 27,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000027",
+      "snapshot_sha256": {
+        "planner.json": "348a277dd47f7c156bd967983ca6555e1221bf3c14242dad6befc95a571ffd8b",
+        "map.bin": "6063cee79b53f72d142039b968836cbe388da644f9023eb3370afc5ee7cad601",
+        "manifest.json": "862f627a78ae0c23beaaf67660bdfd44bccc36140fae86aa982887aa16ff20a9"
+      },
+      "eligible_pool_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "status": "CONTEXT_VALID",
+      "source_files": {
+        "request_000027.json": "247f585b6d5eb51640969385830b3914db1f774c728a75f454149a135de5cd5e",
+        "result_000027.json": "0f5b16788e3dbd6bc2013fa56e4aebf55b1ba1b298854842106b5904399c5dcf"
+      }
+    },
+    {
+      "sequence": 38,
+      "directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000038",
+      "snapshot_sha256": {
+        "planner.json": "9812a019cac1ab52d0205faf96ac71824f080b58dcf5955fa3c427d29d664dc0",
+        "map.bin": "56ea5a166f99226279c7652ddea94d5e404d6c6131068fd36e28ed7e9bcd8a8c",
+        "manifest.json": "65cce16afadb206c6447e32bdf620730e24395f8958c7b15a8926c80c646b55c"
+      },
+      "eligible_pool_indices": [
+        0,
+        1
+      ],
+      "status": "CONTEXT_VALID",
+      "source_files": {
+        "request_000038.json": "2b1832955af553b50ba10a00f5d90b0f1609a452b6ccefb509509bd8763631c8",
+        "result_000038.json": "71f7bf5dc4407592caa476b26e96588b308cbd58c2c1d513d6357f736bddf590"
+      }
+    }
+  ],
+  "camera_kernel_commit": "ece80ea",
+  "spacing_m": 0.25,
+  "yaw_spacing_rad": 0.1,
+  "repeats": 3,
+  "material_lost_voxels_min": 100,
+  "material_loss_ratio_min": 0.05,
+  "raw_as_final_length_ratio_max": 1.25,
+  "raw_as_final_time_ratio_max": 1.25,
+  "raw_as_final_additional_yaw_max": 1.5707963267948966,
+  "utility_improvement_tolerance": 1e-09,
+  "minimum_supported_states": 2,
+  "secondary_rotation_interiors": false,
+  "old_budgets_or_results_superseded": false
+}
