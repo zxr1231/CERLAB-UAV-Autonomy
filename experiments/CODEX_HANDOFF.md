@@ -1,6 +1,28 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-14. I3-03-02 core opportunity beam prototype IMPLEMENTED,22 C++ +4Python tests pass; registered38-state/four-control parallel matrix next. Branch feat/i3-opportunity-prototype,GP0221483. I3-03-01/AABB failure unchanged. Finish one matrix/report/local backup and stop; NO method revision after results, no GitHub push.
+Last updated: 2026-10-14. I3-03-02 FINAL BATCH COMPLETE: METHOD_NOT_SUPPORTED. Core code/22C+++4Python tests/304parallel jobs complete. Expanded32states: guided wins1against each control;500ms complete54/111=48.65%. Close current prototype, no method revision/retest/new seeds/automatic follow-on. Report/local backup then stop; no GitHub push. Branch feat/i3-opportunity-prototype,GP0221483.
+
+**Immediate next task: NONE for this prototype; closed after final go/no-go test.**
+Read i3/I3_03_02_REPORT.md, RESULTS.json and VALIDATION.json. Finish verified local
+backup if its receipt is missing, then STOP. After user separately initiates a research
+decision, discuss stopping/narrowing/changing the paper scope, without disguising a new
+test as another continuation of this failed prototype. Do not automatically start
+I3-03-03, simulation, optimizations, cache/confidence/semantics or more diagnostics.
+
+Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-OPPORTUNITY-PROTOTYPE-V1/.
+Inputs: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/.
+Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_03_02_FINAL_2026-10-14/.
+Formal run parent51f599f/GP0221483. All38cases preserved,37valid+1negative.148mechanism
+and444budget records,148warmups,8negative jobs,0tool errors; four pinned physical-core
+workers with method/core rotation. Data are ONE correlated static-world/seed4 trajectory.
+148reference/selected-route oracle groups and5oldreference raw/unique/address parity
+pass; allold/current SHA unchanged. Scratch max69.98MiB,process RSS201.04MiB. New model
+actual capacities dense7,946,032/sparse4,812,592bytes measured; old E1 gap remains frozen.
+Guided changes26/27beams and21/21output pools vs motion/diverse, but primary equal-score
+expanded contrasts1/29/2 and1/31/0, means+0.435580%/+0.014940%relative-to-reference.
+Old development improvements do not rescue primary failure. Two-anchor outputs28states
+but0two-anchor final selected improvements. Actual observation/Coverage/T95/B-spline
+remain UNTESTED; no physical/sensor/default-online changes. Current prototype is CLOSED.
 
 **Latest user instruction for this batch:** this is the FINAL prototype go/no-go test.
 User allows expanded experiments and parallel groups, but prohibits further method
@@ -767,11 +789,11 @@ Implementation frozen parent46787af / GP6ef0fa9; final commit recorded in backup
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-01-BOUND-DIAGNOSTIC-V1/.
 Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_03_01_2026-10-14/.
 
-**Immediate next task, only after user starts it: one bounded method finalization and core implementation batch.**
+**Historical next task (now completed and closed): one bounded method finalization and core implementation batch.**
 
-UPDATE: user started this batch, core implementation and necessary tests now complete.
-Immediate work is the once-only I3-03-02 frozen parallel matrix, summary/report, handoff
-and verified local backup then stop. Do not run old G1-P1 or revise/retest for positivity.
+UPDATE: user started and completed this batch, including the once-only I3-03-02 matrix.
+Decision METHOD_NOT_SUPPORTED; the top-of-file closure is current. No further prototype
+work is authorized. Do not run old G1-P1 or revise/retest for positivity.
 All prior guidance in this paragraph below is historical scope guidance for this batch.
 Do not revive the failed AABB ranker as old I3-03-02 (G1-P1) or start E2/new seeds at
 this checkpoint. A future user-started core development batch follows the new boundary.

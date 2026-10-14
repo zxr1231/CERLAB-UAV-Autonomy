@@ -1,0 +1,116 @@
+{
+  "task": "I3-03-02",
+  "new_CPP_tests_passed": 5,
+  "CPP_regression_tests_passed": 17,
+  "python_statistics_tests_passed": 4,
+  "jobs_completed": 304,
+  "tool_failures": 0,
+  "valid_mechanism_records": 148,
+  "valid_budget_records": 444,
+  "warmups": 148,
+  "negative_jobs": 8,
+  "old_reference_address_raw_unique_parity_states": [
+    1,
+    14,
+    26,
+    27,
+    38
+  ],
+  "frozen_D0_sources_unchanged": true,
+  "frozen_current_inputs_unchanged": true,
+  "second_layer_in_output_pool_states": {
+    "0": 0,
+    "1": 28,
+    "2": 28,
+    "3": 28
+  },
+  "second_layer_selected_states": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0
+  },
+  "beam_changes_vs_observation_states": {
+    "1": 26,
+    "2": 27
+  },
+  "output_pool_changes_vs_observation_states": {
+    "1": 21,
+    "2": 21
+  },
+  "budget_failure_reasons": [
+    {
+      "mode": 1,
+      "reason": "wall_budget_exhausted",
+      "count": 39
+    },
+    {
+      "mode": 2,
+      "reason": "wall_budget_exhausted",
+      "count": 42
+    },
+    {
+      "mode": 3,
+      "reason": "absolute_deadline_exhausted",
+      "count": 50
+    },
+    {
+      "mode": 3,
+      "reason": "generation_cancelled",
+      "count": 4
+    },
+    {
+      "mode": 3,
+      "reason": "wall_budget_exhausted",
+      "count": 3
+    }
+  ],
+  "budget_timing_summary": {
+    "0": {
+      "median_ms": 102.572732,
+      "max_ms": 301.996783
+    },
+    "1": {
+      "median_ms": 356.879375,
+      "max_ms": 478.347117
+    },
+    "2": {
+      "median_ms": 368.772088,
+      "max_ms": 478.662446
+    },
+    "3": {
+      "median_ms": 194.646139,
+      "max_ms": 477.764125
+    }
+  },
+  "new_model_capacities": [
+    {
+      "mode": 0,
+      "dense_model_bytes": 7946032,
+      "sparse_model_bytes": 0
+    },
+    {
+      "mode": 1,
+      "dense_model_bytes": 7946032,
+      "sparse_model_bytes": 0
+    },
+    {
+      "mode": 2,
+      "dense_model_bytes": 7946032,
+      "sparse_model_bytes": 0
+    },
+    {
+      "mode": 3,
+      "dense_model_bytes": 7946032,
+      "sparse_model_bytes": 0
+    },
+    {
+      "mode": 3,
+      "dense_model_bytes": 7946032,
+      "sparse_model_bytes": 4812592
+    }
+  ],
+  "method_revision_or_retest_performed": false,
+  "new_simulation": false,
+  "verdict": "METHOD_NOT_SUPPORTED"
+}

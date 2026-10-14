@@ -11,15 +11,15 @@
 | I3-02 observation opportunities / anchors | V2 E1 functional exactness verified; LIMITED_POOL_VALUE_FAIL; no E2/true guided generator admission |
 | I3 scope decision | Grilling Q1--Q8 confirmed; historical true-Edge/state27 prerequisites revised; old negatives retained |
 | I3-03-01 / G1-D0 lightweight bound diagnosis | Complete: exactness/cost PASS; NO_USEFUL_CONDITIONING_SIGNAL |
-| I3-03-02 core opportunity beam prototype | Implemented/tested; expanded38state final matrix next; old G1-P1 remains closed |
-| I3-03-03 independent verification | Conditional/pending; no prototype admission |
-| I3-03 guided candidate construction | Paused pending scope decision; not automatically authorized |
-| I3-04 observation-preserving simplification | Pending |
-| I3-05 online integration | Pending |
-| I3-06 bounded simulation checks | Pending |
-| I3-07 paired pilot | Pending |
-| I3-08 ablation / mechanism analysis | Pending |
-| I3-09 decision and backup | Pending |
+| I3-03-02 core opportunity beam prototype | Complete: METHOD_NOT_SUPPORTED; final batch closed; no revision/retest |
+| I3-03-03 independent verification | Not admitted; no automatic follow-on |
+| I3-03 guided candidate construction | Core prototype implemented, evidence insufficient to continue current method |
+| I3-04 observation-preserving simplification | Not admitted for closed current prototype |
+| I3-05 online integration | Not admitted for closed current prototype |
+| I3-06 bounded simulation checks | Not admitted for closed current prototype |
+| I3-07 paired pilot | Not admitted for closed current prototype |
+| I3-08 ablation / mechanism analysis | Historical conditional plan; no new run authorized |
+| I3-09 decision and backup | Current prototype final decision/backup completed at I3-03-02 |
 
 Historical checkpoint2026-10-12: see I3_00_REPORT.md. Camera evaluation is isolated,
 Legacy default unchanged. No online/performance win or guided method claimed.
@@ -129,3 +129,12 @@ implemented, new reusable header and runner;22C++/4Python tests passed. Protocol
 inputs registered,4controls×2regimes=304jobs on4physical-core workers next. All controls
 preserve inserted anchors; no B-spline/actual observation evidence yet. User says this
 is final go/no-go batch: no method revision/retest after results, preserve failed jobs.
+
+FINAL2026-10-14: I3-03-02 COMPLETE/METHOD_NOT_SUPPORTED.304jobs complete,37valid
+states+1negative,0tool errors. Main expanded32equal-score contrasts vs motion1/29/2,
+vs geometry1/31/0; both fail>=2win criterion. Budget observation54/111complete=48.65%
+vs90% gate, expanded timing medians0wins/31ties/1lossagainst either.22C++/4Python tests,
+148reference/selected oracle groups and5oldreference parity pass. Actual beams/pools
+changed;two-anchor outputs28states but0selected. Close current prototype, no revision/
+retest/automatic I3-03-03 or simulation. Read I3_03_02_REPORT.md. Local verified backup
+only; no GitHub push. All prior future-stage plans remain conditional, not executable.
