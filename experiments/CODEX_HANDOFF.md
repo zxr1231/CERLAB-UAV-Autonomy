@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-14. I3 scope decision complete. Fixed geometric pool closed; one unimplemented hypothesis remains: reference-conditioned observation upper-bound candidate search. Next freeze G1 contract and test a minimal prototype only after user starts it. Local backup only.
+Last updated: 2026-10-14. User confirmed grilling Q1--Q8. G1-D0 lightweight diagnosis contract registered; no implementation/run. Real Edge is no longer a research prerequisite. Next user-triggered task is D0 only, not full G1/P1/E2. Local backup only.
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -666,7 +666,7 @@ and model allocated capacity were not collected: explicit resource-metadata gap,
 not full resource-recording compliance. No repeat or E2 was run to fill it. One-shot
 fixture process times are not fair deployed-speed or500ms admission evidence.
 
-**Scope decision COMPLETE: read I3_SCOPE_DECISION_2026-10-14.md and I3_SCOPE_TRACE_2026-10-14.json.**
+**Historical scope decision: I3_SCOPE_DECISION_2026-10-14.md and TRACE.json; future rules superseded by confirmed grilling consensus below.**
 Read-only saved records prove per-Edge min-time excluded0 candidates in this corpus.
 Old positive26/636 and38/197 have no allowed existing nonstart Graph arcs and no exact
 E1 path match; they were excluded by representation. E1 qualified-not-scored counts
@@ -680,21 +680,35 @@ counts and Ubar=(|R|+K)/estimatedTime. Ubar changes visit/retention order BEFORE
 scoring. Exact B_e union C determines actual model utility. No negative A* edge weights,
 no persistent cache/free preprocessing. Old E1 failure remains, not superseded.
 
-**Immediate next task, only after user resumes: freeze G1 contract and one minimal prototype gate.**
-Read the scope decision in full before implementation. It is a mechanism draft, NOT
-an already registered experiment or proven novelty. Freeze hashes, envelope containment
-rules/numeric safeguards, query accounting and termination BEFORE new evaluation.
-Controls: geometric stratification, identical upper-bound search using N (without R),
-and reference-conditioned search using Q. Same mother set, exact scorer, motion and
-wall caps; report real completed counts, no padding. Standard branch-and-bound is not
-the contribution. Require2 positive states and a distinct strict signal versus each
-control as a bounded development gate; failures end this single hypothesis.
-State38mother is fully scored negative, so reaching2 useful states depends on finding
-an unverified positive27 while retaining26; do not reinstate old anchor197 to pass.
-Repair missing model-capacity/whole-process RSS instrumentation BEFORE any G1 batch.
-Do not automatically run G1 now, E2, live simulation, new seeds or extra variants.
-Exact composition remains foundation; whole-paper innovation/performance is unproved.
-All frozen V1/V2/earlier negative results stay. Scope checkpoint local backup only.
+**Current: user-confirmed grilling consensus Q1--Q8, G1-D0 registered/not implemented.**
+Read i3/I3_GRILLING_CONSENSUS_2026-10-14.md, I3_G1_D0_PROTOCOL.md/JSON and INPUTS.json.
+The eight decisions prioritize actual observation/exploration benefit as eventual paper
+evidence; old reused5states do not solely decide the whole line. Real Graph Edge becomes
+an implementation option, not a scientific necessity. No change to old E1/02A results.
+The old “must find a state27positive” gate and optional box-sum approximation are no
+longer future execution requirements. Main bound uses exact union (<=7 queries for3boxes).
+
+**Immediate next task, only after user starts it: G1-D0 LIGHTWEIGHT DIAGNOSIS ONLY.**
+Use I3_G1_D0_START_PROMPT.md. D0 uniformly uses all14 previously scored02A safe single-
+waypoint corridors (sizes0/2/5/5/2) and original6snapshots,13negative. This is retrospective
+development diagnosis, not an independent experiment or revival of failed anchor proxy.
+No new geometry/visibility/seed/simulation; never supplement168unscored Edge routes.
+Compute exact union counts for N and Q=N minus R, freeze motion/N-bound/Q-bound ranking,
+then read saved precise labels. K1 is the primary early-value check; K2/5auxiliary cannot
+rescue failure (K5covers the whole already-scored subset). Require an effective-U strict
+signal versus each control, no-later known-positive retention vs motion, nonlower5-state
+means, plus per-bound index/build/query/sort<=50ms and256MiB scratch. The50ms is a NEW
+diagnostic overhead target under eventual500ms, not a deployment admission result.
+
+Correct bound/changed ranking alone is insufficient. Once-only diagnostic then, ONLY
+if all gates support it, separately register one P1prototype with common predeclared safe
+corridors and real full500ms budgets plus equal actual scoring-count mechanism comparison.
+No automatic P1/E2/core coding. Any D0/P1failure stops THIS mechanism, pauses core coding
+and triggers a research-scope decision, not a universal proof against informative planning.
+Process RSS and allocation counts must be recorded in D0; new model capacity must be
+measured before later P1 (D0constructs no model). Preserve all old metadata gaps/failures.
+This turn only registered protocols; after a future D0, report/local commit/verified
+backup and stop. No GitHub push for this small checkpoint.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/.
 Local backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_E1_V2_2026-10-14/.
 No GitHub push for this checkpoint; user asked backup and stop after E1.

@@ -9,7 +9,8 @@
 | I3-01B minimal offline supply/budget probe | Complete, NOT admitted: reference5/5pass; 4supply deficits,1alternative timeout; negative13passed |
 | I3-01C fixed-pool observation/simplification diagnostic | Complete: predicted loss10/10, direct raw-retention leads0; NOT admitted |
 | I3-02 observation opportunities / anchors | V2 E1 functional exactness verified; LIMITED_POOL_VALUE_FAIL; no E2/true guided generator admission |
-| I3 scope decision | Complete2026-10-14; one reference-conditioned upper-bound search draft, not implemented/tested |
+| I3 scope decision | Grilling Q1--Q8 confirmed; historical true-Edge/state27 prerequisites revised; old negatives retained |
+| G1-D0 lightweight bound diagnosis | Protocol/inputs registered; no code/run; next user-triggered task |
 | I3-03 guided candidate construction | Pending |
 | I3-04 observation-preserving simplification | Pending |
 | I3-05 online integration | Pending |
@@ -97,3 +98,11 @@ reference-conditioned optimistic visibility bounds to choose<=5 expensive querie
 pool lock; compare geometry and identical nonconditioned bounds. Not a novel B&B claim.
 Next user-started step: freeze G1 contract/numeric+resource rules, isolated prototype and
 one finite gate. Draft only, no automatic execution or E2. This turn ends after local backup.
+
+Current2026-10-14: user accepted grilling Q1--Q8 and final shared understanding.
+I3_GRILLING_CONSENSUS + I3_G1_D0_PROTOCOL.md/json + INPUTS.json supersede historical
+scope future directions. D0only: all14old02A scored corridors, original6contexts, no new
+gain/routes/seeds/sim. Exact box union fixed; K1primary quality and50ms counted-index
+overhead target plus256MiB. Changed order alone not PASS. True Edge no longer necessary;
+old5-state corpus no sole whole-line death verdict. One diagnosis, after pass one
+separately registered prototype; do not autoexecute. Local backup only, no GitHub push.

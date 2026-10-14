@@ -1,0 +1,105 @@
+{
+  "protocol_id": "I3_G1_D0_BOUND_DIAGNOSTIC_V1",
+  "status": "REGISTERED_NOT_IMPLEMENTED_OR_RUN",
+  "consensus_file": "I3_GRILLING_CONSENSUS_2026-10-14.md",
+  "method_file": "I3_G1_D0_PROTOCOL.md",
+  "inputs_file": "I3_G1_D0_INPUTS.json",
+  "scope": "one lightweight retrospective bound discrimination/cost diagnostic",
+  "fixed_states": [
+    1,
+    13,
+    14,
+    26,
+    27,
+    38
+  ],
+  "negative_control": 13,
+  "valid_states": 5,
+  "corpus": {
+    "source": "all14 already scored I3-02A alternatives",
+    "per_state_sizes": [
+      0,
+      2,
+      5,
+      5,
+      2
+    ],
+    "representation": "shared two-segment single-PRM-waypoint safe corridor from saved records",
+    "real_prm_edge_required": false,
+    "select_by_old_gain": false,
+    "unscored_routes_evaluated": false,
+    "held_out": false
+  },
+  "bound": {
+    "padding": "range + norm(body_to_camera_translation) + sqrt(3)*map_resolution",
+    "closed_voxel_center_boxes": true,
+    "union_mode": "exact inclusion-exclusion only",
+    "max_boxes_future": 3,
+    "max_terms": 7,
+    "index": "3D int64 prefix over planning-region voxel-center grid",
+    "count_masks": [
+      "N",
+      "Q=N minus R"
+    ],
+    "Q_bound": "(|R|+count(Q intersect box union))/estimated_time",
+    "N_bound": "(|R|+count(N intersect box union))/estimated_time",
+    "changes_optical_model": false
+  },
+  "controls": [
+    "motion_order",
+    "unconditioned_bound",
+    "reference_conditioned_bound"
+  ],
+  "order_tie_key": [
+    "estimated_time",
+    "length",
+    "anchor_id",
+    "reference_segment",
+    "record_id"
+  ],
+  "primary_K": 1,
+  "secondary_K": [
+    2,
+    "min(5,n)"
+  ],
+  "secondary_cannot_rescue_primary": true,
+  "numerical_tolerance": 1e-9,
+  "tolerance_is_effect_size": false,
+  "quality_gates": {
+    "strict_better_than_motion_states_min": 1,
+    "strict_better_than_unconditioned_states_min": 1,
+    "mean_effective_relative_utility_not_lower_than_either": true,
+    "known_positive_states_no_later_than_motion": true,
+    "ranking_change_alone_is_pass": false
+  },
+  "diagnostic_resource_gates": {
+    "independent_index_build_queries_sort_ms_max": 50,
+    "scratch_bytes_max": 268435456,
+    "zero_candidate_state_skip_index": true,
+    "warmups": 0,
+    "measured_runs": 1,
+    "input_io_separate": true,
+    "saved_reference_not_free_online_information": true,
+    "whole_500ms_admission": false,
+    "process_peak_RSS_required": true,
+    "model_not_constructed": "allocated capacity remains not_measured until separately registered P1"
+  },
+  "outcomes": [
+    "BOUND_ENGINEERING_FAIL",
+    "BOUND_PREPARATION_FAIL",
+    "NO_USEFUL_CONDITIONING_SIGNAL",
+    "DIAGNOSTIC_SIGNAL_ONLY",
+    "INCONCLUSIVE_QUALITY_METRICS"
+  ],
+  "new_camera_queries": 0,
+  "new_routes": 0,
+  "new_seeds": 0,
+  "new_simulation": false,
+  "attempt_batches_max": 1,
+  "prototype_attempts_after_pass_max": 1,
+  "prototype_registration": "separate contract and inputs; not automatic",
+  "old_frozen_failures_unchanged": true,
+  "whole_research_line_killed_by_old_corpus": false,
+  "ordinary_backup_local_only": true,
+  "github_push_this_checkpoint": false
+}

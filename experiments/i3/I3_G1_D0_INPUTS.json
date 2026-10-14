@@ -1,0 +1,896 @@
+{
+  "schema": "i3-g1-d0-inputs-v1",
+  "registered_before_diagnostic": true,
+  "source_e1_registry_sha256": "f84573b1a77edbea9f5874374e66d5bb5c3827547efa942c2a6655b851734755",
+  "old_scored_corpus": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1",
+  "source_root": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1",
+  "fixed_states": [
+    1,
+    13,
+    14,
+    26,
+    27,
+    38
+  ],
+  "total_alternatives": 14,
+  "cases": [
+    {
+      "sequence": 1,
+      "stage": "early",
+      "snapshot_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000001",
+      "snapshot_sha256": {
+        "planner.json": "0372f42b7bdbe3d1febbdd0aa00f5c25376a52703f0d9e26443d788cbb4056a1",
+        "map.bin": "62141d0670e7c39da5fc5e0e7f07a9fbb8ee0d0072e9d0a116cb8e993c7b6782",
+        "manifest.json": "ff20bce5124dfeb86f8d9bd4ecf1c654a5b1bf018d528a9d6c7dbec3e2790cc0"
+      },
+      "request_file": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000001.json",
+      "source_sha256": {
+        "request_000001.json": "ddc69e0ab05ca19a65d7777fc5954fab66e7b9534a33e79c4e9e98c99c5ca922",
+        "result_000001.json": "a3a52ef726bf77f7fb75f17f45557841257e9e84bee5a53037c1e46090857949"
+      },
+      "context": {
+        "camera": {
+          "model": "mapper_matched_frozen_shadow_v1",
+          "depth_assumption": "no_return_until_first_snapshot_occupied",
+          "unknown_obstacles_observable": false,
+          "fx": 554.254691191187,
+          "fy": 554.254691191187,
+          "cx": 320.5,
+          "cy": 240.5,
+          "image_cols": 640,
+          "image_rows": 480,
+          "filter_margin": 2,
+          "mapper_pixel_skip": 2,
+          "evaluation_pixel_skip": 2,
+          "raycast_max_length": 5.0,
+          "body_to_camera": [
+            0.0,
+            0.0,
+            1.0,
+            0.09,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.095,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "planning_min": [
+            -20.0,
+            -20.0,
+            0.7
+          ],
+          "planning_max": [
+            20.0,
+            20.0,
+            1.2
+          ]
+        },
+        "motion_model": {
+          "velocity": 1,
+          "angular_velocity": 0.5,
+          "yaw_penalty_weight": 1
+        },
+        "planning_region": {
+          "min": [
+            -20,
+            -20,
+            0.7
+          ],
+          "max": [
+            20,
+            20,
+            1.2
+          ]
+        },
+        "start_position": [
+          0.00031056036874690333,
+          0.0005119831642866687,
+          0.9143923746490772
+        ],
+        "start_yaw": -0.00015759503438603009,
+        "terminal_yaw": 4.9087384375,
+        "goal": 1,
+        "accepted": true,
+        "map_version": 9413
+      },
+      "camera_fingerprint": "b4bedcdc82b5ed298e91cd13a89e2a887c01e8eadb399707f3862b35db6638be",
+      "context_fingerprint": "ccc75b01244507fafbb11a0e8472701894b9878fa21caae1067b4de40be30cd6",
+      "diagnostic_artifacts": {
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s001_pool.json": "c1d938cb8329fd9ce47b930cb1d975ce40c9c08fd47080f589677b74aa60f6a0",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000001.json": "f34e3bc3173ea2321d75ff99f60b3149af3a35c4e5759352b57564eaeac9b2b2",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s001_reference.json": "edc13a46c6580ca26ba11fb615d3265b19f2ccaee908ef9d6d3745a74ede1ae5"
+      },
+      "route_record_ids": [],
+      "routes": []
+    },
+    {
+      "sequence": 13,
+      "stage": "early",
+      "snapshot_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000013",
+      "snapshot_sha256": {
+        "planner.json": "b3d1a1d7ed4f90aa348ec649a2071e160ed3339d3cff0bd5e5b0959c81234399",
+        "map.bin": "9d1abbd6f90305515db1c9b43ed7a11b53b8198651441d984476c1b52e74cd5b",
+        "manifest.json": "687757961fd7763a1148f20aae81fa90101f8e40f1fc672f3dca4d3e99225980"
+      },
+      "request_file": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000013.json",
+      "source_sha256": {
+        "request_000013.json": "2294180ec7c859f0d25a1dec39caa0416dc3b5fd667a45c6981737c6bb088bce",
+        "result_000013.json": "6d20c42236ca73b692945ddfa80072873e6e330a7ac2ba28e4d9cddebb11bcd0"
+      },
+      "context": {
+        "camera": {
+          "model": "mapper_matched_frozen_shadow_v1",
+          "depth_assumption": "no_return_until_first_snapshot_occupied",
+          "unknown_obstacles_observable": false,
+          "fx": 554.254691191187,
+          "fy": 554.254691191187,
+          "cx": 320.5,
+          "cy": 240.5,
+          "image_cols": 640,
+          "image_rows": 480,
+          "filter_margin": 2,
+          "mapper_pixel_skip": 2,
+          "evaluation_pixel_skip": 2,
+          "raycast_max_length": 5.0,
+          "body_to_camera": [
+            0.0,
+            0.0,
+            1.0,
+            0.09,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.095,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "planning_min": [
+            -20.0,
+            -20.0,
+            0.7
+          ],
+          "planning_max": [
+            20.0,
+            20.0,
+            1.2
+          ]
+        },
+        "motion_model": {
+          "velocity": 1,
+          "angular_velocity": 0.5,
+          "yaw_penalty_weight": 1
+        },
+        "planning_region": {
+          "min": [
+            -20,
+            -20,
+            0.7
+          ],
+          "max": [
+            20,
+            20,
+            1.2
+          ]
+        },
+        "start_position": [
+          0.3582542075491202,
+          -5.819319869257309,
+          0.8082740651285696
+        ],
+        "start_yaw": -0.2784833284693248,
+        "terminal_yaw": 6.0868356625,
+        "goal": 176,
+        "accepted": false,
+        "map_version": 23524
+      },
+      "camera_fingerprint": "b4bedcdc82b5ed298e91cd13a89e2a887c01e8eadb399707f3862b35db6638be",
+      "context_fingerprint": "5fbedb0fc625aae0b0c7d89fe8edb0d51862d5f7623f5ac7002dbe6a333d1171",
+      "diagnostic_artifacts": {
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s013_pool.json": "5562d896134a17349bf08b1baa285f64e95037cc8028abfb543ac19dff1c8ffc"
+      },
+      "route_record_ids": [],
+      "routes": []
+    },
+    {
+      "sequence": 14,
+      "stage": "middle",
+      "snapshot_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000014",
+      "snapshot_sha256": {
+        "planner.json": "cd88bae7034ade3a517336c9c40da9f71a1e333a1644a4136bacb92879bf942c",
+        "map.bin": "874e561ae96b79771cc0ee70d7fdc7746396874ee72a4af49ac8af0c2ce5eb75",
+        "manifest.json": "71b2667c3afa13e992ba9a4ca662a72835d6e9c1ef332952549f52a1326cf716"
+      },
+      "request_file": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000014.json",
+      "source_sha256": {
+        "request_000014.json": "caf99f76ece5576803b5f39f6bb85513191f60b75f4e682cb7df121875a55d39",
+        "result_000014.json": "6839d61a837c4a774caa92dfc972f64d8a490ba51fc17ba8acc8a789f2c2af00"
+      },
+      "context": {
+        "camera": {
+          "model": "mapper_matched_frozen_shadow_v1",
+          "depth_assumption": "no_return_until_first_snapshot_occupied",
+          "unknown_obstacles_observable": false,
+          "fx": 554.254691191187,
+          "fy": 554.254691191187,
+          "cx": 320.5,
+          "cy": 240.5,
+          "image_cols": 640,
+          "image_rows": 480,
+          "filter_margin": 2,
+          "mapper_pixel_skip": 2,
+          "evaluation_pixel_skip": 2,
+          "raycast_max_length": 5.0,
+          "body_to_camera": [
+            0.0,
+            0.0,
+            1.0,
+            0.09,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.095,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "planning_min": [
+            -20.0,
+            -20.0,
+            0.7
+          ],
+          "planning_max": [
+            20.0,
+            20.0,
+            1.2
+          ]
+        },
+        "motion_model": {
+          "velocity": 1,
+          "angular_velocity": 0.5,
+          "yaw_penalty_weight": 1
+        },
+        "planning_region": {
+          "min": [
+            -20,
+            -20,
+            0.7
+          ],
+          "max": [
+            20,
+            20,
+            1.2
+          ]
+        },
+        "start_position": [
+          0.6212333101666118,
+          -5.873956642946847,
+          0.8009948678606797
+        ],
+        "start_yaw": -0.2785021013036052,
+        "terminal_yaw": 4.5160393625,
+        "goal": 153,
+        "accepted": true,
+        "map_version": 23707
+      },
+      "camera_fingerprint": "b4bedcdc82b5ed298e91cd13a89e2a887c01e8eadb399707f3862b35db6638be",
+      "context_fingerprint": "5b18ed06ca17eae855b9bd8ed7bf253002ba6602feb86f706b93259663c6271e",
+      "diagnostic_artifacts": {
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s014_pool.json": "4d375ba6f7ea022a30afd636a25e3904e88aa2025da9f120f839d5c23365001e",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000014.json": "3c0931f6ecc8843786039c633ce4e32351a614dbfe61084aa7d796b2c404bacc",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s014_reference.json": "50516aed7a41aa0dd8de91e120574fc6bb6692f72000c7300d8a6106f9a02dc8",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s014_r00158_full.json": "89765a2331fa2bb55fd969f4d4756218cda0f44db20a8d67826941b7b7d1d4f1",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s014_r00158_full.input.json": "02f3261afcbc80484ff6907f113e95fda0cb8d2507e9776a636a369deebca4df",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s014_r00156_full.json": "05d57fb4daa1f4ab518b67c94d17df214fdb34ad82ef56d2634f6b521156a736",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s014_r00156_full.input.json": "ff1cd4d08ebd141f5dc468a0266f5fce553244fbde7e759f1d9b4ad9655e7cf9"
+      },
+      "route_record_ids": [
+        158,
+        156
+      ],
+      "routes": [
+        {
+          "record_id": 158,
+          "path": [
+            0,
+            158,
+            153
+          ],
+          "reference_segment": 0,
+          "anchor_id": 158,
+          "motion": {
+            "length": 2.7466099735258767,
+            "time": 6.887759580623111,
+            "yaw": 2.0705748035486176
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s014_r00158_full.json"
+        },
+        {
+          "record_id": 156,
+          "path": [
+            0,
+            156,
+            153
+          ],
+          "reference_segment": 0,
+          "anchor_id": 156,
+          "motion": {
+            "length": 2.7436199084123105,
+            "time": 7.231485990476816,
+            "yaw": 2.243933041032253
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s014_r00156_full.json"
+        }
+      ]
+    },
+    {
+      "sequence": 26,
+      "stage": "middle",
+      "snapshot_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000026",
+      "snapshot_sha256": {
+        "planner.json": "76bd641b875f80055fe9f422139e3e868863424e70f459efd2f72df34683dc5b",
+        "map.bin": "76bd4251360067adb52073f98ea951848effcb3439eaaccb07354be193234dce",
+        "manifest.json": "e964881a713323c8340697d0c82e1724299b1da8ab1e4d8e3eca6314f6a30ef0"
+      },
+      "request_file": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000026.json",
+      "source_sha256": {
+        "request_000026.json": "f09994252a9994db42524ce3ca27560bc2e91bd9fd0b59b428ea578a47484933",
+        "result_000026.json": "059c7ffb2c04fad85d013eb3957eb027d2a9170d66ccbb71cf1d38fb4290f115"
+      },
+      "context": {
+        "camera": {
+          "model": "mapper_matched_frozen_shadow_v1",
+          "depth_assumption": "no_return_until_first_snapshot_occupied",
+          "unknown_obstacles_observable": false,
+          "fx": 554.254691191187,
+          "fy": 554.254691191187,
+          "cx": 320.5,
+          "cy": 240.5,
+          "image_cols": 640,
+          "image_rows": 480,
+          "filter_margin": 2,
+          "mapper_pixel_skip": 2,
+          "evaluation_pixel_skip": 2,
+          "raycast_max_length": 5.0,
+          "body_to_camera": [
+            0.0,
+            0.0,
+            1.0,
+            0.09,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.095,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "planning_min": [
+            -20.0,
+            -20.0,
+            0.7
+          ],
+          "planning_max": [
+            20.0,
+            20.0,
+            1.2
+          ]
+        },
+        "motion_model": {
+          "velocity": 1,
+          "angular_velocity": 0.5,
+          "yaw_penalty_weight": 1
+        },
+        "planning_region": {
+          "min": [
+            -20,
+            -20,
+            0.7
+          ],
+          "max": [
+            20,
+            20,
+            1.2
+          ]
+        },
+        "start_position": [
+          3.3183327400607885,
+          2.0552840021024714,
+          1.060217861226357
+        ],
+        "start_yaw": -2.626427319867262,
+        "terminal_yaw": 4.9087384375,
+        "goal": 301,
+        "accepted": true,
+        "map_version": 42259
+      },
+      "camera_fingerprint": "b4bedcdc82b5ed298e91cd13a89e2a887c01e8eadb399707f3862b35db6638be",
+      "context_fingerprint": "363e2c8807396a44ad7662ee4a98b8c2706009d2a6b92d163d0f0b067300b3c6",
+      "diagnostic_artifacts": {
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_pool.json": "5bc42702ff427f873e8ac9d4d478cde28944d16e9c659947b6b8533cdae88226",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000026.json": "62bbce08b6406e4f74d702502d53e22a234165002c0a4e2a1f41100df42cce1e",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_reference.json": "c0caf3f2a7d2624828876e52170a89c402e6da93fb765457ec7d1850fb995728",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00200_full.json": "58d12588ce79a9dbf1d48ba663d33fe9ad9df98ad20436552f8eb30b2c2cc076",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00200_full.input.json": "7c6a641bacc21db1faab44ff9d43b300eba1117686c495e506edb0df1399c0c7",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00275_full.json": "5bcc734bf57336467872297f340c01de6b7ce9aa3b17e769d42af20b193ababf",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00275_full.input.json": "9a1851f4adbd43b780f3a7aa6c26e9969cfe850360294d700e0ddd39c36a7b29",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00209_full.json": "bbff8e49ec9b8ec6abce05281a91c9d3688912dd9ff5bad80e8becf9e9db29ee",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00209_full.input.json": "c087c70b1a0be6ea066125794bd14d948c9b7c3408981023904b0f245de83628",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00636_full.json": "cdc9e8c69c63f4cb5dd56496a66c51d2448c760d5367e5131c9831157ae2870b",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00636_full.input.json": "795146c0338311ae39672364479d4f4e93b2e6cfce508fa4bafa7c37853631c2",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00279_full.json": "afad061c24b3416e6f7797d326a22ed9904f2ba046513931c1b2ff94ccdffe88",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00279_full.input.json": "d177f6c33ed898fb98dc1b3574a0fecc49018c700d715d1a7fe115cb32d9dae3"
+      },
+      "route_record_ids": [
+        200,
+        275,
+        209,
+        636,
+        279
+      ],
+      "routes": [
+        {
+          "record_id": 200,
+          "path": [
+            0,
+            200,
+            282,
+            301
+          ],
+          "reference_segment": 0,
+          "anchor_id": 200,
+          "motion": {
+            "length": 10.011413500937518,
+            "time": 19.079392746060428,
+            "yaw": 4.533989622561456
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00200_full.json"
+        },
+        {
+          "record_id": 275,
+          "path": [
+            0,
+            275,
+            282,
+            301
+          ],
+          "reference_segment": 0,
+          "anchor_id": 275,
+          "motion": {
+            "length": 10.121208981436787,
+            "time": 19.96800751442703,
+            "yaw": 4.923399266495122
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00275_full.json"
+        },
+        {
+          "record_id": 209,
+          "path": [
+            0,
+            209,
+            282,
+            301
+          ],
+          "reference_segment": 0,
+          "anchor_id": 209,
+          "motion": {
+            "length": 10.685612482559094,
+            "time": 20.748022196542912,
+            "yaw": 5.03120485699191
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00209_full.json"
+        },
+        {
+          "record_id": 636,
+          "path": [
+            0,
+            282,
+            285,
+            301
+          ],
+          "reference_segment": 1,
+          "anchor_id": 285,
+          "motion": {
+            "length": 10.202028220531439,
+            "time": 21.527013054097026,
+            "yaw": 5.6624924167827935
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00636_full.json"
+        },
+        {
+          "record_id": 279,
+          "path": [
+            0,
+            279,
+            282,
+            301
+          ],
+          "reference_segment": 0,
+          "anchor_id": 279,
+          "motion": {
+            "length": 12.28723941293729,
+            "time": 23.383981785777777,
+            "yaw": 5.548371186420243
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s026_r00279_full.json"
+        }
+      ]
+    },
+    {
+      "sequence": 27,
+      "stage": "late",
+      "snapshot_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000027",
+      "snapshot_sha256": {
+        "planner.json": "348a277dd47f7c156bd967983ca6555e1221bf3c14242dad6befc95a571ffd8b",
+        "map.bin": "6063cee79b53f72d142039b968836cbe388da644f9023eb3370afc5ee7cad601",
+        "manifest.json": "862f627a78ae0c23beaaf67660bdfd44bccc36140fae86aa982887aa16ff20a9"
+      },
+      "request_file": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000027.json",
+      "source_sha256": {
+        "request_000027.json": "247f585b6d5eb51640969385830b3914db1f774c728a75f454149a135de5cd5e",
+        "result_000027.json": "0f5b16788e3dbd6bc2013fa56e4aebf55b1ba1b298854842106b5904399c5dcf"
+      },
+      "context": {
+        "camera": {
+          "model": "mapper_matched_frozen_shadow_v1",
+          "depth_assumption": "no_return_until_first_snapshot_occupied",
+          "unknown_obstacles_observable": false,
+          "fx": 554.254691191187,
+          "fy": 554.254691191187,
+          "cx": 320.5,
+          "cy": 240.5,
+          "image_cols": 640,
+          "image_rows": 480,
+          "filter_margin": 2,
+          "mapper_pixel_skip": 2,
+          "evaluation_pixel_skip": 2,
+          "raycast_max_length": 5.0,
+          "body_to_camera": [
+            0.0,
+            0.0,
+            1.0,
+            0.09,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.095,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "planning_min": [
+            -20.0,
+            -20.0,
+            0.7
+          ],
+          "planning_max": [
+            20.0,
+            20.0,
+            1.2
+          ]
+        },
+        "motion_model": {
+          "velocity": 1,
+          "angular_velocity": 0.5,
+          "yaw_penalty_weight": 1
+        },
+        "planning_region": {
+          "min": [
+            -20,
+            -20,
+            0.7
+          ],
+          "max": [
+            20,
+            20,
+            1.2
+          ]
+        },
+        "start_position": [
+          8.460323561235189,
+          3.4658083503536505,
+          0.7614078681168907
+        ],
+        "start_yaw": -1.1959849895169719,
+        "terminal_yaw": 4.9087384375,
+        "goal": 113,
+        "accepted": true,
+        "map_version": 44741
+      },
+      "camera_fingerprint": "b4bedcdc82b5ed298e91cd13a89e2a887c01e8eadb399707f3862b35db6638be",
+      "context_fingerprint": "4c828d9bd2a6a975e648a2b9e0428384e4a7e1395b906aa07c7fd44b09e6ad0d",
+      "diagnostic_artifacts": {
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_pool.json": "cb0aec059507176f6acce576941339aa265a732a4bcb2257e5985e7f536166ab",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000027.json": "b7c425e4d1aacbdab5bdbf658bc6ee8d4274b7d7a7b3661c28f6219e8285ae23",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_reference.json": "7d495abf550d6df4a8d24302e141fb009a3f57282fb6e5eb6adb8174762db69d",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00587_full.json": "2ae03f3320d0633a8b1739833a139330ee97ced57c5442205510c330fb2566bc",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00587_full.input.json": "6856a71b8d824226ad07f9945e440ff73846528d8e264e484a4a95beeb20b2ad",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00584_full.json": "001914186ae410660ed454a6d7fea5c2d3b9737124e12c20cd283690f4b4b5b9",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00584_full.input.json": "ece63c2fb8064006399ae8809c53f2e26cd9d2dfd2872e17aae6d32645cdaee5",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r01535_full.json": "bfbd44de7bafdf734b263dd0c9445ef076ae33895ec9535cb3c8626eff7f38c4",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r01535_full.input.json": "c92bebe53a9c909cf6340b48344ce4ae1b36afa2eb0ee4e8acf78b02bd46bb4f",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00892_full.json": "9e4dc9d25c0e2aaab57e661877089e6f9f6f2a2c7108b5c41197e8ef2839a9a4",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00892_full.input.json": "0913deebb71fc28fdcfc169eeb8ddd1487c639603321dd1406b69745ef6dd4ae",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r01504_full.json": "850f11b0492eb93b0c499e157e1a42f72fccd7450dd44ce27acac78edffb9498",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r01504_full.input.json": "bf50f40d22c664fabf335b5eb92a057a24d63c14f0d155ba230f927e07e937c7"
+      },
+      "route_record_ids": [
+        587,
+        584,
+        1535,
+        892,
+        1504
+      ],
+      "routes": [
+        {
+          "record_id": 587,
+          "path": [
+            0,
+            240,
+            233,
+            201,
+            154,
+            124,
+            110,
+            113
+          ],
+          "reference_segment": 1,
+          "anchor_id": 233,
+          "motion": {
+            "length": 23.145479867838002,
+            "time": 34.981572388000025,
+            "yaw": 5.918046260081011
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00587_full.json"
+        },
+        {
+          "record_id": 584,
+          "path": [
+            0,
+            240,
+            230,
+            201,
+            154,
+            124,
+            110,
+            113
+          ],
+          "reference_segment": 1,
+          "anchor_id": 230,
+          "motion": {
+            "length": 23.301992465335598,
+            "time": 35.75586730484905,
+            "yaw": 6.226937419756726
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00584_full.json"
+        },
+        {
+          "record_id": 1535,
+          "path": [
+            0,
+            240,
+            201,
+            154,
+            124,
+            119,
+            110,
+            113
+          ],
+          "reference_segment": 4,
+          "anchor_id": 119,
+          "motion": {
+            "length": 24.07846422416729,
+            "time": 37.214239117467564,
+            "yaw": 6.567887446650135
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r01535_full.json"
+        },
+        {
+          "record_id": 892,
+          "path": [
+            0,
+            240,
+            201,
+            184,
+            154,
+            124,
+            110,
+            113
+          ],
+          "reference_segment": 2,
+          "anchor_id": 184,
+          "motion": {
+            "length": 25.559946440715567,
+            "time": 38.65612111639173,
+            "yaw": 6.548087337838081
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r00892_full.json"
+        },
+        {
+          "record_id": 1504,
+          "path": [
+            0,
+            240,
+            201,
+            154,
+            124,
+            88,
+            110,
+            113
+          ],
+          "reference_segment": 4,
+          "anchor_id": 88,
+          "motion": {
+            "length": 28.879458700157898,
+            "time": 42.80694142872909,
+            "yaw": 6.963741364285594
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s027_r01504_full.json"
+        }
+      ]
+    },
+    {
+      "sequence": 38,
+      "stage": "late",
+      "snapshot_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000038",
+      "snapshot_sha256": {
+        "planner.json": "9812a019cac1ab52d0205faf96ac71824f080b58dcf5955fa3c427d29d664dc0",
+        "map.bin": "56ea5a166f99226279c7652ddea94d5e404d6c6131068fd36e28ed7e9bcd8a8c",
+        "manifest.json": "65cce16afadb206c6447e32bdf620730e24395f8958c7b15a8926c80c646b55c"
+      },
+      "request_file": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000038.json",
+      "source_sha256": {
+        "request_000038.json": "2b1832955af553b50ba10a00f5d90b0f1609a452b6ccefb509509bd8763631c8",
+        "result_000038.json": "71f7bf5dc4407592caa476b26e96588b308cbd58c2c1d513d6357f736bddf590"
+      },
+      "context": {
+        "camera": {
+          "model": "mapper_matched_frozen_shadow_v1",
+          "depth_assumption": "no_return_until_first_snapshot_occupied",
+          "unknown_obstacles_observable": false,
+          "fx": 554.254691191187,
+          "fy": 554.254691191187,
+          "cx": 320.5,
+          "cy": 240.5,
+          "image_cols": 640,
+          "image_rows": 480,
+          "filter_margin": 2,
+          "mapper_pixel_skip": 2,
+          "evaluation_pixel_skip": 2,
+          "raycast_max_length": 5.0,
+          "body_to_camera": [
+            0.0,
+            0.0,
+            1.0,
+            0.09,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.095,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "planning_min": [
+            -20.0,
+            -20.0,
+            0.7
+          ],
+          "planning_max": [
+            20.0,
+            20.0,
+            1.2
+          ]
+        },
+        "motion_model": {
+          "velocity": 1,
+          "angular_velocity": 0.5,
+          "yaw_penalty_weight": 1
+        },
+        "planning_region": {
+          "min": [
+            -20,
+            -20,
+            0.7
+          ],
+          "max": [
+            20,
+            20,
+            1.2
+          ]
+        },
+        "start_position": [
+          -4.09142112445893,
+          6.399493628301736,
+          1.0018011728373897
+        ],
+        "start_yaw": 2.0556416717296675,
+        "terminal_yaw": 2.748893525,
+        "goal": 161,
+        "accepted": true,
+        "map_version": 73075
+      },
+      "camera_fingerprint": "b4bedcdc82b5ed298e91cd13a89e2a887c01e8eadb399707f3862b35db6638be",
+      "context_fingerprint": "b9992e06c60210ecce9f9da1c87343e8232a83f1e1bda589043945852d2ff7e6",
+      "diagnostic_artifacts": {
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s038_pool.json": "3cadb7acae588ee016b53303469ed4e9a71554ea701b0cac4241a750817ae4f7",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000038.json": "96f88e396b25a61059144d1b7d0b4785c76e3d11298d5e5e73ecbd3c71e9ad6c",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s038_reference.json": "dc41dc7ffce1770a512fd2eec691e0b6c0fff37a874bef256906806b81ed071e",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s038_r00197_full.json": "39d2ff1b354e3bdc4f6a9f11f60bb382ad97e943e4b1815152f1793f3f1861b7",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s038_r00197_full.input.json": "e116b24971ee5d0771a08b6c3f81c3f287a8a31b14014933570d3039a31e9743",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s038_r00177_full.json": "759e4bcd79f28f26bac8b54dbca6e40af46d8ed29c589f4a4a1bb6231fe39192",
+        "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s038_r00177_full.input.json": "0ed7e6d7cf3d79bc0963ecdcf6064f1e2990f7cbbb3d38b3d761b9279bc4ca0b"
+      },
+      "route_record_ids": [
+        197,
+        177
+      ],
+      "routes": [
+        {
+          "record_id": 197,
+          "path": [
+            0,
+            197,
+            161
+          ],
+          "reference_segment": 0,
+          "anchor_id": 197,
+          "motion": {
+            "length": 4.113690491953696,
+            "time": 6.078744135217493,
+            "yaw": 0.9825268216318985
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s038_r00197_full.json"
+        },
+        {
+          "record_id": 177,
+          "path": [
+            0,
+            177,
+            161
+          ],
+          "reference_segment": 0,
+          "anchor_id": 177,
+          "motion": {
+            "length": 4.142438302075583,
+            "time": 6.589210204293236,
+            "yaw": 1.2233859511088268
+          },
+          "full_output": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/s038_r00177_full.json"
+        }
+      ]
+    }
+  ]
+}
