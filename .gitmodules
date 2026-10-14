@@ -12,7 +12,7 @@
 	url = https://github.com/Zhefan-Xu/trajectory_planner.git
 [submodule "map_manager"]
 	path = map_manager
-	url = https://github.com/Zhefan-Xu/map_manager.git
+	url = https://github.com/zxr1231/map_manager.git
 [submodule "time_optimizer"]
 	path = time_optimizer
 	url = https://github.com/Zhefan-Xu/time_optimizer.git
