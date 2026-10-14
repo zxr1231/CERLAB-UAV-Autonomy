@@ -1,0 +1,558 @@
+{
+  "task": "I3-03-02",
+  "source_run": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548",
+  "source_route_log_sha256": "d3dcf3708c78757b214bdabe6f0dbed38b09eb2efd9c46665121aac09b2c08f0",
+  "mapping_yaml_sha256": "a0efc81649cce8f185ccca775a4820e1d4b23107c30d50868669f2eab215cd9a",
+  "protocol_sha256": "66d77ea350b163a06b6f9ae85af2bf1d0bbb1bdfbc2d349b278591e42308300a",
+  "cases": [
+    {
+      "sequence": 1,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000001",
+      "snapshot_sha256": {
+        "planner.json": "0372f42b7bdbe3d1febbdd0aa00f5c25376a52703f0d9e26443d788cbb4056a1",
+        "map.bin": "62141d0670e7c39da5fc5e0e7f07a9fbb8ee0d0072e9d0a116cb8e993c7b6782",
+        "manifest.json": "ff20bce5124dfeb86f8d9bd4ecf1c654a5b1bf018d528a9d6c7dbec3e2790cc0"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000001.json",
+      "request_sha256": "15bb4fd42487f56a814d7dce53709f4f86738c55b0fbc585a466f1cff64a8829",
+      "accepted_at_recording": true,
+      "subset": "historical_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 2,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000002",
+      "snapshot_sha256": {
+        "planner.json": "fd12ddb394a0bc644989296fff2582720aec1a46e773fe82e34c4cc946cee3c4",
+        "map.bin": "dd21422821ffc721ae6f39bc19f51351369fe0488df00bb5e823f6fed3181021",
+        "manifest.json": "cc32a13c95061d20838f4fc616aabecd63f7de8d4a2fea6998bdc94934020ab5"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000002.json",
+      "request_sha256": "a528310d68ae74786f57119e09059e00c2705eef7e9d113399331b81bcad6731",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 3,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000003",
+      "snapshot_sha256": {
+        "planner.json": "46957972b7c04adebfb55f402d88323d5ba922e9effc02e91747d8f99b9b26e4",
+        "map.bin": "affcaa55096c7696161173f607ce8eedb4f7c84e8b93eedfa07fac548767ffca",
+        "manifest.json": "a751dce4d5e1477352ddc5d49822f4c467564b3cbb6bc6ab09f283909c00298a"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000003.json",
+      "request_sha256": "84d2112f73cbcc733e7ce6781597aea19678122fd41a3eae13f5662b9cab01b5",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 4,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000004",
+      "snapshot_sha256": {
+        "planner.json": "0fa71d225e7ca3d7cb05a3b8716bb20687d32833857e3a86540a155d81255feb",
+        "map.bin": "3ee7269fd5abd91d1b3ffcfabf14a10bf5ebec8587a25f502028752c52efa3ec",
+        "manifest.json": "9b7d330ba5788bc1703a422bbfd73849dff1022c63679d3c156c0e2d9a3bda7d"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000004.json",
+      "request_sha256": "9c75ea1765f0c37ed83f8c62ecc7f4c2b60d7390ec110355a54bdc44afedc16b",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 5,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000005",
+      "snapshot_sha256": {
+        "planner.json": "6f7d2acff2fd78f6c2bf797ca300ef937ca2b8a0d46ca65e737cb5bc218191ae",
+        "map.bin": "ec34bff2e6ceda8238dc20ce633bebb05f62d48355f76f67d517f9699f0c31d1",
+        "manifest.json": "0dd5bc9bf477206b3efcc31bc2b78e30382d91244b82e0eb03af2ae9886180cb"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000005.json",
+      "request_sha256": "047b312e2801ed208be07f86decf9357080c8c0e973062f7dbb31b9d9b4de8cf",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 6,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000006",
+      "snapshot_sha256": {
+        "planner.json": "9ea822a1ca58c03e062697323168881344efd5fcf343bd6c2e7426c7c3ee3c95",
+        "map.bin": "946a63dcd9f9bd03ce709bb0ab607c1c879472850b7b6c10bc9070918bb4ea2b",
+        "manifest.json": "635b39512624f6345d6282f97cd64a5b968d9db8618cd4d1b84501f20ad5ae9a"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000006.json",
+      "request_sha256": "5a90d38c8994b043e78cb16b83930db8bf4d1d16425eaf92f06a08dd004123b0",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 7,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000007",
+      "snapshot_sha256": {
+        "planner.json": "562c892fb01212cd18fba25e3dc584befe164e5a82b7255c600e92cc965f153b",
+        "map.bin": "f461ad5ced26d3ca2c0a97ad717fe0da1f1d70bbba77c0e3be4e29b709a49263",
+        "manifest.json": "df71737f05ec51d44bd00047329f21259169736bc1b7c2f47be376b5734bf390"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000007.json",
+      "request_sha256": "557b0290bfa6e69fe9f63f2484df3af79a1600d0611a62972eadd4f3f1b9a002",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 8,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000008",
+      "snapshot_sha256": {
+        "planner.json": "970e1b8052e6c1e4c31149aaccc8928f87cdf0ac33712e070d039e1eedc34040",
+        "map.bin": "8d8d279ad4626a071aa70343c163d8437cdc5661e33e723ab2d0e8ac38204656",
+        "manifest.json": "9315066a1dce6b6f0d10a659c4807114a016a4665071a804fc9564079200e29e"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000008.json",
+      "request_sha256": "9bd35e88b5ab9d054e73aa0da321b2e7e9565b832cf5e5d4204822ab84203a02",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 9,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000009",
+      "snapshot_sha256": {
+        "planner.json": "74a826cd72fa943db5222816becad65a78bd0312b615f8e8041ff5d6ff576665",
+        "map.bin": "9b3ed7b8a001c9ad288dd788326d220fb62318e4ba02cc0a4c07d3b20b9b7506",
+        "manifest.json": "999bab530e29cb2ce4a94efebeec3d1222cacad284aa7de826301a26994536dd"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000009.json",
+      "request_sha256": "41767c244451835c8f89733e95d88fb9701345f89e23e9b75e9d4d7cf8c4c4a3",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 10,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000010",
+      "snapshot_sha256": {
+        "planner.json": "52eea947aaa5d26d12770bf018ceb0b2af7159657c54f16f4dfe0d1376e8affa",
+        "map.bin": "d2cb12a1ce9e025c855539aced91e1982dad83d023f898caf0cd1d618106104d",
+        "manifest.json": "bc8356d0f80510f8e9c3498906555cd28959ca04d2adabaaa38413ed2e2498af"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000010.json",
+      "request_sha256": "b915a1a291404b00aabb9e63703122c2b438c8927bdee7a0cf3d84c369999568",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 11,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000011",
+      "snapshot_sha256": {
+        "planner.json": "a9e04be4d9da53452e2c2d37ff59a50bcb7306de2fd3c0f94afea39f0ab7ceab",
+        "map.bin": "c995394e84601e549c3a30662c5f962275c44d451140b2be1af31ff82d6e2b2f",
+        "manifest.json": "150a302174f115bd1a0be7cb573fb7463454bfe8478c3fa7601c826013a46fe8"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000011.json",
+      "request_sha256": "c5504c949eacdfca0d47ce07c49cc3e5d645721abbdc070a3dee9215dd3bb25c",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 12,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000012",
+      "snapshot_sha256": {
+        "planner.json": "803558f74f0f1f825e20b528c2a1260139b12a36653e9121322f32acacdf10ac",
+        "map.bin": "cf8e92584a9c6d1f1136f8434be8c5724bbcab7974690f1a2127a9bd76add98d",
+        "manifest.json": "8920802ae7959ea33293ae036c035fca03acd2df5895d379bcdd9c79520a5c17"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000012.json",
+      "request_sha256": "af4fde7d4eac28679b05fcb4da713f8169dc3c42f08ca039b7bf577181d48da1",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 13,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000013",
+      "snapshot_sha256": {
+        "planner.json": "b3d1a1d7ed4f90aa348ec649a2071e160ed3339d3cff0bd5e5b0959c81234399",
+        "map.bin": "9d1abbd6f90305515db1c9b43ed7a11b53b8198651441d984476c1b52e74cd5b",
+        "manifest.json": "687757961fd7763a1148f20aae81fa90101f8e40f1fc672f3dca4d3e99225980"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000013.json",
+      "request_sha256": "7fd0fb2c5625cbd9904842d19dfe588fc1a8fa17ed6f4e42ec91100549eba1a4",
+      "accepted_at_recording": false,
+      "subset": "historical_development",
+      "stage": "early"
+    },
+    {
+      "sequence": 14,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000014",
+      "snapshot_sha256": {
+        "planner.json": "cd88bae7034ade3a517336c9c40da9f71a1e333a1644a4136bacb92879bf942c",
+        "map.bin": "874e561ae96b79771cc0ee70d7fdc7746396874ee72a4af49ac8af0c2ce5eb75",
+        "manifest.json": "71b2667c3afa13e992ba9a4ca662a72835d6e9c1ef332952549f52a1326cf716"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000014.json",
+      "request_sha256": "9c0dc64078ae28b667f38f159c58a931a5f93cdb409a6bc8f1c1565804400aad",
+      "accepted_at_recording": true,
+      "subset": "historical_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 15,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000015",
+      "snapshot_sha256": {
+        "planner.json": "ef7411b22ede0217dbce56284cf54778637a9e9cc89729864eea8237aa063fd0",
+        "map.bin": "c0e12ea85a81d2b8627650b9968ca632375d161d7e80f9b574b7d879f71de1f1",
+        "manifest.json": "28b38d9057acb6875d83d7ac658063f9b00cede3523942033f20eb4d1342ba46"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000015.json",
+      "request_sha256": "046559742987d2de4674ce193b51f1ba2811d9ebd64b9f191238f4f61ad62e7d",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 16,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000016",
+      "snapshot_sha256": {
+        "planner.json": "3c6b03aaeaf958b5d0fdd51275674c1dee35f35c03cbb798800673e78191f235",
+        "map.bin": "f8775eb24679a33dbbbf53f1d9fafc66bdadae66873d598f4ad615602bd08ffd",
+        "manifest.json": "4ac6073fde2d143e12f61f137c286dae83c7ae7eb31baeb0cc2e7a91e74fa151"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000016.json",
+      "request_sha256": "f8d2acc30f8699e551a2701d5bd751ace567b7b79e96c484d0761f6ab6d6476d",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 17,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000017",
+      "snapshot_sha256": {
+        "planner.json": "3cc828d792064ca8ee25fa0084fc0ab861d8d278073789aa631feace56302350",
+        "map.bin": "650499b9df328b0f91f22a3d6cb9a5452402c92f03e23d65980eb15e5df9bf56",
+        "manifest.json": "e0f7cf425993f54716e72b6b8ed2b9030ed5be1344604ca1a5835b8bcea71b04"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000017.json",
+      "request_sha256": "b7a1e2ef74a05c9426392c02430a9a24b49dd05e6d2dc1d9a741c072bd6e8dbf",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 18,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000018",
+      "snapshot_sha256": {
+        "planner.json": "c1356dac5adb1a7684555a6b3897e2a5e86d918325ac6a9d303d2c453e6b129c",
+        "map.bin": "6a8235acd6cb73a04affadcd01c6696a66b9066bdf3e2a228bed2f7073d9c128",
+        "manifest.json": "260b79e726e22f66fcecb459a1088072c898c990ba0a4b7fda66a3d7fd288e50"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000018.json",
+      "request_sha256": "c80a7ff1cc25659ea0063e746d2ff1f609efd63cc92e4319f49e34d3af894020",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 19,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000019",
+      "snapshot_sha256": {
+        "planner.json": "369573adb0b80ee9c579f7cf7316acace87dfdd6d0910a843cdba81faf1ff8ce",
+        "map.bin": "861b68fb0cb11acf1f96f27ce210995f8c16eb66f0e4359676587bfefaac8d23",
+        "manifest.json": "9e81e97edeecd384d40e37e7cf09ec7646365bb0e99dbc60bcb377cafd2a43a1"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000019.json",
+      "request_sha256": "05287bbc578431c0d20a0b31fe982569bb3cd7e869d188b6aac6b70a2f34275a",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 20,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000020",
+      "snapshot_sha256": {
+        "planner.json": "70fab284def0303bafe2dccfe8b94743a1470ff8f7e65494efb13783f4e12370",
+        "map.bin": "f749a5275393f892e81490d849037874b0d13dcadf863a4215e651c4cb71df1d",
+        "manifest.json": "d16a1e0185bd00cc272dd51ef29767d963aae466c08df4156a75e53ee1585a91"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000020.json",
+      "request_sha256": "7774c91eb58f99a6ff3a25bd89f9bc3454edf04e3f655e17013392ab5099b389",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 21,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000021",
+      "snapshot_sha256": {
+        "planner.json": "ea65d854ae9b8f4eab2c94e00fa357b3205968df808ed5be8f643391380e57c1",
+        "map.bin": "ca6db6417ab21e1ea5c56197b84118be03f227502239585dbef85d0e8972d50e",
+        "manifest.json": "e87b761d2e1fe9643da7ef3e317299db8ab5c0de4d0e2fc3114e0d2c12957f3f"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000021.json",
+      "request_sha256": "f5271fcc38dd6843bb1f12ea09094206870ae911c932f42e14cb5bd687e3eda8",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 22,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000022",
+      "snapshot_sha256": {
+        "planner.json": "8610dc318f0399da0adeb92b16fcd780487a02440799a70db30f73d15f729007",
+        "map.bin": "4faecda085698d539c4a8c9c986e15bc19a15851793a46d8a295250ea2947b17",
+        "manifest.json": "dd0e7476a1317b5224a860cd0b896a2382e56d0a5faa4156737dcc16d127f68a"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000022.json",
+      "request_sha256": "d2ffc0b05d5e938324a4f6979c53c86a52f3187b04d0866883c570a09eb7eab7",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 23,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000023",
+      "snapshot_sha256": {
+        "planner.json": "dffc6a8761c6fff471e52dacffff7bdfa3d028a568135faef823fb93296342f6",
+        "map.bin": "607fa280865dadd453bdaff6b24a07aa39eac4e9c1b2e50aa4625ad4236cc654",
+        "manifest.json": "e6f9e2bb4f01da78066529f5dbac5c0ffb89ad82e5dc2582f9d1f0820320e27a"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000023.json",
+      "request_sha256": "0dec6c1d59e9b814f7d95dab0fa07ac65c8ef5fe97fa83e1a7b9a07e6233e152",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 24,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000024",
+      "snapshot_sha256": {
+        "planner.json": "ac0dfabbfd18e07e2b60e91995d019fa811425e47aba4b94822866aa09799b86",
+        "map.bin": "d7fb8f78dd85fbc8ca17aa6459e5665c9498a0948b00932df81d246f5d587bf1",
+        "manifest.json": "52051511fb421fb3abd0ef70b309b2c73cf7b5abc04fed070ce17a1c180b026b"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000024.json",
+      "request_sha256": "6d2d150b6cfae3b3817fb77d6be3c8dd2a47c7dfb8dfa8ce7cb85acbfe985c0f",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 25,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000025",
+      "snapshot_sha256": {
+        "planner.json": "6b3d4e3c7fd13efa42b011b668a4d8c26f1973fac7dd94c7085699580c9e4d58",
+        "map.bin": "9ff01a994470a8eb69f67e94412919629289b1e5a6788cb8f3789d1485ee9af9",
+        "manifest.json": "031f44463eedf0fe63e79fa232380b728dfeb3b2bc3b2479720385f166f6290a"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000025.json",
+      "request_sha256": "51752f6c6370830b43fca106faf16850ffe8d77fa299b12f2417e31027eaeced",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 26,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000026",
+      "snapshot_sha256": {
+        "planner.json": "76bd641b875f80055fe9f422139e3e868863424e70f459efd2f72df34683dc5b",
+        "map.bin": "76bd4251360067adb52073f98ea951848effcb3439eaaccb07354be193234dce",
+        "manifest.json": "e964881a713323c8340697d0c82e1724299b1da8ab1e4d8e3eca6314f6a30ef0"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000026.json",
+      "request_sha256": "7142453d99466ac3fd3bc8ccb4986faab6e18378e44e75d1a45e3552c8aa506b",
+      "accepted_at_recording": true,
+      "subset": "historical_development",
+      "stage": "middle"
+    },
+    {
+      "sequence": 27,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000027",
+      "snapshot_sha256": {
+        "planner.json": "348a277dd47f7c156bd967983ca6555e1221bf3c14242dad6befc95a571ffd8b",
+        "map.bin": "6063cee79b53f72d142039b968836cbe388da644f9023eb3370afc5ee7cad601",
+        "manifest.json": "862f627a78ae0c23beaaf67660bdfd44bccc36140fae86aa982887aa16ff20a9"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000027.json",
+      "request_sha256": "5547c95c06af4999275e1bde16e3d13e28917312dbf319909fdd4226fe26a401",
+      "accepted_at_recording": true,
+      "subset": "historical_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 28,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000028",
+      "snapshot_sha256": {
+        "planner.json": "85b1edb15c0b370f5d0f6ed4eabb7d4d726c516afb400c724465efad1f08c7b3",
+        "map.bin": "3396712c6f1f1ba5998c0500b7732d0e0b269fd10dee4ff9d1152034212abf2b",
+        "manifest.json": "1cec3c7b159424b008f4cf5a5ec970c1086d7ca453c3bb97d1873d4a9674485a"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000028.json",
+      "request_sha256": "34b97564d24f47c55fe0e8f1c78d5c9a9d943c78fa28f0f09022a162a36b3848",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 29,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000029",
+      "snapshot_sha256": {
+        "planner.json": "36e33b6aa0015e06aa8cf6694ab02575f47a270411b70f3be43aa3bd5bc5fa7a",
+        "map.bin": "ad5e63a76bf8a55901dcc8766770cc9251e6c088bc86b7c98c1d93541eee57be",
+        "manifest.json": "7b0a461f8d4af62ec370089ad8738371cab2f9cfb0f8c43c35770503307365c2"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000029.json",
+      "request_sha256": "4df63058f71c1dd0ab87da0f30ba23d70d2e73908c09175eaf5546d8d9d16beb",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 30,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000030",
+      "snapshot_sha256": {
+        "planner.json": "16bd9323e6b360aaf5a19b9d7aae64cca39d6f9412c292bc9730c3dac0f6263d",
+        "map.bin": "603d4e6ed7c00d8022521b71985f2509f28ca4b820557d509f8c9e27f8fcf5e1",
+        "manifest.json": "9b0c41d990c83f62a15a50b41bfeaf56473d808f242dfc86a063590dd0bfd0c8"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000030.json",
+      "request_sha256": "96e88cbeeec308692120786334374cc3a2be08457312084103299981c8d7265d",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 31,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000031",
+      "snapshot_sha256": {
+        "planner.json": "2c22c82e9036d755befb27056681cc4080779de0c2fa8e65188171f6d213eb3e",
+        "map.bin": "1e25f0332fc1ffa748c5a560f0859e656e3ecec9852b64c6a07a4c334abec88d",
+        "manifest.json": "634059652dadf7226a8b63e4c50a259d06ccf4a2a8453c9b1941aed6234c0345"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000031.json",
+      "request_sha256": "1cc9abb91663f29763cf06f8b10fd2f06841c09c58f5930f8f0b98144959dd7a",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 32,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000032",
+      "snapshot_sha256": {
+        "planner.json": "f4f4ab90900d2e5ef414b5f81ce806d5cbb6a4c495fe764e1c550aa6d671f8b5",
+        "map.bin": "8cdb678b3322ecbd554e5b4b2237239575f9611212eeaee32b5e21a1bc7ce466",
+        "manifest.json": "3c15361ce222876877e3d1e4226c984e29d689d297f4dd8f73323cbdebc9d9b5"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000032.json",
+      "request_sha256": "3cf67f333db159eb4f86fb59290642234345163c9294c017f59e4522a2e0e25e",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 33,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000033",
+      "snapshot_sha256": {
+        "planner.json": "3739a2aac707de89b6ca4ebb6ccaafc602c3909e811b28b68e990e3252eb6c43",
+        "map.bin": "927d122730dc4bc04617fdb5d67bbf30a6224d094e2d512aca68605436cb73d6",
+        "manifest.json": "cb855609d3ea6b4d88dcba9ac67d7f1cb025d648a11fa27eb89ca4fc618446d8"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000033.json",
+      "request_sha256": "124dd693ecb8c556da91c45e26da95e49a481fe1595c62ccc86222a5baf85342",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 34,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000034",
+      "snapshot_sha256": {
+        "planner.json": "27a586887127da02f3ec1f3b8c7c2a378c7233797c5bce994ca31bdc80245c12",
+        "map.bin": "83c2a17ee3640dd3a999a9fbc30299711c8de1e4c5048fbb01ea6fa678b5737c",
+        "manifest.json": "5b729cbf8d53717f1f8b3fe57c58f058014ee17f88981d10ea17f953f8026052"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000034.json",
+      "request_sha256": "23f311512fa225a7e1f9297958c86afbfb68a236c9997515cef19459b04aeeed",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 35,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000035",
+      "snapshot_sha256": {
+        "planner.json": "58ef30d3955f9cbdb75ea457a5a868f2f3fbc7f0daa92afbd3bbfbbd03ec053b",
+        "map.bin": "eb240c227f8237b4ba89ed2022be06c8987cbfc5609fe69ac3aad0d91604de2d",
+        "manifest.json": "3ef5014e513b13cd4a7dc7a910c2bcd0556f2e588b300d391b0ba116f29f60a0"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000035.json",
+      "request_sha256": "f5fa95a0899974135845d296f0b830d1f6b6207eb0d9513e21e9fc23f1774a4d",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 36,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000036",
+      "snapshot_sha256": {
+        "planner.json": "6e6119936e375f8e86185e67c801ec82b314f3c53d986ee544c1475b463a62bc",
+        "map.bin": "56d315b924f0efbbd5e0782a88806271aadf75f04739b6d3310e100d3d4f3f38",
+        "manifest.json": "1da33600f5f4c517e5bddcbb48ae9464ae59877c96f0b2840f42580918484ba4"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000036.json",
+      "request_sha256": "3d2be7628d1be2adbccd970b491de9f3972dafa634ba205d5724330ca62271e6",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 37,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000037",
+      "snapshot_sha256": {
+        "planner.json": "01f4bd6232a0109380fd93e8e342649153e45ac32c6b1baa41d45658ee6e2432",
+        "map.bin": "4a1e91d88d6ea655733ce4546ecdbaba23c535886a72799c15b9592a76f26a44",
+        "manifest.json": "574c3af16114fb19c606234334e19545d5125ce1000e9e4b51d0cc03308e8177"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000037.json",
+      "request_sha256": "864aa4301783e1b8cb2ad2e6c771f25f77b4acc43c35754ffa7d7264e0083175",
+      "accepted_at_recording": true,
+      "subset": "expanded_development",
+      "stage": "late"
+    },
+    {
+      "sequence": 38,
+      "snapshot": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I2-06-HELD-OUT-SEED4-V1/environment_seed_004/planner_seed_004/20261012T140548/snapshots/snapshot_000038",
+      "snapshot_sha256": {
+        "planner.json": "9812a019cac1ab52d0205faf96ac71824f080b58dcf5955fa3c427d29d664dc0",
+        "map.bin": "56ea5a166f99226279c7652ddea94d5e404d6c6131068fd36e28ed7e9bcd8a8c",
+        "manifest.json": "65cce16afadb206c6447e32bdf620730e24395f8958c7b15a8926c80c646b55c"
+      },
+      "request": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-02-PROTOTYPE-INPUTS-V1/request_000038.json",
+      "request_sha256": "ab89b6ca9f36ece85f7180b31e2940c13df7a8cbcbfdcd92179c35f7d2989b74",
+      "accepted_at_recording": true,
+      "subset": "historical_development",
+      "stage": "late"
+    }
+  ],
+  "environment_seed": 4,
+  "planner_seed": 4,
+  "new_simulation": false,
+  "independent_seed_runs": 1,
+  "worker_physical_cores": [
+    0,
+    2,
+    4,
+    6
+  ],
+  "primary_quality": {
+    "wins_each_control_min": 2,
+    "mean_absolute_difference_min_exclusive": 1e-09,
+    "median_difference_min": -1e-09
+  },
+  "budget_completion_fraction_min": 0.9,
+  "method_revisions_after_results": 0
+}

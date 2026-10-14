@@ -1,6 +1,14 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-14. I3-03-01 (old G1-D0) COMPLETE and locally backed up: NO_USEFUL_CONDITIONING_SIGNAL. Counting correctness/cost pass; K1 usefulness fails. Latest user boundary: next user-started development batch must use one bounded method finalization followed by core implementation, rather than serial new diagnostics. Failed AABB/P1 not admitted; no automatic new run or GitHub push at this checkpoint.
+Last updated: 2026-10-14. I3-03-02 core opportunity beam prototype IMPLEMENTED,22 C++ +4Python tests pass; registered38-state/four-control parallel matrix next. Branch feat/i3-opportunity-prototype,GP0221483. I3-03-01/AABB failure unchanged. Finish one matrix/report/local backup and stop; NO method revision after results, no GitHub push.
+
+**Latest user instruction for this batch:** this is the FINAL prototype go/no-go test.
+User allows expanded experiments and parallel groups, but prohibits further method
+revision/retest after results. Only compiler/deterministic correctness bugs may be fixed
+with a recorded cause. This supersedes the earlier allowance of one method revision.
+Read i3/I3_03_02_PROTOCOL.md + INPUTS.json. Four pinned physical-core workers;304jobs,
+mechanism one pass and budget warmup+3measured repeats. No new ROS/Gazebo/seed. The
+38states are one correlated historical seed4/static-world trajectory, not38independent runs.
 
 **Latest user execution boundary, 2026-10-14:** stop extending diagnosis as a substitute
 for core method implementation. The next authorized development batch must follow the
@@ -94,7 +102,7 @@ consult the latest backup README/remote receipt. A previous push was not execute
 because automatic approval review hit a usage limit; report actual status explicitly.
 
 ```text
-parent branch: feat/i3-camera-evaluator
+parent branch: feat/i3-opportunity-prototype
 I2-04 smoke source commit: e97291d431dba1344b4edcd59f9d4a1ff37520c5
 I2-05 runner checkpoint: a8967e0
 final documentation checkpoint: inspect git HEAD / local backup README
@@ -102,8 +110,8 @@ frozen I1 branch: feat/i1-unique-gain
 frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
-  branch feat/i3-camera-evaluator
-  commit 6ef0fa9 (isolated I3-03-01 bound diagnostic; online library unchanged)
+  branch feat/i3-opportunity-prototype
+  commit 0221483 (core opportunity beam prototype; Legacy default unchanged)
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -760,6 +768,11 @@ Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-01-BOUND-DIAGNOSTIC-V1/.
 Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_03_01_2026-10-14/.
 
 **Immediate next task, only after user starts it: one bounded method finalization and core implementation batch.**
+
+UPDATE: user started this batch, core implementation and necessary tests now complete.
+Immediate work is the once-only I3-03-02 frozen parallel matrix, summary/report, handoff
+and verified local backup then stop. Do not run old G1-P1 or revise/retest for positivity.
+All prior guidance in this paragraph below is historical scope guidance for this batch.
 Do not revive the failed AABB ranker as old I3-03-02 (G1-P1) or start E2/new seeds at
 this checkpoint. A future user-started core development batch follows the new boundary.
 Decide whether to drop this bound's ranking role and formulate a materially different

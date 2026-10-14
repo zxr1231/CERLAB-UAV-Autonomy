@@ -11,7 +11,7 @@
 | I3-02 observation opportunities / anchors | V2 E1 functional exactness verified; LIMITED_POOL_VALUE_FAIL; no E2/true guided generator admission |
 | I3 scope decision | Grilling Q1--Q8 confirmed; historical true-Edge/state27 prerequisites revised; old negatives retained |
 | I3-03-01 / G1-D0 lightweight bound diagnosis | Complete: exactness/cost PASS; NO_USEFUL_CONDITIONING_SIGNAL |
-| I3-03-02 / G1-P1 prototype | Not admitted after D0 failure; scope decision first |
+| I3-03-02 core opportunity beam prototype | Implemented/tested; expanded38state final matrix next; old G1-P1 remains closed |
 | I3-03-03 independent verification | Conditional/pending; no prototype admission |
 | I3-03 guided candidate construction | Paused pending scope decision; not automatically authorized |
 | I3-04 observation-preserving simplification | Pending |
@@ -123,3 +123,9 @@ implementation, with correctness/profiling inside that batch. One complete proto
 fixed comparison batch; at most one evidence-backed method revision, otherwise explicit
 stop/downgrade decision. See the research execution boundary at the top of CODEX_HANDOFF.md.
 D0 remains failed; this is not admission for the same AABB ranker/P1 under a new name.
+
+Latest user-started I3-03-02: actual2-layer observation-conditioned core generator
+implemented, new reusable header and runner;22C++/4Python tests passed. Protocol/38
+inputs registered,4controls×2regimes=304jobs on4physical-core workers next. All controls
+preserve inserted anchors; no B-spline/actual observation evidence yet. User says this
+is final go/no-go batch: no method revision/retest after results, preserve failed jobs.
