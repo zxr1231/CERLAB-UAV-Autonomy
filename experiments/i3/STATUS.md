@@ -116,3 +116,10 @@ state26positive delayed4→5; NO_USEFUL_CONDITIONING_SIGNAL. No new routes/camer
 seed/simulation, no whole500ms admission. Read I3_03_01_REPORT.md/results/validation.
 Stop this bound ranking mechanism. Next scope decision only; no I3-03-02/P1/E2 or
 automatic core implementation. Backup local only; no GitHub push for this checkpoint.
+
+User execution boundary2026-10-14: stop serial diagnostic-only phases. Next user-started
+batch allows at most one bounded method finalization then actual core route-generation
+implementation, with correctness/profiling inside that batch. One complete prototype/
+fixed comparison batch; at most one evidence-backed method revision, otherwise explicit
+stop/downgrade decision. See the research execution boundary at the top of CODEX_HANDOFF.md.
+D0 remains failed; this is not admission for the same AABB ranker/P1 under a new name.

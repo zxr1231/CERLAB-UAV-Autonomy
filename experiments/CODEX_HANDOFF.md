@@ -1,6 +1,38 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-14. I3-03-01 (old G1-D0) COMPLETE: NO_USEFUL_CONDITIONING_SIGNAL. Counting correctness and <=50ms/256MiB preparation pass; K1 usefulness fails (zero wins; state26 positive delayed4→5). Report/local backup then stop. Next is a user-triggered research-scope decision; no P1/E2/core coding or GitHub push.
+Last updated: 2026-10-14. I3-03-01 (old G1-D0) COMPLETE and locally backed up: NO_USEFUL_CONDITIONING_SIGNAL. Counting correctness/cost pass; K1 usefulness fails. Latest user boundary: next user-started development batch must use one bounded method finalization followed by core implementation, rather than serial new diagnostics. Failed AABB/P1 not admitted; no automatic new run or GitHub push at this checkpoint.
+
+**Latest user execution boundary, 2026-10-14:** stop extending diagnosis as a substitute
+for core method implementation. The next authorized development batch must follow the
+bounded policy below; historical failed gates/results remain frozen. This instruction
+does not declare D0 passed or authorize its failed AABB ranker to proceed as old P1.
+
+## 研究执行底线：从诊断转入实现
+
+用户明确要求：不要无条件收敛、反复修改方案，一直验证而不编写创新点核心代码。
+此执行规则优先于历史交接里可能引出连续新诊断的未来安排；历史实验事实不变。
+
+1. **不再追加独立的前置可行性诊断批次。** 必要正确性测试、profiling 和收益诊断
+   并入核心方法实现，不能要求先得到正实验结果才准开始编码。
+2. **最多一次有边界的方案定稿，随后在同一开发批次进入核心编码。** 定稿明确
+   观测机会如何生成路线、与几何多路径的区别、评价/候选/运动/计算预算、验证输入
+   和退出条件；交付可运行的核心生成方法及对照，而非又一个只读诊断工具或新提示词。
+   若不能提出具有明确机制差异且可实现的方法，应直接说明当前主线不值得继续，
+   不再通过增加诊断阶段推迟判断。本条不保证存在可行方法或论文贡献。
+3. **冻结后执行一个完整方法原型和一批预登记对照。** 先编译、正确性测试和有界
+   集成，再用固定输入/预算做机制对照；不能把只调权重、普通 waypoint/K-shortest
+   或失败的 AABB 排序换名当作核心贡献。线上默认仍保持 Legacy，实验开关隔离。
+4. **负结果最多允许一次有证据的方法修订。** 必须定位明确的可修复原因，记录
+   变更理由并事先固定复验，保留原数据；若没有该证据，或修订后仍不支持核心主张，
+   就停止该方法，明确给出放弃/降级/一次性换方向的决策，不继续扩诊断、改阈值、
+   加 seed 或添加无关模块。常规编译与确定性正确性错误应定位修复，不能借此改变
+   方法、冻结实验口径或无限增加验证范围。
+5. **成功标准是方法作用证据，不是所有开发状态均胜出。** 核对是否在同候选数/
+   运动与计算预算下改善实际新增观测或探索效率，并报告失败与成本；需要多场景/
+   多 seed 才能形成论文结论，但不为追求正结果重跑或替换冻结负结果。
+
+下次用户启动开发后按上述顺序推进；本次只记录底线，不自行开启新的算法实现。
+多个独立测试按用户偏好并行，公平计时/资源比较采用隔离或明确登记的测量安排。
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -727,12 +759,16 @@ Implementation frozen parent46787af / GP6ef0fa9; final commit recorded in backup
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-01-BOUND-DIAGNOSTIC-V1/.
 Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_03_01_2026-10-14/.
 
-**Immediate next task, only after user starts it: research-scope decision.**
-Do not automatically start I3-03-02 (G1-P1), E2, online guided-route coding or new seeds.
+**Immediate next task, only after user starts it: one bounded method finalization and core implementation batch.**
+Do not revive the failed AABB ranker as old I3-03-02 (G1-P1) or start E2/new seeds at
+this checkpoint. A future user-started core development batch follows the new boundary.
 Decide whether to drop this bound's ranking role and formulate a materially different
 bounded hypothesis, or narrow the paper objective. Do not tune boxes/K/weights or add
 confidence/semantics/energy/loop closure to disguise the failed discriminator. Any new
 implementation needs a separate fixed protocol; preserve all current/frozen negatives.
+The latest user boundary above rules out a chain of additional diagnostic-only batches:
+one bounded finalization must lead into actual route-generation code in that batch, or
+explicitly stop the line if no defensible implementable mechanism can be specified.
 This completed task ends after verified local backup, without a GitHub push.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/.
 Local backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_E1_V2_2026-10-14/.
