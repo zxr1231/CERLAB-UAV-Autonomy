@@ -1,0 +1,72 @@
+{
+  "schema": "i3-e1-read-only-validation-v2",
+  "status": "PASS",
+  "states": 5,
+  "negative_control": 13,
+  "routes_checked": 13,
+  "source_hashes": "UNCHANGED",
+  "reference_and_full_route_metrics": "EXACT",
+  "selection_checkpoints": "SHA256_VERIFIED",
+  "decision_reconstructed": {
+    "decision": "LIMITED_POOL_VALUE_FAIL",
+    "nontruncated_nonempty_states": [
+      14,
+      26,
+      27,
+      38
+    ],
+    "positive_predicted_utility_states": [
+      26
+    ],
+    "engineering_pass": true,
+    "timing_admitted": false,
+    "guided_generation_admitted": false
+  },
+  "resources": [
+    {
+      "sequence": 1,
+      "model_logical_payload_bytes": 6616416,
+      "model_storage_capacity_measured": false,
+      "rss_measured": false,
+      "input_map_bytes_reported": 39000000,
+      "tracked_visibility_peak_bytes": 23421584
+    },
+    {
+      "sequence": 14,
+      "model_logical_payload_bytes": 6616416,
+      "model_storage_capacity_measured": false,
+      "rss_measured": false,
+      "input_map_bytes_reported": 39000000,
+      "tracked_visibility_peak_bytes": 31514252
+    },
+    {
+      "sequence": 26,
+      "model_logical_payload_bytes": 6616416,
+      "model_storage_capacity_measured": false,
+      "rss_measured": false,
+      "input_map_bytes_reported": 39000000,
+      "tracked_visibility_peak_bytes": 30182584
+    },
+    {
+      "sequence": 27,
+      "model_logical_payload_bytes": 6616416,
+      "model_storage_capacity_measured": false,
+      "rss_measured": false,
+      "input_map_bytes_reported": 39000000,
+      "tracked_visibility_peak_bytes": 34224380
+    },
+    {
+      "sequence": 38,
+      "model_logical_payload_bytes": 6616416,
+      "model_storage_capacity_measured": false,
+      "rss_measured": false,
+      "input_map_bytes_reported": 39000000,
+      "tracked_visibility_peak_bytes": 29149888
+    }
+  ],
+  "resource_limits": [
+    "tracked C++ requested capacities include allocator headers, not malloc arena slack",
+    "model payload calculated from source; allocated capacity and process peak RSS not collected in primary batch",
+    "one-shot component/process times are not E2 or fair deployed-speed evidence"
+  ]
+}

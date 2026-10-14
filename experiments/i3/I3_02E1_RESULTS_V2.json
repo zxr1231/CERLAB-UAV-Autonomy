@@ -1,0 +1,463 @@
+{
+  "schema": "i3-e1-foundation-v2",
+  "identity": {
+    "parent_commit": "6132b98d83d62c0239c7b06b0eb12255487a80a0",
+    "global_planner_commit": "32801ef8b4404b7b283ddadb38276e194c8093cc",
+    "runner_sha256": "d9154447907e90f3b11243782148fe6af6b5fcd25393aa92678bb17c1a1ec7c8",
+    "protocol_sha256": "226838218aafb77e972297435f11993fffb13ac30e4934a735a96256a9765fa5",
+    "registry_sha256": "f84573b1a77edbea9f5874374e66d5bb5c3827547efa942c2a6655b851734755"
+  },
+  "states": [
+    {
+      "sequence": 1,
+      "stage": "early",
+      "status": "COMPLETE",
+      "pool_size": 0,
+      "qualified": 0,
+      "possible_pairs": 10,
+      "enumerated_pairs": 10,
+      "truncated": false,
+      "reference_unique": 10787,
+      "reference_time": 3.658176027768846,
+      "reference_utility": 2948.7372718308166,
+      "choices": {
+        "geometry_with_u_fallback": {
+          "extra": null,
+          "final": null,
+          "utility": 2948.7372718308166,
+          "extra_utility": null
+        },
+        "new_only_with_u_fallback": {
+          "extra": null,
+          "final": null,
+          "utility": 2948.7372718308166,
+          "extra_utility": null
+        },
+        "exact_net_rerank": {
+          "extra": null,
+          "final": null,
+          "utility": 2948.7372718308166,
+          "extra_utility": null
+        }
+      },
+      "engineering_parity": true,
+      "rows": [],
+      "generation_component_ms": 14.524265,
+      "compose_process_ms": 261.6981950000081,
+      "oracle_process_ms": 270.0576140000521,
+      "scratch_peak_bytes": 23421584,
+      "pose_queries": 20,
+      "voxel_visits": 2422986
+    },
+    {
+      "sequence": 14,
+      "stage": "middle",
+      "status": "COMPLETE",
+      "pool_size": 1,
+      "qualified": 1,
+      "possible_pairs": 934,
+      "enumerated_pairs": 934,
+      "truncated": false,
+      "reference_unique": 12813,
+      "reference_time": 6.208324304222662,
+      "reference_utility": 2063.8419277300145,
+      "choices": {
+        "geometry_with_u_fallback": {
+          "extra": 853,
+          "final": null,
+          "utility": 2063.8419277300145,
+          "extra_utility": 1959.8535404713984
+        },
+        "new_only_with_u_fallback": {
+          "extra": 853,
+          "final": null,
+          "utility": 2063.8419277300145,
+          "extra_utility": 1959.8535404713984
+        },
+        "exact_net_rerank": {
+          "extra": 853,
+          "final": null,
+          "utility": 2063.8419277300145,
+          "extra_utility": 1959.8535404713984
+        }
+      },
+      "engineering_parity": true,
+      "rows": [
+        {
+          "changed_pose_count": 34,
+          "component_ms": 73.974513,
+          "lost": 345,
+          "metrics": {
+            "raw": 150058,
+            "unique": 13499,
+            "sample_count": 35,
+            "marginal_sum": 13499,
+            "complete_addresses_and_marginals_file": "s014_compose.json"
+          },
+          "new": 1031,
+          "record_id": 853,
+          "time": 6.887759580623111,
+          "utility": 1959.8535404713984,
+          "metrics_file": "s014_compose.json"
+        }
+      ],
+      "generation_component_ms": 16.420204,
+      "compose_process_ms": 391.94192499996916,
+      "oracle_process_ms": 384.5640150000236,
+      "scratch_peak_bytes": 31514252,
+      "pose_queries": 65,
+      "voxel_visits": 9477931
+    },
+    {
+      "sequence": 26,
+      "stage": "middle",
+      "status": "COMPLETE",
+      "pool_size": 5,
+      "qualified": 52,
+      "possible_pairs": 3760,
+      "enumerated_pairs": 3760,
+      "truncated": false,
+      "reference_unique": 10834,
+      "reference_time": 19.06764593401904,
+      "reference_utility": 568.1876010016948,
+      "choices": {
+        "geometry_with_u_fallback": {
+          "extra": 3411,
+          "final": null,
+          "utility": 568.1876010016948,
+          "extra_utility": 545.5222874539685
+        },
+        "new_only_with_u_fallback": {
+          "extra": 3428,
+          "final": 3428,
+          "utility": 595.0858519732417,
+          "extra_utility": 595.0858519732417
+        },
+        "exact_net_rerank": {
+          "extra": 3428,
+          "final": 3428,
+          "utility": 595.0858519732417,
+          "extra_utility": 595.0858519732417
+        }
+      },
+      "engineering_parity": true,
+      "rows": [
+        {
+          "changed_pose_count": 37,
+          "component_ms": 62.633472,
+          "lost": 543,
+          "metrics": {
+            "raw": 92334,
+            "unique": 10415,
+            "sample_count": 89,
+            "marginal_sum": 10415,
+            "complete_addresses_and_marginals_file": "s026_compose.json"
+          },
+          "new": 124,
+          "record_id": 3411,
+          "time": 19.09179558658971,
+          "utility": 545.5222874539685,
+          "metrics_file": "s026_compose.json"
+        },
+        {
+          "changed_pose_count": 76,
+          "component_ms": 104.717191,
+          "lost": 233,
+          "metrics": {
+            "raw": 91866,
+            "unique": 10707,
+            "sample_count": 98,
+            "marginal_sum": 10707,
+            "complete_addresses_and_marginals_file": "s026_compose.json"
+          },
+          "new": 106,
+          "record_id": 1145,
+          "time": 20.750495484726446,
+          "utility": 515.9876788427035,
+          "metrics_file": "s026_compose.json"
+        },
+        {
+          "changed_pose_count": 50,
+          "component_ms": 84.45207,
+          "lost": 40,
+          "metrics": {
+            "raw": 149785,
+            "unique": 12867,
+            "sample_count": 102,
+            "marginal_sum": 12867,
+            "complete_addresses_and_marginals_file": "s026_compose.json"
+          },
+          "new": 2073,
+          "record_id": 3428,
+          "time": 21.622090253590116,
+          "utility": 595.0858519732417,
+          "metrics_file": "s026_compose.json"
+        },
+        {
+          "changed_pose_count": 86,
+          "component_ms": 122.255872,
+          "lost": 0,
+          "metrics": {
+            "raw": 93230,
+            "unique": 10838,
+            "sample_count": 108,
+            "marginal_sum": 10838,
+            "complete_addresses_and_marginals_file": "s026_compose.json"
+          },
+          "new": 4,
+          "record_id": 1252,
+          "time": 22.301913066336876,
+          "utility": 485.96727858109966,
+          "metrics_file": "s026_compose.json"
+        },
+        {
+          "changed_pose_count": 91,
+          "component_ms": 131.070824,
+          "lost": 222,
+          "metrics": {
+            "raw": 92706,
+            "unique": 10733,
+            "sample_count": 113,
+            "marginal_sum": 10733,
+            "complete_addresses_and_marginals_file": "s026_compose.json"
+          },
+          "new": 121,
+          "record_id": 1514,
+          "time": 23.763985822338,
+          "utility": 451.6498234025643,
+          "metrics_file": "s026_compose.json"
+        }
+      ],
+      "generation_component_ms": 20.770274,
+      "compose_process_ms": 932.6556469999332,
+      "oracle_process_ms": 1195.8313380000618,
+      "scratch_peak_bytes": 30182584,
+      "pose_queries": 428,
+      "voxel_visits": 50458419
+    },
+    {
+      "sequence": 27,
+      "stage": "late",
+      "status": "COMPLETE",
+      "pool_size": 5,
+      "qualified": 126,
+      "possible_pairs": 11520,
+      "enumerated_pairs": 11520,
+      "truncated": false,
+      "reference_unique": 18616,
+      "reference_time": 34.94363191451242,
+      "reference_utility": 532.7437069375893,
+      "choices": {
+        "geometry_with_u_fallback": {
+          "extra": 4936,
+          "final": null,
+          "utility": 532.7437069375893,
+          "extra_utility": 521.0016538068106
+        },
+        "new_only_with_u_fallback": {
+          "extra": 8269,
+          "final": null,
+          "utility": 532.7437069375893,
+          "extra_utility": 472.2443638442464
+        },
+        "exact_net_rerank": {
+          "extra": 4936,
+          "final": null,
+          "utility": 532.7437069375893,
+          "extra_utility": 521.0016538068106
+        }
+      },
+      "engineering_parity": true,
+      "rows": [
+        {
+          "changed_pose_count": 37,
+          "component_ms": 69.03649,
+          "lost": 347,
+          "metrics": {
+            "raw": 187791,
+            "unique": 18269,
+            "sample_count": 160,
+            "marginal_sum": 18269,
+            "complete_addresses_and_marginals_file": "s027_compose.json"
+          },
+          "new": 0,
+          "record_id": 4936,
+          "time": 35.065147810018686,
+          "utility": 521.0016538068106,
+          "metrics_file": "s027_compose.json"
+        },
+        {
+          "changed_pose_count": 65,
+          "component_ms": 98.569753,
+          "lost": 0,
+          "metrics": {
+            "raw": 197722,
+            "unique": 18616,
+            "sample_count": 170,
+            "marginal_sum": 18616,
+            "complete_addresses_and_marginals_file": "s027_compose.json"
+          },
+          "new": 0,
+          "record_id": 3061,
+          "time": 36.83851330236594,
+          "utility": 505.34069730779265,
+          "metrics_file": "s027_compose.json"
+        },
+        {
+          "changed_pose_count": 47,
+          "component_ms": 84.160055,
+          "lost": 2241,
+          "metrics": {
+            "raw": 200936,
+            "unique": 17991,
+            "sample_count": 175,
+            "marginal_sum": 17991,
+            "complete_addresses_and_marginals_file": "s027_compose.json"
+          },
+          "new": 1616,
+          "record_id": 8269,
+          "time": 38.09680194708203,
+          "utility": 472.2443638442464,
+          "metrics_file": "s027_compose.json"
+        },
+        {
+          "changed_pose_count": 57,
+          "component_ms": 89.210706,
+          "lost": 494,
+          "metrics": {
+            "raw": 185045,
+            "unique": 18122,
+            "sample_count": 180,
+            "marginal_sum": 18122,
+            "complete_addresses_and_marginals_file": "s027_compose.json"
+          },
+          "new": 0,
+          "record_id": 4938,
+          "time": 39.17815307674306,
+          "utility": 462.5537085554343,
+          "metrics_file": "s027_compose.json"
+        },
+        {
+          "changed_pose_count": 66,
+          "component_ms": 107.540392,
+          "lost": 1740,
+          "metrics": {
+            "raw": 187934,
+            "unique": 18204,
+            "sample_count": 194,
+            "marginal_sum": 18204,
+            "complete_addresses_and_marginals_file": "s027_compose.json"
+          },
+          "new": 1328,
+          "record_id": 8208,
+          "time": 42.65308192556163,
+          "utility": 426.7921373599617,
+          "metrics_file": "s027_compose.json"
+        }
+      ],
+      "generation_component_ms": 31.830933,
+      "compose_process_ms": 1097.835033000024,
+      "oracle_process_ms": 2049.460661000012,
+      "scratch_peak_bytes": 34224380,
+      "pose_queries": 432,
+      "voxel_visits": 56072525
+    },
+    {
+      "sequence": 38,
+      "stage": "late",
+      "status": "COMPLETE",
+      "pool_size": 2,
+      "qualified": 2,
+      "possible_pairs": 2650,
+      "enumerated_pairs": 2650,
+      "truncated": false,
+      "reference_unique": 10699,
+      "reference_time": 6.013760057427092,
+      "reference_utility": 1779.0866110107868,
+      "choices": {
+        "geometry_with_u_fallback": {
+          "extra": 968,
+          "final": null,
+          "utility": 1779.0866110107868,
+          "extra_utility": 1640.1055156744947
+        },
+        "new_only_with_u_fallback": {
+          "extra": 1074,
+          "final": null,
+          "utility": 1779.0866110107868,
+          "extra_utility": 1561.385100641123
+        },
+        "exact_net_rerank": {
+          "extra": 968,
+          "final": null,
+          "utility": 1779.0866110107868,
+          "extra_utility": 1640.1055156744947
+        }
+      },
+      "engineering_parity": true,
+      "rows": [
+        {
+          "changed_pose_count": 31,
+          "component_ms": 60.002901,
+          "lost": 608,
+          "metrics": {
+            "raw": 104276,
+            "unique": 10807,
+            "sample_count": 32,
+            "marginal_sum": 10807,
+            "complete_addresses_and_marginals_file": "s038_compose.json"
+          },
+          "new": 716,
+          "record_id": 968,
+          "time": 6.589210204293236,
+          "utility": 1640.1055156744947,
+          "metrics_file": "s038_compose.json"
+        },
+        {
+          "changed_pose_count": 34,
+          "component_ms": 59.994548,
+          "lost": 382,
+          "metrics": {
+            "raw": 121753,
+            "unique": 11131,
+            "sample_count": 35,
+            "marginal_sum": 11131,
+            "complete_addresses_and_marginals_file": "s038_compose.json"
+          },
+          "new": 814,
+          "record_id": 1074,
+          "time": 7.128926742947324,
+          "utility": 1561.385100641123,
+          "metrics_file": "s038_compose.json"
+        }
+      ],
+      "generation_component_ms": 19.840148,
+      "compose_process_ms": 452.44967199994335,
+      "oracle_process_ms": 439.1747959999748,
+      "scratch_peak_bytes": 29149888,
+      "pose_queries": 94,
+      "voxel_visits": 12746114
+    }
+  ],
+  "decision": "LIMITED_POOL_VALUE_FAIL",
+  "nontruncated_nonempty_states": [
+    14,
+    26,
+    27,
+    38
+  ],
+  "positive_predicted_utility_states": [
+    26
+  ],
+  "engineering_pass": true,
+  "timing_admitted": false,
+  "guided_generation_admitted": false,
+  "states_denominator": 5,
+  "negative_control": 13,
+  "new_simulation": false,
+  "optical_model_changed": false,
+  "stage_b_budget_tested": false,
+  "no_guided_generation_claim": true,
+  "raw_results_directory": "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2",
+  "repository_export": "compact metrics only; complete address sets and per-pose marginals in frozen raw artifacts"
+}

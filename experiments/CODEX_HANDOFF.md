@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-13. I3-02E V2 revised after audit B; next is isolated E1 FOUNDATION evaluation, not observation-guided generation. V1 retained, no E experiment run. Local backup only.
+Last updated: 2026-10-14. V2 E1 batch complete: exact composition verified, LIMITED_POOL_VALUE_FAIL. Fixed-pool branch stops; next research-scope decision only. Resource-metadata gap explicitly retained. Local backup only.
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -71,7 +71,7 @@ frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i3-camera-evaluator
-  commit cde9ed05e107369504e6606ce45e43412f9cd86c
+  commit 32801ef8b4404b7b283ddadb38276e194c8093cc
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -638,7 +638,7 @@ selection. Current CameraGainEvaluator lacks a budget-aware all-or-nothing pose-
 batch API; implementing/testing that isolated interface is an E1 prerequisite and all
 its cost counts. No persistent Edge cache is assumed.
 
-**Current checkpoint: audit B addressed by I3-02E V2, NOT IMPLEMENTED/RUN.**
+**Historical checkpoint: audit B addressed by I3-02E V2, now implemented/tested below.**
 Read i3/I3_02E_REVISION_V2.md, METHOD_PROTOCOL_V2.md, PROTOCOL_V2.json and INPUTS_V2.json.
 I3_02E_ASTRA_AUDIT.md is the immutable audit snapshot; its pre-revision status is historical.
 All four V1 E documents and earlier negative data are preserved. E1 is now exact local
@@ -646,22 +646,35 @@ visibility composition and LIMITED GEOMETRIC POOL VALUE, not observation-guided 
 The latter remains undefined/unimplemented. Exact argmax matching the same oracle and
 dominating weaker same-pool selectors are correctness/definition properties, not novelty.
 
-**Immediate next task, only after user resumes: V2 E1 foundation implementation and one batch.**
-Use fixed states1/13/14/26/27/38 and registry hashes. Preserve canonical boundary poses;
-exact-equal adjacent boundary merge only, reject unequal near-boundary ambiguities.
-Event-based changed-window decomposition, B_e union C (never R minus R_e), independent
-history including recomputed suffix marginals. Validate addresses/raw/marginal/unique and
-same-U/tie oracle choice. Shared absolute deadline, counters,256MiB visibility scratch cap,
-invalid results and whole-control fallback contract apply. Actual scoring is1reference+
-up to5corridors, not2 just because1extra is output. No new optical kernel or online default.
+**Current checkpoint: V2 E1 COMPLETE, LIMITED_POOL_VALUE_FAIL.**
+Read i3/I3_02E1_REPORT_V2.md, RESULTS_V2.json and VALIDATION_V2.json.
+Collection parent6132b98 / global_planner32801ef, one registered6-state batch:
+18874 pairs,13 fixed-pool corridors, no truncation. Pools1/14/26/27/38=0/1/5/5/2.
+Four nonempty states pass supply>=3; only26has positive predicted-U (required>=2),
+so value fails. Candidate3428 at26 is [0,282,285,295,301], real Edge285->295:
+new2073/lost40, U+4.734%; new-only and exact both choose it. Other states keep reference.
+Do not restore prior non-Edge anchor candidate197 at38 to improve the result.
 
-Engineering checks plus >=3 nontruncated nonempty states and >=2 positive predicted-U
-states allow FOUNDATION_PASS_COST_STUDY_PENDING only. Strict wins are descriptive.
-No automatic E2/cost benchmark, guided generation, simulation or cache. E2 requires a
-separate registration and fixed early/middle/late labels; effective early state is only1.
-Any fixed-pool failure stops that branch, not a claim all informative planning is impossible.
-Complete E1 report/local backup and stop. This turn only revised protocols, no implementation.
-I3-02 remains incomplete; do not push this small checkpoint to GitHub.
+13/13 candidate address/raw/unique/per-pose marginal outputs exactly match independent
+full recomputation after choices are checkpointed. All5reference outputs match old
+I3-01C.12new C++ tests+21existing regression tests and23Python tests pass.
+Optional shared pose-set API uses unchanged optical ray arithmetic, absolute deadline,
+counter/cancel checks and all-or-nothing output. Allocation tracker is linked into
+isolated fixtures only; live planner defaults/dep.cpp are unchanged. Scratch peaks
+22.34--32.64MiB under256MiB. Engineering FUNCTIONAL parity passes, but process peakRSS
+and model allocated capacity were not collected: explicit resource-metadata gap,
+not full resource-recording compliance. No repeat or E2 was run to fill it. One-shot
+fixture process times are not fair deployed-speed or500ms admission evidence.
+
+**Immediate next task, only after user resumes: research-scope decision.**
+Stop this fixed per-Edge-min-time/5-stratified pool branch. No reruns, cap enlargement,
+new seeds, E2, cache or online integration. Decide whether to formulate a genuinely
+observation-conditioned generator BEFORE final-pool lock with an independent finite
+protocol, or lower/close the main claim. Exact composition remains reusable foundation,
+not primary innovation proof. All old negative results and frozen V1/V2 protocols stay.
+Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/.
+Local backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_E1_V2_2026-10-14/.
+No GitHub push for this checkpoint; user asked backup and stop after E1.
 
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01C-OBSERVATION-LOSS-V1/.
 Backup target: /home/zxr2/下载/CERLAB_I3_Backups/I3_01C_2026-10-13/.
