@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-14. I3-03-01 (old G1-D0) implementation and 6 C++/5 Python tests complete; one fixed diagnostic batch is authorized and next within this task. No formal batch yet at this source checkpoint. Finish report/local backup and stop; no P1/E2 or GitHub push.
+Last updated: 2026-10-14. I3-03-01 (old G1-D0) COMPLETE: NO_USEFUL_CONDITIONING_SIGNAL. Counting correctness and <=50ms/256MiB preparation pass; K1 usefulness fails (zero wins; state26 positive delayed4→5). Report/local backup then stop. Next is a user-triggered research-scope decision; no P1/E2/core coding or GitHub push.
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -680,7 +680,7 @@ counts and Ubar=(|R|+K)/estimatedTime. Ubar changes visit/retention order BEFORE
 scoring. Exact B_e union C determines actual model utility. No negative A* edge weights,
 no persistent cache/free preprocessing. Old E1 failure remains, not superseded.
 
-**Current: user-confirmed grilling consensus Q1--Q8, G1-D0 registered/not implemented.**
+**Historical registration: user-confirmed grilling consensus Q1--Q8, G1-D0 registered. Completed below.**
 Read i3/I3_GRILLING_CONSENSUS_2026-10-14.md, I3_G1_D0_PROTOCOL.md/JSON and INPUTS.json.
 The eight decisions prioritize actual observation/exploration benefit as eventual paper
 evidence; old reused5states do not solely decide the whole line. Real Graph Edge becomes
@@ -688,7 +688,7 @@ an implementation option, not a scientific necessity. No change to old E1/02A re
 The old “must find a state27positive” gate and optional box-sum approximation are no
 longer future execution requirements. Main bound uses exact union (<=7 queries for3boxes).
 
-**Immediate next task, only after user starts it: G1-D0 LIGHTWEIGHT DIAGNOSIS ONLY.**
+**Historical D0 execution instructions (now completed; DO NOT rerun):**
 Use I3_G1_D0_START_PROMPT.md. D0 uniformly uses all14 previously scored02A safe single-
 waypoint corridors (sizes0/2/5/5/2) and original6snapshots,13negative. This is retrospective
 development diagnosis, not an independent experiment or revival of failed anchor proxy.
@@ -709,6 +709,31 @@ Process RSS and allocation counts must be recorded in D0; new model capacity mus
 measured before later P1 (D0constructs no model). Preserve all old metadata gaps/failures.
 This turn only registered protocols; after a future D0, report/local commit/verified
 backup and stop. No GitHub push for this small checkpoint.
+
+**Current: I3-03-01 (G1-D0) COMPLETE, NO_USEFUL_CONDITIONING_SIGNAL.**
+Read i3/I3_03_01_REPORT.md, RESULTS.json and VALIDATION.json. Isolated integer prefix
+counting tool/tests complete; one six-state batch over all14 old alternatives, zero
+new routes/camera evaluations/seed/simulation.6 C++ +5 Python tests and74 frozen file
+hashes pass. Exact counts/containment/upper inequalities14/14pass. N/Q preparation
+max12.946/13.308ms; counted workspace max8.12MiB, process RSS max57.93MiB. Model
+not constructed; its old actual capacity remains not_measured. No500ms admission.
+
+Primary K1 effective-relative means motion=N=Q=+0.115377% over5validstates. Q strictly
+better than either control in0states; record636 at26moves4→5, violating no-later gate.
+K2same; K5exhausts old pool and cannot rescue. Changed ranks at26/27are not usefulness.
+This stops the reference-conditioned AABB-count ranking mechanism and core coding.
+It does not kill all informative planning, alter old02A/E1/I1 or admit automatic P1.
+Implementation frozen parent46787af / GP6ef0fa9; final commit recorded in backup receipt.
+Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-03-01-BOUND-DIAGNOSTIC-V1/.
+Backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_03_01_2026-10-14/.
+
+**Immediate next task, only after user starts it: research-scope decision.**
+Do not automatically start I3-03-02 (G1-P1), E2, online guided-route coding or new seeds.
+Decide whether to drop this bound's ranking role and formulate a materially different
+bounded hypothesis, or narrow the paper objective. Do not tune boxes/K/weights or add
+confidence/semantics/energy/loop closure to disguise the failed discriminator. Any new
+implementation needs a separate fixed protocol; preserve all current/frozen negatives.
+This completed task ends after verified local backup, without a GitHub push.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/.
 Local backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_E1_V2_2026-10-14/.
 No GitHub push for this checkpoint; user asked backup and stop after E1.

@@ -1,0 +1,1094 @@
+{
+  "task": "I3-03-01",
+  "outcome": "NO_USEFUL_CONDITIONING_SIGNAL",
+  "engineering_passed": true,
+  "preparation_cost_passed": true,
+  "quality": {
+    "mean_relative_utility_K1": {
+      "motion": 0.001153766691358671,
+      "N": 0.001153766691358671,
+      "Q": 0.001153766691358671
+    },
+    "strict_better_states_K1": {
+      "motion": 0,
+      "N": 0
+    },
+    "known_positive_states": [
+      26,
+      38
+    ],
+    "no_later_than_motion": false,
+    "means_not_lower": true,
+    "evaluable": true,
+    "passed": false
+  },
+  "cases": [
+    {
+      "sequence": 1,
+      "accepted": true,
+      "reference_utility": 2948.7372718308166,
+      "reference_unique_gain": 10787,
+      "candidate_count": 0,
+      "rows": [],
+      "orders": {
+        "motion": [],
+        "N": [],
+        "Q": []
+      },
+      "curves": {
+        "motion": {
+          "K1": {
+            "K": 1,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 0,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        },
+        "N": {
+          "K1": {
+            "K": 1,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 0,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        },
+        "Q": {
+          "K1": {
+            "K": 1,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 0,
+            "visited": [],
+            "raw_candidate_utilities": [],
+            "effective_utility": 2948.7372718308166,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        }
+      },
+      "positive_records": [],
+      "first_positive": {
+        "motion": 1,
+        "N": 1,
+        "Q": 1
+      },
+      "costs": {
+        "N": {
+          "index_build_ms": 0,
+          "union_queries_ms": 0,
+          "sort_ms": 0,
+          "total_preparation_ms": 0,
+          "tracked_scratch_peak_bytes": 0,
+          "table_storage_bytes": 0
+        },
+        "Q": {
+          "index_build_ms": 0,
+          "union_queries_ms": 0,
+          "sort_ms": 0,
+          "total_preparation_ms": 0,
+          "tracked_scratch_peak_bytes": 0,
+          "table_storage_bytes": 0
+        }
+      },
+      "cost_passed": true,
+      "process_peak_rss_kib": 43364,
+      "input_io_and_geometry_ms": 149.41169,
+      "independent_count_and_label_validation_ms": 0.11792799978138646,
+      "new_camera_queries": 0,
+      "new_routes_generated": 0,
+      "containment_passed": true
+    },
+    {
+      "sequence": 13,
+      "accepted": false,
+      "status": "SKIP_NEGATIVE_CONTROL",
+      "process_peak_rss_kib": 3912
+    },
+    {
+      "sequence": 14,
+      "accepted": true,
+      "reference_utility": 2063.8419277300145,
+      "reference_unique_gain": 12813,
+      "candidate_count": 2,
+      "rows": [
+        {
+          "record_id": 158,
+          "unique_gain": 13499,
+          "new_voxels": 1031,
+          "actual_model_utility": 1959.8535404713984,
+          "N_count": 40082,
+          "Q_count": 27269,
+          "Q_upper_utility": 5819.308808739506,
+          "containment_passed": true
+        },
+        {
+          "record_id": 156,
+          "unique_gain": 14110,
+          "new_voxels": 1688,
+          "actual_model_utility": 1951.1895644382823,
+          "N_count": 39977,
+          "Q_count": 27164,
+          "Q_upper_utility": 5528.186053688817,
+          "containment_passed": true
+        }
+      ],
+      "orders": {
+        "motion": [
+          158,
+          156
+        ],
+        "N": [
+          158,
+          156
+        ],
+        "Q": [
+          158,
+          156
+        ]
+      },
+      "curves": {
+        "motion": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              158
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              158,
+              156
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984,
+              1951.1895644382823
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 2,
+            "visited": [
+              158,
+              156
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984,
+              1951.1895644382823
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        },
+        "N": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              158
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              158,
+              156
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984,
+              1951.1895644382823
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 2,
+            "visited": [
+              158,
+              156
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984,
+              1951.1895644382823
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        },
+        "Q": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              158
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              158,
+              156
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984,
+              1951.1895644382823
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 2,
+            "visited": [
+              158,
+              156
+            ],
+            "raw_candidate_utilities": [
+              1959.8535404713984,
+              1951.1895644382823
+            ],
+            "effective_utility": 2063.8419277300145,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        }
+      },
+      "positive_records": [],
+      "first_positive": {
+        "motion": 3,
+        "N": 3,
+        "Q": 3
+      },
+      "costs": {
+        "N": {
+          "index_build_ms": 11.373812,
+          "union_queries_ms": 0.002405,
+          "sort_ms": 0.00032,
+          "total_preparation_ms": 11.841249,
+          "tracked_scratch_peak_bytes": 7718568,
+          "table_storage_bytes": 7718448
+        },
+        "Q": {
+          "index_build_ms": 11.916697,
+          "union_queries_ms": 0.001462,
+          "sort_ms": 6e-05,
+          "total_preparation_ms": 11.918531,
+          "tracked_scratch_peak_bytes": 8518480,
+          "table_storage_bytes": 7718448
+        }
+      },
+      "cost_passed": true,
+      "process_peak_rss_kib": 55048,
+      "input_io_and_geometry_ms": 160.508797,
+      "independent_count_and_label_validation_ms": 182.6154279997354,
+      "new_camera_queries": 0,
+      "new_routes_generated": 0,
+      "containment_passed": true
+    },
+    {
+      "sequence": 26,
+      "accepted": true,
+      "reference_utility": 568.1876010016948,
+      "reference_unique_gain": 10834,
+      "candidate_count": 5,
+      "rows": [
+        {
+          "record_id": 200,
+          "unique_gain": 10834,
+          "new_voxels": 0,
+          "actual_model_utility": 567.8377789165768,
+          "N_count": 30611,
+          "Q_count": 25406,
+          "Q_upper_utility": 1899.4315218697382,
+          "containment_passed": true
+        },
+        {
+          "record_id": 275,
+          "unique_gain": 10835,
+          "new_voxels": 1,
+          "actual_model_utility": 542.6179849026817,
+          "N_count": 29143,
+          "Q_count": 24335,
+          "Q_upper_utility": 1761.267366039909,
+          "containment_passed": true
+        },
+        {
+          "record_id": 209,
+          "unique_gain": 10702,
+          "new_voxels": 100,
+          "actual_model_utility": 515.8082008309782,
+          "N_count": 27196,
+          "Q_count": 24874,
+          "Q_upper_utility": 1721.0315114252073,
+          "containment_passed": true
+        },
+        {
+          "record_id": 636,
+          "unique_gain": 13024,
+          "new_voxels": 2230,
+          "actual_model_utility": 605.0072979131338,
+          "N_count": 30898,
+          "Q_count": 20081,
+          "Q_upper_utility": 1436.1026270719083,
+          "containment_passed": true
+        },
+        {
+          "record_id": 279,
+          "unique_gain": 10770,
+          "new_voxels": 121,
+          "actual_model_utility": 460.57168957214776,
+          "N_count": 36450,
+          "Q_count": 31524,
+          "Q_upper_utility": 1811.4109217174591,
+          "containment_passed": true
+        }
+      ],
+      "orders": {
+        "motion": [
+          200,
+          275,
+          209,
+          636,
+          279
+        ],
+        "N": [
+          200,
+          279,
+          275,
+          636,
+          209
+        ],
+        "Q": [
+          200,
+          279,
+          275,
+          209,
+          636
+        ]
+      },
+      "curves": {
+        "motion": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              200
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768
+            ],
+            "effective_utility": 568.1876010016948,
+            "relative_utility": 0.0,
+            "best_regret": 36.819696911438996
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              200,
+              275
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768,
+              542.6179849026817
+            ],
+            "effective_utility": 568.1876010016948,
+            "relative_utility": 0.0,
+            "best_regret": 36.819696911438996
+          },
+          "Kmax": {
+            "K": 5,
+            "visited": [
+              200,
+              275,
+              209,
+              636,
+              279
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768,
+              542.6179849026817,
+              515.8082008309782,
+              605.0072979131338,
+              460.57168957214776
+            ],
+            "effective_utility": 605.0072979131338,
+            "relative_utility": 0.06480200702466443,
+            "best_regret": 0.0
+          }
+        },
+        "N": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              200
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768
+            ],
+            "effective_utility": 568.1876010016948,
+            "relative_utility": 0.0,
+            "best_regret": 36.819696911438996
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              200,
+              279
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768,
+              460.57168957214776
+            ],
+            "effective_utility": 568.1876010016948,
+            "relative_utility": 0.0,
+            "best_regret": 36.819696911438996
+          },
+          "Kmax": {
+            "K": 5,
+            "visited": [
+              200,
+              279,
+              275,
+              636,
+              209
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768,
+              460.57168957214776,
+              542.6179849026817,
+              605.0072979131338,
+              515.8082008309782
+            ],
+            "effective_utility": 605.0072979131338,
+            "relative_utility": 0.06480200702466443,
+            "best_regret": 0.0
+          }
+        },
+        "Q": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              200
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768
+            ],
+            "effective_utility": 568.1876010016948,
+            "relative_utility": 0.0,
+            "best_regret": 36.819696911438996
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              200,
+              279
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768,
+              460.57168957214776
+            ],
+            "effective_utility": 568.1876010016948,
+            "relative_utility": 0.0,
+            "best_regret": 36.819696911438996
+          },
+          "Kmax": {
+            "K": 5,
+            "visited": [
+              200,
+              279,
+              275,
+              209,
+              636
+            ],
+            "raw_candidate_utilities": [
+              567.8377789165768,
+              460.57168957214776,
+              542.6179849026817,
+              515.8082008309782,
+              605.0072979131338
+            ],
+            "effective_utility": 605.0072979131338,
+            "relative_utility": 0.06480200702466443,
+            "best_regret": 0.0
+          }
+        }
+      },
+      "positive_records": [
+        636
+      ],
+      "first_positive": {
+        "motion": 4,
+        "N": 4,
+        "Q": 5
+      },
+      "costs": {
+        "N": {
+          "index_build_ms": 11.17123,
+          "union_queries_ms": 0.003998,
+          "sort_ms": 0.000411,
+          "total_preparation_ms": 11.690937,
+          "tracked_scratch_peak_bytes": 7718784,
+          "table_storage_bytes": 7718448
+        },
+        "Q": {
+          "index_build_ms": 11.845878,
+          "union_queries_ms": 0.003237,
+          "sort_ms": 0.0003,
+          "total_preparation_ms": 11.849996,
+          "tracked_scratch_peak_bytes": 8518480,
+          "table_storage_bytes": 7718448
+        }
+      },
+      "cost_passed": true,
+      "process_peak_rss_kib": 57368,
+      "input_io_and_geometry_ms": 160.053439,
+      "independent_count_and_label_validation_ms": 373.8263619998179,
+      "new_camera_queries": 0,
+      "new_routes_generated": 0,
+      "containment_passed": true
+    },
+    {
+      "sequence": 27,
+      "accepted": true,
+      "reference_utility": 532.7437069375893,
+      "reference_unique_gain": 18616,
+      "candidate_count": 5,
+      "rows": [
+        {
+          "record_id": 587,
+          "unique_gain": 18616,
+          "new_voxels": 0,
+          "actual_model_utility": 532.165901335698,
+          "N_count": 33562,
+          "Q_count": 32992,
+          "Q_upper_utility": 1475.2910311631233,
+          "containment_passed": true
+        },
+        {
+          "record_id": 584,
+          "unique_gain": 18413,
+          "new_voxels": 57,
+          "actual_model_utility": 514.9644348720053,
+          "N_count": 31792,
+          "Q_count": 31222,
+          "Q_upper_utility": 1393.8411722777928,
+          "containment_passed": true
+        },
+        {
+          "record_id": 1535,
+          "unique_gain": 17721,
+          "new_voxels": 393,
+          "actual_model_utility": 476.1886960543053,
+          "N_count": 26682,
+          "Q_count": 9815,
+          "Q_upper_utility": 763.9817627402491,
+          "containment_passed": true
+        },
+        {
+          "record_id": 892,
+          "unique_gain": 17644,
+          "new_voxels": 12,
+          "actual_model_utility": 456.43482818347866,
+          "N_count": 40696,
+          "Q_count": 31431,
+          "Q_upper_utility": 1294.6720611028427,
+          "containment_passed": true
+        },
+        {
+          "record_id": 1504,
+          "unique_gain": 15463,
+          "new_voxels": 417,
+          "actual_model_utility": 361.2264619686725,
+          "N_count": 34807,
+          "Q_count": 17940,
+          "Q_upper_utility": 853.973649597542,
+          "containment_passed": true
+        }
+      ],
+      "orders": {
+        "motion": [
+          587,
+          584,
+          1535,
+          892,
+          1504
+        ],
+        "N": [
+          892,
+          587,
+          584,
+          1504,
+          1535
+        ],
+        "Q": [
+          587,
+          584,
+          892,
+          1504,
+          1535
+        ]
+      },
+      "curves": {
+        "motion": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              587
+            ],
+            "raw_candidate_utilities": [
+              532.165901335698
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              587,
+              584
+            ],
+            "raw_candidate_utilities": [
+              532.165901335698,
+              514.9644348720053
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 5,
+            "visited": [
+              587,
+              584,
+              1535,
+              892,
+              1504
+            ],
+            "raw_candidate_utilities": [
+              532.165901335698,
+              514.9644348720053,
+              476.1886960543053,
+              456.43482818347866,
+              361.2264619686725
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        },
+        "N": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              892
+            ],
+            "raw_candidate_utilities": [
+              456.43482818347866
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              892,
+              587
+            ],
+            "raw_candidate_utilities": [
+              456.43482818347866,
+              532.165901335698
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 5,
+            "visited": [
+              892,
+              587,
+              584,
+              1504,
+              1535
+            ],
+            "raw_candidate_utilities": [
+              456.43482818347866,
+              532.165901335698,
+              514.9644348720053,
+              361.2264619686725,
+              476.1886960543053
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        },
+        "Q": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              587
+            ],
+            "raw_candidate_utilities": [
+              532.165901335698
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              587,
+              584
+            ],
+            "raw_candidate_utilities": [
+              532.165901335698,
+              514.9644348720053
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 5,
+            "visited": [
+              587,
+              584,
+              892,
+              1504,
+              1535
+            ],
+            "raw_candidate_utilities": [
+              532.165901335698,
+              514.9644348720053,
+              456.43482818347866,
+              361.2264619686725,
+              476.1886960543053
+            ],
+            "effective_utility": 532.7437069375893,
+            "relative_utility": 0.0,
+            "best_regret": 0.0
+          }
+        }
+      },
+      "positive_records": [],
+      "first_positive": {
+        "motion": 6,
+        "N": 6,
+        "Q": 6
+      },
+      "costs": {
+        "N": {
+          "index_build_ms": 10.852683,
+          "union_queries_ms": 0.003597,
+          "sort_ms": 0.000481,
+          "total_preparation_ms": 11.330189,
+          "tracked_scratch_peak_bytes": 7718784,
+          "table_storage_bytes": 7718448
+        },
+        "Q": {
+          "index_build_ms": 11.927586,
+          "union_queries_ms": 0.003086,
+          "sort_ms": 0.000361,
+          "total_preparation_ms": 11.931423,
+          "tracked_scratch_peak_bytes": 8518480,
+          "table_storage_bytes": 7718448
+        }
+      },
+      "cost_passed": true,
+      "process_peak_rss_kib": 58516,
+      "input_io_and_geometry_ms": 160.774551,
+      "independent_count_and_label_validation_ms": 458.8140120004027,
+      "new_camera_queries": 0,
+      "new_routes_generated": 0,
+      "containment_passed": true
+    },
+    {
+      "sequence": 38,
+      "accepted": true,
+      "reference_utility": 1779.0866110107868,
+      "reference_unique_gain": 10699,
+      "candidate_count": 2,
+      "rows": [
+        {
+          "record_id": 197,
+          "unique_gain": 10877,
+          "new_voxels": 223,
+          "actual_model_utility": 1789.349865374919,
+          "N_count": 45621,
+          "Q_count": 34922,
+          "Q_upper_utility": 7505.004156317844,
+          "containment_passed": true
+        },
+        {
+          "record_id": 177,
+          "unique_gain": 10807,
+          "new_voxels": 716,
+          "actual_model_utility": 1640.1055156744947,
+          "N_count": 45231,
+          "Q_count": 34532,
+          "Q_upper_utility": 6864.403865964011,
+          "containment_passed": true
+        }
+      ],
+      "orders": {
+        "motion": [
+          197,
+          177
+        ],
+        "N": [
+          197,
+          177
+        ],
+        "Q": [
+          197,
+          177
+        ]
+      },
+      "curves": {
+        "motion": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              197
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              197,
+              177
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919,
+              1640.1055156744947
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 2,
+            "visited": [
+              197,
+              177
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919,
+              1640.1055156744947
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          }
+        },
+        "N": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              197
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              197,
+              177
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919,
+              1640.1055156744947
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 2,
+            "visited": [
+              197,
+              177
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919,
+              1640.1055156744947
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          }
+        },
+        "Q": {
+          "K1": {
+            "K": 1,
+            "visited": [
+              197
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          },
+          "K2": {
+            "K": 2,
+            "visited": [
+              197,
+              177
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919,
+              1640.1055156744947
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          },
+          "Kmax": {
+            "K": 2,
+            "visited": [
+              197,
+              177
+            ],
+            "raw_candidate_utilities": [
+              1789.349865374919,
+              1640.1055156744947
+            ],
+            "effective_utility": 1789.349865374919,
+            "relative_utility": 0.005768833456793354,
+            "best_regret": 0.0
+          }
+        }
+      },
+      "positive_records": [
+        197
+      ],
+      "first_positive": {
+        "motion": 1,
+        "N": 1,
+        "Q": 1
+      },
+      "costs": {
+        "N": {
+          "index_build_ms": 12.475779,
+          "union_queries_ms": 0.002274,
+          "sort_ms": 0.000781,
+          "total_preparation_ms": 12.945619,
+          "tracked_scratch_peak_bytes": 7718568,
+          "table_storage_bytes": 7718448
+        },
+        "Q": {
+          "index_build_ms": 13.304905,
+          "union_queries_ms": 0.001953,
+          "sort_ms": 0.000431,
+          "total_preparation_ms": 13.307701,
+          "tracked_scratch_peak_bytes": 8518480,
+          "table_storage_bytes": 7718448
+        }
+      },
+      "cost_passed": true,
+      "process_peak_rss_kib": 59320,
+      "input_io_and_geometry_ms": 163.583324,
+      "independent_count_and_label_validation_ms": 180.58624099921872,
+      "new_camera_queries": 0,
+      "new_routes_generated": 0,
+      "containment_passed": true
+    }
+  ],
+  "new_camera_queries": 0,
+  "new_routes_generated": 0,
+  "whole_500ms_admission": "not tested",
+  "model_allocated_capacity": "not_measured_not_constructed",
+  "limitations": [
+    "retrospective 14-route development corpus, not held-out",
+    "optimistic bound ignores FoV/yaw/occlusion",
+    "saved reference camera cost not free online",
+    "one measured batch, no timing reruns",
+    "does not validate actual observation or exploration improvement"
+  ]
+}

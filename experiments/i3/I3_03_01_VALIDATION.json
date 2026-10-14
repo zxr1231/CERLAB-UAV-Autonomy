@@ -1,0 +1,120 @@
+{
+  "task": "I3-03-01",
+  "C++_tests_passed": 6,
+  "python_tests_passed": 5,
+  "frozen_files_validated_before_and_after": 74,
+  "ranking_seal_unchanged": true,
+  "full_candidate_labels_read_after_rankings_sealed": true,
+  "independent_voxel_scan_passed": 14,
+  "new_address_containment_passed": 14,
+  "upper_utility_passed": 14,
+  "negative_control_no_map_or_index_work": true,
+  "zero_candidate_no_index_work": true,
+  "camera_queries": 0,
+  "new_routes": 0,
+  "new_simulation": false,
+  "old_results_unchanged": true,
+  "auxiliary_order_comparison": [
+    {
+      "sequence": 1,
+      "nonempty": false,
+      "Q_vs_motion": {
+        "order_changed": false,
+        "top_k_jaccard": {
+          "1": null,
+          "2": null,
+          "0": null
+        }
+      },
+      "Q_vs_N": {
+        "order_changed": false,
+        "top_k_jaccard": {
+          "1": null,
+          "2": null,
+          "0": null
+        }
+      }
+    },
+    {
+      "sequence": 14,
+      "nonempty": true,
+      "Q_vs_motion": {
+        "order_changed": false,
+        "top_k_jaccard": {
+          "1": 1.0,
+          "2": 1.0
+        }
+      },
+      "Q_vs_N": {
+        "order_changed": false,
+        "top_k_jaccard": {
+          "1": 1.0,
+          "2": 1.0
+        }
+      }
+    },
+    {
+      "sequence": 26,
+      "nonempty": true,
+      "Q_vs_motion": {
+        "order_changed": true,
+        "top_k_jaccard": {
+          "1": 1.0,
+          "2": 0.3333333333333333,
+          "5": 1.0
+        }
+      },
+      "Q_vs_N": {
+        "order_changed": true,
+        "top_k_jaccard": {
+          "1": 1.0,
+          "2": 1.0,
+          "5": 1.0
+        }
+      }
+    },
+    {
+      "sequence": 27,
+      "nonempty": true,
+      "Q_vs_motion": {
+        "order_changed": true,
+        "top_k_jaccard": {
+          "1": 1.0,
+          "2": 1.0,
+          "5": 1.0
+        }
+      },
+      "Q_vs_N": {
+        "order_changed": true,
+        "top_k_jaccard": {
+          "1": 0.0,
+          "2": 0.3333333333333333,
+          "5": 1.0
+        }
+      }
+    },
+    {
+      "sequence": 38,
+      "nonempty": true,
+      "Q_vs_motion": {
+        "order_changed": false,
+        "top_k_jaccard": {
+          "1": 1.0,
+          "2": 1.0
+        }
+      },
+      "Q_vs_N": {
+        "order_changed": false,
+        "top_k_jaccard": {
+          "1": 1.0,
+          "2": 1.0
+        }
+      }
+    }
+  ],
+  "max_N_preparation_ms": 12.945619,
+  "max_Q_preparation_ms": 13.307701,
+  "max_scratch_bytes": 8518480,
+  "max_process_peak_RSS_kib": 59320,
+  "outcome": "NO_USEFUL_CONDITIONING_SIGNAL"
+}

@@ -10,8 +10,10 @@
 | I3-01C fixed-pool observation/simplification diagnostic | Complete: predicted loss10/10, direct raw-retention leads0; NOT admitted |
 | I3-02 observation opportunities / anchors | V2 E1 functional exactness verified; LIMITED_POOL_VALUE_FAIL; no E2/true guided generator admission |
 | I3 scope decision | Grilling Q1--Q8 confirmed; historical true-Edge/state27 prerequisites revised; old negatives retained |
-| G1-D0 lightweight bound diagnosis | Protocol/inputs registered; no code/run; next user-triggered task |
-| I3-03 guided candidate construction | Pending |
+| I3-03-01 / G1-D0 lightweight bound diagnosis | Complete: exactness/cost PASS; NO_USEFUL_CONDITIONING_SIGNAL |
+| I3-03-02 / G1-P1 prototype | Not admitted after D0 failure; scope decision first |
+| I3-03-03 independent verification | Conditional/pending; no prototype admission |
+| I3-03 guided candidate construction | Paused pending scope decision; not automatically authorized |
 | I3-04 observation-preserving simplification | Pending |
 | I3-05 online integration | Pending |
 | I3-06 bounded simulation checks | Pending |
@@ -106,3 +108,11 @@ gain/routes/seeds/sim. Exact box union fixed; K1primary quality and50ms counted-
 overhead target plus256MiB. Changed order alone not PASS. True Edge no longer necessary;
 old5-state corpus no sole whole-line death verdict. One diagnosis, after pass one
 separately registered prototype; do not autoexecute. Local backup only, no GitHub push.
+
+Latest2026-10-14: I3-03-01 (old G1-D0) COMPLETE.6C++/5Python tests,74frozen file hashes,
+14exact voxel counts/containment/upper bounds pass. N/Q max12.946/13.308ms and8.12MiB
+workspace; process RSS max57.93MiB. K1 Q wins0against both controls, means equal,
+state26positive delayed4→5; NO_USEFUL_CONDITIONING_SIGNAL. No new routes/camera calls/
+seed/simulation, no whole500ms admission. Read I3_03_01_REPORT.md/results/validation.
+Stop this bound ranking mechanism. Next scope decision only; no I3-03-02/P1/E2 or
+automatic core implementation. Backup local only; no GitHub push for this checkpoint.
