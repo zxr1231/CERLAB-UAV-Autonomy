@@ -2,6 +2,18 @@
 
 Last updated: 2026-10-14. I3-03-02 FINAL BATCH COMPLETE: METHOD_NOT_SUPPORTED. Core code/22C+++4Python tests/304parallel jobs complete. Expanded32states: guided wins1against each control;500ms complete54/111=48.65%. Close current prototype, no method revision/retest/new seeds/automatic follow-on. Report/local backup then stop; no GitHub push. Branch feat/i3-opportunity-prototype,GP0221483.
 
+Latest follow-up2026-10-14: user requested comparison of CLI candidateA (execution-prefix
+selection) and web candidateB (dual-horizon coordination), based on the Downloads review.
+Completed read-only source/primary-literature review in
+`method_reviews/A_B_METHOD_REVIEW_2026-10-14.md`. Engineering preference A-lite; neither
+proposal AS WRITTEN is approved as a differentiated paper core. B adds undefined global
+value/alpha logic; substantial prior art includes RH-NBVP, dynamic motion-primitive IPP,
+Active3DPlanning,FUEL,DSVP,FALCON. Local replans often retain global goals; B-spline
+getPose yaw is tangent-derived but execution commands use odometry yaw between explicit
+rotations. Candidate trajectory preview is not an existing stateless API. No guaranteed
+novelty/performance/runtime. The earlier conversational I4-01 plan was premature and
+is NOT registered/authorized for execution. No new algorithm/tests/simulation this review.
+
 **Immediate next task: NONE for this prototype; closed after final go/no-go test.**
 Read i3/I3_03_02_REPORT.md, RESULTS.json and VALIDATION.json. Finish verified local
 backup if its receipt is missing, then STOP. After user separately initiates a research
