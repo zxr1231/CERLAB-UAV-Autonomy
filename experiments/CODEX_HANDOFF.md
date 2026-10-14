@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-14. V2 E1 batch complete: exact composition verified, LIMITED_POOL_VALUE_FAIL. Fixed-pool branch stops; next research-scope decision only. Resource-metadata gap explicitly retained. Local backup only.
+Last updated: 2026-10-14. I3 scope decision complete. Fixed geometric pool closed; one unimplemented hypothesis remains: reference-conditioned observation upper-bound candidate search. Next freeze G1 contract and test a minimal prototype only after user starts it. Local backup only.
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -666,12 +666,35 @@ and model allocated capacity were not collected: explicit resource-metadata gap,
 not full resource-recording compliance. No repeat or E2 was run to fill it. One-shot
 fixture process times are not fair deployed-speed or500ms admission evidence.
 
-**Immediate next task, only after user resumes: research-scope decision.**
-Stop this fixed per-Edge-min-time/5-stratified pool branch. No reruns, cap enlargement,
-new seeds, E2, cache or online integration. Decide whether to formulate a genuinely
-observation-conditioned generator BEFORE final-pool lock with an independent finite
-protocol, or lower/close the main claim. Exact composition remains reusable foundation,
-not primary innovation proof. All old negative results and frozen V1/V2 protocols stay.
+**Scope decision COMPLETE: read I3_SCOPE_DECISION_2026-10-14.md and I3_SCOPE_TRACE_2026-10-14.json.**
+Read-only saved records prove per-Edge min-time excluded0 candidates in this corpus.
+Old positive26/636 and38/197 have no allowed existing nonstart Graph arcs and no exact
+E1 path match; they were excluded by representation. E1 qualified-not-scored counts
+are0/0/47/121/0. We did NOT score them and cannot claim they contain useful routes.
+
+One remaining hypothesis is reference-conditioned observation UPPER-BOUND search,
+not more via-point/Edge variants. Keep same finite E1 mother sets0/1/52/126/2 and
+<=5 exact alternative evaluations. Reference R defines residual Unknown Q=N minus R;
+conservative range/extrinsic/voxel-padded corridor boxes produce optimistic new-voxel
+counts and Ubar=(|R|+K)/estimatedTime. Ubar changes visit/retention order BEFORE full
+scoring. Exact B_e union C determines actual model utility. No negative A* edge weights,
+no persistent cache/free preprocessing. Old E1 failure remains, not superseded.
+
+**Immediate next task, only after user resumes: freeze G1 contract and one minimal prototype gate.**
+Read the scope decision in full before implementation. It is a mechanism draft, NOT
+an already registered experiment or proven novelty. Freeze hashes, envelope containment
+rules/numeric safeguards, query accounting and termination BEFORE new evaluation.
+Controls: geometric stratification, identical upper-bound search using N (without R),
+and reference-conditioned search using Q. Same mother set, exact scorer, motion and
+wall caps; report real completed counts, no padding. Standard branch-and-bound is not
+the contribution. Require2 positive states and a distinct strict signal versus each
+control as a bounded development gate; failures end this single hypothesis.
+State38mother is fully scored negative, so reaching2 useful states depends on finding
+an unverified positive27 while retaining26; do not reinstate old anchor197 to pass.
+Repair missing model-capacity/whole-process RSS instrumentation BEFORE any G1 batch.
+Do not automatically run G1 now, E2, live simulation, new seeds or extra variants.
+Exact composition remains foundation; whole-paper innovation/performance is unproved.
+All frozen V1/V2/earlier negative results stay. Scope checkpoint local backup only.
 Raw: /home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/.
 Local backup: /home/zxr2/下载/CERLAB_I3_Backups/I3_E1_V2_2026-10-14/.
 No GitHub push for this checkpoint; user asked backup and stop after E1.

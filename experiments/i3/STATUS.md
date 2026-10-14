@@ -9,6 +9,7 @@
 | I3-01B minimal offline supply/budget probe | Complete, NOT admitted: reference5/5pass; 4supply deficits,1alternative timeout; negative13passed |
 | I3-01C fixed-pool observation/simplification diagnostic | Complete: predicted loss10/10, direct raw-retention leads0; NOT admitted |
 | I3-02 observation opportunities / anchors | V2 E1 functional exactness verified; LIMITED_POOL_VALUE_FAIL; no E2/true guided generator admission |
+| I3 scope decision | Complete2026-10-14; one reference-conditioned upper-bound search draft, not implemented/tested |
 | I3-03 guided candidate construction | Pending |
 | I3-04 observation-preserving simplification | Pending |
 | I3-05 online integration | Pending |
@@ -87,3 +88,12 @@ online planner and optical arithmetic unchanged. Resource-metadata gap: full pro
 peakRSS/model allocated capacity not collected; scratch22.34--32.64MiB recorded.
 See I3_02E1_REPORT_V2.md/RESULTS/VALIDATION. Stop fixed pool; next scope decision only,
 no rerun/E2/seed/cache. Local backup only; no GitHub push.
+
+Scope decision COMPLETE2026-10-14: read I3_SCOPE_DECISION_2026-10-14.md/TRACE.json.
+per-Edge insertion pruning excludes0; old positive26/38 exact paths excluded by mandatory
+real-Edge representation. Unscored qualified routes47/121 at26/27 remain unknown.
+No new routes/visibility/seed/simulation. One next hypothesis: same finite mother sets,
+reference-conditioned optimistic visibility bounds to choose<=5 expensive queries BEFORE
+pool lock; compare geometry and identical nonconditioned bounds. Not a novel B&B claim.
+Next user-started step: freeze G1 contract/numeric+resource rules, isolated prototype and
+one finite gate. Draft only, no automatic execution or E2. This turn ends after local backup.

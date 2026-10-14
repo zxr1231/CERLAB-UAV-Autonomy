@@ -1,0 +1,111 @@
+{
+  "schema": "i3-scope-trace-v1",
+  "states": [
+    {
+      "sequence": 1,
+      "enumerated_pairs": 10,
+      "motion_safe_before_per_edge_filter": 0,
+      "per_edge_filter_rejections": 0,
+      "geometry_duplicate_rejections": 0,
+      "qualified_distinct": 0,
+      "evaluated_small_pool": 0,
+      "qualified_not_evaluated": 0,
+      "known_old_positive_paths": []
+    },
+    {
+      "sequence": 14,
+      "enumerated_pairs": 934,
+      "motion_safe_before_per_edge_filter": 1,
+      "per_edge_filter_rejections": 0,
+      "geometry_duplicate_rejections": 0,
+      "qualified_distinct": 1,
+      "evaluated_small_pool": 1,
+      "qualified_not_evaluated": 0,
+      "known_old_positive_paths": []
+    },
+    {
+      "sequence": 26,
+      "enumerated_pairs": 3760,
+      "motion_safe_before_per_edge_filter": 52,
+      "per_edge_filter_rejections": 0,
+      "geometry_duplicate_rejections": 0,
+      "qualified_distinct": 52,
+      "evaluated_small_pool": 5,
+      "qualified_not_evaluated": 47,
+      "known_old_positive_paths": [
+        {
+          "old_record_id": 636,
+          "old_path": [
+            0,
+            282,
+            285,
+            301
+          ],
+          "old_relative_u": 0.06480200702466432,
+          "existing_nonstart_arcs_along_old_path": [],
+          "identical_e1_path_records": []
+        }
+      ]
+    },
+    {
+      "sequence": 27,
+      "enumerated_pairs": 11520,
+      "motion_safe_before_per_edge_filter": 128,
+      "per_edge_filter_rejections": 0,
+      "geometry_duplicate_rejections": 2,
+      "qualified_distinct": 126,
+      "evaluated_small_pool": 5,
+      "qualified_not_evaluated": 121,
+      "known_old_positive_paths": []
+    },
+    {
+      "sequence": 38,
+      "enumerated_pairs": 2650,
+      "motion_safe_before_per_edge_filter": 2,
+      "per_edge_filter_rejections": 0,
+      "geometry_duplicate_rejections": 0,
+      "qualified_distinct": 2,
+      "evaluated_small_pool": 2,
+      "qualified_not_evaluated": 0,
+      "known_old_positive_paths": [
+        {
+          "old_record_id": 197,
+          "old_path": [
+            0,
+            197,
+            161
+          ],
+          "old_relative_u": 0.005768833456793454,
+          "existing_nonstart_arcs_along_old_path": [],
+          "identical_e1_path_records": []
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/s001_pool.json": "920deec042de6dbba059dcebc7e2bc4bf6e31f5032278095ba6b33955ac19622",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000001.json": "ddc69e0ab05ca19a65d7777fc5954fab66e7b9534a33e79c4e9e98c99c5ca922",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000001.json": "f34e3bc3173ea2321d75ff99f60b3149af3a35c4e5759352b57564eaeac9b2b2",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/s014_pool.json": "fe14511e0b3c004fc334994e7a9178726f7d290e76bcdea0fe856d3df90f8c2c",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000014.json": "caf99f76ece5576803b5f39f6bb85513191f60b75f4e682cb7df121875a55d39",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000014.json": "3c0931f6ecc8843786039c633ce4e32351a614dbfe61084aa7d796b2c404bacc",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/s026_pool.json": "49e9ca03da404c70ecaf5d9bf0573a6050884887d3fd4b9f8b862185ea3cd425",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000026.json": "f09994252a9994db42524ce3ca27560bc2e91bd9fd0b59b428ea578a47484933",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000026.json": "62bbce08b6406e4f74d702502d53e22a234165002c0a4e2a1f41100df42cce1e",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/s027_pool.json": "657ab3920c6d82a093fd6601acea3f2de5b6e31c7a86f7adbb2f6e13a0db534b",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000027.json": "247f585b6d5eb51640969385830b3914db1f774c728a75f454149a135de5cd5e",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000027.json": "b7c425e4d1aacbdab5bdbf658bc6ee8d4274b7d7a7b3661c28f6219e8285ae23",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-E1-FOUNDATION-V2/s038_pool.json": "a8d1a1f6fedbe957e6fee9ec033021a20fcdcfb387ad09c304caacda085b212e",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-01B-TWO-STAGE-V1/request_000038.json": "2b1832955af553b50ba10a00f5d90b0f1609a452b6ccefb509509bd8763631c8",
+    "/home/zxr2/cerlab_benchmark_ws/results/EXP-I3-02A-SINGLE-ANCHOR-V1/state_000038.json": "96f88e396b25a61059144d1b7d0b4785c76e3d11298d5e5e73ecbd3c71e9ad6c"
+  },
+  "new_visibility_queries": 0,
+  "new_routes_generated": 0,
+  "new_simulation": false,
+  "old_e1_decision_unchanged": "LIMITED_POOL_VALUE_FAIL",
+  "limits": [
+    "unscored candidate values cannot be inferred from geometry",
+    "old non-Edge route not representable verbatim does not prove all Edge detours lack value",
+    "no causal exploration-performance conclusion"
+  ]
+}
