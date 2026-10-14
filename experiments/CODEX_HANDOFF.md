@@ -1,6 +1,6 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-14. User confirmed grilling Q1--Q8. G1-D0 lightweight diagnosis contract registered; no implementation/run. Real Edge is no longer a research prerequisite. Next user-triggered task is D0 only, not full G1/P1/E2. Local backup only.
+Last updated: 2026-10-14. I3-03-01 (old G1-D0) implementation and 6 C++/5 Python tests complete; one fixed diagnostic batch is authorized and next within this task. No formal batch yet at this source checkpoint. Finish report/local backup and stop; no P1/E2 or GitHub push.
 
 The historical executable prompt is `experiments/i3/I3_02A_START_PROMPT.md`; it has now been completed. Do not rerun it.
 
@@ -71,7 +71,7 @@ frozen I1 commit: 10e9c3589e2f5895d53e354547a03bf8f6f238a2
 
 global_planner:
   branch feat/i3-camera-evaluator
-  commit 32801ef8b4404b7b283ddadb38276e194c8093cc
+  commit 6ef0fa9 (isolated I3-03-01 bound diagnostic; online library unchanged)
 autonomous_flight:
   branch feat/i2-route-logging
   commit 33422e2d5ff2c8e405013df5abb72f388351eb00
@@ -768,6 +768,12 @@ observation-opportunity-guided route construction method under fixed motion and
 computation budgets, with observation preservation through simplification/execution.
 
 ## Working protocol for the next Codex
+
+User preference updated2026-10-14: run multiple future tests in parallel, with separate
+ROS Masters/ports/output directories when simulations are involved. If shared hardware
+would interfere with frozen timing/resource comparisons, explain it first and use resource
+isolation or a separately registered measurement arrangement; do not silently alter a
+frozen protocol. The current D0 batch retains its pre-registered sequential timing.
 
 1. Start with the outcome and evidence; distinguish implemented, tested, experimentally
    supported and still unverified.
