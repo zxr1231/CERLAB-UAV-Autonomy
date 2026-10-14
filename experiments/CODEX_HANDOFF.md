@@ -1,6 +1,29 @@
 # CERLAB UAV autonomy — Codex handoff
 
-Last updated: 2026-10-14. I3-03-02 FINAL BATCH COMPLETE: METHOD_NOT_SUPPORTED. Core code/22C+++4Python tests/304parallel jobs complete. Expanded32states: guided wins1against each control;500ms complete54/111=48.65%. Close current prototype, no method revision/retest/new seeds/automatic follow-on. Report/local backup then stop; no GitHub push. Branch feat/i3-opportunity-prototype,GP0221483.
+Last updated: 2026-10-14. I3-03-02 FINAL BATCH COMPLETE: METHOD_NOT_SUPPORTED. Core code/22C+++4Python tests/304parallel jobs complete. Expanded32states: guided wins1against each control;500ms complete54/111=48.65%. Current prototype closed. User explicitly requested COMPLETE I3 GitHub backup, now published/verified below. Branch feat/i3-opportunity-prototype,GP0221483. No new algorithm or experiment.
+
+## Latest I3 GitHub backup — COMPLETE
+
+User explicitly authorized this push. Source+data backup is published at:
+https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/tag/i3-complete-backup-2026-10-14
+Latest code/docs branch:
+https://github.com/zxr1231/CERLAB-UAV-Autonomy/tree/feat/i3-opportunity-prototype
+Algorithm submodule branch:
+https://github.com/zxr1231/global_planner/tree/feat/i3-opportunity-prototype
+
+Both parent/global_planner I3 camera and prototype branches are pushed; tag snapshot
+parentcc47ef4,GP0221483. Current map_manager submodule URL is corrected to user's fork.
+Release includes all12I3 result directories, all previous local backups, complete
+seed4dependency source run with111snapshots/logs, and all10repository Git bundles.
+Four archives plus3metadata assets: all7server sizes/digests verified;4470internal
+files re-read and SHA verified. Final REMOTE_SYNC_RECEIPT.json is a release attachment;
+project receipt: i3/I3_GITHUB_SYNC_RECEIPT.json. Source snapshot remains tag-frozen;
+new branch commits add upload receipts only. Previous local-only receipt statements
+describe their earlier checkpoints, not the latest GitHub state.
+
+Local upload/checksum/remote evidence:
+/home/zxr2/下载/CERLAB_I3_GitHub_Uploads/2026-10-14/.
+No test rerun/new method started. I3 failure and A/B review decisions remain unchanged.
 
 Latest follow-up2026-10-14: user requested comparison of CLI candidateA (execution-prefix
 selection) and web candidateB (dual-horizon coordination), based on the Downloads review.

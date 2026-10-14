@@ -1,0 +1,86 @@
+{
+  "schema": "cerlab-i3-github-sync-v1",
+  "github_backup_complete": true,
+  "github_repository": "https://github.com/zxr1231/CERLAB-UAV-Autonomy",
+  "release_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/tag/i3-complete-backup-2026-10-14",
+  "release_id": 412624771,
+  "release_tag": "i3-complete-backup-2026-10-14",
+  "published_at": "2026-10-14T11:20:58Z",
+  "snapshot_parent_commit": "cc47ef4407cc2a40d191043f0aff50c9b0bfcadc",
+  "source_branch_heads_at_data_publish": {
+    "refs/heads/feat/i3-camera-evaluator": "ccc3e19f0b005d1413ea0945bdafbbb1fa2b5b7b",
+    "refs/heads/feat/i3-opportunity-prototype": "cc47ef4407cc2a40d191043f0aff50c9b0bfcadc",
+    "refs/tags/i3-complete-backup-2026-10-14": "bb6003c77fdaa6253d8f6bbddfac02573edcd5ad",
+    "refs/tags/i3-complete-backup-2026-10-14^{}": "cc47ef4407cc2a40d191043f0aff50c9b0bfcadc"
+  },
+  "global_planner_heads": {
+    "refs/heads/feat/i3-camera-evaluator": "6ef0fa9f19b55e93d01721da6b910d42222541cb",
+    "refs/heads/feat/i3-opportunity-prototype": "0221483818fdbadf3dc64b3bf84ec3e286959bca"
+  },
+  "assets": [
+    {
+      "name": "I3_frozen_dependencies.tar.gz",
+      "bytes": 16269665,
+      "sha256": "67aade805fa82bf1d39e96634d662b5ddeac7ec4512f340546f953dd31e1094f",
+      "server_digest": "sha256:67aade805fa82bf1d39e96634d662b5ddeac7ec4512f340546f953dd31e1094f",
+      "download_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/i3-complete-backup-2026-10-14/I3_frozen_dependencies.tar.gz",
+      "verified": true
+    },
+    {
+      "name": "I3_git_bundles.tar.gz",
+      "bytes": 102461381,
+      "sha256": "a65a46b7430787553610bc2c2d6dd449447833fcc0b115682d23954f8e1f13da",
+      "server_digest": "sha256:a65a46b7430787553610bc2c2d6dd449447833fcc0b115682d23954f8e1f13da",
+      "download_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/i3-complete-backup-2026-10-14/I3_git_bundles.tar.gz",
+      "verified": true
+    },
+    {
+      "name": "I3_local_backups.tar.gz",
+      "bytes": 101791722,
+      "sha256": "b0e98cb54df028fb7bcd356d6c5ee9369eedec969cc53ed61ecf01185435a7f8",
+      "server_digest": "sha256:b0e98cb54df028fb7bcd356d6c5ee9369eedec969cc53ed61ecf01185435a7f8",
+      "download_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/i3-complete-backup-2026-10-14/I3_local_backups.tar.gz",
+      "verified": true
+    },
+    {
+      "name": "I3_raw_results.tar.gz",
+      "bytes": 55316635,
+      "sha256": "f3ddce1101ee4132d19dee0e63591ceb90916e1c4534a0807546b8959f43b039",
+      "server_digest": "sha256:f3ddce1101ee4132d19dee0e63591ceb90916e1c4534a0807546b8959f43b039",
+      "download_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/i3-complete-backup-2026-10-14/I3_raw_results.tar.gz",
+      "verified": true
+    },
+    {
+      "name": "RESTORE.md",
+      "bytes": 3148,
+      "sha256": "91fe598e60b3c5f542723d37027b961f974ce7afe772058ac409c387b91adcec",
+      "server_digest": "sha256:91fe598e60b3c5f542723d37027b961f974ce7afe772058ac409c387b91adcec",
+      "download_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/i3-complete-backup-2026-10-14/RESTORE.md",
+      "verified": true
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 526,
+      "sha256": "49b5f9e69758f08fbc0cef5079f7bbe64b152e1254bd7608bd36e3f06a38413f",
+      "server_digest": "sha256:49b5f9e69758f08fbc0cef5079f7bbe64b152e1254bd7608bd36e3f06a38413f",
+      "download_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/i3-complete-backup-2026-10-14/SHA256SUMS",
+      "verified": true
+    },
+    {
+      "name": "UPLOAD_MANIFEST.json",
+      "bytes": 7517,
+      "sha256": "1cbadb0054c15dcb3a30f66968ac4cacd3436728a21c51b45ff5d554ce7e959b",
+      "server_digest": "sha256:1cbadb0054c15dcb3a30f66968ac4cacd3436728a21c51b45ff5d554ce7e959b",
+      "download_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/i3-complete-backup-2026-10-14/UPLOAD_MANIFEST.json",
+      "verified": true
+    }
+  ],
+  "internal_archived_files_verified": 4470,
+  "archived_repository_count": 10,
+  "all12_I3_result_directories_included": true,
+  "all_previous_local_I3_backups_included": true,
+  "full_seed4_dependency_run_included": true,
+  "negative_results_retained": true,
+  "new_experiments": 0,
+  "note": "Release tag freezes data/code snapshot; newer branch commits may add upload receipts only."
+}

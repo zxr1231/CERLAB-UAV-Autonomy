@@ -4,6 +4,11 @@
 目标主仓库：https://github.com/zxr1231/CERLAB-UAV-Autonomy
 目标Release：https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/tag/i3-complete-backup-2026-10-14
 
+**完成状态：GitHub备份已发布并核验。** 两个仓库各两条I3分支与备份tag均匹配；
+四个归档和三份说明附件共7个文件的服务端大小/SHA256与本地一致，归档内4470文件
+逐个核验，覆盖主仓库和9个子模块Git历史。上传核验见`I3_GITHUB_SYNC_RECEIPT.json`；
+最终收据另作为Release附件。随后的branch提交仅补充备份完成记录，tag保持冻结。
+
 本备份是研究检查点，保留全部负结果。I3-03-02仍为METHOD_NOT_SUPPORTED，当前原型关闭。
 不是算法性能发布，也没有新增仿真/研究数据。GitHub上传完成状态以远端Release、branch/tag
 和上传收据为准，不能以本文件的存在代替远端核验。
@@ -19,7 +24,7 @@
 主仓库的子模块条目仅保存commit指针，具体源码必须通过子模块或下面Git bundles恢复。
 历史旧commit的 `.gitmodules` 可能仍指向原作者map_manager；离线bundle不受此链接影响。
 
-## Release 附件计划
+## Release 附件（已上传核验）
 
 | 文件 | 覆盖内容 |
 |---|---|
