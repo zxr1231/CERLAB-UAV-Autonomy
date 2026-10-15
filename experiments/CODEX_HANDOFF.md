@@ -14,7 +14,8 @@
   最新权威决定：[选题定稿](method_reviews/TOPIC_FINAL_DECISION_2026-10-15.md)。
 - 用户要求暂缓上传剩余原始数据；阶段文件与文档整理已完成，清单和恢复归档均已保留。
 - 后续开发需要用户明确的新任务；本次完成后没有自动待执行阶段。
-  本地备份：`/home/zxr2/下载/CERLAB_I4_Backups/I4_01_2026-10-15/`，未推送GitHub。
+  本地备份：`/home/zxr2/下载/CERLAB_I4_Backups/I4_01_2026-10-15/`；后按用户新授权
+  已上传两个I4分支及10个校验一致的草稿Release附件，详见[I4备份](i4/I4_GITHUB_BACKUP.md)。
 - 最新结果：[I4-01最终报告](i4/I4_01_REPORT.md)，状态 **PROTOTYPE_COST_GATE_FAIL**。
   新增增量评价器、编译与88项C++/4项Python测试完成。38旧状态/350路线/三计算重复，
   3150条路径对照结果一致，但事件中位耗时新方法2175.20ms、完整重算1913.14ms、
@@ -37,7 +38,7 @@ map_manager：f6d2e925b47916a5cb3b72e011af6f3a17dbdd26
 uav_simulator：cc8c8a6dce0214d9ba99a3189272f05dc8807d24
 ```
 
-父仓库HEAD请实际运行git log查询；上传后新增的历史备份审计/文档清理提交仅在本地。
+父仓库HEAD请实际运行git log查询；此前历史备份审计/文档清理提交已随I4分支上传。
 I3代码和数据的远端快照不受这次文档整理影响。开始任务先读适用AGENTS.md，查Git/
 submodule/进程，保留用户修改、冻结输入与失败。不要升级系统/ROS、重clone、覆盖个人
 文件或删除已有目录；依赖安装前说明用途。不要启动重复ROS/Gazebo实例或宽泛pkill。
@@ -131,7 +132,8 @@ I3快照来自floorplan1_static、environment/planner seed4的一条历史轨迹
 
 ## 6. 本地数据与GitHub备份边界
 
-原始数据仍在本地，约6.55GB目录文件逻辑大小，含副本；尚未全部上传约5.21GB。
+此前旧阶段原始数据审计约6.55GB目录文件逻辑大小（含副本），尚未全部上传约5.21GB；
+该历史统计不包含后来I4新增数据。I4本批已完整上传草稿备份，未补传其余旧数据。
 
 ```text
 /home/zxr2/cerlab_benchmark_ws/results/EXP-BENCH*
@@ -148,6 +150,7 @@ I3全部12结果目录、历次I3本地备份、seed4完整源运行111快照/�
 排除，git push不等于全数据备份。[历史备份审计](maintenance/HISTORICAL_GITHUB_BACKUP_AUDIT_2026-10-14.md)。
 
 - [GitHub最新已上传I3分支](https://github.com/zxr1231/CERLAB-UAV-Autonomy/tree/feat/i3-opportunity-prototype)
+- [GitHub I4分支及草稿数据备份说明](i4/I4_GITHUB_BACKUP.md)：两仓库分支、10附件大小/SHA均已核验。
 - [I3完整Release](https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/tag/i3-complete-backup-2026-10-14)
 - [上传收据](i3/I3_GITHUB_SYNC_RECEIPT.json)：代码tag快照cc47ef4，后续远端收据提交78c7e9f。
 
@@ -168,7 +171,7 @@ I3全部12结果目录、历次I3本地备份、seed4完整源运行111快照/�
 临时副本移除，文件占用净减少约362MiB。原始5436文件、6个正式备份树和9个子模块
 核验保持不变；源码/配置未改，正式协议与失败记录保留。整理后文档归档为同目录
 `current_documents_after_cleanup.tar.gz`，内部manifest可逐文件核验。
-文档整理与交接收尾只做本地提交，没有推送GitHub或补传历史数据。
+文档整理当时只做本地提交，后已随I4分支上传；未补传旧阶段剩余原始数据。
 
 ## 8. 后续工作底线与沟通
 
@@ -181,8 +184,9 @@ I3全部12结果目录、历次I3本地备份、seed4完整源运行111快照/�
 
 多个独立测试按用户偏好并行，隔离ROS Master/端口/输出与硬件资源；共享资源可能污染
 固定计时口径时先说明并采用已登记的安排。中途提问简短回答后继续任务，不因此结束。
-普通备份为本地校验备份；大任务完成或用户明确要求时才推GitHub。此次清理本地提交，
-不补传历史原始数据，不自动推送。任务后更新本交接，保留未完成步骤和真实限制。
+普通备份为本地校验备份；大任务完成或用户明确要求时才推GitHub。本次用户明确授权
+I4上传，已完成。原始数据Release因公开发布自动审批被拒而保持草稿，不自行公开发布。
+不补传其余历史原始数据。任务后更新本交接，保留真实限制。
 
 新对话提示：完整读本文件、当前文档索引，核查Git/进程后按用户新任务执行；不要重跑
 已经关闭的I3、R1/R2诊断。A/B不立项；I4-01已完成并停止，等待用户明确新任务。

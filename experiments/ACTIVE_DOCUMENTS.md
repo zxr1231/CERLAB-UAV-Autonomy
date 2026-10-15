@@ -7,6 +7,7 @@
 
 - [CODEX_HANDOFF.md](CODEX_HANDOFF.md)：当前状态、基线、Git/数据与后续工作底线。
 - [I4-01最新决定](i4/I4_01_REPORT.md)：核心原型已完成，正确性通过、成本门槛失败，停止且不自动进入I4-02。
+- [I4 GitHub备份](i4/I4_GITHUB_BACKUP.md)：代码分支与完整数据草稿附件已上传并核验；登录有权限账号查看。
 - [I4历史选题建议](method_reviews/INCREMENTAL_GAIN_TOPIC_2026-10-15.md)：初始设计依据，执行状态以最终报告为准。
 - [选题最终决定](method_reviews/TOPIC_FINAL_DECISION_2026-10-15.md)：A/B不批准立项，本轮选择结束，无自动补测/再筛选任务。
 - [A/B方法复核](method_reviews/A_B_METHOD_REVIEW_2026-10-14.md)：当前两候选工程/论文取舍。

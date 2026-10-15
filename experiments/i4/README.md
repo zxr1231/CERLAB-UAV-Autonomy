@@ -1,6 +1,7 @@
 # I4-01 已完成并停止
 
 最新决定：[I4_01_REPORT.md](I4_01_REPORT.md)。正确性通过，成本门槛失败，不自动进入I4-02。
+已完成[GitHub备份](I4_GITHUB_BACKUP.md)，包括两个代码分支及校验一致的完整数据草稿附件。
 
 - [冻结协议](I4_01_PROTOCOL.md)、[输入清单](I4_01_INPUTS.json)
 - [汇总数据](I4_01_RESULTS.json)、[验证](I4_01_VALIDATION.json)

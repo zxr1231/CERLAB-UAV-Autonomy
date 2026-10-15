@@ -1,0 +1,87 @@
+{
+  "task": "I4-01",
+  "verified_at": "2026-10-15T11:10:27.154732+08:00",
+  "repo": "zxr1231/CERLAB-UAV-Autonomy",
+  "release_id": 413376318,
+  "release_url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/tag/untagged-08b22dddb25d3eed4e69",
+  "tag": "i4-01-backup-2026-10-15",
+  "draft": true,
+  "prerelease": true,
+  "parent_code_commit": "78816187d6145bde6474cf3ef30cc39603ec630e",
+  "global_planner_commit": "5dfadc01cbd2d17e75bffca03aa13eaa617081e7",
+  "all_assets_size_and_sha256_match": true,
+  "asset_count": 10,
+  "asset_bytes": 182653717,
+  "assets": [
+    {
+      "name": "FILE_MANIFEST.json",
+      "size": 122345,
+      "digest": "sha256:af02278cb7c2d0f17cfe9ae36313472d2785374fa199a41180809466345ab75e",
+      "asset_id": 642475988,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/FILE_MANIFEST.json"
+    },
+    {
+      "name": "RESTORE.md",
+      "size": 732,
+      "digest": "sha256:661003b7428bbbca46c1b2f835dc4843d74d9570ee9cb46abf2b070bad3bebd4",
+      "asset_id": 642476016,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/RESTORE.md"
+    },
+    {
+      "name": "SHA256SUMS",
+      "size": 756,
+      "digest": "sha256:5af7c7005dcfa1af6c4929a439c637011cf429f5ce1df6e69c5994c1bcfa1c88",
+      "asset_id": 642476019,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/SHA256SUMS"
+    },
+    {
+      "name": "artifacts.tar.gz",
+      "size": 179948688,
+      "digest": "sha256:fa9a02cbbb6a50e1956d7d6ec846d009506c73c030be4e785f4da5db818e97f8",
+      "asset_id": 642477650,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/artifacts.tar.gz"
+    },
+    {
+      "name": "backup_receipt.json",
+      "size": 547,
+      "digest": "sha256:1070b0752de98184db3b4b7b96b2a64610a4b0c82d1fdfdb46367b2d24f564a3",
+      "asset_id": 642476018,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/backup_receipt.json"
+    },
+    {
+      "name": "global_planner.bundle",
+      "size": 1538946,
+      "digest": "sha256:4337e2f16ef4888b447211256534cd5d967f74a64840557d0c28d4eb4a3c89d1",
+      "asset_id": 642476021,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/global_planner.bundle"
+    },
+    {
+      "name": "global_planner_verify.log",
+      "size": 211,
+      "digest": "sha256:bcb04f2ca22cdb4f63e126242250723f2016389309f9554e67c7230deb1d7594",
+      "asset_id": 642476223,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/global_planner_verify.log"
+    },
+    {
+      "name": "parent.bundle",
+      "size": 1040581,
+      "digest": "sha256:d47c1016bc3752e942af9952ab2ec303c1fbb5923dfffb10db82661fc09fd37b",
+      "asset_id": 642476225,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/parent.bundle"
+    },
+    {
+      "name": "parent_verify.log",
+      "size": 203,
+      "digest": "sha256:83c5063202a58ff2f37916d5a66e0c0709e32ec06894f077769d0fa7d1350a44",
+      "asset_id": 642476224,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/parent_verify.log"
+    },
+    {
+      "name": "submodules.txt",
+      "size": 708,
+      "digest": "sha256:361e22daf0da5f71b7f7f03550b83c9f080fba204d8cc92fb67adb772b6a31f9",
+      "asset_id": 642476294,
+      "url": "https://github.com/zxr1231/CERLAB-UAV-Autonomy/releases/download/untagged-08b22dddb25d3eed4e69/submodules.txt"
+    }
+  ]
+}
