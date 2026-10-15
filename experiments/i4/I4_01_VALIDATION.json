@@ -1,0 +1,89 @@
+{
+  "protected_files_unchanged": 115,
+  "old_frozen_full_oracle_route_parity": 51,
+  "cpp_tests": [
+    {
+      "file": "i4_01_bound_diagnostic_test.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_camera_tests_envfix.xml",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_corridor_fixture_test.xml",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_incremental_tests_envfix.xml",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_opportunity_route_test.xml",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_path_gain_contract_test.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_path_gain_evaluator_test.xml",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_route_candidates_test.xml",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_route_search_test.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_route_snapshot_test.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_single_anchor_fixture_test.xml",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "file": "i4_01_two_stage_fixture_test.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "retained_prior_failures": [
+    {
+      "file": "i4_01_route_snapshot_pre_sync_failure.xml",
+      "tests": 7,
+      "failures": 1,
+      "errors": 0
+    }
+  ],
+  "tests_total": 88,
+  "all_current_cpp_tests_passed": true,
+  "old_reference_parity_compares_counts_marginals_not_unavailable_old_addresses": true
+}

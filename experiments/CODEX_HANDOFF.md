@@ -1,6 +1,6 @@
 # CERLAB 项目交接：当前状态与工作入口
 
-更新：2026-10-15，A/B否决后用户重新授权选题，已推荐增量收益计算主线。本文件是新Codex对话的主入口。阶段研究已经结束的部分只作复现依据，
+更新：2026-10-15，I4-01增量收益原型已实现并完成固定回放，成本门槛失败后停止。本文件是新Codex对话的主入口。阶段研究已经结束的部分只作复现依据，
 历史文件里的“下一步”不能替代本文件和用户最新指令。清理前完整交接已压缩归档。
 
 ## 1. 当前结论与授权
@@ -9,14 +9,17 @@
 - Benchmark v2、R1、R2、I1、I2已完成；I3最终原型已实现、测试并关闭。
 - **I3-03-02：METHOD_NOT_SUPPORTED。** 不再修改该方法、追加seed或复测追求正结果。
 - A（执行前缀选路）/B（双时域协同）最终决定：**DECISION_COMPLETE_NO_APPROVED_TOPIC**。
-  两者不批准为论文主方法，I4不启动；A-lite仅工程上可行。不是待补测或待再审状态。
+  两者不批准为论文主方法，原执行前缀/双时域I4提议不启动；后续增量计算I4是独立授权。
+  A-lite仅工程上可行，不是待补测或待再审状态。
   最新权威决定：[选题定稿](method_reviews/TOPIC_FINAL_DECISION_2026-10-15.md)。
 - 用户要求暂缓上传剩余原始数据；阶段文件与文档整理已完成，清单和恢复归档均已保留。
-- 后续算法开发需要用户明确的新任务；当前没有正在运行的实验或自动待执行阶段。
-- 最新推荐：[遮挡依赖感知路径收益增量计算](method_reviews/INCREMENTAL_GAIN_TOPIC_2026-10-15.md)。
-  状态RECOMMENDED_FOR_PROTOTYPE，尚未实现/验证；用户确认后I4-01直接写核心原型、
-  做正确性和固定回放，不新增前置诊断链。目标是保持既定收益的计算一致性并降低成本，
-  不复活I3路线生成或声称Unique优于Legacy。A/B原否决仍有效。
+- 后续开发需要用户明确的新任务；本次完成后没有自动待执行阶段。
+  本地备份：`/home/zxr2/下载/CERLAB_I4_Backups/I4_01_2026-10-15/`，未推送GitHub。
+- 最新结果：[I4-01最终报告](i4/I4_01_REPORT.md)，状态 **PROTOTYPE_COST_GATE_FAIL**。
+  新增增量评价器、编译与88项C++/4项Python测试完成。38旧状态/350路线/三计算重复，
+  3150条路径对照结果一致，但事件中位耗时新方法2175.20ms、完整重算1913.14ms、
+  区域缓存737.43ms。停止该原型，不进I4-02，不追加seed/调参/模块挽救结果。
+  [选题建议](method_reviews/INCREMENTAL_GAIN_TOPIC_2026-10-15.md)保留为历史设计，不能替代最终报告。
 
 当前必读文件见[ACTIVE_DOCUMENTS.md](ACTIVE_DOCUMENTS.md)，目录入口见[README.md](README.md)。
 
@@ -27,8 +30,8 @@ Ubuntu 20.04 / ROS Noetic
 研究工作空间：/home/zxr2/cerlab_benchmark_ws
 项目：/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy
 原可运行工作空间：/home/zxr2/cerlab_ws（保留）
-当前研究分支：feat/i3-opportunity-prototype
-global_planner：0221483818fdbadf3dc64b3bf84ec3e286959bca
+当前研究分支：feat/i4-incremental-gain（父仓库及global_planner）
+global_planner：5dfadc0（回放冻结f991aa1，后续仅回归测试同步修复）
 autonomous_flight：33422e2d5ff2c8e405013df5abb72f388351eb00
 map_manager：f6d2e925b47916a5cb3b72e011af6f3a17dbdd26
 uav_simulator：cc8c8a6dce0214d9ba99a3189272f05dc8807d24
@@ -85,6 +88,7 @@ T95采用用户已登记的seed3/9/10复测选择政策，原结果保留；不�
 | I2 | generic多路线没有稳定优势；早期pilot含反馈缺陷，失败及修复边界保留 | [最终决定](i2/I2_FINAL_DECISION.md)、[执行诊断](i2/I2_00_DIAGNOSTIC_REPORT.md) |
 | I3 | 正确评价机制支持，主要生成原型不支持，关闭 | [最终原型报告](i3/I3_03_02_REPORT.md)、[状态](i3/STATUS.md) |
 | A/B候选复核 | A-lite较易，A/B当前均未获论文立项认可 | [方法复核](method_reviews/A_B_METHOD_REVIEW_2026-10-14.md) |
+| I4-01 | 集合/收益一致，成本比完整重算慢13.70%、比区域缓存慢194.97%，原型停止 | [最终报告](i4/I4_01_REPORT.md)、I4_01_RESULTS.json、I4_01_VALIDATION.json |
 
 R1：25状态/152路线，候选重复率52.19%，选中67.15%；Top1变化16%。
 R2：19可比正式执行区间，shadow/旧proxy Jaccard0.531/0.087、count Spearman0.812/0.077，
@@ -118,6 +122,7 @@ I3快照来自floorplan1_static、environment/planner seed4的一条历史轨迹
 - 同目录`pathGainEvaluator.*`、`cameraGainEvaluator.*`：不可变地图上的路径收益/相机集合。
 - 同目录`routeSearch.h`、`routeCandidates.h`、`routeSnapshot.h`：图搜索、控制组和安全快照。
 - 同目录`opportunityRoutes.h`：已关闭I3原型，保留复现，不默认启用。
+- 同目录`incrementalGainEvaluator.h/.cpp`：I4-01离线原型及四控制，未接入在线；成本门槛失败。
 - `autonomous_flight/include/autonomous_flight/simulation/dynamicExploration.cpp`：执行/重规划/
   返航/日志；`trajectory_planner/.../bsplineTraj.*`：有状态局部优化接口，不是候选只读预演。
 - `exploration_benchmark/`、`experiments/analysis/`：冻结评测、日志关联、汇总与复核工具。
@@ -167,8 +172,8 @@ I3全部12结果目录、历次I3本地备份、seed4完整源运行111快照/�
 
 ## 8. 后续工作底线与沟通
 
-前次A/B定稿未选出合格方案；用户随后明确重新授权选题，当前推荐上述增量计算方法。
-后续不再同时筛选其它方向；用户确认开发后直接实现核心机制及固定对照。
+前次A/B未立项，随后授权的I4-01已直接实现核心机制及固定对照，成本门槛失败后关闭。
+不得把历史推荐状态当继续实施指令，不进I4-02，不自动追加优化、回放或新方向筛选。
 不要将“先实现再说”用作忽略已发现的方法差异不足，也不要求实现前保证正效果。
 当前I3已完成最终去留测试，禁止方法修订复测。
 普通SCI/EI允许渐进改进，但已有思想改名、改权重、union/cache/via point不自动成为贡献。
@@ -180,4 +185,4 @@ I3全部12结果目录、历次I3本地备份、seed4完整源运行111快照/�
 不补传历史原始数据，不自动推送。任务后更新本交接，保留未完成步骤和真实限制。
 
 新对话提示：完整读本文件、当前文档索引，核查Git/进程后按用户新任务执行；不要重跑
-已经关闭的I3、R1/R2诊断。A/B不立项；新I4仅指最新推荐的增量计算主线，用户确认后开始。
+已经关闭的I3、R1/R2诊断。A/B不立项；I4-01已完成并停止，等待用户明确新任务。
