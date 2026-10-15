@@ -1,0 +1,276 @@
+{
+  "date": "2026-10-14",
+  "obsolete_documents_archived": [
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/PAPER_CONTRIBUTIONS_DRAFT.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/PAPER_CONTRIBUTIONS_DRAFT.md",
+      "bytes": 2344,
+      "sha256": "1bf87fd6bbe919bd53eccbbb1ca23216ee5b68ea04ab78002517244ad53dd5d3"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/FORMAL_BASELINE_BATCH1_2026-09-16.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/FORMAL_BASELINE_BATCH1_2026-09-16.md",
+      "bytes": 2994,
+      "sha256": "b21e9f688105ab53480fedd5c0c59e250522c42247c99d3e749ae3e9ec5ae56e"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/RUNTIME_VALIDATION_2026-09-15.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/RUNTIME_VALIDATION_2026-09-15.md",
+      "bytes": 2545,
+      "sha256": "20d9e48a5430c4750fd8cdab158f2885c1d33fcb0605ea13e84fbf11ced8e61f"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/FULL_RUN_VALIDATION_2026-09-16.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/benchmark_v2/FULL_RUN_VALIDATION_2026-09-16.md",
+      "bytes": 2777,
+      "sha256": "426b17dbbe87b6f5fb1e1519f451ef08a3bce769a48182ebe7bd579cb6624870"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/r1/R1_06_PROGRESS.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/r1/R1_06_PROGRESS.md",
+      "bytes": 1846,
+      "sha256": "6c4f2c7eeb2467c74cba98f8d9c1481a4c1b783bfad689e7f9ecc8a90110d550"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i1/I1_04_PREP.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i1/I1_04_PREP.md",
+      "bytes": 1329,
+      "sha256": "0771836ca2aa46e417204ab3178cbc165dcc3e46ca85dedc5517123bf3380255"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i1/I1_06_PROGRESS_2026-09-23.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i1/I1_06_PROGRESS_2026-09-23.md",
+      "bytes": 2717,
+      "sha256": "cbcbbf2bac0c6e126250afe6013c15c9f51c086b154d1aacd53773f65ea2cd6e"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i1/I1_06_PROGRESS_2026-10-08.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i1/I1_06_PROGRESS_2026-10-08.md",
+      "bytes": 3292,
+      "sha256": "3950d91345a85d1560de61753c442f0c93704858307dfd05b07e2ae00ca8e7a9"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i1/I1_06_SEED3_LEGACY_2026-10-08.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i1/I1_06_SEED3_LEGACY_2026-10-08.md",
+      "bytes": 1198,
+      "sha256": "857ef9ed5977ca698525aec00730c2f87fd72e0269a974aef3edbe84eb81defd"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i2/I2_05_SEED2_CHECKPOINT.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i2/I2_05_SEED2_CHECKPOINT.md",
+      "bytes": 1145,
+      "sha256": "531817727e62592f8c74c0e11cf22cd554be52d658e6b9513e6352acef77dbbb"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02A_START_PROMPT.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02A_START_PROMPT.md",
+      "bytes": 4771,
+      "sha256": "b13d7d48c6b97bd93bbd6e3d41a5315231dc69d33f17dc2d14ade10f97f09a91"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_G1_D0_START_PROMPT.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_G1_D0_START_PROMPT.md",
+      "bytes": 1090,
+      "sha256": "0238f7d965df8f7a46656a72226814acef3eada549b62191bc2b2ebaeffc1272"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_BUDGET_POLICY_DRAFT.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_BUDGET_POLICY_DRAFT.md",
+      "bytes": 2106,
+      "sha256": "87d8ea77055858dfaf714e548f7f21af519efbca1fe8840fffa91d358930db69"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02A_CLARIFICATIONS.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02A_CLARIFICATIONS.md",
+      "bytes": 1645,
+      "sha256": "561ba1dc0ac0b7d9301a9e5baa02b824ef71a9c8e257ad6050cb5b71d37185f3"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02E_DESIGN_REVIEW.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02E_DESIGN_REVIEW.md",
+      "bytes": 2039,
+      "sha256": "990d1a8e5bec335d0c082aefed954e745b5fdf2f6e498e1bad45c0dd0898d5d2"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02E_REVISION_V2.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02E_REVISION_V2.md",
+      "bytes": 3517,
+      "sha256": "6994c53b6cdedf6d06411aa33f3e17274f775a594bbad7ff997d9d766f01d576"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02E_REVISION_VALIDATION.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02E_REVISION_VALIDATION.md",
+      "bytes": 1157,
+      "sha256": "95225babdf6a8025568eab89d63cb227b340d7c7a3702692eecc696a765d52c4"
+    },
+    {
+      "original": "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_SCOPE_DECISION_2026-10-14.md",
+      "archive_member": "cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_SCOPE_DECISION_2026-10-14.md",
+      "bytes": 11079,
+      "sha256": "01695bc74d8cc7b0db77c6aad83a6fefae09b6c5ef2d559b9386a34c487d7c13"
+    },
+    {
+      "original": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_02E_Astra_Audit_Prompt.md",
+      "archive_member": "\u4e0b\u8f7d/CERLAB_I3_02E_Astra_Audit_Prompt.md",
+      "bytes": 10167,
+      "sha256": "3c837bf0c8c14229d5156ff6fc01f65b9312c877f684bcdd9230a4e4d956e4b6"
+    },
+    {
+      "original": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_02E_Astra_Audit_Report.md",
+      "archive_member": "\u4e0b\u8f7d/CERLAB_I3_02E_Astra_Audit_Report.md",
+      "bytes": 32330,
+      "sha256": "1390d3a5ab77e1c6198f1601209c76956edd2640596dce9afff3ce7c06f7e067"
+    },
+    {
+      "original": "/home/zxr2/\u4e0b\u8f7d/UAV_Exploration_Astra_Method_Review.md",
+      "archive_member": "\u4e0b\u8f7d/UAV_Exploration_Astra_Method_Review.md",
+      "bytes": 17679,
+      "sha256": "85b74a1a17a57813ace8756a7c35ad667cc7d0c3cadc8d2b0b77b6ef9830a459"
+    },
+    {
+      "original": "/home/zxr2/\u4e0b\u8f7d/CERLAB_Research_Documents/current/UAV_Autonomous_Exploration_Research_Roadmap_Revised.md",
+      "archive_member": "\u4e0b\u8f7d/CERLAB_Research_Documents/current/UAV_Autonomous_Exploration_Research_Roadmap_Revised.md",
+      "bytes": 32968,
+      "sha256": "5f3fe79bdae12f4109af7769011d5f094b006339ccb357088f83e3eba691b676"
+    }
+  ],
+  "current_document_reorganized": [
+    {
+      "from": "/home/zxr2/\u4e0b\u8f7d/UAV_Exploration_A_B_Review_Result_2026-10-14.md",
+      "to": "/home/zxr2/\u4e0b\u8f7d/CERLAB_Research_Documents/current/UAV_Exploration_A_B_Review_Result_2026-10-14.md"
+    }
+  ],
+  "verified_upload_duplicates_removed": [
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/I3_raw_results.tar.gz",
+      "bytes": 55316635,
+      "allocated_bytes": 55324672,
+      "sha256": "f3ddce1101ee4132d19dee0e63591ceb90916e1c4534a0807546b8959f43b039",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/I3_local_backups.tar.gz",
+      "bytes": 101791722,
+      "allocated_bytes": 101797888,
+      "sha256": "b0e98cb54df028fb7bcd356d6c5ee9369eedec969cc53ed61ecf01185435a7f8",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/I3_git_bundles.tar.gz",
+      "bytes": 102461381,
+      "allocated_bytes": 102465536,
+      "sha256": "a65a46b7430787553610bc2c2d6dd449447833fcc0b115682d23954f8e1f13da",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/I3_frozen_dependencies.tar.gz",
+      "bytes": 16269665,
+      "allocated_bytes": 16273408,
+      "sha256": "67aade805fa82bf1d39e96634d662b5ddeac7ec4512f340546f953dd31e1094f",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/trajectory_planner.bundle",
+      "bytes": 16939925,
+      "allocated_bytes": 16941056,
+      "sha256": "30fd3b0a7c24c80467337db1922e0a6166a652a96f0d4ca2aa59d1671838844a",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/uav_simulator.bundle",
+      "bytes": 52433551,
+      "allocated_bytes": 52441088,
+      "sha256": "0abd60b943ae95d88843441dc54aca4a641378ca9e4bc95f3c8e5a738bce15b9",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/parent.bundle",
+      "bytes": 984302,
+      "allocated_bytes": 987136,
+      "sha256": "342503bf8326a305e9a3b7561f2390f3560002abccc527a96c924d8dfd198d55",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/onboard_detector.bundle",
+      "bytes": 7686925,
+      "allocated_bytes": 7688192,
+      "sha256": "f58c84c5ac130cb1782d7d861941a998cf87411346b52d291dae08122adede43",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/time_optimizer.bundle",
+      "bytes": 18465335,
+      "allocated_bytes": 18468864,
+      "sha256": "1585c67db262e328db27005c022eae621e2f764d053480c805494119e0d34fda",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/map_manager.bundle",
+      "bytes": 4062993,
+      "allocated_bytes": 4063232,
+      "sha256": "1317649580e3cb2904033ed6ff6af25b4cd0713cf3c51c435939615458bc8a7d",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/autonomous_flight.bundle",
+      "bytes": 1660389,
+      "allocated_bytes": 1662976,
+      "sha256": "9454a82d6e85042bba2fbf4840fb396773a3278bf2efedf4afaf242dadd00597",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/tracking_controller.bundle",
+      "bytes": 59703,
+      "allocated_bytes": 61440,
+      "sha256": "666250ce2b889bf65da1cbcca0b45617a00ba97a3eb7a34ace2621a1d725db64",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/global_planner.bundle",
+      "bytes": 1530337,
+      "allocated_bytes": 1531904,
+      "sha256": "f772221fdbbd33d2866508eb4f9e7ff2bc7550f2476620f9ce313726082c3b02",
+      "remote_backup_verified": true
+    },
+    {
+      "path": "/home/zxr2/\u4e0b\u8f7d/CERLAB_I3_GitHub_Uploads/2026-10-14/git_bundles/remote_control.bundle",
+      "bytes": 32279,
+      "allocated_bytes": 32768,
+      "sha256": "dff799920c646a02379486e294c51a3cbafcfe526853dace8100643421d9afdd",
+      "remote_backup_verified": true
+    }
+  ],
+  "raw_file_inventory_unchanged": true,
+  "raw_file_count": 5436,
+  "formal_backup_trees_unchanged": 6,
+  "submodules_unchanged": 9,
+  "protected_hard_reference_docs": [
+    "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_01A_SCOPE_REVIEW.md",
+    "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_01A_SOURCE_AUDIT.md",
+    "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_01D_METHOD_DECISION.md",
+    "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02E_SOURCE_AUDIT.md",
+    "/home/zxr2/cerlab_benchmark_ws/src/CERLAB-UAV-Autonomy/experiments/i3/I3_02E_ASTRA_AUDIT.md"
+  ],
+  "current_entrypoint_links_valid": true,
+  "pre_archive_verified_documents": 29,
+  "post_archive_verified_documents": 9,
+  "github_push": false,
+  "new_experiments": 0,
+  "source_or_experiment_config_changes": false,
+  "space_measurement_scope": "allocated file blocks for affected files, including new archives/indexes/receipts; excludes directories, git object metadata and unrelated filesystem writes",
+  "space": {
+    "removed_upload_payload_bytes": 379695142,
+    "active_obsolete_document_bytes": 142735,
+    "before_affected_allocated_bytes": 380035072,
+    "after_affected_allocated_bytes": 536576,
+    "net_file_allocated_bytes_released": 379498496,
+    "net_MiB": 361.918,
+    "net_decimal_MB": 379.498,
+    "handoff_before_bytes": 58737,
+    "handoff_after_bytes": 12003
+  },
+  "handoff_completed_date": "2026-10-15",
+  "current_entrypoint_links_checked": 45,
+  "handoff_status": "FINALIZED",
+  "commit_evidence": "handoff_completion_receipt_2026-10-15.json in local archive directory"
+}

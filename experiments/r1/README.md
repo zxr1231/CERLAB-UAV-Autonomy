@@ -1,5 +1,8 @@
 # Phase R1 observation-gain diagnostics
 
+R1已完成。本文件保留接口/复现说明；当前任务与结论见
+[`../CODEX_HANDOFF.md`](../CODEX_HANDOFF.md)和[`R1_FINAL_DECISION.md`](R1_FINAL_DECISION.md)。
+
 R1 is an offline diagnostic phase. It does not change candidate selection, online
 path scoring, trajectory generation, or mission completion. R1-01 and R1-02 establish
 the frozen definitions and reproducible snapshot input required by later gain work.
@@ -72,7 +75,7 @@ Validate a saved directory with:
 
 ```bash
 source /opt/ros/noetic/setup.bash
-source /home/zxr2/cerlab_ws/devel/setup.bash
+source /home/zxr2/cerlab_benchmark_ws/devel/setup.bash
 rosrun exploration_benchmark inspect_r1_snapshot.py SNAPSHOT_DIRECTORY
 ```
 

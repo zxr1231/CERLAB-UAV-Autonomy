@@ -21,4 +21,5 @@ reference fixture for Innovation 1 is stored at
 copy and all relevant Git bundles are in
 `/home/zxr2/下载/CERLAB_R2_Final_2026-09-22`.
 
-The next task is I1-01. Online baseline behavior is unchanged at this checkpoint.
+R2已完成，后续I1/I2/I3也已完成各自阶段。此处保留历史证据，当前状态与授权请读
+[`../CODEX_HANDOFF.md`](../CODEX_HANDOFF.md)，不要重新启动I1-01。

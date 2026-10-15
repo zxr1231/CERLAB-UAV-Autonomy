@@ -1,46 +1,20 @@
-# CERLAB experiment records
+# CERLAB研究工作入口
 
-For a new Codex conversation, start with [`CODEX_HANDOFF.md`](CODEX_HANDOFF.md). It is
-the maintained single-file project state and continuation prompt.
+先读[总体交接](CODEX_HANDOFF.md)和[当前必读文档索引](ACTIVE_DOCUMENTS.md)。
+当前Legacy基线可用；I3观测引导原型已完成最终测试并关闭，A/B候选尚未立项。
+历史报告里的下一阶段计划不自动构成当前授权。
 
-This directory keeps reviewable experiment configuration, lightweight manifests,
-aggregate tables, reports, and analysis code. Large raw logs and trajectories remain
-under the benchmark workspace result root and are not committed to Git.
+| 需要查看什么 | 入口 |
+|---|---|
+| 固定指标、10seed与复测政策 | [Benchmark最终报告](benchmark_v2/FINAL_BASELINE_10SEED_2026-09-17.md)、[指标](benchmark_v2/METRICS_SPEC.md) |
+| 各阶段正式结论及可复用组件 | [当前索引](ACTIVE_DOCUMENTS.md) |
+| 最新方法取舍 | [A/B复核](method_reviews/A_B_METHOD_REVIEW_2026-10-14.md) |
+| 原始数据是否已备份 | [备份审计](maintenance/HISTORICAL_GITHUB_BACKUP_AUDIT_2026-10-14.md)、[I3上传收据](i3/I3_GITHUB_SYNC_RECEIPT.json) |
+| 此次整理/恢复旧文档 | [清理明细](maintenance/DOCUMENT_CLEANUP_2026-10-14.md) |
 
-Layout:
+`benchmark_v2/`保留指标/地图mask/正式汇总；`r1/`至`i3/`保留正式决定、冻结协议/输入、
+结果及复核证据；`analysis/`、阶段Python脚本保留复现工具。旧贡献草稿、完成阶段的启动
+提示词/中途进展已压缩归档，避免与当前计划混淆。原始数据与历次正式备份继续保留。
 
-- `configs/`: fixed experiment protocols and source run paths;
-- `manifests/`: copies of each run's `run.json`, `runner_result.json`,
-  `summary.json`, and mission-state events;
-- `summaries/`: generated comparison tables;
-- `reports/`: interpreted results and explicit limitations;
-- `analysis/`: reusable aggregation scripts;
-- `raw/`: optional local raw data; ignored by Git.
-
-Historical map-point counts are map-size proxies and must not be mixed with Benchmark
-v2 Coverage. The verified v2 task mask, sensor provenance, observability audit, and
-T80/T90/T95 definitions are documented under `benchmark_v2`.
-
-Benchmark v2 metric definitions, source audit, and deterministic floorplan2 masks are
-under [`benchmark_v2`](benchmark_v2/METRICS_SPEC.md).
-
-The completed ten-seed baseline, T95 repeat policy, per-seed table, and final aggregate
-are documented in
-[`FINAL_BASELINE_10SEED_2026-09-17.md`](benchmark_v2/FINAL_BASELINE_10SEED_2026-09-17.md).
-
-Phase R1 observation-gain diagnostics are specified under [`r1`](r1/README.md).
-Generated map snapshots stay in `experiments/r1/snapshots/` and are intentionally
-ignored; only manifests, selected fixtures, aggregate tables, and reports should be
-committed.
-
-Phase R2 predicted-versus-actual observation validation is complete under
-[`r2`](r2/R2_FINAL_DECISION.md). Its final decision conditionally authorizes the
-feature-flagged Innovation-1 unique-gain phase while retaining the legacy completion
-gate and frozen Benchmark-v2 controls.
-
-Innovation 1 progress and validation records are under [`i1`](i1/STATUS.md).
-The three-part paper contribution framing is in
-[`PAPER_CONTRIBUTIONS_DRAFT.md`](PAPER_CONTRIBUTIONS_DRAFT.md).
-
-I2's bounded observation-gap diagnosis and next control task are under
-[`i2`](i2/STATUS.md).
+历史地图点数是代理量，不可混作Benchmark Coverage；覆盖率分母、人工清空排除与
+停止条件见冻结指标。I3数据在GitHub Release，其他阶段原始数据未全部上传。
