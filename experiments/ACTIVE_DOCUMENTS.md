@@ -6,6 +6,7 @@
 ## 当前工作
 
 - [CODEX_HANDOFF.md](CODEX_HANDOFF.md)：当前状态、基线、Git/数据与后续工作底线。
+- [选题最终决定](method_reviews/TOPIC_FINAL_DECISION_2026-10-15.md)：A/B不批准立项，本轮选择结束，无自动补测/再筛选任务。
 - [A/B方法复核](method_reviews/A_B_METHOD_REVIEW_2026-10-14.md)：当前两候选工程/论文取舍。
 - [I3最终报告](i3/I3_03_02_REPORT.md)：代码已实现但主方法未获支持，原型关闭。
 - [历史GitHub备份审计](maintenance/HISTORICAL_GITHUB_BACKUP_AUDIT_2026-10-14.md)：剩余数据仍本地。
